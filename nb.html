@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allergy Bundle — The DRIPBaR New Braunfels</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:  #3C4C62;
+    --teal:  #0E9EC1;
+    --lime:  #C1D81A;
+    --white: #FFFFFF;
+    --light: #F5F7FA;
+    --text:  #2a2a2a;
+    --muted: #666;
+  }
+  body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--text); min-height: 100vh; }
+
+  /* HEADER */
+  header { background: var(--navy); padding: 16px 24px; text-align: center; }
+  header .eyebrow { font-family: 'Poppins', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lime); margin-bottom: 4px; }
+  header img { height: 48px; width: auto; }
+
+  /* URGENCY BANNER */
+  .urgency-bar { background: var(--teal); color: var(--white); text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* HERO */
+  .hero { background: var(--light); padding: 56px 24px 48px; }
+  .hero-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 680px) { .hero-inner { grid-template-columns: 1fr; gap: 32px; } }
+  .hero-image { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 48px rgba(60,76,98,0.18); border: 3px solid var(--lime); }
+  .hero-image img { width: 100%; display: block; }
+  .hero-content .tag { display: inline-block; background: var(--teal); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 18px; }
+  .hero-content h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 72px); color: var(--navy); line-height: 1.0; margin-bottom: 8px; }
+  .hero-content h1 .accent { color: var(--teal); }
+  .hero-content .price-row { display: flex; align-items: baseline; gap: 12px; margin: 20px 0 8px; }
+  .price-main { font-family: 'Bebas Neue', sans-serif; font-size: 58px; color: var(--navy); line-height: 1; }
+  .price-label { font-size: 13px; color: var(--muted); font-weight: 500; }
+  .hero-content .subtitle { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
+  .includes { margin-bottom: 28px; }
+  .includes h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--navy); margin-bottom: 12px; }
+  .includes ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .includes li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); font-weight: 500; }
+  .includes li::before { content: ''; display: block; width: 20px; height: 20px; min-width: 20px; background: var(--lime); border-radius: 50%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10l4 4 6-7' stroke='%233C4C62' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-size: contain; }
+  .btn-primary { display: block; width: 100%; background: var(--lime); color: var(--navy); font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.1em; text-align: center; padding: 18px 32px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; box-shadow: 0 6px 24px rgba(193,216,26,0.35); }
+  .btn-primary:hover { background: #afc215; transform: translateY(-2px); }
+  .btn-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+  /* WHAT'S INCLUDED */
+  .what-section { background: var(--white); padding: 56px 24px; border-top: 1px solid #e8ecf0; }
+  .what-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .what-inner .section-tag { display: inline-block; background: rgba(14,158,193,0.10); color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 16px; }
+  .what-inner h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 52px); color: var(--navy); margin-bottom: 12px; line-height: 1.05; }
+  .what-inner > p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 40px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+  @media (max-width: 540px) { .cards-grid { grid-template-columns: 1fr; } }
+  .card { background: var(--light); border-radius: 12px; padding: 24px; border-left: 4px solid var(--teal); }
+  .card-icon { font-size: 28px; margin-bottom: 10px; }
+  .card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--navy); letter-spacing: 0.05em; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  /* HOW IT WORKS */
+  .how-section { background: var(--navy); padding: 56px 24px; text-align: center; }
+  .how-section .section-tag { display: inline-block; background: rgba(193,216,26,0.15); color: var(--lime); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 16px; }
+  .how-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 52px); color: var(--white); margin-bottom: 40px; line-height: 1.05; }
+  .steps-grid { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  @media (max-width: 560px) { .steps-grid { grid-template-columns: 1fr; } }
+  .step { text-align: center; }
+  .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--lime); line-height: 1; margin-bottom: 8px; }
+  .step h4 { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--white); letter-spacing: 0.05em; margin-bottom: 6px; }
+  .step p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  /* BOTTOM CTA */
+  .bottom-cta { background: var(--light); padding: 56px 24px; text-align: center; border-top: 1px solid #e8ecf0; }
+  .bottom-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 6vw, 60px); color: var(--navy); line-height: 1.05; margin-bottom: 8px; }
+  .bottom-cta h2 em { color: var(--teal); font-style: normal; }
+  .bottom-cta p { color: var(--muted); font-size: 15px; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .btn-cta-dark { display: inline-block; background: var(--navy); color: var(--white); font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.1em; padding: 18px 48px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; box-shadow: 0 6px 24px rgba(60,76,98,0.25); }
+  .btn-cta-dark:hover { background: #2e3b4e; transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer { background: #2a3545; padding: 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.8; }
+  footer img { height: 32px; width: auto; margin-bottom: 10px; opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">The DRIPBaR | New Braunfels</div>
+  <img src="https://files.catbox.moe/5gfzrp.svg" alt="The DRIPBaR" />
+</header>
+
+<div class="urgency-bar">
+  🌿 Seasonal Offer &nbsp;—&nbsp; Beat Allergy Season Before It Beats You
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-image">
+      <img src="https://files.catbox.moe/fwyx7j.jpeg" alt="Allergy Bundle" />
+    </div>
+    <div class="hero-content">
+      <span class="tag">Limited Time Offer</span>
+      <h1>Allergy <span class="accent">Bundle</span></h1>
+      <p class="subtitle">Four powerful therapies. One smart stack. Stop surviving allergy season — start breathing easy again.</p>
+      <div class="includes">
+        <h3>What's Included</h3>
+        <ul>
+          <li>Allergy IV Infusion</li>
+          <li>Tri-Immune IM Shot</li>
+          <li>Halo Salt Sauna Session</li>
+          <li>Vitamin D Shot</li>
+        </ul>
+      </div>
+      <div class="price-row">
+        <span class="price-main">$249</span>
+        <span class="price-label">All 4 therapies included</span>
+      </div>
+      <a href="https://grow.genierocket.com/payment-link/69dac2e880425dc02fbc71fe" class="btn-primary">Claim Your Bundle — $249</a>
+      <p class="btn-note">Book online · Available at The DRIPBaR New Braunfels</p>
+    </div>
+  </div>
+</section>
+
+<section class="what-section">
+  <div class="what-inner">
+    <span class="section-tag">The Protocol</span>
+    <h2>Four Therapies.<br>One Powerful Stack.</h2>
+    <p>Each therapy was chosen because it works synergistically to calm your immune response, open your airways, and flood your body with the nutrients it needs to fight back this season.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">💧</div>
+        <h4>Allergy IV</h4>
+        <p>A targeted IV infusion with antihistamines, Vitamin C, magnesium, and minerals to dampen your inflammatory response at the source — fast.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💉</div>
+        <h4>Tri-Immune Shot</h4>
+        <p>A potent IM injection of Glutathione, Zinc, and Vitamin C that supercharges your immune system and helps your body stop overreacting to allergens.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧂</div>
+        <h4>Halo Salt Sauna</h4>
+        <p>Dry salt therapy that clears your airways, soothes inflamed nasal passages, and helps you breathe deeper — the natural way.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☀️</div>
+        <h4>Vitamin D Shot</h4>
+        <p>A high-dose Vitamin D IM injection to strengthen your immune defenses, reduce inflammation, and support overall respiratory health during allergy season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div>
+    <span class="section-tag">Simple Process</span>
+    <h2>Three Steps to Relief</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Book Online</h4>
+        <p>Claim your bundle now and schedule at a time that works for you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Come In</h4>
+        <p>Arrive at The DRIPBaR New Braunfels and let our clinical team handle everything.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Breathe Easy</h4>
+        <p>Leave feeling refreshed, clear-headed, and ready to actually enjoy the season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <h2>Ready to Win<br><em>Allergy Season?</em></h2>
+  <p>Four therapies. One streamlined session. Only $249 — at The DRIPBaR New Braunfels.</p>
+  <a href="https://grow.genierocket.com/payment-link/69dac2e880425dc02fbc71fe" class="btn-cta-dark">Claim Your Bundle — $249</a>
+  <p style="margin-top:16px; font-size:12px; color:var(--muted);">Questions? Call us or stop in — we're here to help.</p>
+</section>
+
+<footer>
+  <img src="https://files.catbox.moe/5gfzrp.svg" alt="The DRIPBaR" /><br>
+  © 2026 The DRIPBaR New Braunfels. All rights reserved.<br>
+  Results may vary. These statements have not been evaluated by the FDA. This service is not intended to diagnose, treat, cure, or prevent any disease.
+</footer>
+
+</body>
+</html>
