@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>GHK-Cu Copper Peptide Therapy | The DRIPBaR Burleson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg-deep:#07070f;--bg-card:#0d1b2e;--bg-navy:#0a1628;--bg-navy-mid:#112240;--purple-dark:#3b0764;--purple-mid:#7c3aed;--purple-bright:#a855f7;--purple-glow:#c084fc;--navy-bright:#1e3a5f;--teal-bright:#14b8a6;--teal-glow:#2dd4bf;--blue-mid:#3b82f6;--text-primary:#f0f6ff;--text-muted:#8ca5c0}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-deep);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4,h5,h6{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;line-height:1.1}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(7,7,15,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(124,58,237,.15)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.nav-logo{height:48px;filter:brightness(0) invert(1)}
+.btn-nav{display:inline-block;padding:10px 22px;font-size:.85rem;font-weight:700;letter-spacing:.06em;border-radius:8px;background:linear-gradient(135deg,var(--purple-mid),var(--purple-bright));color:#fff;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+.btn-nav:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(168,85,247,.45)}
+
+/* BUTTONS */
+.cta-btn{display:inline-block;padding:16px 38px;font-size:1.05rem;font-weight:700;letter-spacing:.06em;border-radius:10px;background:linear-gradient(135deg,var(--purple-mid),var(--purple-bright));color:#fff;transition:transform .25s,box-shadow .25s;cursor:pointer;border:none;text-align:center}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 0 32px rgba(168,85,247,.5)}
+.cta-ghost{display:inline-block;padding:16px 38px;font-size:1.05rem;font-weight:600;letter-spacing:.04em;border-radius:10px;border:2px solid var(--purple-glow);color:var(--purple-glow);background:transparent;transition:all .25s;cursor:pointer}
+.cta-ghost:hover{background:rgba(168,85,247,.12);transform:translateY(-3px);box-shadow:0 0 24px rgba(192,132,252,.25)}
+
+/* SECTIONS */
+section{padding:100px 24px}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-bright);margin-bottom:12px}
+.section-title{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:24px}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:120px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:140%;height:80%;border-radius:50%;background:radial-gradient(ellipse,rgba(124,58,237,.18) 0%,rgba(20,184,166,.06) 40%,transparent 70%);animation:heroGlow 8s ease-in-out infinite alternate}
+.hero-bg::after{content:'';position:absolute;bottom:-10%;left:30%;width:60%;height:50%;border-radius:50%;background:radial-gradient(ellipse,rgba(20,184,166,.1) 0%,transparent 70%);animation:heroGlow 10s ease-in-out 2s infinite alternate}
+@keyframes heroGlow{0%{opacity:.6;transform:translateX(-50%) scale(1)}100%{opacity:1;transform:translateX(-48%) scale(1.08)}}
+.hero-content{position:relative;z-index:1;max-width:820px}
+.pill{display:inline-block;padding:8px 22px;border-radius:50px;background:rgba(20,184,166,.12);border:1px solid rgba(20,184,166,.3);font-size:.78rem;font-weight:700;letter-spacing:.14em;color:var(--teal-glow);margin-bottom:28px}
+.hero h1{font-size:clamp(3rem,8vw,5.5rem);margin-bottom:22px;background:linear-gradient(135deg,var(--text-primary) 40%,var(--purple-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:clamp(1rem,2vw,1.25rem);color:var(--text-muted);max-width:640px;margin:0 auto 40px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* DNA HELIX DECORATION */
+.dna-decoration{position:absolute;right:5%;top:20%;opacity:.07;z-index:0;pointer-events:none}
+.dna-decoration svg{width:60px;height:400px;animation:dnaFloat 6s ease-in-out infinite}
+@keyframes dnaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+
+/* PROBLEM */
+.problem{background:var(--bg-navy)}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:48px}
+.problem-card{background:var(--bg-card);border:1px solid rgba(124,58,237,.2);border-radius:16px;padding:36px 30px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.problem-card:hover{transform:translateY(-6px);box-shadow:0 8px 40px rgba(124,58,237,.18);border-color:var(--purple-mid)}
+.problem-card h3{font-size:1.5rem;margin-bottom:12px;color:var(--purple-glow)}
+.problem-card p{color:var(--text-muted);font-size:.95rem;line-height:1.7}
+
+/* SOLUTION */
+.solution{background:var(--bg-deep)}
+.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px}
+.solution-img{border-radius:20px;overflow:hidden;box-shadow:0 0 60px rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.2)}
+.solution-img img{width:100%;height:auto;display:block}
+.solution-text p{color:var(--text-muted);font-size:1.05rem;line-height:1.8;margin-bottom:28px}
+.benefit-icons{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.benefit-icon{display:flex;align-items:center;gap:12px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:14px 18px;font-size:.92rem;font-weight:500;transition:border-color .3s,background .3s}
+.benefit-icon:hover{border-color:var(--purple-mid);background:rgba(124,58,237,.14)}
+.benefit-icon span:first-child{font-size:1.4rem}
+
+/* SCIENCE */
+.science{background:var(--bg-navy)}
+.science-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:48px}
+.science-card{position:relative;background:var(--bg-card);border-radius:16px;padding:36px 30px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.science-card::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(135deg,var(--purple-mid),var(--purple-bright),var(--teal-bright));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.5;transition:opacity .3s}
+.science-card:hover{transform:translateY(-5px);box-shadow:0 10px 40px rgba(124,58,237,.15)}
+.science-card:hover::before{opacity:1}
+.science-card h3{font-size:1.45rem;margin-bottom:10px;color:var(--purple-glow)}
+.science-card p{color:var(--text-muted);font-size:.93rem;line-height:1.7}
+
+/* PLAN / HOW IT WORKS */
+.plan{background:var(--bg-deep);position:relative}
+.plan-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;position:relative}
+.plan-steps::before{content:'';position:absolute;top:48px;left:16%;right:16%;height:2px;background:linear-gradient(90deg,transparent,var(--purple-mid),var(--purple-bright),var(--purple-mid),transparent);opacity:.4}
+.plan-step{text-align:center;position:relative}
+.step-num{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--purple-dark),var(--purple-mid));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;margin:0 auto 24px;position:relative;z-index:1;border:2px solid var(--purple-bright);box-shadow:0 0 30px rgba(124,58,237,.25)}
+.plan-step h3{font-size:1.6rem;margin-bottom:10px;color:var(--text-primary)}
+.plan-step p{color:var(--text-muted);font-size:.93rem;line-height:1.7;max-width:320px;margin:0 auto}
+
+/* ORDER */
+.order{background:var(--bg-navy)}
+.order-card{max-width:900px;margin:48px auto 0;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;background:var(--bg-card);border:2px solid rgba(124,58,237,.3);border-radius:24px;padding:48px;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(124,58,237,.12)}
+.order-card::before{content:'';position:absolute;top:-60%;right:-40%;width:80%;height:120%;border-radius:50%;background:radial-gradient(ellipse,rgba(124,58,237,.08),transparent 70%);pointer-events:none}
+.order-img{border-radius:16px;overflow:hidden;border:1px solid rgba(124,58,237,.15)}
+.order-img img{width:100%;height:auto}
+.order-details{position:relative}
+.order-details h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;margin-bottom:4px}
+.order-supply{color:var(--text-muted);font-size:1rem;margin-bottom:16px}
+.order-price{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--purple-bright);margin-bottom:24px}
+.order-list{list-style:none;margin-bottom:32px}
+.order-list li{padding:8px 0;font-size:.95rem;color:var(--text-muted);display:flex;align-items:center;gap:10px}
+.order-list li .check{color:var(--teal-bright);font-weight:700;font-size:1.1rem}
+.order-btn{width:100%;padding:18px;font-size:1.15rem;font-weight:800;letter-spacing:.08em;border-radius:12px;background:linear-gradient(135deg,var(--purple-mid),var(--purple-bright));color:#fff;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;text-align:center;display:block}
+.order-btn:hover{transform:translateY(-3px);box-shadow:0 0 36px rgba(168,85,247,.5)}
+.order-footnote{text-align:center;color:var(--text-muted);font-size:.82rem;margin-top:28px;opacity:.7}
+
+/* TRANSFORMATION */
+.transform{background:var(--bg-deep);text-align:center}
+.transform p{max-width:700px;margin:0 auto 40px;color:var(--text-muted);font-size:1.1rem;line-height:1.85}
+
+/* FOOTER */
+footer{background:var(--bg-navy);padding:48px 24px;text-align:center;border-top:1px solid rgba(124,58,237,.1)}
+footer img{height:40px;filter:brightness(0) invert(1);margin:0 auto 16px;opacity:.7}
+footer .copy{color:var(--text-muted);font-size:.82rem;margin-bottom:14px}
+footer .disclaimer{color:var(--text-muted);font-size:.72rem;max-width:640px;margin:0 auto;opacity:.55;line-height:1.7}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .solution-grid{grid-template-columns:1fr;text-align:center}
+  .solution-img{max-width:420px;margin:0 auto}
+  .benefit-icons{grid-template-columns:1fr}
+  .plan-steps{grid-template-columns:1fr;gap:48px}
+  .plan-steps::before{display:none}
+  .order-card{grid-template-columns:1fr;max-width:520px;padding:32px}
+  .order-img{max-width:320px;margin:0 auto}
+}
+@media(max-width:600px){
+  section{padding:72px 18px}
+  .hero h1{font-size:clamp(2.4rem,10vw,3.6rem)}
+  .hero-btns{flex-direction:column;align-items:center}
+  .cta-btn,.cta-ghost{width:100%;max-width:340px;text-align:center}
+  .problem-grid{grid-template-columns:1fr}
+  .science-grid{grid-template-columns:1fr}
+  .nav-inner{padding:12px 16px}
+  .nav-logo{height:36px}
+  .btn-nav{padding:8px 16px;font-size:.78rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#"><img src="https://betterbranding.github.io/dripbar-pages/images/dripbar-logo.svg" alt="The DRIPBaR" class="nav-logo"/></a>
+    <a href="#order" class="btn-nav">ORDER NOW — $149</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="dna-decoration" aria-hidden="true">
+    <svg viewBox="0 0 40 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="var(--purple-glow)" stroke-width="1.5" opacity=".6">
+        <path d="M8 0C8 0 32 25 32 50S8 75 8 100S32 125 32 150S8 175 8 200S32 225 32 250S8 275 8 300S32 325 32 350S8 375 8 400"/>
+        <path d="M32 0C32 0 8 25 8 50S32 75 32 100S8 125 8 150S32 175 32 200S8 225 8 250S32 275 32 300S8 325 8 350S32 375 32 400"/>
+        <line x1="8" y1="25" x2="32" y2="25" opacity=".3"/>
+        <line x1="32" y1="75" x2="8" y2="75" opacity=".3"/>
+        <line x1="8" y1="125" x2="32" y2="125" opacity=".3"/>
+        <line x1="32" y1="175" x2="8" y2="175" opacity=".3"/>
+        <line x1="8" y1="225" x2="32" y2="225" opacity=".3"/>
+        <line x1="32" y1="275" x2="8" y2="275" opacity=".3"/>
+        <line x1="8" y1="325" x2="32" y2="325" opacity=".3"/>
+        <line x1="32" y1="375" x2="8" y2="375" opacity=".3"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="pill">THE DRIPBAR &nbsp;|&nbsp; PEPTIDES</div>
+    <h1>TURN BACK TIME WITH GHK-Cu</h1>
+    <p>The copper peptide your body already knows — reactivated to rebuild collagen, restore hair, and reverse visible aging from the inside out.</p>
+    <div class="hero-btns">
+      <a href="#order" class="cta-btn">ORDER NOW — $149</a>
+      <a href="#benefits" class="cta-ghost">SEE THE SCIENCE</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">The Problem</p>
+    <h2 class="section-title">YOUR SKIN REMEMBERS WHAT YOUR BODY FORGOT</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>The Mirror Doesn't Lie</h3>
+        <p>Fine lines, sagging skin, and thinning hair aren't just cosmetic — they're signals your body's repair system is slowing down.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Feeling Invisible</h3>
+        <p>You take care of yourself. You eat well, exercise, show up every day. But somehow your reflection doesn't match your energy.</p>
+      </div>
+      <div class="problem-card">
+        <h3>You Deserve Better</h3>
+        <p>Aging is natural. Aging without options isn't. You deserve a solution grounded in science, not wishful thinking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <p class="section-label">The Solution</p>
+    <h2 class="section-title">MEET GHK-Cu: YOUR BODY'S ORIGINAL REPAIR SIGNAL</h2>
+    <div class="solution-grid">
+      <div class="solution-img">
+        <img src="https://betterbranding.github.io/dripbar-pages/images/ghkcu-product.jpg" alt="GHK-Cu Copper Peptide Vial"/>
+      </div>
+      <div class="solution-text">
+        <p>GHK-Cu is a naturally occurring copper peptide found in human plasma, saliva, and urine. It plays a critical role in tissue remodeling, collagen synthesis, and anti-inflammatory response.</p>
+        <p>Here's the problem: <strong>by age 60, your GHK-Cu levels have dropped by over 60%</strong> compared to age 20. That decline directly correlates with visible aging — thinner skin, slower healing, and loss of elasticity.</p>
+        <p>Supplementing with pharmaceutical-grade GHK-Cu reactivates your body's own repair pathways — stimulating collagen production, promoting hair growth, and reducing inflammation from the inside out.</p>
+        <div class="benefit-icons">
+          <div class="benefit-icon"><span>🧬</span> Stimulates collagen synthesis</div>
+          <div class="benefit-icon"><span>💆‍♀️</span> Promotes thicker, healthier hair</div>
+          <div class="benefit-icon"><span>🛡️</span> Reduces inflammation &amp; scarring</div>
+          <div class="benefit-icon"><span>✨</span> Tightens &amp; firms skin naturally</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE / BENEFITS -->
+<section class="science" id="benefits">
+  <div class="container">
+    <p class="section-label">Research-Backed Benefits</p>
+    <h2 class="section-title">THE SCIENCE SPEAKS FOR ITSELF</h2>
+    <div class="science-grid">
+      <div class="science-card">
+        <h3>Collagen Production</h3>
+        <p>Increases type I and III collagen synthesis by up to 70%, restoring skin thickness and elasticity at the cellular level.</p>
+      </div>
+      <div class="science-card">
+        <h3>Hair Restoration</h3>
+        <p>Enlarges hair follicle size and extends the active growth phase, promoting thicker, fuller hair over time.</p>
+      </div>
+      <div class="science-card">
+        <h3>Anti-Inflammatory</h3>
+        <p>Suppresses inflammatory cytokines systemically, calming chronic low-grade inflammation linked to accelerated aging.</p>
+      </div>
+      <div class="science-card">
+        <h3>Wound Healing</h3>
+        <p>Accelerates tissue repair and significantly reduces scarring, helping your skin recover faster and cleaner.</p>
+      </div>
+      <div class="science-card">
+        <h3>Antioxidant Defense</h3>
+        <p>Boosts superoxide dismutase (SOD) activity, your body's primary antioxidant enzyme that neutralizes free radicals.</p>
+      </div>
+      <div class="science-card">
+        <h3>DNA Repair</h3>
+        <p>Activates genes responsible for cellular repair and longevity, supporting your body's ability to maintain healthy tissue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="plan">
+  <div class="container">
+    <p class="section-label">The Plan</p>
+    <h2 class="section-title">YOUR PATH TO RENEWAL</h2>
+    <div class="plan-steps">
+      <div class="plan-step">
+        <div class="step-num">1</div>
+        <h3>ORDER</h3>
+        <p>Secure your 1-month supply of pharmaceutical-grade GHK-Cu for just $149.</p>
+      </div>
+      <div class="plan-step">
+        <div class="step-num">2</div>
+        <h3>PROTOCOL</h3>
+        <p>Follow the simple self-administered injection protocol (instructions included with your order).</p>
+      </div>
+      <div class="plan-step">
+        <div class="step-num">3</div>
+        <h3>REVEAL</h3>
+        <p>Watch your skin, hair, and confidence transform over 4–8 weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="order" id="order">
+  <div class="container">
+    <p class="section-label" style="text-align:center">Limited Availability</p>
+    <h2 class="section-title" style="text-align:center">RECLAIM YOUR RADIANCE</h2>
+    <div class="order-card">
+      <div class="order-img">
+        <img src="https://betterbranding.github.io/dripbar-pages/images/ghkcu-product.jpg" alt="GHK-Cu Copper Peptide"/>
+      </div>
+      <div class="order-details">
+        <h3>GHK-Cu Copper Peptide</h3>
+        <p class="order-supply">1 Vial — 1 Month Supply</p>
+        <div class="order-price">$149</div>
+        <ul class="order-list">
+          <li><span class="check">✓</span> Pharmaceutical-grade GHK-Cu</li>
+          <li><span class="check">✓</span> Self-administration instructions</li>
+          <li><span class="check">✓</span> 30-day supply</li>
+          <li><span class="check">✓</span> Free consultation included</li>
+        </ul>
+        <a href="https://grow.genierocket.com/payment-link/69e64c32557558e89e5213ad" target="_blank" class="cta-btn order-btn">ORDER NOW</a>
+      </div>
+    </div>
+    <p class="order-footnote">Limited availability. Peptide therapies require medical oversight.</p>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section class="transform">
+  <div class="container">
+    <p class="section-label">The Transformation</p>
+    <h2 class="section-title">THE MIRROR MOMENT</h2>
+    <p>Imagine catching your reflection and seeing the vitality you feel inside — finally matching what's on the outside. Firmer skin. Thicker hair. That quiet confidence that comes from knowing you're giving your body exactly what it needs.</p>
+    <a href="https://grow.genierocket.com/payment-link/69e64c32557558e89e5213ad" target="_blank" class="cta-btn">BEGIN YOUR TRANSFORMATION — $149</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://betterbranding.github.io/dripbar-pages/images/dripbar-logo.svg" alt="The DRIPBaR"/>
+  <p class="copy">&copy; 2026 The DRIPBaR Burleson. All rights reserved.</p>
+  <p class="disclaimer">These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Peptide therapies are provided under medical supervision.</p>
+</footer>
+
+</body>
+</html>
