@@ -108,7 +108,9 @@ section{padding:100px 24px}
 .order-footnote{text-align:center;color:var(--text-muted);font-size:.82rem;margin-top:28px;opacity:.7}
 
 /* TRANSFORMATION */
-.transform{background:var(--bg-deep);text-align:center}
+.transform{position:relative;overflow:hidden;text-align:center}
+.transform-bg{position:absolute;inset:0;z-index:0;background:url('https://betterbranding.github.io/dripbar-pages/ghkcu_cta_bg.jpg') center center/cover no-repeat;opacity:.12}
+.transform .container{position:relative;z-index:1}
 .transform p{max-width:700px;margin:0 auto 40px;color:var(--text-muted);font-size:1.1rem;line-height:1.85}
 
 /* FOOTER */
@@ -313,6 +315,7 @@ footer .disclaimer{color:var(--text-muted);font-size:.72rem;max-width:640px;marg
 
 <!-- TRANSFORMATION -->
 <section class="transform">
+  <div class="transform-bg"></div>
   <div class="container">
     <p class="section-label">The Transformation</p>
     <h2 class="section-title">THE MIRROR MOMENT</h2>
