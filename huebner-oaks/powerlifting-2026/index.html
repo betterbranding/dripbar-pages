@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRIPBaR Pop-Up Menu | Powerlifting United 2026</title>
+<meta name="description" content="Exclusive IV therapy pop-up menu at the 2026 Powerlifting United National Championships. Hydration, recovery, and performance drips starting at $99.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #3C4C62;
+  --lime: #C1D81A;
+  --lime-glow: rgba(193,216,26,0.25);
+  --lime-soft: rgba(193,216,26,0.08);
+  --dark: #100818;
+  --card-bg: rgba(255,255,255,0.06);
+  --card-border: rgba(193,216,26,0.25);
+  --purple-accent: rgba(107,47,138,0.7);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: #0a0510;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px 40px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: url('assets/powerlifter-bg.png') center/cover no-repeat;
+  opacity: 0.3;
+}
+.hero-overlay {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(180deg, rgba(16,8,24,0.85) 0%, rgba(20,10,30,0.6) 40%, rgba(16,8,24,0.8) 70%, rgba(16,8,24,0.95) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 680px; width: 100%;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* Logo */
+.logo { width: 200px; margin-bottom: 16px; }
+
+/* Titles */
+.pop-up-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(42px, 8vw, 64px);
+  text-align: center;
+  color: var(--lime);
+  letter-spacing: 8px;
+  line-height: 1;
+}
+.subtitle {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+/* Menu Cards */
+.cards {
+  width: 100%;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  background: rgba(193,216,26,0.08);
+  border-color: var(--lime);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(193,216,26,0.15);
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.card-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(24px, 4vw, 32px);
+  letter-spacing: 2px;
+}
+.card-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(24px, 4vw, 32px);
+  color: var(--lime);
+}
+.card-desc {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+.card-tags {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.tag {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lime);
+  font-weight: 600;
+  padding: 5px 12px;
+  border: 1px solid rgba(193,216,26,0.3);
+  border-radius: 20px;
+  background: var(--lime-soft);
+}
+.card-cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--lime);
+  position: relative;
+}
+.card-cta::after {
+  content: ' →';
+}
+
+/* CTA Section */
+.cta-section {
+  position: relative;
+  width: 100%;
+  margin-top: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 40px 28px;
+  text-align: center;
+}
+.cta-bg {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: url('assets/cta-bg.png') center/cover;
+  opacity: 0.15;
+}
+.cta-overlay {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(135deg, var(--purple-accent), rgba(16,8,24,0.9));
+}
+.cta-inner { position: relative; z-index: 2; }
+
+.event-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(28px, 5vw, 40px);
+  letter-spacing: 5px;
+  line-height: 1.1;
+}
+.event-year {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(20px, 4vw, 28px);
+  letter-spacing: 3px;
+  color: var(--lime);
+  margin-top: 4px;
+}
+.cta-waive {
+  margin-top: 20px;
+  font-size: clamp(13px, 2.5vw, 16px);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.5;
+}
+.cta-waive span {
+  color: var(--lime);
+}
+.cta-details {
+  font-size: 11px;
+  color: #ccc;
+  margin-top: 12px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+.cta-button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 40px;
+  background: var(--lime);
+  color: var(--dark);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  letter-spacing: 3px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.cta-button:hover {
+  background: #d4eb2f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,216,26,0.3);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 1px;
+}
+.footer a { color: var(--lime); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .hero { padding: 40px 16px 32px; }
+  .card { padding: 20px; }
+  .cta-section { padding: 32px 20px; }
+  .logo { width: 160px; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img class="logo" src="assets/logo.svg" alt="The DRIPBaR">
+    <h1 class="pop-up-title">POP-UP MENU</h1>
+    <p class="subtitle">Exclusive Event Drip Menu</p>
+
+    <div class="cards">
+
+      <a href="https://the-strand-at-huebner-oaks.thedripbar.com/services-menu/iv-therapy/" class="card" target="_blank" rel="noopener">
+        <div class="card-header">
+          <h2 class="card-title">100% HYDRATION</h2>
+          <div class="card-price">$99</div>
+        </div>
+        <p class="card-desc">1000mL of pure IV hydration with electrolytes. Fast-track your recovery between lifts and stay competition-ready all day.</p>
+        <div class="card-tags">
+          <span class="tag">Rapid Rehydration</span>
+          <span class="tag">Electrolyte Balance</span>
+          <span class="tag">Peak Performance</span>
+        </div>
+        <span class="card-cta">Learn More</span>
+      </a>
+
+      <a href="https://the-strand-at-huebner-oaks.thedripbar.com/services-menu/iv-therapy/powerpack/" class="card" target="_blank" rel="noopener">
+        <div class="card-header">
+          <h2 class="card-title">PEAK POWER</h2>
+          <div class="card-price">$129</div>
+        </div>
+        <p class="card-desc">B-Complex, Amino Acids, Magnesium, Zinc, Vitamin C, and a Glutathione push. Designed for strength, endurance, and muscle recovery.</p>
+        <div class="card-tags">
+          <span class="tag">Muscle Recovery</span>
+          <span class="tag">Energy Boost</span>
+          <span class="tag">Strength Support</span>
+        </div>
+        <span class="card-cta">Learn More</span>
+      </a>
+
+      <a href="https://the-strand-at-huebner-oaks.thedripbar.com/services-menu/iv-therapy/restoration/" class="card" target="_blank" rel="noopener">
+        <div class="card-header">
+          <h2 class="card-title">RECOVER &amp; RECHARGE</h2>
+          <div class="card-price">$129</div>
+        </div>
+        <p class="card-desc">High-dose Vitamin C, B12, Magnesium, Zinc, Glutamine, and a Glutathione push. Full-spectrum post-competition recovery.</p>
+        <div class="card-tags">
+          <span class="tag">Inflammation Support</span>
+          <span class="tag">Immune Defense</span>
+          <span class="tag">Total Recovery</span>
+        </div>
+        <span class="card-cta">Learn More</span>
+      </a>
+
+    </div>
+
+    <div class="cta-section">
+      <div class="cta-bg"></div>
+      <div class="cta-overlay"></div>
+      <div class="cta-inner">
+        <div class="event-title">POWERLIFTING UNITED</div>
+        <div class="event-year">2026 NATIONAL CHAMPIONSHIPS</div>
+        <p class="cta-waive">Secure your drip today and <span>waive the $35 consult fee</span></p>
+        <p class="cta-details">VISIT OUR POP-UP BOOTH &bull; WALK-INS WELCOME &bull; FUEL YOUR PERFORMANCE</p>
+        <a href="https://the-strand-at-huebner-oaks.thedripbar.com/book-appointment/" class="cta-button" target="_blank" rel="noopener">BOOK NOW</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>The DRIPBaR Huebner Oaks &bull; 11255 Huebner Road, Suite 107, San Antonio, TX 78230</p>
+  <p style="margin-top:8px;"><a href="tel:2103064135">(210) 306-4135</a> &bull; <a href="https://the-strand-at-huebner-oaks.thedripbar.com" target="_blank">the-strand-at-huebner-oaks.thedripbar.com</a></p>
+</footer>
+
+</body>
+</html>
