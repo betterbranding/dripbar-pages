@@ -91,7 +91,6 @@ body {
   text-decoration: none;
   color: #fff;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 .card:hover {
   background: rgba(193,216,26,0.08);
@@ -136,18 +135,30 @@ body {
   border-radius: 20px;
   background: var(--lime-soft);
 }
-.card-cta {
-  display: inline-block;
-  margin-top: 14px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--lime);
-  position: relative;
+
+/* Buy Now Button - right aligned in each card */
+.card-buy-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
 }
-.card-cta::after {
-  content: ' →';
+.buy-btn {
+  display: inline-block;
+  padding: 10px 28px;
+  background: var(--lime);
+  color: #0a0510;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.buy-btn:hover {
+  background: #d4eb2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(193,216,26,0.35);
 }
 
 /* CTA Section */
@@ -201,24 +212,6 @@ body {
   letter-spacing: 1px;
   font-weight: 300;
 }
-.cta-button {
-  display: inline-block;
-  margin-top: 24px;
-  padding: 14px 40px;
-  background: var(--lime);
-  color: var(--dark);
-  font-family: 'Bebas Neue', cursive;
-  font-size: 20px;
-  letter-spacing: 3px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.cta-button:hover {
-  background: #d4eb2f;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(193,216,26,0.3);
-}
 
 /* Footer */
 .footer {
@@ -252,7 +245,7 @@ body {
 
     <div class="cards">
 
-      <a href="https://grow.genierocket.com/payment-link/69f1737ac970abb4095b05eb" class="card" target="_blank" rel="noopener">
+      <div class="card">
         <div class="card-header">
           <h2 class="card-title">100% HYDRATION</h2>
           <div class="card-price">$99</div>
@@ -263,10 +256,12 @@ body {
           <span class="tag">Electrolyte Balance</span>
           <span class="tag">Peak Performance</span>
         </div>
-        <span class="card-cta">Buy Now</span>
-      </a>
+        <div class="card-buy-row">
+          <a href="https://the-strand-at-huebner-oaks.thedripbar.com/services-menu/iv-therapy/" class="buy-btn" target="_blank" rel="noopener">BUY NOW</a>
+        </div>
+      </div>
 
-      <a href="https://grow.genierocket.com/payment-link/69f173edc970abb4095b05ed" class="card" target="_blank" rel="noopener">
+      <div class="card">
         <div class="card-header">
           <h2 class="card-title">PEAK POWER</h2>
           <div class="card-price">$129</div>
@@ -277,10 +272,12 @@ body {
           <span class="tag">Energy Boost</span>
           <span class="tag">Strength Support</span>
         </div>
-        <span class="card-cta">Buy Now</span>
-      </a>
+        <div class="card-buy-row">
+          <a href="https://the-strand-at-huebner-oaks.thedripbar.com/services-menu/iv-therapy/powerpack/" class="buy-btn" target="_blank" rel="noopener">BUY NOW</a>
+        </div>
+      </div>
 
-      <a href="https://grow.genierocket.com/payment-link/69f174338e7406bd4d4a3bda" class="card" target="_blank" rel="noopener">
+      <div class="card">
         <div class="card-header">
           <h2 class="card-title">RECOVER &amp; RECHARGE</h2>
           <div class="card-price">$129</div>
@@ -291,8 +288,10 @@ body {
           <span class="tag">Immune Defense</span>
           <span class="tag">Total Recovery</span>
         </div>
-        <span class="card-cta">Buy Now</span>
-      </a>
+        <div class="card-buy-row">
+          <a href="https://the-strand-at-huebner-oaks.thedripbar.com/services-menu/iv-therapy/restoration/" class="buy-btn" target="_blank" rel="noopener">BUY NOW</a>
+        </div>
+      </div>
 
     </div>
 
@@ -304,7 +303,6 @@ body {
         <div class="event-year">2026 NATIONAL CHAMPIONSHIPS</div>
         <p class="cta-waive">Secure your drip today and <span>waive the $35 consult fee</span></p>
         <p class="cta-details">VISIT OUR POP-UP BOOTH &bull; WALK-INS WELCOME &bull; FUEL YOUR PERFORMANCE</p>
-        <a href="https://the-strand-at-huebner-oaks.thedripbar.com/book-appointment/" class="cta-button" target="_blank" rel="noopener">BOOK NOW</a>
       </div>
     </div>
 
