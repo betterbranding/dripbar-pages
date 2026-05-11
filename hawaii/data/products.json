@@ -1,0 +1,282 @@
+{
+  "categories": [
+    {
+      "id": "weight-management",
+      "name": "Weight Management",
+      "tagline": "Slim Down and Energize with Tailored Weight Loss Solutions.",
+      "icon": "\ud83d\udc8a",
+      "products": [
+        {
+          "name": "Semaglutide Injection",
+          "subtitle": "Compounded with glycine",
+          "price": 160,
+          "image": "semaglutide-injection.webp"
+        },
+        {
+          "name": "Semaglutide Sublingual",
+          "subtitle": "",
+          "price": 195,
+          "image": "semaglutide-sublingual.webp"
+        },
+        {
+          "name": "Tirzepatide",
+          "subtitle": "Compounded with Glycine",
+          "price": 200,
+          "image": "tirzepatide.webp"
+        },
+        {
+          "name": "Liraglutide",
+          "subtitle": "",
+          "price": 345,
+          "image": "liraglutide.webp"
+        },
+        {
+          "name": "Oral Weight Loss Capsules",
+          "subtitle": "",
+          "price": 225,
+          "image": "oral-weight-loss.webp"
+        },
+        {
+          "name": "Metformin HCl ER Tablet",
+          "subtitle": "",
+          "price": 135,
+          "image": "metformin.webp"
+        },
+        {
+          "name": "Phentermine HCl Tablet",
+          "subtitle": "",
+          "price": 135,
+          "image": "phentermine.webp"
+        }
+      ]
+    },
+    {
+      "id": "hormone-optimization",
+      "name": "Hormone Balance & Optimization",
+      "tagline": "Personalized therapies to restore balance, optimize hormone levels, and support overall health.",
+      "icon": "\u26a1",
+      "products": [
+        {
+          "name": "Testosterone Replacement Therapy - 3 Month Supply",
+          "subtitle": "",
+          "price": 220,
+          "image": "trt-3mo.webp"
+        },
+        {
+          "name": "Testosterone Replacement Therapy - 1 Month Supply",
+          "subtitle": "",
+          "price": 90,
+          "image": "trt-1mo.webp"
+        },
+        {
+          "name": "Hormone Replacement Therapy for Women - 1 Month Supply",
+          "subtitle": "",
+          "price": 109,
+          "image": "hrt-women.webp"
+        }
+      ]
+    },
+    {
+      "id": "appetite-suppressant",
+      "name": "Appetite Suppressant",
+      "tagline": "Curb cravings and support your weight loss journey.",
+      "icon": "\ud83d\udd25",
+      "products": [
+        {
+          "name": "L-Carnitine",
+          "subtitle": "",
+          "price": 175,
+          "image": "l-carnitine.webp"
+        },
+        {
+          "name": "Sermorelin Troche",
+          "subtitle": "",
+          "price": 165,
+          "image": "sermorelin-troche.webp"
+        },
+        {
+          "name": "Skinny Shots - MICC",
+          "subtitle": "",
+          "price": 145,
+          "image": "micc.webp"
+        },
+        {
+          "name": "Sermorelin Sublingual",
+          "subtitle": "",
+          "price": 225,
+          "image": "sermorelin-sublingual.webp"
+        },
+        {
+          "name": "Sermorelin Injection",
+          "subtitle": "",
+          "price": 225,
+          "image": "sermorelin-injection.webp"
+        }
+      ]
+    },
+    {
+      "id": "anti-aging",
+      "name": "Anti-Aging",
+      "tagline": "Clinically Backed. Youthfully You.",
+      "icon": "\u2728",
+      "products": [
+        {
+          "name": "NAD+ Patches",
+          "subtitle": "",
+          "price": 285,
+          "image": "nad-patches.webp"
+        },
+        {
+          "name": "Glutathione",
+          "subtitle": "",
+          "price": 125,
+          "image": "glutathione.webp"
+        },
+        {
+          "name": "Nicotinamide Riboside (NR) Injectable",
+          "subtitle": "",
+          "price": 495,
+          "image": "nr-injectable.webp"
+        },
+        {
+          "name": "Vitamin B12 Injection",
+          "subtitle": "",
+          "price": 95,
+          "image": "b12-injection.webp"
+        },
+        {
+          "name": "Low Dose Naltrexone",
+          "subtitle": "",
+          "price": 135,
+          "image": "naltrexone.webp"
+        },
+        {
+          "name": "NAD+ Nasal Spray",
+          "subtitle": "",
+          "price": 265,
+          "image": "nad-nasal.webp"
+        },
+        {
+          "name": "NAD+ Injection",
+          "subtitle": "",
+          "price": 195,
+          "image": "nad-injection.webp"
+        },
+        {
+          "name": "Anti Aging Topical Gel",
+          "subtitle": "",
+          "price": 185,
+          "image": "anti-aging-gel.webp"
+        },
+        {
+          "name": "Anti Aging Topical Cream",
+          "subtitle": "",
+          "price": 175,
+          "image": "anti-aging-cream.webp"
+        },
+        {
+          "name": "Methylene Blue Capsules",
+          "subtitle": "",
+          "price": 300,
+          "image": "methylene-blue.webp"
+        }
+      ]
+    },
+    {
+      "id": "sexual-health",
+      "name": "Sexual Health",
+      "tagline": "Revitalize intimacy and confidence.",
+      "icon": "\u2764\ufe0f",
+      "products": [
+        {
+          "name": "Scream Cream - Libido Enhancement for Women",
+          "subtitle": "",
+          "price": 145,
+          "image": "scream-cream.webp"
+        },
+        {
+          "name": "Erectile Dysfunction Medication",
+          "subtitle": "",
+          "price": 125,
+          "image": "ed-medication.webp"
+        },
+        {
+          "name": "Tadalafil + Oxytocin Troche",
+          "subtitle": "",
+          "price": 145,
+          "image": "tadalafil-oxytocin.webp"
+        },
+        {
+          "name": "Oxybutynin",
+          "subtitle": "",
+          "price": 125,
+          "image": "oxybutynin.webp"
+        },
+        {
+          "name": "PT-141 (bremelanotide) Injectable",
+          "subtitle": "",
+          "price": 175,
+          "image": "pt141.webp"
+        },
+        {
+          "name": "Oxytocin 100 IU Troche",
+          "subtitle": "",
+          "price": 145,
+          "image": "oxytocin-troche.webp"
+        },
+        {
+          "name": "Oxytocin Nasal Spray",
+          "subtitle": "",
+          "price": 175,
+          "image": "oxytocin-spray.webp"
+        }
+      ]
+    },
+    {
+      "id": "hair-loss",
+      "name": "Hair Loss",
+      "tagline": "Restore thickness and confidence.",
+      "icon": "\ud83d\udc87",
+      "products": [
+        {
+          "name": "Hair Loss Scalp Topical Medication",
+          "subtitle": "",
+          "price": 175,
+          "image": "hair-topical.webp"
+        },
+        {
+          "name": "Hair Loss Oral Medication",
+          "subtitle": "",
+          "price": 145,
+          "image": "hair-oral.webp"
+        }
+      ]
+    },
+    {
+      "id": "acne",
+      "name": "Acne",
+      "tagline": "Clear skin, clear confidence.",
+      "icon": "\ud83e\uddf4",
+      "products": [
+        {
+          "name": "Acne Cream",
+          "subtitle": "",
+          "price": 145,
+          "image": "acne-cream.webp"
+        },
+        {
+          "name": "Acne Gel",
+          "subtitle": "",
+          "price": 125,
+          "image": "acne-gel.webp"
+        },
+        {
+          "name": "Doxycycline Hyclate for Acne",
+          "subtitle": "",
+          "price": 165,
+          "image": "doxycycline.webp"
+        }
+      ]
+    }
+  ]
+}
