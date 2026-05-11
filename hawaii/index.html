@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRIP Direct Hawaii — Personalized Health, Delivered</title>
+  <meta name="description" content="Premium telehealth pharmacy — weight management, hormone optimization, anti-aging, and more. Delivered to your door in Hawaii.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- ============ PARTICLE CANVAS ============ -->
+  <canvas id="particles"></canvas>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#categories" class="nav-link">Shop</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#about" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-cart" id="cartBtn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ MOBILE NAV ============ -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#categories" class="mobile-nav-link">Shop</a>
+    <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="hero">
+    <div class="hero-glow hero-glow--blue"></div>
+    <div class="hero-glow hero-glow--green"></div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">Telehealth Pharmacy · Hawaii</div>
+      <h1 class="hero-title reveal">
+        Personalized care,<br>
+        <span class="gradient-text">delivered to your door.</span>
+      </h1>
+      <p class="hero-subtitle reveal">
+        Premium compounded medications prescribed by licensed providers.
+        Weight management, hormone therapy, anti-aging & more.
+      </p>
+      <div class="hero-ctas reveal">
+        <a href="#categories" class="btn btn--primary">
+          <span>Browse Treatments</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn btn--glass">How It Works</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num" data-count="37">0</span>
+          <span class="stat-label">Treatments</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="7">0</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Online</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CATEGORY NAV ============ -->
+  <section class="category-nav" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Explore</span>
+        <h2 class="section-title">Treatment Categories</h2>
+      </div>
+      <div class="category-scroll" id="categoryScroll">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTS ============ -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div id="productGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Process</span>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card glass reveal">
+          <div class="step-number">01</div>
+          <div class="step-icon">🛒</div>
+          <h3>Choose Your Treatment</h3>
+          <p>Browse our catalog of FDA-regulated compounded medications and select what fits your health goals.</p>
+        </div>
+        <div class="step-connector"><div class="connector-line"></div></div>
+        <div class="step-card glass reveal">
+          <div class="step-number">02</div>
+          <div class="step-icon">📋</div>
+          <h3>Complete Health Intake</h3>
+          <p>Answer a quick medical questionnaire so our providers understand your health history and needs.</p>
+        </div>
+        <div class="step-connector"><div class="connector-line"></div></div>
+        <div class="step-card glass reveal">
+          <div class="step-number">03</div>
+          <div class="step-icon">👨‍⚕️</div>
+          <h3>Provider Review & Rx</h3>
+          <p>A licensed telehealth provider reviews your intake and prescribes the right treatment plan for you.</p>
+        </div>
+        <div class="step-connector"><div class="connector-line"></div></div>
+        <div class="step-card glass reveal">
+          <div class="step-number">04</div>
+          <div class="step-icon">📦</div>
+          <h3>Delivered to You</h3>
+          <p>Your medication ships directly from a licensed pharmacy to your door — discreet and secure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / TRUST ============ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="section-tag">Why DripDirect</span>
+          <h2 class="section-title">Trusted by doctors,<br><span class="gradient-text">made for you.</span></h2>
+          <p>DripDirect Hawaii partners with VS Digital Health to bring you board-certified telehealth providers and licensed pharmacy fulfillment — all from the comfort of home.</p>
+          <div class="trust-badges">
+            <div class="trust-badge glass">
+              <span class="trust-icon">🔒</span>
+              <span>HIPAA Compliant</span>
+            </div>
+            <div class="trust-badge glass">
+              <span class="trust-icon">💊</span>
+              <span>Licensed Pharmacy</span>
+            </div>
+            <div class="trust-badge glass">
+              <span class="trust-icon">🩺</span>
+              <span>Board-Certified MDs</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="glow-orb glow-orb--blue"></div>
+          <div class="glow-orb glow-orb--green"></div>
+          <div class="about-card glass">
+            <div class="about-card-stat">37+</div>
+            <div class="about-card-label">Treatments Available</div>
+          </div>
+          <div class="about-card glass" style="--delay: 0.1s">
+            <div class="about-card-stat">100%</div>
+            <div class="about-card-label">Online & Convenient</div>
+          </div>
+          <div class="about-card glass" style="--delay: 0.2s">
+            <div class="about-card-stat">🌺</div>
+            <div class="about-card-label">Serving All Hawaii</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass reveal">
+        <h2>Ready to start your<br><span class="gradient-text">health journey?</span></h2>
+        <p>Browse 37+ treatments and get started with a licensed provider today.</p>
+        <a href="#categories" class="btn btn--primary btn--lg">
+          <span>Shop Treatments</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img footer-logo-img">
+          </div>
+          <p>Delivering secure, patient-first healthcare solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://link.vsdigitalhealth.com/terms-and-conditions" target="_blank">Terms of Service</a>
+          <a href="https://link.vsdigitalhealth.com/privacy" target="_blank">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRIP Direct Hawaii. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ PRODUCT MODAL ============ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal glass" id="productModal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

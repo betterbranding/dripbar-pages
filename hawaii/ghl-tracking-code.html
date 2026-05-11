@@ -1,0 +1,98 @@
+<!-- ============================================================
+     DRIP DIRECT HAWAII — GHL Header Tracking Code
+     Paste this into: GHL > Funnel/Website > Settings > Header Code
+     
+     This loads the full store from GitHub CDN.
+     Any updates pushed to the repo auto-update here.
+     ============================================================ -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Store CSS from GitHub CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii/css/styles.css">
+
+<style>
+  /* Hide GHL default page chrome so the store takes over */
+  .hl-page-creator,
+  .hl_page--content,
+  #preview-container,
+  .row-container {
+    all: unset !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    background: #06060e !important;
+    color: #f0f0f5 !important;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* Remove any GHL default footer/header styling conflicts */
+  .c-footer, .c-header, .hl-footer, .hl-header { display: none !important; }
+</style>
+
+<script>
+(function() {
+  'use strict';
+
+  var BASE = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+
+  // Rewrite relative asset paths to absolute CDN paths
+  function rewritePaths(html) {
+    return html
+      .replace(/src="img\//g, 'src="' + BASE + '/img/')
+      .replace(/src="css\//g, 'src="' + BASE + '/css/')
+      .replace(/src="js\//g,  'src="' + BASE + '/js/')
+      .replace(/href="css\//g, 'href="' + BASE + '/css/');
+  }
+
+  function loadStore() {
+    // Fetch the store HTML
+    fetch(BASE + '/index.html')
+      .then(function(res) { return res.text(); })
+      .then(function(html) {
+        // Extract the <body> content
+        var bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+        if (!bodyMatch) return;
+
+        var bodyContent = rewritePaths(bodyMatch[1]);
+
+        // Remove the original <script src="js/app.js"> tag — we'll load it separately
+        bodyContent = bodyContent.replace(/<script[^>]*src=["'].*?app\.js["'][^>]*><\/script>/gi, '');
+
+        // Inject into a container
+        var container = document.createElement('div');
+        container.id = 'dripdirect-store';
+        container.innerHTML = bodyContent;
+        document.body.appendChild(container);
+
+        // Load the store JS
+        var script = document.createElement('script');
+        script.src = BASE + '/js/app.js';
+        script.onload = function() {
+          console.log('[DripDirect Hawaii] Store loaded successfully ✅');
+        };
+        document.body.appendChild(script);
+      })
+      .catch(function(err) {
+        console.error('[DripDirect Hawaii] Failed to load store:', err);
+      });
+  }
+
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadStore);
+  } else {
+    loadStore();
+  }
+})();
+</script>
