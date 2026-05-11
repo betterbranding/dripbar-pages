@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Treatments — DRIP Direct Hawaii</title>
+  <meta name="description" content="Browse 37+ telehealth treatments — weight management, hormones, anti-aging, sexual health, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <img src="../img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="shop.html" class="nav-link" style="color:var(--text-primary)">Shop</a>
+        <a href="home.html#how-it-works" class="nav-link">How It Works</a>
+        <a href="home.html#about" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-cart" id="cartBtn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="shop.html" class="mobile-nav-link">Shop</a>
+    <a href="home.html#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="home.html#about" class="mobile-nav-link">About</a>
+  </div>
+
+  <!-- SHOP HEADER -->
+  <section style="padding: 140px 0 40px; position:relative; z-index:1;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Catalog</span>
+        <h2 class="section-title">All Treatments</h2>
+        <p style="color:var(--text-secondary); margin-top:12px; font-size:1.05rem;">37 telehealth treatments — prescribed online, delivered to your door.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTERS -->
+  <section class="category-nav" id="categories" style="padding-top:0;">
+    <div class="container">
+      <div class="category-scroll" id="categoryScroll"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal glass" id="productModal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="../img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img footer-logo-img">
+          </div>
+          <p>Delivering secure, patient-first healthcare solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://link.vsdigitalhealth.com/terms-and-conditions" target="_blank">Terms of Service</a>
+          <a href="https://link.vsdigitalhealth.com/privacy" target="_blank">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRIP Direct Hawaii. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    (function() {
+      var activeCategory = 'all';
+
+      // Read category from URL param
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('category')) activeCategory = params.get('category');
+
+      document.addEventListener('DOMContentLoaded', function() {
+        DD.cartPageUrl = 'cart.html';
+        DD.initShared();
+        initCategoryPills();
+        renderProducts();
+        initModal();
+      });
+
+      function initCategoryPills() {
+        var scroll = document.getElementById('categoryScroll');
+
+        var allPill = document.createElement('button');
+        allPill.className = 'category-pill' + (activeCategory === 'all' ? ' active' : '');
+        allPill.innerHTML = '<span class="cat-icon">🏠</span> All <span class="cat-count">37</span>';
+        allPill.addEventListener('click', function() {
+          activeCategory = 'all';
+          updatePills();
+          renderProducts();
+        });
+        scroll.appendChild(allPill);
+
+        DD.PRODUCTS.categories.forEach(function(cat) {
+          var pill = document.createElement('button');
+          pill.className = 'category-pill' + (activeCategory === cat.id ? ' active' : '');
+          pill.dataset.catId = cat.id;
+          pill.innerHTML = '<span class="cat-icon">' + cat.icon + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
+          pill.addEventListener('click', function() {
+            activeCategory = cat.id;
+            updatePills();
+            renderProducts();
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+          scroll.appendChild(pill);
+        });
+      }
+
+      function updatePills() {
+        document.querySelectorAll('.category-pill').forEach(function(pill) {
+          var isAll = !pill.dataset.catId && activeCategory === 'all';
+          var isMatch = pill.dataset.catId === activeCategory;
+          pill.classList.toggle('active', isAll || isMatch);
+        });
+      }
+
+      function renderProducts() {
+        var grid = document.getElementById('productGrid');
+        grid.innerHTML = '';
+
+        var categories = activeCategory === 'all'
+          ? DD.PRODUCTS.categories
+          : DD.PRODUCTS.categories.filter(function(c) { return c.id === activeCategory; });
+
+        categories.forEach(function(cat) {
+          var group = document.createElement('div');
+          group.className = 'category-group';
+          group.innerHTML =
+            '<div class="category-group-header reveal">' +
+              '<h3 class="category-group-title">' + cat.icon + ' ' + cat.name + '</h3>' +
+              '<span class="category-group-tag">' + cat.tagline + '</span>' +
+            '</div>' +
+            '<div class="product-grid" id="grid-' + cat.id + '"></div>';
+          grid.appendChild(group);
+
+          var productGrid = group.querySelector('.product-grid');
+          cat.products.forEach(function(product, idx) {
+            var imgPath = DD.getImageUrl(product.name);
+            var card = document.createElement('div');
+            card.className = 'product-card reveal';
+            card.style.transitionDelay = (idx * 0.05) + 's';
+            card.innerHTML =
+              '<div class="product-image-wrap">' +
+                (imgPath
+                  ? '<img class="product-image" src="../' + imgPath + '" alt="' + product.name + '" loading="lazy" />'
+                  : '<div class="product-image-placeholder">' + product.icon + '</div>') +
+              '</div>' +
+              '<div class="product-info">' +
+                '<div class="product-name">' + product.name + '</div>' +
+                '<div class="product-subtitle">' + (product.subtitle || '&nbsp;') + '</div>' +
+                '<div class="product-footer">' +
+                  '<div class="product-price">' +
+                    '<span class="from">Starting from</span>' +
+                    '<span class="amount">$' + product.price + '</span>' +
+                  '</div>' +
+                  '<button class="btn-add">' +
+                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>' +
+                    'Add' +
+                  '</button>' +
+                '</div>' +
+              '</div>';
+
+            card.addEventListener('click', function(e) {
+              if (e.target.closest('.btn-add')) return;
+              openModal(product, cat.name);
+            });
+            card.querySelector('.btn-add').addEventListener('click', function(e) {
+              e.stopPropagation();
+              DD.addToCart(product);
+            });
+            productGrid.appendChild(card);
+          });
+        });
+
+        DD.initScrollReveal();
+      }
+
+      function initModal() {
+        var overlay = document.getElementById('modalOverlay');
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+      }
+
+      function openModal(product, categoryName) {
+        var overlay = document.getElementById('modalOverlay');
+        var body = document.getElementById('modalBody');
+        var imgPath = DD.getImageUrl(product.name);
+        var slug = DD.slugify(product.name);
+
+        body.innerHTML =
+          (imgPath
+            ? '<img class="modal-product-image" src="../' + imgPath + '" alt="' + product.name + '" />'
+            : '<div class="modal-product-icon">' + product.icon + '</div>') +
+          '<div class="modal-product-name">' + product.name + '</div>' +
+          '<div class="modal-product-subtitle">' + (product.subtitle || categoryName) + '</div>' +
+          '<div class="modal-product-price">' +
+            '<span class="from" style="font-size:0.8rem;color:var(--text-muted);font-weight:400;">Starting from</span><br>' +
+            '<span class="amount">$' + product.price + '</span>' +
+          '</div>' +
+          '<div class="modal-product-desc">' +
+            'This treatment is prescribed by a licensed telehealth provider after a brief health intake. ' +
+            'Your medication ships directly from a licensed pharmacy — discreet, secure, and straight to your door.' +
+          '</div>' +
+          '<div class="modal-actions">' +
+            '<button class="btn btn--green btn-modal-add">' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Add to Cart' +
+            '</button>' +
+            '<a href="product.html?p=' + slug + '" class="btn btn--glass">View Details</a>' +
+          '</div>';
+
+        body.querySelector('.btn-modal-add').addEventListener('click', function() {
+          DD.addToCart(product);
+          closeModal();
+        });
+
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    })();
+  </script>
+</body>
+</html>

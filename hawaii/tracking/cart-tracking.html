@@ -1,0 +1,135 @@
+<!-- ============================================================
+     DRIP DIRECT HAWAII — CART PAGE Tracking Code
+     Paste into: GHL > Website/Funnel > CART page > Header Code
+     ============================================================ -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Store CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii/css/styles.css">
+
+<style>
+  .hl-page-creator, .hl_page--content, #preview-container, .row-container {
+    all: unset !important; display: block !important; width: 100% !important;
+    max-width: 100% !important; padding: 0 !important; margin: 0 !important;
+  }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    background: #06060e !important; color: #f0f0f5 !important;
+    overflow-x: hidden !important; margin: 0 !important; padding: 0 !important;
+  }
+  .c-footer, .c-header, .hl-footer, .hl-header { display: none !important; }
+</style>
+
+<script>
+(function() {
+  'use strict';
+  var CDN = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+
+  /*  ⚡ UPDATE THESE to your actual GHL page URLs */
+  var PAGE_URLS = {
+    home: '/',
+    shop: '/shop',
+    product: '/product',
+    cart: ''              /* current page */
+  };
+
+  function rewritePaths(html) {
+    return html
+      .replace(/(src|href)="\.\.\/img\//g, '$1="' + CDN + '/img/')
+      .replace(/(src|href)="\.\.\/css\//g, '$1="' + CDN + '/css/')
+      .replace(/(src|href)="\.\.\/js\//g,  '$1="' + CDN + '/js/')
+      .replace(/href="home\.html/g,        'href="' + PAGE_URLS.home)
+      .replace(/href="shop\.html/g,        'href="' + PAGE_URLS.shop)
+      .replace(/href="product\.html/g,     'href="' + PAGE_URLS.product)
+      .replace(/href="cart\.html/g,        'href="' + PAGE_URLS.cart);
+  }
+
+  function loadPage() {
+    fetch(CDN + '/pages/cart.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var m = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+        if (!m) return;
+        var content = rewritePaths(m[1]);
+        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+        var container = document.createElement('div');
+        container.id = 'dripdirect-store';
+        container.innerHTML = content;
+        document.body.appendChild(container);
+
+        var shared = document.createElement('script');
+        shared.src = CDN + '/js/shared.js';
+        shared.onload = function() {
+          DD.cartPageUrl = PAGE_URLS.cart;
+          DD.initShared();
+          renderCart();
+          console.log('[DripDirect] Cart page loaded ✅');
+        };
+        document.body.appendChild(shared);
+      })
+      .catch(function(err) { console.error('[DripDirect] Failed:', err); });
+  }
+
+  function renderCart() {
+    var layout = document.getElementById('cartLayout');
+    if (!layout) return;
+
+    if (DD.cart.length === 0) {
+      layout.innerHTML =
+        '<div class="cart-empty reveal"><div class="cart-empty-icon">🛒</div><h2>Your cart is empty</h2><p>Browse our treatments and add items to get started.</p>' +
+        '<a href="' + PAGE_URLS.shop + '" class="btn btn--primary"><span>Browse Treatments</span></a></div>';
+      DD.initScrollReveal();
+      return;
+    }
+
+    var items = '<div class="cart-items">';
+    DD.cart.forEach(function(item, idx) {
+      var img = DD.PRODUCT_IMAGES[item.name];
+      var lineTotal = item.price * (item.qty || 1);
+      items +=
+        '<div class="cart-item reveal">' +
+          (img ? '<img class="ci-image" src="' + CDN + '/' + img + '" alt="' + item.name + '" />' : '<div class="ci-placeholder">' + item.icon + '</div>') +
+          '<div class="ci-details"><div class="ci-name">' + item.name + '</div><div class="ci-subtitle">' + (item.subtitle || '') + '</div>' +
+          '<div class="ci-qty-row"><button class="ci-qty-btn" data-action="minus" data-idx="' + idx + '">−</button><span class="ci-qty">' + (item.qty || 1) + '</span><button class="ci-qty-btn" data-action="plus" data-idx="' + idx + '">+</button></div></div>' +
+          '<div class="ci-right"><div class="ci-price">$' + lineTotal + '</div><button class="ci-remove" data-idx="' + idx + '">Remove</button></div></div>';
+    });
+    items += '</div>';
+
+    var total = DD.getCartTotal();
+    var count = DD.getCartCount();
+
+    var summary =
+      '<div class="order-summary reveal"><div class="os-title">Summary</div>' +
+      '<div class="os-row"><span class="os-label">Items (' + count + ')</span><span class="os-val">$' + total + '</span></div>' +
+      '<div class="os-row"><span class="os-label">Shipping</span><span class="os-val" style="color:#00ff88;">FREE</span></div>' +
+      '<div class="os-row"><span class="os-label">Telehealth Consult</span><span class="os-val">Included</span></div>' +
+      '<div class="os-row total"><span class="os-label">Total</span><span class="os-val">$' + total + '</span></div>' +
+      '<button class="btn btn--primary btn--lg os-checkout" id="checkoutBtn"><span>Proceed to Checkout</span></button>' +
+      '<div class="os-note">You\'ll complete a brief health intake after checkout.<br>A licensed provider will review & approve your treatment.</div></div>';
+
+    layout.innerHTML = items + summary;
+
+    layout.querySelectorAll('.ci-qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        DD.updateQty(parseInt(btn.dataset.idx), btn.dataset.action === 'plus' ? 1 : -1);
+        renderCart();
+      });
+    });
+    layout.querySelectorAll('.ci-remove').forEach(function(btn) {
+      btn.addEventListener('click', function() { DD.removeFromCart(parseInt(btn.dataset.idx)); renderCart(); });
+    });
+
+    var cb = document.getElementById('checkoutBtn');
+    if (cb) cb.addEventListener('click', function() { DD.showToast('Checkout coming soon — VSDH integration pending!'); });
+
+    DD.initScrollReveal();
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', loadPage); } else { loadPage(); }
+})();
+</script>

@@ -1,0 +1,109 @@
+<!-- ============================================================
+     DRIP DIRECT HAWAII — HOME PAGE Tracking Code
+     Paste into: GHL > Website/Funnel > HOME page > Header Code
+     
+     ⚡ UPDATE THESE URLs to match your GHL page slugs:
+     ============================================================ -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Store CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii/css/styles.css">
+
+<style>
+  /* Hide GHL page chrome */
+  .hl-page-creator, .hl_page--content, #preview-container, .row-container {
+    all: unset !important; display: block !important; width: 100% !important;
+    max-width: 100% !important; padding: 0 !important; margin: 0 !important;
+  }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    background: #06060e !important; color: #f0f0f5 !important;
+    overflow-x: hidden !important; margin: 0 !important; padding: 0 !important;
+  }
+  .c-footer, .c-header, .hl-footer, .hl-header { display: none !important; }
+</style>
+
+<script>
+(function() {
+  'use strict';
+  var CDN = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+
+  /*  ⚡ UPDATE THESE to your actual GHL page URLs */
+  var PAGE_URLS = {
+    home: '',           /* current page */
+    shop: '/shop',      /* your GHL shop page slug */
+    product: '/product',/* your GHL product page slug */
+    cart: '/cart'        /* your GHL cart page slug */
+  };
+
+  function rewritePaths(html) {
+    return html
+      .replace(/(src|href)="\.\.\/img\//g, '$1="' + CDN + '/img/')
+      .replace(/(src|href)="\.\.\/css\//g, '$1="' + CDN + '/css/')
+      .replace(/(src|href)="\.\.\/js\//g,  '$1="' + CDN + '/js/')
+      .replace(/(src|href)="img\//g,       '$1="' + CDN + '/img/')
+      .replace(/href="home\.html/g,        'href="' + PAGE_URLS.home)
+      .replace(/href="shop\.html/g,        'href="' + PAGE_URLS.shop)
+      .replace(/href="product\.html/g,     'href="' + PAGE_URLS.product)
+      .replace(/href="cart\.html/g,        'href="' + PAGE_URLS.cart);
+  }
+
+  function loadPage() {
+    fetch(CDN + '/pages/home.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var m = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+        if (!m) return;
+        var content = rewritePaths(m[1]);
+        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+        var container = document.createElement('div');
+        container.id = 'dripdirect-store';
+        container.innerHTML = content;
+        document.body.appendChild(container);
+
+        // Load shared JS then page-specific init
+        var shared = document.createElement('script');
+        shared.src = CDN + '/js/shared.js';
+        shared.onload = function() {
+          // Set page URLs for cart navigation
+          DD.cartPageUrl = PAGE_URLS.cart;
+
+          // Override category pills to link to shop page
+          DD.initShared();
+          DD.initCountUp();
+
+          var scroll = document.getElementById('categoryScroll');
+          if (scroll) {
+            DD.PRODUCTS.categories.forEach(function(cat) {
+              var pill = document.createElement('a');
+              pill.href = PAGE_URLS.shop + '?category=' + cat.id;
+              pill.className = 'category-pill';
+              pill.innerHTML = '<span class="cat-icon">' + cat.icon + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
+              scroll.appendChild(pill);
+            });
+          }
+
+          // Rewrite any remaining relative links
+          document.querySelectorAll('#dripdirect-store a[href*="shop.html"]').forEach(function(a) {
+            a.href = a.href.replace(/shop\.html/, PAGE_URLS.shop);
+          });
+
+          console.log('[DripDirect] Home page loaded ✅');
+        };
+        document.body.appendChild(shared);
+      })
+      .catch(function(err) { console.error('[DripDirect] Failed:', err); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadPage);
+  } else {
+    loadPage();
+  }
+})();
+</script>

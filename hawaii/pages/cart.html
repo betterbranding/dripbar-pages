@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — DRIP Direct Hawaii</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .cart-page { position: relative; z-index: 1; padding: 140px 0 100px; min-height: 80vh; }
+    .cart-layout { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: start; }
+    @media (max-width: 900px) { .cart-layout { grid-template-columns: 1fr; } }
+
+    /* Cart Items */
+    .cart-items { display: flex; flex-direction: column; gap: 16px; }
+    .cart-item {
+      display: grid; grid-template-columns: 80px 1fr auto; gap: 20px; align-items: center;
+      padding: 20px 24px; border-radius: var(--radius-lg);
+      background: var(--glass); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px); transition: all 0.3s;
+    }
+    .cart-item:hover { border-color: rgba(0,212,255,0.2); }
+    .ci-image { width: 80px; height: 80px; object-fit: cover; border-radius: 10px; }
+    .ci-placeholder {
+      width: 80px; height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,255,136,0.08));
+    }
+    .ci-name { font-family: var(--font-display); font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+    .ci-subtitle { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; }
+    .ci-qty-row { display: flex; align-items: center; gap: 12px; }
+    .ci-qty-btn {
+      width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--glass-border);
+      background: var(--glass); color: var(--text-primary); font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+    }
+    .ci-qty-btn:hover { border-color: var(--blue); background: rgba(0,212,255,0.08); }
+    .ci-qty { font-family: var(--font-display); font-weight: 600; font-size: 1rem; min-width: 20px; text-align: center; }
+    .ci-right { text-align: right; }
+    .ci-price {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.15rem;
+      background: var(--gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;
+    }
+    .ci-remove {
+      background: none; border: none; color: var(--text-muted); font-size: 0.8rem;
+      cursor: pointer; transition: color 0.2s; text-decoration: underline;
+    }
+    .ci-remove:hover { color: #ff4466; }
+
+    /* Order Summary */
+    .order-summary {
+      position: sticky; top: 120px;
+      padding: 32px; border-radius: var(--radius-lg);
+      background: var(--glass); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+    }
+    .os-title {
+      font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 24px;
+      padding-bottom: 16px; border-bottom: 1px solid var(--glass-border);
+    }
+    .os-row { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 0.95rem; }
+    .os-row.total {
+      margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--glass-border);
+      font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+    }
+    .os-row.total .os-val {
+      background: var(--gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .os-label { color: var(--text-secondary); }
+    .os-val { color: var(--text-primary); font-weight: 600; }
+    .os-checkout { width: 100%; margin-top: 24px; text-align: center; justify-content: center; }
+    .os-note { margin-top: 16px; font-size: 0.8rem; color: var(--text-muted); text-align: center; line-height: 1.5; }
+
+    /* Empty cart */
+    .cart-empty {
+      text-align: center; padding: 80px 24px; grid-column: 1 / -1;
+    }
+    .cart-empty-icon { font-size: 4rem; margin-bottom: 20px; opacity: 0.5; }
+    .cart-empty h2 {
+      font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;
+    }
+    .cart-empty p { color: var(--text-secondary); margin-bottom: 28px; }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <img src="../img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="home.html#how-it-works" class="nav-link">How It Works</a>
+        <a href="home.html#about" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-cart" id="cartBtn" style="border-color:var(--blue);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="shop.html" class="mobile-nav-link">Shop</a>
+    <a href="home.html#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="home.html#about" class="mobile-nav-link">About</a>
+  </div>
+
+  <!-- CART -->
+  <section class="cart-page">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:40px;">
+        <span class="section-tag">Your Cart</span>
+        <h2 class="section-title">Order Summary</h2>
+      </div>
+      <div class="cart-layout" id="cartLayout">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="../img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img footer-logo-img">
+          </div>
+          <p>Delivering secure, patient-first healthcare solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://link.vsdigitalhealth.com/terms-and-conditions" target="_blank">Terms of Service</a>
+          <a href="https://link.vsdigitalhealth.com/privacy" target="_blank">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRIP Direct Hawaii. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      DD.cartPageUrl = 'cart.html';
+      DD.initShared();
+      renderCart();
+    });
+
+    function renderCart() {
+      var layout = document.getElementById('cartLayout');
+
+      if (DD.cart.length === 0) {
+        layout.innerHTML =
+          '<div class="cart-empty reveal">' +
+            '<div class="cart-empty-icon">🛒</div>' +
+            '<h2>Your cart is empty</h2>' +
+            '<p>Browse our treatments and add items to get started.</p>' +
+            '<a href="shop.html" class="btn btn--primary">' +
+              '<span>Browse Treatments</span>' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
+            '</a>' +
+          '</div>';
+        DD.initScrollReveal();
+        return;
+      }
+
+      var itemsHtml = '<div class="cart-items">';
+      DD.cart.forEach(function(item, idx) {
+        var imgPath = DD.getImageUrl(item.name);
+        var lineTotal = item.price * (item.qty || 1);
+        itemsHtml +=
+          '<div class="cart-item reveal">' +
+            (imgPath
+              ? '<img class="ci-image" src="../' + imgPath + '" alt="' + item.name + '" />'
+              : '<div class="ci-placeholder">' + item.icon + '</div>') +
+            '<div class="ci-details">' +
+              '<div class="ci-name">' + item.name + '</div>' +
+              '<div class="ci-subtitle">' + (item.subtitle || '') + '</div>' +
+              '<div class="ci-qty-row">' +
+                '<button class="ci-qty-btn" data-action="minus" data-idx="' + idx + '">−</button>' +
+                '<span class="ci-qty">' + (item.qty || 1) + '</span>' +
+                '<button class="ci-qty-btn" data-action="plus" data-idx="' + idx + '">+</button>' +
+              '</div>' +
+            '</div>' +
+            '<div class="ci-right">' +
+              '<div class="ci-price">$' + lineTotal + '</div>' +
+              '<button class="ci-remove" data-idx="' + idx + '">Remove</button>' +
+            '</div>' +
+          '</div>';
+      });
+      itemsHtml += '</div>';
+
+      var total = DD.getCartTotal();
+      var count = DD.getCartCount();
+
+      var summaryHtml =
+        '<div class="order-summary reveal">' +
+          '<div class="os-title">Summary</div>' +
+          '<div class="os-row"><span class="os-label">Items (' + count + ')</span><span class="os-val">$' + total + '</span></div>' +
+          '<div class="os-row"><span class="os-label">Shipping</span><span class="os-val" style="color:var(--green);">FREE</span></div>' +
+          '<div class="os-row"><span class="os-label">Telehealth Consult</span><span class="os-val">Included</span></div>' +
+          '<div class="os-row total"><span class="os-label">Total</span><span class="os-val">$' + total + '</span></div>' +
+          '<button class="btn btn--primary btn--lg os-checkout" id="checkoutBtn">' +
+            '<span>Proceed to Checkout</span>' +
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
+          '</button>' +
+          '<div class="os-note">You\'ll complete a brief health intake after checkout.<br>A licensed provider will review &amp; approve your treatment.</div>' +
+        '</div>';
+
+      layout.innerHTML = itemsHtml + summaryHtml;
+
+      // Wire up quantity buttons
+      layout.querySelectorAll('.ci-qty-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var idx = parseInt(btn.dataset.idx);
+          var delta = btn.dataset.action === 'plus' ? 1 : -1;
+          DD.updateQty(idx, delta);
+          renderCart();
+        });
+      });
+
+      // Wire up remove buttons
+      layout.querySelectorAll('.ci-remove').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          DD.removeFromCart(parseInt(btn.dataset.idx));
+          renderCart();
+        });
+      });
+
+      // Checkout button
+      var checkoutBtn = document.getElementById('checkoutBtn');
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function() {
+          // This will be wired to GHL checkout / VSDH intake flow
+          DD.showToast('Checkout coming soon — VSDH integration pending!');
+        });
+      }
+
+      DD.initScrollReveal();
+    }
+  </script>
+</body>
+</html>

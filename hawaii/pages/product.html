@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — DRIP Direct Hawaii</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .product-detail { position: relative; z-index: 1; padding: 140px 0 80px; }
+    .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    @media (max-width: 768px) { .product-detail-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .pd-image-wrap {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px); padding: 32px;
+    }
+    .pd-image { width: 100%; border-radius: 12px; }
+    .pd-image-placeholder {
+      width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,255,136,0.08));
+      border-radius: 12px;
+    }
+    .pd-category {
+      display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--blue); padding: 6px 16px;
+      border: 1px solid rgba(0,212,255,0.25); border-radius: 100px;
+      background: rgba(0,212,255,0.06); margin-bottom: 16px;
+    }
+    .pd-name {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800; margin-bottom: 8px;
+    }
+    .pd-subtitle { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px; }
+    .pd-price-block { margin-bottom: 28px; }
+    .pd-price-label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+    .pd-price {
+      font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;
+      background: var(--gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .pd-desc {
+      color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin-bottom: 32px;
+      padding-bottom: 28px; border-bottom: 1px solid var(--glass-border);
+    }
+    .pd-features { list-style: none; margin-bottom: 36px; }
+    .pd-features li {
+      display: flex; align-items: center; gap: 12px; padding: 10px 0;
+      color: var(--text-secondary); font-size: 0.95rem;
+    }
+    .pd-features li::before {
+      content: '✓'; display: flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px; border-radius: 50%;
+      background: rgba(0,255,136,0.12); color: var(--green);
+      font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
+    }
+    .pd-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .pd-back {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted);
+      text-decoration: none; font-size: 0.9rem; margin-bottom: 24px; transition: color 0.3s;
+    }
+    .pd-back:hover { color: var(--blue); }
+
+    /* Related products */
+    .related-section { position: relative; z-index: 1; padding: 60px 0 100px; }
+    .related-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <img src="../img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="home.html#how-it-works" class="nav-link">How It Works</a>
+        <a href="home.html#about" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-cart" id="cartBtn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="shop.html" class="mobile-nav-link">Shop</a>
+    <a href="home.html#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="home.html#about" class="mobile-nav-link">About</a>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="product-detail" id="productDetail">
+    <div class="container">
+      <a href="shop.html" class="pd-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Shop
+      </a>
+      <div class="product-detail-grid" id="pdGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="related-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">More from this category</span>
+        <h2 class="section-title" id="relatedTitle">Related Treatments</h2>
+      </div>
+      <div class="related-grid" id="relatedGrid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="../img/logos/logo-4c-transparent.png" alt="DripDirect Hawaii" class="logo-img footer-logo-img">
+          </div>
+          <p>Delivering secure, patient-first healthcare solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://link.vsdigitalhealth.com/terms-and-conditions" target="_blank">Terms of Service</a>
+          <a href="https://link.vsdigitalhealth.com/privacy" target="_blank">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRIP Direct Hawaii. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      DD.cartPageUrl = 'cart.html';
+      DD.initShared();
+
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('p');
+      if (!slug) { window.location.href = 'shop.html'; return; }
+
+      var result = DD.findProduct(slug);
+      if (!result) { window.location.href = 'shop.html'; return; }
+
+      var product = result.product;
+      var category = result.category;
+
+      // Update page title
+      document.title = product.name + ' — DRIP Direct Hawaii';
+
+      var imgPath = DD.getImageUrl(product.name);
+      var grid = document.getElementById('pdGrid');
+
+      grid.innerHTML =
+        '<div class="pd-image-wrap reveal">' +
+          (imgPath
+            ? '<img class="pd-image" src="../' + imgPath + '" alt="' + product.name + '" />'
+            : '<div class="pd-image-placeholder">' + product.icon + '</div>') +
+        '</div>' +
+        '<div class="pd-info">' +
+          '<div class="pd-category reveal">' + category.icon + ' ' + category.name + '</div>' +
+          '<h1 class="pd-name reveal">' + product.name + '</h1>' +
+          '<p class="pd-subtitle reveal">' + (product.subtitle || '') + '</p>' +
+          '<div class="pd-price-block reveal">' +
+            '<div class="pd-price-label">Starting from</div>' +
+            '<div class="pd-price">$' + product.price + '</div>' +
+          '</div>' +
+          '<div class="pd-desc reveal">' +
+            'This treatment is prescribed by a licensed telehealth provider after a brief online health intake. ' +
+            'Your medication is compounded at a licensed pharmacy and shipped directly to your door in Hawaii — ' +
+            'discreet, secure, and convenient.' +
+          '</div>' +
+          '<ul class="pd-features reveal">' +
+            '<li>Prescribed by board-certified providers</li>' +
+            '<li>Licensed US pharmacy fulfillment</li>' +
+            '<li>HIPAA-compliant telehealth platform</li>' +
+            '<li>Free shipping to all Hawaii addresses</li>' +
+            '<li>Ongoing provider support included</li>' +
+          '</ul>' +
+          '<div class="pd-actions reveal">' +
+            '<button class="btn btn--primary btn--lg" id="addToCartBtn">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>' +
+              '<span>Add to Cart — $' + product.price + '</span>' +
+            '</button>' +
+            '<a href="shop.html?category=' + category.id + '" class="btn btn--glass">Browse ' + category.name + '</a>' +
+          '</div>' +
+        '</div>';
+
+      document.getElementById('addToCartBtn').addEventListener('click', function() {
+        DD.addToCart(product);
+      });
+
+      DD.initScrollReveal();
+
+      // Related products
+      var related = category.products.filter(function(p) { return p.name !== product.name; }).slice(0, 4);
+      var relatedGrid = document.getElementById('relatedGrid');
+
+      related.forEach(function(rp, idx) {
+        var rImg = DD.getImageUrl(rp.name);
+        var card = document.createElement('a');
+        card.href = 'product.html?p=' + DD.slugify(rp.name);
+        card.className = 'product-card reveal';
+        card.style.textDecoration = 'none';
+        card.style.transitionDelay = (idx * 0.05) + 's';
+        card.innerHTML =
+          '<div class="product-image-wrap">' +
+            (rImg
+              ? '<img class="product-image" src="../' + rImg + '" alt="' + rp.name + '" loading="lazy" />'
+              : '<div class="product-image-placeholder">' + rp.icon + '</div>') +
+          '</div>' +
+          '<div class="product-info">' +
+            '<div class="product-name">' + rp.name + '</div>' +
+            '<div class="product-subtitle">' + (rp.subtitle || '&nbsp;') + '</div>' +
+            '<div class="product-footer">' +
+              '<div class="product-price">' +
+                '<span class="from">Starting from</span>' +
+                '<span class="amount">$' + rp.price + '</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        relatedGrid.appendChild(card);
+      });
+
+      DD.initScrollReveal();
+    });
+  </script>
+</body>
+</html>

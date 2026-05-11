@@ -1,0 +1,145 @@
+<!-- ============================================================
+     DRIP DIRECT HAWAII — PRODUCT DETAIL PAGE Tracking Code
+     Paste into: GHL > Website/Funnel > PRODUCT page > Header Code
+     
+     Products are loaded via ?p=product-slug URL parameter
+     ============================================================ -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Store CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii/css/styles.css">
+
+<style>
+  .hl-page-creator, .hl_page--content, #preview-container, .row-container {
+    all: unset !important; display: block !important; width: 100% !important;
+    max-width: 100% !important; padding: 0 !important; margin: 0 !important;
+  }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    background: #06060e !important; color: #f0f0f5 !important;
+    overflow-x: hidden !important; margin: 0 !important; padding: 0 !important;
+  }
+  .c-footer, .c-header, .hl-footer, .hl-header { display: none !important; }
+</style>
+
+<script>
+(function() {
+  'use strict';
+  var CDN = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+
+  /*  ⚡ UPDATE THESE to your actual GHL page URLs */
+  var PAGE_URLS = {
+    home: '/',
+    shop: '/shop',
+    product: '',          /* current page */
+    cart: '/cart'
+  };
+
+  function rewritePaths(html) {
+    return html
+      .replace(/(src|href)="\.\.\/img\//g, '$1="' + CDN + '/img/')
+      .replace(/(src|href)="\.\.\/css\//g, '$1="' + CDN + '/css/')
+      .replace(/(src|href)="\.\.\/js\//g,  '$1="' + CDN + '/js/')
+      .replace(/href="home\.html/g,        'href="' + PAGE_URLS.home)
+      .replace(/href="shop\.html/g,        'href="' + PAGE_URLS.shop)
+      .replace(/href="product\.html/g,     'href="' + PAGE_URLS.product)
+      .replace(/href="cart\.html/g,        'href="' + PAGE_URLS.cart);
+  }
+
+  function loadPage() {
+    fetch(CDN + '/pages/product.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var m = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+        if (!m) return;
+        var content = rewritePaths(m[1]);
+        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+        var container = document.createElement('div');
+        container.id = 'dripdirect-store';
+        container.innerHTML = content;
+        document.body.appendChild(container);
+
+        var shared = document.createElement('script');
+        shared.src = CDN + '/js/shared.js';
+        shared.onload = function() {
+          DD.cartPageUrl = PAGE_URLS.cart;
+          DD.initShared();
+
+          // Get product slug from URL
+          var params = new URLSearchParams(window.location.search);
+          var slug = params.get('p');
+          if (!slug) { window.location.href = PAGE_URLS.shop; return; }
+
+          var result = DD.findProduct(slug);
+          if (!result) { window.location.href = PAGE_URLS.shop; return; }
+
+          var product = result.product;
+          var category = result.category;
+          document.title = product.name + ' — DRIP Direct Hawaii';
+
+          var img = DD.PRODUCT_IMAGES[product.name];
+          var grid = document.getElementById('pdGrid');
+          if (!grid) return;
+
+          grid.innerHTML =
+            '<div class="pd-image-wrap reveal">' +
+              (img ? '<img class="pd-image" src="' + CDN + '/' + img + '" alt="' + product.name + '" />' : '<div class="pd-image-placeholder">' + product.icon + '</div>') +
+            '</div>' +
+            '<div class="pd-info">' +
+              '<div class="pd-category reveal">' + category.icon + ' ' + category.name + '</div>' +
+              '<h1 class="pd-name reveal">' + product.name + '</h1>' +
+              '<p class="pd-subtitle reveal">' + (product.subtitle || '') + '</p>' +
+              '<div class="pd-price-block reveal"><div class="pd-price-label">Starting from</div><div class="pd-price">$' + product.price + '</div></div>' +
+              '<div class="pd-desc reveal">This treatment is prescribed by a licensed telehealth provider after a brief online health intake. Your medication is compounded at a licensed pharmacy and shipped directly to your door in Hawaii — discreet, secure, and convenient.</div>' +
+              '<ul class="pd-features reveal">' +
+                '<li>Prescribed by board-certified providers</li>' +
+                '<li>Licensed US pharmacy fulfillment</li>' +
+                '<li>HIPAA-compliant telehealth platform</li>' +
+                '<li>Free shipping to all Hawaii addresses</li>' +
+                '<li>Ongoing provider support included</li>' +
+              '</ul>' +
+              '<div class="pd-actions reveal">' +
+                '<button class="btn btn--primary btn--lg" id="addToCartBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Add to Cart — $' + product.price + '</span></button>' +
+                '<a href="' + PAGE_URLS.shop + '?category=' + category.id + '" class="btn btn--glass">Browse ' + category.name + '</a>' +
+              '</div>' +
+            '</div>';
+
+          document.getElementById('addToCartBtn').addEventListener('click', function() { DD.addToCart(product); });
+          DD.initScrollReveal();
+
+          // Related products
+          var related = category.products.filter(function(p) { return p.name !== product.name; }).slice(0, 4);
+          var relGrid = document.getElementById('relatedGrid');
+          if (relGrid) {
+            related.forEach(function(rp, idx) {
+              var rImg = DD.PRODUCT_IMAGES[rp.name];
+              var card = document.createElement('a');
+              card.href = PAGE_URLS.product + '?p=' + DD.slugify(rp.name);
+              card.className = 'product-card reveal';
+              card.style.textDecoration = 'none';
+              card.style.transitionDelay = (idx * 0.05) + 's';
+              card.innerHTML =
+                '<div class="product-image-wrap">' +
+                  (rImg ? '<img class="product-image" src="' + CDN + '/' + rImg + '" alt="' + rp.name + '" loading="lazy" />' : '<div class="product-image-placeholder">' + rp.icon + '</div>') +
+                '</div><div class="product-info"><div class="product-name">' + rp.name + '</div><div class="product-subtitle">' + (rp.subtitle || '') + '</div>' +
+                '<div class="product-footer"><div class="product-price"><span class="from">Starting from</span><span class="amount">$' + rp.price + '</span></div></div></div>';
+              relGrid.appendChild(card);
+            });
+            DD.initScrollReveal();
+          }
+
+          console.log('[DripDirect] Product page loaded ✅');
+        };
+        document.body.appendChild(shared);
+      })
+      .catch(function(err) { console.error('[DripDirect] Failed:', err); });
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', loadPage); } else { loadPage(); }
+})();
+</script>

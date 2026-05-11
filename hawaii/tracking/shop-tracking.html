@@ -1,0 +1,181 @@
+<!-- ============================================================
+     DRIP DIRECT HAWAII — SHOP PAGE Tracking Code
+     Paste into: GHL > Website/Funnel > SHOP page > Header Code
+     ============================================================ -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Store CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii/css/styles.css">
+
+<style>
+  .hl-page-creator, .hl_page--content, #preview-container, .row-container {
+    all: unset !important; display: block !important; width: 100% !important;
+    max-width: 100% !important; padding: 0 !important; margin: 0 !important;
+  }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    background: #06060e !important; color: #f0f0f5 !important;
+    overflow-x: hidden !important; margin: 0 !important; padding: 0 !important;
+  }
+  .c-footer, .c-header, .hl-footer, .hl-header { display: none !important; }
+</style>
+
+<script>
+(function() {
+  'use strict';
+  var CDN = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+
+  /*  ⚡ UPDATE THESE to your actual GHL page URLs */
+  var PAGE_URLS = {
+    home: '/',
+    shop: '',            /* current page */
+    product: '/product',
+    cart: '/cart'
+  };
+
+  function rewritePaths(html) {
+    return html
+      .replace(/(src|href)="\.\.\/img\//g, '$1="' + CDN + '/img/')
+      .replace(/(src|href)="\.\.\/css\//g, '$1="' + CDN + '/css/')
+      .replace(/(src|href)="\.\.\/js\//g,  '$1="' + CDN + '/js/')
+      .replace(/href="home\.html/g,        'href="' + PAGE_URLS.home)
+      .replace(/href="shop\.html/g,        'href="' + PAGE_URLS.shop)
+      .replace(/href="product\.html/g,     'href="' + PAGE_URLS.product)
+      .replace(/href="cart\.html/g,        'href="' + PAGE_URLS.cart);
+  }
+
+  function loadPage() {
+    fetch(CDN + '/pages/shop.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var m = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+        if (!m) return;
+        var content = rewritePaths(m[1]);
+        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+        var container = document.createElement('div');
+        container.id = 'dripdirect-store';
+        container.innerHTML = content;
+        document.body.appendChild(container);
+
+        var shared = document.createElement('script');
+        shared.src = CDN + '/js/shared.js';
+        shared.onload = function() {
+          DD.cartPageUrl = PAGE_URLS.cart;
+          DD.initShared();
+
+          // Read category from URL param
+          var params = new URLSearchParams(window.location.search);
+          var activeCategory = params.get('category') || 'all';
+
+          initShopPage(activeCategory);
+          console.log('[DripDirect] Shop page loaded ✅');
+        };
+        document.body.appendChild(shared);
+      })
+      .catch(function(err) { console.error('[DripDirect] Failed:', err); });
+  }
+
+  function initShopPage(activeCategory) {
+    var scroll = document.getElementById('categoryScroll');
+    if (!scroll) return;
+
+    // "All" pill
+    var allPill = document.createElement('button');
+    allPill.className = 'category-pill' + (activeCategory === 'all' ? ' active' : '');
+    allPill.innerHTML = '<span class="cat-icon">🏠</span> All <span class="cat-count">37</span>';
+    allPill.addEventListener('click', function() { activeCategory = 'all'; updatePills(); renderProducts(); });
+    scroll.appendChild(allPill);
+
+    DD.PRODUCTS.categories.forEach(function(cat) {
+      var pill = document.createElement('button');
+      pill.className = 'category-pill' + (activeCategory === cat.id ? ' active' : '');
+      pill.dataset.catId = cat.id;
+      pill.innerHTML = '<span class="cat-icon">' + cat.icon + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
+      pill.addEventListener('click', function() { activeCategory = cat.id; updatePills(); renderProducts(); });
+      scroll.appendChild(pill);
+    });
+
+    renderProducts();
+    initModal();
+
+    function updatePills() {
+      document.querySelectorAll('.category-pill').forEach(function(p) {
+        p.classList.toggle('active', (!p.dataset.catId && activeCategory === 'all') || p.dataset.catId === activeCategory);
+      });
+    }
+
+    function renderProducts() {
+      var grid = document.getElementById('productGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      var cats = activeCategory === 'all' ? DD.PRODUCTS.categories : DD.PRODUCTS.categories.filter(function(c) { return c.id === activeCategory; });
+
+      cats.forEach(function(cat) {
+        var group = document.createElement('div');
+        group.className = 'category-group';
+        group.innerHTML =
+          '<div class="category-group-header reveal"><h3 class="category-group-title">' + cat.icon + ' ' + cat.name + '</h3><span class="category-group-tag">' + cat.tagline + '</span></div>' +
+          '<div class="product-grid" id="grid-' + cat.id + '"></div>';
+        grid.appendChild(group);
+
+        var pg = group.querySelector('.product-grid');
+        cat.products.forEach(function(product, idx) {
+          var img = DD.PRODUCT_IMAGES[product.name];
+          var card = document.createElement('div');
+          card.className = 'product-card reveal';
+          card.style.transitionDelay = (idx * 0.05) + 's';
+          card.innerHTML =
+            '<div class="product-image-wrap">' +
+              (img ? '<img class="product-image" src="' + CDN + '/' + img + '" alt="' + product.name + '" loading="lazy" />' : '<div class="product-image-placeholder">' + product.icon + '</div>') +
+            '</div><div class="product-info"><div class="product-name">' + product.name + '</div><div class="product-subtitle">' + (product.subtitle || '') + '</div>' +
+            '<div class="product-footer"><div class="product-price"><span class="from">Starting from</span><span class="amount">$' + product.price + '</span></div>' +
+            '<button class="btn-add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Add</button></div></div>';
+
+          card.addEventListener('click', function(e) { if (!e.target.closest('.btn-add')) openModal(product, cat.name); });
+          card.querySelector('.btn-add').addEventListener('click', function(e) { e.stopPropagation(); DD.addToCart(product); });
+          pg.appendChild(card);
+        });
+      });
+      DD.initScrollReveal();
+    }
+
+    function initModal() {
+      var overlay = document.getElementById('modalOverlay');
+      if (!overlay) return;
+      document.getElementById('modalClose').addEventListener('click', closeModal);
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    }
+
+    function openModal(product, catName) {
+      var overlay = document.getElementById('modalOverlay');
+      var body = document.getElementById('modalBody');
+      var img = DD.PRODUCT_IMAGES[product.name];
+      var slug = DD.slugify(product.name);
+      body.innerHTML =
+        (img ? '<img class="modal-product-image" src="' + CDN + '/' + img + '" alt="' + product.name + '" />' : '<div class="modal-product-icon">' + product.icon + '</div>') +
+        '<div class="modal-product-name">' + product.name + '</div>' +
+        '<div class="modal-product-subtitle">' + (product.subtitle || catName) + '</div>' +
+        '<div class="modal-product-price"><span class="from" style="font-size:0.8rem;color:#55556e;font-weight:400;">Starting from</span><br><span class="amount">$' + product.price + '</span></div>' +
+        '<div class="modal-product-desc">This treatment is prescribed by a licensed telehealth provider after a brief health intake. Ships directly from a licensed pharmacy — discreet, secure, and straight to your door.</div>' +
+        '<div class="modal-actions"><button class="btn btn--green btn-ma">Add to Cart</button><a href="' + PAGE_URLS.product + '?p=' + slug + '" class="btn btn--glass">View Details</a></div>';
+      body.querySelector('.btn-ma').addEventListener('click', function() { DD.addToCart(product); closeModal(); });
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', loadPage); } else { loadPage(); }
+})();
+</script>
