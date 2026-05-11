@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Health | The DRIPBaR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cyan: #0E9EC1;
+  --cyan-glow: rgba(14, 158, 193, 0.3);
+  --cyan-dim: rgba(14, 158, 193, 0.12);
+  --dark: #0a0e17;
+  --dark-card: #0f1520;
+  --dark-card-border: rgba(14, 158, 193, 0.15);
+  --navy: #3C4C62;
+  --white: #ffffff;
+  --gray: #94a3b8;
+  --light-gray: #cbd5e1;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ===== UTILITY ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; position: relative; }
+.eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+}
+h1, h2, h3, h4, h5 { font-family: 'Bebas Neue', sans-serif; }
+h2 {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.accent { color: var(--cyan); }
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 600px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+/* ===== ANIMATED BACKGROUND PARTICLES ===== */
+.particles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--cyan);
+  opacity: 0.08;
+  animation: float linear infinite;
+}
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 0.08; }
+  90% { opacity: 0.08; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* ===== HEADER / NAV ===== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 18px 0;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(14, 158, 193, 0.08);
+  transition: all 0.3s ease;
+}
+.nav.scrolled {
+  padding: 12px 0;
+  background: rgba(10, 14, 23, 0.95);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo img { height: 36px; }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cyan);
+  color: var(--dark);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.nav-cta:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--cyan-glow);
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(14, 158, 193, 0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(14, 158, 193, 0.06) 0%, transparent 50%),
+              var(--dark);
+}
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(14, 158, 193, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 158, 193, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridPulse 8s ease-in-out infinite;
+}
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+.hero h1 {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  margin-bottom: 28px;
+  letter-spacing: -1px;
+}
+.hero h1 .line-accent {
+  display: block;
+  color: var(--cyan);
+  text-shadow: 0 0 40px var(--cyan-glow);
+}
+.hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 540px;
+}
+.hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--cyan);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px var(--cyan-glow);
+}
+.btn-primary::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+.btn-primary:hover::after { transform: translateX(4px); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: transparent;
+  color: var(--cyan);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid var(--cyan);
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: var(--cyan-dim);
+  transform: translateY(-3px);
+}
+
+/* ===== DNA HELIX ANIMATION ===== */
+.hero-visual {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 600px;
+  opacity: 0.2;
+  z-index: 1;
+}
+.dna-strand {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.dna-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--cyan-glow);
+  animation: dnaPulse 3s ease-in-out infinite;
+}
+@keyframes dnaPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ===== STATS BAR ===== */
+.stats-bar {
+  padding: 60px 0;
+  background: linear-gradient(180deg, var(--dark) 0%, rgba(14, 158, 193, 0.04) 50%, var(--dark) 100%);
+  border-top: 1px solid var(--dark-card-border);
+  border-bottom: 1px solid var(--dark-card-border);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===== PROBLEM SECTION ===== */
+.problem-section {
+  background: linear-gradient(180deg, var(--dark) 0%, #0c1019 100%);
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.problem-list { list-style: none; margin-top: 32px; }
+.problem-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 1rem;
+  color: var(--light-gray);
+}
+.problem-list li .icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(14, 158, 193, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  font-size: 14px;
+  margin-top: 2px;
+}
+.problem-visual {
+  position: relative;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--dark-card-border);
+  background: var(--dark-card);
+}
+.problem-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, var(--dark-card) 100%);
+}
+.pulse-rings {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pulse-ring {
+  position: absolute;
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulseOut 4s ease-out infinite;
+}
+.pulse-ring:nth-child(1) { width: 80px; height: 80px; margin: -40px 0 0 -40px; }
+.pulse-ring:nth-child(2) { width: 160px; height: 160px; margin: -80px 0 0 -80px; animation-delay: 0.8s; }
+.pulse-ring:nth-child(3) { width: 240px; height: 240px; margin: -120px 0 0 -120px; animation-delay: 1.6s; }
+.pulse-ring:nth-child(4) { width: 320px; height: 320px; margin: -160px 0 0 -160px; animation-delay: 2.4s; }
+@keyframes pulseOut {
+  0% { transform: scale(0.5); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.pulse-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px; height: 20px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 40px var(--cyan), 0 0 80px var(--cyan-glow);
+  z-index: 2;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services-section {
+  background: linear-gradient(180deg, #0c1019 0%, var(--dark) 100%);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 60px;
+}
+.service-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-card-border);
+  border-radius: 20px;
+  padding: 44px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.service-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(14, 158, 193, 0.1);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--cyan-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+.service-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+.service-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.service-card .service-features {
+  list-style: none;
+  margin-top: 20px;
+}
+.service-card .service-features li {
+  padding: 6px 0;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.service-card .service-features li::before {
+  content: '◆';
+  color: var(--cyan);
+  font-size: 8px;
+}
+
+/* ===== PRICING TIERS ===== */
+.pricing-section {
+  background: radial-gradient(ellipse at 50% 0%, rgba(14, 158, 193, 0.08) 0%, var(--dark) 60%);
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 60px;
+  align-items: stretch;
+}
+.pricing-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-card-border);
+  border-radius: 24px;
+  padding: 48px 36px;
+  position: relative;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.pricing-card.featured {
+  border-color: var(--cyan);
+  background: linear-gradient(180deg, rgba(14, 158, 193, 0.08) 0%, var(--dark-card) 40%);
+}
+.pricing-card.featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 3px;
+  background: var(--cyan);
+  border-radius: 0 0 4px 4px;
+}
+.pricing-badge {
+  display: inline-block;
+  background: var(--cyan);
+  color: var(--dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+.pricing-tier {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+.pricing-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.pricing-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.pricing-price span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--gray);
+  font-weight: 400;
+}
+.pricing-desc {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.pricing-features {
+  list-style: none;
+  margin-bottom: 36px;
+  flex-grow: 1;
+}
+.pricing-features li {
+  padding: 10px 0;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.pricing-features li:last-child { border-bottom: none; }
+.pricing-features .check {
+  color: var(--cyan);
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pricing-card .btn-primary,
+.pricing-card .btn-outline {
+  width: 100%;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 0.85rem;
+}
+
+/* ===== HOW IT WORKS ===== */
+.how-section {
+  background: linear-gradient(180deg, var(--dark) 0%, #0c1019 100%);
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0.2;
+}
+.step-card { text-align: center; position: relative; }
+.step-number {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--dark-card);
+  border: 2px solid var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--cyan);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 30px var(--cyan-glow);
+}
+.step-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.step-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ===== COMPARISON TABLE ===== */
+.compare-section {
+  background: linear-gradient(180deg, #0c1019 0%, var(--dark) 100%);
+}
+.compare-table-wrapper {
+  margin-top: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--dark-card-border);
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.compare-table thead th {
+  background: var(--dark-card);
+  padding: 20px 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-align: left;
+  border-bottom: 2px solid var(--cyan);
+}
+.compare-table thead th:first-child { width: 40%; }
+.compare-table thead th.highlight {
+  color: var(--cyan);
+  text-align: center;
+}
+.compare-table thead th:not(:first-child) { text-align: center; }
+.compare-table tbody td {
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.95rem;
+  color: var(--light-gray);
+}
+.compare-table tbody td:not(:first-child) { text-align: center; }
+.compare-table tbody td .yes {
+  color: var(--cyan);
+  font-size: 20px;
+  font-weight: 700;
+}
+.compare-table tbody td .no {
+  color: #475569;
+  font-size: 20px;
+}
+.compare-table tbody tr:hover { background: rgba(14, 158, 193, 0.03); }
+
+/* ===== FAQ ===== */
+.faq-section {
+  background: radial-gradient(ellipse at 50% 100%, rgba(14, 158, 193, 0.06) 0%, var(--dark) 60%);
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  margin-top: 40px;
+  align-items: start;
+}
+.faq-list { display: flex; flex-direction: column; gap: 16px; }
+.faq-item {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.faq-item.active { border-color: var(--cyan); }
+.faq-question {
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+.faq-question:hover { color: var(--cyan); }
+.faq-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(14, 158, 193, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: var(--cyan);
+  font-size: 18px;
+}
+.faq-item.active .faq-toggle {
+  background: var(--cyan);
+  color: var(--dark);
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-answer-inner {
+  padding: 0 28px 22px;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(14, 158, 193, 0.15) 0%, transparent 60%);
+}
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+.cta-content h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 20px;
+}
+.cta-content .subtitle {
+  margin: 0 auto 40px;
+  max-width: 560px;
+  text-align: center;
+}
+
+/* ===== LOCATIONS ===== */
+.locations-section {
+  background: var(--dark-card);
+  padding: 60px 0;
+  border-top: 1px solid var(--dark-card-border);
+}
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.location-pill {
+  background: var(--dark);
+  border: 1px solid var(--dark-card-border);
+  border-radius: 12px;
+  padding: 18px 24px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.location-pill:hover {
+  border-color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.footer p {
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+  .problem-visual { height: 300px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .steps-grid { grid-template-columns: 1fr; gap: 50px; }
+  .steps-grid::before { display: none; }
+  .compare-table-wrapper { overflow-x: auto; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .locations-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .hero-visual { display: none; }
+}
+@media (max-width: 640px) {
+  .section { padding: 70px 0; }
+  .services-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .stat-number { font-size: 2.5rem; }
+  .locations-grid { grid-template-columns: 1fr; }
+  .hero-cta-group { flex-direction: column; }
+  .hero-cta-group a { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div class="particles" id="particles"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="https://betterbranding.github.io/dripbar-pages/logo.png" alt="The DRIPBaR">
+    </a>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-visual">
+    <div class="dna-strand" id="dnaStrand"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="eyebrow reveal">The DRIPBaR | Precision Health</div>
+    <h1 class="reveal stagger-1">
+      YOUR BODY.<br>
+      <span class="line-accent">DECODED.</span>
+    </h1>
+    <p class="subtitle reveal stagger-2">
+      Genetic testing. Advanced lab panels. VO2 max analysis. One personalized protocol built around your biology. Not guesswork. Science.
+    </p>
+    <div class="hero-cta-group reveal stagger-3">
+      <a href="#pricing" class="btn-primary">Explore Your Protocol</a>
+      <a href="#services" class="btn-outline">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal stagger-1">
+        <div class="stat-number" data-target="100" data-suffix="+">0+</div>
+        <div class="stat-label">Biomarkers Tested</div>
+      </div>
+      <div class="reveal stagger-2">
+        <div class="stat-number" data-target="3">0</div>
+        <div class="stat-label">Consultation Tiers</div>
+      </div>
+      <div class="reveal stagger-3">
+        <div class="stat-number" data-target="6">0</div>
+        <div class="stat-label">Locations</div>
+      </div>
+      <div class="reveal stagger-4">
+        <div class="stat-number" data-target="1">0</div>
+        <div class="stat-label">Personalized Plan</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM SECTION -->
+<section class="section problem-section">
+  <div class="container">
+    <div class="problem-grid">
+      <div>
+        <div class="eyebrow reveal">The Problem</div>
+        <h2 class="reveal stagger-1">STANDARD CARE<br><span class="accent">MISSES THE MARK</span></h2>
+        <p class="subtitle reveal stagger-2">Your annual physical checks the bare minimum. Meanwhile, your body is sending signals nobody is reading.</p>
+        <ul class="problem-list">
+          <li class="reveal stagger-2"><span class="icon">✕</span>Generic lab panels that skip critical biomarkers</li>
+          <li class="reveal stagger-3"><span class="icon">✕</span>Cookie-cutter advice with zero personalization</li>
+          <li class="reveal stagger-3"><span class="icon">✕</span>Reactive treatment instead of proactive prevention</li>
+          <li class="reveal stagger-4"><span class="icon">✕</span>No understanding of your genetic blueprint</li>
+          <li class="reveal stagger-4"><span class="icon">✕</span>Fitness goals built on assumptions, not data</li>
+        </ul>
+      </div>
+      <div class="problem-visual reveal-right">
+        <div class="pulse-rings">
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+        </div>
+        <div class="pulse-center"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="eyebrow reveal">Complete Diagnostics</div>
+      <h2 class="reveal stagger-1" style="margin:0 auto;">THE FULL <span class="accent">PICTURE</span></h2>
+      <p class="subtitle reveal stagger-2" style="margin:0 auto;">Three pillars of precision health that reveal what's really happening inside your body.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal stagger-1">
+        <div class="service-icon"><img src="data:image/jpeg;base64,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" alt="DNA" style="width:64px;height:64px;border-radius:12px;"></div>
+        <h3>GENETIC TESTING</h3>
+        <p>Unlock the code written into every cell. Discover predispositions, nutrient needs, and metabolic tendencies hardwired into your DNA.</p>
+        <ul class="service-features">
+          <li>Methylation pathway analysis</li>
+          <li>Nutrigenomics profiling</li>
+          <li>Hormonal predisposition mapping</li>
+          <li>Detox capacity assessment</li>
+        </ul>
+      </div>
+      <div class="service-card reveal stagger-2">
+        <div class="service-icon"><img src="data:image/jpeg;base64,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" alt="Lab" style="width:64px;height:64px;border-radius:12px;"></div>
+        <h3>ADVANCED LAB PANELS</h3>
+        <p>Go beyond the basics. 100+ biomarkers paint the full picture of your metabolic, hormonal, and immune health.</p>
+        <ul class="service-features">
+          <li>Comprehensive metabolic panel</li>
+          <li>Thyroid & hormone deep-dive</li>
+          <li>Inflammatory markers</li>
+          <li>Micronutrient analysis</li>
+        </ul>
+      </div>
+      <div class="service-card reveal stagger-3">
+        <div class="service-icon"><img src="data:image/jpeg;base64,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" alt="VO2" style="width:64px;height:64px;border-radius:12px;"></div>
+        <h3>VO2 MAX TESTING</h3>
+        <p>Measure your cardiorespiratory ceiling. The gold standard of fitness testing reveals exactly where your body thrives and where it breaks down.</p>
+        <ul class="service-features">
+          <li>Peak oxygen consumption analysis</li>
+          <li>Anaerobic threshold mapping</li>
+          <li>Heart rate zone calibration</li>
+          <li>Metabolic efficiency scoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="section pricing-section" id="pricing">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="eyebrow reveal">Functional Health Consultations</div>
+      <h2 class="reveal stagger-1">CHOOSE YOUR <span class="accent">TIER</span></h2>
+      <p class="subtitle reveal stagger-2" style="margin:0 auto;">Three levels of care with our Licensed Nurse Practitioner. Every plan is personalized to your biology.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- TIER 1 -->
+      <div class="pricing-card reveal stagger-1">
+        <div class="pricing-tier">TIER 1</div>
+        <div class="pricing-name">FOUNDATION</div>
+        <div class="pricing-price">$35 <span>/ session</span></div>
+        <p class="pricing-desc">Your entry point to precision health. Get a clear snapshot of where you stand.</p>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span>30-minute functional health consultation</li>
+          <li><span class="check">✓</span>Health history intake & review</li>
+          <li><span class="check">✓</span>Baseline wellness assessment</li>
+          <li><span class="check">✓</span>Personalized supplement guidance</li>
+          <li><span class="check">✓</span>Follow-up action plan</li>
+        </ul>
+        <a href="#" class="btn-outline">Book Foundation</a>
+      </div>
+
+      <!-- TIER 2 -->
+      <div class="pricing-card featured reveal stagger-2">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">TIER 2</div>
+        <div class="pricing-name">PRECISION</div>
+        <div class="pricing-price">$49 <span>/ session</span></div>
+        <p class="pricing-desc">Lab-driven strategy. Deep analysis meets expert guidance.</p>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span>60-minute deep-dive consultation</li>
+          <li><span class="check">✓</span>Comprehensive lab work review</li>
+          <li><span class="check">✓</span>Custom supplement protocol</li>
+          <li><span class="check">✓</span>Nutritional optimization plan</li>
+          <li><span class="check">✓</span>Lifestyle & stress management strategies</li>
+          <li><span class="check">✓</span>30-day follow-up check-in</li>
+        </ul>
+        <a href="#" class="btn-primary">Book Precision</a>
+      </div>
+
+      <!-- TIER 3 -->
+      <div class="pricing-card reveal stagger-3">
+        <div class="pricing-tier">TIER 3</div>
+        <div class="pricing-name">ELITE</div>
+        <div class="pricing-price">$149 <span>/ session</span></div>
+        <p class="pricing-desc">Total command of your health. Genetics, labs, fitness, and a complete protocol.</p>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span>90-minute comprehensive consultation</li>
+          <li><span class="check">✓</span>Genetic testing review & interpretation</li>
+          <li><span class="check">✓</span>Advanced lab panel analysis</li>
+          <li><span class="check">✓</span>VO2 max results integration</li>
+          <li><span class="check">✓</span>Custom wellness blueprint</li>
+          <li><span class="check">✓</span>Personalized IV & supplement protocol</li>
+          <li><span class="check">✓</span>Priority scheduling & ongoing support</li>
+        </ul>
+        <a href="#" class="btn-outline">Book Elite</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="eyebrow reveal">Your Journey</div>
+      <h2 class="reveal stagger-1">HOW IT <span class="accent">WORKS</span></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal stagger-1">
+        <div class="step-number">1</div>
+        <h3>DISCOVER</h3>
+        <p>Book your consultation. Share your health history, goals, and concerns. We listen first.</p>
+      </div>
+      <div class="step-card reveal stagger-2">
+        <div class="step-number">2</div>
+        <h3>DECODE</h3>
+        <p>Advanced labs, genetic panels, and VO2 max testing reveal your body's unique blueprint.</p>
+      </div>
+      <div class="step-card reveal stagger-3">
+        <div class="step-number">3</div>
+        <h3>DESIGN</h3>
+        <p>Your Functional NP builds a personalized protocol. Supplements. IV therapy. Lifestyle shifts. All based on data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section compare-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="eyebrow reveal">See The Difference</div>
+      <h2 class="reveal stagger-1">STANDARD CARE <span class="accent">VS. PRECISION HEALTH</span></h2>
+    </div>
+    <div class="compare-table-wrapper reveal stagger-2">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Standard Care</th>
+            <th class="highlight">The DRIPBaR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>100+ biomarkers tested</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Genetic testing & interpretation</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>VO2 max fitness assessment</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Functional NP consultation</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Personalized peptide protocol</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>IV therapy integration</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Proactive, not reactive</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <div class="eyebrow reveal">Questions?</div>
+        <h2 class="reveal stagger-1">FAQs</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal stagger-1">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What is a Licensed Nurse Practitioner?</span>
+            <div class="faq-toggle">↓</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">A Functional NP looks beyond symptoms to find root causes. They combine conventional medical training with a holistic approach to build protocols tailored to your unique biology. Think of it as healthcare that treats you as a whole person, not a checklist.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal stagger-2">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Do I need to do all three tests?</span>
+            <div class="faq-toggle">↓</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">No. Each service stands on its own. Your Functional NP will recommend the right combination based on your goals, health history, and consultation tier. Some clients start with labs and add genetic testing later. Your protocol, your pace.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal stagger-3">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How long until I see results?</span>
+            <div class="faq-toggle">↓</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Lab results typically return within 5-7 business days. Genetic testing takes 2-3 weeks. VO2 max results are available immediately. Most clients notice meaningful changes in energy, sleep, and focus within 4-6 weeks of following their personalized protocol.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal stagger-4">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Is this covered by insurance?</span>
+            <div class="faq-toggle">↓</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Consultations and wellness services are paid out-of-pocket. We provide superbills that you can submit to your insurance for potential reimbursement. Many HSA and FSA accounts cover these services. Investing in prevention is always more affordable than treating disease.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal stagger-4">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What makes this different from a regular doctor visit?</span>
+            <div class="faq-toggle">↓</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Depth. Time. Personalization. A standard visit runs 10 minutes and checks a handful of markers. We test 100+ biomarkers, read your genetic code, measure your fitness ceiling, and build a protocol that's yours alone. This is healthcare designed for people who refuse to settle for average.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-content">
+    <div class="eyebrow reveal">Ready?</div>
+    <h2 class="reveal stagger-1">STOP GUESSING.<br><span class="accent">START KNOWING.</span></h2>
+    <p class="subtitle reveal stagger-2">Your biology has answers. We have the tools to find them. Book your precision health consultation today.</p>
+    <div class="reveal stagger-3">
+      <a href="#pricing" class="btn-primary" style="font-size:1.1rem; padding:18px 48px;">Begin Your Protocol</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="eyebrow">Available Locations</div>
+      <h2 style="font-size:2rem;">FIND YOUR <span class="accent">DRIPBaR</span></h2>
+    </div>
+    <div class="locations-grid">
+      <div class="location-pill"><img src="data:image/jpeg;base64,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" alt="" style="width:20px;height:20px;vertical-align:middle;margin-right:4px;border-radius:4px;"> Huebner Oaks</div>
+      <div class="location-pill"><img src="data:image/jpeg;base64,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" alt="" style="width:20px;height:20px;vertical-align:middle;margin-right:4px;border-radius:4px;"> New Braunfels</div>
+      <div class="location-pill"><img src="data:image/jpeg;base64,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" alt="" style="width:20px;height:20px;vertical-align:middle;margin-right:4px;border-radius:4px;"> Alamo Heights</div>
+      <div class="location-pill"><img src="data:image/jpeg;base64,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" alt="" style="width:20px;height:20px;vertical-align:middle;margin-right:4px;border-radius:4px;"> Dominion Creek</div>
+      <div class="location-pill"><img src="data:image/jpeg;base64,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" alt="" style="width:20px;height:20px;vertical-align:middle;margin-right:4px;border-radius:4px;"> Fossil Creek</div>
+      <div class="location-pill"><img src="data:image/jpeg;base64,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" alt="" style="width:20px;height:20px;vertical-align:middle;margin-right:4px;border-radius:4px;"> Domain</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 The DRIPBaR. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// ===== PARTICLES =====
+(function() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    container.appendChild(p);
+  }
+})();
+
+// ===== DNA HELIX =====
+(function() {
+  const strand = document.getElementById('dnaStrand');
+  if (!strand) return;
+  for (let i = 0; i < 20; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dna-dot';
+    const yPos = (i / 20) * 100;
+    const xPos = 50 + Math.sin(i * 0.6) * 30;
+    dot.style.top = yPos + '%';
+    dot.style.left = xPos + '%';
+    dot.style.animationDelay = (i * 0.15) + 's';
+    strand.appendChild(dot);
+    // Mirror dot
+    const dot2 = document.createElement('div');
+    dot2.className = 'dna-dot';
+    dot2.style.top = yPos + '%';
+    dot2.style.left = (100 - xPos) + '%';
+    dot2.style.animationDelay = (i * 0.15 + 1.5) + 's';
+    dot2.style.opacity = '0.5';
+    strand.appendChild(dot2);
+  }
+})();
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== COUNTER ANIMATION =====
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+      const increment = target / 40;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current) + suffix;
+      }, 30);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+// ===== FAQ ACCORDION =====
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const answer = item.querySelector('.faq-answer');
+  const inner = answer.querySelector('.faq-answer-inner');
+  const isActive = item.classList.contains('active');
+
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('active');
+    i.querySelector('.faq-answer').style.maxHeight = '0';
+  });
+
+  if (!isActive) {
+    item.classList.add('active');
+    answer.style.maxHeight = inner.scrollHeight + 'px';
+  }
+}
+</script>
+
+</body>
+</html>
