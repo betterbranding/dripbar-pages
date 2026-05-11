@@ -1,135 +1,115 @@
-<!-- ============================================================
-     DRIP DIRECT HAWAII — CART PAGE Tracking Code
-     Paste into: GHL > Website/Funnel > CART page > Header Code
-     ============================================================ -->
+<!--
+  DRIP Direct Hawaii - GHL Tracking Code
+  Page: Cart
+  Shopping cart with quantity management
+
+  INSTRUCTIONS:
+  1. In GHL, go to Sites > Funnels/Websites
+  2. Open the "Cart" page editor
+  3. Settings (gear icon) > Custom Code > Header Code
+  4. Paste this entire snippet
+  5. Update PAGE_URLS below with your actual GHL page paths
+  6. Save & publish
+-->
+
+<script>
+// ============================================================
+//  CONFIGURE YOUR GHL PAGE URLs HERE
+//  Replace these with your actual GHL funnel/website page paths
+// ============================================================
+var PAGE_URLS = {
+  home:           '/home',
+  products:       '/products-list',
+  productDetails: '/product-details',
+  cart:           '/cart',
+  checkout:       '/checkout',
+  thankyou:       '/thank-you',
+  contact:        '/contact-us'
+};
+</script>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Store CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii/css/styles.css">
 
 <style>
-  .hl-page-creator, .hl_page--content, #preview-container, .row-container {
-    all: unset !important; display: block !important; width: 100% !important;
-    max-width: 100% !important; padding: 0 !important; margin: 0 !important;
-  }
-  body {
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    background: #06060e !important; color: #f0f0f5 !important;
-    overflow-x: hidden !important; margin: 0 !important; padding: 0 !important;
-  }
-  .c-footer, .c-header, .hl-footer, .hl-header { display: none !important; }
+  .hl_page-preview--content,
+  #preview-container,
+  .hl-page-builder,
+  body { background: #0a0a0f !important; }
+  .hl_page-preview--content > div:not(#dd-store-root),
+  #sections_list,
+  #preview-container > div:not(#dd-store-root) { display: none !important; }
+  #dd-store-root { min-height: 100vh; }
 </style>
 
 <script>
-(function() {
-  'use strict';
-  var CDN = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+document.addEventListener('DOMContentLoaded', function() {
+  var root = document.createElement('div');
+  root.id = 'dd-store-root';
+  document.body.appendChild(root);
 
-  /*  ⚡ UPDATE THESE to your actual GHL page URLs */
-  var PAGE_URLS = {
-    home: '/',
-    shop: '/shop',
-    product: '/product',
-    cart: ''              /* current page */
-  };
+  var CDN_BASE = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+  var PAGE_HTML = CDN_BASE + '/pages/cart.html';
+  var SHARED_JS = CDN_BASE + '/js/shared.js';
 
-  function rewritePaths(html) {
-    return html
-      .replace(/(src|href)="\.\.\/img\//g, '$1="' + CDN + '/img/')
-      .replace(/(src|href)="\.\.\/css\//g, '$1="' + CDN + '/css/')
-      .replace(/(src|href)="\.\.\/js\//g,  '$1="' + CDN + '/js/')
-      .replace(/href="home\.html/g,        'href="' + PAGE_URLS.home)
-      .replace(/href="shop\.html/g,        'href="' + PAGE_URLS.shop)
-      .replace(/href="product\.html/g,     'href="' + PAGE_URLS.product)
-      .replace(/href="cart\.html/g,        'href="' + PAGE_URLS.cart);
-  }
+  var sharedScript = document.createElement('script');
+  sharedScript.src = SHARED_JS;
+  sharedScript.onload = function() {
+    DD.pageUrls = PAGE_URLS;
+    DD.cartPageUrl = PAGE_URLS.cart;
 
-  function loadPage() {
-    fetch(CDN + '/pages/cart.html')
+    fetch(PAGE_HTML)
       .then(function(r) { return r.text(); })
       .then(function(html) {
-        var m = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-        if (!m) return;
-        var content = rewritePaths(m[1]);
-        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, 'text/html');
+        var content = doc.body.innerHTML;
 
-        var container = document.createElement('div');
-        container.id = 'dripdirect-store';
-        container.innerHTML = content;
-        document.body.appendChild(container);
+        // Replace placeholder URLs
+        content = content.replace(/PAGE_URL_HOME/g, PAGE_URLS.home);
+        content = content.replace(/PAGE_URL_PRODUCTS/g, PAGE_URLS.products);
+        content = content.replace(/PAGE_URL_PRODUCT_DETAILS/g, PAGE_URLS.productDetails);
+        content = content.replace(/PAGE_URL_CART/g, PAGE_URLS.cart);
+        content = content.replace(/PAGE_URL_CHECKOUT/g, PAGE_URLS.checkout);
+        content = content.replace(/PAGE_URL_THANKYOU/g, PAGE_URLS.thankyou);
+        content = content.replace(/PAGE_URL_CONTACT/g, PAGE_URLS.contact);
+        content = content.replace(/IMG_BASE/g, CDN_BASE);
 
-        var shared = document.createElement('script');
-        shared.src = CDN + '/js/shared.js';
-        shared.onload = function() {
-          DD.cartPageUrl = PAGE_URLS.cart;
-          DD.initShared();
-          renderCart();
-          console.log('[DripDirect] Cart page loaded ✅');
-        };
-        document.body.appendChild(shared);
+        root.innerHTML = content;
+
+        // Execute inline scripts
+        var scripts = root.querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+          var newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+
+        // Apply inline styles from page
+        var styles = doc.head.querySelectorAll('style');
+        styles.forEach(function(s) {
+          var ns = document.createElement('style');
+          ns.textContent = s.textContent;
+          document.head.appendChild(ns);
+        });
+
+        DD.initShared();
       })
-      .catch(function(err) { console.error('[DripDirect] Failed:', err); });
-  }
-
-  function renderCart() {
-    var layout = document.getElementById('cartLayout');
-    if (!layout) return;
-
-    if (DD.cart.length === 0) {
-      layout.innerHTML =
-        '<div class="cart-empty reveal"><div class="cart-empty-icon">🛒</div><h2>Your cart is empty</h2><p>Browse our treatments and add items to get started.</p>' +
-        '<a href="' + PAGE_URLS.shop + '" class="btn btn--primary"><span>Browse Treatments</span></a></div>';
-      DD.initScrollReveal();
-      return;
-    }
-
-    var items = '<div class="cart-items">';
-    DD.cart.forEach(function(item, idx) {
-      var img = DD.PRODUCT_IMAGES[item.name];
-      var lineTotal = item.price * (item.qty || 1);
-      items +=
-        '<div class="cart-item reveal">' +
-          (img ? '<img class="ci-image" src="' + CDN + '/' + img + '" alt="' + item.name + '" />' : '<div class="ci-placeholder">' + item.icon + '</div>') +
-          '<div class="ci-details"><div class="ci-name">' + item.name + '</div><div class="ci-subtitle">' + (item.subtitle || '') + '</div>' +
-          '<div class="ci-qty-row"><button class="ci-qty-btn" data-action="minus" data-idx="' + idx + '">−</button><span class="ci-qty">' + (item.qty || 1) + '</span><button class="ci-qty-btn" data-action="plus" data-idx="' + idx + '">+</button></div></div>' +
-          '<div class="ci-right"><div class="ci-price">$' + lineTotal + '</div><button class="ci-remove" data-idx="' + idx + '">Remove</button></div></div>';
-    });
-    items += '</div>';
-
-    var total = DD.getCartTotal();
-    var count = DD.getCartCount();
-
-    var summary =
-      '<div class="order-summary reveal"><div class="os-title">Summary</div>' +
-      '<div class="os-row"><span class="os-label">Items (' + count + ')</span><span class="os-val">$' + total + '</span></div>' +
-      '<div class="os-row"><span class="os-label">Shipping</span><span class="os-val" style="color:#00ff88;">FREE</span></div>' +
-      '<div class="os-row"><span class="os-label">Telehealth Consult</span><span class="os-val">Included</span></div>' +
-      '<div class="os-row total"><span class="os-label">Total</span><span class="os-val">$' + total + '</span></div>' +
-      '<button class="btn btn--primary btn--lg os-checkout" id="checkoutBtn"><span>Proceed to Checkout</span></button>' +
-      '<div class="os-note">You\'ll complete a brief health intake after checkout.<br>A licensed provider will review & approve your treatment.</div></div>';
-
-    layout.innerHTML = items + summary;
-
-    layout.querySelectorAll('.ci-qty-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        DD.updateQty(parseInt(btn.dataset.idx), btn.dataset.action === 'plus' ? 1 : -1);
-        renderCart();
+      .catch(function(err) {
+        console.error('[DripDirect Hawaii] Failed to load store:', err);
+        root.innerHTML = '<div style="color:white;text-align:center;padding:100px 20px;">' +
+          '<h2>Store loading...</h2><p>Please refresh the page.</p></div>';
       });
-    });
-    layout.querySelectorAll('.ci-remove').forEach(function(btn) {
-      btn.addEventListener('click', function() { DD.removeFromCart(parseInt(btn.dataset.idx)); renderCart(); });
-    });
-
-    var cb = document.getElementById('checkoutBtn');
-    if (cb) cb.addEventListener('click', function() { DD.showToast('Checkout coming soon — VSDH integration pending!'); });
-
-    DD.initScrollReveal();
-  }
-
-  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', loadPage); } else { loadPage(); }
-})();
+  };
+  document.head.appendChild(sharedScript);
+});
 </script>

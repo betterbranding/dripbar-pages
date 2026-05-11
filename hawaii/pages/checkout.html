@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — DRIP Direct Hawaii</title>
+</head>
+<body>
+  <canvas id="particles" class="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="PAGE_URL_HOME" class="nav-logo">
+        <img src="IMG_BASE/img/logos/logo-4c-transparent.png" alt="DRIP Direct Hawaii" style="height:44px;">
+      </a>
+      <div class="nav-links">
+        <a href="PAGE_URL_HOME" class="nav-link">Home</a>
+        <a href="PAGE_URL_PRODUCTS" class="nav-link">Shop</a>
+        <a href="PAGE_URL_CONTACT" class="nav-link">Contact</a>
+        <button class="nav-cart" id="cartBtn">🛒 <span class="cart-count">0</span></button>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="PAGE_URL_HOME" class="mobile-nav-link">Home</a>
+    <a href="PAGE_URL_PRODUCTS" class="mobile-nav-link">Shop</a>
+    <a href="PAGE_URL_CONTACT" class="mobile-nav-link">Contact</a>
+    <a href="PAGE_URL_CART" class="mobile-nav-link">Cart</a>
+  </div>
+
+  <!-- Checkout Section -->
+  <section class="section" style="padding-top:120px; min-height:100vh;">
+    <div class="container">
+      <h1 class="section-title reveal">Secure <span class="gradient-text">Checkout</span></h1>
+      <p class="section-subtitle reveal">Complete your order to begin your wellness journey</p>
+
+      <div id="checkoutContent" style="max-width:900px; margin:0 auto;">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="IMG_BASE/img/logos/logo-4c-transparent.png" alt="DRIP Direct Hawaii" style="height:64px; margin-bottom:16px;">
+          <p style="color:rgba(255,255,255,0.5); font-size:0.9rem;">Premium telehealth &amp; wellness solutions for Hawaii.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="PAGE_URL_HOME">Home</a>
+          <a href="PAGE_URL_PRODUCTS">Shop</a>
+          <a href="PAGE_URL_CONTACT">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">HIPAA Notice</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRIP Direct Hawaii. All rights reserved. Telehealth services provided through licensed physicians.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var cart = JSON.parse(localStorage.getItem('dd_cart') || '[]');
+      var container = document.getElementById('checkoutContent');
+      if (!cart.length) {
+        container.innerHTML = '<div class="glass-card" style="text-align:center; padding:60px 30px;">' +
+          '<h2 style="margin-bottom:16px;">Your cart is empty</h2>' +
+          '<p style="color:rgba(255,255,255,0.6); margin-bottom:24px;">Add some products before checking out.</p>' +
+          '<a href="PAGE_URL_PRODUCTS" class="cta-button" style="display:inline-block; text-decoration:none;">Browse Products</a></div>';
+        return;
+      }
+
+      var total = cart.reduce(function(s, i) { return s + (i.price * (i.qty || 1)); }, 0);
+
+      var html = '<div class="glass-card reveal" style="margin-bottom:30px;">' +
+        '<h3 style="margin-bottom:20px; font-size:1.3rem;">📋 Order Summary</h3>' +
+        '<div style="border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:16px; padding-bottom:16px;">';
+
+      cart.forEach(function(item) {
+        var qty = item.qty || 1;
+        html += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">' +
+          '<div><strong>' + item.name + '</strong><br><span style="color:rgba(255,255,255,0.5); font-size:0.85rem;">Qty: ' + qty + '</span></div>' +
+          '<div style="font-weight:600; color:var(--accent-blue);">$' + (item.price * qty).toFixed(2) + '</div></div>';
+      });
+
+      html += '</div>' +
+        '<div style="display:flex; justify-content:space-between; font-size:1.2rem; font-weight:700;">' +
+        '<span>Total</span><span class="gradient-text">$' + total.toFixed(2) + '</span></div></div>';
+
+      html += '<div class="glass-card reveal" style="margin-bottom:30px;">' +
+        '<h3 style="margin-bottom:20px; font-size:1.3rem;">👤 Patient Information</h3>' +
+        '<p style="color:rgba(255,255,255,0.6); margin-bottom:20px;">Required for telehealth qualification</p>' +
+        '<form id="checkoutForm" style="display:grid; gap:16px;">' +
+        '<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">' +
+        '<input type="text" placeholder="First Name *" required class="dd-input" name="firstName">' +
+        '<input type="text" placeholder="Last Name *" required class="dd-input" name="lastName"></div>' +
+        '<input type="email" placeholder="Email Address *" required class="dd-input" name="email">' +
+        '<input type="tel" placeholder="Phone Number *" required class="dd-input" name="phone">' +
+        '<input type="text" placeholder="Date of Birth (MM/DD/YYYY) *" required class="dd-input" name="dob">' +
+        '<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">' +
+        '<select class="dd-input" name="sex" required><option value="">Biological Sex *</option><option>Male</option><option>Female</option></select>' +
+        '<select class="dd-input" name="state" required><option value="">State *</option><option>Hawaii</option></select></div>' +
+        '<input type="text" placeholder="Shipping Address *" required class="dd-input" name="address">' +
+        '<div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:16px;">' +
+        '<input type="text" placeholder="City *" required class="dd-input" name="city">' +
+        '<input type="text" value="HI" readonly class="dd-input" name="stateShip">' +
+        '<input type="text" placeholder="ZIP *" required class="dd-input" name="zip"></div>' +
+        '<div style="margin-top:8px;">' +
+        '<label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; color:rgba(255,255,255,0.7); font-size:0.9rem;">' +
+        '<input type="checkbox" required style="margin-top:3px;"> I understand that this purchase requires a telehealth consultation and physician approval before fulfillment.</label></div>' +
+        '<button type="submit" class="cta-button" style="width:100%; margin-top:8px; font-size:1.1rem; padding:16px;">Complete Order — $' + total.toFixed(2) + '</button>' +
+        '</form></div>';
+
+      container.innerHTML = html;
+
+      document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = this.querySelector('button[type="submit"]');
+        btn.textContent = 'Processing...';
+        btn.disabled = true;
+        // Simulate order processing — in production this triggers GHL webhook + VSDH
+        setTimeout(function() {
+          localStorage.setItem('dd_last_order', JSON.stringify({ cart: cart, total: total }));
+          localStorage.removeItem('dd_cart');
+          window.location.href = 'PAGE_URL_THANKYOU';
+        }, 1500);
+      });
+    })();
+  </script>
+
+  <style>
+    .dd-input {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .dd-input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(0,212,255,0.15);
+    }
+    .dd-input::placeholder { color: rgba(255,255,255,0.35); }
+    select.dd-input { cursor: pointer; }
+    select.dd-input option { background: #0a0a0f; color: #fff; }
+  </style>
+</body>
+</html>

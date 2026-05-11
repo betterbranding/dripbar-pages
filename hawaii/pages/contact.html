@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — DRIP Direct Hawaii</title>
+</head>
+<body>
+  <canvas id="particles" class="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="PAGE_URL_HOME" class="nav-logo">
+        <img src="IMG_BASE/img/logos/logo-4c-transparent.png" alt="DRIP Direct Hawaii" style="height:44px;">
+      </a>
+      <div class="nav-links">
+        <a href="PAGE_URL_HOME" class="nav-link">Home</a>
+        <a href="PAGE_URL_PRODUCTS" class="nav-link">Shop</a>
+        <a href="PAGE_URL_CONTACT" class="nav-link active">Contact</a>
+        <button class="nav-cart" id="cartBtn">🛒 <span class="cart-count">0</span></button>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="PAGE_URL_HOME" class="mobile-nav-link">Home</a>
+    <a href="PAGE_URL_PRODUCTS" class="mobile-nav-link">Shop</a>
+    <a href="PAGE_URL_CONTACT" class="mobile-nav-link">Contact</a>
+    <a href="PAGE_URL_CART" class="mobile-nav-link">Cart</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="padding-top:140px; min-height:60vh; display:flex; align-items:center;">
+    <div class="container" style="text-align:center;">
+      <h1 class="section-title reveal">Get in <span class="gradient-text">Touch</span></h1>
+      <p class="section-subtitle reveal" style="max-width:600px; margin:0 auto;">We're here to help with your wellness journey. Reach out and our team will respond promptly.</p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1000px; margin:0 auto;">
+
+        <!-- Contact Form -->
+        <div class="glass-card reveal" style="padding:40px;">
+          <h3 style="margin-bottom:24px; font-size:1.3rem;">Send us a Message</h3>
+          <form id="contactForm" style="display:grid; gap:16px;">
+            <input type="text" placeholder="Full Name *" required class="dd-input" name="name">
+            <input type="email" placeholder="Email Address *" required class="dd-input" name="email">
+            <input type="tel" placeholder="Phone Number" class="dd-input" name="phone">
+            <select class="dd-input" name="subject">
+              <option value="">What can we help with?</option>
+              <option>Product Information</option>
+              <option>Order Status</option>
+              <option>Telehealth Consultation</option>
+              <option>Billing & Payments</option>
+              <option>Technical Support</option>
+              <option>Other</option>
+            </select>
+            <textarea placeholder="Your Message *" required class="dd-input" name="message" rows="5" style="resize:vertical; min-height:120px;"></textarea>
+            <button type="submit" class="cta-button" style="width:100%;">Send Message</button>
+          </form>
+          <div id="formSuccess" style="display:none; text-align:center; padding:40px 0;">
+            <div style="font-size:48px; margin-bottom:16px;">✅</div>
+            <h3>Message Sent!</h3>
+            <p style="color:rgba(255,255,255,0.6); margin-top:8px;">We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div style="display:grid; gap:20px; align-content:start;">
+          <div class="glass-card reveal" style="padding:28px;">
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:50px; height:50px; border-radius:12px; background:rgba(0,212,255,0.1); display:flex; align-items:center; justify-content:center; font-size:24px;">📧</div>
+              <div>
+                <h4 style="margin-bottom:4px;">Email</h4>
+                <a href="mailto:support@dripdirecthawaii.com" style="color:var(--accent-blue); text-decoration:none;">support@dripdirecthawaii.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card reveal" style="padding:28px;">
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:50px; height:50px; border-radius:12px; background:rgba(0,255,136,0.1); display:flex; align-items:center; justify-content:center; font-size:24px;">📞</div>
+              <div>
+                <h4 style="margin-bottom:4px;">Phone</h4>
+                <a href="tel:+18081234567" style="color:var(--accent-green); text-decoration:none;">(808) 123-4567</a>
+                <p style="color:rgba(255,255,255,0.4); font-size:0.8rem; margin-top:2px;">Mon-Fri 9am-5pm HST</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card reveal" style="padding:28px;">
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:50px; height:50px; border-radius:12px; background:rgba(0,212,255,0.1); display:flex; align-items:center; justify-content:center; font-size:24px;">📍</div>
+              <div>
+                <h4 style="margin-bottom:4px;">Location</h4>
+                <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Honolulu, Hawaii</p>
+                <p style="color:rgba(255,255,255,0.4); font-size:0.8rem;">Telehealth services available statewide</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card reveal" style="padding:28px;">
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:50px; height:50px; border-radius:12px; background:rgba(0,255,136,0.1); display:flex; align-items:center; justify-content:center; font-size:24px;">⏰</div>
+              <div>
+                <h4 style="margin-bottom:4px;">Response Time</h4>
+                <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">We typically respond within 24 hours</p>
+                <p style="color:rgba(255,255,255,0.4); font-size:0.8rem;">Urgent medical questions? Call us directly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <h2 class="section-title reveal">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <div style="display:grid; gap:16px; margin-top:40px;">
+        <div class="glass-card reveal faq-item" style="padding:24px; cursor:pointer;" onclick="this.classList.toggle('open')">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>How does the telehealth process work?</strong>
+            <span class="faq-chevron" style="transition:transform 0.3s;">▼</span>
+          </div>
+          <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height 0.3s; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+            <p style="padding-top:12px;">After placing your order, you'll complete a health questionnaire and schedule a video consultation with a licensed physician. If approved, your prescription is sent to our partner pharmacy for fulfillment and shipped to your door.</p>
+          </div>
+        </div>
+        <div class="glass-card reveal faq-item" style="padding:24px; cursor:pointer;" onclick="this.classList.toggle('open')">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>Is my information secure?</strong>
+            <span class="faq-chevron" style="transition:transform 0.3s;">▼</span>
+          </div>
+          <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height 0.3s; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+            <p style="padding-top:12px;">Absolutely. All data is encrypted and handled in compliance with HIPAA regulations. Your medical information is only shared with the treating physician and pharmacy.</p>
+          </div>
+        </div>
+        <div class="glass-card reveal faq-item" style="padding:24px; cursor:pointer;" onclick="this.classList.toggle('open')">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>Do you ship to all Hawaiian islands?</strong>
+            <span class="faq-chevron" style="transition:transform 0.3s;">▼</span>
+          </div>
+          <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height 0.3s; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+            <p style="padding-top:12px;">Yes! We deliver to all major Hawaiian islands including Oahu, Maui, Big Island, Kauai, Molokai, and Lanai.</p>
+          </div>
+        </div>
+        <div class="glass-card reveal faq-item" style="padding:24px; cursor:pointer;" onclick="this.classList.toggle('open')">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>What if I'm not approved?</strong>
+            <span class="faq-chevron" style="transition:transform 0.3s;">▼</span>
+          </div>
+          <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height 0.3s; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+            <p style="padding-top:12px;">If the physician determines that the requested medication isn't right for you, you'll receive a full refund. Your health and safety always come first.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="IMG_BASE/img/logos/logo-4c-transparent.png" alt="DRIP Direct Hawaii" style="height:64px; margin-bottom:16px;">
+          <p style="color:rgba(255,255,255,0.5); font-size:0.9rem;">Premium telehealth &amp; wellness solutions for Hawaii.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="PAGE_URL_HOME">Home</a>
+          <a href="PAGE_URL_PRODUCTS">Shop</a>
+          <a href="PAGE_URL_CONTACT">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">HIPAA Notice</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRIP Direct Hawaii. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Contact form submit
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+  </script>
+
+  <style>
+    .dd-input {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .dd-input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(0,212,255,0.15);
+    }
+    .dd-input::placeholder { color: rgba(255,255,255,0.35); }
+    select.dd-input { cursor: pointer; }
+    select.dd-input option { background: #0a0a0f; color: #fff; }
+    textarea.dd-input { font-family: 'Inter', sans-serif; }
+    .faq-item.open .faq-answer { max-height: 200px; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</body>
+</html>
