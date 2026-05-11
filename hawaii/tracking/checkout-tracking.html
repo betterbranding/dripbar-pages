@@ -2,5 +2,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@latest/hawaii/css/styles.css">
 <script>
-document.addEventListener("DOMContentLoaded",function(){var d=document.createElement("div");d.id="dd-store";document.body.innerHTML="";document.body.appendChild(d);fetch("https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@latest/hawaii/pages/checkout.html").then(function(r){return r.text()}).then(function(h){d.innerHTML=h;var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@latest/hawaii/js/shared.js";document.body.appendChild(s)})});
+(function(){
+  var cdn="https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@latest/hawaii";
+  function boot(){
+    document.body.innerHTML='<div id="dd-store"></div>';
+    fetch(cdn+"/pages/checkout.html").then(function(r){return r.text()}).then(function(h){
+      document.getElementById("dd-store").innerHTML=h;
+      var s=document.createElement("script");s.src=cdn+"/js/shared.js";document.body.appendChild(s);
+    });
+  }
+  var t=setInterval(function(){if(document.body&&document.body.children.length>0){clearInterval(t);boot()}},100);
+})();
 </script>
