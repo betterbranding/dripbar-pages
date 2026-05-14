@@ -122,7 +122,7 @@ body {
   align-items: center;
 }
 .logo-img {
-  height: 88px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -132,14 +132,14 @@ body {
   transform: scale(1.03);
 }
 .footer-logo-img {
-  height: 96px;
+  height: 66px;
 }
 @media (max-width: 768px) {
   .logo-img {
-    height: 68px;
+    height: 46px;
   }
   .footer-logo-img {
-    height: 76px;
+    height: 52px;
   }
 }
 /* Legacy text logo classes kept for reference */
