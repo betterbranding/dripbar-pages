@@ -71,7 +71,7 @@ DD.showToast = function(message) {
     toast.className = 'dd-toast toast';
     document.body.appendChild(toast);
   }
-  toast.textContent = '✅ ' + message;
+  toast.textContent = '<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/checkmark.png" alt="✅" class="branded-icon"> ' + message;
   toast.classList.add('show');
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(function() { toast.classList.remove('show'); }, 2500);
@@ -262,82 +262,82 @@ DD.PRODUCT_IMAGES = {
 DD.PRODUCTS = {
   categories: [
     {
-      id: "weight-management", name: "Weight Management", icon: "💊",
+      id: "weight-management", name: "Weight Management", icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">",
       tagline: "Slim Down and Energize with Tailored Weight Loss Solutions.",
       products: [
-        { name: "Semaglutide Injection", subtitle: "Compounded with glycine", price: 160, icon: "💉" },
-        { name: "Semaglutide Sublingual", subtitle: "Dissolves under tongue", price: 195, icon: "💊" },
-        { name: "Tirzepatide", subtitle: "Compounded with Glycine", price: 200, icon: "💉" },
-        { name: "Liraglutide", subtitle: "Daily GLP-1 injection", price: 345, icon: "💉" },
-        { name: "Oral Weight Loss Capsules", subtitle: "Easy oral dosing", price: 225, icon: "💊" },
-        { name: "Metformin HCl ER Tablet", subtitle: "Extended release", price: 135, icon: "💊" },
-        { name: "Phentermine HCl Tablet", subtitle: "Appetite control", price: 135, icon: "💊" }
+        { name: "Semaglutide Injection", subtitle: "Compounded with glycine", price: 160, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Semaglutide Sublingual", subtitle: "Dissolves under tongue", price: 195, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "Tirzepatide", subtitle: "Compounded with Glycine", price: 200, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Liraglutide", subtitle: "Daily GLP-1 injection", price: 345, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Oral Weight Loss Capsules", subtitle: "Easy oral dosing", price: 225, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "Metformin HCl ER Tablet", subtitle: "Extended release", price: 135, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "Phentermine HCl Tablet", subtitle: "Appetite control", price: 135, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" }
       ]
     },
     {
-      id: "hormone-optimization", name: "Hormone Balance & Optimization", icon: "⚡",
+      id: "hormone-optimization", name: "Hormone Balance & Optimization", icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/lightning.png" alt="⚡" class="branded-icon">",
       tagline: "Personalized therapies to restore balance and support overall health.",
       products: [
-        { name: "Testosterone Replacement Therapy - 3 Month Supply", subtitle: "3-month kit", price: 220, icon: "💪" },
-        { name: "Testosterone Replacement Therapy - 1 Month Supply", subtitle: "1-month kit", price: 90, icon: "💪" },
-        { name: "Hormone Replacement Therapy for Women - 1 Month Supply", subtitle: "Women's HRT", price: 109, icon: "🌸" }
+        { name: "Testosterone Replacement Therapy - 3 Month Supply", subtitle: "3-month kit", price: 220, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/muscle.png" alt="💪" class="branded-icon">" },
+        { name: "Testosterone Replacement Therapy - 1 Month Supply", subtitle: "1-month kit", price: 90, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/muscle.png" alt="💪" class="branded-icon">" },
+        { name: "Hormone Replacement Therapy for Women - 1 Month Supply", subtitle: "Women's HRT", price: 109, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/blossom.png" alt="🌸" class="branded-icon">" }
       ]
     },
     {
-      id: "appetite-suppressant", name: "Appetite Suppressant", icon: "🔥",
+      id: "appetite-suppressant", name: "Appetite Suppressant", icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/fire.png" alt="🔥" class="branded-icon">",
       tagline: "Curb cravings and support your weight loss journey.",
       products: [
-        { name: "L-Carnitine", subtitle: "Fat metabolism booster", price: 175, icon: "🔥" },
-        { name: "Sermorelin Troche", subtitle: "Growth hormone peptide", price: 165, icon: "💊" },
-        { name: "Skinny Shots - MICC", subtitle: "Lipotropic injection", price: 145, icon: "💉" },
-        { name: "Sermorelin Sublingual", subtitle: "Sublingual peptide", price: 225, icon: "💊" },
-        { name: "Sermorelin Injection", subtitle: "Injectable peptide", price: 225, icon: "💉" }
+        { name: "L-Carnitine", subtitle: "Fat metabolism booster", price: 175, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/fire.png" alt="🔥" class="branded-icon">" },
+        { name: "Sermorelin Troche", subtitle: "Growth hormone peptide", price: 165, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "Skinny Shots - MICC", subtitle: "Lipotropic injection", price: 145, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Sermorelin Sublingual", subtitle: "Sublingual peptide", price: 225, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "Sermorelin Injection", subtitle: "Injectable peptide", price: 225, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" }
       ]
     },
     {
-      id: "anti-aging", name: "Anti-Aging", icon: "✨",
+      id: "anti-aging", name: "Anti-Aging", icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/sparkles.png" alt="✨" class="branded-icon">",
       tagline: "Clinically Backed. Youthfully You.",
       products: [
         { name: "NAD+ Patches", subtitle: "Transdermal delivery", price: 285, icon: "🩹" },
-        { name: "Glutathione", subtitle: "Master antioxidant", price: 125, icon: "✨" },
-        { name: "Nicotinamide Riboside (NR) Injectable", subtitle: "Cellular energy", price: 495, icon: "💉" },
-        { name: "Vitamin B12 Injection", subtitle: "Energy boost", price: 95, icon: "💉" },
-        { name: "Low Dose Naltrexone", subtitle: "Immune modulator", price: 135, icon: "💊" },
+        { name: "Glutathione", subtitle: "Master antioxidant", price: 125, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/sparkles.png" alt="✨" class="branded-icon">" },
+        { name: "Nicotinamide Riboside (NR) Injectable", subtitle: "Cellular energy", price: 495, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Vitamin B12 Injection", subtitle: "Energy boost", price: 95, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Low Dose Naltrexone", subtitle: "Immune modulator", price: 135, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
         { name: "NAD+ Nasal Spray", subtitle: "Nasal delivery", price: 265, icon: "🫁" },
-        { name: "NAD+ Injection", subtitle: "Direct cellular NAD+", price: 195, icon: "💉" },
-        { name: "Anti Aging Topical Gel", subtitle: "Skin rejuvenation gel", price: 185, icon: "🧴" },
-        { name: "Anti Aging Topical Cream", subtitle: "Skin rejuvenation cream", price: 175, icon: "🧴" },
-        { name: "Methylene Blue Capsules", subtitle: "Mitochondrial support", price: 300, icon: "💊" }
+        { name: "NAD+ Injection", subtitle: "Direct cellular NAD+", price: 195, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Anti Aging Topical Gel", subtitle: "Skin rejuvenation gel", price: 185, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/lotion.png" alt="🧴" class="branded-icon">" },
+        { name: "Anti Aging Topical Cream", subtitle: "Skin rejuvenation cream", price: 175, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/lotion.png" alt="🧴" class="branded-icon">" },
+        { name: "Methylene Blue Capsules", subtitle: "Mitochondrial support", price: 300, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" }
       ]
     },
     {
-      id: "sexual-health", name: "Sexual Health", icon: "❤️",
+      id: "sexual-health", name: "Sexual Health", icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/heart.png" alt="<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/heart.png" alt="❤" class="branded-icon">️" class="branded-icon">",
       tagline: "Revitalize intimacy and confidence.",
       products: [
-        { name: "Scream Cream - Libido Enhancement for Women", subtitle: "Topical for women", price: 145, icon: "🌸" },
-        { name: "Erectile Dysfunction Medication", subtitle: "Customized ED treatment", price: 125, icon: "💊" },
-        { name: "Tadalafil + Oxytocin Troche", subtitle: "Dual-action troche", price: 145, icon: "💊" },
-        { name: "Oxybutynin", subtitle: "Bladder control", price: 125, icon: "💊" },
-        { name: "PT-141 (bremelanotide) Injectable", subtitle: "Libido peptide", price: 175, icon: "💉" },
-        { name: "Oxytocin 100 IU Troche", subtitle: "Bonding hormone", price: 145, icon: "💊" },
+        { name: "Scream Cream - Libido Enhancement for Women", subtitle: "Topical for women", price: 145, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/blossom.png" alt="🌸" class="branded-icon">" },
+        { name: "Erectile Dysfunction Medication", subtitle: "Customized ED treatment", price: 125, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "Tadalafil + Oxytocin Troche", subtitle: "Dual-action troche", price: 145, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "Oxybutynin", subtitle: "Bladder control", price: 125, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
+        { name: "PT-141 (bremelanotide) Injectable", subtitle: "Libido peptide", price: 175, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="💉" class="branded-icon">" },
+        { name: "Oxytocin 100 IU Troche", subtitle: "Bonding hormone", price: 145, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" },
         { name: "Oxytocin Nasal Spray", subtitle: "Nasal oxytocin", price: 175, icon: "🫁" }
       ]
     },
     {
-      id: "hair-loss", name: "Hair Loss", icon: "💇",
+      id: "hair-loss", name: "Hair Loss", icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/haircut.png" alt="💇" class="branded-icon">",
       tagline: "Restore thickness and confidence.",
       products: [
-        { name: "Hair Loss Scalp Topical Medication", subtitle: "Topical treatment", price: 175, icon: "🧴" },
-        { name: "Hair Loss Oral Medication", subtitle: "Oral treatment", price: 145, icon: "💊" }
+        { name: "Hair Loss Scalp Topical Medication", subtitle: "Topical treatment", price: 175, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/lotion.png" alt="🧴" class="branded-icon">" },
+        { name: "Hair Loss Oral Medication", subtitle: "Oral treatment", price: 145, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" }
       ]
     },
     {
-      id: "acne", name: "Acne", icon: "🧴",
+      id: "acne", name: "Acne", icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/lotion.png" alt="🧴" class="branded-icon">",
       tagline: "Clear skin, clear confidence.",
       products: [
-        { name: "Acne Cream", subtitle: "Topical cream", price: 145, icon: "🧴" },
-        { name: "Acne Gel", subtitle: "Topical gel", price: 125, icon: "🧴" },
-        { name: "Doxycycline Hyclate for Acne", subtitle: "Oral antibiotic", price: 165, icon: "💊" }
+        { name: "Acne Cream", subtitle: "Topical cream", price: 145, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/lotion.png" alt="🧴" class="branded-icon">" },
+        { name: "Acne Gel", subtitle: "Topical gel", price: 125, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/lotion.png" alt="🧴" class="branded-icon">" },
+        { name: "Doxycycline Hyclate for Acne", subtitle: "Oral antibiotic", price: 165, icon: "<img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="💊" class="branded-icon">" }
       ]
     }
   ]
@@ -367,4 +367,4 @@ DD.findProduct = function(slug) {
   return null;
 };
 
-console.log('[DripDirect] Shared module loaded ✅');
+console.log('[DripDirect] Shared module loaded <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/checkmark.png" alt="✅" class="branded-icon">');

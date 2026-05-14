@@ -18,7 +18,7 @@
         <a href="PAGE_URL_HOME" class="nav-link">Home</a>
         <a href="PAGE_URL_PRODUCTS" class="nav-link">Shop</a>
         <a href="PAGE_URL_CONTACT" class="nav-link">Contact</a>
-        <button class="nav-cart" id="cartBtn">🛒 <span class="cart-count">0</span></button>
+        <button class="nav-cart" id="cartBtn"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/cart.png" alt="🛒" class="branded-icon"> <span class="cart-count">0</span></button>
       </div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
@@ -84,7 +84,7 @@
       var total = cart.reduce(function(s, i) { return s + (i.price * (i.qty || 1)); }, 0);
 
       var html = '<div class="glass-card reveal" style="margin-bottom:30px;">' +
-        '<h3 style="margin-bottom:20px; font-size:1.3rem;">📋 Order Summary</h3>' +
+        '<h3 style="margin-bottom:20px; font-size:1.3rem;"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/clipboard.png" alt="📋" class="branded-icon"> Order Summary</h3>' +
         '<div style="border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:16px; padding-bottom:16px;">';
 
       cart.forEach(function(item) {
@@ -99,7 +99,7 @@
         '<span>Total</span><span class="gradient-text">$' + total.toFixed(2) + '</span></div></div>';
 
       html += '<div class="glass-card reveal" style="margin-bottom:30px;">' +
-        '<h3 style="margin-bottom:20px; font-size:1.3rem;">👤 Patient Information</h3>' +
+        '<h3 style="margin-bottom:20px; font-size:1.3rem;"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/patient.png" alt="👤" class="branded-icon"> Patient Information</h3>' +
         '<p style="color:rgba(255,255,255,0.6); margin-bottom:20px;">Required for telehealth qualification</p>' +
         '<form id="checkoutForm" style="display:grid; gap:16px;">' +
         '<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">' +

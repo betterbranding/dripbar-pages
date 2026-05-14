@@ -125,7 +125,7 @@
 
         var allPill = document.createElement('button');
         allPill.className = 'category-pill' + (activeCategory === 'all' ? ' active' : '');
-        allPill.innerHTML = '<span class="cat-icon">🏠</span> All <span class="cat-count">37</span>';
+        allPill.innerHTML = '<span class="cat-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/home.png" alt="🏠" class="branded-icon"></span> All <span class="cat-count">37</span>';
         allPill.addEventListener('click', function() {
           activeCategory = 'all';
           updatePills();
