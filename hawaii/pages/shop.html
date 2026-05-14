@@ -137,7 +137,7 @@
           var pill = document.createElement('button');
           pill.className = 'category-pill' + (activeCategory === cat.id ? ' active' : '');
           pill.dataset.catId = cat.id;
-          pill.innerHTML = '<span class="cat-icon">' + cat.icon + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
+          pill.innerHTML = '<span class="cat-icon">' + DD.iconImg(cat.icon) + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
           pill.addEventListener('click', function() {
             activeCategory = cat.id;
             updatePills();
@@ -169,7 +169,7 @@
           group.className = 'category-group';
           group.innerHTML =
             '<div class="category-group-header reveal">' +
-              '<h3 class="category-group-title">' + cat.icon + ' ' + cat.name + '</h3>' +
+              '<h3 class="category-group-title">' + DD.iconImg(cat.icon) + ' ' + cat.name + '</h3>' +
               '<span class="category-group-tag">' + cat.tagline + '</span>' +
             '</div>' +
             '<div class="product-grid" id="grid-' + cat.id + '"></div>';
@@ -185,7 +185,7 @@
               '<div class="product-image-wrap">' +
                 (imgPath
                   ? '<img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/' + imgPath + '" alt="' + product.name + '" loading="lazy" />'
-                  : '<div class="product-image-placeholder">' + product.icon + '</div>') +
+                  : '<div class="product-image-placeholder">' + DD.iconImg(product.icon) + '</div>') +
               '</div>' +
               '<div class="product-info">' +
                 '<div class="product-name">' + product.name + '</div>' +
@@ -233,7 +233,7 @@
         body.innerHTML =
           (imgPath
             ? '<img class="modal-product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/' + imgPath + '" alt="' + product.name + '" />'
-            : '<div class="modal-product-icon">' + product.icon + '</div>') +
+            : '<div class="modal-product-icon">' + DD.iconImg(product.icon) + '</div>') +
           '<div class="modal-product-name">' + product.name + '</div>' +
           '<div class="modal-product-subtitle">' + (product.subtitle || categoryName) + '</div>' +
           '<div class="modal-product-price">' +

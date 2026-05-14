@@ -180,10 +180,10 @@
         '<div class="pd-image-wrap reveal">' +
           (imgPath
             ? '<img class="pd-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/' + imgPath + '" alt="' + product.name + '" />'
-            : '<div class="pd-image-placeholder">' + product.icon + '</div>') +
+            : '<div class="pd-image-placeholder">' + DD.iconImg(product.icon) + '</div>') +
         '</div>' +
         '<div class="pd-info">' +
-          '<div class="pd-category reveal">' + category.icon + ' ' + category.name + '</div>' +
+          '<div class="pd-category reveal">' + DD.iconImg(category.icon) + ' ' + category.name + '</div>' +
           '<h1 class="pd-name reveal">' + product.name + '</h1>' +
           '<p class="pd-subtitle reveal">' + (product.subtitle || '') + '</p>' +
           '<div class="pd-price-block reveal">' +
@@ -232,7 +232,7 @@
           '<div class="product-image-wrap">' +
             (rImg
               ? '<img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/' + rImg + '" alt="' + rp.name + '" loading="lazy" />'
-              : '<div class="product-image-placeholder">' + rp.icon + '</div>') +
+              : '<div class="product-image-placeholder">' + DD.iconImg(rp.icon) + '</div>') +
           '</div>' +
           '<div class="product-info">' +
             '<div class="product-name">' + rp.name + '</div>' +

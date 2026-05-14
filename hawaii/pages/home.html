@@ -212,7 +212,7 @@
         var pill = document.createElement('a');
         pill.href = 'shop.html?category=' + cat.id;
         pill.className = 'category-pill';
-        pill.innerHTML = '<span class="cat-icon">' + cat.icon + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
+        pill.innerHTML = '<span class="cat-icon">' + DD.iconImg(cat.icon) + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
         scroll.appendChild(pill);
       });
     });

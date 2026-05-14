@@ -251,7 +251,7 @@ function initCategories() {
   // "All" pill
   const allPill = document.createElement('button');
   allPill.className = 'category-pill active';
-  allPill.innerHTML = `<span class="cat-icon">🏠</span> All <span class="cat-count">37</span>`;
+  allPill.innerHTML = `<span class="cat-icon">${DD.iconImg('home.png')}</span> All <span class="cat-count">37</span>`;
   allPill.addEventListener('click', () => {
     activeCategory = 'all';
     updateCategoryPills();
@@ -380,7 +380,7 @@ function showToast(message) {
     toast.className = 'toast';
     document.body.appendChild(toast);
   }
-  toast.textContent = `✅ ${message}`;
+  toast.innerHTML = `${DD.iconImg('checkmark.png')} ${message}`;
   toast.classList.add('show');
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => toast.classList.remove('show'), 2500);
