@@ -1,0 +1,240 @@
+{
+  "id": "flower-mound",
+  "name": "The DRIPBaR Flower Mound",
+  "city": "Flower Mound",
+  "state": "TX",
+  "brand_voice_group": "cvfm",
+  "subdomain": "flower-mound-highlands-ranch.thedripbar.com",
+  "booking_url": "https://flower-mound-highlands-ranch.thedripbar.com/book-appointment/",
+  "medical_director": {
+    "name": "Dr. Angela Straface MD",
+    "attribution": "Under the medical direction of Dr. Angela Straface MD"
+  },
+  "brand_voice": {
+    "tagline": "Medical Wellness. Delivered with Precision.",
+    "tone": [
+      "Clinical",
+      "Precise",
+      "Professional",
+      "Measured",
+      "Authoritative but approachable"
+    ],
+    "target_audience": "Adults 35-65, Flower Mound / Highland Village / Lewisville area. Health-conscious individuals who value clinical professionalism, medical oversight, and personalized care.",
+    "content_pillars": [
+      "Energy",
+      "Immunity",
+      "Recovery",
+      "Education",
+      "Medical Standards",
+      "Community"
+    ],
+    "writing_style_notes": "Medical Wellness. Delivered with Precision. At The DRIPBaR Flower Mound, wellness begins with clinical integrity. Our focus is simple: provide medically guided therapies that support your body at the cellular level. Every therapy is administered by licensed medical professionals in a clean, comfortable, and highly controlled environment. Because when it comes to your health, precision matters. Clinical professionalism, medical oversight, personalized care. This is wellness delivered with medical responsibility. Proactive care leads to better outcomes. Professional care. Clinical precision. Personal attention. Feeling better should never come at the expense of safety or quality."
+  },
+  "approved_hashtags": [
+    "#TheDRIPBaRFlowerMound",
+    "#DFWWellness",
+    "#DFWHealth",
+    "#FlowerMoundTX",
+    "#IVTherapy"
+  ],
+  "visual_identity": {
+    "colors": {
+      "navy": "#3C4C62",
+      "lime": "#C1D81A",
+      "cyan": "#0E9EC1",
+      "white": "#FFFFFF"
+    },
+    "logos": {
+      "primary_ghl_cdn": "https://assets.cdn.filesafe.space/DUPIkcAu6l2rbLLsxhO7/media/64bedd891176ac59660ea0ca.png",
+      "satx_email": "https://assets.cdn.filesafe.space/DUPIkcAu6l2rbLLsxhO7/media/655adc4c0226f0ec1406c920.png",
+      "non_satx_email": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/690b99fe6fadaa58375c8d36.png",
+      "navy_green_svg": "https://drive.google.com/file/d/1Cyi6qFq-miSZFw2Y-wfuAZRUf_u7Zdqg/view",
+      "white_green_svg": "https://drive.google.com/file/d/1QYLnqBrbb8lMIWtkvWqIQWFSGyPihNRl/view",
+      "white_svg": "https://drive.google.com/file/d/1ac9CRBdxmtyOLrfUrOt7NU4ygxAG7sP2/view",
+      "email_logo": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/690b99fe6fadaa58375c8d36.png"
+    },
+    "photography_style": "Professional wellness lounge. Real location photos. Staff in navy scrubs. White leather chairs. Clean, modern, warm. Uses Burleson library as stand-in for photo reference."
+  },
+  "social_accounts": {
+    "instagram": {
+      "handle": "thedripbarflowermound",
+      "ghl_account_id": ""
+    },
+    "facebook": {
+      "name": "The DRIPBaR Flower Mound",
+      "ghl_account_id": ""
+    },
+    "gbp": {
+      "ghl_account_id": ""
+    },
+    "threads": {
+      "ghl_account_id": ""
+    }
+  },
+  "ghl": {
+    "group_name": "DB CV/FM",
+    "location_id": "0VVRkDLqrPF5oqPjdrAT",
+    "user_id": "69bc53160efabb238646637f"
+  },
+  "content_restrictions": [
+    "No esthetics services (no Botox, Dysport, HydraFacial)"
+  ],
+  "email_recipients": [
+    "jill.trammell@thedripbar.com",
+    "ronnie.trammell@thedripbar.com"
+  ],
+  "sitemap": {
+    "subdomain": "flower-mound-highlands-ranch",
+    "base_url": "https://flower-mound-highlands-ranch.thedripbar.com",
+    "booking_url": "https://flower-mound-highlands-ranch.thedripbar.com/book-appointment/",
+    "services_menu": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/",
+    "iv_therapy": {
+      "High Dose Vitamin C": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/high-dose-vitamin-c/",
+      "Restoration": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/restoration/",
+      "Metabolize": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/metabolize/",
+      "NAD+": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/nad-plus/",
+      "Powerpack": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/powerpack/",
+      "Time Machine": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/time-machine/",
+      "Allstar": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/allstar/",
+      "Alpha Lipoic Acid (ALA)": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/alpha-lipoic-acid-ala/",
+      "The Debut": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/the-debut/",
+      "Flu Fighter": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/flu-fighter/",
+      "Maternal Wellness": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/maternal-wellness/",
+      "Allergy": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/allergy/",
+      "Firm": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/firm/",
+      "Pre/Post-Op": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/pre-post-op/",
+      "Vitality": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/vitality/",
+      "100% Hydration": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/100-hydration/",
+      "Glutathione": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/glutathione/",
+      "Jetsetter": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/jetsetter-drip/",
+      "Soother": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/iv-therapy/soother/"
+    },
+    "wellness_services": {
+      "Semaglutide & Tirzepatide": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/wellness-services/semaglutide-and-tirzepatide/",
+      "Sermorelin Peptide Therapy": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/wellness-services/sermorelin-peptide-therapy/",
+      "Infrared Sauna": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/wellness-services/infrared-sauna/",
+      "Halotherapy": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/wellness-services/halotherapy/",
+      "Botox and Dysport": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/wellness-services/botox-and-dysport/",
+      "Oral Supplements": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/wellness-services/oral-supplements/"
+    },
+    "add_ons": {
+      "Drip Add-Ons": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/drip-add-ons/"
+    },
+    "im_quick_shots": {
+      "IM Detoxed": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-detoxed/",
+      "IM Glowing": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-glowing/",
+      "IM Lean": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-lean/",
+      "IM Strong": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-strong/",
+      "IM Supercharged": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-supercharged/",
+      "IM Vitalized": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-vitalized/"
+    },
+    "im_single_shots": {
+      "MIC Products": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-single-shots/mic-products/",
+      "Tri-Immune": "https://flower-mound-highlands-ranch.thedripbar.com/services-menu/add-ons-and-injections/im-single-shots/tri-immune/"
+    },
+    "wellness_needs": {
+      "Wellness Needs": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/",
+      "Anti-Aging & Beauty": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/",
+      "Skin Health": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/skin-health/",
+      "Acne": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/acne/",
+      "Hair Loss": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/hair-loss/",
+      "Wrinkle Prevention": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/wrinkle-prevention/",
+      "Sun Damage": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/sun-damage-and-photodamage/",
+      "Hyperpigmentation": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/hyperpigmentation/",
+      "Healthy Aging": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/healthy-aging/",
+      "Cellular Repair": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/cellular-repair/",
+      "Nail and Cuticle Health": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/anti-aging-and-beauty/nail-and-cuticle-health/",
+      "Diseases & Illnesses": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/",
+      "Diabetes": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/diabetes/",
+      "Cardiovascular Disease": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/cardiovascular-disease/",
+      "Autoimmune": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/autoimmune/",
+      "Irritable Bowel Syndrome": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/irritable-bowel-syndrome/",
+      "Eczema and Psoriasis": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/eczema-and-psoriasis/",
+      "Chronic Kidney Disease": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/chronic-kidney-disease/",
+      "Cancer Care & Prevention": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/cancer-care-and-prevention/",
+      "Alzheimer\u2019s & Dementia": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/alzheimers-and-dementia/",
+      "Fibromyalgia": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/fibromyalgia/",
+      "Polycystic Ovary Syndrome (PCOS)": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/polycystic-ovary-syndrome/",
+      "Gout": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/gout/",
+      "Crohn\u2019s Disease": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/crohns-disease/",
+      "Lyme Disease": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/lyme-disease/",
+      "Bladder Inflammation": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/bladder-inflammation/",
+      "Interstitial Cystitis": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/interstitial-cystitis/",
+      "Chronic Liver Disease": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/chronic-liver-disease/",
+      "Multiple Sclerosis": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/multiple-sclerosis/",
+      "Demyelinating Conditions": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/demyelinating-conditions/",
+      "Parkinson\u2019s Disease": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/parkinsons-disease/",
+      "Mitochondrial Dysfunction": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/mitochondrial-dysfunction/",
+      "Cystic Fibrosis": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/diseases-and-illnesses/cystic-fibrosis/",
+      "Energy & Vitality": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/energy-and-vitality/",
+      "Low Energy": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/energy-and-vitality/low-energy/",
+      "Post-Workout Recovery": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/energy-and-vitality/post-workout-recovery/",
+      "Jet Lag": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/energy-and-vitality/jet-lag/",
+      "Chronic Fatigue": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/energy-and-vitality/chronic-fatigue/",
+      "Thyroid Imbalance (Hypothyroidism)": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/energy-and-vitality/thyroid-imbalance-hypothyroidism/",
+      "Adrenal Burnout": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/energy-and-vitality/adrenal-burnout/",
+      "Hydration & Physical Health": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/",
+      "Dehydration": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/dehydration/",
+      "Inflammation": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/inflammation/",
+      "Gut Health": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/gut-health/",
+      "Headaches and Migraines": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/headaches-and-migraines/",
+      "Weight Management": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/weight-management/",
+      "Chronic Pain": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/chronic-pain/",
+      "Menstrual Health": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/menstrual-health/",
+      "Sports Performance and Endurance": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/sports-performance-and-endurance/",
+      "Electrolyte Depletion": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/electrolyte-depletion/",
+      "Post Surgery Recovery": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/post-surgery-recovery/",
+      "Gastric Surgery": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/gastric-surgery/",
+      "Altitude Sickness": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/hydration-and-physical-health/altitude-sickness/",
+      "Immune & Recovery Support": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/",
+      "Allergies": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/allergies/",
+      "Cold & Flu": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/cold-and-flu/",
+      "Sinus Congestion": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/sinus-congestion/",
+      "Hangover Recovery": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/hangover-recovery/",
+      "Post-Viral Recovery": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/post-viral-recovery/",
+      "Long Covid": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/long-covid/",
+      "Epstein-Barr Virus": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/epstein-barr-virus/",
+      "Mononucleosis Recovery": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/mononucleosis-recovery/",
+      "Chemotherapy Recovery": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/immune-and-recovery-support/chemotherapy-recovery/",
+      "Mental & Emotional Support": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/",
+      "Stress and Anxiety": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/stress-and-anxiety/",
+      "Sleep Disturbance and Insomnia": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/sleep-disturbance-and-insomnia/",
+      "Burnout & Exhaustion": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/burnout-and-exhaustion/",
+      "Brain Fog": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/brain-fog/",
+      "Mood Imbalance": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/mood-imbalance/",
+      "Menopausal Symptoms": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/menopausal-symptoms/",
+      "ADHD (In Adults)": "https://flower-mound-highlands-ranch.thedripbar.com/wellness-needs/mental-and-emotional-support/adhd-in-adults/"
+    },
+    "ingredients": {
+      "1 Liter of Lactated Ringers": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/lactated-ringers/",
+      "Alpha Lipoic Acid (ALA)": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/alpha-lipoic-acid/",
+      "CoQ10": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/coq-10/",
+      "Nicotinamide Adenine Dinucleotide (NAD)": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/ingredient-nad-plus/",
+      "Vitamin D": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/vitamin-d/",
+      "Amino Acids": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/amino-acids/",
+      "B12": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/b12/",
+      "B-Complex": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/b-complex/",
+      "Biotin (B7)": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/biotin-b7/",
+      "Calcium": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/calcium/",
+      "Carnitine": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/carnitine/",
+      "Dexpanthenol (B5)": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/dexpanthenol-b5/",
+      "Folic Acid (B9)": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/folic-acid-b9/",
+      "Glutamine": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/glutamine/",
+      "Glutathione": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/glutathione-ingredient/",
+      "L-Arginine": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/l-arginine/",
+      "Magnesium": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/magnesium/",
+      "N-Acetyl Cysteine": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/n-acetyl-cysteine-nac/",
+      "Pyridoxine (B6)": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/pyridoxine-b6/",
+      "Taurine": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/taurine/",
+      "Vitamin C": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/vitamin-c/",
+      "Zinc": "https://flower-mound-highlands-ranch.thedripbar.com/ingredients/zinc/"
+    },
+    "pages": {
+      "About": "https://flower-mound-highlands-ranch.thedripbar.com/about-us/",
+      "Contact Us": "https://flower-mound-highlands-ranch.thedripbar.com/contact-us/",
+      "Memberships": "https://flower-mound-highlands-ranch.thedripbar.com/memberships/",
+      "Promotions": "https://flower-mound-highlands-ranch.thedripbar.com/promotions/",
+      "Local Offers": "https://flower-mound-highlands-ranch.thedripbar.com/promotions/local-offers/"
+    }
+  }
+}

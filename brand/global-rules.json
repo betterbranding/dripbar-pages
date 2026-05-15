@@ -1,0 +1,171 @@
+{
+  "content_rules": {
+    "language": "simple, direct, short sentences",
+    "voice": "active",
+    "perspective": "second person (you/your)",
+    "no_emojis": true,
+    "formatting_rules": [
+      "No em dashes; use commas, periods, or semicolons only",
+      "No hashtags, markdown, or asterisks in copy body",
+      "No filler phrases or loose connectors",
+      "Output should read clean, concise, and how a human naturally writes",
+      "Review every response to ensure no em dashes"
+    ],
+    "should": [
+      "Use clear, direct language",
+      "Keep sentences short and sharp",
+      "Write in active voice",
+      "Give practical, specific advice",
+      "Use bullet point lists for social media posts",
+      "Include data, numbers, or concrete examples when possible",
+      "Speak to the reader using 'you' and 'your'",
+      "Write the way a human would speak",
+      "Start sentences with 'and' or 'but' when natural",
+      "State facts plainly; steer clear of hype"
+    ],
+    "avoid": [
+      "Em dashes",
+      "Filler phrases that connect ideas too loosely",
+      "Constructions like 'not just X, but Y'",
+      "Metaphors, analogies, and cliches",
+      "Vague or sweeping claims",
+      "Phrases like 'in conclusion', 'to sum up', or 'closing'",
+      "Extra adjectives or adverbs",
+      "Salesy language and over-promising",
+      "Clinical jargon and trendy wellness buzzwords",
+      "Exclamation points (SATX voice)"
+    ],
+    "banned_words": [
+      "Elevate",
+      "Delve",
+      "Hustle and bustle",
+      "Revolutionize",
+      "Foster",
+      "Realm",
+      "Remnant",
+      "Subsequently",
+      "Nestled",
+      "Enigma",
+      "Whispering",
+      "Sights unseen",
+      "Sounds unheard",
+      "A testament to",
+      "Dance",
+      "Metamorphosis",
+      "Indelible",
+      "Leverage",
+      "Synergy",
+      "Scalable",
+      "Optimize",
+      "Empower",
+      "Innovative",
+      "Disruptive",
+      "Robust",
+      "Seamless",
+      "Holistic",
+      "Cutting-edge",
+      "Next-generation",
+      "User-centric",
+      "Agile",
+      "Dynamic",
+      "Frictionless",
+      "Value-driven",
+      "Data-driven",
+      "Scalability",
+      "Mission-critical",
+      "Thought leadership",
+      "Turnkey",
+      "Paradigm shift",
+      "Game-changer",
+      "Ecosystem",
+      "Deep dive",
+      "Move the needle",
+      "Circle back",
+      "Actionable insights",
+      "Ideation",
+      "Pain point",
+      "Deliverables",
+      "Quick win",
+      "Elevator pitch",
+      "Framework",
+      "Drill down",
+      "Synergize"
+    ]
+  },
+  "frameworks": {
+    "cafe": {
+      "captivate": "Hook intro, attention grabber, news headline",
+      "agitate": "Provoke emotion of the pain/struggle. Relate with the reader.",
+      "fascinate": "Something outrageous they didn't know.",
+      "educate": "Follow up with science and evidence-based education. Simplified.",
+      "usage_note": "Never mention CAFE by name. Weave structure into content naturally."
+    },
+    "eeat": {
+      "experience": "Real client care, real visits, real questions answered",
+      "expertise": "Trained clinical team, licensed medical oversight",
+      "authoritativeness": "Professional guidance, individualized support, data-backed protocols",
+      "trust": "Safety, comfort, clear explanations, no-pressure environment",
+      "usage_note": "Weave in subtly without stating terms explicitly. Never mention EEAT by name."
+    }
+  },
+  "meta_compliance": {
+    "no_medical_claims": true,
+    "wellness_language_only": true,
+    "description": "Never make medical claims about therapies or treatments curing, treating, or preventing any condition. Use wellness language describing how people feel. Focus on wellness, self-care, and general well-being rather than specific medical outcomes."
+  },
+  "medical_director_attribution": {
+    "required": true,
+    "placement": "Every caption must reference the location's medical director before the hashtags.",
+    "directors": {
+      "colleyville": "Dr. Angela Straface MD",
+      "flower-mound": "Dr. Angela Straface MD",
+      "default": "Dr. Aminidhan D. Thakkar"
+    }
+  },
+  "channel_rules": {
+    "instagram_facebook": {
+      "hashtags": true,
+      "hashtag_count": "10-15 per post",
+      "booking_urls": false,
+      "combined_post": true,
+      "notes": "Create ONE post targeting both IG and FB accounts simultaneously. Use IG caption style (longer form). Do NOT include a URL or booking link in IG/FB captions. Include relevant hashtags at the end."
+    },
+    "gbp": {
+      "hashtags": false,
+      "url_cta": true,
+      "contextual_link_required": true,
+      "notes": "Always include a contextual link to the relevant service page from the location sitemap. The ONLY channel that uses a URL call to action. Include gmbPostDetails with gmbEventType STANDARD."
+    },
+    "pinterest": {
+      "frequency": "1/week"
+    },
+    "x": {
+      "frequency": "1/week"
+    },
+    "tiktok": {
+      "frequency": "1/week"
+    },
+    "email": {
+      "frequency": "1/week",
+      "preferred_days": [
+        "Tuesday",
+        "Thursday"
+      ]
+    }
+  },
+  "posting_cadence": {
+    "instagram_facebook": "3-4 per week",
+    "gbp": "2-3 per week",
+    "pinterest": "1 per week",
+    "x": "1 per week",
+    "tiktok": "1 per week",
+    "email": "1 per week"
+  },
+  "publishing": {
+    "default_status": "draft",
+    "default_time": "10:00 AM CDT",
+    "ghl_api_base": "https://services.leadconnectorhq.com",
+    "location_id": "0VVRkDLqrPF5oqPjdrAT",
+    "user_id": "69bc53160efabb238646637f"
+  }
+}

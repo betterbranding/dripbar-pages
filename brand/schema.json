@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DRIPBaR Location Brand Profile",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "city",
+    "state",
+    "brand_voice_group",
+    "subdomain",
+    "booking_url",
+    "medical_director",
+    "brand_voice",
+    "sitemap"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique location identifier (kebab-case)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full display name"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "const": "TX"
+    },
+    "brand_voice_group": {
+      "type": "string",
+      "enum": [
+        "keller",
+        "burleson",
+        "cvfm",
+        "satx"
+      ]
+    },
+    "subdomain": {
+      "type": "string",
+      "description": "Full subdomain (e.g. keller.thedripbar.com)"
+    },
+    "booking_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "medical_director": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "attribution": {
+          "type": "string"
+        }
+      }
+    },
+    "brand_voice": {
+      "type": "object",
+      "properties": {
+        "tagline": {
+          "type": "string"
+        },
+        "tone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target_audience": {
+          "type": "string"
+        },
+        "content_pillars": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "writing_style_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "approved_hashtags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "visual_identity": {
+      "type": "object"
+    },
+    "social_accounts": {
+      "type": "object"
+    },
+    "ghl": {
+      "type": "object"
+    },
+    "content_restrictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "email_recipients": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "sitemap": {
+      "type": "object",
+      "description": "Full sitemap with all service URLs organized by category"
+    }
+  }
+}

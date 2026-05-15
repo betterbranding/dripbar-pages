@@ -1,0 +1,248 @@
+{
+  "id": "alamo-heights",
+  "name": "The DRIPBaR Alamo Heights",
+  "city": "Alamo Heights",
+  "state": "TX",
+  "brand_voice_group": "satx",
+  "subdomain": "alamo-heights.thedripbar.com",
+  "booking_url": "https://alamo-heights.thedripbar.com/book-appointment/",
+  "medical_director": {
+    "name": "Dr. Aminidhan D. Thakkar",
+    "attribution": "Under the medical direction of Dr. Aminidhan D. Thakkar"
+  },
+  "brand_voice": {
+    "tagline": "Functional Health, Elevated",
+    "tone": [
+      "Clinical",
+      "Data-driven",
+      "Precise",
+      "Authoritative but approachable",
+      "Confident without being arrogant",
+      "Educational without being condescending"
+    ],
+    "target_audience": "Men and women 35-60, San Antonio / Austin / New Braunfels metro areas. Proactive health optimizers. High performers who value measurable results. Data-curious. Willing to invest in longevity and peak function. Prefer science over trends.",
+    "content_pillars": [
+      "Energy",
+      "Immunity",
+      "Recovery",
+      "Longevity",
+      "Education",
+      "Analysis"
+    ],
+    "writing_style_notes": "Functional Health, Elevated. At The DRIPBaR, we do more than help you feel better fast. We help you understand why. We add something deeper: Analysis. Because optimal health starts with knowing your baseline. We go beyond symptoms. We measure. VO2 Max Breath Analysis, Genetic Testing, Comprehensive Lab Work, Functional NP Consults. Your data becomes your direction. We combine advanced analysis with personalized therapy. That means your IV protocols, peptides, and recovery strategies are not random. They are aligned with your biology and your goals. Intentional. Measured. Results-driven. Direct. Science-first. Practical. Efficient. Avoid hype, trendy wellness language, vague claims, overly casual tone, emojis, exclamation points, fluffy motivational speak. Functional health is not trendy. It is intentional. Support the cells. Strengthen the systems. Use data to guide decisions."
+  },
+  "approved_hashtags": [
+    "#TheDRIPBaRSATX",
+    "#SanAntonioWellness",
+    "#AustinHealth",
+    "#NewBraunfelsWellness",
+    "#BioHack",
+    "#FunctionalHealth",
+    "#IVTherapySanAntonio",
+    "#PeptideTherapy",
+    "#VO2Max",
+    "#LongevityWellness",
+    "#CentralTexasHealth",
+    "#WellnessOptimized"
+  ],
+  "visual_identity": {
+    "colors": {
+      "navy": "#3C4C62",
+      "lime": "#C1D81A",
+      "cyan": "#0E9EC1",
+      "white": "#FFFFFF"
+    },
+    "logos": {
+      "primary_ghl_cdn": "https://assets.cdn.filesafe.space/DUPIkcAu6l2rbLLsxhO7/media/64bedd891176ac59660ea0ca.png",
+      "satx_email": "https://assets.cdn.filesafe.space/DUPIkcAu6l2rbLLsxhO7/media/655adc4c0226f0ec1406c920.png",
+      "non_satx_email": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/690b99fe6fadaa58375c8d36.png",
+      "navy_green_svg": "https://drive.google.com/file/d/1Cyi6qFq-miSZFw2Y-wfuAZRUf_u7Zdqg/view",
+      "white_green_svg": "https://drive.google.com/file/d/1QYLnqBrbb8lMIWtkvWqIQWFSGyPihNRl/view",
+      "white_svg": "https://drive.google.com/file/d/1ac9CRBdxmtyOLrfUrOt7NU4ygxAG7sP2/view",
+      "email_logo": "https://assets.cdn.filesafe.space/DUPIkcAu6l2rbLLsxhO7/media/655adc4c0226f0ec1406c920.png"
+    },
+    "photography_style": "Real professional photos from location reference libraries. Candid iPhone photo. Clean, bright, modern wellness lounge aesthetic. White leather chairs, navy scrubs on clinical team, rubber gloves visible during treatments. Bright white diffused lighting. Luxury relaxed vibe, not clinical."
+  },
+  "social_accounts": {
+    "instagram": {
+      "handle": "",
+      "ghl_account_id": ""
+    },
+    "facebook": {
+      "name": "",
+      "ghl_account_id": ""
+    },
+    "gbp": {
+      "ghl_account_id": ""
+    },
+    "threads": {
+      "ghl_account_id": ""
+    }
+  },
+  "ghl": {
+    "group_name": "DB SATX",
+    "location_id": "0VVRkDLqrPF5oqPjdrAT",
+    "user_id": "69bc53160efabb238646637f"
+  },
+  "content_restrictions": [],
+  "email_recipients": [
+    "michael.nelson@thedripbar.com",
+    "manuel.torres@thedripbar.com"
+  ],
+  "sitemap": {
+    "subdomain": "alamo-heights",
+    "base_url": "https://alamo-heights.thedripbar.com",
+    "booking_url": "https://alamo-heights.thedripbar.com/book-appointment/",
+    "services_menu": "https://alamo-heights.thedripbar.com/services-menu/",
+    "iv_therapy": {
+      "High Dose Vitamin C": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/high-dose-vitamin-c/",
+      "Restoration": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/restoration/",
+      "Metabolize": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/metabolize/",
+      "NAD+": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/nad-plus/",
+      "Powerpack": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/powerpack/",
+      "Nicotinamide Riboside (NR)": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/nicotinamide-riboside-nr/",
+      "Time Machine": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/time-machine/",
+      "Allstar": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/allstar/",
+      "Alpha Lipoic Acid (ALA)": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/alpha-lipoic-acid-ala/",
+      "Heavy Metal Detox": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/heavy-metal-detox/",
+      "The Debut": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/the-debut/",
+      "Flu Fighter": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/flu-fighter/",
+      "Shield": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/shield/",
+      "Allergy": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/allergy/",
+      "Firm": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/firm/",
+      "Pre-Op": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/pre-op/",
+      "Post-Op": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/post-op/",
+      "Vitality": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/vitality/",
+      "Glutathione": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/glutathione/",
+      "Post Viral": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/post-viral/",
+      "Jetsetter": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/jetsetter-drip/",
+      "Soother": "https://alamo-heights.thedripbar.com/services-menu/iv-therapy/soother/"
+    },
+    "wellness_services": {
+      "Red Light Therapy": "https://alamo-heights.thedripbar.com/services-menu/wellness-services/red-light-therapy/",
+      "Infrared Sauna": "https://alamo-heights.thedripbar.com/services-menu/wellness-services/infrared-sauna/",
+      "Halotherapy": "https://alamo-heights.thedripbar.com/services-menu/wellness-services/halotherapy/",
+      "Botox and Dysport": "https://alamo-heights.thedripbar.com/services-menu/wellness-services/botox-and-dysport/",
+      "Hydrafacial": "https://alamo-heights.thedripbar.com/services-menu/wellness-services/hydrafacial/",
+      "Oral Supplements": "https://alamo-heights.thedripbar.com/services-menu/wellness-services/oral-supplements/"
+    },
+    "add_ons": {
+      "Drip Add-Ons": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/drip-add-ons/"
+    },
+    "im_quick_shots": {
+      "IM Detoxed": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-detoxed/",
+      "IM Glowing": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-glowing/",
+      "IM Lean": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-lean/",
+      "IM Strong": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-strong/",
+      "IM Supercharged": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-supercharged/",
+      "IM Vitalized": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-vitalized/"
+    },
+    "im_single_shots": {
+      "Tri-Immune": "https://alamo-heights.thedripbar.com/services-menu/add-ons-and-injections/im-single-shots/tri-immune/"
+    },
+    "wellness_needs": {
+      "Wellness Needs": "https://alamo-heights.thedripbar.com/wellness-needs/",
+      "Anti-Aging & Beauty": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/",
+      "Skin Health": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/skin-health/",
+      "Acne": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/acne/",
+      "Hair Loss": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/hair-loss/",
+      "Wrinkle Prevention": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/wrinkle-prevention/",
+      "Sun Damage": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/sun-damage-and-photodamage/",
+      "Hyperpigmentation": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/hyperpigmentation/",
+      "Healthy Aging": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/healthy-aging/",
+      "Cellular Repair": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/cellular-repair/",
+      "Nail and Cuticle Health": "https://alamo-heights.thedripbar.com/wellness-needs/anti-aging-and-beauty/nail-and-cuticle-health/",
+      "Diseases & Illnesses": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/",
+      "Diabetes": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/diabetes/",
+      "Cardiovascular Disease": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/cardiovascular-disease/",
+      "Autoimmune": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/autoimmune/",
+      "Irritable Bowel Syndrome": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/irritable-bowel-syndrome/",
+      "Eczema and Psoriasis": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/eczema-and-psoriasis/",
+      "Chronic Kidney Disease": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/chronic-kidney-disease/",
+      "Cancer Care & Prevention": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/cancer-care-and-prevention/",
+      "Alzheimer\u2019s & Dementia": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/alzheimers-and-dementia/",
+      "Fibromyalgia": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/fibromyalgia/",
+      "Polycystic Ovary Syndrome (PCOS)": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/polycystic-ovary-syndrome/",
+      "Gout": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/gout/",
+      "Crohn\u2019s Disease": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/crohns-disease/",
+      "Lyme Disease": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/lyme-disease/",
+      "Bladder Inflammation": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/bladder-inflammation/",
+      "Interstitial Cystitis": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/interstitial-cystitis/",
+      "Chronic Liver Disease": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/chronic-liver-disease/",
+      "Multiple Sclerosis": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/multiple-sclerosis/",
+      "Demyelinating Conditions": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/demyelinating-conditions/",
+      "Parkinson\u2019s Disease": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/parkinsons-disease/",
+      "Mitochondrial Dysfunction": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/mitochondrial-dysfunction/",
+      "Cystic Fibrosis": "https://alamo-heights.thedripbar.com/wellness-needs/diseases-and-illnesses/cystic-fibrosis/",
+      "Energy & Vitality": "https://alamo-heights.thedripbar.com/wellness-needs/energy-and-vitality/",
+      "Low Energy": "https://alamo-heights.thedripbar.com/wellness-needs/energy-and-vitality/low-energy/",
+      "Post-Workout Recovery": "https://alamo-heights.thedripbar.com/wellness-needs/energy-and-vitality/post-workout-recovery/",
+      "Jet Lag": "https://alamo-heights.thedripbar.com/wellness-needs/energy-and-vitality/jet-lag/",
+      "Chronic Fatigue": "https://alamo-heights.thedripbar.com/wellness-needs/energy-and-vitality/chronic-fatigue/",
+      "Thyroid Imbalance (Hypothyroidism)": "https://alamo-heights.thedripbar.com/wellness-needs/energy-and-vitality/thyroid-imbalance-hypothyroidism/",
+      "Adrenal Burnout": "https://alamo-heights.thedripbar.com/wellness-needs/energy-and-vitality/adrenal-burnout/",
+      "Hydration & Physical Health": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/",
+      "Dehydration": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/dehydration/",
+      "Inflammation": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/inflammation/",
+      "Gut Health": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/gut-health/",
+      "Headaches and Migraines": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/headaches-and-migraines/",
+      "Weight Management": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/weight-management/",
+      "Chronic Pain": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/chronic-pain/",
+      "Menstrual Health": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/menstrual-health/",
+      "Sports Performance and Endurance": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/sports-performance-and-endurance/",
+      "Electrolyte Depletion": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/electrolyte-depletion/",
+      "Post Surgery Recovery": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/post-surgery-recovery/",
+      "Gastric Surgery": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/gastric-surgery/",
+      "Altitude Sickness": "https://alamo-heights.thedripbar.com/wellness-needs/hydration-and-physical-health/altitude-sickness/",
+      "Immune & Recovery Support": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/",
+      "Allergies": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/allergies/",
+      "Cold & Flu": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/cold-and-flu/",
+      "Sinus Congestion": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/sinus-congestion/",
+      "Hangover Recovery": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/hangover-recovery/",
+      "Post-Viral Recovery": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/post-viral-recovery/",
+      "Long Covid": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/long-covid/",
+      "Epstein-Barr Virus": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/epstein-barr-virus/",
+      "Mononucleosis Recovery": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/mononucleosis-recovery/",
+      "Chemotherapy Recovery": "https://alamo-heights.thedripbar.com/wellness-needs/immune-and-recovery-support/chemotherapy-recovery/",
+      "Mental & Emotional Support": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/",
+      "Stress and Anxiety": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/stress-and-anxiety/",
+      "Sleep Disturbance and Insomnia": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/sleep-disturbance-and-insomnia/",
+      "Burnout & Exhaustion": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/burnout-and-exhaustion/",
+      "Brain Fog": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/brain-fog/",
+      "Mood Imbalance": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/mood-imbalance/",
+      "Menopausal Symptoms": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/menopausal-symptoms/",
+      "ADHD (In Adults)": "https://alamo-heights.thedripbar.com/wellness-needs/mental-and-emotional-support/adhd-in-adults/"
+    },
+    "ingredients": {
+      "Alpha Lipoic Acid (ALA)": "https://alamo-heights.thedripbar.com/ingredients/alpha-lipoic-acid/",
+      "CoQ10": "https://alamo-heights.thedripbar.com/ingredients/coq-10/",
+      "Nicotinamide Adenine Dinucleotide (NAD)": "https://alamo-heights.thedripbar.com/ingredients/ingredient-nad-plus/",
+      "Nicotinamide Riboside (NR)": "https://alamo-heights.thedripbar.com/ingredients/nicotinomide-riboside/",
+      "Potassium": "https://alamo-heights.thedripbar.com/ingredients/potassium/",
+      "Vitamin D": "https://alamo-heights.thedripbar.com/ingredients/vitamin-d/",
+      "Amino Acids": "https://alamo-heights.thedripbar.com/ingredients/amino-acids/",
+      "B12": "https://alamo-heights.thedripbar.com/ingredients/b12/",
+      "B-Complex": "https://alamo-heights.thedripbar.com/ingredients/b-complex/",
+      "Biotin (B7)": "https://alamo-heights.thedripbar.com/ingredients/biotin-b7/",
+      "Calcium": "https://alamo-heights.thedripbar.com/ingredients/calcium/",
+      "Dexpanthenol (B5)": "https://alamo-heights.thedripbar.com/ingredients/dexpanthenol-b5/",
+      "Folic Acid (B9)": "https://alamo-heights.thedripbar.com/ingredients/folic-acid-b9/",
+      "Glutamine": "https://alamo-heights.thedripbar.com/ingredients/glutamine/",
+      "Glutathione": "https://alamo-heights.thedripbar.com/ingredients/glutathione-ingredient/",
+      "L-Arginine": "https://alamo-heights.thedripbar.com/ingredients/l-arginine/",
+      "Magnesium": "https://alamo-heights.thedripbar.com/ingredients/magnesium/",
+      "Pyridoxine (B6)": "https://alamo-heights.thedripbar.com/ingredients/pyridoxine-b6/",
+      "Taurine": "https://alamo-heights.thedripbar.com/ingredients/taurine/",
+      "Vitamin C": "https://alamo-heights.thedripbar.com/ingredients/vitamin-c/",
+      "Zinc": "https://alamo-heights.thedripbar.com/ingredients/zinc/"
+    },
+    "pages": {
+      "About": "https://alamo-heights.thedripbar.com/about-us/",
+      "Contact Us": "https://alamo-heights.thedripbar.com/contact-us/",
+      "Memberships": "https://alamo-heights.thedripbar.com/memberships/",
+      "Mobile Services": "https://alamo-heights.thedripbar.com/mobile-services/",
+      "Promotions": "https://alamo-heights.thedripbar.com/promotions/",
+      "Local Offers": "https://alamo-heights.thedripbar.com/promotions/local-offers/"
+    }
+  }
+}

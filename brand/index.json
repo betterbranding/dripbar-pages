@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "generated": "2025-05-15",
+  "description": "DRIPBaR TX brand database - 10 locations across 4 brand voice groups",
+  "brand_voice_groups": {
+    "keller": {
+      "locations": [
+        "keller"
+      ],
+      "voice_doc": "https://docs.google.com/document/d/1eA3UEaKNyLHKF0d3VZ_ona56SWSQfCNN8H0fNxi7ZpM/edit"
+    },
+    "burleson": {
+      "locations": [
+        "burleson"
+      ],
+      "voice_doc": "https://docs.google.com/document/d/1jh_9GrysLcCG1EaRK01bwHXLK8kmCm9rFszDC92WfuA/edit"
+    },
+    "cvfm": {
+      "locations": [
+        "colleyville",
+        "flower-mound"
+      ],
+      "voice_docs": {
+        "primary": "https://docs.google.com/document/d/1E0Z8Y3vKBaFCyBfEWKivhYTjFEfFgrm8IIvEHg-A2ME/edit",
+        "secondary": "https://docs.google.com/document/d/19dZ6rVlNal4fG0rrI2zzGIbj7VccmRK7xyb5C5G2TH0/edit"
+      }
+    },
+    "satx": {
+      "locations": [
+        "alamo-heights",
+        "austin",
+        "dominion-creek",
+        "fossil-creek",
+        "huebner-oaks",
+        "new-braunfels"
+      ],
+      "voice_doc": "https://docs.google.com/document/d/1ZMk-fvFhBcypbJpYowUhwwpD0L_z3SvSYVP3DTjaDAQ/edit"
+    }
+  },
+  "locations": [
+    {
+      "id": "keller",
+      "name": "The DRIPBaR Keller",
+      "city": "Keller",
+      "brand_voice_group": "keller",
+      "file": "locations/keller.json"
+    },
+    {
+      "id": "burleson",
+      "name": "The DRIPBaR Burleson",
+      "city": "Burleson",
+      "brand_voice_group": "burleson",
+      "file": "locations/burleson.json"
+    },
+    {
+      "id": "colleyville",
+      "name": "The DRIPBaR Colleyville",
+      "city": "Colleyville",
+      "brand_voice_group": "cvfm",
+      "file": "locations/colleyville.json"
+    },
+    {
+      "id": "flower-mound",
+      "name": "The DRIPBaR Flower Mound",
+      "city": "Flower Mound",
+      "brand_voice_group": "cvfm",
+      "file": "locations/flower-mound.json"
+    },
+    {
+      "id": "alamo-heights",
+      "name": "The DRIPBaR Alamo Heights",
+      "city": "Alamo Heights",
+      "brand_voice_group": "satx",
+      "file": "locations/alamo-heights.json"
+    },
+    {
+      "id": "austin",
+      "name": "The DRIPBaR Austin",
+      "city": "Austin",
+      "brand_voice_group": "satx",
+      "file": "locations/austin.json"
+    },
+    {
+      "id": "dominion-creek",
+      "name": "The DRIPBaR Dominion Creek",
+      "city": "San Antonio",
+      "brand_voice_group": "satx",
+      "file": "locations/dominion-creek.json"
+    },
+    {
+      "id": "fossil-creek",
+      "name": "The DRIPBaR Fossil Creek",
+      "city": "San Antonio",
+      "brand_voice_group": "satx",
+      "file": "locations/fossil-creek.json"
+    },
+    {
+      "id": "huebner-oaks",
+      "name": "The DRIPBaR Huebner Oaks",
+      "city": "San Antonio",
+      "brand_voice_group": "satx",
+      "file": "locations/huebner-oaks.json"
+    },
+    {
+      "id": "new-braunfels",
+      "name": "The DRIPBaR New Braunfels",
+      "city": "New Braunfels",
+      "brand_voice_group": "satx",
+      "file": "locations/new-braunfels.json"
+    }
+  ],
+  "files": {
+    "global_rules": "global-rules.json",
+    "schema": "schema.json",
+    "readme": "README.md"
+  }
+}

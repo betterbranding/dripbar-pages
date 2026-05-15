@@ -1,0 +1,246 @@
+{
+  "id": "keller",
+  "name": "The DRIPBaR Keller",
+  "city": "Keller",
+  "state": "TX",
+  "brand_voice_group": "keller",
+  "subdomain": "keller.thedripbar.com",
+  "booking_url": "https://keller.thedripbar.com/book-appointment/",
+  "medical_director": {
+    "name": "Dr. Aminidhan D. Thakkar",
+    "attribution": "Under the medical direction of Dr. Aminidhan D. Thakkar"
+  },
+  "brand_voice": {
+    "tagline": "",
+    "tone": [
+      "Professional",
+      "Approachable",
+      "Confident without being loud"
+    ],
+    "target_audience": "Adults 35-65, Keller / North Fort Worth suburbs. Parents, professionals, athletes, busy adults who take health seriously. Value education, medical oversight, and real conversations over sales pitches.",
+    "content_pillars": [
+      "Energy",
+      "Immunity",
+      "Recovery",
+      "Education",
+      "Medical Standards",
+      "Community"
+    ],
+    "writing_style_notes": "Clarity-first. Education-driven. Calm authority. Personalized care. No hype, no pressure. The DRIPBaR Keller exists to give people their power back when it comes to their health. We serve individuals who want more than guesswork. Through personalized IV therapy, peptide therapy, and functional wellness treatments, we help you increase energy, strengthen immunity, improve recovery, and support long-term vitality. Our mission: Educate you. Equip you. Support you. In a clean, welcoming environment where you feel heard, not rushed. Speak with clarity, educate first, avoid hype, value informed decisions. Do not use the word 'peptides' in consumer-facing copy; refer to 'medical protocols' or 'functional support'. Student Athletes focus: admire young people becoming more aware of functional health in sports. 'Raising the BaR' theme: DRIPBaR's high medical standards differentiation."
+  },
+  "approved_hashtags": [
+    "#TheDRIPBaRKeller",
+    "#FortWorthWellness",
+    "#DFWHealth",
+    "#BioHack",
+    "#KellerTX"
+  ],
+  "visual_identity": {
+    "colors": {
+      "navy": "#3C4C62",
+      "lime": "#C1D81A",
+      "cyan": "#0E9EC1",
+      "white": "#FFFFFF"
+    },
+    "logos": {
+      "primary_ghl_cdn": "https://assets.cdn.filesafe.space/DUPIkcAu6l2rbLLsxhO7/media/64bedd891176ac59660ea0ca.png",
+      "satx_email": "https://assets.cdn.filesafe.space/DUPIkcAu6l2rbLLsxhO7/media/655adc4c0226f0ec1406c920.png",
+      "non_satx_email": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/690b99fe6fadaa58375c8d36.png",
+      "navy_green_svg": "https://drive.google.com/file/d/1Cyi6qFq-miSZFw2Y-wfuAZRUf_u7Zdqg/view",
+      "white_green_svg": "https://drive.google.com/file/d/1QYLnqBrbb8lMIWtkvWqIQWFSGyPihNRl/view",
+      "white_svg": "https://drive.google.com/file/d/1ac9CRBdxmtyOLrfUrOt7NU4ygxAG7sP2/view",
+      "email_logo": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/690b99fe6fadaa58375c8d36.png"
+    },
+    "photography_style": "Professional wellness lounge. Real location photos. Staff in navy scrubs. White leather chairs. Clean, modern, warm. Use real Keller reference photos. Don't use AI-generated images unless reference library is insufficient."
+  },
+  "social_accounts": {
+    "instagram": {
+      "handle": "thedripbarkeller",
+      "ghl_account_id": ""
+    },
+    "facebook": {
+      "name": "The DRIPBaR Keller",
+      "ghl_account_id": ""
+    },
+    "gbp": {
+      "ghl_account_id": ""
+    },
+    "threads": {
+      "ghl_account_id": ""
+    }
+  },
+  "ghl": {
+    "group_name": "DBK",
+    "location_id": "0VVRkDLqrPF5oqPjdrAT",
+    "user_id": "69bc53160efabb238646637f"
+  },
+  "content_restrictions": [
+    "Do not use the word 'peptides' in consumer-facing copy; use 'medical protocols' or 'functional support'"
+  ],
+  "email_recipients": [
+    "jason.jackson@thedripbar.com",
+    "tasha.jackson@thedripbar.com"
+  ],
+  "sitemap": {
+    "subdomain": "keller",
+    "base_url": "https://keller.thedripbar.com",
+    "booking_url": "https://keller.thedripbar.com/book-appointment/",
+    "services_menu": "https://keller.thedripbar.com/services-menu/",
+    "iv_therapy": {
+      "High Dose Vitamin C": "https://keller.thedripbar.com/services-menu/iv-therapy/high-dose-vitamin-c/",
+      "Restoration": "https://keller.thedripbar.com/services-menu/iv-therapy/restoration/",
+      "Metabolize": "https://keller.thedripbar.com/services-menu/iv-therapy/metabolize/",
+      "NAD+": "https://keller.thedripbar.com/services-menu/iv-therapy/nad-plus/",
+      "Powerpack": "https://keller.thedripbar.com/services-menu/iv-therapy/powerpack/",
+      "Nicotinamide Riboside (NR)": "https://keller.thedripbar.com/services-menu/iv-therapy/nicotinamide-riboside-nr/",
+      "Time Machine": "https://keller.thedripbar.com/services-menu/iv-therapy/time-machine/",
+      "Allstar": "https://keller.thedripbar.com/services-menu/iv-therapy/allstar/",
+      "Alpha Lipoic Acid (ALA)": "https://keller.thedripbar.com/services-menu/iv-therapy/alpha-lipoic-acid-ala/",
+      "Heavy Metal Detox": "https://keller.thedripbar.com/services-menu/iv-therapy/heavy-metal-detox/",
+      "The Debut": "https://keller.thedripbar.com/services-menu/iv-therapy/the-debut/",
+      "Flu Fighter": "https://keller.thedripbar.com/services-menu/iv-therapy/flu-fighter/",
+      "Maternal Wellness": "https://keller.thedripbar.com/services-menu/iv-therapy/maternal-wellness/",
+      "Shield": "https://keller.thedripbar.com/services-menu/iv-therapy/shield/",
+      "Allergy": "https://keller.thedripbar.com/services-menu/iv-therapy/allergy/",
+      "Firm": "https://keller.thedripbar.com/services-menu/iv-therapy/firm/",
+      "Pre/Post-Op": "https://keller.thedripbar.com/services-menu/iv-therapy/pre-post-op/",
+      "Vitality": "https://keller.thedripbar.com/services-menu/iv-therapy/vitality/",
+      "100% Hydration": "https://keller.thedripbar.com/services-menu/iv-therapy/100-hydration/",
+      "Glutathione": "https://keller.thedripbar.com/services-menu/iv-therapy/glutathione/",
+      "Post Viral": "https://keller.thedripbar.com/services-menu/iv-therapy/post-viral/",
+      "Jetsetter": "https://keller.thedripbar.com/services-menu/iv-therapy/jetsetter-drip/",
+      "Soother": "https://keller.thedripbar.com/services-menu/iv-therapy/soother/"
+    },
+    "wellness_services": {
+      "GLP-1 Weight Loss Peptides": "https://keller.thedripbar.com/services-menu/wellness-services/semaglutide-and-tirzepatide/",
+      "Heavy Metal Testing": "https://keller.thedripbar.com/services-menu/wellness-services/heavy-metal-testing/",
+      "Sermorelin Peptide Therapy": "https://keller.thedripbar.com/services-menu/wellness-services/sermorelin-peptide-therapy/",
+      "Ozone Therapy": "https://keller.thedripbar.com/services-menu/wellness-services/ozone-therapy/",
+      "Red Light Therapy": "https://keller.thedripbar.com/services-menu/wellness-services/red-light-therapy/",
+      "Infrared Sauna": "https://keller.thedripbar.com/services-menu/wellness-services/infrared-sauna/",
+      "Halotherapy": "https://keller.thedripbar.com/services-menu/wellness-services/halotherapy/",
+      "Compression Boots": "https://keller.thedripbar.com/services-menu/wellness-services/compression-boots/",
+      "Phlebotomy": "https://keller.thedripbar.com/services-menu/wellness-services/phlebotomy/",
+      "Oral Supplements": "https://keller.thedripbar.com/services-menu/wellness-services/oral-supplements/"
+    },
+    "add_ons": {
+      "Drip Add-Ons": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/drip-add-ons/"
+    },
+    "im_quick_shots": {
+      "IM Detoxed": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-detoxed/",
+      "IM Glowing": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-glowing/",
+      "IM Lean": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-lean/",
+      "IM Strong": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-strong/",
+      "IM Supercharged": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-supercharged/",
+      "IM Vitalized": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/im-quick-shots/im-vitalized/"
+    },
+    "im_single_shots": {
+      "Tri-Immune": "https://keller.thedripbar.com/services-menu/add-ons-and-injections/im-single-shots/tri-immune/"
+    },
+    "wellness_needs": {
+      "Wellness Needs": "https://keller.thedripbar.com/wellness-needs/",
+      "Anti-Aging & Beauty": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/",
+      "Skin Health": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/skin-health/",
+      "Acne": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/acne/",
+      "Hair Loss": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/hair-loss/",
+      "Wrinkle Prevention": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/wrinkle-prevention/",
+      "Sun Damage": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/sun-damage-and-photodamage/",
+      "Hyperpigmentation": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/hyperpigmentation/",
+      "Healthy Aging": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/healthy-aging/",
+      "Cellular Repair": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/cellular-repair/",
+      "Nail and Cuticle Health": "https://keller.thedripbar.com/wellness-needs/anti-aging-and-beauty/nail-and-cuticle-health/",
+      "Diseases & Illnesses": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/",
+      "Diabetes": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/diabetes/",
+      "Cardiovascular Disease": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/cardiovascular-disease/",
+      "Autoimmune": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/autoimmune/",
+      "Irritable Bowel Syndrome": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/irritable-bowel-syndrome/",
+      "Eczema and Psoriasis": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/eczema-and-psoriasis/",
+      "Chronic Kidney Disease": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/chronic-kidney-disease/",
+      "Cancer Care & Prevention": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/cancer-care-and-prevention/",
+      "Alzheimer\u2019s & Dementia": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/alzheimers-and-dementia/",
+      "Fibromyalgia": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/fibromyalgia/",
+      "Polycystic Ovary Syndrome (PCOS)": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/polycystic-ovary-syndrome/",
+      "Gout": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/gout/",
+      "Crohn\u2019s Disease": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/crohns-disease/",
+      "Lyme Disease": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/lyme-disease/",
+      "Bladder Inflammation": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/bladder-inflammation/",
+      "Interstitial Cystitis": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/interstitial-cystitis/",
+      "Chronic Liver Disease": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/chronic-liver-disease/",
+      "Multiple Sclerosis": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/multiple-sclerosis/",
+      "Demyelinating Conditions": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/demyelinating-conditions/",
+      "Parkinson\u2019s Disease": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/parkinsons-disease/",
+      "Mitochondrial Dysfunction": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/mitochondrial-dysfunction/",
+      "Cystic Fibrosis": "https://keller.thedripbar.com/wellness-needs/diseases-and-illnesses/cystic-fibrosis/",
+      "Energy & Vitality": "https://keller.thedripbar.com/wellness-needs/energy-and-vitality/",
+      "Low Energy": "https://keller.thedripbar.com/wellness-needs/energy-and-vitality/low-energy/",
+      "Post-Workout Recovery": "https://keller.thedripbar.com/wellness-needs/energy-and-vitality/post-workout-recovery/",
+      "Jet Lag": "https://keller.thedripbar.com/wellness-needs/energy-and-vitality/jet-lag/",
+      "Chronic Fatigue": "https://keller.thedripbar.com/wellness-needs/energy-and-vitality/chronic-fatigue/",
+      "Thyroid Imbalance (Hypothyroidism)": "https://keller.thedripbar.com/wellness-needs/energy-and-vitality/thyroid-imbalance-hypothyroidism/",
+      "Adrenal Burnout": "https://keller.thedripbar.com/wellness-needs/energy-and-vitality/adrenal-burnout/",
+      "Hydration & Physical Health": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/",
+      "Dehydration": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/dehydration/",
+      "Inflammation": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/inflammation/",
+      "Gut Health": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/gut-health/",
+      "Headaches and Migraines": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/headaches-and-migraines/",
+      "Weight Management": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/weight-management/",
+      "Chronic Pain": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/chronic-pain/",
+      "Menstrual Health": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/menstrual-health/",
+      "Sports Performance and Endurance": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/sports-performance-and-endurance/",
+      "Electrolyte Depletion": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/electrolyte-depletion/",
+      "Post Surgery Recovery": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/post-surgery-recovery/",
+      "Gastric Surgery": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/gastric-surgery/",
+      "Altitude Sickness": "https://keller.thedripbar.com/wellness-needs/hydration-and-physical-health/altitude-sickness/",
+      "Immune & Recovery Support": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/",
+      "Allergies": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/allergies/",
+      "Cold & Flu": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/cold-and-flu/",
+      "Sinus Congestion": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/sinus-congestion/",
+      "Hangover Recovery": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/hangover-recovery/",
+      "Post-Viral Recovery": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/post-viral-recovery/",
+      "Long Covid": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/long-covid/",
+      "Epstein-Barr Virus": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/epstein-barr-virus/",
+      "Mononucleosis Recovery": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/mononucleosis-recovery/",
+      "Chemotherapy Recovery": "https://keller.thedripbar.com/wellness-needs/immune-and-recovery-support/chemotherapy-recovery/",
+      "Mental & Emotional Support": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/",
+      "Stress and Anxiety": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/stress-and-anxiety/",
+      "Sleep Disturbance and Insomnia": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/sleep-disturbance-and-insomnia/",
+      "Burnout & Exhaustion": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/burnout-and-exhaustion/",
+      "Brain Fog": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/brain-fog/",
+      "Mood Imbalance": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/mood-imbalance/",
+      "Menopausal Symptoms": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/menopausal-symptoms/",
+      "ADHD (In Adults)": "https://keller.thedripbar.com/wellness-needs/mental-and-emotional-support/adhd-in-adults/"
+    },
+    "ingredients": {
+      "1 Liter of Lactated Ringers": "https://keller.thedripbar.com/ingredients/lactated-ringers/",
+      "Alpha Lipoic Acid (ALA)": "https://keller.thedripbar.com/ingredients/alpha-lipoic-acid/",
+      "CoQ10": "https://keller.thedripbar.com/ingredients/coq-10/",
+      "Nicotinamide Adenine Dinucleotide (NAD)": "https://keller.thedripbar.com/ingredients/ingredient-nad-plus/",
+      "Vitamin D": "https://keller.thedripbar.com/ingredients/vitamin-d/",
+      "Amino Acids": "https://keller.thedripbar.com/ingredients/amino-acids/",
+      "B12": "https://keller.thedripbar.com/ingredients/b12/",
+      "B-Complex": "https://keller.thedripbar.com/ingredients/b-complex/",
+      "Biotin (B7)": "https://keller.thedripbar.com/ingredients/biotin-b7/",
+      "Calcium": "https://keller.thedripbar.com/ingredients/calcium/",
+      "Carnitine": "https://keller.thedripbar.com/ingredients/carnitine/",
+      "Dexpanthenol (B5)": "https://keller.thedripbar.com/ingredients/dexpanthenol-b5/",
+      "Folic Acid (B9)": "https://keller.thedripbar.com/ingredients/folic-acid-b9/",
+      "Glutamine": "https://keller.thedripbar.com/ingredients/glutamine/",
+      "Glutathione": "https://keller.thedripbar.com/ingredients/glutathione-ingredient/",
+      "L-Arginine": "https://keller.thedripbar.com/ingredients/l-arginine/",
+      "Magnesium": "https://keller.thedripbar.com/ingredients/magnesium/",
+      "N-Acetyl Cysteine": "https://keller.thedripbar.com/ingredients/n-acetyl-cysteine-nac/",
+      "Pyridoxine (B6)": "https://keller.thedripbar.com/ingredients/pyridoxine-b6/",
+      "Taurine": "https://keller.thedripbar.com/ingredients/taurine/",
+      "Vitamin C": "https://keller.thedripbar.com/ingredients/vitamin-c/",
+      "Zinc": "https://keller.thedripbar.com/ingredients/zinc/"
+    },
+    "pages": {
+      "About": "https://keller.thedripbar.com/about-us/",
+      "Contact Us": "https://keller.thedripbar.com/contact-us/",
+      "Memberships": "https://keller.thedripbar.com/memberships/",
+      "Mobile Services": "https://keller.thedripbar.com/mobile-services/",
+      "Promotions": "https://keller.thedripbar.com/promotions/",
+      "Local Offers": "https://keller.thedripbar.com/promotions/local-offers/"
+    }
+  }
+}
