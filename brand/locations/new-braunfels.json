@@ -244,5 +244,121 @@
       "Promotions": "https://new-braunfels.thedripbar.com/promotions/",
       "Local Offers": "https://new-braunfels.thedripbar.com/promotions/local-offers/"
     }
+  },
+  "services": {
+    "peptide_therapies": {
+      "category_description": "Injectable peptide therapies designed to help you look, feel, and perform your best. Peptides are small chains of amino acids that act as building blocks for proteins in your body, playing a vital role in supporting overall wellness.",
+      "items": [
+        {
+          "name": "Ipamorelin",
+          "description": "Increases growth hormone activity to improve sleep quality, enhance recovery, and maintain healthy body composition."
+        },
+        {
+          "name": "DSIP",
+          "description": "Promotes deeper, more restorative sleep while helping balance stress for better rest and recovery."
+        },
+        {
+          "name": "Epithalon",
+          "description": "Linked to cellular repair and longevity, helping reinforce healthy aging processes and overall vitality."
+        },
+        {
+          "name": "GHK-Cu",
+          "description": "Supports skin repair and firmness while helping improve overall tone, texture, and youthful appearance."
+        },
+        {
+          "name": "IGF-1 LR3",
+          "description": "Enhances lean muscle development, accelerates recovery, and promotes better physical performance."
+        },
+        {
+          "name": "KPV",
+          "description": "Helps calm inflammation while promoting healthier skin, balanced digestion, and stronger immune wellness."
+        },
+        {
+          "name": "LL-37",
+          "description": "A powerful peptide that reinforces immune defense and assists with wound healing and tissue repair."
+        },
+        {
+          "name": "AOD-9604",
+          "description": "Supports fat metabolism and healthy body composition by helping the body break down stored fat more efficiently."
+        },
+        {
+          "name": "MOTS-C",
+          "description": "Improves cellular energy production and metabolic function to boost vitality, stamina, and overall wellness."
+        },
+        {
+          "name": "BPC-157",
+          "description": "Promotes natural tissue repair, gut wellness, and smoother recovery from daily strain, activity, or physical stress."
+        },
+        {
+          "name": "PE-22-28",
+          "description": "Helps promote emotional balance, calmness, and resilience during everyday stress."
+        },
+        {
+          "name": "CJC-1295",
+          "description": "Encourages natural growth hormone release to enhance energy, support recovery, and promote healthy aging over time."
+        },
+        {
+          "name": "Pinealon",
+          "description": "Supports mental clarity, focus, and memory, contributing to healthier cognitive function."
+        },
+        {
+          "name": "PT-141",
+          "description": "Enhances desire and improves sexual well-being for both men and women, helping restore confidence and intimacy."
+        },
+        {
+          "name": "Retatrutide",
+          "description": "Targets metabolic pathways to reduce appetite, improve metabolic efficiency, and promote weight management."
+        },
+        {
+          "name": "Semaglutide",
+          "description": "Helps reduce appetite and improve fullness cues, supporting steady, sustainable weight loss and healthier metabolism."
+        },
+        {
+          "name": "Semax",
+          "description": "Enhances focus, mental clarity, and cognitive performance for sharper thinking throughout the day."
+        },
+        {
+          "name": "Selank",
+          "description": "Promotes a calm, balanced mood while improving stress response and emotional resilience."
+        },
+        {
+          "name": "Sermorelin",
+          "description": "Stimulates natural growth hormone production to improve sleep, recovery, body composition, and healthy aging."
+        },
+        {
+          "name": "TB-500",
+          "description": "Encourages tissue repair, improves flexibility, and supports faster recovery from physical activity or strain."
+        },
+        {
+          "name": "Tesamorelin",
+          "description": "Helps reduce stubborn visceral fat and promotes a leaner, healthier body composition."
+        },
+        {
+          "name": "Thymosin Alpha-1",
+          "description": "Strengthens and balances the immune system, helping your body stay resilient and prepared."
+        },
+        {
+          "name": "Tirzepatide",
+          "description": "A dual-pathway metabolic peptide that supports significant weight loss, appetite control, and improved glucose balance."
+        }
+      ]
+    },
+    "advanced_diagnostics": {
+      "category_description": "Precision wellness testing and consultations for data-driven health optimization.",
+      "items": [
+        {
+          "name": "VO2 Max Testing",
+          "description": "Measures your body's maximum oxygen consumption during exercise, providing precise data on cardiovascular fitness and longevity potential."
+        },
+        {
+          "name": "Genetic Testing",
+          "description": "Analyzes your unique genetic markers to inform personalized wellness strategies based on your DNA."
+        },
+        {
+          "name": "NP Consultations",
+          "description": "One-on-one consultations with our Nurse Practitioner to review your results, discuss goals, and build a personalized wellness plan."
+        }
+      ]
+    }
   }
 }
