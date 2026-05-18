@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us — DRIP Direct Hawaii</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://betterbranding.github.io/dripbar-pages/hawaii/css/styles.css">
 </head>
 <body>
   <canvas id="particles" class="particles-canvas"></canvas>
@@ -11,23 +15,23 @@
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="PAGE_URL_HOME" class="nav-logo">
+      <a href="/home" class="nav-logo">
         <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/logos/dripdirect-hawaii.png" alt="DRIP Direct Hawaii" style="height:44px;">
       </a>
       <div class="nav-links">
-        <a href="PAGE_URL_HOME" class="nav-link">Home</a>
-        <a href="PAGE_URL_PRODUCTS" class="nav-link">Shop</a>
-        <a href="PAGE_URL_CONTACT" class="nav-link active">Contact</a>
+        <a href="/home" class="nav-link">Home</a>
+        <a href="/products-list" class="nav-link">Shop</a>
+        <a href="/contact-us" class="nav-link active">Contact</a>
         <button class="nav-cart" id="cartBtn"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/cart.png" alt="🛒" class="branded-icon"> <span class="cart-count">0</span></button>
       </div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div class="mobile-nav" id="mobileNav">
-    <a href="PAGE_URL_HOME" class="mobile-nav-link">Home</a>
-    <a href="PAGE_URL_PRODUCTS" class="mobile-nav-link">Shop</a>
-    <a href="PAGE_URL_CONTACT" class="mobile-nav-link">Contact</a>
-    <a href="PAGE_URL_CART" class="mobile-nav-link">Cart</a>
+    <a href="/home" class="mobile-nav-link">Home</a>
+    <a href="/products-list" class="mobile-nav-link">Shop</a>
+    <a href="/contact-us" class="mobile-nav-link">Contact</a>
+    <a href="/cart" class="mobile-nav-link">Cart</a>
   </div>
 
   <!-- Hero -->
@@ -173,9 +177,9 @@
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
-          <a href="PAGE_URL_HOME">Home</a>
-          <a href="PAGE_URL_PRODUCTS">Shop</a>
-          <a href="PAGE_URL_CONTACT">Contact</a>
+          <a href="/home">Home</a>
+          <a href="/products-list">Shop</a>
+          <a href="/contact-us">Contact</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
@@ -190,7 +194,12 @@
     </div>
   </footer>
 
+  <script src="https://betterbranding.github.io/dripbar-pages/hawaii/js/shared.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      DD.cartPageUrl = '/cart';
+      DD.initShared();
+    });
     // Contact form submit
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();

@@ -76,13 +76,13 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="home.html" class="nav-logo">
+      <a href="/home" class="nav-logo">
         <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/logos/dripdirect-hawaii.png" alt="DripDirect Hawaii" class="logo-img">
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="home.html#how-it-works" class="nav-link">How It Works</a>
-        <a href="home.html#about" class="nav-link">About</a>
+        <a href="/products-list" class="nav-link">Shop</a>
+        <a href="/home#how-it-works" class="nav-link">How It Works</a>
+        <a href="/home#about" class="nav-link">About</a>
       </div>
       <div class="nav-actions">
         <button class="btn-cart" id="cartBtn">
@@ -97,15 +97,15 @@
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="shop.html" class="mobile-nav-link">Shop</a>
-    <a href="home.html#how-it-works" class="mobile-nav-link">How It Works</a>
-    <a href="home.html#about" class="mobile-nav-link">About</a>
+    <a href="/products-list" class="mobile-nav-link">Shop</a>
+    <a href="/home#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="/home#about" class="mobile-nav-link">About</a>
   </div>
 
   <!-- PRODUCT DETAIL -->
   <section class="product-detail" id="productDetail">
     <div class="container">
-      <a href="shop.html" class="pd-back">
+      <a href="/products-list" class="pd-back">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         Back to Shop
       </a>
@@ -157,15 +157,15 @@
   <script src="https://betterbranding.github.io/dripbar-pages/hawaii/js/shared.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      DD.cartPageUrl = 'cart.html';
+      DD.cartPageUrl = '/cart';
       DD.initShared();
 
       var params = new URLSearchParams(window.location.search);
       var slug = params.get('p');
-      if (!slug) { window.location.href = 'shop.html'; return; }
+      if (!slug) { window.location.href = '/products-list'; return; }
 
       var result = DD.findProduct(slug);
-      if (!result) { window.location.href = 'shop.html'; return; }
+      if (!result) { window.location.href = '/products-list'; return; }
 
       var product = result.product;
       var category = result.category;
@@ -207,7 +207,7 @@
               '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>' +
               '<span>Add to Cart — $' + product.price + '</span>' +
             '</button>' +
-            '<a href="shop.html?category=' + category.id + '" class="btn btn--glass">Browse ' + category.name + '</a>' +
+            '<a href="/products-list?category=' + category.id + '" class="btn btn--glass">Browse ' + category.name + '</a>' +
           '</div>' +
         '</div>';
 
@@ -224,7 +224,7 @@
       related.forEach(function(rp, idx) {
         var rImg = DD.getImageUrl(rp.name);
         var card = document.createElement('a');
-        card.href = 'product.html?p=' + DD.slugify(rp.name);
+        card.href = '/product-details?p=' + DD.slugify(rp.name);
         card.className = 'product-card reveal';
         card.style.textDecoration = 'none';
         card.style.transitionDelay = (idx * 0.05) + 's';

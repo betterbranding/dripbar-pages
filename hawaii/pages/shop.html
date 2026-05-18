@@ -16,13 +16,13 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="home.html" class="nav-logo">
+      <a href="/home" class="nav-logo">
         <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/logos/dripdirect-hawaii.png" alt="DripDirect Hawaii" class="logo-img">
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="shop.html" class="nav-link" style="color:var(--text-primary)">Shop</a>
-        <a href="home.html#how-it-works" class="nav-link">How It Works</a>
-        <a href="home.html#about" class="nav-link">About</a>
+        <a href="/products-list" class="nav-link" style="color:var(--text-primary)">Shop</a>
+        <a href="/home#how-it-works" class="nav-link">How It Works</a>
+        <a href="/home#about" class="nav-link">About</a>
       </div>
       <div class="nav-actions">
         <button class="btn-cart" id="cartBtn">
@@ -37,9 +37,9 @@
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="shop.html" class="mobile-nav-link">Shop</a>
-    <a href="home.html#how-it-works" class="mobile-nav-link">How It Works</a>
-    <a href="home.html#about" class="mobile-nav-link">About</a>
+    <a href="/products-list" class="mobile-nav-link">Shop</a>
+    <a href="/home#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="/home#about" class="mobile-nav-link">About</a>
   </div>
 
   <!-- SHOP HEADER -->
@@ -113,7 +113,7 @@
       if (params.get('category')) activeCategory = params.get('category');
 
       document.addEventListener('DOMContentLoaded', function() {
-        DD.cartPageUrl = 'cart.html';
+        DD.cartPageUrl = '/cart';
         DD.initShared();
         initCategoryPills();
         renderProducts();
@@ -184,7 +184,7 @@
             card.innerHTML =
               '<div class="product-image-wrap">' +
                 (imgPath
-                  ? '<img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/' + imgPath + '" alt="' + product.name + '" loading="lazy" />'
+                  ? '<img class="product-image" src="' + imgPath + '" alt="' + product.name + '" loading="lazy" />'
                   : '<div class="product-image-placeholder">' + DD.iconImg(product.icon) + '</div>') +
               '</div>' +
               '<div class="product-info">' +
@@ -232,7 +232,7 @@
 
         body.innerHTML =
           (imgPath
-            ? '<img class="modal-product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/' + imgPath + '" alt="' + product.name + '" />'
+            ? '<img class="modal-product-image" src="' + imgPath + '" alt="' + product.name + '" />'
             : '<div class="modal-product-icon">' + DD.iconImg(product.icon) + '</div>') +
           '<div class="modal-product-name">' + product.name + '</div>' +
           '<div class="modal-product-subtitle">' + (product.subtitle || categoryName) + '</div>' +
@@ -248,7 +248,7 @@
             '<button class="btn btn--green btn-modal-add">' +
               '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Add to Cart' +
             '</button>' +
-            '<a href="product.html?p=' + slug + '" class="btn btn--glass">View Details</a>' +
+            '<a href="/product-details?p=' + slug + '" class="btn btn--glass">View Details</a>' +
           '</div>';
 
         body.querySelector('.btn-modal-add').addEventListener('click', function() {

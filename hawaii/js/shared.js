@@ -8,7 +8,7 @@ const DD = window.DD || {};
 window.DD = DD;
 
 // -------- CDN Base --------
-DD.BASE = 'https://cdn.jsdelivr.net/gh/betterbranding/dripbar-pages@main/hawaii';
+DD.BASE = 'https://betterbranding.github.io/dripbar-pages/hawaii';
 
 
 // -------- Icon Helper --------

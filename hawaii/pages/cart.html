@@ -91,13 +91,13 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="home.html" class="nav-logo">
+      <a href="/home" class="nav-logo">
         <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/logos/dripdirect-hawaii.png" alt="DripDirect Hawaii" class="logo-img">
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="home.html#how-it-works" class="nav-link">How It Works</a>
-        <a href="home.html#about" class="nav-link">About</a>
+        <a href="/products-list" class="nav-link">Shop</a>
+        <a href="/home#how-it-works" class="nav-link">How It Works</a>
+        <a href="/home#about" class="nav-link">About</a>
       </div>
       <div class="nav-actions">
         <button class="btn-cart" id="cartBtn" style="border-color:var(--blue);">
@@ -112,9 +112,9 @@
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="shop.html" class="mobile-nav-link">Shop</a>
-    <a href="home.html#how-it-works" class="mobile-nav-link">How It Works</a>
-    <a href="home.html#about" class="mobile-nav-link">About</a>
+    <a href="/products-list" class="mobile-nav-link">Shop</a>
+    <a href="/home#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="/home#about" class="mobile-nav-link">About</a>
   </div>
 
   <!-- CART -->
@@ -161,7 +161,7 @@
   <script src="https://betterbranding.github.io/dripbar-pages/hawaii/js/shared.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      DD.cartPageUrl = 'cart.html';
+      DD.cartPageUrl = '/cart';
       DD.initShared();
       renderCart();
     });
@@ -175,7 +175,7 @@
             '<div class="cart-empty-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/cart.png" alt="🛒" class="branded-icon"></div>' +
             '<h2>Your cart is empty</h2>' +
             '<p>Browse our treatments and add items to get started.</p>' +
-            '<a href="shop.html" class="btn btn--primary">' +
+            '<a href="/products-list" class="btn btn--primary">' +
               '<span>Browse Treatments</span>' +
               '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
             '</a>' +

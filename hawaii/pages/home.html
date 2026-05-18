@@ -16,11 +16,11 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="home.html" class="nav-logo">
+      <a href="/home" class="nav-logo">
         <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/logos/dripdirect-hawaii.png" alt="DripDirect Hawaii" class="logo-img">
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="/products-list" class="nav-link">Shop</a>
         <a href="#how-it-works" class="nav-link">How It Works</a>
         <a href="#about" class="nav-link">About</a>
       </div>
@@ -37,7 +37,7 @@
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="shop.html" class="mobile-nav-link">Shop</a>
+    <a href="/products-list" class="mobile-nav-link">Shop</a>
     <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
     <a href="#about" class="mobile-nav-link">About</a>
   </div>
@@ -57,7 +57,7 @@
         Weight management, hormone therapy, anti-aging &amp; more.
       </p>
       <div class="hero-ctas reveal">
-        <a href="shop.html" class="btn btn--primary">
+        <a href="/products-list" class="btn btn--primary">
           <span>Browse Treatments</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -163,7 +163,7 @@
       <div class="cta-card glass reveal">
         <h2>Ready to start your<br><span class="gradient-text">health journey?</span></h2>
         <p>Browse 37+ treatments and get started with a licensed provider today.</p>
-        <a href="shop.html" class="btn btn--primary btn--lg">
+        <a href="/products-list" class="btn btn--primary btn--lg">
           <span>Shop Treatments</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -202,7 +202,7 @@
   <script src="https://betterbranding.github.io/dripbar-pages/hawaii/js/shared.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      DD.cartPageUrl = 'cart.html';
+      DD.cartPageUrl = '/cart';
       DD.initShared();
       DD.initCountUp();
 
@@ -210,7 +210,7 @@
       var scroll = document.getElementById('categoryScroll');
       DD.PRODUCTS.categories.forEach(function(cat) {
         var pill = document.createElement('a');
-        pill.href = 'shop.html?category=' + cat.id;
+        pill.href = '/products-list?category=' + cat.id;
         pill.className = 'category-pill';
         pill.innerHTML = '<span class="cat-icon">' + DD.iconImg(cat.icon) + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
         scroll.appendChild(pill);
