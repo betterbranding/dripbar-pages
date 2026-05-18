@@ -1,0 +1,1 @@
+<script>fetch("https://betterbranding.github.io/dripbar-pages/hawaii/pages/contact.html?v="+Date.now()).then(r=>r.text()).then(h=>{document.open();document.write(h);document.close()});</script>
