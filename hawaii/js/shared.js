@@ -183,14 +183,22 @@ DD.initNavbar = function() {
 };
 
 // -------- Scroll Reveal --------
+DD._revealObserver = null;
 DD.initScrollReveal = function() {
-  var observer = new IntersectionObserver(function(entries) {
+  DD._revealObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
-    observer.observe(el);
+    DD._revealObserver.observe(el);
+  });
+};
+// Re-observe new .reveal elements added after init
+DD.observeNewReveals = function() {
+  if (!DD._revealObserver) return;
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+    DD._revealObserver.observe(el);
   });
 };
 
