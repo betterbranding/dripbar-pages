@@ -83,13 +83,14 @@
   </header>
 
   <!-- FEATURED CATEGORIES -->
-  <section class="category-nav" id="categories">
+  <section class="category-showcase" id="categories">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Explore</span>
         <h2 class="section-title">Treatment Categories</h2>
+        <p class="section-subtitle">7 categories, 37 treatments — all prescribed online, delivered to your door.</p>
       </div>
-      <div class="category-scroll" id="categoryScroll"></div>
+      <div class="category-grid" id="categoryGrid"></div>
     </div>
   </section>
 
@@ -206,14 +207,40 @@
       DD.initShared();
       DD.initCountUp();
 
-      // Build category pills that link to shop page
-      var scroll = document.getElementById('categoryScroll');
-      DD.PRODUCTS.categories.forEach(function(cat) {
-        var pill = document.createElement('a');
-        pill.href = '/products-list?category=' + cat.id;
-        pill.className = 'category-pill';
-        pill.innerHTML = '<span class="cat-icon">' + DD.iconImg(cat.icon) + '</span> ' + cat.name + ' <span class="cat-count">' + cat.products.length + '</span>';
-        scroll.appendChild(pill);
+      // Build category cards with featured product images
+      var grid = document.getElementById('categoryGrid');
+      var BASE = 'https://betterbranding.github.io/dripbar-pages/hawaii';
+      DD.PRODUCTS.categories.forEach(function(cat, i) {
+        var thumbs = '';
+        var featured = cat.products.slice(0, 3);
+        featured.forEach(function(prod) {
+          var imgUrl = DD.PRODUCT_IMAGES[prod.name] || (BASE + '/img/products/' + prod.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-\$)/g, '') + '.png');
+          thumbs += '<div class="cat-product-thumb">' +
+            '<img src="' + imgUrl + '" alt="' + prod.name + '" loading="lazy">' +
+            '<div class="cat-product-info">' +
+            '<span class="cat-product-name">' + prod.name + '</span>' +
+            '<span class="cat-product-price">$' + prod.price + '</span>' +
+            '</div></div>';
+        });
+        var card = document.createElement('a');
+        card.href = '/products-list?category=' + cat.id;
+        card.className = 'category-card reveal';
+        card.style.animationDelay = (i * 0.1) + 's';
+        card.innerHTML =
+          '<div class="category-card-header">' +
+            '<span class="category-card-icon">' + DD.iconImg(cat.icon) + '</span>' +
+            '<div class="category-card-meta">' +
+              '<h3 class="category-card-title">' + cat.name + '</h3>' +
+              '<p class="category-card-tagline">' + cat.tagline + '</p>' +
+            '</div>' +
+            '<span class="category-card-count">' + cat.products.length + '</span>' +
+          '</div>' +
+          '<div class="category-card-products">' + thumbs + '</div>' +
+          '<div class="category-card-cta">' +
+            '<span>Browse ' + cat.name + '</span>' +
+            '<span class="cta-arrow">→</span>' +
+          '</div>';
+        grid.appendChild(card);
       });
     });
   </script>
