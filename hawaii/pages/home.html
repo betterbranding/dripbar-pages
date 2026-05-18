@@ -88,9 +88,14 @@
       <div class="section-header reveal">
         <span class="section-tag">Explore</span>
         <h2 class="section-title">Treatment Categories</h2>
-        <p class="section-subtitle">7 categories, 37 treatments — all prescribed online, delivered to your door.</p>
+        <p class="section-subtitle">5 categories, 37+ treatments — all prescribed online, delivered to your door.</p>
       </div>
-      <div class="category-grid" id="categoryGrid"></div>
+      <div class="category-slider-wrap">
+        <button class="cat-nav cat-nav--prev" id="catPrev" aria-label="Previous">&#8249;</button>
+        <div class="category-grid" id="categoryGrid"></div>
+        <button class="cat-nav cat-nav--next" id="catNext" aria-label="Next">&#8250;</button>
+        <div class="cat-dots" id="catDots"></div>
+      </div>
     </div>
   </section>
 
@@ -207,10 +212,13 @@
       DD.initShared();
       DD.initCountUp();
 
-      // Build category cards with featured product images
+      // Build category cards — exclude Hair Loss & Acne
       var grid = document.getElementById('categoryGrid');
       var BASE = 'https://betterbranding.github.io/dripbar-pages/hawaii';
-      DD.PRODUCTS.categories.forEach(function(cat, i) {
+      var SKIP = ['hair-loss', 'acne'];
+      var cats = DD.PRODUCTS.categories.filter(function(c) { return SKIP.indexOf(c.id) === -1; });
+
+      cats.forEach(function(cat, i) {
         var thumbs = '';
         var featured = cat.products.slice(0, 3);
         featured.forEach(function(prod) {
@@ -225,7 +233,7 @@
         var card = document.createElement('a');
         card.href = '/products-list?category=' + cat.id;
         card.className = 'category-card reveal visible';
-        card.style.animationDelay = (i * 0.1) + 's';
+        card.style.animationDelay = (i * 0.12) + 's';
         card.innerHTML =
           '<div class="category-card-header">' +
             '<span class="category-card-icon">' + DD.iconImg(cat.icon) + '</span>' +
@@ -242,6 +250,56 @@
           '</div>';
         grid.appendChild(card);
       });
+
+      // Carousel pagination
+      var prevBtn = document.getElementById('catPrev');
+      var nextBtn = document.getElementById('catNext');
+      var dotsWrap = document.getElementById('catDots');
+      var cards = grid.querySelectorAll('.category-card');
+      var currentIdx = 0;
+
+      // Create dots
+      cats.forEach(function(_, i) {
+        var dot = document.createElement('span');
+        dot.className = 'cat-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', function() { scrollToCard(i); });
+        dotsWrap.appendChild(dot);
+      });
+
+      function scrollToCard(idx) {
+        if (idx < 0 || idx >= cards.length) return;
+        currentIdx = idx;
+        cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        updateNav();
+      }
+
+      function updateNav() {
+        prevBtn.disabled = currentIdx <= 0;
+        nextBtn.disabled = currentIdx >= cards.length - 1;
+        var dots = dotsWrap.querySelectorAll('.cat-dot');
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === currentIdx); });
+      }
+
+      prevBtn.addEventListener('click', function() { scrollToCard(currentIdx - 1); });
+      nextBtn.addEventListener('click', function() { scrollToCard(currentIdx + 1); });
+
+      // Sync dots on manual scroll
+      var scrollTimer;
+      grid.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+          var gridLeft = grid.scrollLeft;
+          var closest = 0, minDist = Infinity;
+          cards.forEach(function(c, i) {
+            var dist = Math.abs(c.offsetLeft - grid.offsetLeft - gridLeft);
+            if (dist < minDist) { minDist = dist; closest = i; }
+          });
+          currentIdx = closest;
+          updateNav();
+        }, 100);
+      });
+
+      updateNav();
 
     });
   </script>

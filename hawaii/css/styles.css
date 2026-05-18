@@ -1025,11 +1025,91 @@ h1 .branded-icon, h2 .branded-icon, h3 .branded-icon {
   margin-top: 0.5rem;
 }
 
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.5rem;
+.category-slider-wrap {
+  position: relative;
   margin-top: 2.5rem;
+}
+
+.category-grid {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.category-grid::-webkit-scrollbar { display: none; }
+
+.category-grid .category-card {
+  min-width: 340px;
+  max-width: 380px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* Pagination arrows */
+.cat-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.cat-nav:hover {
+  background: rgba(0, 255, 170, 0.15);
+  border-color: rgba(0, 255, 170, 0.3);
+  color: #00ffaa;
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.15);
+}
+
+.cat-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+.cat-nav--prev { left: -22px; }
+.cat-nav--next { right: -22px; }
+
+/* Scroll indicator dots */
+.cat-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.cat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cat-dot.active {
+  background: #00ffaa;
+  box-shadow: 0 0 8px rgba(0, 255, 170, 0.4);
+  width: 24px;
+  border-radius: 4px;
 }
 
 .category-card {
@@ -1208,9 +1288,9 @@ h1 .branded-icon, h2 .branded-icon, h3 .branded-icon {
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-  .category-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .category-grid .category-card {
+    min-width: 280px;
+    max-width: 300px;
   }
   
   .category-card {
@@ -1224,12 +1304,10 @@ h1 .branded-icon, h2 .branded-icon, h3 .branded-icon {
   .cat-product-name {
     font-size: 0.65rem;
   }
-}
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .cat-nav { display: none; }
+  
+  .cat-dots { margin-top: 0.5rem; }
 }
 
 /* Category card stagger animation */
