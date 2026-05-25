@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Give a Subcutaneous Injection | The DRIPBaR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #1a2332;
+    --navy-mid: #2a3a4e;
+    --navy-light: #3C4C62;
+    --lime: #C1D81A;
+    --cyan: #0E9EC1;
+    --white: #FFFFFF;
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-highlight: rgba(255, 255, 255, 0.08);
+    --radius: 20px;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(170deg, #0d1520 0%, var(--navy) 30%, #1e2d40 70%, #0d1520 100%);
+    color: var(--white);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px 0;
+  }
+  .header img {
+    height: 52px;
+    width: auto;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    text-align: center;
+    padding: 40px 24px 12px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .hero h1 span {
+    color: var(--lime);
+  }
+  .hero .subtitle {
+    margin-top: 16px;
+    font-size: clamp(14px, 2vw, 17px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* ─── GLASS CARD CONTAINER ─── */
+  .cards-section {
+    max-width: 1200px;
+    margin: 36px auto 0;
+    padding: 0 24px;
+  }
+
+  /* Desktop: side by side */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  }
+  .glass-card:hover {
+    border-color: rgba(193, 216, 26, 0.25);
+    box-shadow: 0 8px 40px rgba(193, 216, 26, 0.06);
+  }
+
+  .card-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 24px 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--lime);
+  }
+  .card-label .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--lime);
+    flex-shrink: 0;
+  }
+
+  /* Video card */
+  .video-wrapper {
+    padding: 16px 20px 20px;
+  }
+  .video-wrapper video {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    background: #000;
+  }
+
+  /* Diagram card */
+  .diagram-wrapper {
+    padding: 16px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .diagram-wrapper img {
+    width: 100%;
+    max-height: 680px;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  /* ─── MOBILE TABS ─── */
+  .mobile-tabs {
+    display: none;
+    margin: 36px auto 0;
+    padding: 0 16px;
+    max-width: 600px;
+  }
+  .tab-buttons {
+    display: flex;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 14px 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .tab-btn.active {
+    color: var(--lime);
+    background: rgba(193, 216, 26, 0.08);
+  }
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 20%; right: 20%;
+    height: 2px;
+    background: var(--lime);
+    border-radius: 2px;
+  }
+
+  .tab-panel {
+    display: none;
+    margin-top: 16px;
+  }
+  .tab-panel.active {
+    display: block;
+  }
+  .tab-panel .glass-card {
+    width: 100%;
+  }
+
+  /* ─── STEPS SECTION ─── */
+  .steps-section {
+    max-width: 900px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+  }
+  .steps-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 38px);
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .steps-title span { color: var(--lime); }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .step-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: border-color 0.3s ease;
+  }
+  .step-card:hover {
+    border-color: rgba(14, 158, 193, 0.3);
+  }
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--cyan);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+    text-align: center;
+  }
+  .step-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+  }
+  .step-text strong {
+    display: block;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+
+  /* ─── TIPS BAR ─── */
+  .tips-bar {
+    max-width: 900px;
+    margin: 36px auto 0;
+    padding: 0 24px;
+  }
+  .tips-glass {
+    background: linear-gradient(135deg, rgba(14,158,193,0.12), rgba(193,216,26,0.06));
+    border: 1px solid rgba(14,158,193,0.2);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .tips-glass h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    color: var(--cyan);
+    margin-bottom: 16px;
+  }
+  .tips-glass ul {
+    list-style: none;
+    padding: 0;
+  }
+  .tips-glass li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .tips-glass li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--lime);
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    text-align: center;
+    padding: 48px 24px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .cta-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(26px, 4vw, 36px);
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  .cta-section p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  .cta-btn.primary {
+    background: var(--lime);
+    color: var(--navy);
+  }
+  .cta-btn.primary:hover {
+    background: #d4ec2a;
+    box-shadow: 0 4px 24px rgba(193,216,26,0.3);
+    transform: translateY(-2px);
+  }
+  .cta-btn.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--glass-border);
+  }
+  .cta-btn.secondary:hover {
+    border-color: var(--lime);
+    color: var(--lime);
+    transform: translateY(-2px);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    padding: 0 24px 40px;
+  }
+  .footer-logo {
+    height: 44px;
+    margin-bottom: 16px;
+  }
+  .footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+  }
+  .footer .director {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .cards-section { display: none; }
+    .mobile-tabs { display: block; }
+
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero { padding: 32px 16px 8px; }
+    .hero .subtitle { font-size: 14px; }
+    .header { padding: 24px 16px 0; }
+    .header img { height: 42px; }
+    .steps-section { padding: 0 16px; margin-top: 36px; }
+    .tips-bar { padding: 0 16px; }
+    .tips-glass { padding: 22px 20px; }
+    .cta-section { padding: 36px 16px; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .cta-btn { width: 100%; max-width: 300px; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/690b99fe6fadaa58375c8d36.png" alt="The DRIPBaR">
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>How to Give a<br><span>Subcutaneous Injection</span></h1>
+  <p class="subtitle">A quick guide for at-home peptide administration. Watch the video walkthrough and follow the step-by-step diagram below.</p>
+</div>
+
+<!-- DESKTOP: Side by Side Glass Cards -->
+<div class="cards-section">
+  <div class="cards-grid">
+    <!-- Video Card -->
+    <div class="glass-card">
+      <div class="card-label"><span class="dot"></span> Video Walkthrough</div>
+      <div class="video-wrapper">
+        <video controls playsinline preload="metadata" poster="">
+          <source src="https://assets.cdn.filesafe.space/Ep37gEvtvjKDhWAtLwXi/media/6a14d84a4c82f7be921fe7f3.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <!-- Diagram Card -->
+    <div class="glass-card">
+      <div class="card-label"><span class="dot"></span> Step-by-Step Diagram</div>
+      <div class="diagram-wrapper">
+        <img src="https://assets.cdn.filesafe.space/Ep37gEvtvjKDhWAtLwXi/media/6a14d84a4c82f7be921fe7f4.jpg" alt="How to Give a Subcutaneous Injection - Step by Step Diagram">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE: Tabbed View -->
+<div class="mobile-tabs">
+  <div class="tab-buttons">
+    <button class="tab-btn active" onclick="switchTab('video')">Video</button>
+    <button class="tab-btn" onclick="switchTab('diagram')">Diagram</button>
+  </div>
+  <div id="tab-video" class="tab-panel active">
+    <div class="glass-card">
+      <div class="card-label"><span class="dot"></span> Video Walkthrough</div>
+      <div class="video-wrapper">
+        <video controls playsinline preload="metadata">
+          <source src="https://assets.cdn.filesafe.space/Ep37gEvtvjKDhWAtLwXi/media/6a14d84a4c82f7be921fe7f3.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+  <div id="tab-diagram" class="tab-panel">
+    <div class="glass-card">
+      <div class="card-label"><span class="dot"></span> Step-by-Step Diagram</div>
+      <div class="diagram-wrapper">
+        <img src="https://assets.cdn.filesafe.space/Ep37gEvtvjKDhWAtLwXi/media/6a14d84a4c82f7be921fe7f4.jpg" alt="How to Give a Subcutaneous Injection - Step by Step Diagram">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="steps-section">
+  <h2 class="steps-title">Quick <span>Reference</span></h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-text">
+        <strong>Position the Syringe</strong>
+        Hold the syringe in your dominant hand like a pencil or dart.
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-text">
+        <strong>Pinch the Skin</strong>
+        Gather a mound of skin between your fingers at the injection site.
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-text">
+        <strong>Insert the Needle</strong>
+        Insert the syringe at 90 degrees in a quick, snapping motion.
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-text">
+        <strong>Depress the Plunger</strong>
+        Push slowly with steady, even pressure until all medication has been injected.
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">05</div>
+      <div class="step-text">
+        <strong>Release and Remove</strong>
+        Release the skin. Place a cotton ball next to the needle, then remove the needle.
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">06</div>
+      <div class="step-text">
+        <strong>Apply Pressure</strong>
+        Hold the cotton ball on the injection site for 15 seconds, then apply an adhesive bandage.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="tips-bar">
+  <div class="tips-glass">
+    <h3>Before You Begin</h3>
+    <ul>
+      <li>Wash your hands thoroughly with soap and water</li>
+      <li>Clean the injection site with an alcohol swab and let it dry completely</li>
+      <li>Rotate injection sites to avoid irritation (upper arms, abdomen, thighs)</li>
+      <li>Store your peptides according to the instructions provided by your clinical team</li>
+      <li>Dispose of used needles in a proper sharps container</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Questions? We're Here to Help.</h2>
+  <p>Your clinical team can walk you through your first injection in person and answer any questions about your protocol.</p>
+  <div class="cta-buttons">
+    <a href="https://colleyville.thedripbar.com/book-appointment/" class="cta-btn primary" target="_blank">Book Colleyville</a>
+    <a href="https://flower-mound-highlands-ranch.thedripbar.com/book-appointment/" class="cta-btn secondary" target="_blank">Book Flower Mound</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <img src="https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/690b99fe6fadaa58375c8d36.png" alt="The DRIPBaR" class="footer-logo">
+  <p>The DRIPBaR Colleyville &amp; Flower Mound</p>
+  <p class="director">Under the medical direction of Dr. Angela Straface MD</p>
+</div>
+
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
+  document.querySelectorAll('.tab-panel').forEach(function(panel) { panel.classList.remove('active'); });
+  if (tab === 'video') {
+    document.querySelectorAll('.tab-btn')[0].classList.add('active');
+    document.getElementById('tab-video').classList.add('active');
+  } else {
+    document.querySelectorAll('.tab-btn')[1].classList.add('active');
+    document.getElementById('tab-diagram').classList.add('active');
+  }
+}
+</script>
+</body>
+</html>
