@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weight Management — DRIP Direct Hawaii</title>
+  <meta name="description" content="FDA-backed GLP-1 medications, metabolic boosters, and clinician-guided weight loss plans — prescribed online by licensed providers and delivered straight t">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://betterbranding.github.io/dripbar-pages/hawaii/css/styles.css">
+  <style>
+    /* ===== CATEGORY LANDING PAGE STYLES ===== */
+    .cat-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    .cat-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .cat-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .cat-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(6,6,14,0.92) 0%,
+        rgba(6,6,14,0.75) 45%,
+        rgba(6,6,14,0.4) 70%,
+        rgba(6,6,14,0.2) 100%
+      );
+      z-index: 1;
+    }
+    .cat-hero-overlay::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      background: linear-gradient(to top, var(--bg-deep) 0%, transparent 100%);
+    }
+    .cat-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+    }
+    .cat-hero-content .hero-badge {
+      margin-bottom: 20px;
+    }
+    .cat-hero-content h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .cat-hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+    .cat-hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .cat-hero-stats .stat {
+      text-align: left;
+    }
+    .cat-hero-stats .stat-num {
+      font-size: 1.6rem;
+    }
+    @media (max-width: 768px) {
+      .cat-hero {
+        min-height: 70vh;
+        padding: 100px 20px 60px;
+      }
+      .cat-hero-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(6,6,14,0.5) 0%,
+          rgba(6,6,14,0.85) 50%,
+          rgba(6,6,14,0.95) 100%
+        );
+      }
+      .cat-hero-stats {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+      position: relative;
+      z-index: 1;
+      padding: 80px 0;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .benefit-card {
+      padding: 32px 28px;
+      text-align: center;
+      transition: all 0.4s var(--ease-out);
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 212, 255, 0.2);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 212, 255, 0.06);
+    }
+    .benefit-icon {
+      margin-bottom: 16px;
+    }
+    .benefit-icon .branded-icon {
+      width: 2.5em;
+      height: 2.5em;
+    }
+    .benefit-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Products Section */
+    .cat-products {
+      position: relative;
+      z-index: 1;
+      padding: 40px 0 80px;
+    }
+
+    /* Floating category image accent */
+    .cat-accent-img {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 320px;
+      opacity: 0.06;
+      pointer-events: none;
+      filter: blur(2px);
+    }
+    @media (max-width: 1200px) {
+      .cat-accent-img { display: none; }
+    }
+
+    /* Pulsing CTA glow */
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.15); }
+      50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.3), 0 0 60px rgba(0, 212, 255, 0.15); }
+    }
+    .cta-pulse {
+      animation: ctaPulse 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/home" class="nav-logo">
+        <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/logos/dripdirect-hawaii.png" alt="DripDirect Hawaii" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/products-list" class="nav-link">Shop</a>
+        <a href="/home#how-it-works" class="nav-link">How It Works</a>
+        <a href="/home#about" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-cart" id="cartBtn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/products-list" class="mobile-nav-link">Shop</a>
+    <a href="/home#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="/home#about" class="mobile-nav-link">About</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="cat-hero">
+    <div class="cat-hero-bg">
+      <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/heroes/weight-management-hero.png" alt="Weight Management">
+    </div>
+    <div class="cat-hero-overlay"></div>
+    <div class="container">
+      <div class="cat-hero-content">
+        <span class="hero-badge">✦ WEIGHT MANAGEMENT</span>
+        <h1>Your Weight Loss<br><span class='gradient-text'>Breakthrough</span> Starts Here</h1>
+        <p>FDA-backed GLP-1 medications, metabolic boosters, and clinician-guided weight loss plans — prescribed online by licensed providers and delivered straight to your door.</p>
+        <div class="hero-ctas">
+          <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn btn--primary btn--lg cta-pulse">
+            Start Your Intake →
+          </a>
+          <a href="#treatments" class="btn btn--glass btn--lg">
+            View Treatments ↓
+          </a>
+        </div>
+        <div class="cat-hero-stats">
+          <div class="stat">
+            <span class="stat-num">7</span>
+            <span class="stat-label">Treatments</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" style="font-size:1.3rem;">$135 – $345</span>
+            <span class="stat-label">Price Range</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SECTION / BENEFITS -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Why Choose Us</span>
+        <h2 class="section-title">Everything You Need,<br><span class="gradient-text">Nothing You Don't</span></h2>
+      </div>
+      <div class="benefits-grid">
+        
+          <div class="benefit-card glass reveal" style="transition-delay:0.0s">
+            <div class="benefit-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/syringe.png" alt="" class="branded-icon"></div>
+            <h3>GLP-1 Injections</h3>
+            <p>Semaglutide, Tirzepatide & Liraglutide — proven to reduce appetite and promote significant weight loss.</p>
+          </div>
+          <div class="benefit-card glass reveal" style="transition-delay:0.1s">
+            <div class="benefit-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/pill.png" alt="" class="branded-icon"></div>
+            <h3>Oral Options</h3>
+            <p>Phentermine, Metformin ER & oral weight loss capsules for those who prefer pills over injections.</p>
+          </div>
+          <div class="benefit-card glass reveal" style="transition-delay:0.2s">
+            <div class="benefit-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/shield.png" alt="" class="branded-icon"></div>
+            <h3>Doctor-Prescribed</h3>
+            <p>Every treatment reviewed and prescribed by a US-licensed telehealth provider after your health intake.</p>
+          </div>
+          <div class="benefit-card glass reveal" style="transition-delay:0.30000000000000004s">
+            <div class="benefit-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/delivery.png" alt="" class="branded-icon"></div>
+            <h3>Discreet Delivery</h3>
+            <p>Medications ship from a licensed US pharmacy in unmarked packaging — straight to your doorstep.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="cat-products" id="treatments">
+    <div class="container" style="position:relative;">
+      <div class="section-header reveal">
+        <span class="section-tag">Treatments</span>
+        <h2 class="section-title">Browse <span class="gradient-text">Weight Management</span> Treatments</h2>
+        <p style="color:var(--text-secondary); margin-top:12px; font-size:1.05rem;">All treatments include a licensed provider consultation. Prescribed only if appropriate for you.</p>
+      </div>
+      <div class="product-grid">
+        
+            <div class="product-card reveal" style="transition-delay:0.0s">
+              <div class="product-image-wrap"><img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/img/products/semaglutide-injection.png" alt="Semaglutide Injection" loading="lazy" /></div>
+              <div class="product-info">
+                <div class="product-name">Semaglutide Injection</div>
+                <div class="product-subtitle">Compounded with glycine</div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="from">Starting from</span>
+                    <span class="amount">$160</span>
+                  </div>
+                  <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="product-card reveal" style="transition-delay:0.06s">
+              <div class="product-image-wrap"><img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/img/products/semaglutide-sublingual.png" alt="Semaglutide Sublingual" loading="lazy" /></div>
+              <div class="product-info">
+                <div class="product-name">Semaglutide Sublingual</div>
+                <div class="product-subtitle">&nbsp;</div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="from">Starting from</span>
+                    <span class="amount">$195</span>
+                  </div>
+                  <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="product-card reveal" style="transition-delay:0.12s">
+              <div class="product-image-wrap"><img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/img/products/tirzepatide.png" alt="Tirzepatide" loading="lazy" /></div>
+              <div class="product-info">
+                <div class="product-name">Tirzepatide</div>
+                <div class="product-subtitle">Compounded with Glycine</div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="from">Starting from</span>
+                    <span class="amount">$200</span>
+                  </div>
+                  <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="product-card reveal" style="transition-delay:0.18s">
+              <div class="product-image-wrap"><img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/img/products/liraglutide.png" alt="Liraglutide" loading="lazy" /></div>
+              <div class="product-info">
+                <div class="product-name">Liraglutide</div>
+                <div class="product-subtitle">&nbsp;</div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="from">Starting from</span>
+                    <span class="amount">$345</span>
+                  </div>
+                  <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="product-card reveal" style="transition-delay:0.24s">
+              <div class="product-image-wrap"><img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/img/products/oral-weight-loss.png" alt="Oral Weight Loss Capsules" loading="lazy" /></div>
+              <div class="product-info">
+                <div class="product-name">Oral Weight Loss Capsules</div>
+                <div class="product-subtitle">&nbsp;</div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="from">Starting from</span>
+                    <span class="amount">$225</span>
+                  </div>
+                  <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="product-card reveal" style="transition-delay:0.3s">
+              <div class="product-image-wrap"><img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/img/products/metformin.png" alt="Metformin HCl ER Tablet" loading="lazy" /></div>
+              <div class="product-info">
+                <div class="product-name">Metformin HCl ER Tablet</div>
+                <div class="product-subtitle">&nbsp;</div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="from">Starting from</span>
+                    <span class="amount">$135</span>
+                  </div>
+                  <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="product-card reveal" style="transition-delay:0.36s">
+              <div class="product-image-wrap"><img class="product-image" src="https://betterbranding.github.io/dripbar-pages/hawaii/img/products/phentermine.png" alt="Phentermine HCl Tablet" loading="lazy" /></div>
+              <div class="product-info">
+                <div class="product-name">Phentermine HCl Tablet</div>
+                <div class="product-subtitle">&nbsp;</div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="from">Starting from</span>
+                    <span class="amount">$135</span>
+                  </div>
+                  <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">From Intake to <span class="gradient-text">Your Door</span></h2>
+      </div>
+      <div class="steps-grid glass reveal" style="padding: 20px 12px; border-radius: var(--radius-xl);">
+        <div class="step-card">
+          <div class="step-number">STEP 01</div>
+          <div class="step-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/clipboard.png" alt="" class="branded-icon" style="width:2.2em;height:2.2em;"></div>
+          <h3>Complete Health Intake</h3>
+          <p>Answer a few guided questions about your symptoms, medical history, and treatment goals.</p>
+        </div>
+        <div class="step-connector"><div class="connector-line"></div></div>
+        <div class="step-card">
+          <div class="step-number">STEP 02</div>
+          <div class="step-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/shield.png" alt="" class="branded-icon" style="width:2.2em;height:2.2em;"></div>
+          <h3>Provider Review</h3>
+          <p>A US-licensed provider reviews your intake and determines if treatment is right for you.</p>
+        </div>
+        <div class="step-connector"><div class="connector-line"></div></div>
+        <div class="step-card">
+          <div class="step-number">STEP 03</div>
+          <div class="step-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/credit-card.png" alt="" class="branded-icon" style="width:2.2em;height:2.2em;"></div>
+          <h3>Secure Checkout</h3>
+          <p>Only pay if approved. Transparent pricing with no hidden fees.</p>
+        </div>
+        <div class="step-connector"><div class="connector-line"></div></div>
+        <div class="step-card">
+          <div class="step-number">STEP 04</div>
+          <div class="step-icon"><img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/icons/delivery.png" alt="" class="branded-icon" style="width:2.2em;height:2.2em;"></div>
+          <h3>Discreet Delivery</h3>
+          <p>Your medication ships in unmarked packaging from a licensed US pharmacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass reveal">
+        <h2>Ready to Start Your <span class="gradient-text">Weight Management</span> Journey?</h2>
+        <p>Complete your health intake in under 5 minutes. A US-licensed provider will respond within 24 hours.</p>
+        <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank" class="btn btn--primary btn--lg cta-pulse">
+          Start Your Intake →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="https://betterbranding.github.io/dripbar-pages/hawaii/img/logos/dripdirect-hawaii.png" alt="DripDirect Hawaii" class="logo-img footer-logo-img">
+          </div>
+          <p>Delivering secure, patient-first healthcare solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://link.vsdigitalhealth.com/terms-and-conditions" target="_blank">Terms of Service</a>
+          <a href="https://link.vsdigitalhealth.com/privacy" target="_blank">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRIP Direct Hawaii. All rights reserved.</p>
+        <p style="margin-top:8px; font-size:0.72rem; color:var(--text-muted);">Educational information only. Not a substitute for medical advice. Treatment is provided only if a US-licensed provider determines it is appropriate. Individual results vary.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://betterbranding.github.io/dripbar-pages/hawaii/js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      DD.cartPageUrl = '/cart';
+      DD.initShared();
+    });
+  </script>
+</body>
+</html>
