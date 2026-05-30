@@ -11,6 +11,113 @@
   <link rel="stylesheet" href="https://betterbranding.github.io/dripbar-pages/hawaii/css/styles.css">
 </head>
 <body>
+
+<!-- ═══ ANNOUNCEMENT BANNER ═══ -->
+<style>
+  .announce-bar {
+    background: linear-gradient(90deg, rgba(0,180,255,0.12) 0%, rgba(57,255,20,0.08) 100%);
+    border-bottom: 1px solid rgba(0,180,255,0.2);
+    position: relative;
+    z-index: 9999;
+    overflow: hidden;
+    max-height: 200px;
+    transition: max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s ease, padding 0.4s ease;
+    opacity: 1;
+  }
+  .announce-bar.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    border: none;
+  }
+  .announce-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 48px 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+  }
+  .announce-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0,180,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .announce-icon svg { width: 12px; height: 12px; }
+  .announce-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(240,240,245,0.85);
+    line-height: 1.5;
+  }
+  .announce-text strong { color: #00b4ff; font-weight: 600; }
+  .announce-text a {
+    color: #39ff14;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(57,255,20,0.3);
+    transition: border-color 0.2s;
+  }
+  .announce-text a:hover { border-color: #39ff14; }
+  .announce-phone {
+    color: #00b4ff;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .announce-close {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(240,240,245,0.5);
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .announce-close:hover {
+    background: rgba(255,255,255,0.1);
+    color: #f0f0f5;
+    border-color: rgba(255,255,255,0.2);
+  }
+  @media (max-width: 768px) {
+    .announce-inner { padding: 10px 40px 10px 16px; gap: 8px; }
+    .announce-text { font-size: 0.75rem; }
+    .announce-icon { display: none; }
+    .announce-close { right: 10px; width: 22px; height: 22px; }
+  }
+</style>
+<div class="announce-bar" id="announceBanner">
+  <div class="announce-inner">
+    <div class="announce-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#00b4ff" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </div>
+    <div class="announce-text">
+      <strong>DRIPBaR Kailua-Kona Update:</strong> We're transitioning ownership &amp; IV services are paused. Wellness continues with <a href="https://store.dripdirect.com/business/afanhf07/dgqke1pl" target="_blank">DRIP Direct Hawaii</a> — NAD+, B-12, Glutathione &amp; more shipped to your door. Available nationwide. Questions? <a href="tel:8089413012" class="announce-phone">(808) 941-3012</a>
+    </div>
+    <button class="announce-close" onclick="document.getElementById('announceBanner').classList.add('collapsed');sessionStorage.setItem('announce-dismissed','1')" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+<script>if(sessionStorage.getItem('announce-dismissed')==='1')document.getElementById('announceBanner').classList.add('collapsed');</script>
+<!-- ═══ END ANNOUNCEMENT BANNER ═══ -->
+
+
   <canvas id="particles"></canvas>
 
   <!-- NAVBAR -->
