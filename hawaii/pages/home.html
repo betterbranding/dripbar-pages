@@ -17,14 +17,15 @@
   .announce-bar {
     background: linear-gradient(90deg, rgba(0,180,255,0.15) 0%, rgba(57,255,20,0.08) 100%);
     border-bottom: 1px solid rgba(0,180,255,0.25);
-    position: relative;
-    z-index: 10000;
+    position: sticky;
+    top: 0;
+    z-index: 10001;
     overflow: hidden;
     max-height: 200px;
     transition: max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s ease, padding 0.4s ease;
     opacity: 1;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
   .announce-bar.collapsed {
     max-height: 0;
