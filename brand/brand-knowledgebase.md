@@ -41,7 +41,7 @@ The DRIPBaR is a franchise IV therapy and wellness brand. Better Branding manage
 - **Social:** IG @thedripbarkeller
 - **Voice:** Professional, approachable, confident without being loud. Education-driven. Calm authority. "Raising the BaR" theme.
 - **Audience:** Adults 35-65, Keller/North Fort Worth suburbs. Parents, professionals, athletes.
-- **Restrictions:** Do not use the word "peptides" in consumer-facing copy; use "medical protocols" or "functional support."
+- **Restrictions:** The word "peptides" is allowed in consumer-facing copy. Do NOT name specific peptide compounds (e.g., semaglutide, tirzepatide, tesamorelin) — use general language like "medical protocols" or "functional support" when referring to specific compounds.
 - **Hashtags:** #TheDRIPBaRKeller #FortWorthWellness #DFWHealth #BioHack #KellerTX
 
 ### 3.2 The DRIPBaR Burleson
@@ -339,8 +339,9 @@ Elevate, Delve, Hustle and bustle, Revolutionize, Foster, Realm, Remnant, Subseq
 - Use language consistent with a professional wellness lounge
 
 ### 8.4 Keller-Specific
-- Do not use the word "peptides" in consumer-facing copy
-- Use "medical protocols" or "functional support" instead
+- The word "peptides" IS allowed in consumer-facing copy
+- Do NOT name specific peptide compounds (e.g., semaglutide, tirzepatide, tesamorelin)
+- When referencing specific compounds, use general language like "medical protocols" or "functional support"
 
 ### 8.5 CV/FM-Specific (Colleyville)
 - No esthetics services content (no Botox, Dysport, HydraFacial)
