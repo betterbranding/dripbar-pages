@@ -6,7 +6,7 @@
 <title>The DRIPBaR Edina — Market Deep Dive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#3C4C62;
@@ -21,7 +21,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:'Inter',-apple-system,sans-serif;
+    font-family:'Poppins',-apple-system,sans-serif;
     background:var(--paper);
     color:var(--ink);
     line-height:1.6;
@@ -60,9 +60,10 @@
   .eyebrow::before,.eyebrow::after{content:"";flex:0 0 32px;height:1px;background:var(--lime);opacity:.6}
   .eyebrow::after{display:none}
   .hero h1{
-    font-family:'Fraunces',serif;
-    font-weight:300;font-style:italic;
-    font-size:clamp(2.5rem,6.5vw,5.5rem);
+    font-family:'Bebas Neue',sans-serif;
+    font-weight:400;
+    letter-spacing:.01em;
+    font-size:clamp(3rem,7.5vw,6rem);
     line-height:1.02;letter-spacing:-.025em;
     margin-bottom:32px;max-width:900px;
   }
@@ -82,20 +83,20 @@
   .container{max-width:1200px;margin:0 auto;padding:0 6vw}
   section{padding:80px 0;position:relative;z-index:2}
   .section-num{
-    font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+    font-family:'Bebas Neue',sans-serif;font-weight:400;
     font-size:.95rem;color:var(--cyan);letter-spacing:.05em;margin-bottom:16px;
   }
   h2{
-    font-family:'Fraunces',serif;font-weight:500;
+    font-family:'Bebas Neue',sans-serif;font-weight:400;
     font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;letter-spacing:-.02em;
     color:var(--navy);margin-bottom:14px;max-width:780px;
   }
-  h2 em{font-style:italic;font-weight:300;color:var(--cyan)}
+  h2 em{font-weight:300;color:var(--cyan)}
   .section-lede{
     font-size:1.05rem;color:var(--muted);max-width:680px;margin-bottom:48px;line-height:1.65;
   }
   h3{
-    font-family:'Inter',sans-serif;
+    font-family:'Poppins',sans-serif;
     font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
     font-weight:600;color:var(--navy);margin-bottom:14px;
   }
@@ -119,7 +120,7 @@
   }
   .metrics-row.head > div:first-child{color:rgba(255,255,255,.6)}
   .metrics-row .label{font-weight:500;color:var(--navy)}
-  .metrics-row .edina{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--cyan);font-weight:500}
+  .metrics-row .edina{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--cyan);font-weight:400;}
   .metrics-row .other{color:var(--muted)}
 
   /* ---------- PERSONAS ---------- */
@@ -138,10 +139,10 @@
     color:var(--muted);font-weight:600;margin-bottom:8px;
   }
   .persona-name{
-    font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;color:var(--navy);
+    font-family:'Bebas Neue',sans-serif;font-size:1.5rem;font-weight:400;color:var(--navy);
     margin-bottom:20px;line-height:1.1;letter-spacing:-.01em;
   }
-  .persona-name em{font-style:italic;font-weight:300}
+  .persona-name em{font-weight:300}
   .persona-stats{
     display:flex;flex-direction:column;gap:10px;padding:16px 0;
     border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:18px;
@@ -158,7 +159,7 @@
   }
   .comp-row:last-child{border-bottom:none}
   .comp-row.head{background:var(--navy);color:#fff;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
-  .comp-row .name{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--navy);font-weight:500}
+  .comp-row .name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--navy);font-weight:400;}
   .comp-row .type{color:var(--cyan);font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
 
   /* ---------- INSIGHTS ---------- */
@@ -168,7 +169,7 @@
   }
   .insight:nth-child(even){border-color:var(--cyan)}
   .insight h4{
-    font-family:'Fraunces',serif;font-size:1.2rem;font-weight:500;color:var(--navy);
+    font-family:'Bebas Neue',sans-serif;font-size:1.2rem;font-weight:400;color:var(--navy);
     margin-bottom:8px;line-height:1.2;
   }
   .insight p{font-size:.95rem;color:var(--muted);margin:0}
@@ -185,7 +186,7 @@
     border-top:2px solid var(--lime);padding-top:16px;
   }
   .pillar-num{
-    font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color:var(--lime);margin-bottom:8px;
+    font-family:'Bebas Neue',sans-serif;font-size:.85rem;color:var(--lime);margin-bottom:8px;
   }
   .pillar h4{font-size:.95rem;font-weight:600;margin-bottom:8px;color:#fff;line-height:1.2}
   .pillar p{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.5;margin:0}
@@ -206,9 +207,9 @@
     display:flex;flex-direction:column;gap:8px;transition:all .25s ease;
   }
   .cp-num{
-    font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;color:var(--cyan);font-weight:400;line-height:1;
+    font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--cyan);font-weight:400;line-height:1;
   }
-  .cp h4{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;color:var(--navy);margin:4px 0}
+  .cp h4{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;font-weight:400;color:var(--navy);margin:4px 0}
   .cp p{font-size:.88rem;color:var(--muted);line-height:1.55;margin:0}
 
   /* ---------- HASHTAGS ---------- */
@@ -231,7 +232,7 @@
   .open-items li::before{
     content:counter(item,decimal-leading-zero);
     position:absolute;left:0;top:-2px;
-    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    font-family:'Bebas Neue',sans-serif;font-weight:400;
     color:var(--lime);font-size:1.4rem;
   }
 
@@ -242,7 +243,7 @@
   }
   footer strong{color:var(--lime);font-weight:500}
   .logo-mark{
-    font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:1.3rem;
+    font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.3rem;
     color:#fff;margin-bottom:12px;
   }
   .logo-mark em{color:var(--lime);font-style:normal;font-weight:500}
@@ -308,7 +309,7 @@
     <div class="metrics-row"><div class="label">Bachelor's degree or higher</div><div class="edina">72%</div><div class="other">42%</div><div class="other">36%</div></div>
     <div class="metrics-row"><div class="label">Owner-occupied housing</div><div class="edina">70%</div><div class="other">—</div><div class="other">65%</div></div>
   </div>
-  <p style="margin-top:24px;font-size:.95rem;color:var(--muted);font-style:italic;font-family:'Fraunces',serif">Median household income is roughly 1.5× the metro average. Average household income exceeds $214K — meaning a meaningful cohort of dual-income executive, medical, and legal professionals.</p>
+  <p style="margin-top:24px;font-size:.95rem;color:var(--muted);font-family:'Poppins',sans-serif">Median household income is roughly 1.5× the metro average. Average household income exceeds $214K — meaning a meaningful cohort of dual-income executive, medical, and legal professionals.</p>
 </section>
 
 <section>
