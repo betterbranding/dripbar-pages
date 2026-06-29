@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The DRIPBaR Edina — Market Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#3C4C62;
+    --navy-deep:#2A3849;
+    --lime:#C1D81A;
+    --cyan:#0E9EC1;
+    --paper:#F7F5F0;
+    --ink:#1B2330;
+    --rule:#D8D2C3;
+    --muted:#5C6A7A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .grain{
+    position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.35;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.25 0 0 0 0 0.35 0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:#fff;
+    padding:80px 8vw 100px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero::before{
+    content:"";position:absolute;top:-150px;right:-150px;width:500px;height:500px;
+    background:radial-gradient(circle,var(--lime) 0%,transparent 70%);
+    opacity:.18;z-index:-1;
+  }
+  .hero::after{
+    content:"";position:absolute;bottom:-200px;left:-100px;width:600px;height:600px;
+    background:radial-gradient(circle,var(--cyan) 0%,transparent 70%);
+    opacity:.22;z-index:-1;
+  }
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--lime);font-weight:600;margin-bottom:24px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before,.eyebrow::after{content:"";flex:0 0 32px;height:1px;background:var(--lime);opacity:.6}
+  .eyebrow::after{display:none}
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:300;font-style:italic;
+    font-size:clamp(2.5rem,6.5vw,5.5rem);
+    line-height:1.02;letter-spacing:-.025em;
+    margin-bottom:32px;max-width:900px;
+  }
+  .hero h1 em{color:var(--lime);font-style:normal;font-weight:500;font-variation-settings:"opsz" 144}
+  .hero-sub{
+    font-size:1.15rem;max-width:640px;color:rgba(255,255,255,.78);
+    font-weight:300;line-height:1.65;
+  }
+  .hero-meta{
+    margin-top:64px;display:flex;gap:48px;flex-wrap:wrap;
+    padding-top:32px;border-top:1px solid rgba(255,255,255,.15);
+  }
+  .hero-meta div{font-size:.78rem;color:rgba(255,255,255,.55);letter-spacing:.18em;text-transform:uppercase}
+  .hero-meta strong{display:block;color:#fff;font-size:.95rem;letter-spacing:.05em;margin-top:6px;font-weight:500}
+
+  /* ---------- SECTIONS ---------- */
+  .container{max-width:1200px;margin:0 auto;padding:0 6vw}
+  section{padding:80px 0;position:relative;z-index:2}
+  .section-num{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+    font-size:.95rem;color:var(--cyan);letter-spacing:.05em;margin-bottom:16px;
+  }
+  h2{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;letter-spacing:-.02em;
+    color:var(--navy);margin-bottom:14px;max-width:780px;
+  }
+  h2 em{font-style:italic;font-weight:300;color:var(--cyan)}
+  .section-lede{
+    font-size:1.05rem;color:var(--muted);max-width:680px;margin-bottom:48px;line-height:1.65;
+  }
+  h3{
+    font-family:'Inter',sans-serif;
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;color:var(--navy);margin-bottom:14px;
+  }
+  p{font-size:1rem;line-height:1.7;margin-bottom:16px;color:var(--ink)}
+  p.lede{font-size:1.1rem;color:var(--navy)}
+
+  /* ---------- METRICS TABLE ---------- */
+  .metrics{
+    background:#fff;border:1px solid var(--rule);
+    border-radius:6px;overflow:hidden;
+  }
+  .metrics-row{
+    display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+    padding:18px 28px;border-bottom:1px solid var(--rule);
+    align-items:center;font-size:.95rem;gap:16px;
+  }
+  .metrics-row:last-child{border-bottom:none}
+  .metrics-row.head{
+    background:var(--navy);color:#fff;
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  }
+  .metrics-row.head > div:first-child{color:rgba(255,255,255,.6)}
+  .metrics-row .label{font-weight:500;color:var(--navy)}
+  .metrics-row .edina{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--cyan);font-weight:500}
+  .metrics-row .other{color:var(--muted)}
+
+  /* ---------- PERSONAS ---------- */
+  .personas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .persona{
+    background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px 28px;
+    position:relative;overflow:hidden;transition:transform .3s ease;
+  }
+  .persona::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--lime);
+  }
+  .persona:nth-child(2)::before{background:var(--cyan)}
+  .persona:nth-child(3)::before{background:var(--navy)}
+  .persona-tag{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;margin-bottom:8px;
+  }
+  .persona-name{
+    font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;color:var(--navy);
+    margin-bottom:20px;line-height:1.1;letter-spacing:-.01em;
+  }
+  .persona-name em{font-style:italic;font-weight:300}
+  .persona-stats{
+    display:flex;flex-direction:column;gap:10px;padding:16px 0;
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:18px;
+  }
+  .persona-stats div{font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between}
+  .persona-stats strong{color:var(--navy);font-weight:600}
+  .persona p{font-size:.92rem;line-height:1.6}
+
+  /* ---------- COMP TABLE ---------- */
+  .comp-table{background:#fff;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+  .comp-row{
+    display:grid;grid-template-columns:1.2fr 1fr 2fr;padding:20px 28px;
+    border-bottom:1px solid var(--rule);gap:20px;align-items:center;font-size:.95rem;
+  }
+  .comp-row:last-child{border-bottom:none}
+  .comp-row.head{background:var(--navy);color:#fff;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  .comp-row .name{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--navy);font-weight:500}
+  .comp-row .type{color:var(--cyan);font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
+
+  /* ---------- INSIGHTS ---------- */
+  .insights{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+  .insight{
+    border-left:3px solid var(--lime);padding:8px 0 8px 24px;
+  }
+  .insight:nth-child(even){border-color:var(--cyan)}
+  .insight h4{
+    font-family:'Fraunces',serif;font-size:1.2rem;font-weight:500;color:var(--navy);
+    margin-bottom:8px;line-height:1.2;
+  }
+  .insight p{font-size:.95rem;color:var(--muted);margin:0}
+
+  /* ---------- VOICE ---------- */
+  .voice-block{background:var(--navy);color:#fff;border-radius:8px;padding:48px;position:relative;overflow:hidden}
+  .voice-block::before{
+    content:"";position:absolute;top:-50px;right:-50px;width:280px;height:280px;
+    background:radial-gradient(circle,var(--lime) 0%,transparent 70%);opacity:.15;
+  }
+  .voice-block h3{color:var(--lime)}
+  .voice-pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:32px;position:relative;z-index:2}
+  .pillar{
+    border-top:2px solid var(--lime);padding-top:16px;
+  }
+  .pillar-num{
+    font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color:var(--lime);margin-bottom:8px;
+  }
+  .pillar h4{font-size:.95rem;font-weight:600;margin-bottom:8px;color:#fff;line-height:1.2}
+  .pillar p{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.5;margin:0}
+
+  .word-grids{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;position:relative;z-index:2}
+  .word-col{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:24px}
+  .word-col h4{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+  .word-col.use h4{color:var(--lime)}
+  .word-col.avoid h4{color:#FF8B8B}
+  .word-col ul{list-style:none;padding:0}
+  .word-col li{font-size:.88rem;padding:6px 0;color:rgba(255,255,255,.82);border-bottom:1px dashed rgba(255,255,255,.08)}
+  .word-col li:last-child{border-bottom:none}
+
+  /* ---------- PILLARS LIST ---------- */
+  .content-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cp{
+    background:#fff;border:1px solid var(--rule);border-radius:6px;padding:24px;
+    display:flex;flex-direction:column;gap:8px;transition:all .25s ease;
+  }
+  .cp-num{
+    font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;color:var(--cyan);font-weight:400;line-height:1;
+  }
+  .cp h4{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;color:var(--navy);margin:4px 0}
+  .cp p{font-size:.88rem;color:var(--muted);line-height:1.55;margin:0}
+
+  /* ---------- HASHTAGS ---------- */
+  .hashtags{
+    background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px;
+    display:flex;flex-wrap:wrap;gap:8px;
+  }
+  .tag{
+    font-size:.82rem;padding:6px 14px;background:var(--paper);
+    border:1px solid var(--rule);border-radius:99px;color:var(--navy);font-weight:500;
+  }
+
+  /* ---------- OPEN ITEMS ---------- */
+  .open-items{background:#fff;border:2px solid var(--lime);border-radius:8px;padding:40px}
+  .open-items h3{color:var(--cyan)}
+  .open-items ol{padding-left:0;list-style:none;counter-reset:item;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  .open-items li{
+    counter-increment:item;padding-left:48px;position:relative;font-size:.98rem;line-height:1.5;color:var(--ink);
+  }
+  .open-items li::before{
+    content:counter(item,decimal-leading-zero);
+    position:absolute;left:0;top:-2px;
+    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    color:var(--lime);font-size:1.4rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy-deep);color:rgba(255,255,255,.55);padding:48px 6vw;
+    text-align:center;font-size:.82rem;letter-spacing:.05em;
+  }
+  footer strong{color:var(--lime);font-weight:500}
+  .logo-mark{
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:1.3rem;
+    color:#fff;margin-bottom:12px;
+  }
+  .logo-mark em{color:var(--lime);font-style:normal;font-weight:500}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .personas,.insights,.content-pillars,.word-grids,.voice-pillars,.open-items ol{grid-template-columns:1fr}
+    .voice-pillars{grid-template-columns:repeat(2,1fr)}
+    .metrics-row{grid-template-columns:1.5fr 1fr 1fr 1fr;padding:14px 18px;font-size:.85rem}
+    .comp-row{grid-template-columns:1fr;gap:8px}
+    .comp-row .type{font-size:.72rem}
+    .hero{padding:60px 6vw 70px}
+    .voice-block{padding:32px 24px}
+    .hero-meta{gap:24px}
+  }
+  @media (max-width:560px){
+    .voice-pillars{grid-template-columns:1fr}
+    .metrics-row{grid-template-columns:1fr 1fr;font-size:.8rem;gap:8px}
+    .metrics-row > div:nth-child(3),.metrics-row > div:nth-child(4){display:none}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    @page{size:Letter;margin:0.5in}
+    body{background:#fff}
+    .grain{display:none}
+    section{padding:36px 0;page-break-inside:avoid}
+    .hero{padding:48px 36px 56px;break-after:auto}
+    .voice-block,.persona,.cp,.insight,.open-items,.metrics,.comp-table{break-inside:avoid}
+    h2{break-after:avoid}
+    .personas,.content-pillars{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="hero">
+  <div class="eyebrow">Market Intelligence · Brand Kit</div>
+  <h1>A market deep dive for <em>The DRIPBaR Edina</em>, Minnesota.</h1>
+  <p class="hero-sub">An affluent, highly educated suburb of Minneapolis with a mature wellness culture and the right demographic match for premium clinical IV therapy. Here's who they are, who we're up against, and the voice that will work.</p>
+  <div class="hero-meta">
+    <div>Prepared by<strong>Better Branding</strong></div>
+    <div>Location<strong>Edina, MN 55410</strong></div>
+    <div>Document<strong>Market Deep Dive v1.0</strong></div>
+    <div>Date<strong>June 2026</strong></div>
+  </div>
+</header>
+
+<div class="container">
+
+<section>
+  <div class="section-num">01 — Overview</div>
+  <h2>Edina <em>at a glance</em></h2>
+  <p class="section-lede">Edina sits just southwest of Minneapolis. It's known for top-tier schools, a strong outdoor lifestyle, and a wellness-and-fitness culture that already supports premium operators like Life Time, Orangetheory, and a growing roster of boutique studios and med spas.</p>
+
+  <div class="metrics">
+    <div class="metrics-row head"><div>Metric</div><div>Edina</div><div>Twin Cities Metro</div><div>U.S.</div></div>
+    <div class="metrics-row"><div class="label">Population</div><div class="edina">53,500</div><div class="other">3.7M</div><div class="other">—</div></div>
+    <div class="metrics-row"><div class="label">Median age</div><div class="edina">44</div><div class="other">37</div><div class="other">39</div></div>
+    <div class="metrics-row"><div class="label">Median household income</div><div class="edina">$128,767</div><div class="other">$99,833</div><div class="other">$78,538</div></div>
+    <div class="metrics-row"><div class="label">Average household income</div><div class="edina">$214,711</div><div class="other">—</div><div class="other">—</div></div>
+    <div class="metrics-row"><div class="label">Bachelor's degree or higher</div><div class="edina">72%</div><div class="other">42%</div><div class="other">36%</div></div>
+    <div class="metrics-row"><div class="label">Owner-occupied housing</div><div class="edina">70%</div><div class="other">—</div><div class="other">65%</div></div>
+  </div>
+  <p style="margin-top:24px;font-size:.95rem;color:var(--muted);font-style:italic;font-family:'Fraunces',serif">Median household income is roughly 1.5× the metro average. Average household income exceeds $214K — meaning a meaningful cohort of dual-income executive, medical, and legal professionals.</p>
+</section>
+
+<section>
+  <div class="section-num">02 — Audience</div>
+  <h2>Three personas worth <em>chasing</em></h2>
+  <p class="section-lede">Edina's wellness customer doesn't fit neatly into one demographic. Three overlapping personas drive the bulk of our addressable demand.</p>
+
+  <div class="personas">
+    <div class="persona">
+      <div class="persona-tag">Core · Primary</div>
+      <div class="persona-name">The <em>Engaged</em> Professional</div>
+      <div class="persona-stats">
+        <div><span>Age</span><strong>38–58</strong></div>
+        <div><span>HHI</span><strong>$150K+</strong></div>
+        <div><span>Gender</span><strong>60F / 40M</strong></div>
+      </div>
+      <p>Married professionals or executives, often dual-income. Many are physicians, attorneys, finance pros, or business owners. They prioritize their own longevity so they can keep up with family, career, and an active lifestyle.</p>
+    </div>
+
+    <div class="persona">
+      <div class="persona-tag">Secondary</div>
+      <div class="persona-name">The <em>Longevity</em> Seeker</div>
+      <div class="persona-stats">
+        <div><span>Age</span><strong>55–70</strong></div>
+        <div><span>Lifestyle</span><strong>Active</strong></div>
+        <div><span>Focus</span><strong>Healthspan</strong></div>
+      </div>
+      <p>Empty-nesters and pre-retirees with strong disposable income. Active in golf, tennis, pickleball, cycling, and travel. They've watched parents age and want a different outcome. Receptive to NAD+, peptides, and immune support.</p>
+    </div>
+
+    <div class="persona">
+      <div class="persona-tag">Tertiary</div>
+      <div class="persona-name">The <em>Performance</em> Mom</div>
+      <div class="persona-stats">
+        <div><span>Age</span><strong>32–45</strong></div>
+        <div><span>Profile</span><strong>Time-poor</strong></div>
+        <div><span>Channel</span><strong>IG, Reels</strong></div>
+      </div>
+      <p>Active moms juggling careers, kids' sports, and a wellness routine. Members at Life Time or boutique studios. Already use IV hydration recreationally. They want efficient interventions — a 45-minute drip on a lunch break beats a multi-step regimen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-num">03 — Competition</div>
+  <h2>The competitive <em>landscape</em></h2>
+  <p class="section-lede">Edina's wellness market is mature but not saturated for our model. Most competition is aesthetics-led or recreational — our medical direction and clinical framing is the difference.</p>
+
+  <div class="comp-table">
+    <div class="comp-row head"><div>Competitor</div><div>Type</div><div>Position</div></div>
+    <div class="comp-row"><div class="name">Hydrate IV Therapy</div><div class="type">Direct IV</div><div>5030 France Ave S. Established, Yelp top-rated. Med spa positioning.</div></div>
+    <div class="comp-row"><div class="name">Be Your Kind</div><div class="type">Integrative Med Spa</div><div>Strong on aesthetics and women's health. IV is a supporting service.</div></div>
+    <div class="comp-row"><div class="name">Life Time Southdale</div><div class="type">Luxury Health Club</div><div>Premium fitness + recovery. Not clinical IV, but capture our audience daily.</div></div>
+    <div class="comp-row"><div class="name">Local med spas</div><div class="type">Aesthetics-led</div><div>Mostly Botox/filler with light IV add-ons.</div></div>
+  </div>
+
+  <div style="margin-top:32px;background:linear-gradient(135deg,var(--lime) 0%,#A5BD0E 100%);color:var(--navy-deep);padding:28px 32px;border-radius:6px;">
+    <h3 style="color:var(--navy-deep);margin-bottom:8px">Our Differentiator</h3>
+    <p style="margin:0;font-size:1.05rem;line-height:1.55;color:var(--navy-deep);font-weight:500;">Medical direction. Nurse-administered protocols. Transparent clinical framing. No aesthetics distraction. We're a clinical wellness lounge — not a med spa.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-num">04 — Culture</div>
+  <h2>Cultural &amp; behavioral <em>insights</em></h2>
+  <p class="section-lede">The "Minnesota Nice" cultural baseline shapes how Edina shops, listens, and buys. Loud doesn't translate. Substance does.</p>
+
+  <div class="insights">
+    <div class="insight">
+      <h4>Winter drives immune demand</h4>
+      <p>Minnesota winters create real seasonal demand. Vitamin D, NAD+, immune drips, and energy support are essentials from October through March.</p>
+    </div>
+    <div class="insight">
+      <h4>Lake-and-cabin summer</h4>
+      <p>June through August, Edina residents head to northern Minnesota cabins on weekends. Hydration and recovery becomes the summer use case.</p>
+    </div>
+    <div class="insight">
+      <h4>"Minnesota Nice" tone</h4>
+      <p>Direct boasting underperforms. Reserved confidence wins. Educational framing wins. Social proof wins. Hype reads as suspicious.</p>
+    </div>
+    <div class="insight">
+      <h4>High health literacy</h4>
+      <p>The audience tolerates — and rewards — clinical language. They want to understand the science before they spend.</p>
+    </div>
+    <div class="insight">
+      <h4>Understated affluence</h4>
+      <p>Lutheran/Scandinavian cultural baseline. Practical, family-oriented, allergic to glitz. Avoid influencer-style copy.</p>
+    </div>
+    <div class="insight">
+      <h4>Wellness as social currency</h4>
+      <p>Wellness functions the way golf or boating does in Edina. Members of Life Time, Edina Country Club, and Indian Hills overlap heavily.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-num">05 — Voice</div>
+  <h2>Brand voice — <em>Edina</em></h2>
+  <p class="section-lede">Edina adopts the Keller voice baseline with Minnesota cultural adjustments. The result is a voice that feels professional, calm, and credible — never loud.</p>
+
+  <div class="voice-block">
+    <h3>Voice Pillars</h3>
+    <h2 style="color:#fff;font-size:1.6rem;margin:0;max-width:none;">Five principles that define how we sound.</h2>
+
+    <div class="voice-pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <h4>Professional, approachable</h4>
+        <p>Knowledgeable friend in medicine. Not a salesperson. Not a hype account.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <h4>Confident, not loud</h4>
+        <p>State the science. Let it stand. No exclamation points. No superlatives.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <h4>Education-driven</h4>
+        <p>Every post teaches something. Lead with why it works before what we offer.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <h4>Calm authority</h4>
+        <p>No urgency manipulation. No fake scarcity. We're the grown-ups in the category.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">05</div>
+        <h4>Raising the BaR</h4>
+        <p>Used to signal the next tier of wellness — same as Keller.</p>
+      </div>
+    </div>
+
+    <div class="word-grids">
+      <div class="word-col use">
+        <h4>+ Use</h4>
+        <ul>
+          <li>"Backed by science"</li>
+          <li>"Clinically administered"</li>
+          <li>"Under medical direction"</li>
+          <li>"Targeted support"</li>
+          <li>"Cellular-level"</li>
+          <li>"Delivered directly to your bloodstream"</li>
+          <li>"Raising the bar on what's possible"</li>
+        </ul>
+      </div>
+      <div class="word-col avoid">
+        <h4>− Avoid</h4>
+        <ul>
+          <li>"Game-changer," "miracle," "magic"</li>
+          <li>"Crush your day," "level up"</li>
+          <li>All emojis</li>
+          <li>Newspaper-style capitalized headlines</li>
+          <li>"Y'all," "howdy," any Texas-isms</li>
+          <li>"Cure," "treat," "diagnose"</li>
+          <li>Any banned medical claims</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-num">06 — Pillars</div>
+  <h2>Content <em>pillars</em></h2>
+  <p class="section-lede">Six pillars to build a recurring editorial calendar around. Each maps to a target persona and a seasonal moment.</p>
+
+  <div class="content-pillars">
+    <div class="cp"><div class="cp-num">i.</div><h4>Seasonal Wellness</h4><p>Winter immune, summer hydration, spring detox, fall recovery.</p></div>
+    <div class="cp"><div class="cp-num">ii.</div><h4>Performance &amp; Recovery</h4><p>For the active Edina lifestyle — golf, tennis, pickleball, lake sports.</p></div>
+    <div class="cp"><div class="cp-num">iii.</div><h4>Longevity &amp; Healthspan</h4><p>NAD+, peptides, cellular repair, cognitive support.</p></div>
+    <div class="cp"><div class="cp-num">iv.</div><h4>Beauty from Within</h4><p>Glutathione, biotin, skin-focused drips — without crossing into med-spa aesthetics.</p></div>
+    <div class="cp"><div class="cp-num">v.</div><h4>Education</h4><p>"What is an IV drip?" "How do peptides work?" "Why bioavailability matters."</p></div>
+    <div class="cp"><div class="cp-num">vi.</div><h4>Local Life</h4><p>Subtle ties to Edina events, schools, seasonal activities, community moments.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-num">07 — Tags</div>
+  <h2>Starter <em>hashtag</em> set</h2>
+  <p class="section-lede">Geo-anchored and wellness-anchored. Rotate based on content pillar.</p>
+  <div class="hashtags">
+    <span class="tag">#TheDRIPBaREdina</span>
+    <span class="tag">#EdinaMN</span>
+    <span class="tag">#EdinaWellness</span>
+    <span class="tag">#TwinCitiesWellness</span>
+    <span class="tag">#MinnesotaWellness</span>
+    <span class="tag">#IVTherapy</span>
+    <span class="tag">#50thAndFrance</span>
+    <span class="tag">#SouthdaleArea</span>
+    <span class="tag">#MinneapolisWellness</span>
+    <span class="tag">#HennepinCounty</span>
+    <span class="tag">#RaisingTheBaR</span>
+  </div>
+</section>
+
+<section>
+  <div class="section-num">08 — Next</div>
+  <h2>Open items <em>for Greg</em></h2>
+  <p class="section-lede">Confirm these and we fold this into the master Brand Knowledgebase and push the update to GitHub.</p>
+  <div class="open-items">
+    <h3>Awaiting Input</h3>
+    <ol>
+      <li>Medical Director name — still TBD in the brand knowledgebase.</li>
+      <li>Exact address &amp; hours — for the location directory.</li>
+      <li>Esthetics scope — IV-only like Keller, or aesthetics like Flower Mound?</li>
+      <li>GHL group name — what should we label it (e.g., "DBE")?</li>
+      <li>Owner/operator contacts for the email recipient list.</li>
+      <li>Local imagery library — real photos yet, or stand-ins until buildout?</li>
+    </ol>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="logo-mark">The DRIP<em>BaR</em></div>
+  Better Branding · Market Deep Dive · Edina, Minnesota · June 2026<br>
+  <strong>Raising the BaR.</strong>
+</footer>
+
+</body>
+</html>
