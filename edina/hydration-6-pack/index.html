@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100% Hydration 6-Pack | The DRIPBaR Edina</title>
+<meta name="description" content="Beat the heat with pure hydration. Six sessions of 100% Hydration IV for just $449 (normally $654). Available through July 31 at The DRIPBaR Edina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a1628;
+  --deep:#0d1f3c;
+  --teal:#00bcd4;
+  --teal-dark:#0097a7;
+  --lime:#c6ff00;
+  --ice:#e0f7fa;
+  --white:#ffffff;
+  --glass:rgba(255,255,255,0.06);
+  --glass-border:rgba(255,255,255,0.1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:linear-gradient(165deg,var(--navy) 0%,#0b2847 40%,#0a3055 70%,var(--navy) 100%);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 30%,rgba(0,188,212,0.12) 0%,transparent 70%),
+    radial-gradient(ellipse 600px 400px at 80% 70%,rgba(198,255,0,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  max-width:1200px;
+  width:100%;
+  padding:6rem 2rem 4rem;
+  position:relative;z-index:1;
+  align-items:center;
+}
+.hero-content{display:flex;flex-direction:column;gap:1.5rem}
+.eyebrow{
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:.75rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--teal);
+  display:flex;align-items:center;gap:.5rem;
+}
+.eyebrow::before{content:'';width:2rem;height:2px;background:var(--teal)}
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,6vw,5.5rem);
+  line-height:.9;
+  letter-spacing:-.02em;
+  color:var(--white);
+}
+h1 .accent{color:var(--teal)}
+h1 .lime{color:var(--lime)}
+.hero-sub{
+  font-size:1.1rem;
+  font-weight:300;
+  color:rgba(255,255,255,0.7);
+  max-width:420px;
+  line-height:1.7;
+}
+.price-lockup{
+  display:flex;align-items:baseline;gap:1rem;
+  margin:0.5rem 0;
+}
+.price-old{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2rem;
+  color:rgba(255,255,255,0.3);
+  text-decoration:line-through;
+  text-decoration-color:rgba(255,80,80,0.6);
+  text-decoration-thickness:3px;
+}
+.price-new{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3.5rem;
+  color:var(--lime);
+  line-height:1;
+}
+.price-tag{
+  font-size:.85rem;font-weight:500;color:rgba(255,255,255,0.5);
+  margin-top:-.25rem;
+}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:1rem 2.5rem;
+  border-radius:60px;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;font-size:.95rem;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;border:none;
+  position:relative;overflow:hidden;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+  color:var(--white);
+  box-shadow:0 4px 24px rgba(0,188,212,0.3);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(0,188,212,0.45);
+}
+.btn-secondary{
+  background:var(--glass);
+  color:var(--white);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(10px);
+}
+.btn-secondary:hover{
+  background:rgba(255,255,255,0.12);
+  transform:translateY(-2px);
+}
+.hero-image{
+  position:relative;
+  display:flex;justify-content:center;align-items:center;
+}
+.hero-image img{
+  width:100%;max-width:520px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 80px rgba(0,188,212,0.1);
+  transition:transform .6s cubic-bezier(.4,0,.2,1);
+}
+.hero-image:hover img{transform:scale(1.02)}
+.hero-image::after{
+  content:'';position:absolute;
+  width:120%;height:120%;
+  background:radial-gradient(ellipse at center,rgba(0,188,212,0.08) 0%,transparent 60%);
+  pointer-events:none;z-index:-1;
+}
+
+/* ─── DEADLINE STRIP ─── */
+.deadline{
+  background:linear-gradient(90deg,var(--teal-dark),var(--teal));
+  text-align:center;
+  padding:1rem 2rem;
+  position:relative;
+  overflow:hidden;
+}
+.deadline::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent,transparent 200px,rgba(255,255,255,0.03) 200px,rgba(255,255,255,0.03) 400px);
+}
+.deadline p{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;
+  letter-spacing:.1em;
+  position:relative;z-index:1;
+}
+.deadline .lime-text{color:var(--navy);font-weight:700}
+
+/* ─── FEATURES ─── */
+.features{
+  background:var(--deep);
+  padding:6rem 2rem;
+  position:relative;
+}
+.features::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--glass-border),transparent);
+}
+.features-inner{max-width:1000px;margin:0 auto}
+.section-label{
+  font-family:'Poppins',sans-serif;font-weight:600;
+  font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal);text-align:center;margin-bottom:1rem;
+  display:flex;align-items:center;justify-content:center;gap:.75rem;
+}
+.section-label::before,.section-label::after{content:'';width:2rem;height:1px;background:var(--teal)}
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,4vw,3.5rem);
+  text-align:center;margin-bottom:3rem;
+  line-height:1;
+}
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+.feature-card{
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  transition:all .3s ease;
+  position:relative;overflow:hidden;
+}
+.feature-card:hover{
+  background:rgba(255,255,255,0.08);
+  transform:translateY(-4px);
+  border-color:rgba(0,188,212,0.3);
+}
+.feature-icon{
+  width:64px;height:64px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(0,188,212,0.15),rgba(0,188,212,0.05));
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;
+  font-size:1.5rem;
+}
+.feature-card h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;
+  margin-bottom:.75rem;
+  letter-spacing:.02em;
+}
+.feature-card p{
+  font-size:.9rem;
+  color:rgba(255,255,255,0.6);
+  line-height:1.6;
+  font-weight:300;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how-it-works{
+  background:var(--navy);
+  padding:6rem 2rem;
+  position:relative;
+}
+.how-inner{max-width:800px;margin:0 auto}
+.steps{display:flex;flex-direction:column;gap:0;position:relative}
+.steps::before{
+  content:'';position:absolute;
+  left:2rem;top:2rem;bottom:2rem;
+  width:2px;
+  background:linear-gradient(to bottom,var(--teal),var(--lime));
+  opacity:0.3;
+}
+.step{
+  display:flex;gap:2rem;align-items:flex-start;
+  padding:2rem 0;
+  position:relative;
+}
+.step-num{
+  width:4rem;height:4rem;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;
+  flex-shrink:0;
+  position:relative;z-index:1;
+  box-shadow:0 0 20px rgba(0,188,212,0.3);
+}
+.step-content h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.4rem;
+  margin-bottom:.5rem;
+}
+.step-content p{
+  font-size:.9rem;
+  color:rgba(255,255,255,0.6);
+  font-weight:300;
+  line-height:1.6;
+}
+
+/* ─── CTA BOTTOM ─── */
+.cta-section{
+  background:linear-gradient(165deg,#0b2847 0%,var(--navy) 50%,#0a3055 100%);
+  padding:6rem 2rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 600px 400px at 50% 50%,rgba(0,188,212,0.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:1}
+.cta-inner h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,5vw,4rem);
+  line-height:.95;
+  margin-bottom:1.5rem;
+}
+.cta-inner p{
+  font-size:1.1rem;font-weight:300;
+  color:rgba(255,255,255,0.7);
+  margin-bottom:2rem;
+  line-height:1.7;
+}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--deep);
+  border-top:1px solid var(--glass-border);
+  padding:2rem;
+  text-align:center;
+}
+footer p{font-size:.8rem;color:rgba(255,255,255,0.4);font-weight:300}
+footer a{color:var(--teal);text-decoration:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem;padding:5rem 1.5rem 3rem;text-align:center}
+  .hero-content{align-items:center}
+  .hero-sub{max-width:100%}
+  .eyebrow{justify-content:center}
+  .price-lockup{justify-content:center}
+  .cta-row{justify-content:center}
+  .hero-image{order:-1}
+  .hero-image img{max-width:360px}
+  .feature-grid{grid-template-columns:1fr}
+  .deadline p{font-size:1.2rem}
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.hero-content{animation:fadeUp .8s ease-out}
+.hero-image{animation:fadeUp .8s ease-out .2s both}
+.feature-card{animation:fadeUp .6s ease-out both}
+.feature-card:nth-child(1){animation-delay:.1s}
+.feature-card:nth-child(2){animation-delay:.2s}
+.feature-card:nth-child(3){animation-delay:.3s}
+
+/* ─── FLOATING PARTICLES ─── */
+.particle{
+  position:absolute;border-radius:50%;pointer-events:none;
+  animation:float linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0) rotate(0deg);opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translateY(-100vh) rotate(720deg);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="particle" style="width:4px;height:4px;background:rgba(0,188,212,0.4);left:10%;animation-duration:12s;animation-delay:0s"></div>
+  <div class="particle" style="width:3px;height:3px;background:rgba(198,255,0,0.3);left:30%;animation-duration:15s;animation-delay:2s"></div>
+  <div class="particle" style="width:5px;height:5px;background:rgba(0,188,212,0.3);left:70%;animation-duration:10s;animation-delay:4s"></div>
+  <div class="particle" style="width:3px;height:3px;background:rgba(198,255,0,0.2);left:85%;animation-duration:14s;animation-delay:1s"></div>
+  <div class="particle" style="width:4px;height:4px;background:rgba(0,188,212,0.3);left:50%;animation-duration:11s;animation-delay:3s"></div>
+
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="eyebrow">The DRIPBaR Edina</div>
+      <h1>BEAT THE HEAT<br>WITH <span class="accent">PURE</span><br><span class="lime">HYDRATION</span></h1>
+      <p class="hero-sub">Six sessions of 100% Hydration IV. Clean fluids and electrolytes delivered straight to your bloodstream. No vitamins. No fillers. Just fast, full-body hydration.</p>
+      <div class="price-lockup">
+        <span class="price-old">$654</span>
+        <span class="price-new">$449</span>
+      </div>
+      <p class="price-tag">6-Pack Bundle · Save $205</p>
+      <div class="cta-row">
+        <a href="https://grow.genierocket.com/payment-link/6a500488a655fa0b802a38b1" class="btn btn-primary">Get Your 6-Pack →</a>
+        <a href="#how" class="btn btn-secondary">How It Works</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="hero.jpg" alt="100% Hydration Six-Pack by The DRIPBaR" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- DEADLINE -->
+<div class="deadline">
+  <p>⏰ LIMITED TIME · OFFER ENDS <span class="lime-text">JULY 31</span> · STOCK UP FOR SUMMER</p>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="features-inner">
+    <div class="section-label">Why 100% Hydration</div>
+    <h2 class="section-title">YOUR BODY DESERVES<br>THE REAL THING</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💧</div>
+        <h3>100% PURE</h3>
+        <p>No added vitamins or supplements. Just medical-grade fluids and electrolytes. Clean hydration, nothing else.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>INSTANT DELIVERY</h3>
+        <p>IV hydration bypasses the gut. Fluids and electrolytes reach your cells immediately. Feel the difference in minutes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>6 SESSIONS</h3>
+        <p>One purchase covers you all summer. Schedule sessions on your terms. Use them whenever the heat hits hardest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how">
+  <div class="how-inner">
+    <div class="section-label">Simple Process</div>
+    <h2 class="section-title">HOW IT WORKS</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>GRAB YOUR 6-PACK</h3>
+          <p>Purchase your bundle online. Secure your summer hydration at the best price before July 31.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>BOOK YOUR SESSIONS</h3>
+          <p>Call or visit The DRIPBaR Edina to schedule your drips. Use all six whenever it works for you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>SIT BACK & HYDRATE</h3>
+          <p>Relax in our spa-like setting. Sessions take about 30-45 minutes. Walk out feeling refreshed and recharged.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-label">Don't Wait</div>
+    <h2>SUMMER WON'T<br>LAST FOREVER</h2>
+    <p>Lock in your 6-pack at $449 before the offer ends July 31. That's six full IV hydration sessions for less than $75 each.</p>
+    <div class="price-lockup" style="justify-content:center;margin-bottom:2rem">
+      <span class="price-old">$654</span>
+      <span class="price-new">$449</span>
+    </div>
+    <a href="https://grow.genierocket.com/payment-link/6a500488a655fa0b802a38b1" class="btn btn-primary" style="font-size:1.1rem;padding:1.2rem 3rem">Get Your 6-Pack Now →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>The DRIPBaR Edina · 3515 W. 70th Street, Edina, MN · <a href="tel:+19522283747">(952) 228-3747</a></p>
+  <p style="margin-top:.5rem">© 2026 The DRIPBaR Edina. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
