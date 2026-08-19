@@ -294,15 +294,23 @@ document.querySelectorAll('[data-back]').forEach(function(b){
 });
 
 /* Step 2: slots */
+function fetchWindow(start,end){
+ return fetch(API+'/calendars/'+CAL_ID+'/free-slots?startDate='+start+'&endDate='+end+'&timezone='+encodeURIComponent(TZ))
+ .then(function(r){ if(!r.ok) throw 0; return r.json(); });
+}
 function loadSlots(){
  var now=Date.now();
- var end=now+45*24*3600*1000;
- fetch(API+'/calendars/'+CAL_ID+'/free-slots?startDate='+now+'&endDate='+end+'&timezone='+encodeURIComponent(TZ))
- .then(function(r){ if(!r.ok) throw 0; return r.json(); })
- .then(function(d){
+ var d30=30*24*3600*1000;
+ Promise.all([
+  fetchWindow(now,now+d30),
+  fetchWindow(now+d30,now+2*d30).catch(function(){return {};})
+ ])
+ .then(function(res){
   state.slotsByDay={};
-  Object.keys(d).forEach(function(k){
-   if(k!=='traceId' && d[k] && d[k].slots && d[k].slots.length) state.slotsByDay[k]=d[k].slots;
+  res.forEach(function(d){
+   Object.keys(d).forEach(function(k){
+    if(k!=='traceId' && d[k] && d[k].slots && d[k].slots.length) state.slotsByDay[k]=d[k].slots;
+   });
   });
   state.loaded=true;
   var days=Object.keys(state.slotsByDay).sort();
