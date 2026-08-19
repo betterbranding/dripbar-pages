@@ -67,14 +67,14 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1;color:var(--navy)}
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('assets/hero.webp') center/cover no-repeat;animation:heroZoom 8s ease forwards}
 @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(34,44,58,.78) 0%,rgba(34,44,58,.35) 45%,rgba(34,44,58,.15) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(34,44,58,.88) 0%,rgba(34,44,58,.62) 45%,rgba(34,44,58,.5) 100%)}
 .hero-in{position:relative;z-index:2;padding:150px 0 110px}
-.hero .eyebrow{margin-bottom:22px;opacity:0;animation:rise .9s .25s forwards ease}
-.hero h1{max-width:14ch;opacity:0;animation:rise .9s .4s forwards ease}
+.hero .eyebrow{margin-bottom:22px}
+.hero h1{max-width:14ch}
 .hero h1 em{font-style:normal;color:var(--lime)}
-.hero p{margin:26px 0 36px;max-width:560px;font-size:clamp(16px,1.3vw,19px);color:rgba(255,255,255,.92);opacity:0;animation:rise .9s .6s forwards ease}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:rise .9s .78s forwards ease}
-.hero .fine{margin-top:26px;font-size:13px;color:rgba(255,255,255,.75);opacity:0;animation:rise .9s .95s forwards ease}
+.hero p{margin:26px 0 36px;max-width:560px;font-size:clamp(16px,1.3vw,19px);color:rgba(255,255,255,.92)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .fine{margin-top:26px;font-size:13px;color:rgba(255,255,255,.75)}
 @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @media(max-width:768px){.hero{min-height:86vh}.hero-in{padding:130px 0 96px}.hero-ctas .btn{width:100%}}
 
@@ -242,17 +242,17 @@ table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;b
 <!-- TRIO -->
 <section class="pad">
   <div class="shell">
-    <div class="trio-head rv">
+    <div class="trio-head">
       <div class="eyebrow">The Science, Made Simple</div>
       <h2>A different kind of insight. <span class="ghosted">By design.</span></h2>
       <p class="lede" style="margin-left:auto;margin-right:auto">Your genes influence how you absorb nutrients, produce energy, recover from stress, and respond to food and exercise. We read those markers and translate them into guidance you can use.</p>
     </div>
     <div class="trio">
-      <div class="tcard rv"><div class="ph"><img src="assets/step-swab.webp" alt="Cheek swab sample collection at The DRIPBaR Austin" loading="lazy"></div>
+      <div class="tcard"><div class="ph"><img src="assets/step-swab.webp" alt="Cheek swab sample collection at The DRIPBaR Austin" loading="lazy"></div>
         <div class="tx"><h3>A SIMPLE SAMPLE <span>&rarr;</span></h3><p>Most panels use a one-minute cheek swab. The NAD Profile uses a quick blood draw. In and out fast, no prep required.</p></div></div>
-      <div class="tcard rv d1"><div class="ph"><img src="assets/step-report.webp" alt="Reviewing genetic test results at The DRIPBaR Austin" loading="lazy"></div>
+      <div class="tcard"><div class="ph"><img src="assets/step-report.webp" alt="Reviewing genetic test results at The DRIPBaR Austin" loading="lazy"></div>
         <div class="tx"><h3>A CLEAR REPORT <span>&rarr;</span></h3><p>Results come back in about a week in plain language. No jargon walls, just what your markers mean for you.</p></div></div>
-      <div class="tcard rv d2"><div class="ph"><img src="assets/step-plan.webp" alt="Personalized plan walkthrough at The DRIPBaR Austin" loading="lazy"></div>
+      <div class="tcard"><div class="ph"><img src="assets/step-plan.webp" alt="Personalized plan walkthrough at The DRIPBaR Austin" loading="lazy"></div>
         <div class="tx"><h3>A REAL PLAN <span>&rarr;</span></h3><p>Our clinical team walks you through every page and builds your plan: nutrition, supplementation, IV support, and lifestyle.</p></div></div>
     </div>
   </div>
@@ -363,12 +363,12 @@ table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;b
 <!-- COMPARE -->
 <section class="pad">
   <div class="shell">
-    <div class="cmp-head rv">
+    <div class="cmp-head">
       <div class="eyebrow">Side By Side</div>
       <h2>Four panels. <span class="ghosted">One quick comparison.</span></h2>
       <p class="lede" style="margin-left:auto;margin-right:auto">Every panel ends the same way: a results review with our team and a plan built around your biology. Here's how to pick your starting point.</p>
     </div>
-    <div class="cmp-scroll rv d1">
+    <div class="cmp-scroll">
       <table class="cmp">
         <thead><tr><th>What you want to know</th><th>Foundation Methylation</th><th>Athletic Performance</th><th>NAD Profile</th><th>ReGENErate</th></tr></thead>
         <tbody>
@@ -386,7 +386,7 @@ table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;b
         </tbody>
       </table>
     </div>
-    <p class="cmp-note rv d2">Not sure where to start? Ask us when you book and we'll point you to the right fit.</p>
+    <p class="cmp-note">Not sure where to start? Ask us when you book and we'll point you to the right fit.</p>
   </div>
 </section>
 
