@@ -48,6 +48,11 @@ h3{font-size:clamp(22px,2vw,28px)}
 .nav-logo img{height:44px;width:auto}
 .nav-tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--navy)}
 .nav .btn{font-size:15px;padding:11px 26px}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:inline-flex;align-items:center;border:1.5px solid var(--navy);border-radius:100px;padding:2px;background:#fff}
+.lang .sep{color:var(--divider);padding:0 1px;font-size:12px}
+.lang button{border:none;background:none;font-family:var(--bebas);font-size:13px;letter-spacing:1px;color:var(--navy);padding:4px 9px;border-radius:100px;cursor:pointer;line-height:1.2}
+.lang button.on{background:var(--navy);color:#fff}
 @media(max-width:820px){.nav-tag{display:none}}
 
 /* HERO */
@@ -160,8 +165,11 @@ footer .btn{margin:26px 0 30px}
 <div class="nav">
   <div class="nav-in">
     <a class="nav-logo" href="https://san-antonio-fossil-creek.thedripbar.com"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
-    <div class="nav-tag">Medical Weight Loss | Fossil Creek</div>
-    <a class="btn btn-cyan" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">BOOK NOW</a>
+    <div class="nav-tag" data-i18n="navTag">Medical Weight Loss | Fossil Creek</div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-setlang="en" class="on">EN</button><span class="sep">|</span><button type="button" data-setlang="es">ES</button></div>
+      <a class="btn btn-cyan" data-i18n="navBook" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">BOOK NOW</a>
+    </div>
   </div>
 </div>
 
@@ -169,12 +177,12 @@ footer .btn{margin:26px 0 30px}
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-in">
-    <div class="eyebrow on-dark">The DRIPBaR Fossil Creek | Medical Weight Loss</div>
-    <h1>Medical weight loss, <em>one simple shot</em> at a time.</h1>
-    <p class="lede">Semaglutide and Tirzepatide single shots, administered by licensed medical professionals. No big packages. No pressure. Pay per dose and go at your own pace. It all begins with a consult.</p>
+    <div class="eyebrow on-dark" data-i18n="heroEyebrow">The DRIPBaR Fossil Creek | Medical Weight Loss</div>
+    <h1 data-i18n="heroH1">Medical weight loss, <em>one simple shot</em> at a time.</h1>
+    <p class="lede" data-i18n="heroLede">Semaglutide and Tirzepatide single shots, administered by licensed medical professionals. No big packages. No pressure. Pay per dose and go at your own pace. It all begins with a consult.</p>
     <div class="hero-ctas">
-      <a class="btn btn-cyan" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
-      <a class="btn btn-ghost" href="#pricing">SEE SINGLE SHOT PRICING</a>
+      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <a class="btn btn-ghost" data-i18n="heroPricing" href="#pricing">SEE SINGLE SHOT PRICING</a>
     </div>
     <div class="hero-fine">22250 Bulverde Rd, Suite 108, San Antonio, TX 78261 | (726) 900-8533</div>
   </div>
@@ -184,30 +192,30 @@ footer .btn{margin:26px 0 30px}
 <section class="pad">
   <div class="shell">
     <div class="trio-head">
-      <div class="eyebrow">Why single shots</div>
-      <h2>Simple. Supervised. <span class="ghosted">On your terms.</span></h2>
-      <p class="lede">GLP-1 support without the long-term commitment. You pay for each shot as you go, with clinical oversight the whole way.</p>
+      <div class="eyebrow" data-i18n="trioEyebrow">Why single shots</div>
+      <h2 data-i18n="trioH2">Simple. Supervised. <span class="ghosted">On your terms.</span></h2>
+      <p class="lede" data-i18n="trioLede">GLP-1 support without the long-term commitment. You pay for each shot as you go, with clinical oversight the whole way.</p>
     </div>
     <div class="trio">
       <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/card-consult.webp" alt="Weight loss consultation at The DRIPBaR Fossil Creek"></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/card-consult.webp" data-i18n-alt="altConsult" alt="Weight loss consultation at The DRIPBaR Fossil Creek"></div>
         <div class="tx">
-          <h3>Start with a consult <span class="arr">&rarr;</span></h3>
-          <p>Every plan starts with a conversation. We review your goals, lifestyle, and health history before anything else.</p>
+          <h3 data-i18n="card1H">Start with a consult <span class="arr">&rarr;</span></h3>
+          <p data-i18n="card1P">Every plan starts with a conversation. We review your goals, lifestyle, and health history before anything else.</p>
         </div>
       </div>
       <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/card-shot.webp" alt="Nurse preparing a GLP-1 single shot"></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/card-shot.webp" data-i18n-alt="altShot" alt="Nurse preparing a GLP-1 single shot"></div>
         <div class="tx">
-          <h3>Pay per shot <span class="arr">&rarr;</span></h3>
-          <p>Single shots start at $25. No bundles, no subscriptions. Your dose is administered in minutes by a licensed nurse.</p>
+          <h3 data-i18n="card2H">Pay per shot <span class="arr">&rarr;</span></h3>
+          <p data-i18n="card2P">Single shots start at $25. No bundles, no subscriptions. Your dose is administered in minutes by a licensed nurse.</p>
         </div>
       </div>
       <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/card-support.webp" alt="Ongoing support at The DRIPBaR Fossil Creek"></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/card-support.webp" data-i18n-alt="altSupport" alt="Ongoing support at The DRIPBaR Fossil Creek"></div>
         <div class="tx">
-          <h3>Real support <span class="arr">&rarr;</span></h3>
-          <p>Clinical oversight, dose adjustments, and a team that checks in. You are not left to figure it out on your own.</p>
+          <h3 data-i18n="card3H">Real support <span class="arr">&rarr;</span></h3>
+          <p data-i18n="card3P">Clinical oversight, dose adjustments, and a team that checks in. You are not left to figure it out on your own.</p>
         </div>
       </div>
     </div>
@@ -218,27 +226,27 @@ footer .btn{margin:26px 0 30px}
 <section class="how pad">
   <div class="shell how-grid">
     <div class="how-left">
-      <div class="eyebrow">How it works</div>
-      <h2>Four steps. <span class="ghosted">Zero guesswork.</span></h2>
-      <p class="lede">Our medically supervised weight loss program is designed to help regulate appetite, improve metabolic function, and support sustainable results. Every plan is guided by licensed medical professionals and tailored to you.</p>
-      <a class="btn btn-cyan" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <div class="eyebrow" data-i18n="howEyebrow">How it works</div>
+      <h2 data-i18n="howH2">Four steps. <span class="ghosted">Zero guesswork.</span></h2>
+      <p class="lede" data-i18n="howLede">Our medically supervised weight loss program is designed to help regulate appetite, improve metabolic function, and support sustainable results. Every plan is guided by licensed medical professionals and tailored to you.</p>
+      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
     </div>
     <div>
       <div class="step">
         <div class="num">01</div>
-        <div><h3>Book your consult.</h3><p>A one-on-one conversation about your goals, health history, and whether GLP-1 support is a fit for you.</p></div>
+        <div><h3 data-i18n="step1H">Book your consult.</h3><p data-i18n="step1P">A one-on-one conversation about your goals, health history, and whether GLP-1 support is a fit for you.</p></div>
       </div>
       <div class="step">
         <div class="num">02</div>
-        <div><h3>Get your plan.</h3><p>Your starting medication and dose are tailored to your body and your goals, with medical oversight from day one.</p></div>
+        <div><h3 data-i18n="step2H">Get your plan.</h3><p data-i18n="step2P">Your starting medication and dose are tailored to your body and your goals, with medical oversight from day one.</p></div>
       </div>
       <div class="step">
         <div class="num">03</div>
-        <div><h3>Come in for your shot.</h3><p>Quick weekly visits. A licensed nurse administers your dose and you are on your way in minutes.</p></div>
+        <div><h3 data-i18n="step3H">Come in for your shot.</h3><p data-i18n="step3P">Quick weekly visits. A licensed nurse administers your dose and you are on your way in minutes.</p></div>
       </div>
       <div class="step">
         <div class="num">04</div>
-        <div><h3>Adjust as you go.</h3><p>Doses step up gradually as your body adapts. We track your progress and fine-tune along the way.</p></div>
+        <div><h3 data-i18n="step4H">Adjust as you go.</h3><p data-i18n="step4P">Doses step up gradually as your body adapts. We track your progress and fine-tune along the way.</p></div>
       </div>
     </div>
   </div>
@@ -247,22 +255,22 @@ footer .btn{margin:26px 0 30px}
 <!-- SEMAGLUTIDE PANEL -->
 <section class="panel pad" id="pricing">
   <div class="shell grid">
-    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/panel-sema.webp" alt="Relaxed client at The DRIPBaR Fossil Creek"></div>
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/panel-sema.webp" data-i18n-alt="altSemaPanel" alt="IV lounge at The DRIPBaR Fossil Creek"></div>
     <div>
-      <div class="eyebrow">Single shots</div>
-      <h2>Semaglutide. <span class="ghosted">Steady and proven.</span></h2>
-      <div class="pill">Best for a gradual, consistent start</div>
-      <p class="why">A GLP-1 medication that helps regulate appetite, slow digestion, and improve blood sugar control. By helping you feel full longer and reducing cravings, it supports consistent, sustainable weight loss when combined with healthy lifestyle habits.</p>
+      <div class="eyebrow" data-i18n="panelEyebrow">Single shots</div>
+      <h2 data-i18n="semaH2">Semaglutide. <span class="ghosted">Steady and proven.</span></h2>
+      <div class="pill" data-i18n="semaPill">Best for a gradual, consistent start</div>
+      <p class="why" data-i18n="semaWhy">A GLP-1 medication that helps regulate appetite, slow digestion, and improve blood sugar control. By helping you feel full longer and reducing cravings, it supports consistent, sustainable weight loss when combined with healthy lifestyle habits.</p>
       <table class="price-table">
-        <tr><th>Dose</th><th style="text-align:right">Price per shot</th></tr>
+        <tr><th data-i18n="thDose">Dose</th><th data-i18n="thPrice" style="text-align:right">Price per shot</th></tr>
         <tr><td>.25 mg</td><td>$25</td></tr>
         <tr><td>.5 mg</td><td>$35</td></tr>
         <tr><td>1 mg</td><td>$40</td></tr>
         <tr><td>1.75 mg</td><td>$55</td></tr>
         <tr><td>2.4 mg</td><td>$65</td></tr>
       </table>
-      <div class="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
-      <a class="btn btn-cyan" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <div class="spec" data-i18n="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
+      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
     </div>
   </div>
 </section>
@@ -270,14 +278,14 @@ footer .btn{margin:26px 0 30px}
 <!-- TIRZEPATIDE PANEL -->
 <section class="panel on-dark pad">
   <div class="shell grid flip">
-    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/panel-tirz.webp" alt="Nurse preparing a Tirzepatide single shot"></div>
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/glp1-single-shots/assets/panel-tirz.webp" data-i18n-alt="altTirzPanel" alt="Nurse preparing a Tirzepatide single shot"></div>
     <div>
-      <div class="eyebrow on-dark">Single shots</div>
-      <h2>Tirzepatide. <span class="ghosted" style="color:#6b7a90">Dual-action power.</span></h2>
-      <div class="pill">Best for stronger, faster momentum</div>
-      <p class="why">Works on both GLP-1 and GIP receptors, providing a dual-action approach to weight loss. It helps regulate appetite, improve insulin sensitivity, and enhance metabolic function, often leading to more significant and efficient weight loss outcomes.</p>
+      <div class="eyebrow on-dark" data-i18n="panelEyebrow">Single shots</div>
+      <h2 data-i18n="tirzH2">Tirzepatide. <span class="ghosted" style="color:#6b7a90">Dual-action power.</span></h2>
+      <div class="pill" data-i18n="tirzPill">Best for stronger, faster momentum</div>
+      <p class="why" data-i18n="tirzWhy">Works on both GLP-1 and GIP receptors, providing a dual-action approach to weight loss. It helps regulate appetite, improve insulin sensitivity, and enhance metabolic function, often leading to more significant and efficient weight loss outcomes.</p>
       <table class="price-table">
-        <tr><th>Dose</th><th style="text-align:right">Price per shot</th></tr>
+        <tr><th data-i18n="thDose">Dose</th><th data-i18n="thPrice" style="text-align:right">Price per shot</th></tr>
         <tr><td>2.5 mg</td><td>$35</td></tr>
         <tr><td>5 mg</td><td>$60</td></tr>
         <tr><td>7.5 mg</td><td>$85</td></tr>
@@ -285,8 +293,8 @@ footer .btn{margin:26px 0 30px}
         <tr><td>12.5 mg</td><td>$140</td></tr>
         <tr><td>15 mg</td><td>$155</td></tr>
       </table>
-      <div class="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
-      <a class="btn btn-lime" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <div class="spec" data-i18n="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
+      <a class="btn btn-lime" data-i18n="ctaConsult" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
     </div>
   </div>
 </section>
@@ -295,20 +303,20 @@ footer .btn{margin:26px 0 30px}
 <section class="pad">
   <div class="shell">
     <div class="compare-head">
-      <div class="eyebrow">Side by side</div>
-      <h2>Which one is right for you? <span class="ghosted">Your consult decides.</span></h2>
+      <div class="eyebrow" data-i18n="cmpEyebrow">Side by side</div>
+      <h2 data-i18n="cmpH2">Which one is right for you? <span class="ghosted">Your consult decides.</span></h2>
     </div>
     <div class="compare-wrap">
       <table class="cmp">
-        <tr><th></th><th>Semaglutide</th><th>Tirzepatide</th></tr>
-        <tr><td>How it works</td><td>Targets GLP-1 receptors to curb appetite and slow digestion.</td><td>Targets GLP-1 and GIP receptors for a dual-action approach.</td></tr>
-        <tr><td>Typical pace</td><td>Gradual, steady progress.</td><td>Often more significant and efficient outcomes.</td></tr>
-        <tr><td>Dose range</td><td>.25 mg to 2.4 mg</td><td>2.5 mg to 15 mg</td></tr>
-        <tr><td>Price per shot</td><td>$25 to $65</td><td>$35 to $155</td></tr>
-        <tr><td>Starting price</td><td>$25</td><td>$35</td></tr>
+        <tr><th></th><th data-i18n="cmpSema">Semaglutide</th><th data-i18n="cmpTirz">Tirzepatide</th></tr>
+        <tr><td data-i18n="cmpR1a">How it works</td><td data-i18n="cmpR1b">Targets GLP-1 receptors to curb appetite and slow digestion.</td><td data-i18n="cmpR1c">Targets GLP-1 and GIP receptors for a dual-action approach.</td></tr>
+        <tr><td data-i18n="cmpR2a">Typical pace</td><td data-i18n="cmpR2b">Gradual, steady progress.</td><td data-i18n="cmpR2c">Often more significant and efficient outcomes.</td></tr>
+        <tr><td data-i18n="cmpR3a">Dose range</td><td data-i18n="cmpR3b">.25 mg to 2.4 mg</td><td data-i18n="cmpR3c">2.5 mg to 15 mg</td></tr>
+        <tr><td data-i18n="cmpR4a">Price per shot</td><td data-i18n="cmpR4b">$25 to $65</td><td data-i18n="cmpR4c">$35 to $155</td></tr>
+        <tr><td data-i18n="cmpR5a">Starting price</td><td>$25</td><td>$35</td></tr>
       </table>
     </div>
-    <p class="cmp-note">Your medical team will recommend the right medication and starting dose at your consult.</p>
+    <p class="cmp-note" data-i18n="cmpNote">Your medical team will recommend the right medication and starting dose at your consult.</p>
   </div>
 </section>
 
@@ -317,11 +325,11 @@ footer .btn{margin:26px 0 30px}
   <div class="shell">
     <div class="refer-card">
       <div>
-        <div class="eyebrow">Refer a friend</div>
-        <h2>Bring a friend, get $35.</h2>
-        <p>Refer a friend and get a $35 credit to your account for each referral. There is no cap, so keep them coming.</p>
+        <div class="eyebrow" data-i18n="refEyebrow">Refer a friend</div>
+        <h2 data-i18n="refH2">Bring a friend, get $35.</h2>
+        <p data-i18n="refP">Refer a friend and get a $35 credit to your account for each referral. There is no cap, so keep them coming.</p>
       </div>
-      <a class="btn btn-lime" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">BOOK NOW</a>
+      <a class="btn btn-lime" data-i18n="navBook" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">BOOK NOW</a>
     </div>
   </div>
 </section>
@@ -330,10 +338,10 @@ footer .btn{margin:26px 0 30px}
 <section class="final pad">
   <div class="shell">
     <div class="eyebrow on-dark" style="justify-content:center;display:inline-flex">The DRIPBaR Fossil Creek</div>
-    <h2>Start your medical weight loss journey <em>today.</em></h2>
-    <p>It all begins with a consult. Schedule yours now and walk out with a plan built around you.</p>
-    <a class="btn btn-cyan" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
-    <p class="fine">Questions first? Call us at <a href="tel:+17269008533">(726) 900-8533</a>.</p>
+    <h2 data-i18n="finalH2">Start your medical weight loss journey <em>today.</em></h2>
+    <p data-i18n="finalP">It all begins with a consult. Schedule yours now and walk out with a plan built around you.</p>
+    <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+    <p class="fine" data-i18n="finalFine">Questions first? Call us at <a href="tel:+17269008533">(726) 900-8533</a>.</p>
   </div>
 </section>
 
@@ -344,11 +352,115 @@ footer .btn{margin:26px 0 30px}
     <div class="f-name">The DRIPBaR Fossil Creek</div>
     <p>22250 Bulverde Rd, Suite 108, San Antonio, TX 78261</p>
     <p>(726) 900-8533</p>
-    <p>Mon-Fri 10-6 | Sat 9-3 | Sun 10-3</p>
-    <a class="btn btn-ghost" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">BOOK NOW</a>
-    <p class="f-md">All services administered under the supervision of A.D. Thakkar, M.D.</p>
+    <p data-i18n="hours">Mon-Fri 10-6 | Sat 9-3 | Sun 10-3</p>
+    <a class="btn btn-ghost" data-i18n="navBook" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">BOOK NOW</a>
+    <p class="f-md" data-i18n="mdLine">All services administered under the supervision of A.D. Thakkar, M.D.</p>
   </div>
 </footer>
+
+<script>
+(function(){
+var ES={
+navTag:'P&eacute;rdida de Peso M&eacute;dica | Fossil Creek',
+navBook:'RESERVA AHORA',
+heroEyebrow:'The DRIPBaR Fossil Creek | P&eacute;rdida de Peso M&eacute;dica',
+heroH1:'P&eacute;rdida de peso m&eacute;dica, <em>una inyecci&oacute;n sencilla</em> a la vez.',
+heroLede:'Inyecciones individuales de Semaglutida y Tirzepatida, aplicadas por profesionales m&eacute;dicos con licencia. Sin paquetes grandes. Sin presi&oacute;n. Paga por dosis y avanza a tu propio ritmo. Todo comienza con una consulta.',
+ctaConsult:'AGENDA TU CONSULTA',
+heroPricing:'VER PRECIOS POR INYECCI&Oacute;N',
+trioEyebrow:'Por qu&eacute; inyecciones individuales',
+trioH2:'Sencillo. Supervisado. <span class="ghosted">A tu manera.</span>',
+trioLede:'Apoyo GLP-1 sin compromiso a largo plazo. Pagas cada inyecci&oacute;n conforme avanzas, con supervisi&oacute;n cl&iacute;nica en todo momento.',
+altConsult:'Consulta de p\u00e9rdida de peso en The DRIPBaR Fossil Creek',
+card1H:'Empieza con una consulta <span class="arr">&rarr;</span>',
+card1P:'Todo plan comienza con una conversaci&oacute;n. Revisamos tus metas, tu estilo de vida y tu historial de salud antes que nada.',
+altShot:'Enfermera preparando una inyecci\u00f3n individual de GLP-1',
+card2H:'Paga por inyecci&oacute;n <span class="arr">&rarr;</span>',
+card2P:'Las inyecciones individuales comienzan en $25. Sin paquetes ni suscripciones. Una enfermera con licencia aplica tu dosis en minutos.',
+altSupport:'Apoyo continuo en The DRIPBaR Fossil Creek',
+card3H:'Apoyo real <span class="arr">&rarr;</span>',
+card3P:'Supervisi&oacute;n cl&iacute;nica, ajustes de dosis y un equipo que se mantiene al pendiente de ti. No te dejamos resolverlo por tu cuenta.',
+howEyebrow:'C&oacute;mo funciona',
+howH2:'Cuatro pasos. <span class="ghosted">Cero complicaciones.</span>',
+howLede:'Nuestro programa de p&eacute;rdida de peso con supervisi&oacute;n m&eacute;dica est&aacute; dise&ntilde;ado para ayudar a regular el apetito, mejorar la funci&oacute;n metab&oacute;lica y lograr resultados sostenibles. Cada plan est&aacute; guiado por profesionales m&eacute;dicos con licencia y hecho a tu medida.',
+step1H:'Agenda tu consulta.',
+step1P:'Una conversaci&oacute;n uno a uno sobre tus metas, tu historial de salud y si el apoyo GLP-1 es adecuado para ti.',
+step2H:'Recibe tu plan.',
+step2P:'Tu medicamento y dosis inicial se ajustan a tu cuerpo y a tus metas, con supervisi&oacute;n m&eacute;dica desde el primer d&iacute;a.',
+step3H:'Ven por tu inyecci&oacute;n.',
+step3P:'Visitas semanales r&aacute;pidas. Una enfermera con licencia aplica tu dosis y en minutos sigues con tu d&iacute;a.',
+step4H:'Ajusta sobre la marcha.',
+step4P:'Las dosis aumentan poco a poco mientras tu cuerpo se adapta. Seguimos tu progreso y afinamos el plan en el camino.',
+altSemaPanel:'Sala de sueros IV en The DRIPBaR Fossil Creek',
+panelEyebrow:'Inyecciones individuales',
+semaH2:'Semaglutida. <span class="ghosted">Constante y comprobada.</span>',
+semaPill:'Ideal para un inicio gradual y constante',
+semaWhy:'Un medicamento GLP-1 que ayuda a regular el apetito, hacer m&aacute;s lenta la digesti&oacute;n y mejorar el control del az&uacute;car en la sangre. Al ayudarte a sentirte satisfecho por m&aacute;s tiempo y reducir los antojos, favorece una p&eacute;rdida de peso constante y sostenible junto con h&aacute;bitos de vida saludables.',
+thDose:'Dosis',
+thPrice:'Precio por inyecci&oacute;n',
+spec:'Aplicada en la cl&iacute;nica por una enfermera con licencia. Ritmo semanal, la dosis se define en tu consulta.',
+altTirzPanel:'Enfermera preparando una inyecci\u00f3n individual de Tirzepatida',
+tirzH2:'Tirzepatida. <span class="ghosted" style="color:#6b7a90">Poder de doble acci&oacute;n.</span>',
+tirzPill:'Ideal para un impulso m&aacute;s fuerte y r&aacute;pido',
+tirzWhy:'Act&uacute;a sobre los receptores GLP-1 y GIP, con un enfoque de doble acci&oacute;n para la p&eacute;rdida de peso. Ayuda a regular el apetito, mejorar la sensibilidad a la insulina y potenciar la funci&oacute;n metab&oacute;lica, logrando con frecuencia resultados m&aacute;s significativos y eficientes.',
+cmpEyebrow:'Lado a lado',
+cmpH2:'&iquest;Cu&aacute;l es la indicada para ti? <span class="ghosted">Tu consulta lo decide.</span>',
+cmpSema:'Semaglutida',
+cmpTirz:'Tirzepatida',
+cmpR1a:'C&oacute;mo funciona',
+cmpR1b:'Act&uacute;a sobre los receptores GLP-1 para reducir el apetito y hacer m&aacute;s lenta la digesti&oacute;n.',
+cmpR1c:'Act&uacute;a sobre los receptores GLP-1 y GIP con un enfoque de doble acci&oacute;n.',
+cmpR2a:'Ritmo t&iacute;pico',
+cmpR2b:'Progreso gradual y constante.',
+cmpR2c:'Resultados a menudo m&aacute;s significativos y eficientes.',
+cmpR3a:'Rango de dosis',
+cmpR3b:'.25 mg a 2.4 mg',
+cmpR3c:'2.5 mg a 15 mg',
+cmpR4a:'Precio por inyecci&oacute;n',
+cmpR4b:'$25 a $65',
+cmpR4c:'$35 a $155',
+cmpR5a:'Precio inicial',
+cmpNote:'Tu equipo m&eacute;dico te recomendar&aacute; el medicamento y la dosis inicial adecuados en tu consulta.',
+refEyebrow:'Recomienda a un amigo',
+refH2:'Trae a un amigo y recibe $35.',
+refP:'Recomienda a un amigo y recibe un cr&eacute;dito de $35 en tu cuenta por cada referido. No hay l&iacute;mite, as&iacute; que sigue invitando.',
+finalH2:'Comienza tu camino de p&eacute;rdida de peso m&eacute;dica <em>hoy.</em>',
+finalP:'Todo comienza con una consulta. Agenda la tuya ahora y sal con un plan hecho a tu medida.',
+finalFine:'&iquest;Tienes preguntas primero? Ll&aacute;manos al <a href="tel:+17269008533">(726) 900-8533</a>.',
+hours:'Lun-Vie 10-6 | S&aacute;b 9-3 | Dom 10-3',
+mdLine:'Todos los servicios se administran bajo la supervisi&oacute;n de A.D. Thakkar, M.D.'
+};
+var LS='fcLang';
+var els=document.querySelectorAll('[data-i18n]');
+var altEls=document.querySelectorAll('[data-i18n-alt]');
+var EN={},ENALT={};
+els.forEach(function(el){EN[el.getAttribute('data-i18n')]=el.innerHTML;});
+altEls.forEach(function(el){ENALT[el.getAttribute('data-i18n-alt')]=el.getAttribute('alt');});
+function setLang(l){
+ document.documentElement.lang=l;
+ try{localStorage.setItem(LS,l);}catch(e){}
+ els.forEach(function(el){
+  var k=el.getAttribute('data-i18n');
+  var v=(l==='es')?ES[k]:EN[k];
+  if(v!==undefined) el.innerHTML=v;
+ });
+ altEls.forEach(function(el){
+  var k=el.getAttribute('data-i18n-alt');
+  var v=(l==='es')?ES[k]:ENALT[k];
+  if(v!==undefined) el.setAttribute('alt',v);
+ });
+ document.querySelectorAll('[data-setlang]').forEach(function(b){
+  b.classList.toggle('on',b.getAttribute('data-setlang')===l);
+ });
+}
+document.querySelectorAll('[data-setlang]').forEach(function(b){
+ b.addEventListener('click',function(){setLang(b.getAttribute('data-setlang'));});
+});
+var saved='en';
+try{saved=localStorage.getItem(LS)||'en';}catch(e){}
+if(saved==='es') setLang('es');
+})();
+</script>
 
 </body>
 </html>

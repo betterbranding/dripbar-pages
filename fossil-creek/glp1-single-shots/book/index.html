@@ -30,6 +30,11 @@ a{color:var(--cyan)}
 .nav-tag{font-family:var(--pop);font-weight:600;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--navy)}
 .nav-back{font-family:var(--bebas);font-size:16px;letter-spacing:1px;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);padding:9px 20px;border-radius:6px;transition:all .2s}
 .nav-back:hover{background:var(--navy);color:#fff}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:inline-flex;align-items:center;border:1.5px solid var(--navy);border-radius:100px;padding:2px;background:#fff}
+.lang .sep{color:var(--divider);padding:0 1px;font-size:12px}
+.lang button{border:none;background:none;font-family:var(--bebas);font-size:13px;letter-spacing:1px;color:var(--navy);padding:4px 9px;border-radius:100px;cursor:pointer;line-height:1.2}
+.lang button.on{background:var(--navy);color:#fff}
 @media(max-width:700px){.nav-tag{display:none}}
 
 /* Header band */
@@ -142,84 +147,87 @@ a{color:var(--cyan)}
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="https://san-antonio-fossil-creek.thedripbar.com"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
-    <span class="nav-tag">Medical Weight Loss | Fossil Creek</span>
-    <a class="nav-back" href="https://fossilcreek.dripbarsanantonio.com/glp-1-weekly-shot">BACK TO PROGRAM</a>
+    <span class="nav-tag" data-i18n="navTag">Medical Weight Loss | Fossil Creek</span>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-setlang="en" class="on">EN</button><span class="sep">|</span><button type="button" data-setlang="es">ES</button></div>
+      <a class="nav-back" data-i18n="navBack" href="https://fossilcreek.dripbarsanantonio.com/glp-1-weekly-shot">BACK TO PROGRAM</a>
+    </div>
   </div>
 </nav>
 
 <header class="head">
   <div class="shell">
     <span class="eyebrow">The DRIPBaR Fossil Creek</span>
-    <h1>Book your <em>free</em> consult.</h1>
-    <p>Fifteen minutes with our clinical team. No cost, no commitment. Pick a time that works and we'll take it from there.</p>
+    <h1 data-i18n="headH1">Book your <em>free</em> consult.</h1>
+    <p data-i18n="headP">Fifteen minutes with our clinical team. No cost, no commitment. Pick a time that works and we'll take it from there.</p>
   </div>
 </header>
 
 <div class="shell">
   <div class="steps">
-    <div class="step-dot active" id="dot1"><span class="num">1</span><span class="lbl">Your Goal</span></div>
+    <div class="step-dot active" id="dot1"><span class="num">1</span><span class="lbl" data-i18n="dot1Lbl">Your Goal</span></div>
     <div class="step-line"></div>
-    <div class="step-dot" id="dot2"><span class="num">2</span><span class="lbl">Date &amp; Time</span></div>
+    <div class="step-dot" id="dot2"><span class="num">2</span><span class="lbl" data-i18n="dot2Lbl">Date &amp; Time</span></div>
     <div class="step-line"></div>
-    <div class="step-dot" id="dot3"><span class="num">3</span><span class="lbl">Your Details</span></div>
+    <div class="step-dot" id="dot3"><span class="num">3</span><span class="lbl" data-i18n="dot3Lbl">Your Details</span></div>
   </div>
 
   <!-- STEP 1 -->
   <section class="card" id="step1">
-    <h2>What are you interested in?</h2>
-    <p class="sub">This helps our team prepare for your consult. You can always change your mind after talking with us.</p>
+    <h2 data-i18n="s1H">What are you interested in?</h2>
+    <p class="sub" data-i18n="s1Sub">This helps our team prepare for your consult. You can always change your mind after talking with us.</p>
     <div class="opts" id="opts"></div>
     <div class="btnrow">
       <span></span>
-      <button class="btn btn-cyan" id="toStep2" disabled>CHOOSE A TIME</button>
+      <button class="btn btn-cyan" id="toStep2" data-i18n="btnChooseTime" disabled>CHOOSE A TIME</button>
     </div>
   </section>
 
   <!-- STEP 2 -->
   <section class="card hidden" id="step2">
-    <h2>Pick a date and time.</h2>
-    <p class="sub">All times are Central Time. Consults take about 15 minutes.</p>
-    <div class="loading" id="calLoading"><div class="spin"></div>Loading available times.</div>
+    <h2 data-i18n="s2H">Pick a date and time.</h2>
+    <p class="sub" data-i18n="s2Sub">All times are Central Time. Consults take about 15 minutes.</p>
+    <div class="loading" id="calLoading"><div class="spin"></div><span data-i18n="loadingTxt">Loading available times.</span></div>
     <div class="calwrap hidden" id="calwrap">
       <div>
         <div class="cal-head">
           <span class="m" id="calMonth"></span>
           <div class="cal-nav">
-            <button id="prevM" aria-label="Previous month">&#8249;</button>
-            <button id="nextM" aria-label="Next month">&#8250;</button>
+            <button id="prevM" data-i18n-aria="ariaPrev" aria-label="Previous month">&#8249;</button>
+            <button id="nextM" data-i18n-aria="ariaNext" aria-label="Next month">&#8250;</button>
           </div>
         </div>
         <div class="cal-grid" id="calGrid"></div>
-        <p class="tzline">Central Time (US)</p>
+        <p class="tzline" data-i18n="tzLine">Central Time (US)</p>
       </div>
       <div class="slots-col">
         <h3 id="slotsTitle">Select a date</h3>
         <div class="slots" id="slots"></div>
       </div>
     </div>
-    <div class="errmsg" id="calErr">We couldn't load available times. Please refresh the page or call us at <a href="tel:+17269008533">(726) 900-8533</a> and we'll get you booked.</div>
+    <div class="errmsg" id="calErr" data-i18n="calErrTxt">We couldn't load available times. Please refresh the page or call us at <a href="tel:+17269008533">(726) 900-8533</a> and we'll get you booked.</div>
     <div class="btnrow">
-      <button class="btn btn-ghostnavy" data-back="1">BACK</button>
-      <button class="btn btn-cyan" id="toStep3" disabled>YOUR DETAILS</button>
+      <button class="btn btn-ghostnavy" data-back="1" data-i18n="btnBack">BACK</button>
+      <button class="btn btn-cyan" id="toStep3" data-i18n="btnDetails" disabled>YOUR DETAILS</button>
     </div>
   </section>
 
   <!-- STEP 3 -->
   <section class="card hidden" id="step3">
-    <h2>Almost done.</h2>
-    <p class="sub">We just need a few details to hold your spot.</p>
+    <h2 data-i18n="s3H">Almost done.</h2>
+    <p class="sub" data-i18n="s3Sub">We just need a few details to hold your spot.</p>
     <div class="summary" id="summary"></div>
     <form class="frm" id="frm" novalidate>
-      <div class="fld"><label for="fn">First Name</label><input id="fn" type="text" autocomplete="given-name" required></div>
-      <div class="fld"><label for="ln">Last Name</label><input id="ln" type="text" autocomplete="family-name" required></div>
-      <div class="fld"><label for="ph">Phone</label><input id="ph" type="tel" autocomplete="tel" placeholder="(210) 555-1234" required></div>
-      <div class="fld"><label for="em">Email</label><input id="em" type="email" autocomplete="email" required></div>
-      <label class="tc"><input type="checkbox" id="tc"><span>I agree to the <a href="https://app.genierocket.com/v2/preview/Ekvjw9Z2UPGks9ZcDdsa#ppyes" target="_blank" rel="noopener">Privacy Policy and Terms of Service</a>, and I consent to being contacted about my appointment.</span></label>
+      <div class="fld"><label for="fn" data-i18n="lblFn">First Name</label><input id="fn" type="text" autocomplete="given-name" required></div>
+      <div class="fld"><label for="ln" data-i18n="lblLn">Last Name</label><input id="ln" type="text" autocomplete="family-name" required></div>
+      <div class="fld"><label for="ph" data-i18n="lblPh">Phone</label><input id="ph" type="tel" autocomplete="tel" placeholder="(210) 555-1234" required></div>
+      <div class="fld"><label for="em" data-i18n="lblEm">Email</label><input id="em" type="email" autocomplete="email" required></div>
+      <label class="tc"><input type="checkbox" id="tc"><span data-i18n="tcText">I agree to the <a href="https://app.genierocket.com/v2/preview/Ekvjw9Z2UPGks9ZcDdsa#ppyes" target="_blank" rel="noopener">Privacy Policy and Terms of Service</a>, and I consent to being contacted about my appointment.</span></label>
     </form>
-    <div class="errmsg" id="bookErr">Something went wrong booking your spot. Please try again, or call us at <a href="tel:+17269008533">(726) 900-8533</a>.</div>
+    <div class="errmsg" id="bookErr" data-i18n="bookErrTxt">Something went wrong booking your spot. Please try again, or call us at <a href="tel:+17269008533">(726) 900-8533</a>.</div>
     <div class="btnrow">
-      <button class="btn btn-ghostnavy" data-back="2">BACK</button>
-      <button class="btn btn-cyan" id="bookBtn">BOOK MY CONSULT</button>
+      <button class="btn btn-ghostnavy" data-back="2" data-i18n="btnBack">BACK</button>
+      <button class="btn btn-cyan" id="bookBtn" data-i18n="btnBook">BOOK MY CONSULT</button>
     </div>
   </section>
 
@@ -227,9 +235,9 @@ a{color:var(--cyan)}
   <section class="card hidden" id="step4">
     <div class="confirm">
       <div class="checkmark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5" stroke="#3C4C62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <h2>You're booked.</h2>
+      <h2 data-i18n="confirmH">You're booked.</h2>
       <div class="when" id="confirmWhen"></div>
-      <p>Check your email and phone for a confirmation. If anything changes, just give us a call and we'll move things around.</p>
+      <p data-i18n="confirmP">Check your email and phone for a confirmation. If anything changes, just give us a call and we'll move things around.</p>
       <p class="addr">The DRIPBaR Fossil Creek<br>22250 Bulverde Rd, Suite 108, San Antonio, TX 78261<br><a href="tel:+17269008533">(726) 900-8533</a></p>
     </div>
   </section>
@@ -241,7 +249,7 @@ a{color:var(--cyan)}
     <div class="loc">Fossil Creek</div>
     22250 Bulverde Rd, Suite 108, San Antonio, TX 78261<br>
     (726) 900-8533
-    <div class="md">All services administered under the supervision of A.D. Thakkar, M.D.</div>
+    <div class="md" data-i18n="mdLine">All services administered under the supervision of A.D. Thakkar, M.D.</div>
   </div>
 </footer>
 
@@ -253,16 +261,59 @@ var FORM_ID='k89jjC5DJsp9x3PNCHCn';
 var API='https://backend.leadconnectorhq.com';
 var TZ='America/Chicago';
 
+/* i18n: dynamic JS strings */
+var LANG='en';
+var T={
+en:{
+ months:['January','February','March','April','May','June','July','August','September','October','November','December'],
+ dows:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+ dowsFull:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+ monthsFull:['January','February','March','April','May','June','July','August','September','October','November','December'],
+ selectDate:'Select a date',
+ booking:'BOOKING...',
+ bookBtn:'BOOK MY CONSULT',
+ summaryName:'{n} consult',
+ summaryDefault:'GLP-1 consult',
+ summaryLoc:' at The DRIPBaR Fossil Creek',
+ summaryAt:' at ',
+ optSemaT:'Semaglutide',optSemaD:'Weekly GLP-1 shots, $25 to $65 per dose.',
+ optTirzT:'Tirzepatide',optTirzD:'Dual-action weekly shots, $35 to $155 per dose.',
+ optSermT:'Sermorelin',optSermD:'Supports your natural growth hormone production.',
+ optMiccT:'IM MICC (Lipo B12)',optMiccD:'Metabolism support shot, $40.',
+ optLeanT:'IM Lean Injection',optLeanD:'Lean muscle and metabolism support, $50.',
+ optNoneT:'Not sure yet',optNoneD:'Talk it through with our team at your consult.'
+},
+es:{
+ months:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+ dows:['Dom','Lun','Mar','Mi\u00e9','Jue','Vie','S\u00e1b'],
+ dowsFull:['domingo','lunes','martes','mi\u00e9rcoles','jueves','viernes','s\u00e1bado'],
+ monthsFull:['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],
+ selectDate:'Selecciona una fecha',
+ booking:'RESERVANDO...',
+ bookBtn:'RESERVAR MI CONSULTA',
+ summaryName:'Consulta de {n}',
+ summaryDefault:'Consulta GLP-1',
+ summaryLoc:' en The DRIPBaR Fossil Creek',
+ summaryAt:' a las ',
+ optSemaT:'Semaglutida',optSemaD:'Inyecciones GLP-1 semanales, de $25 a $65 por dosis.',
+ optTirzT:'Tirzepatida',optTirzD:'Inyecciones semanales de doble acci\u00f3n, de $35 a $155 por dosis.',
+ optSermT:'Sermorelina',optSermD:'Apoya tu producci\u00f3n natural de hormona del crecimiento.',
+ optMiccT:'IM MICC (Lipo B12)',optMiccD:'Inyecci\u00f3n de apoyo al metabolismo, $40.',
+ optLeanT:'Inyecci\u00f3n IM Lean',optLeanD:'Apoyo para m\u00fasculo magro y metabolismo, $50.',
+ optNoneT:'A\u00fan no estoy seguro',optNoneD:'Plat\u00edcalo con nuestro equipo en tu consulta.'
+}};
+function t(k){return T[LANG][k];}
+
 var OPTIONS=[
- {v:'Semaglutide (Requires Package)',t:'Semaglutide',d:'Weekly GLP-1 shots, $25 to $65 per dose.'},
- {v:'Tirzepatide (Requires Package)',t:'Tirzepatide',d:'Dual-action weekly shots, $35 to $155 per dose.'},
- {v:'Sermorelin (Requires Package)',t:'Sermorelin',d:'Supports your natural growth hormone production.'},
- {v:'IM MICC (LIBO B12) - ($40)',t:'IM MICC (Lipo B12)',d:'Metabolism support shot, $40.'},
- {v:'IM Lean Injection ($50)',t:'IM Lean Injection',d:'Lean muscle and metabolism support, $50.'},
- {v:'',t:'Not sure yet',d:'Talk it through with our team at your consult.'}
+ {v:'Semaglutide (Requires Package)',tk:'optSemaT',dk:'optSemaD'},
+ {v:'Tirzepatide (Requires Package)',tk:'optTirzT',dk:'optTirzD'},
+ {v:'Sermorelin (Requires Package)',tk:'optSermT',dk:'optSermD'},
+ {v:'IM MICC (LIBO B12) - ($40)',tk:'optMiccT',dk:'optMiccD'},
+ {v:'IM Lean Injection ($50)',tk:'optLeanT',dk:'optLeanD'},
+ {v:'',tk:'optNoneT',dk:'optNoneD'}
 ];
 
-var state={opt:null,slotsByDay:{},month:null,selDay:null,selSlot:null};
+var state={opt:null,slotsByDay:{},month:null,selDay:null,selSlot:null,booked:false};
 
 function $(id){return document.getElementById(id)}
 function show(n){
@@ -278,7 +329,7 @@ var optsEl=$('opts');
 OPTIONS.forEach(function(o,i){
  var div=document.createElement('div');
  div.className='opt';
- div.innerHTML='<span class="radio"></span><span><span class="t">'+o.t+'</span><br><span class="d">'+o.d+'</span></span>';
+ div.innerHTML='<span class="radio"></span><span><span class="t">'+t(o.tk)+'</span><br><span class="d">'+t(o.dk)+'</span></span>';
  div.onclick=function(){
   state.opt=o;
   Array.prototype.forEach.call(optsEl.children,function(c){c.classList.remove('sel')});
@@ -319,6 +370,7 @@ function loadSlots(){
   $('calLoading').classList.add('hidden');
   $('calwrap').classList.remove('hidden');
   renderCal();
+  renderSlots();
  })
  .catch(function(){
   $('calLoading').classList.add('hidden');
@@ -329,10 +381,9 @@ function loadSlots(){
 function renderCal(){
  var ym=state.month.split('-');
  var y=parseInt(ym[0],10), m=parseInt(ym[1],10)-1;
- var monthNames=['January','February','March','April','May','June','July','August','September','October','November','December'];
- $('calMonth').textContent=monthNames[m]+' '+y;
+ $('calMonth').textContent=t('months')[m]+' '+y;
  var grid=$('calGrid'); grid.innerHTML='';
- ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(function(d){
+ t('dows').forEach(function(d){
   var s=document.createElement('span'); s.className='dow'; s.textContent=d; grid.appendChild(s);
  });
  var first=new Date(y,m,1).getDay();
@@ -367,12 +418,13 @@ function fmtTime(iso){
 function fmtDay(key){
  var p=key.split('-');
  var d=new Date(parseInt(p[0],10),parseInt(p[1],10)-1,parseInt(p[2],10));
- return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+ if(LANG==='es') return t('dowsFull')[d.getDay()]+', '+d.getDate()+' de '+t('monthsFull')[d.getMonth()];
+ return t('dowsFull')[d.getDay()]+', '+t('monthsFull')[d.getMonth()]+' '+d.getDate();
 }
 
 function renderSlots(){
  var wrap=$('slots'); wrap.innerHTML='';
- if(!state.selDay){ $('slotsTitle').textContent='Select a date'; return; }
+ if(!state.selDay){ $('slotsTitle').textContent=t('selectDate'); return; }
  $('slotsTitle').textContent=fmtDay(state.selDay);
  state.slotsByDay[state.selDay].forEach(function(iso){
   var b=document.createElement('button');
@@ -388,8 +440,13 @@ function renderSlots(){
  });
 }
 
+function updateSummary(){
+ if(!state.selDay||!state.selSlot) return;
+ var title=(state.opt&&state.opt.v)?t('summaryName').replace('{n}',t(state.opt.tk)):t('summaryDefault');
+ $('summary').innerHTML='<b>'+title+'</b>'+t('summaryLoc')+'<br>'+fmtDay(state.selDay)+t('summaryAt')+fmtTime(state.selSlot)+' CT';
+}
 $('toStep3').onclick=function(){
- $('summary').innerHTML='<b>'+(state.opt&&state.opt.t!=='Not sure yet'?state.opt.t+' consult':'GLP-1 consult')+'</b> at The DRIPBaR Fossil Creek<br>'+fmtDay(state.selDay)+' at '+fmtTime(state.selSlot)+' CT';
+ updateSummary();
  show(3);
 };
 
@@ -406,7 +463,7 @@ $('bookBtn').onclick=function(){
  if(!tc.checked){ tc.parentElement.style.outline='2px solid #d64545'; ok=false; } else { tc.parentElement.style.outline='none'; }
  if(!ok) return;
 
- var btn=$('bookBtn'); btn.disabled=true; btn.textContent='BOOKING...';
+ var btn=$('bookBtn'); btn.disabled=true; btn.textContent=t('booking');
  $('bookErr').style.display='none';
 
  var digits=ph.value.replace(/\D/g,'');
@@ -432,15 +489,95 @@ $('bookBtn').onclick=function(){
  fetch(API+'/appengine/appointment',{method:'POST',body:fd})
  .then(function(r){ if(!r.ok) throw 0; return r.json(); })
  .then(function(){
-  $('confirmWhen').textContent=fmtDay(state.selDay)+' at '+fmtTime(state.selSlot)+' CT';
+  state.booked=true;
+  $('confirmWhen').textContent=fmtDay(state.selDay)+t('summaryAt')+fmtTime(state.selSlot)+' CT';
   ['dot1','dot2','dot3'].forEach(function(d){ $(d).classList.remove('active'); $(d).classList.add('done'); });
   show(4);
  })
  .catch(function(){
   $('bookErr').style.display='block';
-  btn.disabled=false; btn.textContent='BOOK MY CONSULT';
+  btn.disabled=false; btn.textContent=t('bookBtn');
  });
 };
+
+/* i18n: static page copy */
+var ES_DOM={
+navTag:'P\u00e9rdida de Peso M\u00e9dica | Fossil Creek',
+navBack:'VOLVER AL PROGRAMA',
+headH1:'Agenda tu consulta <em>gratis</em>.',
+headP:'Quince minutos con nuestro equipo cl\u00ednico. Sin costo y sin compromiso. Elige un horario que te funcione y nosotros nos encargamos del resto.',
+dot1Lbl:'Tu Meta',
+dot2Lbl:'Fecha y Hora',
+dot3Lbl:'Tus Datos',
+s1H:'\u00bfQu\u00e9 te interesa?',
+s1Sub:'Esto ayuda a nuestro equipo a prepararse para tu consulta. Siempre puedes cambiar de opini\u00f3n despu\u00e9s de hablar con nosotros.',
+btnChooseTime:'ELEGIR HORARIO',
+s2H:'Elige fecha y hora.',
+s2Sub:'Todos los horarios son en hora del Centro. Las consultas duran unos 15 minutos.',
+loadingTxt:'Cargando horarios disponibles.',
+ariaPrev:'Mes anterior',
+ariaNext:'Mes siguiente',
+tzLine:'Hora del Centro (EE. UU.)',
+calErrTxt:'No pudimos cargar los horarios disponibles. Actualiza la p\u00e1gina o ll\u00e1manos al <a href="tel:+17269008533">(726) 900-8533</a> y te agendamos.',
+btnBack:'ATR\u00c1S',
+btnDetails:'TUS DATOS',
+s3H:'Ya casi terminas.',
+s3Sub:'Solo necesitamos algunos datos para apartar tu lugar.',
+lblFn:'Nombre',
+lblLn:'Apellido',
+lblPh:'Tel\u00e9fono',
+lblEm:'Correo Electr\u00f3nico',
+tcText:'Acepto la <a href="https://app.genierocket.com/v2/preview/Ekvjw9Z2UPGks9ZcDdsa#ppyes" target="_blank" rel="noopener">Pol\u00edtica de Privacidad y los T\u00e9rminos de Servicio</a>, y doy mi consentimiento para que me contacten sobre mi cita.',
+bookErrTxt:'Algo sali\u00f3 mal al reservar tu lugar. Int\u00e9ntalo de nuevo o ll\u00e1manos al <a href="tel:+17269008533">(726) 900-8533</a>.',
+btnBook:'RESERVAR MI CONSULTA',
+confirmH:'Tu cita est\u00e1 reservada.',
+confirmP:'Revisa tu correo y tu tel\u00e9fono para ver la confirmaci\u00f3n. Si algo cambia, solo ll\u00e1manos y lo ajustamos.',
+mdLine:'Todos los servicios se administran bajo la supervisi\u00f3n de A.D. Thakkar, M.D.'
+};
+var i18nEls=document.querySelectorAll('[data-i18n]');
+var ariaEls=document.querySelectorAll('[data-i18n-aria]');
+var EN_DOM={},EN_ARIA={};
+i18nEls.forEach(function(el){EN_DOM[el.getAttribute('data-i18n')]=el.innerHTML;});
+ariaEls.forEach(function(el){EN_ARIA[el.getAttribute('data-i18n-aria')]=el.getAttribute('aria-label');});
+
+function refreshDynamic(){
+ Array.prototype.forEach.call(optsEl.children,function(c,i){
+  var o=OPTIONS[i];
+  c.querySelector('.t').textContent=t(o.tk);
+  c.querySelector('.d').textContent=t(o.dk);
+ });
+ if(state.loaded&&state.month){ renderCal(); renderSlots(); }
+ updateSummary();
+ if(state.booked&&state.selDay&&state.selSlot) $('confirmWhen').textContent=fmtDay(state.selDay)+t('summaryAt')+fmtTime(state.selSlot)+' CT';
+ var bb=$('bookBtn');
+ if(bb.disabled&&!state.booked) bb.textContent=t('booking');
+}
+
+function setLang(l){
+ LANG=l;
+ document.documentElement.lang=l;
+ try{localStorage.setItem('fcLang',l);}catch(e){}
+ i18nEls.forEach(function(el){
+  var k=el.getAttribute('data-i18n');
+  var v=(l==='es')?ES_DOM[k]:EN_DOM[k];
+  if(v!==undefined) el.innerHTML=v;
+ });
+ ariaEls.forEach(function(el){
+  var k=el.getAttribute('data-i18n-aria');
+  var v=(l==='es')?ES_DOM[k]:EN_ARIA[k];
+  if(v!==undefined) el.setAttribute('aria-label',v);
+ });
+ document.querySelectorAll('[data-setlang]').forEach(function(b){
+  b.classList.toggle('on',b.getAttribute('data-setlang')===l);
+ });
+ refreshDynamic();
+}
+document.querySelectorAll('[data-setlang]').forEach(function(b){
+ b.addEventListener('click',function(){setLang(b.getAttribute('data-setlang'));});
+});
+var savedLang='en';
+try{savedLang=localStorage.getItem('fcLang')||'en';}catch(e){}
+if(savedLang==='es') setLang('es');
 })();
 </script>
 </body>
