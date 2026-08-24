@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLP Reactivation - Email Previews</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Poppins',Arial,sans-serif; background:#f4f5f7; height:100vh; display:flex; flex-direction:column; }
+  header { background:#3C4C62; padding:14px 20px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  header h1 { font-family:'Bebas Neue',Arial,sans-serif; font-weight:normal; color:#fff; font-size:22px; letter-spacing:1px; }
+  .loc-toggle { display:flex; gap:6px; }
+  .loc-toggle button { font-family:'Poppins',Arial,sans-serif; font-weight:600; font-size:12px; padding:8px 18px; border:none; border-radius:20px; cursor:pointer; background:#2d3a4c; color:#a0aab4; }
+  .loc-toggle button.active { background:#0E9EC1; color:#fff; }
+  nav { background:#fff; border-bottom:1px solid #e8e8e8; padding:10px 20px; display:flex; gap:8px; overflow-x:auto; }
+  nav button { font-family:'Poppins',Arial,sans-serif; font-size:12px; padding:8px 14px; border:1px solid #e0e0e0; border-radius:8px; cursor:pointer; background:#fff; color:#4a4a4a; white-space:nowrap; text-align:left; }
+  nav button.active { border-color:#0E9EC1; background:#f0f7fa; color:#3C4C62; font-weight:600; }
+  nav button .t { display:block; font-size:10px; color:#9aa3ad; font-weight:400; margin-top:2px; }
+  .meta { background:#fff; padding:10px 20px 14px; border-bottom:1px solid #e8e8e8; font-size:12px; color:#4a4a4a; display:flex; gap:24px; flex-wrap:wrap; }
+  .meta b { color:#3C4C62; }
+  .frame-wrap { flex:1; overflow:hidden; }
+  iframe { width:100%; height:100%; border:none; background:#f4f5f7; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GLP REACTIVATION PREVIEWS</h1>
+  <div class="loc-toggle">
+    <button id="loc-keller" class="active" onclick="setLoc('keller')">KELLER</button>
+    <button id="loc-austin" onclick="setLoc('austin')">AUSTIN (DOMAIN)</button>
+  </div>
+</header>
+<nav id="emailnav"></nav>
+<div class="meta" id="meta"></div>
+<div class="frame-wrap"><iframe id="frame" src="keller-r1.html"></iframe></div>
+<script>
+const emails = [
+  { id:'r1', label:'R1 - Reboot', timing:'Day 0 (Fri Aug 28)', audience:'GLP-lapsed (recent + historical)',
+    subject:{ keller:"it's been a minute", austin:"it's been a minute" } },
+  { id:'m1', label:'M1 - Member Spotlight', timing:'~Day 3 (Mon Aug 31)', audience:'Members (active + frozen)',
+    subject:{ keller:'your membership covers more than you think', austin:'a free shot every month, on us' } },
+  { id:'r2', label:'R2 - The Offer', timing:'~Day 5 (Wed Sep 2)', audience:'GLP-lapsed (recent + historical)',
+    subject:{ keller:'restart your GLP-1 for only $50', austin:'restart your GLP-1 for only $35' } },
+  { id:'r3', label:'R3 - Take-Home GLP', timing:'~Day 10 (Tue Sep 8)', audience:'GLP-lapsed (recent + historical)',
+    subject:{ keller:'GLP-1 that fits your schedule', austin:'GLP-1 that fits your schedule' } },
+  { id:'c1', label:'C1 - AOD Education', timing:'~Day 12 (Thu Sep 10)', audience:'Full client list',
+    subject:{ keller:'the peptide more people are asking about', austin:'the peptide more people are asking about' } },
+  { id:'c2', label:'C2 - AOD + GLP', timing:'~Day 16 (Mon Sep 14)', audience:'Full client list',
+    subject:{ keller:"we're not a GLP-1-only shop", austin:"we're not a GLP-1-only shop" } },
+];
+let loc = 'keller', cur = 'r1';
+function render() {
+  document.getElementById('loc-keller').className = loc==='keller' ? 'active' : '';
+  document.getElementById('loc-austin').className = loc==='austin' ? 'active' : '';
+  const nav = document.getElementById('emailnav');
+  nav.innerHTML = '';
+  emails.forEach(e => {
+    const b = document.createElement('button');
+    b.className = e.id===cur ? 'active' : '';
+    b.innerHTML = e.label + '<span class="t">' + e.timing + '</span>';
+    b.onclick = () => { cur = e.id; render(); };
+    nav.appendChild(b);
+  });
+  const e = emails.find(x => x.id===cur);
+  document.getElementById('meta').innerHTML =
+    '<span><b>Subject:</b> ' + e.subject[loc] + '</span>' +
+    '<span><b>Audience:</b> ' + e.audience + '</span>' +
+    '<span><b>Send:</b> ' + e.timing + '</span>';
+  document.getElementById('frame').src = loc + '-' + cur + '.html';
+}
+function setLoc(l) { loc = l; render(); }
+render();
+</script>
+</body>
+</html>
