@@ -38,8 +38,6 @@
 const emails = [
   { id:'r1', label:'R1 - Reboot', timing:'Day 0 (Fri Aug 28)', audience:'GLP-lapsed (recent + historical)',
     subject:{ keller:"it's been a minute", austin:"it's been a minute" } },
-  { id:'m1', label:'M1 - Member Spotlight', timing:'~Day 3 (Mon Aug 31)', audience:'Members (active + frozen)',
-    subject:{ keller:'your membership covers more than you think', austin:'a free shot every month, on us' } },
   { id:'r2', label:'R2 - The Offer', timing:'~Day 5 (Wed Sep 2)', audience:'GLP-lapsed (recent + historical)',
     subject:{ keller:'restart your GLP-1 for only $50', austin:'restart your GLP-1 for only $35' } },
   { id:'r3', label:'R3 - Take-Home GLP', timing:'~Day 10 (Tue Sep 8)', audience:'GLP-lapsed (recent + historical)',
@@ -48,6 +46,8 @@ const emails = [
     subject:{ keller:'the peptide more people are asking about', austin:'the peptide more people are asking about' } },
   { id:'c2', label:'C2 - AOD + GLP', timing:'~Day 16 (Mon Sep 14)', audience:'Full client list',
     subject:{ keller:"we're not a GLP-1-only shop", austin:"we're not a GLP-1-only shop" } },
+  { id:'m1', label:'M1 - Member Spotlight', timing:'~Day 3 (Mon Aug 31)', audience:'Members (active + frozen)',
+    subject:{ keller:'your membership covers more than you think', austin:'a free shot every month, on us' } },
 ];
 let loc = 'keller', cur = 'r1';
 function render() {
