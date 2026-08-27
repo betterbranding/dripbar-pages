@@ -474,7 +474,7 @@ $('bookBtn').onclick=function(){
   eventData:{source:location.href,medium:'calendar',mediumId:CAL_ID},
   Timezone:'America/Chicago'
  };
- if(state.opt && state.opt.v) payload.which_test_are_you_curious_about=state.opt.v;
+ if(state.opt && state.opt.v){payload.title='Genetic Testing Consult - '+state.opt.v;payload.notes='Interested in: '+state.opt.v;}
 
  var fd=new FormData();
  fd.append('formData',JSON.stringify(payload));
