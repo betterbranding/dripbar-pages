@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SATX Genetic Testing · GHL Paste Blocks</title>
+<style>
+  :root { --navy:#0f1f33; --pink:#FF0099; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f5f6f8; color:#111; }
+  header { background:var(--navy); color:#fff; padding:28px 24px; }
+  header h1 { margin:0 0 6px; font-size:24px; }
+  header p { margin:0; color:#b9c4d4; font-size:14px; }
+  nav { position:sticky; top:0; background:#fff; border-bottom:1px solid #e2e5ea; padding:10px 24px; display:flex; gap:14px; flex-wrap:wrap; z-index:5; }
+  nav a { color:var(--navy); text-decoration:none; font-weight:600; font-size:14px; padding:6px 10px; border-radius:8px; }
+  nav a:hover { background:#eef1f5; }
+  main { max-width:1000px; margin:0 auto; padding:24px; }
+  section { margin-bottom:48px; }
+  h2 { font-size:22px; border-bottom:2px solid var(--pink); display:inline-block; padding-bottom:4px; }
+  .card { background:#fff; border:1px solid #e2e5ea; border-radius:12px; margin:16px 0; overflow:hidden; }
+  .card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:14px 16px; }
+  .note { margin:6px 0 0; font-size:13px; color:#555; }
+  .tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:3px 8px; border-radius:999px; margin-right:8px; color:#fff; }
+  .tag-pink { background:var(--pink); }
+  .tag-navy { background:var(--navy); }
+  .copy { flex-shrink:0; background:var(--navy); color:#fff; border:0; border-radius:8px; padding:8px 16px; font-size:14px; font-weight:600; cursor:pointer; }
+  .copy:hover { background:#1c355a; }
+  .copy.done { background:#0a8f4d; }
+  pre { margin:0; background:#0b1220; color:#d7e0ee; padding:16px; font-size:12px; line-height:1.5; overflow:auto; max-height:320px; }
+  .steps { background:#fff; border:1px solid #e2e5ea; border-radius:12px; padding:16px 20px; font-size:14px; }
+  .steps li { margin:6px 0; }
+  code.inline { background:#eef1f5; padding:2px 6px; border-radius:6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SATX Genetic Testing · GHL Paste Blocks</h1>
+  <p>Landing + booking page code for all 5 locations. Click Copy, paste into GHL.</p>
+</header>
+<nav><a href="#alamo-heights">Alamo Heights</a><a href="#dominion-creek">Dominion Creek</a><a href="#fossil-creek">Fossil Creek</a><a href="#huebner-oaks">Huebner Oaks</a><a href="#new-braunfels">New Braunfels</a></nav>
+<main>
+<div class="steps">
+  <strong>How to use</strong>
+  <ol>
+    <li>Create 2 GHL pages per location: the landing page, and a booking page at slug <code class="inline">/genetic-testing-consult</code>.</li>
+    <li>Body loaders (BLOCK A / C) go into a full-width Custom Code element on the page body.</li>
+    <li>Header meta (BLOCK B / D) goes into the page header tracking code. Replace <code class="inline">PAGE-URL-HERE</code> with the live page URL.</li>
+    <li>Publish, then send me the live URLs for a click-through test.</li>
+  </ol>
+</div>
+
+<section id="alamo-heights">
+  <h2>Alamo Heights</h2>
+  
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK A · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the LANDING page body.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blocka">Copy</button>
+  </div>
+  <pre id="alamo-heights-blocka"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing - Alamo Heights */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/alamo-heights/genetic-testing/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK B · Header meta</strong>
+      <p class="note">Paste into the LANDING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blockb">Copy</button>
+  </div>
+  <pre id="alamo-heights-blockb"><code>&lt;!-- ===== The DRIPBaR Alamo Heights | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Genetic testing at The DRIPBaR Alamo Heights. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Genetic Testing | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Your wellness plan is written in your DNA. Explore four genetic testing panels at The DRIPBaR Alamo Heights, with results reviewed by our clinical team.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Genetic Testing | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Four genetic testing panels covering methylation, athletic performance, NAD levels, and metabolic health. Results reviewed with a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://alamo-heights.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Alamo Heights&quot;,&quot;url&quot;:&quot;https://alamo-heights.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+12104837479&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;5800 Broadway Suite 203&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78209&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 10:00-16:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Genetic Testing | The DRIPBaR Alamo Heights&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Alamo Heights. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://alamo-heights.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK C · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the BOOKING page body. Use slug /genetic-testing-consult.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blockc">Copy</button>
+  </div>
+  <pre id="alamo-heights-blockc"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing Booking - Alamo Heights */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/alamo-heights/genetic-testing/book/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK D · Header meta</strong>
+      <p class="note">Paste into the BOOKING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blockd">Copy</button>
+  </div>
+  <pre id="alamo-heights-blockd"><code>&lt;!-- ===== The DRIPBaR Alamo Heights | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Alamo Heights. Pick the panel you&#x27;re curious about and choose a time that works for you.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Alamo Heights.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Alamo Heights.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://alamo-heights.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Alamo Heights&quot;,&quot;url&quot;:&quot;https://alamo-heights.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+12104837479&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;5800 Broadway Suite 203&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78209&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 10:00-16:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Book Your Genetic Testing Consult | The DRIPBaR Alamo Heights&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Alamo Heights. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://alamo-heights.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+</section>
+<section id="dominion-creek">
+  <h2>Dominion Creek</h2>
+  
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK A · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the LANDING page body.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blocka">Copy</button>
+  </div>
+  <pre id="dominion-creek-blocka"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing - Dominion Creek */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/dominion-creek/genetic-testing/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK B · Header meta</strong>
+      <p class="note">Paste into the LANDING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blockb">Copy</button>
+  </div>
+  <pre id="dominion-creek-blockb"><code>&lt;!-- ===== The DRIPBaR Dominion Creek | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Genetic testing at The DRIPBaR Dominion Creek. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Genetic Testing | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Your wellness plan is written in your DNA. Explore four genetic testing panels at The DRIPBaR Dominion Creek, with results reviewed by our clinical team.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Genetic Testing | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Four genetic testing panels covering methylation, athletic performance, NAD levels, and metabolic health. Results reviewed with a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://san-antonio-dominion-creek.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Dominion Creek&quot;,&quot;url&quot;:&quot;https://san-antonio-dominion-creek.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+12102121104&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;23110 W I-10 Suite 206&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78257&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 10:00-16:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Genetic Testing | The DRIPBaR Dominion Creek&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Dominion Creek. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://san-antonio-dominion-creek.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK C · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the BOOKING page body. Use slug /genetic-testing-consult.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blockc">Copy</button>
+  </div>
+  <pre id="dominion-creek-blockc"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing Booking - Dominion Creek */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/dominion-creek/genetic-testing/book/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK D · Header meta</strong>
+      <p class="note">Paste into the BOOKING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blockd">Copy</button>
+  </div>
+  <pre id="dominion-creek-blockd"><code>&lt;!-- ===== The DRIPBaR Dominion Creek | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Dominion Creek. Pick the panel you&#x27;re curious about and choose a time that works for you.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Dominion Creek.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Dominion Creek.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://san-antonio-dominion-creek.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Dominion Creek&quot;,&quot;url&quot;:&quot;https://san-antonio-dominion-creek.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+12102121104&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;23110 W I-10 Suite 206&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78257&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 10:00-16:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Book Your Genetic Testing Consult | The DRIPBaR Dominion Creek&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Dominion Creek. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://san-antonio-dominion-creek.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+</section>
+<section id="fossil-creek">
+  <h2>Fossil Creek</h2>
+  
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK A · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the LANDING page body.</p>
+    </div>
+    <button class="copy" data-target="fossil-creek-blocka">Copy</button>
+  </div>
+  <pre id="fossil-creek-blocka"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing - Fossil Creek */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/fossil-creek/genetic-testing/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK B · Header meta</strong>
+      <p class="note">Paste into the LANDING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="fossil-creek-blockb">Copy</button>
+  </div>
+  <pre id="fossil-creek-blockb"><code>&lt;!-- ===== The DRIPBaR Fossil Creek | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Genetic testing at The DRIPBaR Fossil Creek. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Genetic Testing | The DRIPBaR Fossil Creek&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Your wellness plan is written in your DNA. Explore four genetic testing panels at The DRIPBaR Fossil Creek, with results reviewed by our clinical team.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Fossil Creek&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Genetic Testing | The DRIPBaR Fossil Creek&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Four genetic testing panels covering methylation, athletic performance, NAD levels, and metabolic health. Results reviewed with a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://san-antonio-fossil-creek.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Fossil Creek&quot;,&quot;url&quot;:&quot;https://san-antonio-fossil-creek.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+17269008533&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;22250 Bulverde Rd Suite 108&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78261&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 09:00-15:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Genetic Testing | The DRIPBaR Fossil Creek&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Fossil Creek. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://san-antonio-fossil-creek.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK C · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the BOOKING page body. Use slug /genetic-testing-consult.</p>
+    </div>
+    <button class="copy" data-target="fossil-creek-blockc">Copy</button>
+  </div>
+  <pre id="fossil-creek-blockc"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing Booking - Fossil Creek */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/fossil-creek/genetic-testing/book/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK D · Header meta</strong>
+      <p class="note">Paste into the BOOKING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="fossil-creek-blockd">Copy</button>
+  </div>
+  <pre id="fossil-creek-blockd"><code>&lt;!-- ===== The DRIPBaR Fossil Creek | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Fossil Creek. Pick the panel you&#x27;re curious about and choose a time that works for you.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Fossil Creek&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Fossil Creek.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Fossil Creek&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Fossil Creek&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Fossil Creek.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://san-antonio-fossil-creek.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Fossil Creek&quot;,&quot;url&quot;:&quot;https://san-antonio-fossil-creek.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+17269008533&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;22250 Bulverde Rd Suite 108&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78261&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 09:00-15:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Book Your Genetic Testing Consult | The DRIPBaR Fossil Creek&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Fossil Creek. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://san-antonio-fossil-creek.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+</section>
+<section id="huebner-oaks">
+  <h2>Huebner Oaks</h2>
+  
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK A · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the LANDING page body.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blocka">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blocka"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing - Huebner Oaks */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/huebner-oaks/genetic-testing/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK B · Header meta</strong>
+      <p class="note">Paste into the LANDING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blockb">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blockb"><code>&lt;!-- ===== The DRIPBaR Huebner Oaks | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Genetic testing at The DRIPBaR Huebner Oaks. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Genetic Testing | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Your wellness plan is written in your DNA. Explore four genetic testing panels at The DRIPBaR Huebner Oaks, with results reviewed by our clinical team.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Genetic Testing | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Four genetic testing panels covering methylation, athletic performance, NAD levels, and metabolic health. Results reviewed with a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://the-strand-at-huebner-oaks.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Huebner Oaks&quot;,&quot;url&quot;:&quot;https://the-strand-at-huebner-oaks.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+12103064135&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;11255 Huebner Road Suite 107&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78230&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 10:00-16:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Genetic Testing | The DRIPBaR Huebner Oaks&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Huebner Oaks. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://the-strand-at-huebner-oaks.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK C · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the BOOKING page body. Use slug /genetic-testing-consult.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blockc">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blockc"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing Booking - Huebner Oaks */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/huebner-oaks/genetic-testing/book/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK D · Header meta</strong>
+      <p class="note">Paste into the BOOKING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blockd">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blockd"><code>&lt;!-- ===== The DRIPBaR Huebner Oaks | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Huebner Oaks. Pick the panel you&#x27;re curious about and choose a time that works for you.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Huebner Oaks.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR Huebner Oaks.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://the-strand-at-huebner-oaks.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR Huebner Oaks&quot;,&quot;url&quot;:&quot;https://the-strand-at-huebner-oaks.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+12103064135&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;11255 Huebner Road Suite 107&quot;,&quot;addressLocality&quot;:&quot;San Antonio&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78230&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 10:00-16:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Book Your Genetic Testing Consult | The DRIPBaR Huebner Oaks&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR Huebner Oaks. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://the-strand-at-huebner-oaks.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+</section>
+<section id="new-braunfels">
+  <h2>New Braunfels</h2>
+  
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK A · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the LANDING page body.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blocka">Copy</button>
+  </div>
+  <pre id="new-braunfels-blocka"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing - New Braunfels */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/new-braunfels/genetic-testing/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing Page</span>
+      <strong>BLOCK B · Header meta</strong>
+      <p class="note">Paste into the LANDING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blockb">Copy</button>
+  </div>
+  <pre id="new-braunfels-blockb"><code>&lt;!-- ===== The DRIPBaR New Braunfels | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Genetic testing at The DRIPBaR New Braunfels. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Genetic Testing | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Your wellness plan is written in your DNA. Explore four genetic testing panels at The DRIPBaR New Braunfels, with results reviewed by our clinical team.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Genetic Testing | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Four genetic testing panels covering methylation, athletic performance, NAD levels, and metabolic health. Results reviewed with a personalized wellness plan.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://new-braunfels.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR New Braunfels&quot;,&quot;url&quot;:&quot;https://new-braunfels.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+18307305304&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;312 FM 306 Suite 112&quot;,&quot;addressLocality&quot;:&quot;New Braunfels&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78130&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 09:00-15:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Genetic Testing | The DRIPBaR New Braunfels&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR New Braunfels. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://new-braunfels.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK C · Body loader</strong>
+      <p class="note">Paste into a Custom Code element on the BOOKING page body. Use slug /genetic-testing-consult.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blockc">Copy</button>
+  </div>
+  <pre id="new-braunfels-blockc"><code>&lt;script&gt;
+/* The DRIPBaR loader v5 (body element) | Genetic Testing Booking - New Braunfels */
+(function () {
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  try {
+    var st = document.createElement(&#x27;style&#x27;);
+    st.id = &#x27;fastSplash&#x27;;
+    st.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  fetch(GH + &#x27;/new-braunfels/genetic-testing/book/index.html?v=1&#x27;).then(function (r) {
+    if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status);
+    return r.text();
+  }).then(function (html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }).catch(function (e) {
+    var s = document.getElementById(&#x27;fastSplash&#x27;);
+    if (s &amp;&amp; s.parentNode) s.parentNode.removeChild(s);
+  });
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking Page</span>
+      <strong>BLOCK D · Header meta</strong>
+      <p class="note">Paste into the BOOKING page header tracking code. Replace PAGE-URL-HERE with the live GHL page URL.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blockd">Copy</button>
+  </div>
+  <pre id="new-braunfels-blockd"><code>&lt;!-- ===== The DRIPBaR New Braunfels | Genetic Testing | SEO (meta only) ===== --&gt;
+&lt;!-- NOTE: replace PAGE-URL-HERE below (2 meta tags + 2 JSON-LD fields) with the final published page URL --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR New Braunfels. Pick the panel you&#x27;re curious about and choose a time that works for you.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR New Braunfels.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;PAGE-URL-HERE&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your Genetic Testing Consult | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Book a free 15-minute genetic testing consult at The DRIPBaR New Braunfels.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0a1220&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+  {&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;https://new-braunfels.thedripbar.com/#location&quot;,&quot;name&quot;:&quot;The DRIPBaR New Braunfels&quot;,&quot;url&quot;:&quot;https://new-braunfels.thedripbar.com/&quot;,&quot;telephone&quot;:&quot;+18307305304&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;streetAddress&quot;:&quot;312 FM 306 Suite 112&quot;,&quot;addressLocality&quot;:&quot;New Braunfels&quot;,&quot;addressRegion&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78130&quot;,&quot;addressCountry&quot;:&quot;US&quot;},&quot;openingHours&quot;:[&quot;Mo-Fr 10:00-18:00&quot;, &quot;Sa 09:00-15:00&quot;, &quot;Su 10:00-15:00&quot;],&quot;image&quot;:&quot;https://betterbranding.github.io/dripbar-pages/austin/genetic-testing/og.jpg&quot;},
+  {&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:&quot;PAGE-URL-HERE#webpage&quot;,&quot;url&quot;:&quot;PAGE-URL-HERE&quot;,&quot;name&quot;:&quot;Book Your Genetic Testing Consult | The DRIPBaR New Braunfels&quot;,&quot;description&quot;:&quot;Genetic testing at The DRIPBaR New Braunfels. Four panels covering methylation, athletic performance, NAD levels, and metabolic health, each with a clinical review and a personalized wellness plan.&quot;,&quot;inLanguage&quot;:&quot;en-US&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;https://new-braunfels.thedripbar.com/#location&quot;}}
+]}&lt;/script&gt;
+&lt;!-- ===== /The DRIPBaR Genetic Testing header ===== --&gt;</code></pre>
+</div>
+</section>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const text = document.getElementById(btn.dataset.target).innerText;
+    try { await navigator.clipboard.writeText(text); }
+    catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    btn.textContent = 'Copied!'; btn.classList.add('done');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1600);
+  });
+});
+</script>
+</body>
+</html>
