@@ -8,260 +8,321 @@
 <link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#3C4C62; --cyan:#0E9EC1; --lime:#C1D81A;
-  --bg:#f4f5f7; --body:#4a4a4a; --cyanfill:#f0f7fa; --limefill:#f7f9f0;
-  --bluefill:#D9EEF5;
-  --divider:#e8e8e8; --muted:#8b95a1;
+  --teal:#044E63; --teal-soft:rgba(255,255,255,.12);
+  --lime:#AFB216; --lime-dark:#9A9D12;
+  --blue:#D9EEF5; --blue-soft:#EEF7FA; --blue-icon:#DFF1F6;
+  --white:#FFFFFF; --body:#3B4A4E; --muted:#6B7A80; --divider:#DCE8EC;
   --bebas:'Bebas Neue','Arial Narrow',Arial,sans-serif;
   --pop:'Poppins',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--pop);font-weight:400;color:var(--body);background:var(--bg);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--pop);font-weight:400;color:var(--body);background:var(--white);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
+ul{list-style:none}
 
 /* ---------- layout ---------- */
-.shell{width:min(1360px,92vw);margin:0 auto}
-.pad{padding-top:130px;padding-bottom:130px}
-@media(max-width:768px){.pad{padding-top:92px;padding-bottom:92px}}
+.shell{width:min(1280px,92vw);margin:0 auto}
+.pad{padding-top:110px;padding-bottom:110px}
+@media(max-width:768px){.pad{padding-top:76px;padding-bottom:76px}}
+.bg-blue{background:var(--blue)}
+.bg-soft{background:var(--blue-soft)}
+.bg-teal{background:var(--teal);color:#fff}
 
 /* ---------- type ---------- */
-.eyebrow{display:flex;align-items:center;gap:8px;font:600 12px/1 var(--pop);letter-spacing:1.5px;text-transform:uppercase;color:var(--navy)}
-.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:none}
-.eyebrow.on-dark{color:#fff}
-.eyebrow.on-dark::before{background:var(--lime)}
-h1,h2,h3,.btn{font-family:var(--bebas);font-weight:400;letter-spacing:1px}
-h1{font-size:clamp(44px,6.2vw,88px);line-height:1.02;color:#fff}
-h2{font-size:clamp(34px,4vw,58px);line-height:1.05;color:var(--navy)}
-h3{font-size:clamp(22px,2vw,28px);line-height:1.1;color:var(--navy)}
-.ghosted{color:#aeb6c0}
-.lede{font-size:clamp(16px,1.3vw,18px);max-width:640px}
+h1,h2,h3,.stat b{font-family:var(--bebas);font-weight:400;letter-spacing:1px}
+h1{font-size:clamp(46px,6vw,86px);line-height:1;color:#fff}
+h2{font-size:clamp(36px,4vw,60px);line-height:1.04;color:var(--teal)}
+h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
+.bg-teal h2,.bg-teal h3{color:#fff}
+.lede{font-size:clamp(16px,1.25vw,18px);max-width:620px}
+.bg-teal .lede{color:rgba(255,255,255,.86)}
+
+/* pill section tags */
+.tag{display:inline-flex;align-items:center;gap:9px;font:500 14px/1 var(--pop);padding:11px 18px;border-radius:99px;background:var(--blue);color:var(--teal);margin-bottom:22px}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none}
+.tag.on-blue{background:var(--white)}
+.tag.on-teal{background:var(--teal-soft);color:#fff;border:1px solid rgba(255,255,255,.2)}
 
 /* ---------- buttons ---------- */
-.btn{display:inline-block;font-size:17px;letter-spacing:1.5px;padding:15px 38px;border-radius:6px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;text-align:center}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(14,158,193,.28)}
-.btn-cyan{background:var(--cyan);color:#fff}
-.btn-lime{background:var(--lime);color:var(--navy)}
-.btn-lime:hover{box-shadow:0 8px 22px rgba(193,216,26,.35)}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.65);color:#fff;background:rgba(255,255,255,.06);backdrop-filter:blur(3px)}
-.btn-ghost:hover{background:rgba(255,255,255,.16);box-shadow:none}
-.tlink{font-family:var(--bebas);font-size:18px;letter-spacing:1.5px;color:var(--cyan);display:inline-flex;align-items:center;gap:8px}
-.tlink span{transition:transform .3s ease}
-.tlink:hover span{transform:translateX(5px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:600 15.5px/1 var(--pop);padding:17px 30px;border-radius:99px;transition:background .25s ease,color .25s ease,transform .25s ease,border-color .25s ease;cursor:pointer;text-align:center;white-space:nowrap}
+.btn-lime{background:var(--lime);color:#fff}
+.btn-lime:hover{background:var(--lime-dark);transform:translateY(-1px)}
+.btn-out{background:transparent;border:1.5px solid var(--teal);color:var(--teal);padding:15.5px 28.5px}
+.btn-out:hover{background:var(--teal);color:#fff}
+.btn-out-w{background:transparent;border:1.5px solid rgba(255,255,255,.85);color:#fff;padding:15.5px 28.5px}
+.btn-out-w:hover{background:#fff;color:var(--teal)}
+.tlink{font:600 15px/1.3 var(--pop);color:var(--lime);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;display:inline-flex;align-items:center;gap:6px;transition:color .25s ease}
+.tlink:hover{color:var(--lime-dark)}
+.tlink span{display:inline-block;transition:transform .3s ease}
+.tlink:hover span{transform:translateX(4px)}
 
-/* ---------- fixed top: announcement + nav ---------- */
-.top{position:fixed;top:0;left:0;right:0;z-index:900;transform:translateY(-100%);animation:navin .7s .3s forwards ease}
-@keyframes navin{to{transform:none}}
-.announce{background:var(--navy);color:#fff;font:600 12px/1 var(--pop);letter-spacing:1px;text-transform:uppercase}
-.announce .shell{display:flex;align-items:center;justify-content:center;gap:14px;height:38px}
-.announce a{color:var(--navy);background:var(--lime);border-radius:100px;padding:5px 14px;font-size:11px;letter-spacing:1.2px;transition:transform .25s ease}
-.announce a:hover{transform:translateY(-1px)}
-.nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(60,76,98,.08)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
-.nav img{height:34px;width:auto}
-.nav-links{display:flex;align-items:center;gap:34px;font:600 13px/1 var(--pop);letter-spacing:1.2px;text-transform:uppercase;color:var(--navy)}
-.nav-links > div, .nav-links > a{position:relative}
-.nav-links a{transition:color .25s ease;padding:10px 0;display:inline-block}
-.nav-links a:hover{color:var(--cyan)}
-.has-drop > a::after{content:"";display:inline-block;margin-left:7px;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
-.drop{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:#fff;border-radius:8px;box-shadow:0 14px 40px rgba(60,76,98,.18);padding:14px 0;min-width:270px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease}
+/* ---------- icons ---------- */
+.ic{display:inline-flex;flex:none}
+.ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.isq{width:56px;height:56px;border-radius:14px;background:var(--blue-icon);color:var(--teal);display:grid;place-items:center;flex:none}
+.isq .ic{width:26px;height:26px}
+.ck{width:20px;height:20px;color:var(--lime);margin-top:3px}
+.ck svg{stroke-width:2.2}
+.ckl li{display:flex;gap:12px;align-items:flex-start;font:600 15.5px/1.5 var(--pop);color:var(--teal);padding:7px 0}
+.ckl li small{display:block;font:400 15px/1.65 var(--pop);color:var(--body);margin-top:3px}
+
+/* ---------- announcement + utility ---------- */
+.announce{background:var(--lime);color:#fff;font:600 14px/1.4 var(--pop);text-align:center;padding:12px 16px}
+.util{background:var(--teal);color:#fff;font:400 14px/1 var(--pop)}
+.util .shell{display:flex;align-items:center;justify-content:center;gap:40px;height:52px;flex-wrap:wrap}
+.util a,.util span{display:inline-flex;align-items:center;gap:8px;color:#fff}
+.util .ic{width:16px;height:16px;color:var(--lime)}
+@media(max-width:720px){.util{display:none}}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:900;background:#fff;border-bottom:1px solid var(--divider)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:88px;gap:24px}
+.nav .logo img{height:72px;width:auto}
+.nav-links{display:flex;align-items:center;gap:36px;font:500 16px/1 var(--pop);color:var(--teal)}
+.nav-links > div,.nav-links > a{position:relative}
+.nav-links a{transition:color .25s ease;padding:12px 0;display:inline-flex;align-items:center;gap:7px}
+.nav-links a:hover{color:var(--lime-dark)}
+.has-drop > a::after{content:"";display:inline-block;width:7px;height:7px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-2px,-2px)}
+.drop{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);background:#fff;border:1px solid var(--divider);border-radius:20px;box-shadow:0 18px 44px rgba(4,78,99,.14);padding:14px 0;min-width:290px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s}
 .has-drop:hover .drop,.has-drop:focus-within .drop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.drop a{display:block;padding:9px 26px;font:600 12px/1.4 var(--pop);letter-spacing:.8px;text-transform:none;color:var(--navy);white-space:nowrap}
-.drop a:hover{background:var(--cyanfill);color:var(--cyan)}
-.nav .btn{font-size:15px;padding:10px 26px}
+.drop a{display:block;padding:10px 26px;font:500 14.5px/1.4 var(--pop);color:var(--teal);white-space:nowrap}
+.drop a:hover{background:var(--blue-soft);color:var(--lime-dark)}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-right .call{font:600 16px/1 var(--pop);color:var(--teal);transition:color .25s ease}
+.nav-right .call:hover{color:var(--lime-dark)}
+.nav .btn{padding:15px 26px}
 .burger{display:none;background:none;border:0;cursor:pointer;padding:8px;flex:none}
-.burger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;transition:transform .3s ease,opacity .3s ease}
-@media(max-width:900px){
-  .nav-links,.nav .btn-cyan.desk{display:none}
+.burger span{display:block;width:26px;height:2px;background:var(--teal);margin:6px 0;border-radius:2px}
+@media(max-width:960px){
+  .nav-links,.nav-right{display:none}
   .burger{display:block}
-  .announce .shell{gap:10px;font-size:11px}
+  .nav-in{height:76px}
+  .nav .logo img{height:58px}
 }
-@media(max-width:420px){
-  .announce .shell{font-size:10px;gap:8px;letter-spacing:.6px}
-  .announce a{padding:4px 10px;font-size:10px}
-}
-/* mobile slide-in menu */
+/* mobile drawer */
 .mnav{position:fixed;inset:0;z-index:950;pointer-events:none}
-.mnav .scrim{position:absolute;inset:0;background:rgba(34,44,58,.5);opacity:0;transition:opacity .3s ease}
-.mnav .panel{position:absolute;top:0;right:0;bottom:0;width:min(360px,88vw);background:var(--navy);color:#fff;transform:translateX(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1);overflow-y:auto;padding:26px 30px 44px}
+.mnav .scrim{position:absolute;inset:0;background:rgba(4,78,99,.45);opacity:0;transition:opacity .3s ease}
+.mnav .panel{position:absolute;top:0;right:0;bottom:0;width:min(380px,90vw);background:var(--teal);color:#fff;transform:translateX(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1);overflow-y:auto;padding:22px 30px 44px}
 .mnav.open{pointer-events:auto}
 .mnav.open .scrim{opacity:1}
 .mnav.open .panel{transform:none}
 .mnav .close{background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer;display:block;margin-left:auto;padding:6px}
-.mnav .grp{font:600 11px/1 var(--pop);letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin:26px 0 8px}
-.mnav a{display:block;font:600 14px/1.4 var(--pop);letter-spacing:.6px;color:#fff;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mnav .grp{font:600 12px/1 var(--pop);letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin:26px 0 8px}
+.mnav a{display:block;font:500 15px/1.4 var(--pop);color:#fff;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .mnav a:hover{color:var(--lime)}
-.mnav .btn{display:block;margin-top:30px;border-bottom:0}
+.mnav .btn{display:flex;margin-top:28px;border-bottom:0;color:#fff}
+.mnav .mphone{margin-top:14px;border-bottom:0;font-weight:600;text-align:center}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero{position:relative;min-height:680px;display:flex;align-items:center;color:#fff;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/The_DRIPBaR_Edina_Lounge.webp') center/cover no-repeat;animation:heroZoom 8s ease forwards}
-@keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(34,44,58,.88) 0%,rgba(34,44,58,.62) 45%,rgba(34,44,58,.5) 100%)}
-.hero-in{position:relative;z-index:2;padding:190px 0 110px}
-.hero .eyebrow{margin-bottom:22px}
-.hero h1{max-width:15ch}
-.hero h1 em{font-style:normal;color:var(--lime)}
-.hero p{margin:26px 0 36px;max-width:560px;font-size:clamp(16px,1.3vw,19px);color:rgba(255,255,255,.92)}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(4,78,99,.84) 0%,rgba(4,78,99,.72) 55%,rgba(4,78,99,.6) 100%)}
+.hero-in{position:relative;z-index:2;padding:110px 0 80px}
+.hero h1{max-width:14ch}
+.hero p{margin:26px 0 34px;max-width:600px;font-size:clamp(16px,1.25vw,19px);color:rgba(255,255,255,.9)}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.hero .fine{margin-top:26px;font-size:13px;color:rgba(255,255,255,.75)}
-@media(max-width:768px){.hero{min-height:86vh}.hero-in{padding:160px 0 96px}.hero-ctas .btn{width:100%}}
+.trust{display:flex;flex-wrap:wrap;gap:16px 40px;margin-top:56px;font:500 15px/1 var(--pop);color:#fff}
+.trust li{display:inline-flex;align-items:center;gap:10px}
+.trust .ic{width:20px;height:20px;color:var(--lime)}
+@media(max-width:768px){.hero{min-height:0}.hero-in{padding:80px 0 64px}.hero-ctas .btn{width:100%}.trust{gap:14px 24px;margin-top:40px;font-size:14px}}
 
-/* ---------- trio photo cards ---------- */
-.trio-head{text-align:center;max-width:760px;margin:0 auto 70px}
-.trio-head .eyebrow{justify-content:center;margin-bottom:18px}
-.trio-head p{margin-top:20px}
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.tcard{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .35s ease,box-shadow .35s ease}
-.tcard:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(60,76,98,.14)}
-.tcard .ph{aspect-ratio:4/3;overflow:hidden}
-.tcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-.tcard:hover .ph img{transform:scale(1.05)}
-.tcard .tx{padding:26px 28px 30px}
-.tcard h3{display:flex;align-items:center;gap:10px}
-.tcard h3 span{color:var(--cyan);font-family:var(--pop);font-size:18px;transition:transform .3s ease}
-.tcard:hover h3 span{transform:translateX(5px)}
-.tcard p{margin-top:10px;font-size:15px}
-@media(max-width:900px){.trio{grid-template-columns:1fr}}
+/* ---------- stats strip ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:54px 0;text-align:center}
+.stat b{display:block;font-size:clamp(44px,4.4vw,64px);line-height:1;color:var(--teal)}
+.stat span{display:block;margin-top:8px;font-size:15px;color:var(--muted)}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr);gap:32px 16px;padding:44px 0}}
+
+/* ---------- two-column blocks ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.two .lede{margin-top:18px}
+.two .ckl{margin:26px 0 34px}
+.two .ctas{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:960px){.two{grid-template-columns:1fr;gap:48px}}
+/* stacked photos */
+.stack{position:relative;padding:0 0 70px 70px}
+.stack .p1{border-radius:24px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--divider)}
+.stack .p2{position:absolute;left:0;bottom:0;width:58%;border-radius:20px;overflow:hidden;aspect-ratio:4/3;border:6px solid #fff;box-shadow:0 18px 50px rgba(4,78,99,.16)}
+.stack img{width:100%;height:100%;object-fit:cover}
+@media(max-width:960px){.stack{padding:0 0 50px 40px}.stack .p1{aspect-ratio:4/3}}
 
 /* ---------- services grid ---------- */
-.svc{background:#fff}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.svc .tcard{background:var(--bg);box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.acard{border-radius:8px;padding:30px 30px 34px;display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease}
-.acard:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(60,76,98,.12)}
-.acard.cy{background:var(--cyanfill);border-left:4px solid var(--cyan)}
-.acard.li{background:var(--limefill);border-left:4px solid var(--lime)}
-.acard h3{display:flex;align-items:center;gap:10px}
-.acard h3 span{color:var(--cyan);font-family:var(--pop);font-size:18px;transition:transform .3s ease}
-.acard.li h3 span{color:#8a9a17}
-.acard:hover h3 span{transform:translateX(5px)}
-.acard p{margin-top:10px;font-size:15px}
-@media(max-width:900px){.svc-grid{grid-template-columns:1fr}}
+.svc-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.svc-head .lede{max-width:520px;margin-left:auto}
+@media(max-width:900px){.svc-head{grid-template-columns:1fr;gap:18px}.svc-head .lede{margin-left:0}}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{background:#fff;border-radius:24px;border:1px solid var(--divider);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(4,78,99,.10)}
+.card .ph{margin:12px 12px 0;border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.card:hover .ph img{transform:scale(1.04)}
+.card .tx{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+.card p{margin-top:10px;font-size:15px}
+.card .ckl{margin:14px 0 18px;padding-top:14px;border-top:1px solid var(--divider)}
+.card .ckl li{padding:4px 0;font-size:14.5px}
+.card .ckl .ck{width:18px;height:18px;margin-top:3px}
+.card .tlink{margin-top:auto;align-self:flex-start}
+@media(max-width:1100px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.svc-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+@media(max-width:480px){.svc-grid{grid-template-columns:1fr}}
+
+/* ---------- find your path ---------- */
+.path-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.path-head .lede{margin:18px auto 0}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gcard{background:#fff;border-radius:24px;padding:32px 30px 30px;display:flex;flex-direction:column;gap:14px;color:var(--body);transition:transform .35s ease}
+.gcard:hover{transform:translateY(-5px)}
+.bg-teal .gcard h3{color:var(--teal)}
+.gcard p{font-size:15px}
+.gcard .tlink{margin-top:auto}
+@media(max-width:960px){.path-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.path-grid{grid-template-columns:1fr}}
 
 /* ---------- how it works ---------- */
-.how-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:start}
-.how-left{position:sticky;top:140px}
-.how-left .eyebrow{margin-bottom:18px}
-.how-left p{margin-top:20px;max-width:420px}
-.how-left .btn{margin-top:30px}
-.step{display:grid;grid-template-columns:86px 1fr;gap:26px;padding:38px 0;border-top:1px solid var(--divider)}
+.how{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.steps{background:var(--teal);color:#fff;border-radius:24px;padding:48px}
+.steps h3{color:#fff;margin-bottom:6px}
+.step{display:grid;grid-template-columns:48px 1fr;gap:22px;padding:24px 0;border-top:1px solid rgba(255,255,255,.14)}
 .step:first-child{border-top:0;padding-top:0}
-.step .num{font-family:var(--bebas);font-size:56px;line-height:.9;color:var(--cyan);opacity:.35}
-.step h3{margin-bottom:8px}
-.step p{font-size:15px;max-width:520px}
-@media(max-width:900px){.how-grid{grid-template-columns:1fr;gap:44px}.how-left{position:static}.step{grid-template-columns:60px 1fr;gap:18px;padding:28px 0}.step .num{font-size:42px}}
+.step:last-child{padding-bottom:0}
+.step .num{width:48px;height:48px;border-radius:50%;background:var(--lime);color:#fff;font:600 17px/1 var(--pop);display:grid;place-items:center}
+.step p{font-size:15px;color:rgba(255,255,255,.86)}
+.how .ph{border-radius:24px;overflow:hidden;aspect-ratio:4/3;border:1px solid var(--divider);margin-bottom:34px}
+.how .ph img{width:100%;height:100%;object-fit:cover}
+.how .lede{margin:18px 0 30px}
+@media(max-width:960px){.how{grid-template-columns:1fr;gap:44px}.steps{padding:32px 26px}}
 
 /* ---------- reviews ---------- */
-.rev{background:#fff}
-.rev-head{text-align:center;max-width:760px;margin:0 auto 64px}
-.rev-head .eyebrow{justify-content:center;margin-bottom:18px}
-.stars{display:flex;justify-content:center;gap:5px;margin:24px 0 6px}
-.stars svg{width:26px;height:26px;fill:var(--lime)}
-.rev-head .count{font-size:14px;color:var(--muted)}
-.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-.rcard{background:var(--bg);border-radius:8px;padding:34px 36px;display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease}
-.rcard:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(60,76,98,.10)}
-.rcard .rstars{display:flex;gap:3px;margin-bottom:16px}
-.rcard .rstars svg{width:16px;height:16px;fill:var(--lime)}
+.rev-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.rev-head .count{margin-top:16px;font-size:15px;color:var(--muted)}
+.rev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.rcard{background:#fff;border-radius:24px;border:1px solid var(--divider);padding:32px 30px;display:flex;flex-direction:column}
+.rstars{display:flex;gap:3px;margin-bottom:18px}
+.rstars svg{width:18px;height:18px;fill:var(--lime)}
 .rcard blockquote{font-size:15px;color:var(--body)}
-.rcard .who{margin-top:auto;padding-top:20px;font:600 13px/1 var(--pop);letter-spacing:.5px;color:var(--navy)}
-.rcard .src{margin-top:6px;font-size:12px;color:var(--muted)}
-@media(max-width:900px){.rev-grid{grid-template-columns:1fr}}
+.rcard .who{margin-top:auto;padding-top:22px;font:600 14px/1 var(--pop);color:var(--teal)}
+.rcard .src{margin-top:6px;font-size:12.5px;color:var(--muted)}
+@media(max-width:1100px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.rev-grid{grid-template-columns:1fr}}
 
-/* ---------- 2-col panel (wellness teaser) ---------- */
-.panel{overflow:hidden}
-.panel.cyfill{background:var(--cyanfill)}
-.panel .grid{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
-.panel.flip .grid > .ph{order:2}
-.panel .ph{border-radius:8px;overflow:hidden;box-shadow:0 18px 44px rgba(60,76,98,.16);aspect-ratio:4/5;max-height:640px}
-.panel .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
-.panel .ph:hover img{transform:scale(1.04)}
-.panel .eyebrow{margin-bottom:16px}
-.panel h2{margin-bottom:8px}
-.panel .why{font-size:16px;margin:16px 0 26px;max-width:540px}
-.learn{list-style:none;margin-bottom:30px}
-.learn li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;font-size:15px;border-top:1px solid var(--divider)}
-.learn li:first-child{border-top:0}
-.learn .ck{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin-top:2px;font-size:12px;font-weight:600}
-.ck.cy{background:var(--cyan);color:#fff}
-.ck.li{background:var(--lime);color:var(--navy)}
-@media(max-width:900px){.panel .grid{grid-template-columns:1fr;gap:38px}.panel.flip .grid > .ph{order:0}.panel .ph{aspect-ratio:4/3;max-height:none}}
+/* ---------- callouts ---------- */
+.callout{border-radius:24px;padding:64px 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.callout.teal{background:var(--teal);color:#fff}
+.callout h2{color:#fff}
+.callout p{margin-top:16px;max-width:560px;color:rgba(255,255,255,.88)}
+.callout .fine{margin-top:18px;font-size:13px;color:rgba(255,255,255,.62)}
+.callout .ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.callout.lime{background:var(--lime);padding:44px 56px;align-items:center}
+.callout.lime h3{color:#fff;font-size:clamp(26px,2.6vw,38px);letter-spacing:1px}
+@media(max-width:900px){.callout{grid-template-columns:1fr;padding:44px 28px}.callout .ctas{justify-content:flex-start}.callout.lime{padding:36px 28px}}
 
-/* ---------- help me choose teaser ---------- */
-.choose .card{background:var(--bluefill);border-radius:8px;padding:84px 40px;text-align:center}
-.choose .eyebrow{justify-content:center;margin-bottom:18px}
-.choose p{max-width:560px;margin:20px auto 30px}
-@media(max-width:768px){.choose .card{padding:60px 26px}}
+/* ---------- wellness panel ---------- */
+.well .ph{border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-height:620px;border:1px solid var(--divider)}
+.well .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.well .ph:hover img{transform:scale(1.03)}
+@media(max-width:960px){.well .ph{aspect-ratio:4/3;max-height:none;order:-1}}
 
 /* ---------- final cta ---------- */
-.cta{background:var(--navy);color:#fff;text-align:center}
-.cta h2{color:#fff}
-.cta h2 em{font-style:normal;color:var(--lime)}
-.cta p{max-width:560px;margin:24px auto 38px;color:rgba(255,255,255,.88)}
-.cta .fine{margin-top:28px;font-size:14px;color:#a0aab4}
-.cta .fine a{color:var(--lime)}
+.cta{text-align:center}
+.cta .lede{margin:22px auto 36px}
+.cta .fine{margin-top:26px;font-size:14px;color:rgba(255,255,255,.7)}
+.cta .fine a{color:var(--lime);font-weight:600}
 
 /* ---------- footer ---------- */
-.foot{background:#334153;color:#fff;padding:64px 0 72px;text-align:center}
-.foot img{height:44px;width:auto;margin:0 auto 22px}
-.foot .loc{font:600 14px/1 var(--pop);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
-.foot .adr{color:#a0aab4;font-size:14px;line-height:1.8}
-.foot .btn{margin:26px 0 34px}
-.foot .links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;max-width:820px;margin:0 auto 34px;font-size:12.5px}
-.foot .links a{color:#a0aab4;transition:color .25s ease}
-.foot .links a:hover{color:var(--lime)}
-.foot .md{color:#7a8896;font-size:12px}
+.foot{background:var(--teal);color:#fff;padding:72px 0 40px;border-top:1px solid rgba(255,255,255,.12)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot img{width:160px;height:auto;margin-bottom:22px}
+.foot .adr{color:rgba(255,255,255,.7);font-size:14.5px;line-height:1.85}
+.foot .adr a{color:#fff;font-weight:600}
+.foot .btn{margin-top:26px}
+.foot h4{font:600 13px/1 var(--pop);letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
+.foot .links a{display:block;color:rgba(255,255,255,.7);font-size:14.5px;padding:5px 0;transition:color .25s ease}
+.foot .links a:hover{color:#fff}
+.foot-bottom{padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.55)}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid > div:first-child{grid-column:1/-1}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- reveal on scroll ---------- */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
 
 /* ---------- reduced motion ---------- */
 @media(prefers-reduced-motion:reduce){
-  .top{transform:none;animation:none}
   .hero-bg{animation:none;transform:none}
-  .btn,.tcard,.acard,.rcard,.tcard .ph img,.panel .ph img,.tlink span,.tcard h3 span,.acard h3 span{transition:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn,.card,.gcard,.rcard,.card .ph img,.well .ph img,.tlink span{transition:none}
   html{scroll-behavior:auto}
 }
 </style>
 </head>
 <body>
 
-<!-- FIXED TOP: ANNOUNCEMENT + NAV -->
-<div class="top">
-  <div class="announce">
-    <div class="shell">
-      <span>$20 off your first appointment.</span>
-      <a href="https://thedripbaredina.com/booking-page-6799" data-book="general">BOOK NOW</a>
-    </div>
+<!-- SVG SYMBOLS -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M2 12.5l4.5 4.5L15 8.5"/><path d="M10 17l1.5 1.5L22 8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.4 6.3 20.5l1.2-6.4L2.8 9.7l6.4-.8z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14a5.5 5.5 0 0 1 3.5 6"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.3-9.3A5.2 5.2 0 0 1 12 6.6a5.2 5.2 0 0 1 9.3 5.1C19.5 16.4 12 21 12 21z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M4 7h16M6 7l-3 7a3 3 0 0 0 6 0L6 7zM18 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></symbol>
+</svg>
+
+<!-- 1. ANNOUNCEMENT BAR -->
+<div class="announce">New Here? Enjoy $20 Off Your First Appointment.</div>
+
+<!-- 2. UTILITY BAR -->
+<div class="util">
+  <div class="shell">
+    <a href="tel:+16124296822"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call or Text: (612) 429-6822</a>
+    <span><span class="ic"><svg><use href="#i-pin"/></svg></span>Edina, Minnesota</span>
+    <span><span class="ic"><svg><use href="#i-clock"/></svg></span>Open Today: <span id="hours-today">Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</span></span>
   </div>
-  <div class="nav">
-    <div class="shell nav-in">
-      <a href="/" aria-label="The DRIPBaR Edina home"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
-      <div class="nav-links">
-        <div class="has-drop">
-          <a href="#services">SERVICES</a>
-          <div class="drop">
-            <a href="/hydration-recovery">Hydration and Recovery</a>
-            <a href="/energy-focus">Energy and Focus</a>
-            <a href="/immunity-viral">Immunity and Viral Support</a>
-            <a href="/nad">NAD+</a>
-            <a href="/high-dose-vitamin-c">High Dose Vitamin C</a>
-            <a href="/detox">Detox</a>
-            <a href="/skin-brightening-beauty">Skin Brightening and Beauty</a>
-            <a href="/weight-loss-support">GLP-1 Weight Loss Support</a>
-            <a href="/sermorelin">Sermorelin Peptide Therapy</a>
-            <a href="/quickshots">Quickshots</a>
-            <a href="/wellness-therapies">Wellness Therapies</a>
-          </div>
+</div>
+
+<!-- 3. NAV -->
+<div class="nav">
+  <div class="shell nav-in">
+    <a class="logo" href="/" aria-label="The DRIPBaR Edina home"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR" loading="eager"></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <div class="has-drop">
+        <a href="#services">Services</a>
+        <div class="drop">
+          <a href="/hydration-recovery">Hydration and Recovery</a>
+          <a href="/energy-focus">Energy and Focus</a>
+          <a href="/immunity-viral">Immunity and Viral Support</a>
+          <a href="/nad">NAD+</a>
+          <a href="/high-dose-vitamin-c">High Dose Vitamin C</a>
+          <a href="/detox">Detox</a>
+          <a href="/skin-brightening-beauty">Skin Brightening and Beauty</a>
+          <a href="/weight-loss-support">GLP-1 Weight Loss Support</a>
+          <a href="/sermorelin">Sermorelin Peptide Therapy</a>
+          <a href="/ozone-therapy">Ozone Therapy</a>
+          <a href="/quickshots">Quickshots</a>
+          <a href="/wellness-therapies">Wellness Therapies</a>
         </div>
-        <a href="/help-me-choose">HELP ME CHOOSE</a>
-        <a href="/contact">CONTACT</a>
       </div>
-      <a class="btn btn-cyan desk" href="https://thedripbaredina.com/booking-page-6799" data-book="general">BOOK NOW</a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a href="/help-me-choose">Help Me Choose</a>
+      <a href="/contact">Contact</a>
     </div>
+    <div class="nav-right">
+      <a class="call" href="tel:+16124296822">Call/Text Us</a>
+      <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Appointment</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </div>
 
@@ -270,6 +331,10 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1;color:var(--navy)}
   <div class="scrim" id="mscrim"></div>
   <div class="panel">
     <button class="close" id="mclose" aria-label="Close menu">&#10005;</button>
+    <div class="grp">Menu</div>
+    <a href="/">Home</a>
+    <a href="/help-me-choose">Help Me Choose</a>
+    <a href="/contact">Contact</a>
     <div class="grp">Services</div>
     <a href="/hydration-recovery">Hydration and Recovery</a>
     <a href="/energy-focus">Energy and Focus</a>
@@ -280,172 +345,261 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1;color:var(--navy)}
     <a href="/skin-brightening-beauty">Skin Brightening and Beauty</a>
     <a href="/weight-loss-support">GLP-1 Weight Loss Support</a>
     <a href="/sermorelin">Sermorelin Peptide Therapy</a>
+    <a href="/ozone-therapy">Ozone Therapy</a>
     <a href="/quickshots">Quickshots</a>
     <a href="/wellness-therapies">Wellness Therapies</a>
-    <div class="grp">More</div>
-    <a href="/help-me-choose">Help Me Choose</a>
-    <a href="/contact">Contact</a>
-    <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">BOOK NOW</a>
+    <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Appointment</a>
+    <a class="mphone" href="tel:+16124296822">Call or Text: (612) 429-6822</a>
   </div>
 </div>
 
-<!-- HERO -->
+<!-- 4. HERO -->
 <header class="hero">
   <div class="hero-bg"></div>
   <div class="shell hero-in">
-    <div class="eyebrow on-dark">IV Therapy in Edina</div>
-    <h1>Modern preventative care, tailored to <em>you</em>.</h1>
+    <div class="tag on-teal">Wellness Center in Edina</div>
+    <h1>Modern preventative care, tailored to you.</h1>
     <p>IV drips, quick shots, and wellness therapies from a licensed clinical team in Edina. Personalized support for energy, immunity, recovery, and healthy aging.</p>
     <div class="hero-ctas">
-      <a class="btn btn-cyan" href="https://thedripbaredina.com/booking-page-6799" data-book="general">BOOK NOW</a>
-      <a class="btn btn-ghost" href="#services">EXPLORE SERVICES</a>
+      <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Your Appointment</a>
+      <a class="btn btn-out-w" href="/help-me-choose">Help Me Choose a Service</a>
     </div>
-    <div class="fine">3515 W. 70th St, Edina, next to Original Pancake House. Walk-ins welcome, appointments preferred.</div>
+    <ul class="trust">
+      <li><span class="ic"><svg><use href="#i-star"/></svg></span>5.0 Google Rating</li>
+      <li><span class="ic"><svg><use href="#i-users"/></svg></span>Personalized Guidance</li>
+      <li><span class="ic"><svg><use href="#i-badge"/></svg></span>Licensed Medical Team</li>
+      <li><span class="ic"><svg><use href="#i-heart"/></svg></span>Locally Owned</li>
+    </ul>
   </div>
 </header>
 
-<!-- TRIO: WHY EDINA -->
+<!-- 5. STATS STRIP -->
+<section class="bg-blue">
+  <div class="shell stats">
+    <div class="stat"><b>230+</b><span>Google Reviews</span></div>
+    <div class="stat"><b>5.0</b><span>Star Rating</span></div>
+    <div class="stat"><b>Custom</b><span>Personalized Plans</span></div>
+    <div class="stat"><b>Local</b><span>Edina Location</span></div>
+  </div>
+</section>
+
+<!-- 6. WHY EDINA -->
 <section class="pad">
-  <div class="shell">
-    <div class="trio-head">
-      <div class="eyebrow">Why The DRIPBaR Edina</div>
-      <h2>Clinical standards. <span class="ghosted">Lounge comfort.</span></h2>
-      <p class="lede" style="margin-left:auto;margin-right:auto">IV therapy works best when it is done carefully. We hold every visit to a clinical standard, then make sure you are comfortable while it happens.</p>
+  <div class="shell two">
+    <div class="rv">
+      <div class="tag">Why Edina</div>
+      <h2>Clinical standards. Lounge comfort.</h2>
+      <p class="lede">IV therapy works best when it is done carefully. We hold every visit to a clinical standard, then make sure you are comfortable while it happens.</p>
+      <ul class="ckl">
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>A licensed clinical team<small>Licensed medical professionals administer every drip and shot, with physician oversight from Dr. Azhar Ahmed. Your first visit starts with a brief health screening, not a sales pitch.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Pharmacy-grade standards<small>Every IV is compounded on site in a dedicated isolator hood that meets pharmacy-grade standards, inside a controlled environment designed to eliminate contamination.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>A lounge built for comfort<small>Settle into a recliner with a warm blanket and a quiet room. Most IV visits take 30 to 60 minutes, and quick shots are done in under 15.</small></div></li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Your Appointment</a>
+        <a class="btn btn-out" href="/contact">Contact Us</a>
+      </div>
     </div>
-    <div class="trio">
-      <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_7577.webp" alt="A nurse checking an IV drip while a client relaxes in the Edina lounge" loading="lazy"></div>
-        <div class="tx"><h3>A LICENSED CLINICAL TEAM <span>&rarr;</span></h3><p>Licensed medical professionals administer every drip and shot, with physician oversight from Dr. Azhar Ahmed. Your first visit starts with a brief health screening, not a sales pitch.</p></div>
-      </div>
-      <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_7549.webp" alt="Gloved hands preparing an IV bag inside a sterile compounding hood" loading="lazy"></div>
-        <div class="tx"><h3>PHARMACY-GRADE STANDARDS <span>&rarr;</span></h3><p>Every IV is compounded on site in a dedicated isolator hood that meets pharmacy-grade standards, inside a controlled environment designed to eliminate contamination.</p></div>
-      </div>
-      <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_1369.webp" alt="White chaise recliners in the bright infusion lounge at The DRIPBaR Edina" loading="lazy"></div>
-        <div class="tx"><h3>A LOUNGE BUILT FOR COMFORT <span>&rarr;</span></h3><p>Settle into a recliner with a warm blanket and a quiet room. Most IV visits take 30 to 60 minutes, and quick shots are done in under 15.</p></div>
-      </div>
+    <div class="stack rv">
+      <div class="p1"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_1369.webp" alt="White chaise recliners in the bright infusion lounge at The DRIPBaR Edina" loading="lazy"></div>
+      <div class="p2"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_7549.webp" alt="Gloved hands preparing an IV bag inside a sterile compounding hood" loading="lazy"></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES GRID -->
-<section class="svc pad" id="services">
+<!-- 7. SERVICES GRID -->
+<section class="bg-soft pad" id="services">
   <div class="shell">
-    <div class="trio-head">
-      <div class="eyebrow">Services</div>
-      <h2>Start with how you want to feel. <span class="ghosted">We take it from there.</span></h2>
-      <p class="lede" style="margin-left:auto;margin-right:auto">Eleven service categories, one clinical team. Everything below is on our live Edina menu, and every visit is matched to your goals during a short screening.</p>
+    <div class="svc-head rv">
+      <div>
+        <div class="tag">What We Offer</div>
+        <h2>Wellness services designed around your goals</h2>
+      </div>
+      <p class="lede">Twelve service categories, one clinical team. Everything below is on our live Edina menu, and every visit is matched to your goals during a short screening.</p>
     </div>
     <div class="svc-grid">
-      <a class="tcard" href="/hydration-recovery">
+      <a class="card rv" href="/hydration-recovery">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/hydration-restoration.webp" alt="A guest relaxing on a chaise lounge during a Restoration IV drip at The DRIPBaR Edina" loading="lazy"></div>
-        <div class="tx"><h3>HYDRATION AND RECOVERY <span>&rarr;</span></h3><p>Rehydrate after travel, training, or a long week. Drips like Restoration and 100% Hydration replace fluids and electrolytes fast.</p></div>
+        <div class="tx"><h3>Hydration and Recovery</h3><p>Rehydrate after travel, training, or a long week. Drips like Restoration and 100% Hydration replace fluids and electrolytes fast.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Restoration</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>100% Hydration</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/energy-focus">
+      <a class="card rv" href="/energy-focus">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/energy-powerpack.webp" alt="A guest reading a tablet during a Powerpack IV infusion in the Edina lounge" loading="lazy"></div>
-        <div class="tx"><h3>ENERGY AND FOCUS <span>&rarr;</span></h3><p>Steady energy and a clearer head. Powerpack and Vitality support cellular energy when demanding weeks catch up with you.</p></div>
+        <div class="tx"><h3>Energy and Focus</h3><p>Steady energy and a clearer head. Powerpack and Vitality support cellular energy when demanding weeks catch up with you.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Powerpack</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Vitality</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/immunity-viral">
+      <a class="card rv" href="/immunity-viral">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/immunity-shield.webp" alt="The Shield IV bag hanging in the Edina infusion lounge" loading="lazy"></div>
-        <div class="tx"><h3>IMMUNITY AND VIRAL SUPPORT <span>&rarr;</span></h3><p>Back up your defenses before travel or through the long Minnesota winter with Shield, Flu Fighter, and Post Viral.</p></div>
+        <div class="tx"><h3>Immunity and Viral Support</h3><p>Back up your defenses before travel or through the long Minnesota winter with Shield, Flu Fighter, and Post Viral.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Shield</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Flu Fighter</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Post Viral</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/nad">
+      <a class="card rv" href="/nad">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/nad-plus.webp" alt="The NAD+ IV bag hanging above the chaise recliners in the Edina lounge" loading="lazy"></div>
-        <div class="tx"><h3>NAD+ <span>&rarr;</span></h3><p>NAD+ IV therapy supports cellular repair, mental clarity, and healthy aging. Ask our team whether it fits your goals.</p></div>
+        <div class="tx"><h3>NAD+</h3><p>NAD+ IV therapy supports cellular repair, mental clarity, and healthy aging. Ask our team whether it fits your goals.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>NAD+ IV therapy</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Mental clarity</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Healthy aging</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/quickshots">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_1438-2.webp" alt="A nurse in nitrile gloves administering an IM quick shot" loading="lazy"></div>
-        <div class="tx"><h3>QUICKSHOTS <span>&rarr;</span></h3><p>Targeted IM injections in 15 minutes or less, from B12 and Vitamin D to IM Lean, IM Glowing, and Tri-Immune.</p></div>
-      </a>
-      <a class="tcard" href="/wellness-therapies">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_0693.webp" alt="A client relaxing under red light therapy" loading="lazy"></div>
-        <div class="tx"><h3>WELLNESS THERAPIES <span>&rarr;</span></h3><p>Infrared sauna, red light therapy, and halotherapy. Book them on their own or pair one with your drip.</p></div>
-      </a>
-      <a class="tcard" href="/high-dose-vitamin-c">
+      <a class="card rv" href="/high-dose-vitamin-c">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/vitamin-c.webp" alt="The High Dose Vitamin C IV bag against the lime green accent wall" loading="lazy"></div>
-        <div class="tx"><h3>HIGH DOSE VITAMIN C <span>&rarr;</span></h3><p>High-concentration vitamin C infusions for immune support and cellular recovery, tailored by our clinical team.</p></div>
+        <div class="tx"><h3>High Dose Vitamin C</h3><p>High-concentration vitamin C infusions for immune support and cellular recovery, tailored by our clinical team.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>High Dose Vitamin C IV</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Immune support</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Cellular recovery</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/detox">
+      <a class="card rv" href="/detox">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/detox-hmd.webp" alt="The Heavy Metal Detox IV bag hanging in the Edina lounge" loading="lazy"></div>
-        <div class="tx"><h3>DETOX <span>&rarr;</span></h3><p>The Heavy Metal Detox drip and IM Detoxed shot support your body's natural detox pathways with antioxidants and key nutrients.</p></div>
+        <div class="tx"><h3>Detox</h3><p>The Heavy Metal Detox drip and IM Detoxed shot support your body's natural detox pathways with antioxidants and key nutrients.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Heavy Metal Detox</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>IM Detoxed</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/skin-brightening-beauty">
+      <a class="card rv" href="/skin-brightening-beauty">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/skin-glutathione.webp" alt="A guest smiling during a Glutathione IV drip at The DRIPBaR Edina" loading="lazy"></div>
-        <div class="tx"><h3>SKIN BRIGHTENING AND BEAUTY <span>&rarr;</span></h3><p>Glutathione, Firm, and Time Machine drips support skin tone, collagen, and antioxidant defense from the inside.</p></div>
+        <div class="tx"><h3>Skin Brightening and Beauty</h3><p>Glutathione, Firm, and Time Machine drips support skin tone, collagen, and antioxidant defense from the inside.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Glutathione</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Firm</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Time Machine</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/weight-loss-support">
+      <a class="card rv" href="/weight-loss-support">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/glp1-metabolize.webp" alt="A guest relaxing with a Metabolize IV drip in the Edina lounge" loading="lazy"></div>
-        <div class="tx"><h3>GLP-1 WEIGHT LOSS SUPPORT <span>&rarr;</span></h3><p>Medically supervised GLP-1 weight management, supported by the Metabolize drip and the IM Lean quick shot. Consultation required.</p></div>
+        <div class="tx"><h3>GLP-1 Weight Loss Support</h3><p>Medically supervised GLP-1 weight management, supported by the Metabolize drip and the IM Lean quick shot. Consultation required.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>GLP-1 weight management</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Metabolize</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>IM Lean</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
-      <a class="tcard" href="/sermorelin">
+      <a class="card rv" href="/sermorelin">
         <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/sermorelin-vial.webp" alt="A sterile vial and capped syringe prepared for peptide therapy" loading="lazy"></div>
-        <div class="tx"><h3>SERMORELIN PEPTIDE THERAPY <span>&rarr;</span></h3><p>Targeted peptide therapy that supports sleep quality, muscle tone, and healthy aging. Consultation based.</p></div>
+        <div class="tx"><h3>Sermorelin Peptide Therapy</h3><p>Targeted peptide therapy that supports sleep quality, muscle tone, and healthy aging. Consultation based.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Sermorelin peptide therapy</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Sleep quality</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Consultation based</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
+      </a>
+      <a class="card rv" href="/ozone-therapy">
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/generated/ozone-therapy.webp" alt="A Blood Ozone Therapy IV bag hanging in The DRIPBaR Edina lounge." loading="lazy"></div>
+        <div class="tx"><h3>Ozone Therapy</h3><p>Blood Ozone Therapy supports immune function and cellular oxygenation in a monitored clinical setting. Ask our team if it fits your goals.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Blood Ozone IV</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Immune support</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Clinician supervised</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
+      </a>
+      <a class="card rv" href="/quickshots">
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_1438-2.webp" alt="A nurse in nitrile gloves administering an IM quick shot" loading="lazy"></div>
+        <div class="tx"><h3>Quickshots</h3><p>Targeted IM injections in 15 minutes or less, from B12 and Vitamin D to IM Lean, IM Glowing, and Tri-Immune.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>B12</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Vitamin D</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>IM Lean, IM Glowing, Tri-Immune</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
+      </a>
+      <a class="card rv" href="/wellness-therapies">
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_0693.webp" alt="A client relaxing under red light therapy" loading="lazy"></div>
+        <div class="tx"><h3>Wellness Therapies</h3><p>Infrared sauna, red light therapy, and halotherapy. Book them on their own or pair one with your drip.</p>
+          <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Infrared sauna</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Red light therapy</li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Halotherapy</li></ul>
+          <span class="tlink">Explore <span>&rarr;</span></span></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="pad">
-  <div class="shell how-grid">
-    <div class="how-left">
-      <div class="eyebrow">Your First Visit</div>
-      <h2>How it works, <span class="ghosted">start to finish.</span></h2>
-      <p>Four steps between you and feeling more like yourself. No pressure, no guesswork, and no membership required.</p>
-      <a class="btn btn-cyan" href="https://thedripbaredina.com/booking-page-6799" data-book="general">BOOK NOW</a>
+<!-- 8. FIND YOUR PATH -->
+<section class="bg-teal pad">
+  <div class="shell">
+    <div class="path-head rv">
+      <div class="tag on-teal">Find Your Path</div>
+      <h2>Start with how you want to feel</h2>
+      <p class="lede">You do not need to know the name of a drip. Choose a goal below, or answer a few quick questions about your goals, energy, and lifestyle and we will point you toward the drips and shots that fit. No account, no commitment.</p>
     </div>
-    <div class="how-right">
-      <div class="step"><div class="num">01</div><div><h3>BOOK ONLINE</h3><p>Choose a day and time that works, or call or text us at (612) 324-4740. Walk-ins are welcome when the schedule allows.</p></div></div>
-      <div class="step"><div class="num">02</div><div><h3>A QUICK HEALTH SCREENING</h3><p>Every first-time guest gets a brief screening with our clinical team. It takes a few minutes and keeps your care safe and personal.</p></div></div>
-      <div class="step"><div class="num">03</div><div><h3>RELAX IN THE LOUNGE</h3><p>Settle into a recliner while a licensed professional administers your drip or shot. Most IVs take 30 to 60 minutes.</p></div></div>
-      <div class="step"><div class="num">04</div><div><h3>FEEL THE DIFFERENCE</h3><p>Fluids and nutrients go straight into your bloodstream for full absorption. Before you leave, we can help you plan what comes next.</p></div></div>
+    <div class="path-grid">
+      <a class="gcard rv" href="/hydration-recovery">
+        <div class="isq"><span class="ic"><svg><use href="#i-drop"/></svg></span></div>
+        <h3>Hydrate &amp; Recover</h3>
+        <p>Replace fluids and electrolytes after travel, training, or a long week.</p>
+        <span class="tlink">Explore options <span>&rarr;</span></span>
+      </a>
+      <a class="gcard rv" href="/energy-focus">
+        <div class="isq"><span class="ic"><svg><use href="#i-bolt"/></svg></span></div>
+        <h3>Boost Energy</h3>
+        <p>Steady energy and a clearer head when demanding weeks catch up with you.</p>
+        <span class="tlink">Explore options <span>&rarr;</span></span>
+      </a>
+      <a class="gcard rv" href="/immunity-viral">
+        <div class="isq"><span class="ic"><svg><use href="#i-shield"/></svg></span></div>
+        <h3>Strengthen Immunity</h3>
+        <p>Back up your defenses before travel or through the long Minnesota winter.</p>
+        <span class="tlink">Explore options <span>&rarr;</span></span>
+      </a>
+      <a class="gcard rv" href="/skin-brightening-beauty">
+        <div class="isq"><span class="ic"><svg><use href="#i-sun"/></svg></span></div>
+        <h3>Healthy Aging &amp; Beauty</h3>
+        <p>Support skin tone, collagen, and antioxidant defense from the inside.</p>
+        <span class="tlink">Explore options <span>&rarr;</span></span>
+      </a>
+      <a class="gcard rv" href="/weight-loss-support">
+        <div class="isq"><span class="ic"><svg><use href="#i-scale"/></svg></span></div>
+        <h3>Weight &amp; Metabolic Support</h3>
+        <p>Medically supervised GLP-1 weight management, starting with a consultation.</p>
+        <span class="tlink">Explore options <span>&rarr;</span></span>
+      </a>
+      <a class="gcard rv" href="/detox">
+        <div class="isq"><span class="ic"><svg><use href="#i-refresh"/></svg></span></div>
+        <h3>Detox &amp; Reset</h3>
+        <p>Support your body's natural detox pathways with antioxidants and key nutrients.</p>
+        <span class="tlink">Explore options <span>&rarr;</span></span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="rv">
+      <a class="btn btn-lime" href="/help-me-choose">Help Me Choose</a>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="rev pad">
+<!-- 9. HOW IT WORKS -->
+<section class="pad">
+  <div class="shell how">
+    <div class="steps rv">
+      <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Choose a day and time that works, or call or text us at (612) 324-4740. Walk-ins are welcome when the schedule allows.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>A quick health screening</h3><p>Every first-time guest gets a brief screening with our clinical team. It takes a few minutes and keeps your care safe and personal.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Relax in the lounge</h3><p>Settle into a recliner while a licensed professional administers your drip or shot. Most IVs take 30 to 60 minutes.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h3>Feel the difference</h3><p>Fluids and nutrients go straight into your bloodstream for full absorption. Before you leave, we can help you plan what comes next.</p></div></div>
+    </div>
+    <div class="rv">
+      <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_7577.webp" alt="A nurse checking an IV drip while a client relaxes in the Edina lounge" loading="lazy"></div>
+      <div class="tag">Your First Visit</div>
+      <h2>How it works, start to finish.</h2>
+      <p class="lede">Four steps between you and feeling more like yourself. No pressure, no guesswork, and no membership required.</p>
+      <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Your Appointment</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. REVIEWS -->
+<section class="bg-blue pad">
   <div class="shell">
-    <div class="rev-head">
-      <div class="eyebrow">Guest Reviews</div>
-      <h2>Rated 5.0 on Google. <span class="ghosted">Across 230 reviews.</span></h2>
-      <div class="stars" aria-label="5 out of 5 stars">
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-      </div>
+    <div class="rev-head rv">
+      <div class="tag on-blue">Reviews</div>
+      <h2>Rated 5.0 across 230 Google reviews</h2>
       <div class="count">Verified Google reviews from guests of The DRIPBaR Edina.</div>
     </div>
     <div class="rev-grid">
-      <div class="rcard">
-        <div class="rstars" aria-hidden="true">
+      <div class="rcard rv">
+        <div class="rstars" aria-label="5 out of 5 stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
         </div>
         <blockquote>&ldquo;Such a Healthy option to revitalize. Staff, product, and building were all excellent. Cameron at the front desk was lovely help too.&rdquo;</blockquote>
         <div class="who">Wesley R.</div>
         <div class="src">Google review</div>
       </div>
-      <div class="rcard">
-        <div class="rstars" aria-hidden="true">
+      <div class="rcard rv">
+        <div class="rstars" aria-label="5 out of 5 stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
         </div>
         <blockquote>&ldquo;Great experience - I went to the yacht club festival in 95 degree heat and was absolutely exhausted. Decided to get an IV the next morning to help me rehydrate and was so grateful they were able to get me in right away! Great space, nice team, highly recommend!&rdquo;</blockquote>
         <div class="who">Shannon W.</div>
         <div class="src">Google review</div>
       </div>
-      <div class="rcard">
-        <div class="rstars" aria-hidden="true">
+      <div class="rcard rv">
+        <div class="rstars" aria-label="5 out of 5 stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
         </div>
         <blockquote>&ldquo;Clean, modern place with such a welcoming team. The vitamin IV was great, and they offer red light therapy too. Will definitely be back!&rdquo;</blockquote>
         <div class="who">Asia O.</div>
         <div class="src">Google review</div>
       </div>
-      <div class="rcard">
-        <div class="rstars" aria-hidden="true">
+      <div class="rcard rv">
+        <div class="rstars" aria-label="5 out of 5 stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
         </div>
         <blockquote>&ldquo;Glad I stopped in and found this place spontaneously. Very knowledgeable staff, able to answer all my questions. I&rsquo;ll be back again!&rdquo;</blockquote>
@@ -456,72 +610,102 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1;color:var(--navy)}
   </div>
 </section>
 
-<!-- WELLNESS THERAPIES TEASER -->
-<section class="panel cyfill flip pad">
-  <div class="shell grid">
-    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_1336.webp" alt="The light-wood infrared sauna cabin at The DRIPBaR Edina" loading="lazy"></div>
-    <div>
-      <div class="eyebrow">Beyond The Drip</div>
-      <h2>Wellness therapies, <span class="ghosted">under one roof.</span></h2>
-      <p class="why">Your visit does not have to end when the drip does. Three recovery therapies live steps from the lounge, and each one stands on its own.</p>
-      <ul class="learn">
-        <li><span class="ck cy">&#10003;</span>Infrared sauna suites with 20 to 40 minute full-spectrum sessions.</li>
-        <li><span class="ck cy">&#10003;</span>Red light therapy for skin, circulation, and recovery support.</li>
-        <li><span class="ck cy">&#10003;</span>Halotherapy that pairs micronized salt with infrared warmth for respiratory and skin support.</li>
+<!-- 11. PROMO CALLOUT -->
+<section class="pad" style="padding-bottom:0">
+  <div class="shell">
+    <div class="callout teal rv">
+      <div>
+        <h2>New here? Your first appointment is $20 off.</h2>
+        <p>Every first visit starts with a brief health screening and a plan built around your goals. Book online in a couple of minutes, or reach out with questions first.</p>
+        <div class="fine">Valid for first-time guests at The DRIPBaR Edina. Walk-ins welcome, appointments preferred.</div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Now</a>
+        <a class="btn btn-out-w" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. WELLNESS THERAPIES -->
+<section class="pad well">
+  <div class="shell two">
+    <div class="rv">
+      <div class="tag">Beyond The Drip</div>
+      <h2>Wellness therapies, under one roof.</h2>
+      <p class="lede">Your visit does not have to end when the drip does. Three recovery therapies live steps from the lounge, and each one stands on its own.</p>
+      <ul class="ckl">
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Infrared sauna suites with 20 to 40 minute full-spectrum sessions.</li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Red light therapy for skin, circulation, and recovery support.</li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span>Halotherapy that pairs micronized salt with infrared warmth for respiratory and skin support.</li>
       </ul>
-      <a class="btn btn-cyan" href="/wellness-therapies">EXPLORE WELLNESS THERAPIES</a>
+      <div class="ctas">
+        <a class="btn btn-lime" href="/wellness-therapies">Explore Wellness Therapies</a>
+      </div>
+    </div>
+    <div class="ph rv"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_1336.webp" alt="The light-wood infrared sauna cabin at The DRIPBaR Edina" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- 13. LIME CALLOUT STRIP -->
+<section style="padding-bottom:110px">
+  <div class="shell">
+    <div class="callout lime rv">
+      <h3>If you only have time for one thing, start with a Help Me Choose consult.</h3>
+      <div class="ctas"><a class="btn btn-out-w" href="/help-me-choose">Help Me Choose</a></div>
     </div>
   </div>
 </section>
 
-<!-- HELP ME CHOOSE TEASER -->
-<section class="choose pad">
-  <div class="shell">
-    <div class="card">
-      <div class="eyebrow">Not Sure Where To Start</div>
-      <h2>Two minutes. <span class="ghosted">A short list built for you.</span></h2>
-      <p>Answer a few quick questions about your goals, energy, and lifestyle, and we will point you toward the drips and shots that fit. No account, no commitment.</p>
-      <a class="tlink" href="/help-me-choose">HELP ME CHOOSE <span>&rarr;</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta pad">
-  <div class="shell">
-    <div class="eyebrow on-dark" style="justify-content:center;margin-bottom:20px">The DRIPBaR Edina</div>
-    <h2>Feed your cells. <em>Fuel your life.</em></h2>
-    <p>Book your visit and let our clinical team build a plan around your goals. New guests get $20 off a first appointment.</p>
-    <a class="btn btn-cyan" href="https://thedripbaredina.com/booking-page-6799" data-book="general">BOOK NOW</a>
+<!-- 14. FINAL CTA -->
+<section class="bg-teal cta pad">
+  <div class="shell rv">
+    <div class="tag on-teal">The DRIPBaR Edina</div>
+    <h2>Feed your cells. Fuel your life.</h2>
+    <p class="lede">Book your visit and let our clinical team build a plan around your goals. New guests get $20 off a first appointment.</p>
+    <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Now</a>
     <div class="fine">Questions first? Call us at <a href="tel:+16124296822">(612) 429-6822</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<div class="foot">
+<!-- 15. FOOTER -->
+<footer class="foot">
   <div class="shell">
-    <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR">
-    <div class="loc">The DRIPBaR Edina</div>
-    <div class="adr">3515 W. 70th St, Edina, MN 55435<br>(612) 429-6822<br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
-    <a class="btn btn-cyan" href="https://thedripbaredina.com/booking-page-6799" data-book="general">BOOK NOW</a>
-    <div class="links">
-      <a href="/hydration-recovery">Hydration and Recovery</a>
-      <a href="/energy-focus">Energy and Focus</a>
-      <a href="/immunity-viral">Immunity and Viral Support</a>
-      <a href="/nad">NAD+</a>
-      <a href="/high-dose-vitamin-c">High Dose Vitamin C</a>
-      <a href="/detox">Detox</a>
-      <a href="/skin-brightening-beauty">Skin Brightening and Beauty</a>
-      <a href="/weight-loss-support">GLP-1 Weight Loss Support</a>
-      <a href="/sermorelin">Sermorelin Peptide Therapy</a>
-      <a href="/quickshots">Quickshots</a>
-      <a href="/wellness-therapies">Wellness Therapies</a>
-      <a href="/help-me-choose">Help Me Choose</a>
-      <a href="/contact">Contact</a>
+    <div class="foot-grid">
+      <div>
+        <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR" loading="lazy">
+        <div class="adr">The DRIPBaR Edina<br>3515 W. 70th St, Edina, MN 55435<br><a href="tel:+16124296822">(612) 429-6822</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
+        <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Appointment</a>
+      </div>
+      <div class="links">
+        <h4>Services</h4>
+        <a href="/hydration-recovery">Hydration and Recovery</a>
+        <a href="/energy-focus">Energy and Focus</a>
+        <a href="/immunity-viral">Immunity and Viral Support</a>
+        <a href="/nad">NAD+</a>
+        <a href="/high-dose-vitamin-c">High Dose Vitamin C</a>
+        <a href="/detox">Detox</a>
+        <a href="/skin-brightening-beauty">Skin Brightening and Beauty</a>
+        <a href="/weight-loss-support">GLP-1 Weight Loss Support</a>
+        <a href="/sermorelin">Sermorelin Peptide Therapy</a>
+        <a href="/ozone-therapy">Ozone Therapy</a>
+        <a href="/quickshots">Quickshots</a>
+        <a href="/wellness-therapies">Wellness Therapies</a>
+      </div>
+      <div class="links">
+        <h4>Visit</h4>
+        <a href="/">Home</a>
+        <a href="/help-me-choose">Help Me Choose</a>
+        <a href="/contact">Contact</a>
+        <a href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Appointment</a>
+      </div>
     </div>
-    <div class="md">All services administered under the supervision of Dr. Azhar Ahmed.</div>
+    <div class="foot-bottom">
+      <div>All services administered under the supervision of Dr. Azhar Ahmed.</div>
+      <div>&copy; 2026 The DRIPBaR Edina. All rights reserved.</div>
+    </div>
   </div>
-</div>
+</footer>
 
 <script>
 // Booking map: swap in per-service calendars later by editing this map only.
@@ -531,6 +715,13 @@ const BOOKING = { default: 'https://thedripbaredina.com/booking-page-6799' };
     var key = a.getAttribute('data-book');
     a.href = BOOKING[key] || BOOKING.default;
   });
+})();
+// Utility bar: today's hours
+(function(){
+  var el = document.getElementById('hours-today');
+  if(!el) return;
+  var h = ['11:00 am - 3:00 pm','10:00 am - 6:00 pm','10:00 am - 6:00 pm','10:00 am - 6:00 pm','10:00 am - 6:00 pm','10:00 am - 6:00 pm','10:00 am - 4:00 pm'];
+  el.textContent = h[new Date().getDay()];
 })();
 // Mobile menu
 (function(){
@@ -543,6 +734,15 @@ const BOOKING = { default: 'https://thedripbaredina.com/booking-page-6799' };
   document.getElementById('mclose').addEventListener('click', close);
   document.getElementById('mscrim').addEventListener('click', close);
   mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+})();
+// Reveal on scroll
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>
