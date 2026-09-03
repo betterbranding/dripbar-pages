@@ -82,7 +82,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:900;background:#fff;border-bottom:1px solid var(--divider)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:88px;gap:24px}
-.nav .logo img{height:72px;width:auto}
+.nav .logo{display:inline-flex;align-items:center;padding:15px 0}
+.nav .logo img{height:54px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:36px;font:500 16px/1 var(--pop);color:var(--teal)}
 .nav-links > div,.nav-links > a{position:relative}
 .nav-links a{transition:color .25s ease;padding:12px 0;display:inline-flex;align-items:center;gap:7px}
@@ -102,7 +103,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
   .nav-links,.nav-right{display:none}
   .burger{display:block}
   .nav-in{height:76px}
-  .nav .logo img{height:58px}
+  .nav .logo{padding:12px 0}.nav .logo img{height:46px}
 }
 /* mobile drawer */
 .mnav{position:fixed;inset:0;z-index:950;pointer-events:none}
@@ -214,6 +215,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .callout{border-radius:24px;padding:64px 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
 .callout.teal{background:var(--teal);color:#fff}
 .callout h2{color:#fff}
+.lime-text{color:var(--lime)}
 .callout p{margin-top:16px;max-width:560px;color:rgba(255,255,255,.88)}
 .callout .fine{margin-top:18px;font-size:13px;color:rgba(255,255,255,.62)}
 .callout .ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
@@ -239,6 +241,24 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .foot img{width:160px;height:auto;margin-bottom:22px}
 .foot .adr{color:rgba(255,255,255,.7);font-size:14.5px;line-height:1.85}
 .foot .adr a{color:#fff;font-weight:600}
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side p{margin-top:16px;max-width:420px}
+.faq-help{margin-top:34px;background:#fff;border-radius:20px;padding:26px 28px;display:flex;gap:16px;align-items:center}
+.faq-help .isq{width:48px;height:48px;border-radius:12px}
+.faq-help strong{display:block;font:600 16px/1.3 var(--pop);color:var(--teal)}
+.faq-help a{font:600 15px/1.4 var(--pop);color:var(--lime-dark);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.faq-list{display:flex;flex-direction:column;gap:14px}
+.faq-item{background:#fff;border-radius:20px;border:1.5px solid transparent;transition:border-color .25s ease,box-shadow .25s ease}
+.faq-item[open]{border-color:rgba(4,78,99,.14);box-shadow:0 14px 40px rgba(4,78,99,.08)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 28px;font:600 17.5px/1.35 var(--pop);color:var(--teal)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .pm{flex:none;width:40px;height:40px;border-radius:50%;background:var(--blue);color:var(--teal);display:grid;place-items:center;transition:background .25s ease,color .25s ease,transform .3s ease}
+.faq-item summary .pm svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
+.faq-item[open] summary .pm{background:var(--lime);color:#fff;transform:rotate(45deg)}
+.faq-item .ans{padding:0 28px 26px;color:var(--teal);font:400 16px/1.7 var(--pop);opacity:.86;max-width:640px}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr;gap:36px}.faq-side{position:static}.faq-item summary{padding:20px 20px;font-size:16px}.faq-item .ans{padding:0 20px 22px}}
 .foot .btn{margin-top:26px}
 .foot h4{font:600 13px/1 var(--pop);letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
 .foot .links a{display:block;color:rgba(255,255,255,.7);font-size:14.5px;padding:5px 0;transition:color .25s ease}
@@ -615,7 +635,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
   <div class="shell">
     <div class="callout teal rv">
       <div>
-        <h2>New here? Your first appointment is $20 off.</h2>
+        <h2><span class="lime-text">New here?</span> Your first appointment is $20 off.</h2>
         <p>Every first visit starts with a brief health screening and a plan built around your goals. Book online in a couple of minutes, or reach out with questions first.</p>
         <div class="fine">Valid for first-time guests at The DRIPBaR Edina. Walk-ins welcome, appointments preferred.</div>
       </div>
@@ -655,6 +675,48 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <div class="ctas"><a class="btn btn-out-w" href="/help-me-choose">Help Me Choose</a></div>
     </div>
   </div>
+</section>
+
+<!-- 13b. FAQ -->
+<section class="bg-soft pad" id="faq">
+  <div class="shell faq-grid">
+    <div class="faq-side rv">
+      <div class="tag on-blue">FAQ</div>
+      <h2>Questions, answered.</h2>
+      <p>Everything you want to know before your first visit to The DRIPBaR Edina.</p>
+      <div class="faq-help">
+        <span class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></span>
+        <div><strong>Still have a question?</strong><a href="tel:+16124296822">Call or text (612) 429-6822</a></div>
+      </div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item rv" open>
+        <summary>How do I choose the right wellness service?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Start with your goal: hydration, energy, immunity, recovery, healthy aging, or weight support. Our team helps match services to your goal during check-in, or you can book a Help Me Choose consult first.</div>
+      </details>
+      <details class="faq-item rv">
+        <summary>What happens during the first appointment?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Your care should be personalized, not one-size-fits-all. During your first visit, our clinical team reviews your health history, talks through your goals, and recommends the therapies that fit you.</div>
+      </details>
+      <details class="faq-item rv">
+        <summary>How long does an appointment take?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Appointment times vary by treatment. Quickshots typically take 15 minutes or less, while most IV therapy appointments are completed in 30 to 60 minutes.</div>
+      </details>
+      <details class="faq-item rv">
+        <summary>Is a consultation or screening required?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Yes. Every first-time guest receives a brief medical screening with our team before treatment. It is an important part of delivering safe, personalized care, it is included with your appointment, and it typically takes only a few minutes.</div>
+      </details>
+      <details class="faq-item rv">
+        <summary>Can I book without becoming a member?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Yes. Everyone is welcome at The DRIPBaR Edina, whether you are visiting for a one-time treatment or looking for ongoing wellness support. Membership is completely optional and is simply our best value for guests who plan to visit regularly.</div>
+      </details>
+      <details class="faq-item rv">
+        <summary>What should I bring to my appointment?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Just bring yourself. We recommend wearing comfortable clothing, staying well hydrated before your visit, and arriving a few minutes early to relax. We will take care of everything else.</div>
+      </details>
+    </div>
+  </div>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I choose the right wellness service?", "acceptedAnswer": {"@type": "Answer", "text": "Start with your goal: hydration, energy, immunity, recovery, healthy aging, or weight support. Our team helps match services to your goal during check-in, or you can book a Help Me Choose consult first."}}, {"@type": "Question", "name": "What happens during the first appointment?", "acceptedAnswer": {"@type": "Answer", "text": "Your care should be personalized, not one-size-fits-all. During your first visit, our clinical team reviews your health history, talks through your goals, and recommends the therapies that fit you."}}, {"@type": "Question", "name": "How long does an appointment take?", "acceptedAnswer": {"@type": "Answer", "text": "Appointment times vary by treatment. Quickshots typically take 15 minutes or less, while most IV therapy appointments are completed in 30 to 60 minutes."}}, {"@type": "Question", "name": "Is a consultation or screening required?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every first-time guest receives a brief medical screening with our team before treatment. It is an important part of delivering safe, personalized care, it is included with your appointment, and it typically takes only a few minutes."}}, {"@type": "Question", "name": "Can I book without becoming a member?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Everyone is welcome at The DRIPBaR Edina, whether you are visiting for a one-time treatment or looking for ongoing wellness support. Membership is completely optional and is simply our best value for guests who plan to visit regularly."}}, {"@type": "Question", "name": "What should I bring to my appointment?", "acceptedAnswer": {"@type": "Answer", "text": "Just bring yourself. We recommend wearing comfortable clothing, staying well hydrated before your visit, and arriving a few minutes early to relax. We will take care of everything else."}}]}</script>
 </section>
 
 <!-- 14. FINAL CTA -->
@@ -734,6 +796,11 @@ const BOOKING = { default: 'https://thedripbaredina.com/booking-page-6799' };
   document.getElementById('mclose').addEventListener('click', close);
   document.getElementById('mscrim').addEventListener('click', close);
   mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+})();
+// FAQ: one open at a time
+(function(){
+  var items = document.querySelectorAll('.faq-item');
+  items.forEach(function(d){ d.addEventListener('toggle', function(){ if(d.open){ items.forEach(function(o){ if(o!==d) o.open=false; }); } }); });
 })();
 // Reveal on scroll
 (function(){
