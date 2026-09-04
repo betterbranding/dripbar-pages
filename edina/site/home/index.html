@@ -119,19 +119,89 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .mnav .btn{display:flex;margin-top:28px;border-bottom:0;color:#fff}
 .mnav .mphone{margin-top:14px;border-bottom:0;font-weight:600;text-align:center}
 
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:680px;display:flex;align-items:center;color:#fff;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/The_DRIPBaR_Edina_Lounge.webp') center/cover no-repeat;animation:heroZoom 8s ease forwards}
-@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(4,78,99,.84) 0%,rgba(4,78,99,.72) 55%,rgba(4,78,99,.6) 100%)}
-.hero-in{position:relative;z-index:2;padding:110px 0 80px}
-.hero h1{max-width:14ch}
-.hero p{margin:26px 0 34px;max-width:600px;font-size:clamp(16px,1.25vw,19px);color:rgba(255,255,255,.9)}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+/* ---------- hero v4: drip stage ---------- */
+.hero4{background:var(--teal);color:#fff;overflow:hidden;position:relative}
+.hero4-grid{display:grid;grid-template-columns:minmax(0,1fr) min(50vw,760px);align-items:stretch}
+.hero4-copy{display:flex;flex-direction:column;justify-content:center;padding:72px 5vw 64px max(4vw,calc((100vw - 1280px)/2));min-width:0}
+.hero4 h1{font-size:clamp(44px,5.6vw,84px);line-height:1;max-width:none;white-space:nowrap}
+.hero4 h1 .rot{display:block;position:relative;height:1.04em;overflow:hidden;color:var(--lime)}
+.hero4 h1 .rot span{position:absolute;left:0;top:0;white-space:nowrap;will-change:transform,opacity}
+.hero4 h1 .rot .out{animation:rotOut .42s cubic-bezier(.5,0,.75,0) forwards}
+.hero4 h1 .rot .in{animation:rotIn .55s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rotOut{to{transform:translateY(-105%);opacity:0}}
+@keyframes rotIn{from{transform:translateY(105%);opacity:0}to{transform:none;opacity:1}}
+.hero4 p{margin:24px 0 32px;max-width:560px;font-size:clamp(16px,1.2vw,19px);color:rgba(255,255,255,.9)}
+.hero4-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero4 .trust{margin-top:48px}
+
+/* stage */
+.stage{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--sbg,#D9EEF5);transition:background-color .9s ease;container-type:inline-size;isolation:isolate;user-select:none}
+.rings{position:absolute;inset:0;display:grid;place-items:center;will-change:transform}
+.ring{position:absolute;width:120cqw;height:120cqw;border-radius:var(--shape,50%);border:6.5cqw solid var(--c);animation:ringOut var(--dur,9.6s) linear infinite;animation-delay:var(--d,0s);transition:border-color .9s ease,border-radius 1.1s ease;will-change:transform;box-sizing:border-box}
+@keyframes ringOut{0%{transform:scale(.01);opacity:0}5%{opacity:1}100%{transform:scale(1.25);opacity:1}}
+.motes{position:absolute;inset:0;pointer-events:none}
+.mote{position:absolute;bottom:-4cqw;width:var(--s,2cqw);height:var(--s,2cqw);border-radius:50%;background:var(--mc,#fff);opacity:0;animation:mote var(--md,9s) linear infinite;animation-delay:var(--mdl,0s);left:var(--x,50%)}
+@keyframes mote{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.75}55%{transform:translateY(-60cqw) translateX(3cqw)}90%{opacity:.5}100%{transform:translateY(-118cqw) translateX(-2cqw);opacity:0}}
+.glow{position:absolute;left:50%;top:50%;width:78cqw;height:78cqw;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55) 0%,rgba(255,255,255,.18) 38%,rgba(255,255,255,0) 62%);pointer-events:none}
+.bag-slot{position:absolute;inset:0;display:grid;place-items:center;perspective:1400px}
+.bag-tilt{width:100%;height:100%;display:grid;place-items:center;transform-style:preserve-3d;will-change:transform}
+.bag{position:relative;height:70cqw;aspect-ratio:415/900;transform-origin:50% 4%;will-change:transform;filter:url(#vblur)}
+.bag img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 26px 30px rgba(4,78,99,.30));-webkit-user-drag:none;pointer-events:none}
+.bag .sheen{position:absolute;inset:0;pointer-events:none;-webkit-mask:var(--bagimg) center/contain no-repeat;mask:var(--bagimg) center/contain no-repeat;background:linear-gradient(108deg,transparent 42%,rgba(255,255,255,.72) 50%,transparent 58%);background-size:320% 100%;background-position:120% 0;mix-blend-mode:screen}
+.bag .sheen.go{animation:sheen 1.05s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes sheen{from{background-position:120% 0}to{background-position:-20% 0}}
+.bag.idle{animation:idle 4.2s ease-in-out infinite}
+@keyframes idle{0%,100%{transform:rotate(0)}25%{transform:rotate(1.1deg)}75%{transform:rotate(-1.1deg)}}
+
+/* stage ui */
+.chip{position:absolute;left:4cqw;bottom:4cqw;display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--teal);border-radius:99px;padding:11px 18px 11px 14px;font:600 14px/1 var(--pop);box-shadow:0 10px 30px rgba(4,78,99,.16);transition:transform .25s ease,box-shadow .25s ease;z-index:3}
+.chip:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(4,78,99,.22)}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--lime);flex:none}
+.chip b{font-family:var(--bebas);font-weight:400;font-size:19px;letter-spacing:.6px;line-height:1}
+.chip small{font:500 12.5px/1 var(--pop);color:var(--muted)}
+.chip svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
+.chip.swap{animation:chipSwap .5s ease}
+@keyframes chipSwap{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:none}}
+.stage-ui{position:absolute;right:4cqw;bottom:4cqw;display:flex;align-items:center;gap:12px;z-index:3}
+.dots{display:flex;gap:8px;background:rgba(255,255,255,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:10px 12px;border-radius:99px}
+.dots button{position:relative;width:8px;height:8px;border-radius:99px;border:0;padding:0;background:rgba(4,78,99,.35);cursor:pointer;transition:width .35s ease,background .3s ease;overflow:hidden}
+.dots button.on{width:34px;background:rgba(4,78,99,.28)}
+.dots button.on::after{content:"";position:absolute;inset:0;background:var(--teal);border-radius:99px;transform-origin:left;transform:scaleX(0);animation:prog var(--t,3.4s) linear forwards}
+.dots button.on.paused::after{animation-play-state:paused}
+@keyframes prog{to{transform:scaleX(1)}}
+.pp{width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--teal);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(4,78,99,.16);transition:transform .2s ease}
+.pp:hover{transform:scale(1.06)}
+.pp svg{width:14px;height:14px;fill:currentColor}
+.pp .i-play{display:none}
+.stage.paused .pp .i-pause{display:none}
+.stage.paused .pp .i-play{display:block}
+.stage.paused .ring,.stage.paused .mote,.stage.paused .bag.idle{animation-play-state:paused}
+
+@media(max-width:980px){
+  .hero4-grid{grid-template-columns:1fr}
+  .hero4-copy{padding:52px 4vw 56px;text-align:left}
+  .hero4 h1{font-size:clamp(44px,11vw,72px)}
+  .stage{order:-1;width:100%;aspect-ratio:4/3}
+  .bag{height:60cqw}
+  .glow{width:66cqw;height:66cqw}
+  .ring{width:126cqw;height:126cqw}
+  .chip b{font-size:17px}
+  .chip small{display:none}
+  .hero4 .trust{margin-top:34px}
+}
+@media(max-width:768px){
+  .hero4-ctas .btn{width:100%}
+  .hero4 .trust{margin-top:36px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ring,.mote,.bag.idle,.hero4 h1 .rot .in,.hero4 h1 .rot .out,.chip.swap,.bag .sheen.go{animation:none}
+  .bag{filter:none}
+}
+
 .trust{display:flex;flex-wrap:wrap;gap:16px 40px;margin-top:56px;font:500 15px/1 var(--pop);color:#fff}
 .trust li{display:inline-flex;align-items:center;gap:10px}
 .trust .ic{width:20px;height:20px;color:var(--lime)}
-@media(max-width:768px){.hero{min-height:0}.hero-in{padding:80px 0 64px}.hero-ctas .btn{width:100%}.trust{gap:14px 24px;margin-top:40px;font-size:14px}}
+@media(max-width:768px){.trust{gap:14px 24px;font-size:14px}}
 
 /* ---------- stats strip ---------- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:54px 0;text-align:center}
@@ -373,23 +443,42 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
   </div>
 </div>
 
-<!-- 4. HERO -->
-<header class="hero">
-  <div class="hero-bg"></div>
-  <div class="shell hero-in">
-    <div class="tag on-teal">Wellness Center in Edina</div>
-    <h1>Modern preventative care, tailored to you.</h1>
-    <p>IV drips, quick shots, and wellness therapies from a licensed clinical team in Edina. Personalized support for energy, immunity, recovery, and healthy aging.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Your Appointment</a>
-      <a class="btn btn-out-w" href="/help-me-choose">Help Me Choose a Service</a>
+<!-- 4. HERO (v4 drip stage) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="vblur" x="-20%" y="-60%" width="140%" height="220%" color-interpolation-filters="sRGB"><feGaussianBlur id="vblurStd" stdDeviation="0 0"/></filter></defs></svg>
+<header class="hero4" id="hero">
+  <div class="hero4-grid">
+    <div class="hero4-copy">
+      <div class="tag on-teal">IV Therapy and Wellness Center in Edina</div>
+      <h1>Your drip for <span class="rot" aria-live="off"><span class="cur">Hydration</span></span></h1>
+      <p>IV drips, quick shots, and wellness therapies from a licensed clinical team in Edina. Personalized support for energy, immunity, recovery, and healthy aging.</p>
+      <div class="hero4-ctas">
+        <a class="btn btn-lime" href="https://thedripbaredina.com/booking-page-6799" data-book="general">Book Your Appointment</a>
+        <a class="btn btn-out-w" href="/help-me-choose">Help Me Choose a Drip</a>
+      </div>
+      <ul class="trust">
+        <li><span class="ic"><svg><use href="#i-star"/></svg></span>5.0 Google Rating</li>
+        <li><span class="ic"><svg><use href="#i-users"/></svg></span>Personalized Guidance</li>
+        <li><span class="ic"><svg><use href="#i-badge"/></svg></span>Licensed Medical Team</li>
+        <li><span class="ic"><svg><use href="#i-heart"/></svg></span>Locally Owned</li>
+      </ul>
     </div>
-    <ul class="trust">
-      <li><span class="ic"><svg><use href="#i-star"/></svg></span>5.0 Google Rating</li>
-      <li><span class="ic"><svg><use href="#i-users"/></svg></span>Personalized Guidance</li>
-      <li><span class="ic"><svg><use href="#i-badge"/></svg></span>Licensed Medical Team</li>
-      <li><span class="ic"><svg><use href="#i-heart"/></svg></span>Locally Owned</li>
-    </ul>
+
+    <div class="stage" id="stage" aria-label="Featured IV drips at The DRIPBaR Edina">
+      <div class="rings" id="rings"></div>
+      <div class="motes" id="motes"></div>
+      <div class="glow"></div>
+      <div class="bag-slot"><div class="bag-tilt" id="tilt">
+        <a class="bag" id="bag" href="/hydration-recovery" aria-label="100% Hydration drip">
+          <img id="bagimg" src="" alt="">
+          <span class="sheen" id="sheen"></span>
+        </a>
+      </div></div>
+      <a class="chip" id="chip" href="/hydration-recovery"><b id="chipName">100% Hydration</b><small id="chipCat">Hydration and Recovery</small><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="stage-ui">
+        <div class="dots" id="dots" role="tablist" aria-label="Featured drips"></div>
+        <button class="pp" id="pp" type="button" aria-label="Pause animation"><svg class="i-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -812,5 +901,128 @@ const BOOKING = { default: 'https://thedripbaredina.com/booking-page-6799' };
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 })();
 </script>
+<script>
+/* hero v4: drip stage */
+(function(){
+  var ASSET='https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/';
+  var DRIPS=[
+    {name:'100% Hydration',file:'100-percent-hydration',word:'Hydration',cat:'Hydration and Recovery',href:'/hydration-recovery',shape:'50%',bg:'#AFB216',r:['#9A9D12','#F3F4D6','#D6D77A','#044E63'],mote:'#F3F4D6'},
+    {name:'Shield',file:'shield',word:'Immune Support',cat:'Immunity and Viral',href:'/immunity-viral',shape:'26%',bg:'#D9EEF5',r:['#044E63','#FFFFFF','#9ED3E6','#AFB216'],mote:'#FFFFFF'},
+    {name:'Vitality',file:'vitality',word:'Energy & Focus',cat:'Energy and Focus',href:'/energy-focus',shape:'50%',bg:'#9ED3E6',r:['#044E63','#EEF7FA','#0A6B85','#AFB216'],mote:'#FFFFFF'},
+    {name:'NAD+',file:'nad-plus',word:'Healthy Aging',cat:'NAD+ Therapy',href:'/nad',shape:'34%',bg:'#EEF7FA',r:['#044E63','#D9EEF5','#AFB216','#FFFFFF'],mote:'#AFB216'},
+    {name:'Glutathione',file:'glutathione',word:'Skin & Glow',cat:'Skin Brightening and Beauty',href:'/skin-brightening-beauty',shape:'50%',bg:'#D6D77A',r:['#AFB216','#FFFFFF','#044E63','#F3F4D6'],mote:'#FFFFFF'}
+  ];
+  var HOLD=3300, EXIT=420, ENTER=2500, RINGS=8;
+  var stage=document.getElementById('stage'); if(!stage) return;
+  var rings=document.getElementById('rings'), motes=document.getElementById('motes'), bag=document.getElementById('bag'),
+      img=document.getElementById('bagimg'), sheen=document.getElementById('sheen'), tilt=document.getElementById('tilt'),
+      chip=document.getElementById('chip'), chipName=document.getElementById('chipName'), chipCat=document.getElementById('chipCat'),
+      dots=document.getElementById('dots'), pp=document.getElementById('pp'), rot=document.querySelector('.hero4 .rot'),
+      blurStd=document.getElementById('vblurStd');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia('(pointer: fine)').matches;
+
+  /* build rings + motes */
+  var ringEls=[];
+  for(var i=0;i<RINGS;i++){var r=document.createElement('div');r.className='ring';r.style.setProperty('--d',(-(i*(9.6/RINGS)))+'s');rings.appendChild(r);ringEls.push(r);}
+  var moteEls=[];
+  for(var m=0;m<14;m++){var e=document.createElement('span');e.className='mote';
+    e.style.setProperty('--x',(4+Math.random()*92)+'%');e.style.setProperty('--s',(0.9+Math.random()*1.8).toFixed(2)+'cqw');
+    e.style.setProperty('--md',(7+Math.random()*7).toFixed(1)+'s');e.style.setProperty('--mdl',(-Math.random()*14).toFixed(1)+'s');
+    motes.appendChild(e);moteEls.push(e);}
+
+  /* preload */
+  DRIPS.forEach(function(d){var p=new Image();p.src=ASSET+d.file+'.webp';d.img=p;});
+
+  /* dots */
+  DRIPS.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-label',d.name);b.addEventListener('click',function(){goTo(i);});dots.appendChild(b);});
+  var dotEls=dots.children;
+  function setDots(i){for(var k=0;k<dotEls.length;k++){dotEls[k].classList.remove('on');dotEls[k].setAttribute('aria-selected','false');}
+    var d=dotEls[i];d.style.setProperty('--t',((HOLD+EXIT)/1000)+'s');void d.offsetWidth;d.classList.add('on');d.setAttribute('aria-selected','true');}
+
+  function palette(d){
+    stage.style.setProperty('--sbg',d.bg);stage.style.setProperty('--mc',d.mote);
+    ringEls.forEach(function(r,i){r.style.setProperty('--c',d.r[i%d.r.length]);r.style.setProperty('--shape',d.shape);});
+  }
+  function setWord(txt){
+    var cur=rot.querySelector('.cur'); if(cur&&cur.textContent===txt) return;
+    var nx=document.createElement('span');nx.textContent=txt;nx.className='cur'+(reduce?'':' in');rot.appendChild(nx);
+    if(cur){cur.className='out';var done=false;var rm=function(){if(!done){done=true;cur.remove();}};cur.addEventListener('animationend',rm,{once:true});setTimeout(rm,700);}
+  }
+  function setChip(d){chip.href=d.href;chipName.textContent=d.name;chipCat.textContent=d.cat;chip.classList.remove('swap');void chip.offsetWidth;chip.classList.add('swap');}
+  function setBag(d){var url=ASSET+d.file+'.webp';img.src=url;img.alt=d.name+' IV bag';bag.href=d.href;bag.setAttribute('aria-label',d.name+' drip');bag.style.setProperty('--bagimg','url("'+url+'")');}
+
+  /* directional blur tween */
+  var blurRaf=0;
+  function blurTo(from,to,dur){cancelAnimationFrame(blurRaf);var t0=performance.now();
+    (function step(now){var p=Math.min(1,(now-t0)/dur);var e=1-Math.pow(1-p,2.2);var v=from+(to-from)*e;blurStd.setAttribute('stdDeviation','0 '+v.toFixed(2));if(p<1)blurRaf=requestAnimationFrame(step);})(t0);}
+
+  /* state machine */
+  var idx=0,pending=null,phase='enter',phaseStart=0,userPaused=false,visible=true,anim=null,sheenT=0;
+  function running(){return !userPaused&&visible;}
+  function startEnter(){
+    var d=DRIPS[idx];phase='enter';phaseStart=performance.now();
+    if(anim){anim.cancel();anim=null;} bag.classList.remove('idle');sheen.classList.remove('go');
+    setBag(d);palette(d);setWord(d.word);setChip(d);setDots(idx);
+    if(reduce){bag.style.transform='none';return;}
+    blurTo(26,0,520);
+    anim=bag.animate([
+      {transform:'translateY(-140%) rotate(-7deg)',offset:0,easing:'cubic-bezier(.4,.55,.55,1)'},
+      {transform:'translateY(0) rotate(-7deg) scale(1.02,.965)',offset:.19,easing:'ease-out'},
+      {transform:'translateY(0) rotate(7.5deg) scale(1,1)',offset:.36,easing:'ease-in-out'},
+      {transform:'translateY(0) rotate(-4.6deg)',offset:.53,easing:'ease-in-out'},
+      {transform:'translateY(0) rotate(2.6deg)',offset:.7,easing:'ease-in-out'},
+      {transform:'translateY(0) rotate(-1.2deg)',offset:.86,easing:'ease-in-out'},
+      {transform:'translateY(0) rotate(0deg)',offset:1}
+    ],{duration:ENTER,fill:'forwards'});
+    anim.onfinish=function(){if(anim){anim.cancel();anim=null;}bag.classList.add('idle');};
+    clearTimeout(sheenT);sheenT=setTimeout(function(){sheen.classList.add('go');},560);
+    if(!running()){anim.pause();}
+  }
+  function startExit(){
+    phase='exit';phaseStart=performance.now();
+    if(reduce){advance();return;}
+    if(anim){anim.cancel();anim=null;} bag.classList.remove('idle');sheen.classList.remove('go');
+    blurTo(0,26,EXIT);
+    anim=bag.animate([{transform:'translateY(0) rotate(0deg)'},{transform:'translateY(-140%) rotate(5deg)'}],{duration:EXIT,easing:'cubic-bezier(.55,0,.85,.35)',fill:'forwards'});
+  }
+  function advance(){idx=(pending!=null)?pending:(idx+1)%DRIPS.length;pending=null;startEnter();}
+  function goTo(i){if(i===idx&&phase!=='exit')return;pending=i;if(reduce){advance();return;}
+    if(userPaused){userPaused=false;stage.classList.remove('paused');pp.setAttribute('aria-label','Pause animation');}
+    startExit();}
+  var pausedAt=0;
+  function setRunning(on){
+    if(on){if(pausedAt){phaseStart+=performance.now()-pausedAt;pausedAt=0;} if(anim&&anim.playState==='paused')anim.play();}
+    else{if(!pausedAt)pausedAt=performance.now(); if(anim&&anim.playState==='running')anim.pause();}
+    dots.querySelectorAll('.on').forEach(function(b){b.classList.toggle('paused',!on);});
+  }
+  pp.addEventListener('click',function(){userPaused=!userPaused;stage.classList.toggle('paused',userPaused);pp.setAttribute('aria-label',userPaused?'Play animation':'Pause animation');setRunning(running());});
+  document.addEventListener('visibilitychange',function(){visible=!document.hidden&&inView;setRunning(running());});
+  var inView=true;
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){inView=en[0].isIntersecting;visible=inView&&!document.hidden;setRunning(running());},{threshold:.05}).observe(stage);}
+
+  function tick(now){
+    if(running()&&!reduce){var el=now-phaseStart;
+      if(phase==='enter'&&el>=HOLD)startExit();
+      else if(phase==='exit'&&el>=EXIT)advance();}
+    requestAnimationFrame(tick);
+  }
+
+  /* parallax tilt (desktop, motion allowed) */
+  if(fine&&!reduce){
+    var tx=0,ty=0,cx=0,cy=0,over=false;
+    stage.addEventListener('mousemove',function(ev){var b=stage.getBoundingClientRect();tx=((ev.clientX-b.left)/b.width-.5);ty=((ev.clientY-b.top)/b.height-.5);over=true;});
+    stage.addEventListener('mouseleave',function(){tx=0;ty=0;over=false;});
+    (function lerp(){cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;
+      tilt.style.transform='rotateY('+(cx*14).toFixed(2)+'deg) rotateX('+(-cy*10).toFixed(2)+'deg) translateX('+(cx*18).toFixed(1)+'px)';
+      rings.style.transform='translate('+(-cx*22).toFixed(1)+'px,'+(-cy*22).toFixed(1)+'px)';
+      requestAnimationFrame(lerp);})();
+  }
+
+  startEnter();
+  if(!reduce)requestAnimationFrame(tick);
+})();
+</script>
+
 </body>
 </html>
