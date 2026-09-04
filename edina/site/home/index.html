@@ -337,6 +337,90 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 @media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid > div:first-child{grid-column:1/-1}}
 @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
 
+/* ---------- drip menu carousel (v4) ---------- */
+.menu{background:var(--white);padding:96px 0 84px;overflow:hidden}
+.menu-head{text-align:center;max-width:760px;margin:0 auto}
+.menu-head .lede{margin:14px auto 0}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:34px auto 0}
+.filters button{font:600 14px/1 var(--pop);padding:12px 20px;border-radius:99px;border:1.5px solid var(--teal);background:transparent;color:var(--teal);cursor:pointer;transition:background .25s ease,color .25s ease,transform .25s ease}
+.filters button:hover{transform:translateY(-1px)}
+.filters button.on{background:var(--teal);color:#fff}
+.menu-note{text-align:center;font:500 14px/1.5 var(--pop);color:var(--muted);margin-top:18px}
+.menu-note b{color:var(--teal);font-weight:600}
+
+.rail{position:relative;margin-top:44px}
+.track{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:26px max(4vw,calc((100vw - 1280px)/2)) 36px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.drip{flex:0 0 292px;scroll-snap-align:center;position:relative;outline:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.drip.hide{display:none}
+.dstage{position:relative;aspect-ratio:4/5;border-radius:24px}
+/* colored card + photo */
+.dcard{position:absolute;inset:0;border-radius:24px;background:var(--cc);opacity:0;transform:scale(.9);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.8,.2,1);overflow:hidden;box-shadow:0 30px 60px -20px rgba(4,78,99,.35)}
+.dcard img{position:absolute;inset:9px 9px 78px 9px;width:calc(100% - 18px);height:calc(100% - 87px);object-fit:cover;object-position:center top;border-radius:17px;transform:scale(1.06);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.dprice{position:absolute;left:0;right:0;bottom:0;height:78px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 18px 0 20px;color:#fff}
+.dprice .pm{display:flex;flex-direction:column;line-height:1}
+.dprice .pm small{font:600 11px/1 var(--pop);letter-spacing:1.2px;text-transform:uppercase;opacity:.85}
+.dprice .pm b{font:400 30px/1 var(--bebas);letter-spacing:.5px;margin-top:5px}
+.dprice .pr{display:flex;flex-direction:column;line-height:1;text-align:right}
+.dprice .pr small{font:600 11px/1 var(--pop);letter-spacing:1.2px;text-transform:uppercase;opacity:.75}
+.dprice .pr span{font:400 20px/1 var(--bebas);letter-spacing:.5px;margin-top:6px;opacity:.85;text-decoration:line-through;text-decoration-thickness:2px}
+.dprice .pr span.nx{text-decoration:none;font:600 12px/1.2 var(--pop);opacity:.9;max-width:110px}
+.dbook{position:absolute;top:14px;right:14px;background:#fff;color:var(--teal);font:600 13px/1 var(--pop);padding:11px 16px;border-radius:99px;opacity:0;transform:translateY(-8px);transition:opacity .35s ease .12s,transform .35s ease .12s,background .25s ease;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.dbook:hover{background:var(--lime);color:#fff}
+/* bag */
+.dbag{position:absolute;left:50%;bottom:9%;width:46%;transform:translateX(-50%);transform-origin:50% 100%;transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .6s ease;filter:drop-shadow(0 22px 22px rgba(4,78,99,.22));z-index:2;pointer-events:none}
+.dbag img{width:100%;height:auto;display:block}
+.dshadow{position:absolute;left:50%;bottom:6%;width:34%;height:14px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(4,78,99,.22),rgba(4,78,99,0) 70%);transition:opacity .4s ease,transform .6s ease;z-index:1}
+/* meta */
+.dmeta{text-align:center;margin-top:14px}
+.dmeta small{display:block;font:500 13px/1 var(--pop);color:var(--muted);margin-bottom:8px}
+.dmeta h3{font-size:26px;color:var(--teal);transition:color .25s ease}
+.dmeta h3 a{color:inherit}
+/* open state (hover on fine pointers, .open on touch, focus-within for keyboard) */
+.drip.open .dcard,.drip:focus-within .dcard{opacity:1;transform:none}
+.drip.open .dcard img,.drip:focus-within .dcard img{transform:scale(1)}
+.drip.open .dbag,.drip:focus-within .dbag{transform:translateX(-118%) translateY(6%) scale(.56) rotate(-5deg);filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
+.drip.open .dshadow,.drip:focus-within .dshadow{opacity:0}
+.drip.open .dbook,.drip:focus-within .dbook{opacity:1;transform:none}
+.drip.open .dmeta h3,.drip:focus-within .dmeta h3{color:var(--cc-text,var(--teal))}
+@media(hover:hover) and (pointer:fine){
+  .drip:hover .dcard{opacity:1;transform:none}
+  .drip:hover .dcard img{transform:scale(1)}
+  .drip:hover .dbag{transform:translateX(-118%) translateY(6%) scale(.56) rotate(-5deg);filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
+  .drip:hover .dshadow{opacity:0}
+  .drip:hover .dbook{opacity:1;transform:none}
+  .drip:not(.open):not(:hover) .dbag{animation:bagIdle 5s ease-in-out infinite;animation-delay:var(--dl,0s)}
+}
+@keyframes bagIdle{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
+/* lime cards need dark text on the price strip */
+.drip.c-lime .dprice{color:#1F2A2E}
+.drip.c-lime .dbook{color:#1F2A2E}
+.drip.c-lime .dbook:hover{background:var(--teal);color:#fff}
+/* arrows */
+.rarrow{position:absolute;top:calc(50% - 60px);width:52px;height:52px;border-radius:50%;border:1.5px solid var(--teal);background:#fff;color:var(--teal);display:grid;place-items:center;cursor:pointer;z-index:4;box-shadow:0 10px 26px rgba(4,78,99,.14);transition:background .25s ease,color .25s ease,opacity .25s ease,transform .25s ease}
+.rarrow:hover{background:var(--teal);color:#fff;transform:scale(1.05)}
+.rarrow svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2}
+.rarrow.prev{left:max(1.2vw,calc((100vw - 1280px)/2 - 26px))}
+.rarrow.next{right:max(1.2vw,calc((100vw - 1280px)/2 - 26px))}
+.rarrow[disabled]{opacity:.35;pointer-events:none}
+.menu-foot{text-align:center;margin-top:8px}
+.menu-foot .fine{font:400 13px/1.6 var(--pop);color:var(--muted);max-width:720px;margin:18px auto 0}
+@media(max-width:768px){
+  .menu{padding:70px 0 60px}
+  .filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding:0 4vw 6px;margin-left:-4vw;margin-right:-4vw;width:100vw;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:none}
+  .track{gap:18px;padding:18px 4vw 28px}
+  .drip{flex-basis:74vw}
+  .rarrow{display:none}
+  .menu-note{padding:0 4vw}
+}
+@media(prefers-reduced-motion:reduce){
+  .dcard,.dcard img,.dbag,.dbook,.dshadow{transition:none}
+  .drip .dbag{animation:none!important}
+  .track{scroll-behavior:auto}
+}
+
 /* ---------- reveal on scroll ---------- */
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .js .rv.in{opacity:1;transform:none}
@@ -481,6 +565,289 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     </div>
   </div>
 </header>
+
+<!-- 4b. DRIP MENU CAROUSEL -->
+<section class="menu" id="drips">
+  <div class="shell">
+    <div class="menu-head">
+      <div class="tag">IV Drip Menu</div>
+      <h2>Find your drip.</h2>
+      <p class="lede">21 nutrient IV drips, each mixed to pharmacy-grade standards and administered by registered nurses. Hover or tap a bag to see it in the lounge and compare member and regular pricing.</p>
+    </div>
+    <div class="filters" role="tablist" aria-label="Filter drips by goal">
+      <button type="button" data-f="all" class="on">All Drips</button>
+      <button type="button" data-f="energy">Energy and Focus</button>
+      <button type="button" data-f="immunity">Immunity</button>
+      <button type="button" data-f="recovery">Recovery</button>
+      <button type="button" data-f="aging">Beauty and Healthy Aging</button>
+      <button type="button" data-f="metabolic">Detox and Metabolic</button>
+      <button type="button" data-f="wellness">Wellness</button>
+    </div>
+    <p class="menu-note"><b>Lifestyle Membership, $169/mo:</b> one Lifestyle drip and one Quick Shot every month, 50% off additional drips, unused drips roll over.</p>
+  </div>
+  <div class="rail">
+    <button class="rarrow prev" id="railPrev" type="button" aria-label="Previous drips"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <div class="track" id="track">
+      <article class="drip c-lime" data-cat="energy" style="--cc:#AFB216;--cc-text:#9A9D12;--dl:0.00s" tabindex="0" aria-label="Vitality: Adrenal support and steady energy">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/vitality.webp" alt="Client receiving the Vitality IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="vitality">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/vitality.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Energy and Focus</small><h3><a href="/energy-focus">Vitality</a></h3></div>
+      </article>
+      <article class="drip c-teal" data-cat="immunity" style="--cc:#044E63;--cc-text:#044E63;--dl:0.37s" tabindex="0" aria-label="Shield: Seasonal immune defense">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/shield.webp" alt="Client receiving the Shield IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="shield">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/shield.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Immunity and Viral</small><h3><a href="/immunity-viral">Shield</a></h3></div>
+      </article>
+      <article class="drip c-navy" data-cat="recovery" style="--cc:#3C4C62;--cc-text:#3C4C62;--dl:0.74s" tabindex="0" aria-label="Powerpack: Performance and post-workout recovery">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/powerpack.webp" alt="Client receiving the Powerpack IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="powerpack">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/powerpack.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Hydration and Recovery</small><h3><a href="/hydration-recovery">Powerpack</a></h3></div>
+      </article>
+      <article class="drip c-purple" data-cat="aging" style="--cc:#7B6BB5;--cc-text:#6A5AA6;--dl:1.11s" tabindex="0" aria-label="NAD+: Cellular repair and healthy aging">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/nad-plus.webp" alt="Client receiving the NAD+ IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="nad-plus">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Regular</small><b>$500</b></div><div class="pr"><small>Members</small><span class="nx">Ask about member pricing</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/nad-plus.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>NAD+ Therapy</small><h3><a href="/nad">NAD+</a></h3></div>
+      </article>
+      <article class="drip c-orange" data-cat="aging" style="--cc:#E2811F;--cc-text:#C96E14;--dl:1.48s" tabindex="0" aria-label="Glutathione: Master antioxidant for skin and detox">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/glutathione.webp" alt="Client receiving the Glutathione IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="glutathione">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Regular</small><b>$120</b></div><div class="pr"><small>Members</small><span class="nx">Members save 50% on add-on drips</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/glutathione.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Skin Brightening and Beauty</small><h3><a href="/skin-brightening-beauty">Glutathione</a></h3></div>
+      </article>
+      <article class="drip c-lime" data-cat="aging" style="--cc:#AFB216;--cc-text:#9A9D12;--dl:1.85s" tabindex="0" aria-label="Time Machine: Anti-aging and skin health">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/time-machine.webp" alt="Client receiving the Time Machine IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="time-machine">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/time-machine.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Skin Brightening and Beauty</small><h3><a href="/skin-brightening-beauty">Time Machine</a></h3></div>
+      </article>
+      <article class="drip c-teal" data-cat="immunity" style="--cc:#044E63;--cc-text:#044E63;--dl:2.22s" tabindex="0" aria-label="Flu Fighter: Cold, flu, and sinus support">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/flu-fighter.webp" alt="Client receiving the Flu Fighter IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="flu-fighter">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/flu-fighter.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Immunity and Viral</small><h3><a href="/immunity-viral">Flu Fighter</a></h3></div>
+      </article>
+      <article class="drip c-navy" data-cat="recovery" style="--cc:#3C4C62;--cc-text:#3C4C62;--dl:2.59s" tabindex="0" aria-label="Restoration: Rehydrate and bounce back">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/restoration.webp" alt="Client receiving the Restoration IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="restoration">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Regular</small><b>$109</b></div><div class="pr"><small>Members</small><span class="nx">Members save 50% on add-on drips</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/restoration.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Hydration and Recovery</small><h3><a href="/hydration-recovery">Restoration</a></h3></div>
+      </article>
+      <article class="drip c-purple" data-cat="metabolic" style="--cc:#7B6BB5;--cc-text:#6A5AA6;--dl:2.96s" tabindex="0" aria-label="Metabolize: Metabolism, thyroid, and gut support">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/metabolize.webp" alt="Client receiving the Metabolize IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="metabolize">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$189</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/metabolize.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>GLP-1 Weight Loss Support</small><h3><a href="/weight-loss-support">Metabolize</a></h3></div>
+      </article>
+      <article class="drip c-orange" data-cat="recovery" style="--cc:#E2811F;--cc-text:#C96E14;--dl:3.33s" tabindex="0" aria-label="Allstar: Muscle recovery and cellular repair">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/allstar.webp" alt="Client receiving the Allstar IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="allstar">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/allstar.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Hydration and Recovery</small><h3><a href="/hydration-recovery">Allstar</a></h3></div>
+      </article>
+      <article class="drip c-lime" data-cat="metabolic" style="--cc:#AFB216;--cc-text:#9A9D12;--dl:3.70s" tabindex="0" aria-label="Heavy Metal Detox: Nutrient support for detox pathways">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/heavy-metal-detox.webp" alt="Client receiving the Heavy Metal Detox IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="heavy-metal-detox">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/heavy-metal-detox.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Detox</small><h3><a href="/detox">Heavy Metal Detox</a></h3></div>
+      </article>
+      <article class="drip c-teal" data-cat="aging" style="--cc:#044E63;--cc-text:#044E63;--dl:4.07s" tabindex="0" aria-label="Firm: Collagen and skin tone support">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/firm.webp" alt="Client receiving the Firm IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="firm">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/firm.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Skin Brightening and Beauty</small><h3><a href="/skin-brightening-beauty">Firm</a></h3></div>
+      </article>
+      <article class="drip c-navy" data-cat="energy" style="--cc:#3C4C62;--cc-text:#3C4C62;--dl:4.44s" tabindex="0" aria-label="The Debut: Foundational wellness for first-timers">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/debut.webp" alt="Client receiving the The Debut IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="debut">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/debut.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Energy and Focus</small><h3><a href="/energy-focus">The Debut</a></h3></div>
+      </article>
+      <article class="drip c-purple" data-cat="immunity" style="--cc:#7B6BB5;--cc-text:#6A5AA6;--dl:4.81s" tabindex="0" aria-label="Post Viral: Recovery after illness">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/post-viral.webp" alt="Client receiving the Post Viral IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="post-viral">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/post-viral.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Immunity and Viral</small><h3><a href="/immunity-viral">Post Viral</a></h3></div>
+      </article>
+      <article class="drip c-orange" data-cat="immunity" style="--cc:#E2811F;--cc-text:#C96E14;--dl:5.18s" tabindex="0" aria-label="Jetsetter: Jet lag and travel fatigue">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/jetsetter.webp" alt="Client receiving the Jetsetter IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="jetsetter">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/jetsetter.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Immunity and Viral</small><h3><a href="/immunity-viral">Jetsetter</a></h3></div>
+      </article>
+      <article class="drip c-lime" data-cat="immunity" style="--cc:#AFB216;--cc-text:#9A9D12;--dl:5.55s" tabindex="0" aria-label="Allergy: Seasonal allergy relief">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/allergy.webp" alt="Client receiving the Allergy IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="allergy">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/allergy.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Immunity and Viral</small><h3><a href="/immunity-viral">Allergy</a></h3></div>
+      </article>
+      <article class="drip c-teal" data-cat="wellness" style="--cc:#044E63;--cc-text:#044E63;--dl:5.92s" tabindex="0" aria-label="Soother: Stress, tension, and headache support">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/soother.webp" alt="Client receiving the Soother IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="soother">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/soother.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Wellness</small><h3><a href="/help-me-choose">Soother</a></h3></div>
+      </article>
+      <article class="drip c-navy" data-cat="wellness" style="--cc:#3C4C62;--cc-text:#3C4C62;--dl:6.29s" tabindex="0" aria-label="Maternal Wellness: Hydration and nausea support in pregnancy">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/maternal-wellness.webp" alt="Client receiving the Maternal Wellness IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="maternal-wellness">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$179</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/maternal-wellness.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Wellness</small><h3><a href="/help-me-choose">Maternal Wellness</a></h3></div>
+      </article>
+      <article class="drip c-purple" data-cat="recovery" style="--cc:#7B6BB5;--cc-text:#6A5AA6;--dl:6.66s" tabindex="0" aria-label="Pre/Post-Op: Surgical recovery and tissue healing">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/pre-post-op.webp" alt="Client receiving the Pre/Post-Op IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="pre-post-op">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/pre-post-op.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Hydration and Recovery</small><h3><a href="/hydration-recovery">Pre/Post-Op</a></h3></div>
+      </article>
+      <article class="drip c-orange" data-cat="energy" style="--cc:#E2811F;--cc-text:#C96E14;--dl:7.03s" tabindex="0" aria-label="Alpha Lipoic Acid: Cellular energy and nerve support">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/ala.webp" alt="Client receiving the Alpha Lipoic Acid IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="ala">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Regular</small><b>$100</b></div><div class="pr"><small>Members</small><span class="nx">Members save 50% on add-on drips</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/ala.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>Energy and Focus</small><h3><a href="/energy-focus">Alpha Lipoic Acid</a></h3></div>
+      </article>
+      <article class="drip c-lime" data-cat="wellness" style="--cc:#AFB216;--cc-text:#9A9D12;--dl:7.40s" tabindex="0" aria-label="High Dose Vitamin C: Specialized high-dose infusion">
+        <div class="dstage">
+          <div class="dcard">
+            <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/high-dose-vitamin-c.webp" alt="Client receiving the High Dose Vitamin C IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
+            <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="high-dose-vitamin-c">Book this drip</a>
+            <div class="dprice"><div class="pm"><small>Pricing</small><b>Consult</b></div><div class="pr"><small>Members</small><span class="nx">Priced at consultation</span></div></div>
+          </div>
+          <div class="dshadow"></div>
+          <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/high-dose-vitamin-c.webp" alt="" loading="lazy" width="416" height="900"></div>
+        </div>
+        <div class="dmeta"><small>High Dose Vitamin C</small><h3><a href="/high-dose-vitamin-c">High Dose Vitamin C</a></h3></div>
+      </article>
+    </div>
+    <button class="rarrow next" id="railNext" type="button" aria-label="More drips"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+  <div class="shell menu-foot">
+    <a class="btn btn-out" href="/help-me-choose">Not sure? Help Me Choose</a>
+    <p class="fine">Regular pricing shown per drip. Member pricing reflects the Lifestyle Membership monthly rate. All IV therapy is provided under medical supervision after a brief health screening.</p>
+  </div>
+</section>
 
 <!-- 5. STATS STRIP -->
 <section class="bg-blue">
@@ -1024,5 +1391,39 @@ const BOOKING = { default: 'https://thedripbaredina.com/booking-page-6799' };
 })();
 </script>
 
+<script>
+(function(){
+  var track=document.getElementById('track');if(!track)return;
+  var drips=[].slice.call(track.querySelectorAll('.drip'));
+  var fine=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  /* tap to open on touch; click outside closes */
+  drips.forEach(function(d){
+    d.addEventListener('click',function(e){
+      if(e.target.closest('a'))return;
+      if(fine)return;
+      var was=d.classList.contains('open');
+      drips.forEach(function(x){x.classList.remove('open');});
+      if(!was)d.classList.add('open');
+    });
+    d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){if(e.target===d){e.preventDefault();d.classList.toggle('open');}}});
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.drip'))drips.forEach(function(x){x.classList.remove('open');});});
+  /* filters */
+  var fb=document.querySelectorAll('.filters button');
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    fb.forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false');});b.classList.add('on');b.setAttribute('aria-selected','true');
+    var f=b.getAttribute('data-f');
+    drips.forEach(function(d){d.classList.toggle('hide',f!=='all'&&d.getAttribute('data-cat')!==f);d.classList.remove('open');});
+    track.scrollTo({left:0,behavior:'smooth'});setTimeout(arrows,400);
+  });});
+  /* arrows */
+  var prev=document.getElementById('railPrev'),next=document.getElementById('railNext');
+  function step(){var v=drips.filter(function(d){return !d.classList.contains('hide');});var w=v[0]?v[0].getBoundingClientRect().width+26:320;return Math.max(w,Math.floor(track.clientWidth/w)*w-w);}
+  prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+  next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
+  function arrows(){var max=track.scrollWidth-track.clientWidth-2;prev.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=max;}
+  track.addEventListener('scroll',arrows,{passive:true});window.addEventListener('resize',arrows);arrows();
+})();
+</script>
 </body>
 </html>
