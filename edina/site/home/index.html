@@ -379,14 +379,14 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 /* open state (hover on fine pointers, .open on touch, focus-within for keyboard) */
 .drip.open .dcard,.drip:focus-within .dcard{opacity:1;transform:none}
 .drip.open .dcard img,.drip:focus-within .dcard img{transform:scale(1)}
-.drip.open .dbag,.drip:focus-within .dbag{transform:translateX(-118%) translateY(6%) scale(.56) rotate(-5deg);filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
+.drip.open .dbag,.drip:focus-within .dbag{transform:translateX(-126%) translateY(-22%) scale(.5) rotate(-5deg);filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
 .drip.open .dshadow,.drip:focus-within .dshadow{opacity:0}
 .drip.open .dbook,.drip:focus-within .dbook{opacity:1;transform:none}
 .drip.open .dmeta h3,.drip:focus-within .dmeta h3{color:var(--cc-text,var(--teal))}
 @media(hover:hover) and (pointer:fine){
   .drip:hover .dcard{opacity:1;transform:none}
   .drip:hover .dcard img{transform:scale(1)}
-  .drip:hover .dbag{transform:translateX(-118%) translateY(6%) scale(.56) rotate(-5deg);filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
+  .drip:hover .dbag{transform:translateX(-126%) translateY(-22%) scale(.5) rotate(-5deg);filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
   .drip:hover .dshadow{opacity:0}
   .drip:hover .dbook{opacity:1;transform:none}
   .drip:not(.open):not(:hover) .dbag{animation:bagIdle 5s ease-in-out infinite;animation-delay:var(--dl,0s)}
@@ -565,6 +565,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     </div>
   </div>
 </header>
+
 
 <!-- 4b. DRIP MENU CAROUSEL -->
 <section class="menu" id="drips">
