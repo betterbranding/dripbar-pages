@@ -358,12 +358,12 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .dcard{position:absolute;inset:0;border-radius:24px;background:var(--cc);opacity:0;transform:scale(.9);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.8,.2,1);overflow:hidden;box-shadow:0 30px 60px -20px rgba(4,78,99,.35)}
 .dcard img{position:absolute;inset:9px 9px 78px 9px;width:calc(100% - 18px);height:calc(100% - 87px);object-fit:cover;object-position:center top;border-radius:17px;transform:scale(1.06);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
 .dprice{position:absolute;left:0;right:0;bottom:0;height:78px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 18px 0 20px;color:#fff}
-.dprice .pm{display:flex;flex-direction:column;line-height:1}
+.dprice .pm{display:flex;flex-direction:column;line-height:1;text-align:right}
 .dprice .pm small{font:600 11px/1 var(--pop);letter-spacing:1.2px;text-transform:uppercase;opacity:.85}
 .dprice .pm b{font:400 30px/1 var(--bebas);letter-spacing:.5px;margin-top:5px}
-.dprice .pr{display:flex;flex-direction:column;line-height:1;text-align:right}
+.dprice .pr{display:flex;flex-direction:column;line-height:1;text-align:left}
 .dprice .pr small{font:600 11px/1 var(--pop);letter-spacing:1.2px;text-transform:uppercase;opacity:.75}
-.dprice .pr span{font:400 20px/1 var(--bebas);letter-spacing:.5px;margin-top:6px;opacity:.85;text-decoration:line-through;text-decoration-thickness:2px}
+.dprice .pr span{font:400 22px/1 var(--bebas);letter-spacing:.5px;margin-top:6px;opacity:.9}
 .dprice .pr span.nx{text-decoration:none;font:600 12px/1.2 var(--pop);opacity:.9;max-width:110px}
 .dbook{position:absolute;top:14px;right:14px;background:#fff;color:var(--teal);font:600 13px/1 var(--pop);padding:11px 16px;border-radius:99px;opacity:0;transform:translateY(-8px);transition:opacity .35s ease .12s,transform .35s ease .12s,background .25s ease;box-shadow:0 8px 20px rgba(0,0,0,.14)}
 .dbook:hover{background:var(--lime);color:#fff}
@@ -404,6 +404,11 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .rarrow.prev{left:max(1.2vw,calc((100vw - 1280px)/2 - 26px))}
 .rarrow.next{right:max(1.2vw,calc((100vw - 1280px)/2 - 26px))}
 .rarrow[disabled]{opacity:.35;pointer-events:none}
+.pager{display:none;align-items:center;justify-content:center;gap:14px;margin:-8px auto 26px;padding:0 4vw}
+.pager .bar{position:relative;flex:1;max-width:220px;height:4px;border-radius:99px;background:var(--divider);overflow:hidden}
+.pager .bar i{position:absolute;left:0;top:0;bottom:0;width:20%;border-radius:99px;background:var(--teal);transition:transform .35s ease,width .35s ease}
+.pager .cnt{font:400 18px/1 var(--bebas);letter-spacing:1px;color:var(--teal);min-width:64px;text-align:center}
+.pager .cnt span{color:var(--muted)}
 .menu-foot{text-align:center;margin-top:8px}
 .menu-foot .fine{font:400 13px/1.6 var(--pop);color:var(--muted);max-width:720px;margin:18px auto 0}
 @media(max-width:768px){
@@ -414,6 +419,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
   .track{gap:18px;padding:18px 4vw 28px}
   .drip{flex-basis:74vw}
   .rarrow{display:none}
+  .pager{display:flex}
   .menu-note{padding:0 4vw}
 }
 @media(prefers-reduced-motion:reduce){
@@ -569,6 +575,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 
 
 
+
 <!-- 4b. DRIP MENU CAROUSEL -->
 <section class="menu" id="drips">
   <div class="shell">
@@ -596,7 +603,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/vitality.webp" alt="Client receiving the Vitality IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="vitality">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/vitality.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -608,7 +615,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/shield.webp" alt="Client receiving the Shield IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="shield">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/shield.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -620,7 +627,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/powerpack.webp" alt="Client receiving the Powerpack IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="powerpack">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/powerpack.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -632,7 +639,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/nad-plus.webp" alt="Client receiving the NAD+ IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="nad-plus">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Regular</small><b>$500</b></div><div class="pr"><small>Members</small><span class="nx">Ask about member pricing</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$500</span></div><div class="pm"><small>Members</small><b class="nx">Ask about member pricing</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/nad-plus.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -644,7 +651,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/glutathione.webp" alt="Client receiving the Glutathione IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="glutathione">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Regular</small><b>$120</b></div><div class="pr"><small>Members</small><span class="nx">Members save 50% on add-on drips</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$120</span></div><div class="pm"><small>Members</small><b class="nx">Members save 50% on add-on drips</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/glutathione.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -656,7 +663,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/time-machine.webp" alt="Client receiving the Time Machine IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="time-machine">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/time-machine.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -668,7 +675,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/flu-fighter.webp" alt="Client receiving the Flu Fighter IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="flu-fighter">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/flu-fighter.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -680,7 +687,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/restoration.webp" alt="Client receiving the Restoration IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="restoration">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Regular</small><b>$109</b></div><div class="pr"><small>Members</small><span class="nx">Members save 50% on add-on drips</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$109</span></div><div class="pm"><small>Members</small><b class="nx">Members save 50% on add-on drips</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/restoration.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -692,7 +699,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/metabolize.webp" alt="Client receiving the Metabolize IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="metabolize">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$189</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$189</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/metabolize.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -704,7 +711,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/allstar.webp" alt="Client receiving the Allstar IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="allstar">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/allstar.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -716,7 +723,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/heavy-metal-detox.webp" alt="Client receiving the Heavy Metal Detox IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="heavy-metal-detox">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/heavy-metal-detox.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -728,7 +735,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/firm.webp" alt="Client receiving the Firm IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="firm">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/firm.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -740,7 +747,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/debut.webp" alt="Client receiving the The Debut IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="debut">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/debut.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -752,7 +759,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/post-viral.webp" alt="Client receiving the Post Viral IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="post-viral">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/post-viral.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -764,7 +771,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/jetsetter.webp" alt="Client receiving the Jetsetter IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="jetsetter">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/jetsetter.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -776,7 +783,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/allergy.webp" alt="Client receiving the Allergy IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="allergy">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/allergy.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -788,7 +795,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/soother.webp" alt="Client receiving the Soother IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="soother">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/soother.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -800,7 +807,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/maternal-wellness.webp" alt="Client receiving the Maternal Wellness IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="maternal-wellness">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$179</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$179</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/maternal-wellness.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -812,7 +819,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/pre-post-op.webp" alt="Client receiving the Pre/Post-Op IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="pre-post-op">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Member</small><b>$169</b></div><div class="pr"><small>Regular</small><span>$224</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$224</span></div><div class="pm"><small>Member</small><b>$169</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/pre-post-op.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -824,7 +831,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/ala.webp" alt="Client receiving the Alpha Lipoic Acid IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="ala">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Regular</small><b>$100</b></div><div class="pr"><small>Members</small><span class="nx">Members save 50% on add-on drips</span></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$100</span></div><div class="pm"><small>Members</small><b class="nx">Members save 50% on add-on drips</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/ala.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -836,7 +843,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/high-dose-vitamin-c.webp" alt="Client receiving the High Dose Vitamin C IV drip at The DRIPBaR Edina" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbaredina.com/booking-page-6799" data-book="high-dose-vitamin-c">Book this drip</a>
-            <div class="dprice"><div class="pm"><small>Pricing</small><b>Consult</b></div><div class="pr"><small>Members</small><span class="nx">Priced at consultation</span></div></div>
+            <div class="dprice"><div class="pr"><small>Pricing</small><span>Consult</span></div><div class="pm"><small>Members</small><b class="nx">Priced at consultation</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/high-dose-vitamin-c.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -846,6 +853,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     </div>
     <button class="rarrow next" id="railNext" type="button" aria-label="More drips"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
   </div>
+  <div class="pager" id="pager" aria-hidden="true"><div class="bar"><i id="pagerBar"></i></div><div class="cnt"><b id="pagerCur">01</b> <span>/ <b id="pagerTot">21</b></span></div></div>
   <div class="shell menu-foot">
     <a class="btn btn-out" href="/help-me-choose">Not sure? Help Me Choose</a>
     <p class="fine">Regular pricing shown per drip. Member pricing reflects the Lifestyle Membership monthly rate. All IV therapy is provided under medical supervision after a brief health screening.</p>
@@ -1426,6 +1434,26 @@ const BOOKING = { default: 'https://thedripbaredina.com/booking-page-6799' };
   next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
   function arrows(){var max=track.scrollWidth-track.clientWidth-2;prev.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=max;}
   track.addEventListener('scroll',arrows,{passive:true});window.addEventListener('resize',arrows);arrows();
+  /* pager (mobile) */
+  var pBar=document.getElementById('pagerBar'),pCur=document.getElementById('pagerCur'),pTot=document.getElementById('pagerTot');
+  function vis(){return drips.filter(function(d){return !d.classList.contains('hide');});}
+  function pad(n){return (n<10?'0':'')+n;}
+  function pager(){var v=vis();if(!v.length)return;var c=track.getBoundingClientRect();var cx=c.left+c.width/2,best=0,bd=1e9;
+    v.forEach(function(d,i){var r=d.getBoundingClientRect();var dx=Math.abs(r.left+r.width/2-cx);if(dx<bd){bd=dx;best=i;}});
+    pTot.textContent=pad(v.length);pCur.textContent=pad(best+1);
+    var w=100/v.length;pBar.style.width=Math.max(w,6)+'%';pBar.style.transform='translateX('+(best*100)+'%)';return best;}
+  track.addEventListener('scroll',pager,{passive:true});fb.forEach(function(b){b.addEventListener('click',function(){setTimeout(pager,450);});});pager();
+  /* slow rotation on touch devices while in view, pauses on touch */
+  if(!fine&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var inView=false,touching=false,lastTouch=0,timer=null;
+    function tickRot(){if(!inView||touching||Date.now()-lastTouch<6000||document.hidden)return;var v=vis();if(v.length<2)return;var i=pager();var nx=(i+1)%v.length;
+      var r=v[nx].getBoundingClientRect(),c=track.getBoundingClientRect();track.scrollBy({left:(r.left+r.width/2)-(c.left+c.width/2),behavior:'smooth'});}
+    track.addEventListener('touchstart',function(){touching=true;lastTouch=Date.now();},{passive:true});
+    track.addEventListener('touchend',function(){touching=false;lastTouch=Date.now();},{passive:true});
+    track.addEventListener('pointerdown',function(){lastTouch=Date.now();},{passive:true});
+    if('IntersectionObserver' in window){new IntersectionObserver(function(en){inView=en[0].isIntersecting;},{threshold:.3}).observe(track);}else{inView=true;}
+    timer=setInterval(tickRot,4200);
+  }
 })();
 </script>
 </body>
