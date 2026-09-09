@@ -185,6 +185,26 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .bw-notes svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--lime-dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
 .bw-notes b{color:var(--teal);font-weight:600}
 
+
+/* step 4: full-width calendar mode */
+.bw.is-cal{grid-template-columns:1fr}
+.bw.is-cal .bw-side{display:none}
+.bw-topbar{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap;margin-bottom:22px}
+.bw-topbar .chip{display:flex;align-items:center;gap:12px;background:var(--teal);color:#fff;border-radius:16px;padding:10px 14px 10px 12px;min-width:0}
+.bw-topbar .chip .pic{width:34px;height:44px;display:grid;place-items:center;flex:none}
+.bw-topbar .chip .pic img{max-height:44px;width:auto;filter:drop-shadow(0 6px 8px rgba(0,0,0,.35))}
+.bw-topbar .chip .pic .isq{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.14);display:grid;place-items:center;color:#fff}
+.bw-topbar .chip .pic .isq svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bw-topbar .chip small{display:block;font:500 10.5px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
+.bw-topbar .chip b{display:block;font:400 17px/1.05 var(--bebas);letter-spacing:.5px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px}
+.bw-topbar .chip button{font:600 12px/1 var(--pop);color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:99px;padding:7px 11px;margin-left:6px;transition:all .25s;flex:none}
+.bw-topbar .chip button:hover{background:#fff;color:var(--teal)}
+.bw-topbar .offer{display:flex;align-items:center;gap:10px;margin-left:auto;background:var(--blue);color:var(--teal);border-radius:16px;padding:10px 16px;font:500 13px/1.3 var(--pop)}
+.bw-topbar .offer i{width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none}
+.bw-topbar .offer b{font-weight:600}
+@media(max-width:1000px){.bw-topbar .offer{display:none}}
+@media(max-width:860px){.bw.is-cal .bw-side{display:flex}.bw-topbar{display:none}}
+
 /* responsive */
 @media(max-width:1000px){.bw-goals{grid-template-columns:repeat(2,1fr)}.bw-services{grid-template-columns:1fr}.bw-svc.wide{grid-column:auto}.bw-main{padding:34px 30px}}
 @media(max-width:860px){
@@ -312,9 +332,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
     <!-- STEP 4 -->
     <div class="bw-pane" data-pane="4">
+      <div class="bw-topbar" id="bw-topbar"></div>
       <div class="bw-kicker">Step 4 of 4</div>
       <h2>Pick a day and time</h2>
-      <p class="lede">Your details are already filled in. Choose a slot, confirm, and you are booked.</p>
+      <p class="lede">Your details are already filled in. Pick a day, choose a time, and confirm.</p>
       <div class="bw-body">
         <div class="bw-cal" id="bw-cal"><div class="loading" id="cal-loading"><div><i></i>Loading available times</div></div></div>
         <div class="bw-notes"><svg><use href="#i-info"/></svg><div><b>What our team will already know:</b> <span id="notes-preview"></span></div></div>
@@ -500,6 +521,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     var c = validate(); if(!c) return;
     state.contact = c;
     $('#s3-sub').textContent = c.first+' '+c.last;
+    renderTopbar();
     loadCalendar();
     go(4);
   });
@@ -538,13 +560,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   $('#back4').addEventListener('click', function(){ go(3,true) });
 
   /* ===== NAV ===== */
+  function renderTopbar(){
+    var g=goalById(state.goal), s=S[state.service], c=state.contact;
+    $('#bw-topbar').innerHTML =
+      '<div class="chip"><span class="pic"><span class="isq"><svg><use href="#'+g.icon+'"/></svg></span></span><span><small>Goal</small><b>'+g.label+'</b></span><button type="button" data-go="1">Change</button></div>'+
+      '<div class="chip"><span class="pic">'+picHTML(s)+'</span><span><small>Service</small><b>'+s.name+'</b></span><button type="button" data-go="2">Change</button></div>'+
+      '<div class="chip"><span class="pic"><span class="isq"><svg><use href="#i-users"/></svg></span></span><span><small>Booking for</small><b>'+c.first+' '+c.last+'</b></span><button type="button" data-go="3">Change</button></div>'+
+      '<div class="offer"><i></i><span>New here? <b>$20 off</b> your first appointment</span></div>';
+  }
+  $('#bw-topbar').addEventListener('click', function(e){ var b=e.target.closest('button[data-go]'); if(b) go(+b.getAttribute('data-go'), true); });
   function go(n, back){
     state.step = n;
+    $('#bw').classList.toggle('is-cal', n===4);
     $$('.bw-pane').forEach(function(p){ var on = p.getAttribute('data-pane')==String(n); p.classList.toggle('is-on',on); p.classList.toggle('is-back', on && !!back); });
     $$('.bw-step').forEach(function(s){ var k=+s.getAttribute('data-step'); s.classList.toggle('is-active',k===n); s.classList.toggle('is-done',k<n); });
     $('#mp-bar').style.width = (n*25)+'%'; $('#mp-txt').textContent = 'Step '+n+' of 4';
     var top = $('#bw').getBoundingClientRect().top + window.pageYOffset - 16;
-    if(window.pageYOffset > top) window.scrollTo({top:top, behavior:'smooth'});
+    if(window.pageYOffset > top || n===4) window.scrollTo({top:top, behavior:'smooth'});
   }
   function updateSummary(){
     var sum = $('#bw-summary');
