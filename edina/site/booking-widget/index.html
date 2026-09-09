@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Your Appointment | The DRIPBaR Edina</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#044E63;--teal-deep:#033D4E;--lime:#AFB216;--lime-dark:#9A9D12;--blue:#D9EEF5;--blue-soft:#EEF7FA;--blue-icon:#DFF1F6;--muted:#6B7A80;--ink:#0F2A33;--divider:#DCE8EC;--navy:#1B3A5C;--purple:#6E4B9E;--orange:#E8873A;--bebas:'Bebas Neue','Arial Narrow',Arial,sans-serif;--pop:'Poppins',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font:400 16px/1.6 var(--pop);color:var(--ink);background:var(--blue-soft);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.page-head{text-align:center;padding:56px 0 34px}
+.page-head .tag{display:inline-flex;align-items:center;gap:9px;font:500 14px/1 var(--pop);padding:11px 18px;border-radius:99px;background:var(--blue);color:var(--teal);margin-bottom:22px}
+.page-head .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.page-head h1{font:400 clamp(44px,5.4vw,72px)/.98 var(--bebas);letter-spacing:1px;color:var(--teal)}
+.page-head h1 span{color:var(--lime)}
+.page-head p{max-width:560px;margin:16px auto 0;color:var(--muted)}
+.page-foot{text-align:center;color:var(--muted);font-size:13.5px;padding:34px 0 64px}
+
+/* ================= BOOKING WIDGET ================= */
+.bw{--r:28px;display:grid;grid-template-columns:340px 1fr;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 40px 90px -40px rgba(4,78,99,.45),0 2px 0 rgba(4,78,99,.04);min-height:640px}
+.bw *{box-sizing:border-box}
+
+/* ---- side panel ---- */
+.bw-side{background:var(--teal);color:#fff;padding:36px 32px 32px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:28px}
+.bw-side::before{content:"";position:absolute;left:-40%;bottom:-40%;width:120%;height:90%;background:repeating-radial-gradient(circle at center,rgba(255,255,255,.07) 0 2px,transparent 2px 84px);pointer-events:none}
+.bw-brand{display:flex;align-items:center;gap:12px;position:relative}
+.bw-brand .mark{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center}
+.bw-brand .mark img{width:30px;height:30px}
+.bw-brand b{font:400 24px/1 var(--bebas);letter-spacing:1px}
+.bw-brand small{display:block;font:500 12px/1 var(--pop);color:rgba(255,255,255,.7);margin-top:4px}
+.bw-offer{position:relative;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:10px 16px 10px 12px;font:500 13px/1 var(--pop)}
+.bw-offer i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(175,178,22,.25)}
+.bw-offer b{color:var(--lime);font-weight:600}
+.bw-steps{position:relative;display:flex;flex-direction:column;gap:0;list-style:none}
+.bw-step{display:flex;gap:14px;align-items:flex-start;position:relative;padding-bottom:22px}
+.bw-step:last-child{padding-bottom:0}
+.bw-step::before{content:"";position:absolute;left:17px;top:38px;bottom:2px;width:2px;background:rgba(255,255,255,.14)}
+.bw-step:last-child::before{display:none}
+.bw-step .n{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.28);display:grid;place-items:center;font:400 17px/1 var(--bebas);letter-spacing:.5px;flex:none;transition:all .35s;background:var(--teal);position:relative;z-index:1}
+.bw-step .n svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;display:none}
+.bw-step .t{padding-top:5px}
+.bw-step .t b{display:block;font:600 14.5px/1.2 var(--pop);color:rgba(255,255,255,.62);transition:color .3s}
+.bw-step .t span{display:block;font:400 13px/1.4 var(--pop);color:rgba(255,255,255,.5);margin-top:4px;min-height:18px}
+.bw-step.is-active .n{border-color:var(--lime);background:var(--lime);color:#fff;box-shadow:0 0 0 6px rgba(175,178,22,.22)}
+.bw-step.is-active .t b{color:#fff}
+.bw-step.is-done .n{border-color:var(--lime);background:transparent}
+.bw-step.is-done .n span{display:none}
+.bw-step.is-done .n svg{display:block}
+.bw-step.is-done .t b{color:#fff}
+.bw-step.is-done .t span{color:var(--lime)}
+.bw-step.is-done::before{background:var(--lime)}
+.bw-summary{position:relative;margin-top:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:18px 18px 18px 20px;display:none;align-items:center;gap:16px;min-height:96px}
+.bw-summary.show{display:flex;animation:bwPop .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes bwPop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.bw-summary .pic{width:58px;height:74px;flex:none;display:grid;place-items:center}
+.bw-summary .pic img{max-height:74px;width:auto;filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));animation:bwSway 5s ease-in-out infinite;transform-origin:50% 4%}
+.bw-summary .pic .isq{width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center}
+.bw-summary .pic .isq svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@keyframes bwSway{0%,100%{transform:rotate(0)}30%{transform:rotate(2deg)}70%{transform:rotate(-1.6deg)}}
+.bw-summary small{display:block;font:500 11.5px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
+.bw-summary b{display:block;font:400 22px/1.05 var(--bebas);letter-spacing:.6px;margin-top:6px}
+.bw-summary span{display:block;font:400 12.5px/1.4 var(--pop);color:rgba(255,255,255,.7);margin-top:4px}
+.bw-side .help{position:relative;display:flex;align-items:center;gap:12px;font:500 13px/1.4 var(--pop);color:rgba(255,255,255,.75)}
+.bw-side .help a{color:#fff;font-weight:600;border-bottom:1px solid rgba(255,255,255,.35)}
+.bw-side .help .ico{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none}
+.bw-side .help .ico svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- main panel ---- */
+.bw-main{padding:40px 44px 40px;position:relative;display:flex;flex-direction:column;min-width:0}
+.bw-mobile-progress{display:none}
+.bw-pane{display:none;flex:1;flex-direction:column}
+.bw-pane.is-on{display:flex;animation:bwIn .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes bwIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.bw-pane.is-back{animation:bwBack .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes bwBack{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+.bw-kicker{display:inline-flex;align-items:center;gap:9px;font:500 13px/1 var(--pop);padding:9px 14px;border-radius:99px;background:var(--blue);color:var(--teal);margin-bottom:16px;align-self:flex-start}
+.bw-kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)}
+.bw-main h2{font:400 clamp(30px,3.2vw,42px)/1 var(--bebas);letter-spacing:.8px;color:var(--teal)}
+.bw-main .lede{color:var(--muted);margin-top:8px;font-size:15px;max-width:560px}
+.bw-body{margin-top:26px;flex:1}
+.bw-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;padding-top:22px;border-top:1px solid var(--divider)}
+.bw-back{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--pop);color:var(--muted);padding:10px 4px;border-radius:99px;transition:color .25s}
+.bw-back:hover{color:var(--teal)}
+.bw-back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15.5px/1 var(--pop);padding:17px 30px;border-radius:99px;transition:background .25s,color .25s,transform .25s,opacity .25s,box-shadow .25s;cursor:pointer;white-space:nowrap}
+.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn-lime{background:var(--lime);color:#fff;box-shadow:0 10px 24px -10px rgba(154,157,18,.7)}
+.btn-lime:hover{background:var(--lime-dark);transform:translateY(-1px)}
+.btn-lime[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.bw-hint{font:500 13px/1.4 var(--pop);color:var(--muted)}
+
+/* goal tiles */
+.bw-goals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bw-tile{position:relative;text-align:left;background:var(--blue-soft);border:2px solid transparent;border-radius:20px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,border-color .25s,background .25s,box-shadow .25s;min-height:132px}
+.bw-tile:hover{transform:translateY(-3px);background:#fff;border-color:var(--blue);box-shadow:0 18px 34px -22px rgba(4,78,99,.35)}
+.bw-tile .isq{width:46px;height:46px;border-radius:13px;background:#fff;color:var(--teal);display:grid;place-items:center;transition:background .25s,color .25s}
+.bw-tile .isq svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bw-tile b{display:block;font:600 15px/1.25 var(--pop);color:var(--ink)}
+.bw-tile .sub{display:block;font:400 12.5px/1.4 var(--pop);color:var(--muted);margin-top:3px}
+.bw-tile .chk{position:absolute;top:14px;right:14px;width:24px;height:24px;border-radius:50%;background:var(--lime);display:grid;place-items:center;opacity:0;transform:scale(.6);transition:all .25s}
+.bw-tile .chk svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.bw-tile.is-sel{background:#fff;border-color:var(--lime);box-shadow:0 18px 34px -22px rgba(4,78,99,.35)}
+.bw-tile.is-sel .isq{background:var(--teal);color:#fff}
+.bw-tile.is-sel .chk{opacity:1;transform:scale(1)}
+.bw-tile.c-lime .isq{color:var(--lime-dark)}.bw-tile.c-navy .isq{color:var(--navy)}.bw-tile.c-purple .isq{color:var(--purple)}.bw-tile.c-orange .isq{color:var(--orange)}.bw-tile.c-teal .isq{color:var(--teal)}
+.bw-tile.is-sel.c-lime .isq{background:var(--lime);color:#fff}.bw-tile.is-sel.c-navy .isq{background:var(--navy);color:#fff}.bw-tile.is-sel.c-purple .isq{background:var(--purple);color:#fff}.bw-tile.is-sel.c-orange .isq{background:var(--orange);color:#fff}
+
+/* service cards */
+.bw-services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bw-svc{position:relative;text-align:left;display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:center;background:var(--blue-soft);border:2px solid transparent;border-radius:20px;padding:16px 18px 16px 14px;transition:transform .25s,border-color .25s,background .25s,box-shadow .25s}
+.bw-svc:hover{transform:translateY(-3px);background:#fff;border-color:var(--blue);box-shadow:0 18px 34px -22px rgba(4,78,99,.35)}
+.bw-svc .pic{width:76px;height:92px;display:grid;place-items:center;border-radius:14px;background:radial-gradient(circle at 50% 40%,#fff 0,rgba(255,255,255,0) 70%)}
+.bw-svc .pic img{max-height:88px;width:auto;filter:drop-shadow(0 10px 12px rgba(4,78,99,.25));transition:transform .35s}
+.bw-svc:hover .pic img{transform:translateY(-3px) rotate(-1.5deg)}
+.bw-svc .pic .isq{width:56px;height:56px;border-radius:14px;background:#fff;color:var(--teal);display:grid;place-items:center}
+.bw-svc .pic .isq svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bw-svc .tx b{display:block;font:400 22px/1.05 var(--bebas);letter-spacing:.6px;color:var(--teal)}
+.bw-svc .tx .blurb{display:block;font:400 13px/1.4 var(--pop);color:var(--muted);margin-top:4px}
+.bw-svc .price{display:flex;align-items:baseline;gap:10px;margin-top:9px;flex-wrap:wrap}
+.bw-svc .price em{font:500 12px/1 var(--pop);color:var(--muted);font-style:normal}
+.bw-svc .price em b{display:inline;font:400 15px/1 var(--bebas);letter-spacing:.4px;color:var(--ink);margin-left:4px}
+.bw-svc .price em.mem b{color:var(--lime-dark)}
+.bw-svc .price .pill{display:inline-flex;align-items:center;font:500 11.5px/1 var(--pop);padding:6px 10px;border-radius:99px;background:var(--blue);color:var(--teal)}
+.bw-svc .chk{position:absolute;top:12px;right:12px;width:24px;height:24px;border-radius:50%;background:var(--lime);display:grid;place-items:center;opacity:0;transform:scale(.6);transition:all .25s}
+.bw-svc .chk svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.bw-svc.is-sel{background:#fff;border-color:var(--lime);box-shadow:0 18px 34px -22px rgba(4,78,99,.35)}
+.bw-svc.is-sel .chk{opacity:1;transform:scale(1)}
+.bw-svc.wide{grid-column:1/-1}
+.bw-goalchip{display:inline-flex;align-items:center;gap:8px;font:500 13px/1 var(--pop);color:var(--teal);background:var(--blue);border-radius:99px;padding:8px 12px 8px 8px;margin-left:10px;vertical-align:middle;letter-spacing:0}
+.bw-goalchip i{width:7px;height:7px;border-radius:50%;background:var(--lime)}
+
+/* form */
+.bw-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bw-field{display:flex;flex-direction:column;gap:7px}
+.bw-field label{font:600 13px/1 var(--pop);color:var(--teal)}
+.bw-field input{width:100%;font:400 15.5px/1.2 var(--pop);color:var(--ink);background:var(--blue-soft);border:2px solid transparent;border-radius:16px;padding:16px 18px;outline:none;transition:border-color .25s,background .25s,box-shadow .25s;-webkit-appearance:none}
+.bw-field input::placeholder{color:#9AA8AD}
+.bw-field input:focus{background:#fff;border-color:var(--teal);box-shadow:0 0 0 4px rgba(4,78,99,.08)}
+.bw-field.err input{border-color:#D9534F;background:#fff}
+.bw-field .msg{font:500 12px/1.3 var(--pop);color:#D9534F;display:none}
+.bw-field.err .msg{display:block}
+.bw-consent{grid-column:1/-1;position:relative;display:flex;gap:14px;align-items:flex-start;background:var(--blue-soft);border:2px solid transparent;border-radius:18px;padding:18px 20px;cursor:pointer;transition:border-color .25s,background .25s}
+.bw-consent:hover{background:#fff;border-color:var(--blue)}
+.bw-consent.is-on{background:#fff;border-color:var(--lime)}
+.bw-consent.err{border-color:#D9534F}
+.bw-consent input{position:absolute;opacity:0;pointer-events:none}
+.bw-consent .box{width:26px;height:26px;border-radius:8px;border:2px solid #B9CCD3;background:#fff;display:grid;place-items:center;flex:none;transition:all .25s;margin-top:1px}
+.bw-consent .box svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.5);transition:all .2s}
+.bw-consent.is-on .box{background:var(--lime);border-color:var(--lime)}
+.bw-consent.is-on .box svg{opacity:1;transform:scale(1)}
+.bw-consent p{font:400 13.5px/1.55 var(--pop);color:var(--ink)}
+.bw-consent p b{font-weight:600;color:var(--teal)}
+.bw-review{grid-column:1/-1;display:flex;gap:14px;align-items:center;background:var(--teal);color:#fff;border-radius:18px;padding:16px 18px}
+.bw-review .pic{width:44px;height:56px;display:grid;place-items:center;flex:none}
+.bw-review .pic img{max-height:56px;width:auto;filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
+.bw-review .pic .isq{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.14);display:grid;place-items:center;color:#fff}
+.bw-review .pic .isq svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bw-review small{display:block;font:500 11px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
+.bw-review b{display:block;font:400 20px/1.05 var(--bebas);letter-spacing:.5px;margin-top:5px}
+.bw-review span{font:400 12.5px/1.4 var(--pop);color:rgba(255,255,255,.75)}
+.bw-review button{margin-left:auto;font:600 12.5px/1 var(--pop);color:#fff;border:1.5px solid rgba(255,255,255,.4);border-radius:99px;padding:9px 14px;transition:all .25s;flex:none}
+.bw-review button:hover{background:#fff;color:var(--teal)}
+.bw-secure{display:flex;align-items:center;gap:8px;font:500 12.5px/1.3 var(--pop);color:var(--muted)}
+.bw-secure svg{width:15px;height:15px;fill:none;stroke:var(--lime-dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bw-foot .right{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+
+/* calendar */
+.bw-cal{position:relative;border-radius:20px;background:var(--blue-soft);overflow:hidden;min-height:680px}
+.bw-cal iframe{width:100%;min-height:680px;border:0;display:block;background:transparent}
+.bw-cal .loading{position:absolute;inset:0;display:grid;place-items:center;background:var(--blue-soft);transition:opacity .4s;pointer-events:none}
+.bw-cal .loading.hide{opacity:0}
+.bw-cal .loading div{display:flex;flex-direction:column;align-items:center;gap:14px;color:var(--teal);font:600 14px/1 var(--pop)}
+.bw-cal .loading i{width:44px;height:44px;border-radius:50%;border:3px solid var(--blue);border-top-color:var(--lime);animation:bwSpin .9s linear infinite}
+@keyframes bwSpin{to{transform:rotate(360deg)}}
+.bw-notes{display:flex;gap:12px;align-items:flex-start;background:var(--blue-soft);border-radius:16px;padding:14px 16px;font:400 13px/1.5 var(--pop);color:var(--muted);margin-top:14px}
+.bw-notes svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--lime-dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.bw-notes b{color:var(--teal);font-weight:600}
+
+/* responsive */
+@media(max-width:1000px){.bw-goals{grid-template-columns:repeat(2,1fr)}.bw-services{grid-template-columns:1fr}.bw-svc.wide{grid-column:auto}.bw-main{padding:34px 30px}}
+@media(max-width:860px){
+  .bw{grid-template-columns:1fr;min-height:0;border-radius:24px}
+  .bw-side{padding:22px 22px 20px;gap:16px}
+  .bw-side .bw-steps,.bw-side .help{display:none}
+  .bw-side::before{display:none}
+  .bw-summary{margin-top:0;min-height:0;padding:12px 14px}
+  .bw-summary .pic{width:44px;height:54px}.bw-summary .pic img{max-height:54px}.bw-summary .pic .isq{width:44px;height:44px}
+  .bw-summary b{font-size:19px}
+  .bw-mobile-progress{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .bw-mobile-progress .bar{flex:1;height:6px;border-radius:99px;background:var(--blue);overflow:hidden}
+  .bw-mobile-progress .bar i{display:block;height:100%;width:25%;background:var(--lime);border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+  .bw-mobile-progress span{font:400 15px/1 var(--bebas);letter-spacing:.8px;color:var(--teal);white-space:nowrap}
+  .bw-main{padding:24px 20px 24px}
+  .bw-main h2{font-size:32px}
+  .bw-goalchip{display:none}
+  .bw-goals{grid-template-columns:repeat(2,1fr);gap:10px}
+  .bw-tile{padding:16px 14px 14px;min-height:0;gap:10px;border-radius:16px}
+  .bw-tile .isq{width:40px;height:40px}
+  .bw-tile b{font-size:14px}.bw-tile .sub{display:none}
+  .bw-svc{grid-template-columns:62px 1fr;gap:12px;padding:12px 14px 12px 10px;border-radius:16px}
+  .bw-svc .pic{width:62px;height:76px}.bw-svc .pic img{max-height:72px}
+  .bw-form{grid-template-columns:1fr;gap:12px}
+  .bw-review button{display:none}
+  .bw-foot{flex-direction:column-reverse;align-items:stretch}
+  .bw-foot .btn{width:100%}
+  .bw-foot .right{flex-direction:column-reverse;align-items:stretch}
+  .bw-foot .bw-back{justify-content:center}
+  .bw-hint,.bw-secure{text-align:center;justify-content:center}
+  .bw-cal,.bw-cal iframe{min-height:720px}
+}
+@media(max-width:420px){.bw-brand small{display:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5S5.5 9.5 5.5 14a6.5 6.5 0 0 0 13 0c0-4.5-6.5-11.5-6.5-11.5z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="2.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 5-15 12a5 5 0 0 0 5 5c7 0 12-6 10-17z"/><path d="M5 21c3-5 7-9 12-12"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M4 7h16"/><path d="M7 7 4 14a3 3 0 0 0 6 0L7 7zM17 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></symbol>
+  <symbol id="i-vial" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6.5L5 19a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9.5V3"/><path d="M7.5 15h9"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></symbol>
+  <symbol id="i-syringe" viewBox="0 0 24 24"><path d="m18 2 4 4M20 4l-9.5 9.5M6.5 11.5 12.5 17.5M4 14l6 6M3 21l3-3M9 9l6 6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4.5-6.2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 7c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></symbol>
+</svg>
+
+<header class="page-head wrap">
+  <div class="tag">Online Booking, 24/7</div>
+  <h1>Book your <span>appointment</span></h1>
+  <p>Three quick steps, then pick a time that works. New here? Your first appointment is $20 off.</p>
+</header>
+
+<main class="wrap">
+<section class="bw" id="bw" aria-label="Booking">
+  <aside class="bw-side">
+    <div class="bw-brand">
+      <div class="mark"><img src="https://betterbranding.github.io/dripbar-pages/logo.svg" alt=""></div>
+      <div><b>The DRIPBaR</b><small>Edina, Minnesota</small></div>
+    </div>
+    <div class="bw-offer"><i></i><span>New here? <b>$20 off</b> your first appointment</span></div>
+    <ol class="bw-steps" id="bw-steps">
+      <li class="bw-step is-active" data-step="1"><div class="n"><span>1</span><svg><use href="#i-check"/></svg></div><div class="t"><b>What you need help with</b><span id="s1-sub">Choose a goal</span></div></li>
+      <li class="bw-step" data-step="2"><div class="n"><span>2</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Your service</b><span id="s2-sub"></span></div></li>
+      <li class="bw-step" data-step="3"><div class="n"><span>3</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Your info</b><span id="s3-sub"></span></div></li>
+      <li class="bw-step" data-step="4"><div class="n"><span>4</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Pick a time</b><span id="s4-sub"></span></div></li>
+    </ol>
+    <div class="bw-summary" id="bw-summary">
+      <div class="pic" id="sum-pic"></div>
+      <div><small>Your visit</small><b id="sum-name"></b><span id="sum-meta"></span></div>
+    </div>
+    <div class="help"><span class="ico"><svg><use href="#i-phone"/></svg></span><span>Prefer to talk? <a href="tel:+16123244740">Call or text (612) 324-4740</a></span></div>
+  </aside>
+
+  <div class="bw-main">
+    <div class="bw-mobile-progress"><div class="bar"><i id="mp-bar"></i></div><span id="mp-txt">Step 1 of 4</span></div>
+
+    <!-- STEP 1 -->
+    <div class="bw-pane is-on" data-pane="1">
+      <div class="bw-kicker">Step 1 of 4</div>
+      <h2>What do you need help with?</h2>
+      <p class="lede">Pick the goal that fits best. We will show you the drips, shots, and therapies built for it.</p>
+      <div class="bw-body"><div class="bw-goals" id="bw-goals"></div></div>
+      <div class="bw-foot"><span class="bw-hint">Not sure? Choose "Help me decide" and our team will guide you at your visit.</span><button class="btn btn-lime" id="next1" disabled>Continue<svg><use href="#i-arrow"/></svg></button></div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="bw-pane" data-pane="2">
+      <div class="bw-kicker">Step 2 of 4</div>
+      <h2>What would you like to book?<span class="bw-goalchip" id="goal-chip"><i></i><span id="goal-chip-txt"></span></span></h2>
+      <p class="lede" id="svc-lede">Choose one. You can always adjust with our clinical team when you arrive.</p>
+      <div class="bw-body"><div class="bw-services" id="bw-services"></div></div>
+      <div class="bw-foot"><button class="bw-back" id="back2"><svg><use href="#i-back"/></svg>Back</button><button class="btn btn-lime" id="next2" disabled>Continue<svg><use href="#i-arrow"/></svg></button></div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="bw-pane" data-pane="3">
+      <div class="bw-kicker">Step 3 of 4</div>
+      <h2>Tell us who is coming in</h2>
+      <p class="lede">We use this to hold your spot and send your confirmation.</p>
+      <div class="bw-body">
+        <form class="bw-form" id="bw-form" novalidate>
+          <div class="bw-review" id="bw-review"><div class="pic" id="rev-pic"></div><div><small>Booking</small><b id="rev-name"></b><span id="rev-meta"></span></div><button type="button" id="rev-change">Change</button></div>
+          <div class="bw-field"><label for="f-first">First name</label><input id="f-first" name="first_name" type="text" autocomplete="given-name" placeholder="Jane" required><div class="msg">Please enter your first name.</div></div>
+          <div class="bw-field"><label for="f-last">Last name</label><input id="f-last" name="last_name" type="text" autocomplete="family-name" placeholder="Smith" required><div class="msg">Please enter your last name.</div></div>
+          <div class="bw-field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required><div class="msg">Please enter a valid email address.</div></div>
+          <div class="bw-field"><label for="f-phone">Mobile phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(612) 555-0123" required><div class="msg">Please enter a 10 digit phone number.</div></div>
+          <label class="bw-consent" id="bw-consent"><input type="checkbox" id="f-consent"><span class="box"><svg><use href="#i-check"/></svg></span><p><b>Consent.</b> I agree to receive appointment related calls, texts, and emails from The DRIPBaR Edina. I understand this is a booking request, not medical advice. Message and data rates may apply.</p></label>
+        </form>
+      </div>
+      <div class="bw-foot"><button class="bw-back" id="back3"><svg><use href="#i-back"/></svg>Back</button><div class="right"><span class="bw-secure"><svg><use href="#i-lock"/></svg>Your details are never shared</span><button class="btn btn-lime" id="next3">Choose a time<svg><use href="#i-cal"/></svg></button></div></div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="bw-pane" data-pane="4">
+      <div class="bw-kicker">Step 4 of 4</div>
+      <h2>Pick a day and time</h2>
+      <p class="lede">Your details are already filled in. Choose a slot, confirm, and you are booked.</p>
+      <div class="bw-body">
+        <div class="bw-cal" id="bw-cal"><div class="loading" id="cal-loading"><div><i></i>Loading available times</div></div></div>
+        <div class="bw-notes"><svg><use href="#i-info"/></svg><div><b>What our team will already know:</b> <span id="notes-preview"></span></div></div>
+      </div>
+      <div class="bw-foot"><button class="bw-back" id="back4"><svg><use href="#i-back"/></svg>Back to my info</button><span class="bw-hint">Questions? Call or text (612) 324-4740</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="page-foot wrap">The DRIPBaR Edina, 3515 W 70th St, Edina, MN 55435. Appointments are screened by our clinical team. Member pricing applies to Lifestyle Membership drips.</footer>
+
+<script>
+(function(){
+  /* ===== CONFIG (swap points) ===== */
+  var CAL_ID = 'y4r5p2sVvb7WrURHdTm7';                       // default "Appointment booking" calendar
+  var CAL_BASE = 'https://api.leadconnectorhq.com/widget/booking/' + CAL_ID;
+  var KEY_SERVICE = 'which_drip_or_service_are_you_interested_in';
+  var KEY_NOTES   = 'tell_us_about_your_health_and_wellness_goals';
+  var IMG = 'https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/';
+
+  /* ===== DATA ===== */
+  var GOALS = [
+    {id:'energy',   label:'Energy and Focus',           sub:'Fatigue, brain fog, burnout',        icon:'i-bolt',   c:'c-lime'},
+    {id:'immunity', label:'Immunity and Viral Support', sub:'Cold, flu, allergies, recovery',     icon:'i-shield', c:'c-teal'},
+    {id:'recovery', label:'Hydration and Recovery',     sub:'Workouts, travel, surgery, stress',  icon:'i-drop',   c:'c-navy'},
+    {id:'aging',    label:'Beauty and Healthy Aging',   sub:'Skin, collagen, NAD+, glow',         icon:'i-spark',  c:'c-purple'},
+    {id:'metabolic',label:'Detox and Metabolic',        sub:'Cleanse, metabolism, gut',           icon:'i-leaf',   c:'c-orange'},
+    {id:'weight',   label:'Weight Management',          sub:'GLP-1 program consultation',         icon:'i-scale',  c:'c-teal'},
+    {id:'peptide',  label:'Peptide Therapy',            sub:'Consultation based plans',           icon:'i-vial',   c:'c-purple'},
+    {id:'wellness', label:'Wellness Therapies',         sub:'Sauna, red light, salt therapy',     icon:'i-sun',    c:'c-orange'},
+    {id:'unsure',   label:'Help me decide',             sub:'Our team will guide you',            icon:'i-help',   c:'c-lime'}
+  ];
+  // type: drip | shot | consult | therapy | unsure ; ghl = exact option label in the calendar's service dropdown ('' = no matching option)
+  var S = {
+    vitality:   {name:'Vitality',           type:'drip', img:'vitality',          reg:'$224', mem:'$169', blurb:'Adrenal support and steady energy',            ghl:'Vitality Drip',  dur:'30 to 60 min'},
+    debut:      {name:'The Debut',          type:'drip', img:'debut',             reg:'$224', mem:'$169', blurb:'Foundational wellness for first timers',        ghl:'Debut Drip',     dur:'30 to 60 min'},
+    ala:        {name:'Alpha Lipoic Acid',  type:'drip', img:'ala',               reg:'$100', note:'Members save 50% on add-on drips', blurb:'Cellular energy and nerve support', ghl:'ALA (Alpha Lipoic Acid) Drip', dur:'30 to 45 min'},
+    shield:     {name:'Shield',             type:'drip', img:'shield',            reg:'$224', mem:'$169', blurb:'Seasonal immune defense',                       ghl:'Shield Drip',    dur:'30 to 60 min'},
+    flu:        {name:'Flu Fighter',        type:'drip', img:'flu-fighter',       reg:'$224', mem:'$169', blurb:'Cold, flu, and sinus support',                  ghl:'Flu Fighter Drip',dur:'30 to 60 min'},
+    postviral:  {name:'Post Viral',         type:'drip', img:'post-viral',        reg:'$224', mem:'$169', blurb:'Recovery after illness',                        ghl:'Post Viral Drip',dur:'30 to 60 min'},
+    jetsetter:  {name:'Jetsetter',          type:'drip', img:'jetsetter',         reg:'$224', mem:'$169', blurb:'Jet lag and travel fatigue',                    ghl:'Jetsetter Drip', dur:'30 to 60 min'},
+    allergy:    {name:'Allergy',            type:'drip', img:'allergy',           reg:'$224', mem:'$169', blurb:'Seasonal allergy relief',                       ghl:'Allergy Drip',   dur:'30 to 60 min'},
+    hdc:        {name:'High Dose Vitamin C',type:'consult', img:'high-dose-vitamin-c', reg:'Consult', note:'Priced at consultation', blurb:'Specialized high dose infusion, consult first', ghl:'High C Drip', dur:'Consult first'},
+    restoration:{name:'Restoration',        type:'drip', img:'restoration',       reg:'$109', note:'Members save 50% on add-on drips', blurb:'Rehydrate and bounce back', ghl:'Restoration Drip', dur:'30 to 45 min'},
+    powerpack:  {name:'Powerpack',          type:'drip', img:'powerpack',         reg:'$224', mem:'$169', blurb:'Performance and post-workout recovery',         ghl:'Powerpack Drip', dur:'30 to 60 min'},
+    allstar:    {name:'Allstar',            type:'drip', img:'allstar',           reg:'$224', mem:'$169', blurb:'Muscle recovery and cellular repair',           ghl:'Allstar Drip',   dur:'30 to 60 min'},
+    prepostop:  {name:'Pre/Post-Op',        type:'drip', img:'pre-post-op',       reg:'$224', mem:'$169', blurb:'Surgical recovery and tissue healing',          ghl:'Preop Drip',     dur:'30 to 60 min'},
+    soother:    {name:'Soother',            type:'drip', img:'soother',           reg:'$224', mem:'$169', blurb:'Stress, tension, and headache support',         ghl:'Soother Drip',   dur:'30 to 60 min'},
+    maternal:   {name:'Maternal Wellness',  type:'drip', img:'maternal-wellness', reg:'$179', mem:'$169', blurb:'Hydration and nausea support in pregnancy',     ghl:'',               dur:'30 to 60 min'},
+    timemachine:{name:'Time Machine',       type:'drip', img:'time-machine',      reg:'$224', mem:'$169', blurb:'Anti-aging and skin health',                    ghl:'Time Machine Drip',dur:'30 to 60 min'},
+    firm:       {name:'Firm',               type:'drip', img:'firm',              reg:'$224', mem:'$169', blurb:'Collagen and skin tone support',                ghl:'Firm Drip',      dur:'30 to 60 min'},
+    glutathione:{name:'Glutathione',        type:'drip', img:'glutathione',       reg:'$120', note:'Members save 50% on add-on drips', blurb:'Master antioxidant for skin and detox', ghl:'Glutathione Drip', dur:'20 to 30 min'},
+    nad:        {name:'NAD+',               type:'drip', img:'nad-plus',          reg:'$500', note:'Ask about member pricing', blurb:'Cellular repair and healthy aging', ghl:'NAD+ Drip', dur:'2 to 4 hours'},
+    hmd:        {name:'Heavy Metal Detox',  type:'drip', img:'heavy-metal-detox', reg:'$224', mem:'$169', blurb:'Nutrient support for detox pathways',           ghl:'',               dur:'30 to 60 min'},
+    metabolize: {name:'Metabolize',         type:'drip', img:'metabolize',        reg:'$189', mem:'$169', blurb:'Metabolism, thyroid, and gut support',          ghl:'Metabolize Drip',dur:'30 to 60 min'},
+    shot_b12:   {name:'IM B12 Quick Shot',  type:'shot', icon:'i-syringe',        reg:'$25',  blurb:'Energy and red blood cell support, under 15 min',       ghl:'IM B12',         dur:'Under 15 min'},
+    shot_super: {name:'IM Supercharged',    type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, biotin, B5 for metabolism and clarity',            ghl:'IM Other',       dur:'Under 15 min'},
+    shot_strong:{name:'IM Strong',          type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, L-arginine, taurine for clean energy',             ghl:'IM Other',       dur:'Under 15 min'},
+    shot_glow:  {name:'IM Glowing',         type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Glutathione and biotin for skin, hair, nails',          ghl:'IM Other',       dur:'Under 15 min'},
+    shot_detox: {name:'IM Detoxed',         type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Glutathione for antioxidant defense',                    ghl:'IM Other',       dur:'Under 15 min'},
+    shot_lean:  {name:'IM Lean',            type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Choline, B12, taurine for metabolism',                   ghl:'IM Other',       dur:'Under 15 min'},
+    shot_tri:   {name:'Tri-Immune Shot',    type:'shot', icon:'i-syringe',        reg:'$35',  blurb:'Glutathione, vitamin C, zinc immune blend',              ghl:'IM Other',       dur:'Under 15 min'},
+    glp1:       {name:'GLP-1 Consultation', type:'consult', icon:'i-users',       reg:'Consult', note:'Program pricing at consultation', blurb:'Medically supervised weight management, starts with a consult', ghl:'GLP-1 Consult', dur:'15 to 30 min'},
+    peptide:    {name:'Peptide Consultation',type:'consult', icon:'i-users',      reg:'Consult', note:'Individualized plan and pricing', blurb:'Medically supervised, administered by registered nurses', ghl:'Peptide Consult', dur:'15 to 30 min'},
+    redlight:   {name:'Red Light Therapy',  type:'therapy', icon:'i-sun',         reg:'Ask about pricing', blurb:'Red and near infrared light for skin and recovery', ghl:'Red Light Therapy', dur:'20 to 30 min'},
+    sauna:      {name:'Infrared Sauna',     type:'therapy', icon:'i-wave',        reg:'Ask about pricing', blurb:'Full spectrum infrared suite',               ghl:'Infrared Sauna', dur:'20 to 40 min'},
+    halo:       {name:'Halotherapy',        type:'therapy', icon:'i-leaf',        reg:'Ask about pricing', blurb:'Salt therapy for respiratory and skin support', ghl:'',            dur:'20 to 40 min'},
+    unsure:     {name:'Help me choose at my visit', type:'unsure', icon:'i-help', reg:'', blurb:'Book a screening slot and decide with our clinical team', ghl:'Not Sure', dur:'15 min screening'}
+  };
+  var MAP = {
+    energy:   ['vitality','debut','ala','shot_super','shot_strong','shot_b12'],
+    immunity: ['shield','flu','postviral','jetsetter','allergy','shot_tri','hdc'],
+    recovery: ['restoration','powerpack','allstar','prepostop','soother','maternal'],
+    aging:    ['timemachine','firm','glutathione','nad','shot_glow'],
+    metabolic:['hmd','metabolize','glutathione','shot_detox','shot_lean'],
+    weight:   ['glp1','metabolize','shot_lean'],
+    peptide:  ['peptide'],
+    wellness: ['redlight','sauna','halo'],
+    unsure:   ['unsure']
+  };
+
+  /* ===== STATE ===== */
+  var state = {step:1, goal:null, service:null, contact:null};
+  var $ = function(s,ctx){return (ctx||document).querySelector(s)};
+  var $$ = function(s,ctx){return Array.prototype.slice.call((ctx||document).querySelectorAll(s))};
+  var goalById = function(id){for(var i=0;i<GOALS.length;i++) if(GOALS[i].id===id) return GOALS[i]; return null};
+
+  function picHTML(svc){
+    if(svc.img) return '<img src="'+IMG+svc.img+'.webp" alt="">';
+    return '<span class="isq"><svg><use href="#'+svc.icon+'"/></svg></span>';
+  }
+  function priceHTML(svc){
+    if(svc.type==='unsure') return '<span class="pill">Screening visit, decide together</span>';
+    var h='';
+    if(svc.mem){ h+='<em>Regular<b>'+svc.reg+'</b></em><em class="mem">Member<b>'+svc.mem+'</b></em>'; }
+    else if(svc.reg==='Consult'){ h+='<em>Consult first</em>'+(svc.note?'<span class="pill">'+svc.note+'</span>':''); }
+    else if(/Ask/.test(svc.reg)){ h+='<span class="pill">'+svc.reg+'</span>'; }
+    else { h+='<em>Price<b>'+svc.reg+'</b></em>'+(svc.note?'<span class="pill">'+svc.note+'</span>':''); }
+    return h;
+  }
+  function metaText(svc){
+    if(svc.mem) return 'Regular '+svc.reg+' / Member '+svc.mem+' / '+svc.dur;
+    if(svc.reg && svc.reg!=='Consult' && !/Ask/.test(svc.reg)) return svc.reg+' / '+svc.dur;
+    return svc.dur;
+  }
+
+  /* ===== RENDER STEP 1 ===== */
+  var goalsEl = $('#bw-goals');
+  goalsEl.innerHTML = GOALS.map(function(g){
+    return '<button type="button" class="bw-tile '+g.c+'" data-goal="'+g.id+'"><span class="chk"><svg><use href="#i-check"/></svg></span><span class="isq"><svg><use href="#'+g.icon+'"/></svg></span><span><b>'+g.label+'</b><span class="sub">'+g.sub+'</span></span></button>';
+  }).join('');
+  goalsEl.addEventListener('click', function(e){
+    var t = e.target.closest('.bw-tile'); if(!t) return;
+    $$('.bw-tile',goalsEl).forEach(function(x){x.classList.remove('is-sel')});
+    t.classList.add('is-sel');
+    state.goal = t.getAttribute('data-goal');
+    if(state.service && MAP[state.goal].indexOf(state.service)<0){ state.service=null; $('#s2-sub').textContent=''; }
+    $('#next1').disabled = false;
+    $('#s1-sub').textContent = goalById(state.goal).label;
+    updateSummary();
+  });
+  $('#next1').addEventListener('click', function(){ if(state.goal){ renderServices(); go(2); } });
+
+  /* ===== RENDER STEP 2 ===== */
+  function renderServices(){
+    var g = goalById(state.goal);
+    $('#goal-chip-txt').textContent = g.label;
+    var ids = MAP[state.goal];
+    $('#svc-lede').textContent = state.goal==='unsure' ? 'No pressure. Book a quick screening slot and we will build your visit together.' : (state.goal==='weight'||state.goal==='peptide') ? 'These programs begin with a consultation so we can build a plan around you.' : 'Choose one. You can always adjust with our clinical team when you arrive.';
+    $('#bw-services').innerHTML = ids.map(function(id){
+      var s=S[id]; var wide = ids.length===1 ? ' wide':'';
+      return '<button type="button" class="bw-svc'+wide+(state.service===id?' is-sel':'')+'" data-svc="'+id+'"><span class="chk"><svg><use href="#i-check"/></svg></span><span class="pic">'+picHTML(s)+'</span><span class="tx"><b>'+s.name+'</b><span class="blurb">'+s.blurb+'</span><span class="price">'+priceHTML(s)+'</span></span></button>';
+    }).join('');
+    $('#next2').disabled = !state.service;
+  }
+  $('#bw-services').addEventListener('click', function(e){
+    var t = e.target.closest('.bw-svc'); if(!t) return;
+    $$('.bw-svc').forEach(function(x){x.classList.remove('is-sel')});
+    t.classList.add('is-sel');
+    state.service = t.getAttribute('data-svc');
+    $('#next2').disabled = false;
+    $('#s2-sub').textContent = S[state.service].name;
+    updateSummary();
+  });
+  $('#back2').addEventListener('click', function(){ go(1,true) });
+  $('#next2').addEventListener('click', function(){ if(state.service){ renderReview(); go(3); setTimeout(function(){ if(window.innerWidth>860) $('#f-first').focus(); },400);} });
+
+  /* ===== STEP 3 ===== */
+  function renderReview(){
+    var s=S[state.service];
+    $('#rev-pic').innerHTML = picHTML(s);
+    $('#rev-name').textContent = s.name;
+    $('#rev-meta').textContent = goalById(state.goal).label + ' / ' + metaText(s);
+  }
+  $('#rev-change').addEventListener('click', function(){ go(2,true) });
+  $('#back3').addEventListener('click', function(){ go(2,true) });
+  var consentEl = $('#bw-consent'), consentCb = $('#f-consent');
+  consentCb.addEventListener('change', function(){ consentEl.classList.toggle('is-on', consentCb.checked); consentEl.classList.remove('err'); });
+  $$('.bw-field input').forEach(function(inp){ inp.addEventListener('input', function(){ inp.closest('.bw-field').classList.remove('err'); }); });
+  $('#f-phone').addEventListener('input', function(e){
+    var d = e.target.value.replace(/\D/g,'').replace(/^1(?=\d{10})/,'').slice(0,10);
+    var f = d;
+    if(d.length>6) f='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
+    else if(d.length>3) f='('+d.slice(0,3)+') '+d.slice(3);
+    else if(d.length>0) f='('+d;
+    e.target.value = f;
+  });
+  function validate(){
+    var ok=true;
+    var first=$('#f-first'), last=$('#f-last'), email=$('#f-email'), phone=$('#f-phone');
+    function bad(el){ el.closest('.bw-field').classList.add('err'); ok=false; }
+    if(!first.value.trim()) bad(first);
+    if(!last.value.trim()) bad(last);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) bad(email);
+    var digits = phone.value.replace(/\D/g,'');
+    if(digits.length!==10) bad(phone);
+    if(!consentCb.checked){ consentEl.classList.add('err'); ok=false; }
+    if(!ok){ var firstErr=$('.bw-field.err input, .bw-consent.err'); if(firstErr){ firstErr.scrollIntoView({behavior:'smooth',block:'center'}); if(firstErr.tagName==='INPUT') firstErr.focus({preventScroll:true}); } return null; }
+    return {first:first.value.trim(), last:last.value.trim(), email:email.value.trim(), phone:digits};
+  }
+  $('#next3').addEventListener('click', function(){
+    var c = validate(); if(!c) return;
+    state.contact = c;
+    $('#s3-sub').textContent = c.first+' '+c.last;
+    loadCalendar();
+    go(4);
+  });
+  $('#bw-form').addEventListener('submit', function(e){ e.preventDefault(); $('#next3').click(); });
+
+  /* ===== STEP 4: CALENDAR ===== */
+  function buildNotes(){
+    var g = goalById(state.goal).label, s = S[state.service].name;
+    var d = new Date(); var stamp = d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    return 'Goal: '+g+' | Service: '+s+' | Consent: agreed '+stamp+' via website booking';
+  }
+  function calUrl(){
+    var c=state.contact, s=S[state.service];
+    var p = new URLSearchParams();
+    p.set('first_name', c.first); p.set('last_name', c.last); p.set('email', c.email); p.set('phone', c.phone);
+    if(s.ghl) p.set(KEY_SERVICE, s.ghl);
+    p.set(KEY_NOTES, buildNotes());
+    return CAL_BASE + '?' + p.toString();
+  }
+  var calLoaded = '';
+  function loadCalendar(){
+    var url = calUrl();
+    $('#notes-preview').textContent = buildNotes().split(' | ').slice(0,2).join('  |  ');
+    if(url===calLoaded) return;
+    calLoaded = url;
+    var wrap = $('#bw-cal'), loading = $('#cal-loading');
+    var old = $('iframe', wrap); if(old) old.remove();
+    loading.classList.remove('hide');
+    var f = document.createElement('iframe');
+    f.src = url; f.title = 'Choose an appointment time'; f.setAttribute('scrolling','no'); f.id = CAL_ID+'_'+Date.now();
+    f.addEventListener('load', function(){ setTimeout(function(){ loading.classList.add('hide'); }, 500); });
+    wrap.appendChild(f);
+    if(!window.__bwEmbedJs){ window.__bwEmbedJs=true; var sc=document.createElement('script'); sc.src='https://link.msgsndr.com/js/form_embed.js'; sc.async=true; document.body.appendChild(sc); }
+    setTimeout(function(){ loading.classList.add('hide'); }, 6000);
+  }
+  $('#back4').addEventListener('click', function(){ go(3,true) });
+
+  /* ===== NAV ===== */
+  function go(n, back){
+    state.step = n;
+    $$('.bw-pane').forEach(function(p){ var on = p.getAttribute('data-pane')==String(n); p.classList.toggle('is-on',on); p.classList.toggle('is-back', on && !!back); });
+    $$('.bw-step').forEach(function(s){ var k=+s.getAttribute('data-step'); s.classList.toggle('is-active',k===n); s.classList.toggle('is-done',k<n); });
+    $('#mp-bar').style.width = (n*25)+'%'; $('#mp-txt').textContent = 'Step '+n+' of 4';
+    var top = $('#bw').getBoundingClientRect().top + window.pageYOffset - 16;
+    if(window.pageYOffset > top) window.scrollTo({top:top, behavior:'smooth'});
+  }
+  function updateSummary(){
+    var sum = $('#bw-summary');
+    if(!state.goal){ sum.classList.remove('show'); return; }
+    sum.classList.add('show');
+    if(state.service){ var s=S[state.service]; $('#sum-pic').innerHTML = picHTML(s); $('#sum-name').textContent = s.name; $('#sum-meta').textContent = goalById(state.goal).label+' / '+metaText(s); }
+    else { var g=goalById(state.goal); $('#sum-pic').innerHTML='<span class="isq"><svg><use href="#'+g.icon+'"/></svg></span>'; $('#sum-name').textContent = g.label; $('#sum-meta').textContent='Now choose a service'; }
+  }
+
+  /* ===== DEEP LINKS: ?goal=energy  or  ?service=vitality ===== */
+  try{
+    var q = new URLSearchParams(location.search);
+    var svc = q.get('service'), goal = q.get('goal');
+    if(svc && S[svc]){
+      var gid = (goal && MAP[goal] && MAP[goal].indexOf(svc)>=0) ? goal : Object.keys(MAP).filter(function(k){return MAP[k].indexOf(svc)>=0})[0];
+      if(gid){ state.goal=gid; state.service=svc; $('[data-goal="'+gid+'"]',goalsEl).classList.add('is-sel'); $('#next1').disabled=false; $('#s1-sub').textContent=goalById(gid).label; $('#s2-sub').textContent=S[svc].name; renderServices(); renderReview(); updateSummary(); go(3); }
+    } else if(goal && MAP[goal]){
+      state.goal=goal; $('[data-goal="'+goal+'"]',goalsEl).classList.add('is-sel'); $('#next1').disabled=false; $('#s1-sub').textContent=goalById(goal).label; renderServices(); updateSummary(); go(2);
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
