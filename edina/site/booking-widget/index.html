@@ -33,11 +33,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---- side panel ---- */
 .bw-side{background:var(--teal);color:#fff;padding:36px 32px 32px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:28px}
 .bw-side::before{content:"";position:absolute;left:-40%;bottom:-40%;width:120%;height:90%;background:repeating-radial-gradient(circle at center,rgba(255,255,255,.07) 0 2px,transparent 2px 84px);pointer-events:none}
-.bw-brand{display:flex;align-items:center;gap:12px;position:relative}
-.bw-brand .mark{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center}
-.bw-brand .mark img{width:30px;height:30px}
-.bw-brand b{font:400 24px/1 var(--bebas);letter-spacing:1px}
-.bw-brand small{display:block;font:500 12px/1 var(--pop);color:rgba(255,255,255,.7);margin-top:4px}
+.bw-brand{display:flex;align-items:center;gap:14px;position:relative}
+.bw-brand .mark{width:104px;height:64px;border-radius:14px;background:#fff;display:grid;place-items:center;padding:8px 10px}
+.bw-brand .mark img{width:100%;height:100%;object-fit:contain}
+.bw-brand small{display:block;font:500 13px/1.3 var(--pop);color:rgba(255,255,255,.75)}
 .bw-offer{position:relative;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:10px 16px 10px 12px;font:500 13px/1 var(--pop)}
 .bw-offer i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(175,178,22,.25)}
 .bw-offer b{color:var(--lime);font-weight:600}
@@ -218,7 +217,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .bw-hint,.bw-secure{text-align:center;justify-content:center}
   .bw-cal,.bw-cal iframe{min-height:720px}
 }
-@media(max-width:420px){.bw-brand small{display:none}}
+@media(max-width:420px){.bw-brand .mark{width:88px;height:54px}}
 </style>
 </head>
 <body>
@@ -255,8 +254,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 <section class="bw" id="bw" aria-label="Booking">
   <aside class="bw-side">
     <div class="bw-brand">
-      <div class="mark"><img src="https://betterbranding.github.io/dripbar-pages/logo.svg" alt=""></div>
-      <div><b>The DRIPBaR</b><small>Edina, Minnesota</small></div>
+      <div class="mark"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></div>
+      <small>Edina, Minnesota</small>
     </div>
     <div class="bw-offer"><i></i><span>New here? <b>$20 off</b> your first appointment</span></div>
     <ol class="bw-steps" id="bw-steps">
@@ -335,7 +334,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   var CAL_BASE = 'https://api.leadconnectorhq.com/widget/booking/' + CAL_ID;
   var KEY_SERVICE = 'which_drip_or_service_are_you_interested_in';
   var KEY_NOTES   = 'tell_us_about_your_health_and_wellness_goals';
-  var IMG = 'https://betterbranding.github.io/dripbar-pages/edina/site/assets/drips/';
+  var IMG = 'https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/';
 
   /* ===== DATA ===== */
   var GOALS = [
