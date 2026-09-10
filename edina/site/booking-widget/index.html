@@ -8,6 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://backend.leadconnectorhq.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--teal:#044E63;--teal-deep:#033D4E;--lime:#AFB216;--lime-dark:#9A9D12;--blue:#D9EEF5;--blue-soft:#EEF7FA;--blue-icon:#DFF1F6;--muted:#6B7A80;--ink:#0F2A33;--divider:#DCE8EC;--navy:#1B3A5C;--purple:#6E4B9E;--orange:#E8873A;--bebas:'Bebas Neue','Arial Narrow',Arial,sans-serif;--pop:'Poppins',Arial,sans-serif}
@@ -96,6 +97,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .btn-lime{background:var(--lime);color:#fff;box-shadow:0 10px 24px -10px rgba(154,157,18,.7)}
 .btn-lime:hover{background:var(--lime-dark);transform:translateY(-1px)}
 .btn-lime[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-ghost{background:#fff;color:var(--teal);border:2px solid var(--blue)}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-deep)}
 .bw-hint{font:500 13px/1.4 var(--pop);color:var(--muted)}
 
 /* goal tiles */
@@ -138,6 +143,50 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .bw-goalchip{display:inline-flex;align-items:center;gap:8px;font:500 13px/1 var(--pop);color:var(--teal);background:var(--blue);border-radius:99px;padding:8px 12px 8px 8px;margin-left:10px;vertical-align:middle;letter-spacing:0}
 .bw-goalchip i{width:7px;height:7px;border-radius:50%;background:var(--lime)}
 
+/* date + time */
+.bw-dt{display:grid;grid-template-columns:minmax(290px,360px) 1fr;gap:22px;align-items:start}
+.bw-month{background:var(--blue-soft);border-radius:22px;padding:18px 18px 16px}
+.bw-month-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.bw-month-head b{font:400 24px/1 var(--bebas);letter-spacing:.7px;color:var(--teal)}
+.bw-month-head button{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--teal);transition:background .25s,color .25s,opacity .25s;box-shadow:0 1px 0 rgba(4,78,99,.06)}
+.bw-month-head button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.bw-month-head button:hover{background:var(--teal);color:#fff}
+.bw-month-head button[disabled]{opacity:.25;cursor:default;background:#fff;color:var(--teal)}
+.bw-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.bw-grid .dow{font:500 11px/1 var(--pop);text-transform:uppercase;letter-spacing:.6px;color:var(--muted);text-align:center;padding:6px 0 8px}
+.bw-day{aspect-ratio:1;border-radius:12px;display:grid;place-items:center;font:500 14px/1 var(--pop);color:#B4C3C8;position:relative;cursor:default}
+.bw-day.avail{background:#fff;color:var(--ink);cursor:pointer;box-shadow:0 1px 0 rgba(4,78,99,.06);transition:background .2s,color .2s,transform .2s}
+.bw-day.avail::after{content:"";position:absolute;bottom:6px;left:50%;margin-left:-2.5px;width:5px;height:5px;border-radius:50%;background:var(--lime)}
+.bw-day.avail:hover{background:var(--blue);color:var(--teal);transform:translateY(-1px)}
+.bw-day.is-sel,.bw-day.is-sel:hover{background:var(--teal);color:#fff;transform:none}
+.bw-day.today{font-weight:600;text-decoration:underline;text-decoration-color:var(--lime);text-underline-offset:3px}
+.bw-tz{display:flex;align-items:center;gap:8px;margin-top:14px;font:500 12px/1.3 var(--pop);color:var(--muted)}
+.bw-tz svg{width:14px;height:14px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bw-times{min-height:300px}
+.bw-times-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.bw-times-head b{font:400 24px/1 var(--bebas);letter-spacing:.7px;color:var(--teal)}
+.bw-times-head span{font:500 12.5px/1 var(--pop);color:var(--muted)}
+.bw-tgroup{margin-bottom:16px}
+.bw-tgroup small{display:flex;align-items:center;gap:8px;font:500 11px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.bw-tgroup small::after{content:"";flex:1;height:1px;background:var(--divider)}
+.bw-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bw-slot{font:500 14px/1 var(--pop);padding:13px 8px;border-radius:99px;background:var(--blue-soft);border:2px solid transparent;color:var(--ink);transition:background .2s,border-color .2s,color .2s,transform .2s;text-align:center}
+.bw-slot:hover{background:#fff;border-color:var(--blue);transform:translateY(-1px)}
+.bw-slot.is-sel,.bw-slot.is-sel:hover{background:var(--lime);border-color:var(--lime);color:#fff;transform:none}
+.bw-empty{display:grid;place-items:center;min-height:260px;text-align:center;color:var(--muted);background:var(--blue-soft);border-radius:22px;padding:28px 24px;font-size:14.5px}
+.bw-empty .isq{width:52px;height:52px;border-radius:16px;background:#fff;color:var(--teal);display:grid;place-items:center;margin:0 auto 12px}
+.bw-empty .isq svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bw-empty b{display:block;font:400 22px/1.1 var(--bebas);letter-spacing:.6px;color:var(--teal);margin-bottom:6px}
+.bw-empty a{color:var(--teal);font-weight:600;border-bottom:1.5px solid var(--lime)}
+.bw-loading{display:grid;place-items:center;min-height:320px;background:var(--blue-soft);border-radius:22px}
+.bw-loading div{display:flex;flex-direction:column;align-items:center;gap:14px;color:var(--teal);font:600 14px/1 var(--pop)}
+.bw-loading i{width:44px;height:44px;border-radius:50%;border:3px solid var(--blue);border-top-color:var(--lime);animation:bwSpin .9s linear infinite}
+@keyframes bwSpin{to{transform:rotate(360deg)}}
+.bw-selpill{display:none;align-items:center;gap:10px;font:500 13px/1 var(--pop);color:var(--teal);background:var(--blue);border-radius:99px;padding:10px 16px 10px 12px}
+.bw-selpill.show{display:inline-flex;animation:bwPop .4s cubic-bezier(.2,.8,.2,1)}
+.bw-selpill i{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.bw-selpill b{font-weight:600}
+
 /* form */
 .bw-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .bw-field{display:flex;flex-direction:column;gap:7px}
@@ -172,41 +221,46 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .bw-secure{display:flex;align-items:center;gap:8px;font:500 12.5px/1.3 var(--pop);color:var(--muted)}
 .bw-secure svg{width:15px;height:15px;fill:none;stroke:var(--lime-dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .bw-foot .right{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-
-/* calendar */
-.bw-cal{position:relative;border-radius:20px;background:#fff;overflow:hidden;min-height:680px}
-.bw-cal iframe{width:100%;min-height:680px;border:0;display:block;background:transparent}
-.bw-cal .loading{position:absolute;inset:0;display:grid;place-items:center;background:var(--blue-soft);transition:opacity .4s;pointer-events:none}
-.bw-cal .loading.hide{opacity:0}
-.bw-cal .loading div{display:flex;flex-direction:column;align-items:center;gap:14px;color:var(--teal);font:600 14px/1 var(--pop)}
-.bw-cal .loading i{width:44px;height:44px;border-radius:50%;border:3px solid var(--blue);border-top-color:var(--lime);animation:bwSpin .9s linear infinite}
-@keyframes bwSpin{to{transform:rotate(360deg)}}
-.bw-notes{display:flex;gap:12px;align-items:flex-start;background:var(--blue-soft);border-radius:16px;padding:14px 16px;font:400 13px/1.5 var(--pop);color:var(--muted);margin-top:14px}
+.bw-notes{display:flex;gap:12px;align-items:flex-start;background:var(--blue-soft);border-radius:16px;padding:14px 16px;font:400 13px/1.5 var(--pop);color:var(--muted);margin-top:14px;grid-column:1/-1}
 .bw-notes svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--lime-dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
 .bw-notes b{color:var(--teal);font-weight:600}
+.bw-error{display:none;grid-column:1/-1;background:#FDF1F0;border:2px solid #F3C6C3;color:#9F2D28;border-radius:16px;padding:14px 16px;font:500 13.5px/1.5 var(--pop)}
+.bw-error.show{display:block}
+.bw-error a{font-weight:600;border-bottom:1.5px solid currentColor}
+.btn.is-busy{pointer-events:none;opacity:.8}
+.btn .spin{display:none;width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;animation:bwSpin .8s linear infinite}
+.btn.is-busy .spin{display:block}
+.btn.is-busy .lbl-idle{display:none}
+.btn .lbl-busy{display:none}
+.btn.is-busy .lbl-busy{display:inline}
 
-
-/* step 4: full-width calendar mode */
-.bw.is-cal{grid-template-columns:1fr}
-.bw.is-cal .bw-side{display:none}
-.bw-topbar{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap;margin-bottom:22px}
-.bw-topbar .chip{display:flex;align-items:center;gap:12px;background:var(--teal);color:#fff;border-radius:16px;padding:10px 14px 10px 12px;min-width:0}
-.bw-topbar .chip .pic{width:34px;height:44px;display:grid;place-items:center;flex:none}
-.bw-topbar .chip .pic img{max-height:44px;width:auto;filter:drop-shadow(0 6px 8px rgba(0,0,0,.35))}
-.bw-topbar .chip .pic .isq{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.14);display:grid;place-items:center;color:#fff}
-.bw-topbar .chip .pic .isq svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.bw-topbar .chip small{display:block;font:500 10.5px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
-.bw-topbar .chip b{display:block;font:400 17px/1.05 var(--bebas);letter-spacing:.5px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px}
-.bw-topbar .chip button{font:600 12px/1 var(--pop);color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:99px;padding:7px 11px;margin-left:6px;transition:all .25s;flex:none}
-.bw-topbar .chip button:hover{background:#fff;color:var(--teal)}
-.bw-topbar .offer{display:flex;align-items:center;gap:10px;margin-left:auto;background:var(--blue);color:var(--teal);border-radius:16px;padding:10px 16px;font:500 13px/1.3 var(--pop)}
-.bw-topbar .offer i{width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none}
-.bw-topbar .offer b{font-weight:600}
-@media(max-width:1000px){.bw-topbar .offer{display:none}}
-@media(max-width:860px){.bw.is-cal .bw-side{display:flex}.bw-topbar{display:none}}
+/* confirmation */
+.bw-done{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.bw-done .big{width:76px;height:76px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(175,178,22,.18);animation:bwPop .6s cubic-bezier(.2,.8,.2,1);margin-bottom:22px}
+.bw-done .big svg{width:36px;height:36px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.bw-done h2{font-size:clamp(38px,4vw,54px)}
+.bw-done h2 span{color:var(--lime)}
+.bw-ticket{width:100%;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:var(--teal);color:#fff;border-radius:22px;padding:22px 24px;margin-top:24px;position:relative;overflow:hidden}
+.bw-ticket::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 70%)}
+.bw-ticket .row{display:grid;grid-template-columns:repeat(3,auto);gap:26px;position:relative}
+.bw-ticket small{display:block;font:500 11px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
+.bw-ticket b{display:block;font:400 24px/1.05 var(--bebas);letter-spacing:.6px;margin-top:6px}
+.bw-ticket span.sub{display:block;font:400 12.5px/1.4 var(--pop);color:rgba(255,255,255,.72);margin-top:3px}
+.bw-ticket .pic{width:70px;height:90px;display:grid;place-items:center;position:relative}
+.bw-ticket .pic img{max-height:90px;width:auto;filter:drop-shadow(0 12px 16px rgba(0,0,0,.4));animation:bwSway 5s ease-in-out infinite;transform-origin:50% 4%}
+.bw-ticket .pic .isq{width:60px;height:60px;border-radius:16px;background:rgba(255,255,255,.14);display:grid;place-items:center;color:#fff}
+.bw-ticket .pic .isq svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bw-addcal{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.bw-addcal .btn{padding:13px 20px;font-size:14px}
+.bw-expect{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.bw-expect div{background:var(--blue-soft);border-radius:18px;padding:16px 16px 14px}
+.bw-expect .isq{width:38px;height:38px;border-radius:11px;background:#fff;color:var(--teal);display:grid;place-items:center;margin-bottom:10px}
+.bw-expect .isq svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bw-expect b{display:block;font:600 13.5px/1.3 var(--pop);color:var(--teal)}
+.bw-expect span{display:block;font:400 12.5px/1.45 var(--pop);color:var(--muted);margin-top:3px}
 
 /* responsive */
-@media(max-width:1000px){.bw-goals{grid-template-columns:repeat(2,1fr)}.bw-services{grid-template-columns:1fr}.bw-svc.wide{grid-column:auto}.bw-main{padding:34px 30px}}
+@media(max-width:1000px){.bw-goals{grid-template-columns:repeat(2,1fr)}.bw-services{grid-template-columns:1fr}.bw-svc.wide{grid-column:auto}.bw-main{padding:34px 30px}.bw-dt{grid-template-columns:1fr}.bw-times{min-height:0}.bw-ticket .row{grid-template-columns:1fr 1fr}}
 @media(max-width:860px){
   .bw{grid-template-columns:1fr;min-height:0;border-radius:24px}
   .bw-side{padding:22px 22px 20px;gap:16px}
@@ -234,10 +288,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .bw-foot .btn{width:100%}
   .bw-foot .right{flex-direction:column-reverse;align-items:stretch}
   .bw-foot .bw-back{justify-content:center}
-  .bw-hint,.bw-secure{text-align:center;justify-content:center}
-  .bw-cal,.bw-cal iframe{min-height:720px}
+  .bw-hint,.bw-secure,.bw-selpill{text-align:center;justify-content:center}
+  .bw-month{padding:14px}
+  .bw-tgrid{grid-template-columns:repeat(3,1fr)}
+  .bw-slot{padding:12px 4px;font-size:13.5px}
+  .bw-ticket{grid-template-columns:1fr;padding:18px}
+  .bw-ticket .pic{display:none}
+  .bw-ticket .row{grid-template-columns:1fr;gap:14px}
+  .bw-expect{grid-template-columns:1fr}
+  .bw-addcal .btn{flex:1}
 }
-@media(max-width:420px){.bw-brand .mark{width:88px;height:54px}}
+@media(max-width:420px){.bw-brand .mark{width:88px;height:54px}.bw-tgrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -257,17 +318,24 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5h.01"/></symbol>
   <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 7c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 8 9 6 9-6"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M7 3h10l-1 17a2 2 0 0 1-2 1h-4a2 2 0 0 1-2-1L7 3z"/><path d="M7.6 11h8.8"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2.2"/><path d="M5.5 17a3.5 3.5 0 0 1 7 0M14 10h4M14 13.5h4"/></symbol>
 </svg>
 
 <header class="page-head wrap">
   <div class="tag">Online Booking, 24/7</div>
   <h1>Book your <span>appointment</span></h1>
-  <p>Three quick steps, then pick a time that works. New here? Your first appointment is $20 off.</p>
+  <p>Four quick steps and you are on the calendar. New here? Your first appointment is $20 off.</p>
 </header>
 
 <main class="wrap">
@@ -281,8 +349,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <ol class="bw-steps" id="bw-steps">
       <li class="bw-step is-active" data-step="1"><div class="n"><span>1</span><svg><use href="#i-check"/></svg></div><div class="t"><b>What you need help with</b><span id="s1-sub">Choose a goal</span></div></li>
       <li class="bw-step" data-step="2"><div class="n"><span>2</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Your service</b><span id="s2-sub"></span></div></li>
-      <li class="bw-step" data-step="3"><div class="n"><span>3</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Your info</b><span id="s3-sub"></span></div></li>
-      <li class="bw-step" data-step="4"><div class="n"><span>4</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Pick a time</b><span id="s4-sub"></span></div></li>
+      <li class="bw-step" data-step="3"><div class="n"><span>3</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Date and time</b><span id="s3-sub"></span></div></li>
+      <li class="bw-step" data-step="4"><div class="n"><span>4</span><svg><use href="#i-check"/></svg></div><div class="t"><b>Your info</b><span id="s4-sub"></span></div></li>
     </ol>
     <div class="bw-summary" id="bw-summary">
       <div class="pic" id="sum-pic"></div>
@@ -294,7 +362,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <div class="bw-main">
     <div class="bw-mobile-progress"><div class="bar"><i id="mp-bar"></i></div><span id="mp-txt">Step 1 of 4</span></div>
 
-    <!-- STEP 1 -->
+    <!-- STEP 1: GOAL -->
     <div class="bw-pane is-on" data-pane="1">
       <div class="bw-kicker">Step 1 of 4</div>
       <h2>What do you need help with?</h2>
@@ -303,20 +371,40 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <div class="bw-foot"><span class="bw-hint">Not sure? Choose "Help me decide" and our team will guide you at your visit.</span><button class="btn btn-lime" id="next1" disabled>Continue<svg><use href="#i-arrow"/></svg></button></div>
     </div>
 
-    <!-- STEP 2 -->
+    <!-- STEP 2: SERVICE -->
     <div class="bw-pane" data-pane="2">
       <div class="bw-kicker">Step 2 of 4</div>
       <h2>What would you like to book?<span class="bw-goalchip" id="goal-chip"><i></i><span id="goal-chip-txt"></span></span></h2>
       <p class="lede" id="svc-lede">Choose one. You can always adjust with our clinical team when you arrive.</p>
       <div class="bw-body"><div class="bw-services" id="bw-services"></div></div>
-      <div class="bw-foot"><button class="bw-back" id="back2"><svg><use href="#i-back"/></svg>Back</button><button class="btn btn-lime" id="next2" disabled>Continue<svg><use href="#i-arrow"/></svg></button></div>
+      <div class="bw-foot"><button class="bw-back" id="back2"><svg><use href="#i-back"/></svg>Back</button><button class="btn btn-lime" id="next2" disabled>Choose a time<svg><use href="#i-cal"/></svg></button></div>
     </div>
 
-    <!-- STEP 3 -->
+    <!-- STEP 3: DATE + TIME -->
     <div class="bw-pane" data-pane="3">
       <div class="bw-kicker">Step 3 of 4</div>
-      <h2>Tell us who is coming in</h2>
-      <p class="lede">We use this to hold your spot and send your confirmation.</p>
+      <h2>Pick a day and time</h2>
+      <p class="lede">All times are Central. Pick a day with a green dot, then choose a time that works.</p>
+      <div class="bw-body">
+        <div class="bw-loading" id="cal-loading"><div><i></i>Loading available times</div></div>
+        <div class="bw-dt" id="bw-dt" style="display:none">
+          <div class="bw-month">
+            <div class="bw-month-head"><button type="button" id="prev-m" aria-label="Previous month"><svg><use href="#i-chev-l"/></svg></button><b id="month-lbl"></b><button type="button" id="next-m" aria-label="Next month"><svg><use href="#i-chev-r"/></svg></button></div>
+            <div class="bw-grid" id="cal-grid"></div>
+            <div class="bw-tz"><svg><use href="#i-clock"/></svg>Central Time (Edina, MN). Showing the next 60 days.</div>
+          </div>
+          <div class="bw-times" id="bw-times"></div>
+        </div>
+        <div class="bw-empty" id="cal-err" style="display:none"><div><span class="isq"><svg><use href="#i-phone"/></svg></span><b>We could not load the calendar</b>Refresh the page to try again, or <a href="tel:+16123244740">call or text (612) 324-4740</a> and we will get you booked.</div></div>
+      </div>
+      <div class="bw-foot"><button class="bw-back" id="back3"><svg><use href="#i-back"/></svg>Back</button><div class="right"><span class="bw-selpill" id="sel-pill"><i></i><span id="sel-pill-txt"></span></span><button class="btn btn-lime" id="next3" disabled>Continue<svg><use href="#i-arrow"/></svg></button></div></div>
+    </div>
+
+    <!-- STEP 4: INFO + CONSENT -->
+    <div class="bw-pane" data-pane="4">
+      <div class="bw-kicker">Step 4 of 4</div>
+      <h2>Almost done</h2>
+      <p class="lede">A few details to hold your spot and send your confirmation.</p>
       <div class="bw-body">
         <form class="bw-form" id="bw-form" novalidate>
           <div class="bw-review" id="bw-review"><div class="pic" id="rev-pic"></div><div><small>Booking</small><b id="rev-name"></b><span id="rev-meta"></span></div><button type="button" id="rev-change">Change</button></div>
@@ -325,22 +413,36 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           <div class="bw-field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required><div class="msg">Please enter a valid email address.</div></div>
           <div class="bw-field"><label for="f-phone">Mobile phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(612) 555-0123" required><div class="msg">Please enter a 10 digit phone number.</div></div>
           <label class="bw-consent" id="bw-consent"><input type="checkbox" id="f-consent"><span class="box"><svg><use href="#i-check"/></svg></span><p><b>Consent.</b> I agree to receive appointment related calls, texts, and emails from The DRIPBaR Edina. I understand this is a booking request, not medical advice. Message and data rates may apply.</p></label>
+          <div class="bw-notes"><svg><use href="#i-info"/></svg><div><b>What our team will already know:</b> <span id="notes-preview"></span></div></div>
+          <div class="bw-error" id="book-err">That time was just taken or something went wrong. <a href="#" id="book-retry">Pick another time</a> or <a href="tel:+16123244740">call or text (612) 324-4740</a>.</div>
         </form>
       </div>
-      <div class="bw-foot"><button class="bw-back" id="back3"><svg><use href="#i-back"/></svg>Back</button><div class="right"><span class="bw-secure"><svg><use href="#i-lock"/></svg>Your details are never shared</span><button class="btn btn-lime" id="next3">Choose a time<svg><use href="#i-cal"/></svg></button></div></div>
+      <div class="bw-foot"><button class="bw-back" id="back4"><svg><use href="#i-back"/></svg>Back</button><div class="right"><span class="bw-secure"><svg><use href="#i-lock"/></svg>Your details are never shared</span><button class="btn btn-lime" id="bookBtn"><span class="spin"></span><span class="lbl-idle">Book my appointment</span><span class="lbl-busy">Booking</span><svg class="lbl-idle"><use href="#i-check"/></svg></button></div></div>
     </div>
 
-    <!-- STEP 4 -->
-    <div class="bw-pane" data-pane="4">
-      <div class="bw-topbar" id="bw-topbar"></div>
-      <div class="bw-kicker">Step 4 of 4</div>
-      <h2>Pick a day and time</h2>
-      <p class="lede">Your details are already filled in. Pick a day, choose a time, and confirm.</p>
-      <div class="bw-body">
-        <div class="bw-cal" id="bw-cal"><div class="loading" id="cal-loading"><div><i></i>Loading available times</div></div></div>
-        <div class="bw-notes"><svg><use href="#i-info"/></svg><div><b>What our team will already know:</b> <span id="notes-preview"></span></div></div>
+    <!-- CONFIRMATION -->
+    <div class="bw-pane" data-pane="5">
+      <div class="bw-done">
+        <div class="big"><svg><use href="#i-check"/></svg></div>
+        <div class="bw-kicker">Confirmed</div>
+        <h2>You are <span>booked</span>, <span id="done-name"></span>.</h2>
+        <p class="lede">A confirmation is on its way to <b id="done-email"></b>. We will text a reminder before your visit.</p>
+        <div class="bw-ticket">
+          <div class="row">
+            <div><small>Service</small><b id="done-svc"></b><span class="sub" id="done-goal"></span></div>
+            <div><small>When</small><b id="done-when"></b><span class="sub" id="done-time"></span></div>
+            <div><small>Where</small><b>The DRIPBaR Edina</b><span class="sub">3515 W 70th St, Edina, MN 55435</span></div>
+          </div>
+          <div class="pic" id="done-pic"></div>
+        </div>
+        <div class="bw-addcal"><a class="btn btn-ghost" id="gcal" target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Add to Google Calendar</a><a class="btn btn-ghost" id="ical" download="dripbar-edina-appointment.ics"><svg><use href="#i-cal"/></svg>Apple / Outlook (.ics)</a><a class="btn btn-ghost" href="https://maps.google.com/?q=The+DRIPBaR+Edina+3515+W+70th+St+Edina+MN+55435" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a></div>
+        <div class="bw-expect">
+          <div><span class="isq"><svg><use href="#i-glass"/></svg></span><b>Hydrate and eat</b><span>A light meal and water before your visit makes the drip easier.</span></div>
+          <div><span class="isq"><svg><use href="#i-id"/></svg></span><b>Bring your ID</b><span>Our clinical team completes a quick screening before every first visit.</span></div>
+          <div><span class="isq"><svg><use href="#i-clock"/></svg></span><b>Arrive 5 minutes early</b><span>Then settle in. Most drips take 30 to 60 minutes.</span></div>
+        </div>
       </div>
-      <div class="bw-foot"><button class="bw-back" id="back4"><svg><use href="#i-back"/></svg>Back to my info</button><span class="bw-hint">Questions? Call or text (612) 324-4740</span></div>
+      <div class="bw-foot"><span class="bw-hint">Need to change it? Call or text (612) 324-4740</span><a class="btn btn-teal" href="https://thedripbaredina.com/">Back to the site<svg><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -352,9 +454,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 (function(){
   /* ===== CONFIG (swap points) ===== */
   var CAL_ID = 'y4r5p2sVvb7WrURHdTm7';                       // default "Appointment booking" calendar
-  var CAL_BASE = 'https://api.leadconnectorhq.com/widget/booking/' + CAL_ID;
-  var KEY_SERVICE = 'which_drip_or_service_are_you_interested_in';
-  var KEY_NOTES   = 'tell_us_about_your_health_and_wellness_goals';
+  var LOC_ID = 'FLJ3lWKPEa7lIRYX5X8C';                       // The DRIPBaR Edina sub-account
+  var API    = 'https://backend.leadconnectorhq.com';
+  var TZ     = 'America/Chicago';
+  var KEY_SERVICE = 'which_drip_or_service_are_you_interested_in';  // calendar form dropdown (unique key)
+  var KEY_NOTES   = 'tell_us_about_your_health_and_wellness_goals'; // calendar form textarea (unique key)
+  var SLOT_STEP_MIN = 15;                                     // only show slots on these minute marks (calendar is set to 5)
+  var DAYS_AHEAD = 60;
   var IMG = 'https://betterbranding.github.io/dripbar-pages/edina/site/assets/hero/';
 
   /* ===== DATA ===== */
@@ -371,40 +477,40 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   ];
   // type: drip | shot | consult | therapy | unsure ; ghl = exact option label in the calendar's service dropdown ('' = no matching option)
   var S = {
-    vitality:   {name:'Vitality',           type:'drip', img:'vitality',          reg:'$224', mem:'$169', blurb:'Adrenal support and steady energy',            ghl:'Vitality Drip',  dur:'30 to 60 min'},
-    debut:      {name:'The Debut',          type:'drip', img:'debut',             reg:'$224', mem:'$169', blurb:'Foundational wellness for first timers',        ghl:'Debut Drip',     dur:'30 to 60 min'},
-    ala:        {name:'Alpha Lipoic Acid',  type:'drip', img:'ala',               reg:'$100', note:'Members save 50% on add-on drips', blurb:'Cellular energy and nerve support', ghl:'ALA (Alpha Lipoic Acid) Drip', dur:'30 to 45 min'},
-    shield:     {name:'Shield',             type:'drip', img:'shield',            reg:'$224', mem:'$169', blurb:'Seasonal immune defense',                       ghl:'Shield Drip',    dur:'30 to 60 min'},
-    flu:        {name:'Flu Fighter',        type:'drip', img:'flu-fighter',       reg:'$224', mem:'$169', blurb:'Cold, flu, and sinus support',                  ghl:'Flu Fighter Drip',dur:'30 to 60 min'},
-    postviral:  {name:'Post Viral',         type:'drip', img:'post-viral',        reg:'$224', mem:'$169', blurb:'Recovery after illness',                        ghl:'Post Viral Drip',dur:'30 to 60 min'},
-    jetsetter:  {name:'Jetsetter',          type:'drip', img:'jetsetter',         reg:'$224', mem:'$169', blurb:'Jet lag and travel fatigue',                    ghl:'Jetsetter Drip', dur:'30 to 60 min'},
-    allergy:    {name:'Allergy',            type:'drip', img:'allergy',           reg:'$224', mem:'$169', blurb:'Seasonal allergy relief',                       ghl:'Allergy Drip',   dur:'30 to 60 min'},
-    hdc:        {name:'High Dose Vitamin C',type:'consult', img:'high-dose-vitamin-c', reg:'Consult', note:'Priced at consultation', blurb:'Specialized high dose infusion, consult first', ghl:'High C Drip', dur:'Consult first'},
-    restoration:{name:'Restoration',        type:'drip', img:'restoration',       reg:'$109', note:'Members save 50% on add-on drips', blurb:'Rehydrate and bounce back', ghl:'Restoration Drip', dur:'30 to 45 min'},
-    powerpack:  {name:'Powerpack',          type:'drip', img:'powerpack',         reg:'$224', mem:'$169', blurb:'Performance and post-workout recovery',         ghl:'Powerpack Drip', dur:'30 to 60 min'},
-    allstar:    {name:'Allstar',            type:'drip', img:'allstar',           reg:'$224', mem:'$169', blurb:'Muscle recovery and cellular repair',           ghl:'Allstar Drip',   dur:'30 to 60 min'},
-    prepostop:  {name:'Pre/Post-Op',        type:'drip', img:'pre-post-op',       reg:'$224', mem:'$169', blurb:'Surgical recovery and tissue healing',          ghl:'Preop Drip',     dur:'30 to 60 min'},
-    soother:    {name:'Soother',            type:'drip', img:'soother',           reg:'$224', mem:'$169', blurb:'Stress, tension, and headache support',         ghl:'Soother Drip',   dur:'30 to 60 min'},
-    maternal:   {name:'Maternal Wellness',  type:'drip', img:'maternal-wellness', reg:'$179', mem:'$169', blurb:'Hydration and nausea support in pregnancy',     ghl:'',               dur:'30 to 60 min'},
-    timemachine:{name:'Time Machine',       type:'drip', img:'time-machine',      reg:'$224', mem:'$169', blurb:'Anti-aging and skin health',                    ghl:'Time Machine Drip',dur:'30 to 60 min'},
-    firm:       {name:'Firm',               type:'drip', img:'firm',              reg:'$224', mem:'$169', blurb:'Collagen and skin tone support',                ghl:'Firm Drip',      dur:'30 to 60 min'},
-    glutathione:{name:'Glutathione',        type:'drip', img:'glutathione',       reg:'$120', note:'Members save 50% on add-on drips', blurb:'Master antioxidant for skin and detox', ghl:'Glutathione Drip', dur:'20 to 30 min'},
-    nad:        {name:'NAD+',               type:'drip', img:'nad-plus',          reg:'$500', note:'Ask about member pricing', blurb:'Cellular repair and healthy aging', ghl:'NAD+ Drip', dur:'2 to 4 hours'},
-    hmd:        {name:'Heavy Metal Detox',  type:'drip', img:'heavy-metal-detox', reg:'$224', mem:'$169', blurb:'Nutrient support for detox pathways',           ghl:'',               dur:'30 to 60 min'},
-    metabolize: {name:'Metabolize',         type:'drip', img:'metabolize',        reg:'$189', mem:'$169', blurb:'Metabolism, thyroid, and gut support',          ghl:'Metabolize Drip',dur:'30 to 60 min'},
-    shot_b12:   {name:'IM B12 Quick Shot',  type:'shot', icon:'i-syringe',        reg:'$25',  blurb:'Energy and red blood cell support, under 15 min',       ghl:'IM B12',         dur:'Under 15 min'},
-    shot_super: {name:'IM Supercharged',    type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, biotin, B5 for metabolism and clarity',            ghl:'IM Other',       dur:'Under 15 min'},
-    shot_strong:{name:'IM Strong',          type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, L-arginine, taurine for clean energy',             ghl:'IM Other',       dur:'Under 15 min'},
-    shot_glow:  {name:'IM Glowing',         type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Glutathione and biotin for skin, hair, nails',          ghl:'IM Other',       dur:'Under 15 min'},
-    shot_detox: {name:'IM Detoxed',         type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Glutathione for antioxidant defense',                    ghl:'IM Other',       dur:'Under 15 min'},
-    shot_lean:  {name:'IM Lean',            type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Choline, B12, taurine for metabolism',                   ghl:'IM Other',       dur:'Under 15 min'},
-    shot_tri:   {name:'Tri-Immune Shot',    type:'shot', icon:'i-syringe',        reg:'$35',  blurb:'Glutathione, vitamin C, zinc immune blend',              ghl:'IM Other',       dur:'Under 15 min'},
-    glp1:       {name:'GLP-1 Consultation', type:'consult', icon:'i-users',       reg:'Consult', note:'Program pricing at consultation', blurb:'Medically supervised weight management, starts with a consult', ghl:'GLP-1 Consult', dur:'15 to 30 min'},
-    peptide:    {name:'Peptide Consultation',type:'consult', icon:'i-users',      reg:'Consult', note:'Individualized plan and pricing', blurb:'Medically supervised, administered by registered nurses', ghl:'Peptide Consult', dur:'15 to 30 min'},
-    redlight:   {name:'Red Light Therapy',  type:'therapy', icon:'i-sun',         reg:'Ask about pricing', blurb:'Red and near infrared light for skin and recovery', ghl:'Red Light Therapy', dur:'20 to 30 min'},
-    sauna:      {name:'Infrared Sauna',     type:'therapy', icon:'i-wave',        reg:'Ask about pricing', blurb:'Full spectrum infrared suite',               ghl:'Infrared Sauna', dur:'20 to 40 min'},
-    halo:       {name:'Halotherapy',        type:'therapy', icon:'i-leaf',        reg:'Ask about pricing', blurb:'Salt therapy for respiratory and skin support', ghl:'',            dur:'20 to 40 min'},
-    unsure:     {name:'Help me choose at my visit', type:'unsure', icon:'i-help', reg:'', blurb:'Book a screening slot and decide with our clinical team', ghl:'Not Sure', dur:'15 min screening'}
+    vitality:   {name:'Vitality',           type:'drip', img:'vitality',          reg:'$224', mem:'$169', blurb:'Adrenal support and steady energy',            ghl:'Vitality Drip',  dur:'30 to 60 min', mins:60},
+    debut:      {name:'The Debut',          type:'drip', img:'debut',             reg:'$224', mem:'$169', blurb:'Foundational wellness for first timers',        ghl:'Debut Drip',     dur:'30 to 60 min', mins:60},
+    ala:        {name:'Alpha Lipoic Acid',  type:'drip', img:'ala',               reg:'$100', note:'Members save 50% on add-on drips', blurb:'Cellular energy and nerve support', ghl:'ALA (Alpha Lipoic Acid) Drip', dur:'30 to 45 min', mins:45},
+    shield:     {name:'Shield',             type:'drip', img:'shield',            reg:'$224', mem:'$169', blurb:'Seasonal immune defense',                       ghl:'Shield Drip',    dur:'30 to 60 min', mins:60},
+    flu:        {name:'Flu Fighter',        type:'drip', img:'flu-fighter',       reg:'$224', mem:'$169', blurb:'Cold, flu, and sinus support',                  ghl:'Flu Fighter Drip',dur:'30 to 60 min', mins:60},
+    postviral:  {name:'Post Viral',         type:'drip', img:'post-viral',        reg:'$224', mem:'$169', blurb:'Recovery after illness',                        ghl:'Post Viral Drip',dur:'30 to 60 min', mins:60},
+    jetsetter:  {name:'Jetsetter',          type:'drip', img:'jetsetter',         reg:'$224', mem:'$169', blurb:'Jet lag and travel fatigue',                    ghl:'Jetsetter Drip', dur:'30 to 60 min', mins:60},
+    allergy:    {name:'Allergy',            type:'drip', img:'allergy',           reg:'$224', mem:'$169', blurb:'Seasonal allergy relief',                       ghl:'Allergy Drip',   dur:'30 to 60 min', mins:60},
+    hdc:        {name:'High Dose Vitamin C',type:'consult', img:'high-dose-vitamin-c', reg:'Consult', note:'Priced at consultation', blurb:'Specialized high dose infusion, consult first', ghl:'High C Drip', dur:'Consult first', mins:30},
+    restoration:{name:'Restoration',        type:'drip', img:'restoration',       reg:'$109', note:'Members save 50% on add-on drips', blurb:'Rehydrate and bounce back', ghl:'Restoration Drip', dur:'30 to 45 min', mins:45},
+    powerpack:  {name:'Powerpack',          type:'drip', img:'powerpack',         reg:'$224', mem:'$169', blurb:'Performance and post-workout recovery',         ghl:'Powerpack Drip', dur:'30 to 60 min', mins:60},
+    allstar:    {name:'Allstar',            type:'drip', img:'allstar',           reg:'$224', mem:'$169', blurb:'Muscle recovery and cellular repair',           ghl:'Allstar Drip',   dur:'30 to 60 min', mins:60},
+    prepostop:  {name:'Pre/Post-Op',        type:'drip', img:'pre-post-op',       reg:'$224', mem:'$169', blurb:'Surgical recovery and tissue healing',          ghl:'Preop Drip',     dur:'30 to 60 min', mins:60},
+    soother:    {name:'Soother',            type:'drip', img:'soother',           reg:'$224', mem:'$169', blurb:'Stress, tension, and headache support',         ghl:'Soother Drip',   dur:'30 to 60 min', mins:60},
+    maternal:   {name:'Maternal Wellness',  type:'drip', img:'maternal-wellness', reg:'$179', mem:'$169', blurb:'Hydration and nausea support in pregnancy',     ghl:'',               dur:'30 to 60 min', mins:60},
+    timemachine:{name:'Time Machine',       type:'drip', img:'time-machine',      reg:'$224', mem:'$169', blurb:'Anti-aging and skin health',                    ghl:'Time Machine Drip',dur:'30 to 60 min', mins:60},
+    firm:       {name:'Firm',               type:'drip', img:'firm',              reg:'$224', mem:'$169', blurb:'Collagen and skin tone support',                ghl:'Firm Drip',      dur:'30 to 60 min', mins:60},
+    glutathione:{name:'Glutathione',        type:'drip', img:'glutathione',       reg:'$120', note:'Members save 50% on add-on drips', blurb:'Master antioxidant for skin and detox', ghl:'Glutathione Drip', dur:'20 to 30 min', mins:30},
+    nad:        {name:'NAD+',               type:'drip', img:'nad-plus',          reg:'$500', note:'Ask about member pricing', blurb:'Cellular repair and healthy aging', ghl:'NAD+ Drip', dur:'2 to 4 hours', mins:180},
+    hmd:        {name:'Heavy Metal Detox',  type:'drip', img:'heavy-metal-detox', reg:'$224', mem:'$169', blurb:'Nutrient support for detox pathways',           ghl:'',               dur:'30 to 60 min', mins:60},
+    metabolize: {name:'Metabolize',         type:'drip', img:'metabolize',        reg:'$189', mem:'$169', blurb:'Metabolism, thyroid, and gut support',          ghl:'Metabolize Drip',dur:'30 to 60 min', mins:60},
+    shot_b12:   {name:'IM B12 Quick Shot',  type:'shot', icon:'i-syringe',        reg:'$25',  blurb:'Energy and red blood cell support, under 15 min',       ghl:'IM B12',         dur:'Under 15 min', mins:15},
+    shot_super: {name:'IM Supercharged',    type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, biotin, B5 for metabolism and clarity',            ghl:'IM Other',       dur:'Under 15 min', mins:15},
+    shot_strong:{name:'IM Strong',          type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, L-arginine, taurine for clean energy',             ghl:'IM Other',       dur:'Under 15 min', mins:15},
+    shot_glow:  {name:'IM Glowing',         type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Glutathione and biotin for skin, hair, nails',          ghl:'IM Other',       dur:'Under 15 min', mins:15},
+    shot_detox: {name:'IM Detoxed',         type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Glutathione for antioxidant defense',                    ghl:'IM Other',       dur:'Under 15 min', mins:15},
+    shot_lean:  {name:'IM Lean',            type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'Choline, B12, taurine for metabolism',                   ghl:'IM Other',       dur:'Under 15 min', mins:15},
+    shot_tri:   {name:'Tri-Immune Shot',    type:'shot', icon:'i-syringe',        reg:'$35',  blurb:'Glutathione, vitamin C, zinc immune blend',              ghl:'IM Other',       dur:'Under 15 min', mins:15},
+    glp1:       {name:'GLP-1 Consultation', type:'consult', icon:'i-users',       reg:'Consult', note:'Program pricing at consultation', blurb:'Medically supervised weight management, starts with a consult', ghl:'GLP-1 Consult', dur:'15 to 30 min', mins:30},
+    peptide:    {name:'Peptide Consultation',type:'consult', icon:'i-users',      reg:'Consult', note:'Individualized plan and pricing', blurb:'Medically supervised, administered by registered nurses', ghl:'Peptide Consult', dur:'15 to 30 min', mins:30},
+    redlight:   {name:'Red Light Therapy',  type:'therapy', icon:'i-sun',         reg:'Ask about pricing', blurb:'Red and near infrared light for skin and recovery', ghl:'Red Light Therapy', dur:'20 to 30 min', mins:30},
+    sauna:      {name:'Infrared Sauna',     type:'therapy', icon:'i-wave',        reg:'Ask about pricing', blurb:'Full spectrum infrared suite',               ghl:'Infrared Sauna', dur:'20 to 40 min', mins:40},
+    halo:       {name:'Halotherapy',        type:'therapy', icon:'i-leaf',        reg:'Ask about pricing', blurb:'Salt therapy for respiratory and skin support', ghl:'',            dur:'20 to 40 min', mins:40},
+    unsure:     {name:'Help me choose at my visit', type:'unsure', icon:'i-help', reg:'', blurb:'Book a screening slot and decide with our clinical team', ghl:'Not Sure', dur:'15 min screening', mins:30}
   };
   var MAP = {
     energy:   ['vitality','debut','ala','shot_super','shot_strong','shot_b12'],
@@ -417,12 +523,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     wellness: ['redlight','sauna','halo'],
     unsure:   ['unsure']
   };
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DOWS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var DOWS_FULL=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
   /* ===== STATE ===== */
-  var state = {step:1, goal:null, service:null, contact:null};
+  var state = {step:1, goal:null, service:null, slotsByDay:null, months:[], month:null, day:null, slot:null, contact:null, booked:false};
   var $ = function(s,ctx){return (ctx||document).querySelector(s)};
   var $$ = function(s,ctx){return Array.prototype.slice.call((ctx||document).querySelectorAll(s))};
   var goalById = function(id){for(var i=0;i<GOALS.length;i++) if(GOALS[i].id===id) return GOALS[i]; return null};
+  var pad2 = function(n){return (n<10?'0':'')+n};
 
   function picHTML(svc){
     if(svc.img) return '<img src="'+IMG+svc.img+'.webp" alt="">';
@@ -442,8 +552,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     if(svc.reg && svc.reg!=='Consult' && !/Ask/.test(svc.reg)) return svc.reg+' / '+svc.dur;
     return svc.dur;
   }
+  /* time helpers: slots arrive as ISO strings in Central offset, e.g. 2026-09-10T10:15:00-05:00 */
+  function fmtTime(iso){
+    var h=parseInt(iso.slice(11,13),10), m=iso.slice(14,16);
+    var ap=h>=12?'PM':'AM'; h=h%12; if(h===0)h=12;
+    return h+':'+m+' '+ap;
+  }
+  function fmtDay(key, short){
+    var p=key.split('-'); var d=new Date(+p[0], +p[1]-1, +p[2]);
+    if(short) return DOWS[d.getDay()]+', '+MONTHS[d.getMonth()].slice(0,3)+' '+d.getDate();
+    return DOWS_FULL[d.getDay()]+', '+MONTHS[d.getMonth()]+' '+d.getDate();
+  }
+  function todayKey(){
+    try{ var p=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()); return p.slice(0,10); }
+    catch(e){ var d=new Date(); return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate()); }
+  }
 
-  /* ===== RENDER STEP 1 ===== */
+  /* ===== STEP 1: GOALS ===== */
   var goalsEl = $('#bw-goals');
   goalsEl.innerHTML = GOALS.map(function(g){
     return '<button type="button" class="bw-tile '+g.c+'" data-goal="'+g.id+'"><span class="chk"><svg><use href="#i-check"/></svg></span><span class="isq"><svg><use href="#'+g.icon+'"/></svg></span><span><b>'+g.label+'</b><span class="sub">'+g.sub+'</span></span></button>';
@@ -460,7 +585,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   });
   $('#next1').addEventListener('click', function(){ if(state.goal){ renderServices(); go(2); } });
 
-  /* ===== RENDER STEP 2 ===== */
+  /* ===== STEP 2: SERVICES ===== */
   function renderServices(){
     var g = goalById(state.goal);
     $('#goal-chip-txt').textContent = g.label;
@@ -482,17 +607,114 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     updateSummary();
   });
   $('#back2').addEventListener('click', function(){ go(1,true) });
-  $('#next2').addEventListener('click', function(){ if(state.service){ renderReview(); go(3); setTimeout(function(){ if(window.innerWidth>860) $('#f-first').focus(); },400);} });
+  $('#next2').addEventListener('click', function(){ if(state.service){ go(3); loadSlots(); } });
 
-  /* ===== STEP 3 ===== */
+  /* ===== STEP 3: DATE + TIME (GHL free-slots API) ===== */
+  function fetchWindow(start,end){
+    return fetch(API+'/calendars/'+CAL_ID+'/free-slots?startDate='+start+'&endDate='+end+'&timezone='+encodeURIComponent(TZ))
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); });
+  }
+  var slotsLoadedAt = 0;
+  function loadSlots(force){
+    if(state.slotsByDay && !force && (Date.now()-slotsLoadedAt) < 5*60*1000){ return; }
+    var now = Date.now(), d30 = 30*24*3600*1000;
+    $('#cal-loading').style.display=''; $('#bw-dt').style.display='none'; $('#cal-err').style.display='none';
+    Promise.all([ fetchWindow(now, now+d30), fetchWindow(now+d30, now+Math.round(DAYS_AHEAD/30*d30)).catch(function(){return {};}) ])
+    .then(function(res){
+      var by = {};
+      res.forEach(function(d){
+        Object.keys(d).forEach(function(k){
+          if(k==='traceId' || !d[k] || !d[k].slots || !d[k].slots.length) return;
+          var all = d[k].slots;
+          var kept = all.filter(function(iso){ return (parseInt(iso.slice(14,16),10) % SLOT_STEP_MIN)===0; });
+          by[k] = (by[k]||[]).concat(kept.length ? kept : all);
+        });
+      });
+      var days = Object.keys(by).sort();
+      if(!days.length) throw new Error('no slots');
+      state.slotsByDay = by; slotsLoadedAt = Date.now();
+      state.months = days.map(function(k){return k.slice(0,7)}).filter(function(v,i,a){return a.indexOf(v)===i});
+      if(!state.month || state.months.indexOf(state.month)<0) state.month = state.months[0];
+      if(state.day && !by[state.day]){ state.day=null; state.slot=null; }
+      if(state.slot && state.day && by[state.day].indexOf(state.slot)<0){ state.slot=null; }
+      $('#cal-loading').style.display='none'; $('#bw-dt').style.display='';
+      renderMonth(); renderTimes(); syncStep3();
+    })
+    .catch(function(){
+      $('#cal-loading').style.display='none'; $('#cal-err').style.display='';
+    });
+  }
+  function renderMonth(){
+    var ym=state.month.split('-'); var y=+ym[0], m=+ym[1]-1;
+    $('#month-lbl').textContent = MONTHS[m]+' '+y;
+    var grid=$('#cal-grid'); var h='';
+    DOWS.forEach(function(d){ h+='<span class="dow">'+d+'</span>'; });
+    var first=new Date(y,m,1).getDay(), dim=new Date(y,m+1,0).getDate(), tk=todayKey();
+    for(var i=0;i<first;i++) h+='<span></span>';
+    for(var day=1; day<=dim; day++){
+      var key=state.month+'-'+pad2(day);
+      var cls='bw-day'+(state.slotsByDay[key]?' avail':'')+(state.day===key?' is-sel':'')+(key===tk?' today':'');
+      h+='<button type="button" class="'+cls+'" data-day="'+key+'"'+(state.slotsByDay[key]?'':' disabled aria-disabled="true"')+'>'+day+'</button>';
+    }
+    grid.innerHTML=h;
+    var idx=state.months.indexOf(state.month);
+    $('#prev-m').disabled = idx<=0; $('#next-m').disabled = idx>=state.months.length-1;
+  }
+  $('#cal-grid').addEventListener('click', function(e){
+    var b=e.target.closest('.bw-day.avail'); if(!b) return;
+    state.day=b.getAttribute('data-day'); state.slot=null;
+    renderMonth(); renderTimes(); syncStep3();
+    if(window.innerWidth<=1000){ var t=$('#bw-times'); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+  $('#prev-m').addEventListener('click', function(){ var i=state.months.indexOf(state.month); if(i>0){ state.month=state.months[i-1]; renderMonth(); } });
+  $('#next-m').addEventListener('click', function(){ var i=state.months.indexOf(state.month); if(i<state.months.length-1){ state.month=state.months[i+1]; renderMonth(); } });
+  function renderTimes(){
+    var w=$('#bw-times');
+    if(!state.day){
+      w.innerHTML='<div class="bw-empty"><div><span class="isq"><svg><use href="#i-cal"/></svg></span><b>Pick a day</b>Days with a green dot have openings. Choose one to see times.</div></div>';
+      return;
+    }
+    var slots=state.slotsByDay[state.day]||[];
+    var groups={Morning:[],Afternoon:[],Evening:[]};
+    slots.forEach(function(iso){ var h=parseInt(iso.slice(11,13),10); (h<12?groups.Morning:h<16?groups.Afternoon:groups.Evening).push(iso); });
+    var h='<div class="bw-times-head"><b>'+fmtDay(state.day)+'</b><span>'+slots.length+' openings</span></div>';
+    Object.keys(groups).forEach(function(g){
+      if(!groups[g].length) return;
+      h+='<div class="bw-tgroup"><small>'+g+'</small><div class="bw-tgrid">';
+      groups[g].forEach(function(iso){ h+='<button type="button" class="bw-slot'+(state.slot===iso?' is-sel':'')+'" data-slot="'+iso+'">'+fmtTime(iso)+'</button>'; });
+      h+='</div></div>';
+    });
+    w.innerHTML=h;
+  }
+  $('#bw-times').addEventListener('click', function(e){
+    var b=e.target.closest('.bw-slot'); if(!b) return;
+    state.slot=b.getAttribute('data-slot');
+    $$('.bw-slot').forEach(function(x){x.classList.remove('is-sel')}); b.classList.add('is-sel');
+    syncStep3();
+  });
+  function syncStep3(){
+    var ok = !!(state.day && state.slot);
+    $('#next3').disabled = !ok;
+    var pill=$('#sel-pill'); pill.classList.toggle('show', ok);
+    if(ok){ $('#sel-pill-txt').innerHTML = '<b>'+fmtDay(state.day,true)+'</b> at <b>'+fmtTime(state.slot)+'</b> CT'; $('#s3-sub').textContent = fmtDay(state.day,true)+', '+fmtTime(state.slot); }
+    else { $('#s3-sub').textContent = ''; }
+    updateSummary();
+  }
+  $('#back3').addEventListener('click', function(){ go(2,true) });
+  $('#next3').addEventListener('click', function(){ if(state.day&&state.slot){ renderReview(); go(4); setTimeout(function(){ if(window.innerWidth>860) $('#f-first').focus(); },400); } });
+
+  /* ===== STEP 4: INFO + CONSENT + BOOK ===== */
   function renderReview(){
     var s=S[state.service];
     $('#rev-pic').innerHTML = picHTML(s);
     $('#rev-name').textContent = s.name;
-    $('#rev-meta').textContent = goalById(state.goal).label + ' / ' + metaText(s);
+    $('#rev-meta').textContent = fmtDay(state.day,true)+' at '+fmtTime(state.slot)+' CT  /  '+goalById(state.goal).label;
+    $('#notes-preview').textContent = 'Goal: '+goalById(state.goal).label+'  |  Service: '+s.name;
+    $('#book-err').classList.remove('show');
   }
-  $('#rev-change').addEventListener('click', function(){ go(2,true) });
-  $('#back3').addEventListener('click', function(){ go(2,true) });
+  $('#rev-change').addEventListener('click', function(){ go(3,true) });
+  $('#back4').addEventListener('click', function(){ go(3,true) });
+  $('#book-retry').addEventListener('click', function(e){ e.preventDefault(); go(3,true); loadSlots(true); });
   var consentEl = $('#bw-consent'), consentCb = $('#f-consent');
   consentCb.addEventListener('change', function(){ consentEl.classList.toggle('is-on', consentCb.checked); consentEl.classList.remove('err'); });
   $$('.bw-field input').forEach(function(inp){ inp.addEventListener('input', function(){ inp.closest('.bw-field').classList.remove('err'); }); });
@@ -517,73 +739,87 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     if(!ok){ var firstErr=$('.bw-field.err input, .bw-consent.err'); if(firstErr){ firstErr.scrollIntoView({behavior:'smooth',block:'center'}); if(firstErr.tagName==='INPUT') firstErr.focus({preventScroll:true}); } return null; }
     return {first:first.value.trim(), last:last.value.trim(), email:email.value.trim(), phone:digits};
   }
-  $('#next3').addEventListener('click', function(){
-    var c = validate(); if(!c) return;
-    state.contact = c;
-    $('#s3-sub').textContent = c.first+' '+c.last;
-    renderTopbar();
-    loadCalendar();
-    go(4);
-  });
-  $('#bw-form').addEventListener('submit', function(e){ e.preventDefault(); $('#next3').click(); });
-
-  /* ===== STEP 4: CALENDAR ===== */
   function buildNotes(){
     var g = goalById(state.goal).label, s = S[state.service].name;
-    var d = new Date(); var stamp = d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    var stamp = new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
     return 'Goal: '+g+' | Service: '+s+' | Consent: agreed '+stamp+' via website booking';
   }
-  function calUrl(){
-    var c=state.contact, s=S[state.service];
-    var p = new URLSearchParams();
-    p.set('first_name', c.first); p.set('last_name', c.last); p.set('email', c.email); p.set('phone', c.phone);
-    if(s.ghl) p.set(KEY_SERVICE, s.ghl);
-    p.set(KEY_NOTES, buildNotes());
-    return CAL_BASE + '?' + p.toString();
+  function book(){
+    var c = validate(); if(!c) return;
+    state.contact = c;
+    $('#s4-sub').textContent = c.first+' '+c.last;
+    var btn=$('#bookBtn'); btn.classList.add('is-busy'); $('#book-err').classList.remove('show');
+    var s=S[state.service], notes=buildNotes();
+    var payload = {
+      calendar_id: CAL_ID,
+      location_id: LOC_ID,
+      selected_slot: state.slot,
+      selected_timezone: TZ,
+      Timezone: TZ,
+      first_name: c.first,
+      last_name: c.last,
+      phone: '+1'+c.phone,
+      email: c.email,
+      terms_and_conditions: 'I agree to receive appointment related calls, texts, and emails from The DRIPBaR Edina. I understand this is a booking request, not medical advice. Message and data rates may apply.',
+      title: s.name+' - '+c.first+' '+c.last,
+      notes: notes,
+      eventData: {source: location.href, medium:'calendar', mediumId: CAL_ID, page:{url:location.href, title:document.title}}
+    };
+    payload[KEY_NOTES] = notes;
+    if(s.ghl) payload[KEY_SERVICE] = s.ghl;
+    var fd = new FormData(); fd.append('formData', JSON.stringify(payload));
+    fetch(API+'/appengine/appointment',{method:'POST',body:fd})
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json().catch(function(){return {}}); })
+    .then(function(){
+      state.booked=true; btn.classList.remove('is-busy');
+      renderDone();
+      go(5);
+      try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'appointment_booked', service:s.name, goal:goalById(state.goal).label}); }catch(e){}
+    })
+    .catch(function(){
+      btn.classList.remove('is-busy');
+      $('#book-err').classList.add('show');
+      $('#book-err').scrollIntoView({behavior:'smooth',block:'center'});
+    });
   }
-  var calLoaded = '';
-  function loadCalendar(){
-    var url = calUrl();
-    $('#notes-preview').textContent = buildNotes().split(' | ').slice(0,2).join('  |  ');
-    if(url===calLoaded) return;
-    calLoaded = url;
-    var wrap = $('#bw-cal'), loading = $('#cal-loading');
-    var old = $('iframe', wrap); if(old) old.remove();
-    loading.classList.remove('hide');
-    var f = document.createElement('iframe');
-    f.src = url; f.title = 'Choose an appointment time'; f.setAttribute('scrolling','no'); f.id = CAL_ID+'_'+Date.now();
-    f.addEventListener('load', function(){ setTimeout(function(){ loading.classList.add('hide'); }, 500); });
-    wrap.appendChild(f);
-    if(!window.__bwEmbedJs){ window.__bwEmbedJs=true; var sc=document.createElement('script'); sc.src='https://link.msgsndr.com/js/form_embed.js'; sc.async=true; document.body.appendChild(sc); }
-    setTimeout(function(){ loading.classList.add('hide'); }, 6000);
+  $('#bookBtn').addEventListener('click', book);
+  $('#bw-form').addEventListener('submit', function(e){ e.preventDefault(); book(); });
+
+  /* ===== CONFIRMATION ===== */
+  function toUTC(d){ return d.getUTCFullYear()+pad2(d.getUTCMonth()+1)+pad2(d.getUTCDate())+'T'+pad2(d.getUTCHours())+pad2(d.getUTCMinutes())+'00Z'; }
+  function renderDone(){
+    var s=S[state.service], c=state.contact, g=goalById(state.goal);
+    $('#done-name').textContent = c.first;
+    $('#done-email').textContent = c.email;
+    $('#done-svc').textContent = s.name;
+    $('#done-goal').textContent = g.label;
+    $('#done-when').textContent = fmtDay(state.day);
+    $('#done-time').textContent = fmtTime(state.slot)+' Central';
+    $('#done-pic').innerHTML = picHTML(s);
+    var start=new Date(state.slot), end=new Date(start.getTime()+(s.mins||60)*60000);
+    var title='The DRIPBaR Edina: '+s.name, loc='The DRIPBaR Edina, 3515 W 70th St, Edina, MN 55435', desc='Your appointment at The DRIPBaR Edina. Questions? Call or text (612) 324-4740.';
+    $('#gcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+toUTC(start)+'/'+toUTC(end)+'&details='+encodeURIComponent(desc)+'&location='+encodeURIComponent(loc)+'&ctz='+encodeURIComponent(TZ);
+    var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The DRIPBaR Edina//Booking//EN','BEGIN:VEVENT','UID:'+Date.now()+'@thedripbaredina.com','DTSTAMP:'+toUTC(new Date()),'DTSTART:'+toUTC(start),'DTEND:'+toUTC(end),'SUMMARY:'+title,'LOCATION:'+loc,'DESCRIPTION:'+desc,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    $('#ical').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
   }
-  $('#back4').addEventListener('click', function(){ go(3,true) });
 
   /* ===== NAV ===== */
-  function renderTopbar(){
-    var g=goalById(state.goal), s=S[state.service], c=state.contact;
-    $('#bw-topbar').innerHTML =
-      '<div class="chip"><span class="pic"><span class="isq"><svg><use href="#'+g.icon+'"/></svg></span></span><span><small>Goal</small><b>'+g.label+'</b></span><button type="button" data-go="1">Change</button></div>'+
-      '<div class="chip"><span class="pic">'+picHTML(s)+'</span><span><small>Service</small><b>'+s.name+'</b></span><button type="button" data-go="2">Change</button></div>'+
-      '<div class="chip"><span class="pic"><span class="isq"><svg><use href="#i-users"/></svg></span></span><span><small>Booking for</small><b>'+c.first+' '+c.last+'</b></span><button type="button" data-go="3">Change</button></div>'+
-      '<div class="offer"><i></i><span>New here? <b>$20 off</b> your first appointment</span></div>';
-  }
-  $('#bw-topbar').addEventListener('click', function(e){ var b=e.target.closest('button[data-go]'); if(b) go(+b.getAttribute('data-go'), true); });
   function go(n, back){
     state.step = n;
-    $('#bw').classList.toggle('is-cal', n===4);
     $$('.bw-pane').forEach(function(p){ var on = p.getAttribute('data-pane')==String(n); p.classList.toggle('is-on',on); p.classList.toggle('is-back', on && !!back); });
     $$('.bw-step').forEach(function(s){ var k=+s.getAttribute('data-step'); s.classList.toggle('is-active',k===n); s.classList.toggle('is-done',k<n); });
-    $('#mp-bar').style.width = (n*25)+'%'; $('#mp-txt').textContent = 'Step '+n+' of 4';
+    var pct = Math.min(n,4)*25; $('#mp-bar').style.width = pct+'%'; $('#mp-txt').textContent = n>4 ? 'Booked' : 'Step '+n+' of 4';
     var top = $('#bw').getBoundingClientRect().top + window.pageYOffset - 16;
-    if(window.pageYOffset > top || n===4) window.scrollTo({top:top, behavior:'smooth'});
+    if(window.pageYOffset > top || n>=3) window.scrollTo({top:top, behavior:'smooth'});
   }
   function updateSummary(){
     var sum = $('#bw-summary');
     if(!state.goal){ sum.classList.remove('show'); return; }
     sum.classList.add('show');
-    if(state.service){ var s=S[state.service]; $('#sum-pic').innerHTML = picHTML(s); $('#sum-name').textContent = s.name; $('#sum-meta').textContent = goalById(state.goal).label+' / '+metaText(s); }
-    else { var g=goalById(state.goal); $('#sum-pic').innerHTML='<span class="isq"><svg><use href="#'+g.icon+'"/></svg></span>'; $('#sum-name').textContent = g.label; $('#sum-meta').textContent='Now choose a service'; }
+    if(state.service){
+      var s=S[state.service]; $('#sum-pic').innerHTML = picHTML(s); $('#sum-name').textContent = s.name;
+      $('#sum-meta').textContent = (state.day&&state.slot) ? fmtDay(state.day,true)+' at '+fmtTime(state.slot)+' CT' : goalById(state.goal).label+' / '+metaText(s);
+    } else { var g=goalById(state.goal); $('#sum-pic').innerHTML='<span class="isq"><svg><use href="#'+g.icon+'"/></svg></span>'; $('#sum-name').textContent = g.label; $('#sum-meta').textContent='Now choose a service'; }
   }
 
   /* ===== DEEP LINKS: ?goal=energy  or  ?service=vitality ===== */
@@ -592,7 +828,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     var svc = q.get('service'), goal = q.get('goal');
     if(svc && S[svc]){
       var gid = (goal && MAP[goal] && MAP[goal].indexOf(svc)>=0) ? goal : Object.keys(MAP).filter(function(k){return MAP[k].indexOf(svc)>=0})[0];
-      if(gid){ state.goal=gid; state.service=svc; $('[data-goal="'+gid+'"]',goalsEl).classList.add('is-sel'); $('#next1').disabled=false; $('#s1-sub').textContent=goalById(gid).label; $('#s2-sub').textContent=S[svc].name; renderServices(); renderReview(); updateSummary(); go(3); }
+      if(gid){ state.goal=gid; state.service=svc; $('[data-goal="'+gid+'"]',goalsEl).classList.add('is-sel'); $('#next1').disabled=false; $('#s1-sub').textContent=goalById(gid).label; $('#s2-sub').textContent=S[svc].name; renderServices(); updateSummary(); go(3); loadSlots(); }
     } else if(goal && MAP[goal]){
       state.goal=goal; $('[data-goal="'+goal+'"]',goalsEl).classList.add('is-sel'); $('#next1').disabled=false; $('#s1-sub').textContent=goalById(goal).label; renderServices(); updateSummary(); go(2);
     }
