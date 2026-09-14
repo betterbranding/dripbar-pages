@@ -247,7 +247,8 @@ a{color:var(--cyan)}
 
 <script>
 (function(){
-var CAL_ID='y4r5p2sVvb7WrURHdTm7'; /* Edina default Appointment Booking calendar; swap for a dedicated weight loss calendar if provided */
+var CAL_ID='laWkY37qfAtqqvSRfSl6'; /* Edina GLP-1 Consult calendar (dedicated) */
+var NOTES_FIELD_ID='ftxWE4F5W6LKk7oXnkDA'; /* contact.glp1_consult_notes */
 var LOC_ID='FLJ3lWKPEa7lIRYX5X8C';
 var SLOT_STEP_MIN=15;
 var API='https://backend.leadconnectorhq.com';
@@ -411,6 +412,19 @@ $('bookBtn').onclick=function(){
 
  var digits=ph.value.replace(/\D/g,'');
  if(digits.length===10) digits='1'+digits;
+ var optT=state.opt?state.opt.t:'Not specified';
+ var optD=state.opt?state.opt.d:'';
+ var fullName=fn.value.trim()+' '+ln.value.trim();
+ var details=[
+  'GLP-1 CONSULT DETAILS',
+  'Source: Edina GLP-1 Kickoff page',
+  'Interest: '+optT+(optD?(' ('+optD+')'):''),
+  'Name: '+fullName,
+  'Phone: '+ph.value.trim(),
+  'Email: '+em.value.trim(),
+  'Requested: '+fmtDay(state.selDay)+' at '+fmtTime(state.selSlot)+' CT',
+  'Booked: '+new Date().toLocaleString('en-US',{timeZone:TZ})+' CT'
+ ].join('\n');
  var payload={
   calendar_id:CAL_ID,
   location_id:LOC_ID,
@@ -421,11 +435,13 @@ $('bookBtn').onclick=function(){
   phone:'+'+digits,
   email:em.value.trim(),
   terms_and_conditions:'I consent to being contacted about my appointment by call, text, or email from The DRIPBaR Edina.',
-  title:'GLP-1 Kickoff Consult - '+(state.opt?state.opt.t:'Not specified')+' - '+fn.value.trim()+' '+ln.value.trim(),
-  notes:'GLP-1 Kickoff page. Interest: '+(state.opt?state.opt.t:'Not specified'),
+  title:'GLP-1 Consult with '+fullName,
+  notes:details,
   eventData:{source:location.href,medium:'calendar',mediumId:CAL_ID},
   Timezone:TZ
  };
+ payload[NOTES_FIELD_ID]=details;
+ payload['glp1_consult_notes']=details;
 
  var fd=new FormData();
  fd.append('formData',JSON.stringify(payload));
