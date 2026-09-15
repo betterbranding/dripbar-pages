@@ -415,13 +415,10 @@ $('bookBtn').onclick=function(){
  var optT=state.opt?state.opt.t:'Not specified';
  var optD=state.opt?state.opt.d:'';
  var fullName=fn.value.trim()+' '+ln.value.trim();
+ var interest=optT+(optD?(' ('+optD+')'):'');
  var details=[
-  'GLP-1 CONSULT DETAILS',
+  'Interest: '+interest,
   'Source: Edina GLP-1 Kickoff page',
-  'Interest: '+optT+(optD?(' ('+optD+')'):''),
-  'Name: '+fullName,
-  'Phone: '+ph.value.trim(),
-  'Email: '+em.value.trim(),
   'Requested: '+fmtDay(state.selDay)+' at '+fmtTime(state.selSlot)+' CT',
   'Booked: '+new Date().toLocaleString('en-US',{timeZone:TZ})+' CT'
  ].join('\n');
@@ -441,8 +438,8 @@ $('bookBtn').onclick=function(){
   eventData:{source:location.href,medium:'calendar',mediumId:CAL_ID},
   Timezone:TZ
  };
- payload[NOTES_FIELD_ID]=details;
- payload['glp1_consult_notes']=details;
+ payload[NOTES_FIELD_ID]=interest;
+ payload['glp1_consult_notes']=interest;
 
  var fd=new FormData();
  fd.append('formData',JSON.stringify(payload));
