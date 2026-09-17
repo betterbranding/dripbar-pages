@@ -446,6 +446,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <!-- SVG SYMBOLS -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M2 12.5l4.5 4.5L15 8.5"/><path d="M10 17l1.5 1.5L22 8"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.5-4.5A8 8 0 1 1 21 12z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
@@ -467,7 +468,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <!-- 2. UTILITY BAR -->
 <div class="util">
   <div class="shell">
-    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call or Text: (817) 241-2107</a>
+    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call: (817) 241-2107</a>
+    <a href="sms:+16823544355"><span class="ic"><svg><use href="#i-chat"/></svg></span>Text: (682) 354-4355</a>
     <span><span class="ic"><svg><use href="#i-pin"/></svg></span>Burleson, Texas</span>
     <span><span class="ic"><svg><use href="#i-clock"/></svg></span>Open Today: <span id="hours-today">Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</span></span>
   </div>
@@ -500,7 +502,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <a href="/contact">Contact</a>
     </div>
     <div class="nav-right">
-      <a class="call" href="tel:+18172412107">Call/Text Us</a>
+      <a class="call" href="tel:+18172412107">Call Us</a>
       <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -530,7 +532,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <a href="/quickshots">Quickshots</a>
     <a href="/wellness-therapies">Wellness Therapies</a>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
-    <a class="mphone" href="tel:+18172412107">Call or Text: (817) 241-2107</a>
+    <a class="mphone" href="tel:+18172412107">Call: (817) 241-2107</a>
+    <a class="mphone" href="sms:+16823544355">Text: (682) 354-4355</a>
   </div>
 </div>
 
@@ -593,7 +596,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <button type="button" data-f="metabolic">Detox and Metabolic</button>
       <button type="button" data-f="wellness">Wellness</button>
     </div>
-    <p class="menu-note"><b>Evolve Membership, $179/mo:</b> one Lifestyle drip every month plus monthly wellness credits and 20% off additional services.</p>
+    <p class="menu-note"><b>Evolve Membership, $159/mo:</b> one Lifestyle drip every month plus monthly wellness credits and 20% off additional services.</p>
   </div>
   <div class="rail">
     <button class="rarrow prev" id="railPrev" type="button" aria-label="Previous drips"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
@@ -603,7 +606,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/vitality.webp" alt="Client receiving the Vitality IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="vitality">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/vitality.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -615,7 +618,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/shield.webp" alt="Client receiving the Shield IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="shield">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/shield.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -627,7 +630,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/powerpack.webp" alt="Client receiving the Powerpack IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="powerpack">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/powerpack.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -651,7 +654,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/glutathione.webp" alt="Client receiving the Glutathione IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="glutathione">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/glutathione.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -663,7 +666,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/time-machine.webp" alt="Client receiving the Time Machine IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="time-machine">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/time-machine.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -675,7 +678,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/flu-fighter.webp" alt="Client receiving the Flu Fighter IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="flu-fighter">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/flu-fighter.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -687,7 +690,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/restoration.webp" alt="Client receiving the Restoration IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="restoration">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/restoration.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -699,7 +702,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/metabolize.webp" alt="Client receiving the Metabolize IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="metabolize">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/metabolize.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -711,7 +714,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/allstar.webp" alt="Client receiving the Allstar IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="allstar">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/allstar.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -723,7 +726,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/heavy-metal-detox.webp" alt="Client receiving the Heavy Metal Detox IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="heavy-metal-detox">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/heavy-metal-detox.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -735,7 +738,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/firm.webp" alt="Client receiving the Firm IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="firm">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/firm.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -759,7 +762,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/post-viral.webp" alt="Client receiving the Post Viral IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="post-viral">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/post-viral.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -771,7 +774,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/jetsetter.webp" alt="Client receiving the Jetsetter IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="jetsetter">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/jetsetter.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -783,7 +786,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/allergy.webp" alt="Client receiving the Allergy IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="allergy">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/allergy.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -795,7 +798,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/soother.webp" alt="Client receiving the Soother IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="soother">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/soother.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -807,7 +810,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/maternal-wellness.webp" alt="Client receiving the Maternal Wellness IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="maternal-wellness">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/maternal-wellness.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -819,7 +822,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="dcard">
             <img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/drips/pre-post-op.webp" alt="Client receiving the Pre/Post-Op IV drip at The DRIPBaR Burleson" loading="lazy" width="640" height="800">
             <a class="dbook" href="https://thedripbarburleson.com/booking" data-book="pre-post-op">Book this drip</a>
-            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$179</b></div></div>
+            <div class="dprice"><div class="pr"><small>Regular</small><span>$199</span></div><div class="pm"><small>Member</small><b>$159</b></div></div>
           </div>
           <div class="dshadow"></div>
           <div class="dbag"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/hero/pre-post-op.webp" alt="" loading="lazy" width="416" height="900"></div>
@@ -1037,7 +1040,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <section class="pad">
   <div class="shell how">
     <div class="steps rv">
-      <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Choose a day and time that works, or call or text us at (817) 241-2107. Walk-ins are welcome when the schedule allows.</p></div></div>
+      <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Choose a day and time that works, or call (817) 241-2107 or text (682) 354-4355. Walk-ins are welcome when the schedule allows.</p></div></div>
       <div class="step"><div class="num">2</div><div><h3>A quick health screening</h3><p>Every first-time guest gets a brief screening with our clinical team. It takes a few minutes and keeps your care safe and personal.</p></div></div>
       <div class="step"><div class="num">3</div><div><h3>Relax in the lounge</h3><p>Settle into a recliner while a licensed professional administers your drip or shot. Most IVs take 30 to 60 minutes.</p></div></div>
       <div class="step"><div class="num">4</div><div><h3>Feel the difference</h3><p>Fluids and nutrients go straight into your bloodstream for full absorption. Before you leave, we can help you plan what comes next.</p></div></div>
@@ -1153,7 +1156,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <p>Everything you want to know before your first visit to The DRIPBaR Burleson.</p>
       <div class="faq-help">
         <span class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></span>
-        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call or text (817) 241-2107</a></div>
+        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a></div>
       </div>
     </div>
     <div class="faq-list">
@@ -1193,7 +1196,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <h2>Feed your cells. Fuel your life.</h2>
     <p class="lede">Book your visit and let our clinical team build a plan around your goals. New guests choose their experience and receive up to $100 worth of free perks on the first visit.</p>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Now</a>
-    <div class="fine">Questions first? Call us at <a href="tel:+18172412107">(817) 241-2107</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
+    <div class="fine">Questions first? Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
   </div>
 </section>
 
@@ -1203,7 +1206,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <div class="foot-grid">
       <div>
         <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR" loading="lazy">
-        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br><a href="tel:+18172412107">(817) 241-2107</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
+        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br>Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
         <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
       </div>
       <div class="links">

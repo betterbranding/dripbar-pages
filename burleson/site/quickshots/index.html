@@ -488,6 +488,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <!-- SVG SYMBOLS -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M2 12.5l4.5 4.5L15 8.5"/><path d="M10 17l1.5 1.5L22 8"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.5-4.5A8 8 0 1 1 21 12z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
@@ -516,7 +517,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <!-- 2. UTILITY BAR -->
 <div class="util">
   <div class="shell">
-    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call or Text: (817) 241-2107</a>
+    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call: (817) 241-2107</a>
+    <a href="sms:+16823544355"><span class="ic"><svg><use href="#i-chat"/></svg></span>Text: (682) 354-4355</a>
     <span><span class="ic"><svg><use href="#i-pin"/></svg></span>Burleson, Texas</span>
     <span><span class="ic"><svg><use href="#i-clock"/></svg></span>Open Today: <span id="hours-today">Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</span></span>
   </div>
@@ -549,7 +551,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <a href="/contact">Contact</a>
     </div>
     <div class="nav-right">
-      <a class="call" href="tel:+18172412107">Call/Text Us</a>
+      <a class="call" href="tel:+18172412107">Call Us</a>
       <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -579,7 +581,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <a href="/quickshots">Quickshots</a>
     <a href="/wellness-therapies">Wellness Therapies</a>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
-    <a class="mphone" href="tel:+18172412107">Call or Text: (817) 241-2107</a>
+    <a class="mphone" href="tel:+18172412107">Call: (817) 241-2107</a>
+    <a class="mphone" href="sms:+16823544355">Text: (682) 354-4355</a>
   </div>
 </div>
 
@@ -664,7 +667,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     </div>
     <div class="cmp-foot rv">
       <a class="btn btn-out" href="/help-me-choose">Not sure? Help Me Choose</a>
-      <p class="fine">Regular pricing shown per drip. Member pricing reflects the Evolve Membership monthly rate ($179/mo includes one Lifestyle drip every month plus monthly wellness credits and 20% off additional services). All IV therapy is provided under medical supervision after a brief health screening.</p>
+      <p class="fine">Regular pricing shown per drip. Member pricing reflects the Evolve Membership monthly rate ($159/mo includes one Lifestyle drip every month plus monthly wellness credits and 20% off additional services). All IV therapy is provided under medical supervision after a brief health screening.</p>
     </div>
   </div>
 </section>
@@ -703,7 +706,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <section class="pad">
   <div class="shell how">
     <div class="steps rv">
-      <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Choose a day and time that works, or call or text us at (817) 241-2107. Walk-ins are welcome when the schedule allows.</p></div></div>
+      <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Choose a day and time that works, or call (817) 241-2107 or text (682) 354-4355. Walk-ins are welcome when the schedule allows.</p></div></div>
       <div class="step"><div class="num">2</div><div><h3>A quick health screening</h3><p>Every first-time guest gets a brief screening with our clinical team. It takes a few minutes and keeps your care safe and personal.</p></div></div>
       <div class="step"><div class="num">3</div><div><h3>Relax in the lounge</h3><p>Settle into a recliner while a licensed professional administers your drip or shot. Most IVs take 30 to 60 minutes.</p></div></div>
       <div class="step"><div class="num">4</div><div><h3>Feel the difference</h3><p>Fluids and nutrients go straight into your bloodstream for full absorption. Before you leave, we can help you plan what comes next.</p></div></div>
@@ -789,7 +792,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <p>Everything you want to know about quickshots at The DRIPBaR Burleson.</p>
       <div class="faq-help">
         <span class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></span>
-        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call or text (817) 241-2107</a></div>
+        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a></div>
       </div>
     </div>
     <div class="faq-list">
@@ -827,7 +830,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <h2>Ready for a quickshot?</h2>
     <p class="lede">Book your quickshot at The DRIPBaR Burleson and get targeted support in under 15 minutes.</p>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="quickshot">Book Now</a>
-    <div class="fine">Questions first? Call or text <a href="tel:+18172412107">(817) 241-2107</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
+    <div class="fine">Questions first? Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
   </div>
 </section>
 
@@ -837,7 +840,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <div class="foot-grid">
       <div>
         <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR" loading="lazy">
-        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br><a href="tel:+18172412107">(817) 241-2107</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
+        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br>Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
         <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
       </div>
       <div class="links">

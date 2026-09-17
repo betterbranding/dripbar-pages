@@ -789,6 +789,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <!-- SVG SYMBOLS -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M2 12.5l4.5 4.5L15 8.5"/><path d="M10 17l1.5 1.5L22 8"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.5-4.5A8 8 0 1 1 21 12z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
@@ -817,7 +818,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <!-- 2. UTILITY BAR -->
 <div class="util">
   <div class="shell">
-    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call or Text: (817) 241-2107</a>
+    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call: (817) 241-2107</a>
+    <a href="sms:+16823544355"><span class="ic"><svg><use href="#i-chat"/></svg></span>Text: (682) 354-4355</a>
     <span><span class="ic"><svg><use href="#i-pin"/></svg></span>Burleson, Texas</span>
     <span><span class="ic"><svg><use href="#i-clock"/></svg></span>Open Today: <span id="hours-today">Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</span></span>
   </div>
@@ -850,7 +852,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <a href="/contact">Contact</a>
     </div>
     <div class="nav-right">
-      <a class="call" href="tel:+18172412107">Call/Text Us</a>
+      <a class="call" href="tel:+18172412107">Call Us</a>
       <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -880,7 +882,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <a href="/quickshots">Quickshots</a>
     <a href="/wellness-therapies">Wellness Therapies</a>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
-    <a class="mphone" href="tel:+18172412107">Call or Text: (817) 241-2107</a>
+    <a class="mphone" href="tel:+18172412107">Call: (817) 241-2107</a>
+    <a class="mphone" href="sms:+16823544355">Text: (682) 354-4355</a>
   </div>
 </div>
 
@@ -939,7 +942,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <div class="pic" id="sum-pic"></div>
       <div><small>Your visit</small><b id="sum-name"></b><span id="sum-meta"></span></div>
     </div>
-    <div class="help"><span class="ico"><svg><use href="#bwi-phone"/></svg></span><span>Prefer to talk? <a href="tel:+18172412107">Call or text (817) 241-2107</a></span></div>
+    <div class="help"><span class="ico"><svg><use href="#bwi-phone"/></svg></span><span>Prefer to talk? <a href="tel:+18172412107">Call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a></span></div>
   </aside>
 
   <div class="bw-main">
@@ -979,7 +982,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           </div>
           <div class="bw-times" id="bw-times"></div>
         </div>
-        <div class="bw-empty" id="cal-err" style="display:none"><div><span class="isq"><svg><use href="#bwi-phone"/></svg></span><b>We could not load the calendar</b>Refresh the page to try again, or <a href="tel:+18172412107">call or text (817) 241-2107</a> and we will get you booked.</div></div>
+        <div class="bw-empty" id="cal-err" style="display:none"><div><span class="isq"><svg><use href="#bwi-phone"/></svg></span><b>We could not load the calendar</b>Refresh the page to try again, or <a href="tel:+18172412107">call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a> and we will get you booked.</div></div>
       </div>
       <div class="bw-foot"><button class="bw-back" id="back3"><svg><use href="#bwi-back"/></svg>Back</button><div class="right"><span class="bw-selpill" id="sel-pill"><i></i><span id="sel-pill-txt"></span></span><button class="btn btn-lime" id="next3" disabled>Continue<svg><use href="#bwi-arrow"/></svg></button></div></div>
     </div>
@@ -998,7 +1001,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div class="bw-field"><label for="f-phone">Mobile phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(817) 555-0123" required><div class="msg">Please enter a 10 digit phone number.</div></div>
           <label class="bw-consent" id="bw-consent"><input type="checkbox" id="f-consent"><span class="box"><svg><use href="#bwi-check"/></svg></span><p><b>Consent.</b> I agree to receive appointment related calls, texts, and emails from The DRIPBaR Burleson. I understand this is a booking request, not medical advice. Message and data rates may apply.</p></label>
           <div class="bw-notes"><svg><use href="#bwi-info"/></svg><div><b>What our team will already know:</b> <span id="notes-preview"></span></div></div>
-          <div class="bw-error" id="book-err">That time was just taken or something went wrong. <a href="#" id="book-retry">Pick another time</a> or <a href="tel:+18172412107">call or text (817) 241-2107</a>.</div>
+          <div class="bw-error" id="book-err">That time was just taken or something went wrong. <a href="#" id="book-retry">Pick another time</a> or <a href="tel:+18172412107">call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a>.</div>
         </form>
       </div>
       <div class="bw-foot"><button class="bw-back" id="back4"><svg><use href="#bwi-back"/></svg>Back</button><div class="right"><span class="bw-secure"><svg><use href="#bwi-lock"/></svg>Your details are never shared</span><button class="btn btn-lime" id="bookBtn"><span class="spin"></span><span class="lbl-idle">Book my appointment</span><span class="lbl-busy">Booking</span><svg class="lbl-idle"><use href="#bwi-check"/></svg></button></div></div>
@@ -1026,7 +1029,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <div><span class="isq"><svg><use href="#bwi-clock"/></svg></span><b>Arrive 5 minutes early</b><span>Then settle in. Most drips take 30 to 60 minutes.</span></div>
         </div>
       </div>
-      <div class="bw-foot"><span class="bw-hint">Need to change it? Call or text (817) 241-2107</span><a class="btn btn-teal" href="https://thedripbarburleson.com/">Back to the site<svg><use href="#bwi-arrow"/></svg></a></div>
+      <div class="bw-foot"><span class="bw-hint">Need to change it? Call (817) 241-2107 or text (682) 354-4355</span><a class="btn btn-teal" href="https://thedripbarburleson.com/">Back to the site<svg><use href="#bwi-arrow"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -1043,7 +1046,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <p>Booking, arriving, and rescheduling at The DRIPBaR Burleson.</p>
       <div class="faq-help">
         <span class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></span>
-        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call or text (817) 241-2107</a></div>
+        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a></div>
       </div>
     </div>
     <div class="faq-list">
@@ -1053,7 +1056,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       </details>
       <details class="faq-item rv">
         <summary>Can I walk in without an appointment?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call or text us at (817) 241-2107 to check same-day availability.</div>
+        <div class="ans">Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call (817) 241-2107 or text (682) 354-4355 to check same-day availability.</div>
       </details>
       <details class="faq-item rv">
         <summary>How do I book a consultation instead of a drip?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -1061,7 +1064,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       </details>
       <details class="faq-item rv">
         <summary>What if I need to reschedule?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Call or text (817) 241-2107 and we will move your appointment. Please give us as much notice as you can so another guest can use the time.</div>
+        <div class="ans">Call (817) 241-2107 or text (682) 354-4355 and we will move your appointment. Please give us as much notice as you can so another guest can use the time.</div>
       </details>
       <details class="faq-item rv">
         <summary>Does the new guest offer apply online?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -1077,7 +1080,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <h2>Your recliner is waiting.</h2>
     <p class="lede">Book your visit and let our clinical team build a plan around your goals. New guests choose their experience and receive up to $100 worth of free perks on the first visit.</p>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Now</a>
-    <div class="fine">Questions first? Call or text <a href="tel:+18172412107">(817) 241-2107</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
+    <div class="fine">Questions first? Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
   </div>
 </section>
 
@@ -1087,7 +1090,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <div class="foot-grid">
       <div>
         <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR" loading="lazy">
-        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br><a href="tel:+18172412107">(817) 241-2107</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
+        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br>Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
         <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
       </div>
       <div class="links">
@@ -1169,7 +1172,7 @@ const BOOKING = { default: B,
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens after I book?","acceptedAnswer":{"@type":"Answer","text":"You will get a confirmation by text and email with your time and our address, 295 E. Renfro St, Ste 207, Burleson, TX 76028. Arrive a few minutes early for your first visit so we can complete your health screening."}},{"@type":"Question","name":"Can I walk in without an appointment?","acceptedAnswer":{"@type":"Answer","text":"Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call or text us at (817) 241-2107 to check same-day availability."}},{"@type":"Question","name":"How do I book a consultation instead of a drip?","acceptedAnswer":{"@type":"Answer","text":"Choose the Consultations option below. GLP-1 weight management, peptide therapy, High Dose Vitamin C, and Ozone Therapy all begin with a scheduled consultation."}},{"@type":"Question","name":"What if I need to reschedule?","acceptedAnswer":{"@type":"Answer","text":"Call or text (817) 241-2107 and we will move your appointment. Please give us as much notice as you can so another guest can use the time."}},{"@type":"Question","name":"Does the new guest offer apply online?","acceptedAnswer":{"@type":"Answer","text":"Yes. New guests choose their experience and receive up to $100 worth of free perks on the first visit: a Lifestyle drip, a booster add-on, and one supportive therapy. One per new guest."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens after I book?","acceptedAnswer":{"@type":"Answer","text":"You will get a confirmation by text and email with your time and our address, 295 E. Renfro St, Ste 207, Burleson, TX 76028. Arrive a few minutes early for your first visit so we can complete your health screening."}},{"@type":"Question","name":"Can I walk in without an appointment?","acceptedAnswer":{"@type":"Answer","text":"Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call (817) 241-2107 or text (682) 354-4355 to check same-day availability."}},{"@type":"Question","name":"How do I book a consultation instead of a drip?","acceptedAnswer":{"@type":"Answer","text":"Choose the Consultations option below. GLP-1 weight management, peptide therapy, High Dose Vitamin C, and Ozone Therapy all begin with a scheduled consultation."}},{"@type":"Question","name":"What if I need to reschedule?","acceptedAnswer":{"@type":"Answer","text":"Call (817) 241-2107 or text (682) 354-4355 and we will move your appointment. Please give us as much notice as you can so another guest can use the time."}},{"@type":"Question","name":"Does the new guest offer apply online?","acceptedAnswer":{"@type":"Answer","text":"Yes. New guests choose their experience and receive up to $100 worth of free perks on the first visit: a Lifestyle drip, a booster add-on, and one supportive therapy. One per new guest."}}]}</script>
 
 <script>
 (function(){
@@ -1203,28 +1206,28 @@ const BOOKING = { default: B,
   ];
   // type: drip | shot | consult | therapy | unsure ; ghl = option label in the calendar form's service dropdown ; cal = CALS key
   var S = {
-    vitality: {"name":"Vitality","type":"drip","img":"vitality","reg":"$199","blurb":"Adrenal support and steady energy","ghl":"Energy","dur":"30 to 60 min","mins":60,"cal":"vitality","mem":"$179"},
+    vitality: {"name":"Vitality","type":"drip","img":"vitality","reg":"$199","blurb":"Adrenal support and steady energy","ghl":"Energy","dur":"30 to 60 min","mins":60,"cal":"vitality","mem":"$159"},
     debut: {"name":"The Debut","type":"drip","img":"debut","reg":"$139","blurb":"Foundational wellness for first timers","ghl":"Energy","dur":"30 to 60 min","mins":60,"cal":"debut","note":"Ask about member pricing"},
     ala: {"name":"Alpha Lipoic Acid","type":"drip","img":"ala","reg":"From $149","blurb":"Cellular energy and nerve support","ghl":"Detox","dur":"30 to 45 min","mins":45,"cal":"iv","note":"200 mg to 600 mg, priced by dose"},
-    flu: {"name":"Flu Fighter","type":"drip","img":"flu-fighter","reg":"$199","blurb":"Cold, flu, and sinus support","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"flu-fighter","mem":"$179"},
-    shield: {"name":"Shield","type":"drip","img":"shield","reg":"$199","blurb":"High-potency immune barrier support","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"shield","mem":"$179"},
-    postviral: {"name":"Post Viral","type":"drip","img":"post-viral","reg":"$199","blurb":"Recovery after illness","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"post-viral","mem":"$179"},
-    jetsetter: {"name":"Jetsetter","type":"drip","img":"jetsetter","reg":"$199","blurb":"Jet lag and travel fatigue","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"jetsetter","mem":"$179"},
-    allergy: {"name":"Allergy","type":"drip","img":"allergy","reg":"$199","blurb":"Seasonal allergy relief","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"allergy","mem":"$179"},
+    flu: {"name":"Flu Fighter","type":"drip","img":"flu-fighter","reg":"$199","blurb":"Cold, flu, and sinus support","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"flu-fighter","mem":"$159"},
+    shield: {"name":"Shield","type":"drip","img":"shield","reg":"$199","blurb":"High-potency immune barrier support","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"shield","mem":"$159"},
+    postviral: {"name":"Post Viral","type":"drip","img":"post-viral","reg":"$199","blurb":"Recovery after illness","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"post-viral","mem":"$159"},
+    jetsetter: {"name":"Jetsetter","type":"drip","img":"jetsetter","reg":"$199","blurb":"Jet lag and travel fatigue","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"jetsetter","mem":"$159"},
+    allergy: {"name":"Allergy","type":"drip","img":"allergy","reg":"$199","blurb":"Seasonal allergy relief","ghl":"Immunity","dur":"30 to 60 min","mins":60,"cal":"allergy","mem":"$159"},
     hdc: {"name":"High Dose Vitamin C","type":"consult","img":"high-dose-vitamin-c","reg":"Consult","note":"From $179, priced by dose","blurb":"Specialized high dose infusion, consult first","ghl":"High Dose Vitamin C","dur":"Consult first","mins":30,"cal":"iv"},
-    restoration: {"name":"Restoration","type":"drip","img":"restoration","reg":"$199","blurb":"Rehydrate and bounce back","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"restoration","mem":"$179"},
+    restoration: {"name":"Restoration","type":"drip","img":"restoration","reg":"$199","blurb":"Rehydrate and bounce back","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"restoration","mem":"$159"},
     hydration: {"name":"100% Hydration","type":"drip","img":"100-percent-hydration","reg":"$99","note":"Ask about member pricing","blurb":"Pure hydration with electrolytes","ghl":"Hydration & Recovery","dur":"30 to 45 min","mins":45,"cal":"hydration"},
-    powerpack: {"name":"Powerpack","type":"drip","img":"powerpack","reg":"$199","blurb":"Performance and post-workout recovery","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"powerpack","mem":"$179"},
-    allstar: {"name":"Allstar","type":"drip","img":"allstar","reg":"$199","blurb":"Muscle recovery and cellular repair","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"allstar","mem":"$179"},
-    prepostop: {"name":"Pre/Post-Op","type":"drip","img":"pre-post-op","reg":"$199","blurb":"Surgical recovery and tissue healing","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"pre-post-op","mem":"$179"},
-    soother: {"name":"Soother","type":"drip","img":"soother","reg":"$199","blurb":"Stress, tension, and headache support","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"soother","mem":"$179"},
-    maternal: {"name":"Maternal Wellness","type":"drip","img":"maternal-wellness","reg":"$199","blurb":"Hydration and nausea support in pregnancy","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"iv","mem":"$179"},
-    timemachine: {"name":"Time Machine","type":"drip","img":"time-machine","reg":"$199","blurb":"Anti-aging and skin health","ghl":"Help me choose","dur":"30 to 60 min","mins":60,"cal":"time-machine","mem":"$179"},
-    firm: {"name":"Firm","type":"drip","img":"firm","reg":"$199","blurb":"Collagen and skin tone support","ghl":"Help me choose","dur":"30 to 60 min","mins":60,"cal":"firm","mem":"$179"},
-    glutathione: {"name":"Glutathione","type":"drip","img":"glutathione","reg":"$199","blurb":"Master antioxidant for skin and detox","ghl":"Detox","dur":"30 to 60 min","mins":60,"cal":"glutathione","mem":"$179"},
+    powerpack: {"name":"Powerpack","type":"drip","img":"powerpack","reg":"$199","blurb":"Performance and post-workout recovery","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"powerpack","mem":"$159"},
+    allstar: {"name":"Allstar","type":"drip","img":"allstar","reg":"$199","blurb":"Muscle recovery and cellular repair","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"allstar","mem":"$159"},
+    prepostop: {"name":"Pre/Post-Op","type":"drip","img":"pre-post-op","reg":"$199","blurb":"Surgical recovery and tissue healing","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"pre-post-op","mem":"$159"},
+    soother: {"name":"Soother","type":"drip","img":"soother","reg":"$199","blurb":"Stress, tension, and headache support","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"soother","mem":"$159"},
+    maternal: {"name":"Maternal Wellness","type":"drip","img":"maternal-wellness","reg":"$199","blurb":"Hydration and nausea support in pregnancy","ghl":"Hydration & Recovery","dur":"30 to 60 min","mins":60,"cal":"iv","mem":"$159"},
+    timemachine: {"name":"Time Machine","type":"drip","img":"time-machine","reg":"$199","blurb":"Anti-aging and skin health","ghl":"Help me choose","dur":"30 to 60 min","mins":60,"cal":"time-machine","mem":"$159"},
+    firm: {"name":"Firm","type":"drip","img":"firm","reg":"$199","blurb":"Collagen and skin tone support","ghl":"Help me choose","dur":"30 to 60 min","mins":60,"cal":"firm","mem":"$159"},
+    glutathione: {"name":"Glutathione","type":"drip","img":"glutathione","reg":"$199","blurb":"Master antioxidant for skin and detox","ghl":"Detox","dur":"30 to 60 min","mins":60,"cal":"glutathione","mem":"$159"},
     nad: {"name":"NAD+","type":"drip","img":"nad-plus","reg":"From $199","blurb":"Cellular repair and healthy aging","ghl":"NAD+ (IVs & Shots)","dur":"2 to 4 hours","mins":180,"cal":"iv","note":"125 mg $199, 250 mg $398, 500 mg $449"},
-    hmd: {"name":"Heavy Metal Detox","type":"drip","img":"heavy-metal-detox","reg":"$199","blurb":"Nutrient support for detox pathways","ghl":"Detox","dur":"30 to 60 min","mins":60,"cal":"heavy-metal-detox","mem":"$179"},
-    metabolize: {"name":"Metabolize","type":"drip","img":"metabolize","reg":"$199","blurb":"Metabolism, thyroid, and gut support","ghl":"Medical Weight Loss","dur":"30 to 60 min","mins":60,"cal":"metabolize","mem":"$179"},
+    hmd: {"name":"Heavy Metal Detox","type":"drip","img":"heavy-metal-detox","reg":"$199","blurb":"Nutrient support for detox pathways","ghl":"Detox","dur":"30 to 60 min","mins":60,"cal":"heavy-metal-detox","mem":"$159"},
+    metabolize: {"name":"Metabolize","type":"drip","img":"metabolize","reg":"$199","blurb":"Metabolism, thyroid, and gut support","ghl":"Medical Weight Loss","dur":"30 to 60 min","mins":60,"cal":"metabolize","mem":"$159"},
     shot_b12: {"name":"IM B12 Quick Shot","type":"shot","icon":"bwi-syringe","reg":"$25","blurb":"Energy and red blood cell support, under 15 min","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
     shot_super: {"name":"IM Supercharged","type":"shot","icon":"bwi-syringe","reg":"$50","blurb":"B12, biotin, B5 for metabolism and clarity","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
     shot_strong: {"name":"IM Strong","type":"shot","icon":"bwi-syringe","reg":"$50","blurb":"B12, L-arginine, taurine for clean energy","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
@@ -1567,7 +1570,7 @@ const BOOKING = { default: B,
     $('#done-time').textContent = fmtTime(state.slot)+' Central';
     $('#done-pic').innerHTML = picHTML(s);
     var start=new Date(state.slot), end=new Date(start.getTime()+(s.mins||60)*60000);
-    var title='The DRIPBaR Burleson: '+s.name, loc='The DRIPBaR Burleson, 295 E. Renfro St Ste 207, Burleson, TX 76028', desc='Your appointment at The DRIPBaR Burleson. Questions? Call or text (817) 241-2107.';
+    var title='The DRIPBaR Burleson: '+s.name, loc='The DRIPBaR Burleson, 295 E. Renfro St Ste 207, Burleson, TX 76028', desc='Your appointment at The DRIPBaR Burleson. Questions? Call (817) 241-2107 or text (682) 354-4355.';
     $('#gcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+toUTC(start)+'/'+toUTC(end)+'&details='+encodeURIComponent(desc)+'&location='+encodeURIComponent(loc)+'&ctz='+encodeURIComponent(TZ);
     var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The DRIPBaR Burleson//Booking//EN','BEGIN:VEVENT','UID:'+Date.now()+'@thedripbarburleson.com','DTSTAMP:'+toUTC(new Date()),'DTSTART:'+toUTC(start),'DTEND:'+toUTC(end),'SUMMARY:'+title,'LOCATION:'+loc,'DESCRIPTION:'+desc,'END:VEVENT','END:VCALENDAR'].join('\r\n');
     $('#ical').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
