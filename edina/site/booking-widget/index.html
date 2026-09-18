@@ -375,7 +375,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <div class="bw-pane" data-pane="2">
       <div class="bw-kicker">Step 2 of 4</div>
       <h2>What would you like to book?<span class="bw-goalchip" id="goal-chip"><i></i><span id="goal-chip-txt"></span></span></h2>
-      <p class="lede" id="svc-lede">Choose one. You can always adjust with our clinical team when you arrive.</p>
+      <p class="lede" id="svc-lede">Choose one. You can always adjust with our wellness team when you arrive.</p>
       <div class="bw-body"><div class="bw-services" id="bw-services"></div></div>
       <div class="bw-foot"><button class="bw-back" id="back2"><svg><use href="#i-back"/></svg>Back</button><button class="btn btn-lime" id="next2" disabled style="display:none">Choose a time<svg><use href="#i-cal"/></svg></button></div>
     </div>
@@ -438,7 +438,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
         <div class="bw-addcal"><a class="btn btn-ghost" id="gcal" target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Add to Google Calendar</a><a class="btn btn-ghost" id="ical" download="dripbar-edina-appointment.ics"><svg><use href="#i-cal"/></svg>Apple / Outlook (.ics)</a><a class="btn btn-ghost" href="https://maps.google.com/?q=The+DRIPBaR+Edina+3515+W+70th+St+Edina+MN+55435" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a></div>
         <div class="bw-expect">
           <div><span class="isq"><svg><use href="#i-glass"/></svg></span><b>Hydrate and eat</b><span>A light meal and water before your visit makes the drip easier.</span></div>
-          <div><span class="isq"><svg><use href="#i-id"/></svg></span><b>Bring your ID</b><span>Our clinical team completes a quick screening before every first visit.</span></div>
+          <div><span class="isq"><svg><use href="#i-id"/></svg></span><b>Bring your ID</b><span>Our wellness team will greet you and get you settled at your first visit.</span></div>
           <div><span class="isq"><svg><use href="#i-clock"/></svg></span><b>Arrive 5 minutes early</b><span>Then settle in. Most drips take 30 to 60 minutes.</span></div>
         </div>
       </div>
@@ -448,7 +448,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 </section>
 </main>
 
-<footer class="page-foot wrap">The DRIPBaR Edina, 3515 W 70th St, Edina, MN 55435. Appointments are screened by our clinical team. Member pricing applies to Lifestyle Membership drips.</footer>
+<footer class="page-foot wrap">The DRIPBaR Edina, 3515 W 70th St, Edina, MN 55435. Appointments are screened by our wellness team. Member pricing applies to Lifestyle Membership drips.</footer>
 
 <script>
 (function(){
@@ -477,27 +477,28 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   ];
   // type: drip | shot | consult | therapy | unsure ; ghl = exact option label in the calendar's service dropdown ('' = no matching option)
   var S = {
-    vitality:   {name:'Vitality',           type:'drip', img:'vitality',          reg:'$224', mem:'$179', blurb:'Adrenal support and steady energy',            ghl:'Vitality Drip',  dur:'30 to 60 min', mins:60},
-    debut:      {name:'The Debut',          type:'drip', img:'debut',             reg:'$224', mem:'$179', blurb:'Foundational wellness for first timers',        ghl:'Debut Drip',     dur:'30 to 60 min', mins:60},
-    ala:        {name:'Alpha Lipoic Acid',  type:'drip', img:'ala',               reg:'$100', note:'Members save 50% on add-on drips', blurb:'Cellular energy and nerve support', ghl:'ALA (Alpha Lipoic Acid) Drip', dur:'30 to 45 min', mins:45},
+    vitality:   {name:'Vitality',           type:'drip', img:'vitality',          reg:'$224', mem:'$179', blurb:'Energy and libido support',            ghl:'Vitality Drip',  dur:'30 to 60 min', mins:60},
+    debut:      {name:'The Debut',          type:'drip', img:'debut',             reg:'$165', note:'Same price for members and guests', blurb:'Classic Myers Cocktail for first timers',        ghl:'Debut Drip',     dur:'30 to 60 min', mins:60},
+    ala:        {name:'Alpha Lipoic Acid',  type:'drip', img:'ala',               reg:'$199', mem:'$159', blurb:'Nerve health support', ghl:'ALA (Alpha Lipoic Acid) Drip', dur:'30 to 45 min', mins:45},
     shield:     {name:'Shield',             type:'drip', img:'shield',            reg:'$224', mem:'$179', blurb:'Seasonal immune defense',                       ghl:'Shield Drip',    dur:'30 to 60 min', mins:60},
     flu:        {name:'Flu Fighter',        type:'drip', img:'flu-fighter',       reg:'$224', mem:'$179', blurb:'Cold, flu, and sinus support',                  ghl:'Flu Fighter Drip',dur:'30 to 60 min', mins:60},
     postviral:  {name:'Post Viral',         type:'drip', img:'post-viral',        reg:'$224', mem:'$179', blurb:'Recovery after illness',                        ghl:'Post Viral Drip',dur:'30 to 60 min', mins:60},
-    jetsetter:  {name:'Jetsetter',          type:'drip', img:'jetsetter',         reg:'$224', mem:'$179', blurb:'Jet lag and travel fatigue',                    ghl:'Jetsetter Drip', dur:'30 to 60 min', mins:60},
+    jetsetter:  {name:'Jetsetter',          type:'drip', img:'jetsetter',         reg:'$224', mem:'$179', blurb:'Immunity and energy for travel',                    ghl:'Jetsetter Drip', dur:'30 to 60 min', mins:60},
     allergy:    {name:'Allergy',            type:'drip', img:'allergy',           reg:'$224', mem:'$179', blurb:'Seasonal allergy relief',                       ghl:'Allergy Drip',   dur:'30 to 60 min', mins:60},
-    hdc:        {name:'High Dose Vitamin C',type:'consult', img:'high-dose-vitamin-c', reg:'Consult', note:'Priced at consultation', blurb:'Specialized high dose infusion, consult first', ghl:'High C Drip', dur:'Consult first', mins:30},
-    restoration:{name:'Restoration',        type:'drip', img:'restoration',       reg:'$109', note:'Members save 50% on add-on drips', blurb:'Rehydrate and bounce back', ghl:'Restoration Drip', dur:'30 to 45 min', mins:45},
-    powerpack:  {name:'Powerpack',          type:'drip', img:'powerpack',         reg:'$224', mem:'$179', blurb:'Performance and post-workout recovery',         ghl:'Powerpack Drip', dur:'30 to 60 min', mins:60},
-    allstar:    {name:'Allstar',            type:'drip', img:'allstar',           reg:'$224', mem:'$179', blurb:'Muscle recovery and cellular repair',           ghl:'Allstar Drip',   dur:'30 to 60 min', mins:60},
+    hdc:        {name:'High Dose Vitamin C',type:'consult', img:'high-dose-vitamin-c', reg:'From $189', note:'Set at your consultation', blurb:'Specialized high dose infusion, consult first', ghl:'High C Drip', dur:'Consult first', mins:30},
+    restoration:{name:'Restoration',        type:'drip', img:'restoration',       reg:'$224', mem:'$179', blurb:'Rehydrate and bounce back', ghl:'Restoration Drip', dur:'30 to 45 min', mins:45},
+    hydration:  {name:'100% Hydration',     type:'drip', img:'100-percent-hydration',       reg:'$109', note:'Same price for members and guests', blurb:'Pure fluids and electrolytes', ghl:'100% Hydration Drip', dur:'30 to 45 min', mins:45},
+    powerpack:  {name:'Powerpack',          type:'drip', img:'powerpack',         reg:'$224', mem:'$179', blurb:'Energy and focus',         ghl:'Powerpack Drip', dur:'30 to 60 min', mins:60},
+    allstar:    {name:'Allstar',            type:'drip', img:'allstar',           reg:'$224', mem:'$179', blurb:'Muscle recovery and energy',           ghl:'Allstar Drip',   dur:'30 to 60 min', mins:60},
     prepostop:  {name:'Pre/Post-Op',        type:'drip', img:'pre-post-op',       reg:'$224', mem:'$179', blurb:'Surgical recovery and tissue healing',          ghl:'Preop Drip',     dur:'30 to 60 min', mins:60},
-    soother:    {name:'Soother',            type:'drip', img:'soother',           reg:'$224', mem:'$179', blurb:'Stress, tension, and headache support',         ghl:'Soother Drip',   dur:'30 to 60 min', mins:60},
-    maternal:   {name:'Maternal Wellness',  type:'drip', img:'maternal-wellness', reg:'$179', mem:'$179', blurb:'Hydration and nausea support in pregnancy',     ghl:'',               dur:'30 to 60 min', mins:60},
-    timemachine:{name:'Time Machine',       type:'drip', img:'time-machine',      reg:'$224', mem:'$179', blurb:'Anti-aging and skin health',                    ghl:'Time Machine Drip',dur:'30 to 60 min', mins:60},
-    firm:       {name:'Firm',               type:'drip', img:'firm',              reg:'$224', mem:'$179', blurb:'Collagen and skin tone support',                ghl:'Firm Drip',      dur:'30 to 60 min', mins:60},
-    glutathione:{name:'Glutathione',        type:'drip', img:'glutathione',       reg:'$120', note:'Members save 50% on add-on drips', blurb:'Master antioxidant for skin and detox', ghl:'Glutathione Drip', dur:'20 to 30 min', mins:30},
-    nad:        {name:'NAD+',               type:'drip', img:'nad-plus',          reg:'$500', note:'Ask about member pricing', blurb:'Cellular repair and healthy aging', ghl:'NAD+ Drip', dur:'2 to 4 hours', mins:180},
+    soother:    {name:'Soother',            type:'drip', img:'soother',           reg:'$224', mem:'$179', blurb:'Calm mind and muscles',         ghl:'Soother Drip',   dur:'30 to 60 min', mins:60},
+    maternal:   {name:'Maternal Wellness',  type:'drip', img:'maternal-wellness', reg:'$224', mem:'$179', blurb:'Hydration and nausea support in pregnancy',     ghl:'',               dur:'30 to 60 min', mins:60},
+    timemachine:{name:'Time Machine',       type:'drip', img:'time-machine',      reg:'$224', mem:'$179', blurb:'Anti-aging',                    ghl:'Time Machine Drip',dur:'30 to 60 min', mins:60},
+    firm:       {name:'Firm',               type:'drip', img:'firm',              reg:'$224', mem:'$179', blurb:'Healthy hair, skin, and nails',                ghl:'Firm Drip',      dur:'30 to 60 min', mins:60},
+    glutathione:{name:'Glutathione',        type:'drip', img:'glutathione',       reg:'$224', mem:'$179', blurb:'Skin brightening and inflammation support', ghl:'Glutathione Drip', dur:'20 to 30 min', mins:30},
+    nad:        {name:'NAD+',               type:'drip', img:'nad-plus',          reg:'$199', mem:'$159', blurb:'Cellular energy and healthy aging, $40 consult first', ghl:'NAD+ Drip', dur:'2 to 4 hours', mins:180},
     hmd:        {name:'Heavy Metal Detox',  type:'drip', img:'heavy-metal-detox', reg:'$224', mem:'$179', blurb:'Nutrient support for detox pathways',           ghl:'',               dur:'30 to 60 min', mins:60},
-    metabolize: {name:'Metabolize',         type:'drip', img:'metabolize',        reg:'$189', mem:'$179', blurb:'Metabolism, thyroid, and gut support',          ghl:'Metabolize Drip',dur:'30 to 60 min', mins:60},
+    metabolize: {name:'Metabolize',         type:'drip', img:'metabolize',        reg:'$224', mem:'$179', blurb:'Metabolism, thyroid, and gut support',          ghl:'Metabolize Drip',dur:'30 to 60 min', mins:60},
     shot_b12:   {name:'IM B12 Quick Shot',  type:'shot', icon:'i-syringe',        reg:'$25',  blurb:'Energy and red blood cell support, under 15 min',       ghl:'IM B12',         dur:'Under 15 min', mins:15},
     shot_super: {name:'IM Supercharged',    type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, biotin, B5 for metabolism and clarity',            ghl:'IM Other',       dur:'Under 15 min', mins:15},
     shot_strong:{name:'IM Strong',          type:'shot', icon:'i-syringe',        reg:'$50',  blurb:'B12, L-arginine, taurine for clean energy',             ghl:'IM Other',       dur:'Under 15 min', mins:15},
@@ -510,12 +511,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     redlight:   {name:'Red Light Therapy',  type:'therapy', icon:'i-sun',         reg:'Ask about pricing', blurb:'Red and near infrared light for skin and recovery', ghl:'Red Light Therapy', dur:'20 to 30 min', mins:30},
     sauna:      {name:'Infrared Sauna',     type:'therapy', icon:'i-wave',        reg:'Ask about pricing', blurb:'Full spectrum infrared suite',               ghl:'Infrared Sauna', dur:'20 to 40 min', mins:40},
     halo:       {name:'Halotherapy',        type:'therapy', icon:'i-leaf',        reg:'Ask about pricing', blurb:'Salt therapy for respiratory and skin support', ghl:'',            dur:'20 to 40 min', mins:40},
-    unsure:     {name:'Help me choose at my visit', type:'unsure', icon:'i-help', reg:'', blurb:'Book a screening slot and decide with our clinical team', ghl:'Not Sure', dur:'15 min screening', mins:30}
+    unsure:     {name:'Help me choose at my visit', type:'unsure', icon:'i-help', reg:'', blurb:'Book a short visit and decide with our wellness team', ghl:'Not Sure', dur:'15 min visit', mins:30}
   };
   var MAP = {
     energy:   ['vitality','debut','ala','shot_super','shot_strong','shot_b12'],
     immunity: ['shield','flu','postviral','jetsetter','allergy','shot_tri','hdc'],
-    recovery: ['restoration','powerpack','allstar','prepostop','soother','maternal'],
+    recovery: ['restoration','hydration','powerpack','allstar','prepostop','soother','maternal'],
     aging:    ['timemachine','firm','glutathione','nad','shot_glow'],
     metabolic:['hmd','metabolize','glutathione','shot_detox','shot_lean'],
     weight:   ['glp1','metabolize','shot_lean'],
@@ -592,7 +593,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     var g = goalById(state.goal);
     $('#goal-chip-txt').textContent = g.label;
     var ids = MAP[state.goal];
-    $('#svc-lede').textContent = state.goal==='unsure' ? 'No pressure. Book a quick screening slot and we will build your visit together.' : (state.goal==='weight'||state.goal==='peptide') ? 'These programs begin with a consultation so we can build a plan around you.' : 'Choose one. You can always adjust with our clinical team when you arrive.';
+    $('#svc-lede').textContent = state.goal==='unsure' ? 'No pressure. Book a quick visit and we will build your plan together.' : (state.goal==='weight'||state.goal==='peptide') ? 'These programs begin with a consultation so we can build a plan around you.' : 'Choose one. You can always adjust with our wellness team when you arrive.';
     $('#bw-services').innerHTML = ids.map(function(id){
       var s=S[id]; var wide = ids.length===1 ? ' wide':'';
       return '<button type="button" class="bw-svc'+wide+(state.service===id?' is-sel':'')+'" data-svc="'+id+'"><span class="chk"><svg><use href="#i-check"/></svg></span><span class="pic">'+picHTML(s)+'</span><span class="tx"><b>'+s.name+'</b><span class="blurb">'+s.blurb+'</span><span class="price">'+priceHTML(s)+'</span></span></button>';
