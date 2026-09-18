@@ -481,6 +481,23 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .note{background:var(--blue-soft);border:1px solid var(--divider);border-radius:20px;padding:22px 26px;font-size:14.5px;display:flex;gap:16px;align-items:flex-start;margin-top:32px}
 .note .isq{width:44px;height:44px;border-radius:12px}
 .note b{color:var(--teal)}
+
+/* ---------- science: antioxidant to pro-oxidant ---------- */
+.sci{background:var(--teal);color:#fff;padding:96px 0 100px}
+.sci .tag.on-teal{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.sci h2{color:#fff}
+.sci h2 .acc{color:var(--lime)}
+.sci .lede{color:rgba(255,255,255,.88);max-width:720px}
+.sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.sci-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:32px 30px 34px;display:flex;flex-direction:column;gap:14px;transition:transform .35s ease,background .35s ease}
+.sci-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.1)}
+.sci-card .kicker{display:inline-flex;align-self:flex-start;background:var(--lime);color:#fff;border-radius:999px;padding:7px 13px;font:600 12px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase}
+.sci-card h3{font:400 30px/1 var(--bebas);letter-spacing:.5px;color:#fff;margin:6px 0 0}
+.sci-card p{font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.84);margin:0}
+.sci-card .arrow{font:400 22px/1 var(--bebas);color:var(--lime);letter-spacing:1px;margin-top:auto}
+.sci-note{margin-top:34px;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.66);max-width:760px}
+@media(max-width:900px){.sci-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.sci{padding:72px 0 76px}.sci-card{padding:26px 22px 28px}.sci-card h3{font-size:27px}}
 </style>
 </head>
 <body>
@@ -592,7 +609,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <div>
       <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/#services">Services</a><span>/</span><b>High Dose Vitamin C</b></div>
       <div class="tag on-teal">High Dose Vitamin C</div>
-      <h1>Antioxidant support, <span class="acc">at clinical strength.</span></h1>
+      <h1>Vitamin C, <span class="acc">at clinical strength.</span></h1>
       <p class="lede">High dose intravenous Vitamin C delivers blood concentrations you cannot reach through diet or oral supplements. Pricing is set by dose, from $179, and a required G6PD screening lab comes first for every new guest.</p>
       <div class="ihero-ctas">
         <a class="btn btn-lime" href="https://dripbarflowermound.com/booking" data-book="consult">Book a Consultation</a>
@@ -623,13 +640,29 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <div class="rv">
       <div class="tag on-blue">Is This You?</div>
       <h2>Looking for deeper immune and cellular support?</h2>
-      <p class="lede">Guests explore high dose Vitamin C when they want more concentrated antioxidant support than a standard drip provides, often alongside ongoing care from their physician. It is not a stand-in for medical treatment, and dosing is always individualized.</p>
-      <div class="symp-grid"><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Frequent colds or slow recovery from illness</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>High physical or oxidative stress</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Interest in deeper antioxidant support</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Wanting a plan reviewed by a clinician first</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Curiosity about IV nutrient therapy</div></div>
+      <p class="lede">Guests explore high dose Vitamin C when they want Vitamin C at levels no supplement or standard drip can reach, often alongside ongoing care from their physician. It is not a stand-in for medical treatment, and dosing is always individualized.</p>
+      <div class="symp-grid"><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Frequent colds or slow recovery from illness</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>High physical or oxidative stress</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Interest in how high dose Vitamin C works differently</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Wanting a plan reviewed by a clinician first</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Curiosity about IV nutrient therapy</div></div>
       <p>A short consultation and lab screening help our team confirm this infusion is a good fit for you.</p>
       <p style="margin-top:18px"><a class="tlink" href="#drips">See the options <span>&rarr;</span></a></p>
     </div>
   </div>
 </section>
+<section class="sci">
+  <div class="shell">
+    <div class="cmp-head rv">
+      <div class="tag on-teal">The Science</div>
+      <h2>At high doses,<br>Vitamin C <span class="acc">changes character.</span></h2>
+      <p class="lede">Most people know Vitamin C as an antioxidant. That holds true for supplements and for the Vitamin C in a standard drip. Delivered intravenously at high doses, it does something different. Blood levels climb far beyond what the gut allows, and Vitamin C shifts from an antioxidant to a pro-oxidant, generating hydrogen peroxide in the fluid around your cells. Same molecule, opposite job.</p>
+    </div>
+    <div class="sci-grid">
+      <div class="sci-card rv"><span class="kicker">Everyday doses</span><h3>Antioxidant</h3><p>By mouth, absorption tops out at a few hundred milligrams and blood levels stay modest. In this range Vitamin C neutralizes free radicals and supports normal immune function.</p><span class="arrow">&rarr; raise the dose</span></div>
+      <div class="sci-card rv"><span class="kicker">High dose IV</span><h3>Pro-oxidant</h3><p>An IV bypasses the gut entirely. At the concentrations a high dose infusion reaches, Vitamin C reverses roles and produces hydrogen peroxide, acting as an oxidizing agent rather than an antioxidant.</p><span class="arrow">&rarr; which is why</span></div>
+      <div class="sci-card rv"><span class="kicker">What it means for you</span><h3>A different protocol</h3><p>Because the mechanism changes, so does the care. High dose Vitamin C requires a consultation, a G6PD screening lab, individualized dosing, and physician oversight. We treat it as its own therapy, not a bigger standard drip.</p></div>
+    </div>
+    <p class="sci-note rv">High dose Vitamin C is offered as supportive wellness care under physician oversight. It is not a treatment or cure for any disease. Keep your physician informed, especially if you are managing an ongoing health concern.</p>
+  </div>
+</section>
+
 <!-- DRIPS -->
 <section class="pad" id="drips">
   <div class="shell">
@@ -643,7 +676,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
         <div class="top"><span class="kind">IV Drip</span><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/hero/high-dose-vitamin-c.webp" alt="High Dose Vitamin C IV bag" loading="lazy" width="416" height="900"></div>
         <div class="body">
           <h3>High Dose Vitamin C</h3>
-          <div class="focus">Concentrated antioxidant and immune support</div>
+          <div class="focus">Vitamin C at levels only an IV can reach, screened and dosed for you</div>
           <p class="best"><b>Best for:</b> Guests seeking clinician-guided, higher-concentration Vitamin C support</p>
           
           <div class="price"><div class="reg"><small>Regular</small><span>From $179</span></div><div class="mem"><small>Members</small><b class="nx">15 g to 75 g, priced by dose</b></div></div>
@@ -809,7 +842,11 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       </details>
       <details class="faq-item rv">
         <summary>Is high dose Vitamin C a replacement for my doctor's care?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">No. It is a supportive antioxidant infusion, not a treatment or cure for any condition. We encourage you to keep your physician informed, especially if you are managing an ongoing health concern.</div>
+        <div class="ans">No. It is a supportive infusion offered under physician oversight, not a treatment or cure for any condition. We encourage you to keep your physician informed, especially if you are managing an ongoing health concern.</div>
+      </details>
+      <details class="faq-item rv">
+        <summary>Why is high dose Vitamin C different from the Vitamin C in a regular drip?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Dose changes the chemistry. At everyday amounts, Vitamin C acts as an antioxidant. At the high concentrations an IV infusion can reach, it shifts to a pro-oxidant and produces hydrogen peroxide in the fluid around your cells. That change in mechanism is why high dose Vitamin C has its own consultation, G6PD screening, and individualized dosing rather than being treated as a larger standard drip.</div>
       </details>
     </div>
   </div>
@@ -915,7 +952,7 @@ const BOOKING = { default: B,
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a consultation before my first high dose Vitamin C infusion?","acceptedAnswer":{"@type":"Answer","text":"Yes. High dose Vitamin C requires a consultation and a G6PD screening lab before we can schedule your infusion. This helps our clinical team confirm the therapy is appropriate for you and set a dose that fits your health history."}},{"@type":"Question","name":"What is a G6PD screening and why is it required?","acceptedAnswer":{"@type":"Answer","text":"G6PD is an enzyme screening that helps our clinical team identify whether high concentrations of Vitamin C are safe for you. It is a standard, required step before any high dose infusion and is part of keeping your visit safe."}},{"@type":"Question","name":"How much does high dose Vitamin C cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is set by dose: $179 at 15 g, $199 at 25 g, $259 at 50 g, and $299 at 75 g. A required G6PD screening lab comes first, and our clinical team will help you choose a dose that fits your goals."}},{"@type":"Question","name":"How long does an appointment take?","acceptedAnswer":{"@type":"Answer","text":"Infusion times vary based on your individualized dose and are discussed during your consultation. Plan for extra time compared to a standard lifestyle drip."}},{"@type":"Question","name":"Can I get high dose Vitamin C without a G6PD screening?","acceptedAnswer":{"@type":"Answer","text":"No. Because dosing is individualized and a G6PD screening lab is required for safety, every guest completes that lab before scheduling an infusion."}},{"@type":"Question","name":"Is high dose Vitamin C a replacement for my doctor's care?","acceptedAnswer":{"@type":"Answer","text":"No. It is a supportive antioxidant infusion, not a treatment or cure for any condition. We encourage you to keep your physician informed, especially if you are managing an ongoing health concern."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a consultation before my first high dose Vitamin C infusion?","acceptedAnswer":{"@type":"Answer","text":"Yes. High dose Vitamin C requires a consultation and a G6PD screening lab before we can schedule your infusion. This helps our clinical team confirm the therapy is appropriate for you and set a dose that fits your health history."}},{"@type":"Question","name":"What is a G6PD screening and why is it required?","acceptedAnswer":{"@type":"Answer","text":"G6PD is an enzyme screening that helps our clinical team identify whether high concentrations of Vitamin C are safe for you. It is a standard, required step before any high dose infusion and is part of keeping your visit safe."}},{"@type":"Question","name":"How much does high dose Vitamin C cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is set by dose: $179 at 15 g, $199 at 25 g, $259 at 50 g, and $299 at 75 g. A required G6PD screening lab comes first, and our clinical team will help you choose a dose that fits your goals."}},{"@type":"Question","name":"How long does an appointment take?","acceptedAnswer":{"@type":"Answer","text":"Infusion times vary based on your individualized dose and are discussed during your consultation. Plan for extra time compared to a standard lifestyle drip."}},{"@type":"Question","name":"Can I get high dose Vitamin C without a G6PD screening?","acceptedAnswer":{"@type":"Answer","text":"No. Because dosing is individualized and a G6PD screening lab is required for safety, every guest completes that lab before scheduling an infusion."}},{"@type":"Question","name":"Is high dose Vitamin C a replacement for my doctor's care?","acceptedAnswer":{"@type":"Answer","text":"No. It is a supportive infusion offered under physician oversight, not a treatment or cure for any condition. We encourage you to keep your physician informed, especially if you are managing an ongoing health concern."}},{"@type":"Question","name":"Why is high dose Vitamin C different from the Vitamin C in a regular drip?","acceptedAnswer":{"@type":"Answer","text":"Dose changes the chemistry. At everyday amounts, Vitamin C acts as an antioxidant. At the high concentrations an IV infusion can reach, it shifts to a pro-oxidant and produces hydrogen peroxide in the fluid around your cells. That change in mechanism is why high dose Vitamin C has its own consultation, G6PD screening, and individualized dosing rather than being treated as a larger standard drip."}}]}</script>
 
 </body>
 </html>
