@@ -789,6 +789,30 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .bw-past.err{border-color:#B42318}.bw-past.err .msg{display:block}
 .bw-past.answered .hint{display:none}
 
+
+/* ---------- team carousel ---------- */
+.team{background:var(--teal);color:#fff;overflow:hidden;padding:96px 0 100px}
+.team .tag.on-teal{background:var(--teal-soft);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.team h2{color:#fff}
+.team h2 .acc{color:var(--lime)}
+.team .lede{color:rgba(255,255,255,.86);margin-top:18px;max-width:620px}
+.team-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:48px}
+.team-head .side{font-size:15px;color:rgba(255,255,255,.72);max-width:420px;justify-self:end;text-align:right}
+.team-wrap{position:relative}
+.team-wrap::before,.team-wrap::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.team-wrap::before{left:0;background:linear-gradient(90deg,var(--teal),rgba(4,78,99,0))}
+.team-wrap::after{right:0;background:linear-gradient(270deg,var(--teal),rgba(4,78,99,0))}
+.team-track{display:flex;width:max-content;animation:teamscroll 48s linear infinite;will-change:transform}
+.team-wrap:hover .team-track{animation-play-state:paused}
+.tcard{position:relative;flex:none;width:250px;aspect-ratio:3/4;border-radius:22px;overflow:hidden;margin-right:18px;background:#033b4c;box-shadow:0 18px 40px rgba(0,0,0,.22)}
+.tcard img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s ease}
+.tcard:hover img{transform:scale(1.04)}
+.tcard .cap{position:absolute;left:0;right:0;bottom:0;padding:54px 16px 16px;background:linear-gradient(to top,rgba(4,78,99,.95),rgba(4,78,99,0));font:600 16px/1.2 var(--pop);color:#fff;display:flex;align-items:center;gap:9px}
+.tcard .cap small{display:inline-block;background:var(--lime);color:#fff;border-radius:999px;padding:3px 9px;font:600 11px/1 var(--pop);letter-spacing:.6px}
+@keyframes teamscroll{to{transform:translateX(-50%)}}
+@media(max-width:900px){.team-head{grid-template-columns:1fr;gap:16px}.team-head .side{justify-self:start;text-align:left}}
+@media(max-width:768px){.team{padding:72px 0 76px}.tcard{width:200px;margin-right:14px;border-radius:18px}.team-track{animation-duration:38s}.team-wrap::before,.team-wrap::after{width:40px}}
+@media(prefers-reduced-motion:reduce){.team-track{animation:none;width:auto;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch}.team-track .dup{display:none}}
 </style>
 </head>
 <body>
@@ -829,8 +853,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- 2. UTILITY BAR -->
 <div class="util">
   <div class="shell">
-    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call: (817) 241-2107</a>
-    <a href="sms:+16823544355"><span class="ic"><svg><use href="#i-chat"/></svg></span>Text: (682) 354-4355</a>
+    <a href="tel:+18172412107"><span class="ic"><svg><use href="#i-phone"/></svg></span>Call or Text: (817) 241-2107</a>
     <span><span class="ic"><svg><use href="#i-pin"/></svg></span>Burleson, Texas</span>
     <span><span class="ic"><svg><use href="#i-clock"/></svg></span>Open Today: <span id="hours-today">Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</span></span>
   </div>
@@ -894,7 +917,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/wellness-therapies">Wellness Therapies</a>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
     <a class="mphone" href="tel:+18172412107">Call: (817) 241-2107</a>
-    <a class="mphone" href="sms:+16823544355">Text: (682) 354-4355</a>
+    <a class="mphone" href="sms:+18172412107">Text: (817) 241-2107</a>
   </div>
 </div>
 
@@ -953,7 +976,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="pic" id="sum-pic"></div>
       <div><small>Your visit</small><b id="sum-name"></b><span id="sum-meta"></span></div>
     </div>
-    <div class="help"><span class="ico"><svg><use href="#bwi-phone"/></svg></span><span>Prefer to talk? <a href="tel:+18172412107">Call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a></span></div>
+    <div class="help"><span class="ico"><svg><use href="#bwi-phone"/></svg></span><span>Prefer to talk? <a href="tel:+18172412107">Call or text (817) 241-2107</a></span></div>
   </aside>
 
   <div class="bw-main">
@@ -993,7 +1016,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="bw-times" id="bw-times"></div>
         </div>
-        <div class="bw-empty" id="cal-err" style="display:none"><div><span class="isq"><svg><use href="#bwi-phone"/></svg></span><b>We could not load the calendar</b>Refresh the page to try again, or <a href="tel:+18172412107">call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a> and we will get you booked.</div></div>
+        <div class="bw-empty" id="cal-err" style="display:none"><div><span class="isq"><svg><use href="#bwi-phone"/></svg></span><b>We could not load the calendar</b>Refresh the page to try again, or <a href="tel:+18172412107">call or text (817) 241-2107</a> and we will get you booked.</div></div>
       </div>
       <div class="bw-foot"><button class="bw-back" id="back3"><svg><use href="#bwi-back"/></svg>Back</button><div class="right"><span class="bw-selpill" id="sel-pill"><i></i><span id="sel-pill-txt"></span></span><button class="btn btn-lime" id="next3" disabled>Continue<svg><use href="#bwi-arrow"/></svg></button></div></div>
     </div>
@@ -1012,7 +1035,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="bw-field"><label for="f-phone">Mobile phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(817) 555-0123" required><div class="msg">Please enter a 10 digit phone number.</div></div>
           <label class="bw-consent" id="bw-consent"><input type="checkbox" id="f-consent"><span class="box"><svg><use href="#bwi-check"/></svg></span><p><b>Consent.</b> I agree to receive appointment related calls, texts, and emails from The DRIPBaR Burleson. I understand this is a booking request, not medical advice. Message and data rates may apply. Reply STOP to opt out. See our <a href="/privacy-policy" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline">Privacy Policy</a>.</p></label>
           <div class="bw-notes"><svg><use href="#bwi-info"/></svg><div><b>What our team will already know:</b> <span id="notes-preview"></span></div></div>
-          <div class="bw-error" id="book-err">That time was just taken or something went wrong. <a href="#" id="book-retry">Pick another time</a> or <a href="tel:+18172412107">call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a>.</div>
+          <div class="bw-error" id="book-err">That time was just taken or something went wrong. <a href="#" id="book-retry">Pick another time</a> or <a href="tel:+18172412107">call or text (817) 241-2107</a>.</div>
         </form>
       </div>
       <div class="bw-foot"><button class="bw-back" id="back4"><svg><use href="#bwi-back"/></svg>Back</button><div class="right"><span class="bw-secure"><svg><use href="#bwi-lock"/></svg>Your details are never shared</span><button class="btn btn-lime" id="bookBtn"><span class="spin"></span><span class="lbl-idle">Book my appointment</span><span class="lbl-busy">Booking</span><svg class="lbl-idle"><use href="#bwi-check"/></svg></button></div></div>
@@ -1040,12 +1063,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div><span class="isq"><svg><use href="#bwi-clock"/></svg></span><b>Arrive 5 minutes early</b><span>Then settle in. Most drips take 30 to 60 minutes.</span></div>
         </div>
       </div>
-      <div class="bw-foot"><span class="bw-hint">Need to change it? Call (817) 241-2107 or text (682) 354-4355</span><a class="btn btn-teal" href="https://thedripbarburleson.com/">Back to the site<svg><use href="#bwi-arrow"/></svg></a></div>
+      <div class="bw-foot"><span class="bw-hint">Need to change it? Call or text (817) 241-2107</span><a class="btn btn-teal" href="https://thedripbarburleson.com/">Back to the site<svg><use href="#bwi-arrow"/></svg></a></div>
     </div>
   </div>
 </section>
 </div>
 <div class="bw-page-foot bw-wrap">The DRIPBaR Burleson, 295 E. Renfro St Ste 207, Burleson, TX 76028. Appointments are screened by our clinical team.  Member pricing reflects the Evolve Membership monthly rate.</div>
+</section>
+
+<!-- TEAM -->
+<section class="team" aria-labelledby="team-h">
+  <div class="shell team-head">
+    <div class="rv">
+      <div class="tag on-teal">Meet the Team</div>
+      <h2 id="team-h">The Healthiest <span class="acc">Bar in Town.</span></h2>
+      <p class="lede">Every drip and shot at The DRIPBaR Burleson is administered by licensed medical professionals, with physician oversight on every plan. This is the team that will take care of you.</p>
+    </div>
+    <div class="side rv">Registered nurses at the chair, a health screening before every first visit, and a plan built around your goals.</div>
+  </div>
+  <div class="team-wrap" aria-label="Photos of The DRIPBaR Burleson team">
+    <div class="team-track">
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/kim-card.webp" alt="Kim, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Kim<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/lariana-card.webp" alt="Lariana, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Lariana</div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/tracie-card.webp" alt="Tracie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Tracie<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/magdeli-card.webp" alt="Magdeli, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Magdeli<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/sam-card.webp" alt="Sam, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Sam<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/daley-card.webp" alt="Daley, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Daley<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/cirrie-card.webp" alt="Cirrie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Cirrie<small>RN</small></div></div>
+        <div class="dup" style="display:contents" aria-hidden="true">
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/kim-card.webp" alt="Kim, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Kim<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/lariana-card.webp" alt="Lariana, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Lariana</div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/tracie-card.webp" alt="Tracie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Tracie<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/magdeli-card.webp" alt="Magdeli, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Magdeli<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/sam-card.webp" alt="Sam, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Sam<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/daley-card.webp" alt="Daley, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Daley<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/cirrie-card.webp" alt="Cirrie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Cirrie<small>RN</small></div></div>
+        </div>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -1057,7 +1112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Booking, arriving, and rescheduling at The DRIPBaR Burleson.</p>
       <div class="faq-help">
         <span class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></span>
-        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call (817) 241-2107</a> or <a href="sms:+16823544355">text (682) 354-4355</a></div>
+        <div><strong>Still have a question?</strong><a href="tel:+18172412107">Call or text (817) 241-2107</a></div>
       </div>
     </div>
     <div class="faq-list">
@@ -1067,7 +1122,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </details>
       <details class="faq-item rv">
         <summary>Can I walk in without an appointment?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call (817) 241-2107 or text (682) 354-4355 to check same-day availability.</div>
+        <div class="ans">Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call or text (817) 241-2107 to check same-day availability.</div>
       </details>
       <details class="faq-item rv">
         <summary>How do I book a consultation instead of a drip?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -1075,7 +1130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </details>
       <details class="faq-item rv">
         <summary>What if I need to reschedule?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Call (817) 241-2107 or text (682) 354-4355 and we will move your appointment. Please give us as much notice as you can so another guest can use the time.</div>
+        <div class="ans">Call or text (817) 241-2107 and we will move your appointment. Please give us as much notice as you can so another guest can use the time.</div>
       </details>
       <details class="faq-item rv">
         <summary>Does the new guest offer apply online?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -1091,7 +1146,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Your recliner is waiting.</h2>
     <p class="lede">Book your visit and let our clinical team build a plan around your goals. New guests choose their experience and receive up to $100 worth of free perks on the first visit.</p>
     <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Now</a>
-    <div class="fine">Questions first? Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
+    <div class="fine">Questions first? Call or text <a href="tel:+18172412107">(817) 241-2107</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
   </div>
 </section>
 
@@ -1101,7 +1156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="foot-grid">
       <div>
         <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR" loading="lazy">
-        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br>Call <a href="tel:+18172412107">(817) 241-2107</a> or text <a href="sms:+16823544355">(682) 354-4355</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
+        <div class="adr">The DRIPBaR Burleson<br>295 E. Renfro St, Ste 207, Burleson, TX 76028<br>Call or text <a href="tel:+18172412107">(817) 241-2107</a><br>Mon-Fri 10 AM - 6 PM, Sat 10 AM - 4 PM, Sun 11 AM - 3 PM</div>
         <a class="btn btn-lime" href="https://thedripbarburleson.com/booking" data-book="general">Book Appointment</a>
       </div>
       <div class="links">
@@ -1184,7 +1239,7 @@ const BOOKING = { default: B,
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens after I book?","acceptedAnswer":{"@type":"Answer","text":"You will get a confirmation by text and email with your time and our address, 295 E. Renfro St, Ste 207, Burleson, TX 76028. Arrive a few minutes early for your first visit so we can complete your health screening."}},{"@type":"Question","name":"Can I walk in without an appointment?","acceptedAnswer":{"@type":"Answer","text":"Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call (817) 241-2107 or text (682) 354-4355 to check same-day availability."}},{"@type":"Question","name":"How do I book a consultation instead of a drip?","acceptedAnswer":{"@type":"Answer","text":"Choose the Consultations option below. GLP-1 weight management, peptide therapy, High Dose Vitamin C, and Ozone Therapy all begin with a scheduled consultation."}},{"@type":"Question","name":"What if I need to reschedule?","acceptedAnswer":{"@type":"Answer","text":"Call (817) 241-2107 or text (682) 354-4355 and we will move your appointment. Please give us as much notice as you can so another guest can use the time."}},{"@type":"Question","name":"Does the new guest offer apply online?","acceptedAnswer":{"@type":"Answer","text":"Yes. New guests choose their experience and receive up to $100 worth of free perks on the first visit: a Lifestyle drip, a booster add-on, and one supportive therapy. One per new guest."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens after I book?","acceptedAnswer":{"@type":"Answer","text":"You will get a confirmation by text and email with your time and our address, 295 E. Renfro St, Ste 207, Burleson, TX 76028. Arrive a few minutes early for your first visit so we can complete your health screening."}},{"@type":"Question","name":"Can I walk in without an appointment?","acceptedAnswer":{"@type":"Answer","text":"Walk-ins are welcome when the schedule allows, and appointments are always preferred so a recliner and a nurse are ready for you. Call or text (817) 241-2107 to check same-day availability."}},{"@type":"Question","name":"How do I book a consultation instead of a drip?","acceptedAnswer":{"@type":"Answer","text":"Choose the Consultations option below. GLP-1 weight management, peptide therapy, High Dose Vitamin C, and Ozone Therapy all begin with a scheduled consultation."}},{"@type":"Question","name":"What if I need to reschedule?","acceptedAnswer":{"@type":"Answer","text":"Call or text (817) 241-2107 and we will move your appointment. Please give us as much notice as you can so another guest can use the time."}},{"@type":"Question","name":"Does the new guest offer apply online?","acceptedAnswer":{"@type":"Answer","text":"Yes. New guests choose their experience and receive up to $100 worth of free perks on the first visit: a Lifestyle drip, a booster add-on, and one supportive therapy. One per new guest."}}]}</script>
 
 <script>
 (function(){
@@ -1582,7 +1637,7 @@ const BOOKING = { default: B,
     $('#done-time').textContent = fmtTime(state.slot)+' Central';
     $('#done-pic').innerHTML = picHTML(s);
     var start=new Date(state.slot), end=new Date(start.getTime()+(s.mins||60)*60000);
-    var title='The DRIPBaR Burleson: '+s.name, loc='The DRIPBaR Burleson, 295 E. Renfro St Ste 207, Burleson, TX 76028', desc='Your appointment at The DRIPBaR Burleson. Questions? Call (817) 241-2107 or text (682) 354-4355.';
+    var title='The DRIPBaR Burleson: '+s.name, loc='The DRIPBaR Burleson, 295 E. Renfro St Ste 207, Burleson, TX 76028', desc='Your appointment at The DRIPBaR Burleson. Questions? Call or text (817) 241-2107.';
     $('#gcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+toUTC(start)+'/'+toUTC(end)+'&details='+encodeURIComponent(desc)+'&location='+encodeURIComponent(loc)+'&ctz='+encodeURIComponent(TZ);
     var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The DRIPBaR Burleson//Booking//EN','BEGIN:VEVENT','UID:'+Date.now()+'@thedripbarburleson.com','DTSTAMP:'+toUTC(new Date()),'DTSTART:'+toUTC(start),'DTEND:'+toUTC(end),'SUMMARY:'+title,'LOCATION:'+loc,'DESCRIPTION:'+desc,'END:VEVENT','END:VCALENDAR'].join('\r\n');
     $('#ical').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
