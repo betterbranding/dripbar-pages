@@ -20,9 +20,11 @@ GHL shell to finish parsing, then swaps head and body content in place. The wind
 GTM loaded natively by GHL all survive, and the swap pushes a `dripbar_page_ready` event with the final
 `page_title` and `page_path`.
 
-**GTM lives in GHL, not in the page HTML.** Paste `tracking-code/head.html` into the website-level
-Settings > Tracking Code > Head, and `tracking-code/body.html` into Body. The v6 loader detects the native
-container and skips any copy in the fetched HTML, so nothing double-fires. Container: GTM-52FCS8CX.
+**GTM lives at the top of each page's body Custom Code element, not in the page HTML and not in the
+site Head tracking code.** Paste `element-v6/{slug}.html` (GTM snippet + v6 loader) into the element. GHL
+injects Head tracking code client-side at hydration, which races the swap and double-fired on some loads,
+so the Head slot must stay empty. `tracking-code/body.html` (the noscript iframe) may go in the site Body
+slot. Container: GTM-52FCS8CX.
 
 Install steps per page are unchanged (one Custom HTML/JS element, paste the loader, save). Header blocks in
 `headers/` are unchanged.
