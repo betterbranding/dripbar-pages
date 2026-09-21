@@ -10,3 +10,19 @@ Home page in GHL should be the site root (/). Its loader fetches burleson/site/h
 Cache bust after edits: bump `?v=` in the loader for that page.
 
 Google Tag Manager (GTM-52FCS8CX) is baked into every page HTML (head snippet + body noscript). Do not add it to GHL tracking code: the loader replaces the document, so GHL-level tags would not fire reliably.
+
+## Loader v6 (current) and Google Tag Manager
+
+**Use `loader-v6/` for every page.** v5 (`loader-v5/`, kept for reference) used `document.write`, which
+replaced the whole document at runtime. That hid GTM from the page source, broke Tag Assistant preview
+mode, and would have dropped any listeners GTM attached. v6 fetches the same GitHub page, waits for the
+GHL shell to finish parsing, then swaps head and body content in place. The window, `dataLayer`, and any
+GTM loaded natively by GHL all survive, and the swap pushes a `dripbar_page_ready` event with the final
+`page_title` and `page_path`.
+
+**GTM lives in GHL, not in the page HTML.** Paste `tracking-code/head.html` into the website-level
+Settings > Tracking Code > Head, and `tracking-code/body.html` into Body. The v6 loader detects the native
+container and skips any copy in the fetched HTML, so nothing double-fires. Container: GTM-52FCS8CX.
+
+Install steps per page are unchanged (one Custom HTML/JS element, paste the loader, save). Header blocks in
+`headers/` are unchanged.
