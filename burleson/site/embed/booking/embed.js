@@ -24,6 +24,7 @@
     f.setAttribute('allowtransparency', 'true');
     f.style.cssText = 'width:100%;max-width:100%;border:0;display:block;background:transparent;min-height:' + (el.getAttribute('data-min-height') || '760') + 'px;transition:height .25s ease';
     el.style.width = '100%';
+    f.addEventListener('load', function(){ try{ f.contentWindow.postMessage({type:'dripbar-bw-host', action:'measure'}, ORIGIN); }catch(e){} });
     el.appendChild(f);
   }
 

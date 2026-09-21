@@ -911,10 +911,10 @@ html.is-embed,html.is-embed body{overflow:hidden}
   /* ===== EMBED: report height to the host page ===== */
   if(EMBED){
     var lastH = 0;
-    function report(){ var h = Math.ceil(document.documentElement.getBoundingClientRect().height); if(h && h !== lastH){ lastH = h; bwPost({height:h}); } }
+    function report(force){ var h = Math.ceil(document.documentElement.getBoundingClientRect().height); if(h && (force===true || h !== lastH)){ lastH = h; bwPost({height:h}); } }
     if('ResizeObserver' in window){ new ResizeObserver(report).observe(document.documentElement); }
     window.addEventListener('load', report); setInterval(report, 800); report();
-    window.addEventListener('message', function(e){ if(e.data && e.data.type==='dripbar-bw-host' && e.data.action==='measure') report(); });
+    window.addEventListener('message', function(e){ if(e.data && e.data.type==='dripbar-bw-host' && e.data.action==='measure') report(true); });
     document.documentElement.classList.add('is-embed');
   }
 })();
