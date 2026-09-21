@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embed test: The DRIPBaR Burleson booking widget</title>
+<style>
+/* Deliberately hostile host styles to prove isolation */
+body{margin:0;font-family:Georgia,serif;background:#f4efe6;color:#333;line-height:1.4}
+h1,h2{font-family:Georgia,serif;color:#7a1f1f}
+button{background:red;color:yellow;border:4px dashed blue;font-size:30px}
+input{background:#000;color:#0f0}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 20px}
+.card{background:#fff;border:1px solid #ddd;padding:24px;margin:24px 0}
+.narrow{max-width:420px}
+</style></head>
+<body>
+<div class="wrap">
+  <h1>Partner Site (embed test)</h1>
+  <p>This page uses clashing fonts and button styles on purpose. The widget below should look exactly like the /booking page and grow to fit its content with no inner scrollbar.</p>
+  <div class="card">
+    <h2>Book with The DRIPBaR Burleson</h2>
+    <div class="dripbar-booking"></div>
+<script src="https://betterbranding.github.io/dripbar-pages/burleson/site/embed/booking/embed.js" async></script>
+  </div>
+  <h2>Deep-linked (service=nad) in a narrow column</h2>
+  <div class="card narrow">
+    <div class="dripbar-booking" data-service="nad"></div>
+  </div>
+  <p style="height:600px">Filler content so scroll sync can be tested.</p>
+</div>
+</body></html>
