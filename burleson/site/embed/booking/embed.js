@@ -29,7 +29,7 @@
 
   window.addEventListener('message', function(e){
     if(e.origin !== ORIGIN || !e.data || e.data.type !== 'dripbar-bw') return;
-    var frames = document.querySelectorAll(SEL + ' iframe');
+    var frames = document.querySelectorAll('.dripbar-booking iframe, #dripbar-booking iframe');
     for(var i = 0; i < frames.length; i++){
       var f = frames[i];
       if(f.contentWindow !== e.source) continue;
