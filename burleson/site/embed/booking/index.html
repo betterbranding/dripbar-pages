@@ -572,9 +572,11 @@ html.is-embed,html.is-embed body{overflow:hidden}
     wellness: ["redlight","sauna","halo"],
     unsure: ["unsure"]
   };
+  // Consults (GLP-1, peptide, etc.) always use their own calendar; the New Client Special calendar is for first drips only.
+  function isConsult(){ var s = state.service ? S[state.service] : null; return !!(s && s.type === 'consult'); }
   function pickCalendar(){
     var s = state.service ? S[state.service] : null;
-    var c = (NEWCLIENT_CAL && state.firstVisit === 'yes') ? NEWCLIENT_CAL : ((s && CALS[s.cal]) || CALS.iv);
+    var c = (NEWCLIENT_CAL && state.firstVisit === 'yes' && !isConsult()) ? NEWCLIENT_CAL : ((s && CALS[s.cal]) || CALS.iv);
     if(c.id !== CAL_ID){ state.slotsByDay = null; state.day = null; state.slot = null; }
     CAL_ID = c.id; SLOT_STEP_MIN = c.step;
   }
@@ -583,6 +585,7 @@ html.is-embed,html.is-embed body{overflow:hidden}
   function enterStep3(){
     go(3);
     var box = document.getElementById('bw-newclient');
+    if(isConsult()){ if(box) box.style.display='none'; pickCalendar(); loadSlots(); return; }
     if(NEWCLIENT_CAL && !state.firstVisit){
       if(box) box.style.display='';
       var cl=document.getElementById('cal-loading'); if(cl) cl.style.display='none';
