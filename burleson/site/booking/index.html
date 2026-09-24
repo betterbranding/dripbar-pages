@@ -1265,7 +1265,7 @@ const BOOKING = { default: B,
 {id:'recovery', label:'Hydration and Recovery',     sub:'Workouts, travel, surgery, stress',  icon:'bwi-drop',   c:'c-navy'},
 {id:'aging',    label:'Beauty and Healthy Aging',   sub:'Skin, collagen, NAD+, glow',         icon:'bwi-spark',  c:'c-purple'},
 {id:'metabolic',label:'Detox and Metabolic',        sub:'Cleanse, metabolism, gut',           icon:'bwi-leaf',   c:'c-orange'},
-{id:'weight',   label:'Weight Management',          sub:'GLP-1 program consultation',         icon:'bwi-scale',  c:'c-teal'},
+{id:'weight',   label:'GLP-1 Weight Loss',          sub:'Semaglutide and Tirzepatide, consult first',         icon:'bwi-scale',  c:'c-teal'},
 {id:'peptide',  label:'Peptide Therapy',            sub:'Consultation based plans',           icon:'bwi-vial',   c:'c-purple'},
 {id:'ozone',    label:'Ozone Therapy',              sub:'Blood Ozone IV, ear and nose ozone',      icon:'bwi-drop',   c:'c-navy'},
 {id:'wellness', label:'Wellness Therapies',         sub:'Sauna, halotherapy, red light',     icon:'bwi-sun',    c:'c-orange'},
@@ -1304,7 +1304,8 @@ const BOOKING = { default: B,
     shot_lean: {"name":"IM Lean","type":"shot","icon":"bwi-syringe","reg":"$50","blurb":"Choline, B12, taurine for metabolism","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
     shot_tri: {"name":"Tri-Immune Shot","type":"shot","icon":"bwi-syringe","reg":"$35","blurb":"Glutathione, vitamin C, zinc immune blend","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
     shot_nad: {"name":"NAD+ IM Shot","type":"shot","icon":"bwi-syringe","reg":"From $50","note":"50 mg $50, 100 mg $100","blurb":"Intramuscular NAD+ for cellular energy, under 15 min","ghl":"NAD+ (IVs & Shots)","dur":"Under 15 min","mins":15,"cal":"nad-shot"},
-    glp1: {"name":"GLP-1 Consultation","type":"consult","icon":"bwi-users","reg":"Consult","note":"Program pricing at consultation","blurb":"Medically supervised weight management, starts with a consult","ghl":"Medical Weight Loss","dur":"15 to 30 min","mins":30,"cal":"weight"},
+    sema: {"name": "Semaglutide", "type": "consult", "icon": "bwi-scale", "reg": "Consult", "note": "Program pricing at consultation", "blurb": "Weekly GLP-1 injection program, starts with a consult", "ghl": "Medical Weight Loss", "dur": "15 to 30 min", "mins": 30, "cal": "weight"},
+    tirz: {"name": "Tirzepatide", "type": "consult", "icon": "bwi-scale", "reg": "Consult", "note": "Program pricing at consultation", "blurb": "Weekly dual GIP and GLP-1 injection program, starts with a consult", "ghl": "Medical Weight Loss", "dur": "15 to 30 min", "mins": 30, "cal": "weight"},
     peptide: {"name":"Peptide Consultation","type":"consult","icon":"bwi-users","reg":"Consult","note":"Individualized plan and pricing","blurb":"Medically supervised, administered by registered nurses","ghl":"Help me choose","dur":"15 to 30 min","mins":30,"cal":"peptide"},
     ozone: {"name":"Ozone Therapy","type":"consult","icon":"bwi-drop","reg":"Consult","note":"Priced at consultation","blurb":"Blood Ozone IV in a monitored clinical setting","ghl":"Ozone Therapy","dur":"45 to 60 min","mins":60,"cal":"ozone"},
     earozone: {"name":"Ear and Nose Ozone Insufflation","type":"therapy","icon":"bwi-drop","reg":"$40","blurb":"Quick ozone insufflation for sinus and ear comfort","ghl":"Ozone Therapy","dur":"About 5 min","mins":15,"cal":"ear-ozone"},
@@ -1319,7 +1320,7 @@ const BOOKING = { default: B,
     recovery: ["hydration","restoration","powerpack","allstar","prepostop","soother","maternal","shot_vital"],
     aging: ["timemachine","firm","glutathione","nad","shot_glow"],
     metabolic: ["hmd","metabolize","glutathione","ala","shot_detox","shot_lean"],
-    weight: ["glp1","metabolize","shot_lean"],
+    weight:   ["sema","tirz"],
     peptide: ["peptide"],
     ozone: ["ozone","earozone"],
     wellness: ["redlight","sauna","halo"],
@@ -1669,6 +1670,7 @@ const BOOKING = { default: B,
   try{
     var q = new URLSearchParams(location.search);
     var svc = q.get('service'), goal = q.get('goal'), first = q.get('first');
+    if(svc==='glp1' || svc==='weightloss'){ svc=null; goal='weight'; }
     if(NEWCLIENT_CAL && (first==='yes'||first==='no')){ state.firstVisit=first; var fr=document.querySelector('input[name="first_visit"][value="'+first+'"]'); if(fr) fr.checked=true; var fb=document.getElementById('bw-newclient'); if(fb) fb.classList.add('answered'); }
     if(svc && S[svc]){
       var gid = (goal && MAP[goal] && MAP[goal].indexOf(svc)>=0) ? goal : Object.keys(MAP).filter(function(k){return MAP[k].indexOf(svc)>=0})[0];
