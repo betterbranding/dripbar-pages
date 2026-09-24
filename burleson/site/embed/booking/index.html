@@ -490,7 +490,7 @@ html.is-embed,html.is-embed body{overflow:hidden}
     if(EMBED){ var h=''; try{ h = new URL(HOST_URL).hostname.replace(/^www\./,''); }catch(e){} if(h) return 'Embedded widget: ' + h; }
     return 'Website';
   }
-  var CALS = {"iv":{"id":"HhheidBjYxzja80Q5hoZ","step":15},"newclient":{"id":"ybLfSd19a4kkOj32svMp","step":15},"shot":{"id":"vK3s2BDt1XiMywjWom2x","step":15},"weight":{"id":"cnPJDAWfBWSakvSlcF0q","step":15},"peptide":{"id":"u7wo8faHyh0GOvAkuBSM","step":15},"ozone":{"id":"GBqSPDNLdwiLAuomEVej","step":15},"sauna":{"id":"qPsSvDb3ZavtDnE80XTt","step":30},"halo":{"id":"TjLERmyV47w8WUn4qhbo","step":30},"redlight":{"id":"dGUoVrlGJvhANuoamqsL","step":30},"vitality":{"id":"yMhgFdpFKfeNZb1hTbXe","step":15},"shield":{"id":"zNGw6kSShbMbFEtcAUOH","step":15},"powerpack":{"id":"rPOR6ED6GjzDHc32HdI2","step":15},"glutathione":{"id":"4skW6j3CsU3JDnyzwD5Z","step":15},"time-machine":{"id":"IE8qqHNCNllVcVAlwRjY","step":15},"flu-fighter":{"id":"l74fccNcwa3mg390NUay","step":15},"restoration":{"id":"VFHzkk7fz6rSHbzbaSXj","step":15},"metabolize":{"id":"lVLlNP6Y2ArPHRggeUxG","step":15},"allstar":{"id":"l3Uay2uByt0xmSAgLBkN","step":15},"heavy-metal-detox":{"id":"aq4nmaJQ38PvBJS2X6u8","step":15},"firm":{"id":"jroc3hrBxhP6nh0OkeiN","step":15},"debut":{"id":"fF8x3fKCkLOB8l1yyMLD","step":15},"post-viral":{"id":"Khb7uF3PcDyMpwzPk98L","step":15},"jetsetter":{"id":"5nYwfljmLzcFdIga39Ze","step":30},"allergy":{"id":"cciUtamAhfVHQ4P7DCSp","step":15},"soother":{"id":"mEojCcJWHP2xU5IsPkB7","step":15},"pre-post-op":{"id":"8uIdhMeoCKUuiDyUmYRW","step":15},"hydration":{"id":"tebjLFkOm8vNPo02eb5y","step":15}}; // The DRIPBaR Burleson GHL calendars (public booking API), step = minute grid to show
+  var CALS = {"iv":{"id":"HhheidBjYxzja80Q5hoZ","step":15},"newclient":{"id":"ybLfSd19a4kkOj32svMp","step":15},"shot":{"id":"vK3s2BDt1XiMywjWom2x","step":15},"weight":{"id":"cnPJDAWfBWSakvSlcF0q","step":15},"peptide":{"id":"u7wo8faHyh0GOvAkuBSM","step":15},"ozone":{"id":"GBqSPDNLdwiLAuomEVej","step":15},"sauna":{"id":"qPsSvDb3ZavtDnE80XTt","step":30},"halo":{"id":"TjLERmyV47w8WUn4qhbo","step":30},"redlight":{"id":"dGUoVrlGJvhANuoamqsL","step":30},"vitality":{"id":"yMhgFdpFKfeNZb1hTbXe","step":15},"shield":{"id":"zNGw6kSShbMbFEtcAUOH","step":15},"powerpack":{"id":"rPOR6ED6GjzDHc32HdI2","step":15},"glutathione":{"id":"4skW6j3CsU3JDnyzwD5Z","step":15},"time-machine":{"id":"IE8qqHNCNllVcVAlwRjY","step":15},"flu-fighter":{"id":"l74fccNcwa3mg390NUay","step":15},"restoration":{"id":"VFHzkk7fz6rSHbzbaSXj","step":15},"metabolize":{"id":"lVLlNP6Y2ArPHRggeUxG","step":15},"allstar":{"id":"l3Uay2uByt0xmSAgLBkN","step":15},"heavy-metal-detox":{"id":"aq4nmaJQ38PvBJS2X6u8","step":15},"firm":{"id":"jroc3hrBxhP6nh0OkeiN","step":15},"debut":{"id":"fF8x3fKCkLOB8l1yyMLD","step":15},"post-viral":{"id":"Khb7uF3PcDyMpwzPk98L","step":15},"jetsetter":{"id":"5nYwfljmLzcFdIga39Ze","step":30},"allergy":{"id":"cciUtamAhfVHQ4P7DCSp","step":15},"soother":{"id":"mEojCcJWHP2xU5IsPkB7","step":15},"pre-post-op":{"id":"8uIdhMeoCKUuiDyUmYRW","step":15},"hydration":{"id":"tebjLFkOm8vNPo02eb5y","step":15},"nad-shot":{"id":"CgPlySyt6i0OIPbtriRz","step":15},"ear-ozone":{"id":"C6oVhVEZOYEyPizaokXP","step":15}}; // The DRIPBaR Burleson GHL calendars (public booking API), step = minute grid to show
   var CAL_ID = CALS.iv.id;                                    // switched per service in pickCalendar()
   var LOC_ID = 'DjWASIwANDe4zzHI9pwC';                       // The DRIPBaR Burleson sub-account
   var API    = 'https://backend.leadconnectorhq.com';
@@ -513,7 +513,7 @@ html.is-embed,html.is-embed body{overflow:hidden}
 {id:'metabolic',label:'Detox and Metabolic',        sub:'Cleanse, metabolism, gut',           icon:'bwi-leaf',   c:'c-orange'},
 {id:'weight',   label:'Weight Management',          sub:'GLP-1 program consultation',         icon:'bwi-scale',  c:'c-teal'},
 {id:'peptide',  label:'Peptide Therapy',            sub:'Consultation based plans',           icon:'bwi-vial',   c:'c-purple'},
-{id:'ozone',    label:'Ozone Therapy',              sub:'Blood Ozone IV, consult first',      icon:'bwi-drop',   c:'c-navy'},
+{id:'ozone',    label:'Ozone Therapy',              sub:'Blood Ozone IV, ear and nose ozone',      icon:'bwi-drop',   c:'c-navy'},
 {id:'wellness', label:'Wellness Therapies',         sub:'Sauna, halotherapy, red light',     icon:'bwi-sun',    c:'c-orange'},
 {id:'unsure',   label:'Help me decide',             sub:'Our team will guide you',            icon:'bwi-help',   c:'c-lime'}
   ];
@@ -548,23 +548,25 @@ html.is-embed,html.is-embed body{overflow:hidden}
     shot_detox: {"name":"IM Detoxed","type":"shot","icon":"bwi-syringe","reg":"$50","blurb":"Glutathione for antioxidant defense","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
     shot_lean: {"name":"IM Lean","type":"shot","icon":"bwi-syringe","reg":"$50","blurb":"Choline, B12, taurine for metabolism","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
     shot_tri: {"name":"Tri-Immune Shot","type":"shot","icon":"bwi-syringe","reg":"$35","blurb":"Glutathione, vitamin C, zinc immune blend","ghl":"IM Vitamin Shots","dur":"Under 15 min","mins":15,"cal":"shot"},
+    shot_nad: {"name":"NAD+ IM Shot","type":"shot","icon":"bwi-syringe","reg":"From $50","note":"50 mg $50, 100 mg $100","blurb":"Intramuscular NAD+ for cellular energy, under 15 min","ghl":"NAD+ (IVs & Shots)","dur":"Under 15 min","mins":15,"cal":"nad-shot"},
     glp1: {"name":"GLP-1 Consultation","type":"consult","icon":"bwi-users","reg":"Consult","note":"Program pricing at consultation","blurb":"Medically supervised weight management, starts with a consult","ghl":"Medical Weight Loss","dur":"15 to 30 min","mins":30,"cal":"weight"},
     peptide: {"name":"Peptide Consultation","type":"consult","icon":"bwi-users","reg":"Consult","note":"Individualized plan and pricing","blurb":"Medically supervised, administered by registered nurses","ghl":"Help me choose","dur":"15 to 30 min","mins":30,"cal":"peptide"},
     ozone: {"name":"Ozone Therapy","type":"consult","icon":"bwi-drop","reg":"Consult","note":"Priced at consultation","blurb":"Blood Ozone IV in a monitored clinical setting","ghl":"Ozone Therapy","dur":"45 to 60 min","mins":60,"cal":"ozone"},
+    earozone: {"name":"Ear and Nose Ozone Insufflation","type":"therapy","icon":"bwi-drop","reg":"$40","blurb":"Quick ozone insufflation for sinus and ear comfort","ghl":"Ozone Therapy","dur":"About 5 min","mins":15,"cal":"ear-ozone"},
     redlight: {"name":"Red Light Therapy","type":"therapy","icon":"bwi-sun","reg":"Ask about pricing","blurb":"Red and near infrared light for skin and recovery","ghl":"Help me choose","dur":"20 to 30 min","mins":30,"cal":"redlight"},
     sauna: {"name":"Infrared Sauna","type":"therapy","icon":"bwi-wave","reg":"Ask about pricing","blurb":"Full spectrum infrared suite","ghl":"Help me choose","dur":"20 to 40 min","mins":40,"cal":"sauna"},
     halo: {"name":"Halotherapy","type":"therapy","icon":"bwi-leaf","reg":"Ask about pricing","blurb":"Salt therapy for respiratory and skin support","ghl":"Help me choose","dur":"20 to 40 min","mins":40,"cal":"halo"},
     unsure: {"name":"Help me choose at my visit","type":"unsure","icon":"bwi-help","reg":"","blurb":"Book a screening slot and decide with our clinical team","ghl":"Help me choose","dur":"15 min screening","mins":30,"cal":"iv"}
   };
   var MAP = {
-    energy: ["vitality","debut","ala","shot_super","shot_strong","shot_b12"],
+    energy: ["vitality","powerpack","debut","ala","shot_nad","shot_super","shot_strong","shot_b12"],
     immunity: ["flu","shield","postviral","jetsetter","allergy","shot_tri","hdc"],
     recovery: ["hydration","restoration","powerpack","allstar","prepostop","soother","maternal"],
     aging: ["timemachine","firm","glutathione","nad","shot_glow"],
     metabolic: ["hmd","metabolize","glutathione","ala","shot_detox","shot_lean"],
     weight: ["glp1","metabolize","shot_lean"],
     peptide: ["peptide"],
-    ozone: ["ozone"],
+    ozone: ["ozone","earozone"],
     wellness: ["redlight","sauna","halo"],
     unsure: ["unsure"]
   };
