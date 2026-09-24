@@ -479,6 +479,7 @@ html.is-embed,html.is-embed body{overflow:hidden}
   function bwPost(msg){ if(!EMBED) return; if(msg.action==='scroll' && !USER_ACTED) return; try{ window.parent.postMessage(Object.assign({type:'dripbar-bw'}, msg), '*'); }catch(e){} }
   function bwReveal(el, block){ if(!el) return; if(EMBED){ bwPost({action:'scroll', offset: el.getBoundingClientRect().top + window.pageYOffset, block: block||'start', force:true}); } else { el.scrollIntoView({behavior:'smooth', block: block||'start'}); } }
   var PAGE_URL = HOST_URL;
+  function urlParams(){ var o={}; try{ new URL(PAGE_URL).searchParams.forEach(function(v,k){ o[k]=v; }); }catch(e){} return o; }
   function bookingChannel(){
     var q; try{ q = new URL(PAGE_URL).searchParams; }catch(e){ q = new URLSearchParams(''); }
     var src = (q.get('utm_source')||q.get('source')||'').toLowerCase(), med = (q.get('utm_medium')||'').toLowerCase(), camp = q.get('utm_campaign')||'';
@@ -843,7 +844,7 @@ html.is-embed,html.is-embed body{overflow:hidden}
       terms_and_conditions: "I agree to receive appointment related calls, texts, and emails from The DRIPBaR Burleson. I understand this is a booking request, not medical advice. Message and data rates may apply.",
       title: s.name+' - '+c.first+' '+c.last,
       notes: notes,
-      eventData: {source: HOST_URL, medium:'calendar', mediumId: CAL_ID, page:{url:HOST_URL, title:document.title}}
+      eventData: {source: HOST_URL, referrer: HOST_URL, url_params: urlParams(), medium:'calendar', mediumId: CAL_ID, page:{url:HOST_URL, title:document.title}, timestamp: Date.now(), type:'page-visit', pageVisitType:'website', domain: (function(){ try{ return new URL(HOST_URL).hostname; }catch(e){ return location.hostname; } })(), version:'v3'}
     };
     if(KEY_NOTES) payload[KEY_NOTES] = notes;
     if(s.ghl && KEY_SERVICE) payload[KEY_SERVICE] = s.ghl;
