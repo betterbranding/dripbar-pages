@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Airrosti Clients | The DRIPBaR Fossil Creek</title>
+<meta name="description" content="Airrosti gets you out of pain. The DRIPBaR Fossil Creek helps your body do the rest, with recovery IVs, VO2 Max, RMR, labs, and genetic testing when appropriate.">
+<link rel="canonical" href="https://fossilcreek.dripbarsanantonio.com/airrosti">
+<meta property="og:title" content="For Airrosti Clients | The DRIPBaR Fossil Creek">
+<meta property="og:description" content="Recover faster. Move better. Know your numbers. Wellness testing and recovery support at The DRIPBaR Fossil Creek.">
+<meta property="og:image" content="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/social.jpg">
+<meta property="og:url" content="https://fossilcreek.dripbarsanantonio.com/airrosti">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#3C4C62; --cyan:#0E9EC1; --lime:#C1D81A;
+  --bg:#f4f5f7; --body:#4a4a4a; --cyanfill:#f0f7fa; --limefill:#f7f9f0;
+  --divider:#e8e8e8; --muted:#8b95a1;
+  --bebas:'Bebas Neue','Arial Narrow',Arial,sans-serif;
+  --pop:'Poppins',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--pop);font-weight:400;color:var(--body);background:var(--bg);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* ---------- layout ---------- */
+.shell{width:min(1360px,92vw);margin:0 auto}
+.pad{padding-top:130px;padding-bottom:130px}
+@media(max-width:768px){.pad{padding-top:92px;padding-bottom:92px}}
+
+/* ---------- type ---------- */
+.eyebrow{display:flex;align-items:center;gap:8px;font:600 12px/1 var(--pop);letter-spacing:1.5px;text-transform:uppercase;color:var(--navy)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:none}
+.eyebrow.on-dark{color:#fff}
+.eyebrow.on-dark::before{background:var(--lime)}
+h1,h2,h3,.btn{font-family:var(--bebas);font-weight:400;letter-spacing:1px}
+h1{font-size:clamp(44px,6.2vw,88px);line-height:1.02;color:#fff}
+h2{font-size:clamp(34px,4vw,58px);line-height:1.05;color:var(--navy)}
+h3{font-size:clamp(22px,2vw,28px);line-height:1.1;color:var(--navy)}
+.ghosted{color:#aeb6c0}
+.lede{font-size:clamp(16px,1.3vw,18px);max-width:640px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;font-size:17px;letter-spacing:1.5px;padding:15px 38px;border-radius:6px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(14,158,193,.28)}
+.btn-cyan{background:var(--cyan);color:#fff}
+.btn-lime{background:var(--lime);color:var(--navy)}
+.btn-lime:hover{box-shadow:0 8px 22px rgba(193,216,26,.35)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.65);color:#fff;background:rgba(255,255,255,.06);backdrop-filter:blur(3px)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);box-shadow:none}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(60,76,98,.08);transform:translateY(-100%);animation:navin .7s .3s forwards ease}
+@keyframes navin{to{transform:none}}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav img{height:34px;width:auto}
+.nav .tag{font:600 11px/1 var(--pop);letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.nav .btn{font-size:15px;padding:10px 26px}
+@media(max-width:640px){.nav .tag{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/hero.webp') center/cover no-repeat;animation:heroZoom 8s ease forwards}
+@keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(34,44,58,.88) 0%,rgba(34,44,58,.62) 45%,rgba(34,44,58,.5) 100%)}
+.hero-in{position:relative;z-index:2;padding:150px 0 110px}
+.hero .eyebrow{margin-bottom:22px}
+.hero h1{max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{margin:26px 0 36px;max-width:560px;font-size:clamp(16px,1.3vw,19px);color:rgba(255,255,255,.92)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .fine{margin-top:26px;font-size:13px;color:rgba(255,255,255,.75)}
+@media(max-width:768px){.hero{min-height:86vh}.hero-in{padding:130px 0 96px}.hero-ctas .btn{width:100%}}
+
+/* ---------- trio photo cards ---------- */
+.trio-head{text-align:center;max-width:760px;margin:0 auto 70px}
+.trio-head .eyebrow{justify-content:center;margin-bottom:18px}
+.trio-head p{margin-top:20px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tcard{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .35s ease,box-shadow .35s ease}
+.tcard:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(60,76,98,.14)}
+.tcard .ph{aspect-ratio:4/3;overflow:hidden}
+.tcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.tcard:hover .ph img{transform:scale(1.05)}
+.tcard .tx{padding:26px 28px 30px}
+.tcard h3{display:flex;align-items:center;gap:10px}
+.tcard h3 span{color:var(--cyan);font-family:var(--pop);font-size:18px;transition:transform .3s ease}
+.tcard:hover h3 span{transform:translateX(5px)}
+.tcard p{margin-top:10px;font-size:15px}
+@media(max-width:900px){.trio{grid-template-columns:1fr}}
+
+/* ---------- how it works ---------- */
+.how{background:#fff}
+.how-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:start}
+.how-left{position:sticky;top:110px}
+.how-left .eyebrow{margin-bottom:18px}
+.how-left p{margin-top:20px;max-width:420px}
+.how-left .btn{margin-top:30px}
+.step{display:grid;grid-template-columns:86px 1fr;gap:26px;padding:38px 0;border-top:1px solid var(--divider)}
+.step:first-child{border-top:0;padding-top:0}
+.step .num{font-family:var(--bebas);font-size:56px;line-height:.9;color:var(--cyan);opacity:.35}
+.step h3{margin-bottom:8px}
+.step p{font-size:15px;max-width:520px}
+@media(max-width:900px){.how-grid{grid-template-columns:1fr;gap:44px}.how-left{position:static}.step{grid-template-columns:60px 1fr;gap:18px;padding:28px 0}.step .num{font-size:42px}}
+
+/* ---------- panels ---------- */
+.panel{overflow:hidden}
+.panel .grid{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+.panel.flip .grid > .ph{order:2}
+.panel .ph{border-radius:8px;overflow:hidden;box-shadow:0 18px 44px rgba(60,76,98,.16);aspect-ratio:4/5;max-height:640px}
+.panel .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.panel .ph:hover img{transform:scale(1.04)}
+.panel .eyebrow{margin-bottom:16px}
+.panel h2{margin-bottom:8px}
+.bestfor{display:inline-block;font:600 12px/1 var(--pop);letter-spacing:1px;text-transform:uppercase;padding:9px 16px;border-radius:100px;margin:14px 0 22px}
+.bestfor.cy{background:var(--cyanfill);color:var(--cyan)}
+.bestfor.li{background:var(--limefill);color:#7a8a10}
+.bestfor.nv{background:rgba(255,255,255,.12);color:#fff}
+.panel .why{font-size:16px;margin-bottom:26px;max-width:540px}
+.learn{list-style:none;margin-bottom:30px}
+.learn li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;font-size:15px;border-top:1px solid var(--divider)}
+.learn li:first-child{border-top:0}
+.learn .ck{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin-top:2px;font-size:12px;font-weight:600}
+.ck.cy{background:var(--cyan);color:#fff}
+.ck.li{background:var(--lime);color:var(--navy)}
+.panel .spec{font-size:13px;color:var(--muted);margin-bottom:28px}
+.panel.dark{background:var(--navy)}
+.panel.dark h2,.panel.dark h3{color:#fff}
+.panel.dark .why{color:rgba(255,255,255,.88)}
+.panel.dark .learn li{color:rgba(255,255,255,.88);border-color:rgba(255,255,255,.14)}
+.panel.dark .spec{color:#a0aab4}
+.panel.white{background:#fff}
+.panel.cyfill{background:var(--cyanfill)}
+@media(max-width:900px){.panel .grid{grid-template-columns:1fr;gap:38px}.panel.flip .grid > .ph{order:0}.panel .ph{aspect-ratio:4/3;max-height:none}}
+
+/* ---------- compare table ---------- */
+.cmp-head{text-align:center;max-width:720px;margin:0 auto 64px}
+.cmp-head .eyebrow{justify-content:center;margin-bottom:18px}
+.cmp-head p{margin-top:20px}
+.cmp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;background:#fff;font-size:14px}
+.cmp th,.cmp td{padding:16px 18px;text-align:center;border-bottom:1px solid var(--divider)}
+.cmp thead th{background:var(--navy);color:#fff;font-family:var(--bebas);font-size:19px;letter-spacing:1px;font-weight:400;padding:20px 18px}
+.cmp thead th:first-child{text-align:left}
+.cmp td:first-child{text-align:left;font-weight:600;color:var(--navy);font-size:13.5px;min-width:230px}
+.cmp tbody tr:nth-child(even) td{background:#fafbfc}
+.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .dot{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--lime);color:var(--navy);font-weight:600;font-size:13px}
+.cmp .dash{color:#c9ced5}
+.cmp .small{font-size:12.5px;color:var(--muted)}
+.cmp-note{text-align:center;font-size:13px;color:var(--muted);margin-top:22px}
+
+/* ---------- final cta ---------- */
+.cta{position:relative;background:var(--navy);color:#fff;text-align:center;padding-bottom:210px !important}
+.cta h2{color:#fff}
+.cta h2 em{font-style:normal;color:var(--lime)}
+.cta p{max-width:560px;margin:24px auto 38px;color:rgba(255,255,255,.88)}
+.cta .fine{margin-top:28px;font-size:14px;color:#a0aab4}
+.cta .fine a{color:var(--lime)}
+
+/* ---------- footer ---------- */
+.foot{background:#334153;color:#fff;padding:64px 0 146px;text-align:center}
+.foot img{height:44px;width:auto;margin:0 auto 22px}
+.foot .loc{font:600 14px/1 var(--pop);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.foot .adr{color:#a0aab4;font-size:14px;line-height:1.8}
+.foot .btn{margin:26px 0 30px}
+.foot .md{color:#7a8896;font-size:12px}
+
+/* ---------- cherry tamer ---------- */
+#floatingEstimator{transform:scale(.82);transform-origin:bottom center}
+.cherry-x{position:fixed;bottom:118px;left:50%;transform:translateX(64px);z-index:10000;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;border:0;font-size:15px;line-height:1;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.3);display:none}
+
+.hero-bg{animation:heroZoom 8s ease forwards}
+@media(prefers-reduced-motion:reduce){.hero-bg,.nav{animation:none}.nav{transform:none}}
+.refpill{display:none;margin:-14px 0 28px;font:600 12px/1 var(--pop);letter-spacing:1px;text-transform:uppercase;padding:10px 16px;border-radius:100px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;width:max-content;max-width:100%}
+.refpill.on{display:inline-block}
+.lockup{min-height:0}
+.trio-head .lede{margin-left:auto;margin-right:auto}
+.cta .alt{margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16);max-width:560px;margin-left:auto;margin-right:auto}
+.cta .alt h3{color:#fff;font-size:24px;margin-bottom:12px}
+.cta .alt .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta .alt .btn{font-size:15px;padding:11px 26px}
+.cmp td.txt{text-align:left;font-size:13.5px;color:var(--body);min-width:190px}
+.cmp thead th{font-size:18px}
+table.cmp{min-width:900px}
+.cmp td:first-child{min-width:170px}
+@media(max-width:900px){.cta .alt .btn{width:100%}}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="shell nav-in">
+    <a href="https://san-antonio-fossil-creek.thedripbar.com/"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
+    <span class="tag">Fossil Creek | Airrosti Clients</span>
+    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK NOW</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="shell hero-in">
+    <!-- AIRROSTI LOGO: pending partner approval -->
+    <div class="eyebrow on-dark">The DRIPBaR Fossil Creek | For Airrosti clients</div>
+    <h1>Recover faster. Move better. <em>Know your numbers.</em></h1>
+    <p>Airrosti gets you out of pain. We help your body do the rest.</p>
+    <div class="refpill" id="refPill"></div>
+    <div class="hero-ctas">
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+      <a class="btn btn-ghost" href="#panels">SEE WHAT WE OFFER</a>
+    </div>
+    <div class="fine">22250 Bulverde Rd, Space 108, San Antonio, TX 78261. Walk-ins welcome, appointments preferred.</div>
+  </div>
+</header>
+
+<!-- TRIO -->
+<section class="pad">
+  <div class="shell">
+    <div class="trio-head">
+      <div class="eyebrow">In collaboration with Airrosti</div>
+      <h2>Referred by Airrosti? <span class="ghosted">Here is how it fits.</span></h2>
+      <p class="lede">Your Airrosti provider handles your injury evaluation. The DRIPBaR supports the wellness side: recovery, hydration, testing, and the data behind how your body is doing.</p>
+    </div>
+    <div class="trio">
+      <div class="tcard"><div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/card-recover.webp" alt="Nurse preparing an IV bag at The DRIPBaR Fossil Creek" loading="lazy" width="1216" height="912"></div>
+        <div class="tx"><h3>RECOVER <span>&rarr;</span></h3><p>IV drips and shots, with Glutathione as an option, to support hydration, recovery, and antioxidant needs.</p></div></div>
+      <div class="tcard"><div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/card-measure.webp" alt="Bright lounge at The DRIPBaR Fossil Creek" loading="lazy" width="1216" height="912"></div>
+        <div class="tx"><h3>MEASURE <span>&rarr;</span></h3><p>VO2 Max and Resting Metabolic Rate testing. Real numbers on fitness and energy use.</p></div></div>
+      <div class="tcard"><div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/card-understand.webp" alt="Two team members reviewing a tablet at The DRIPBaR Fossil Creek" loading="lazy" width="1216" height="912"></div>
+        <div class="tx"><h3>UNDERSTAND <span>&rarr;</span></h3><p>Lab panels and, when appropriate, genetic testing. Clear answers in plain language.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how pad">
+  <div class="shell how-grid">
+    <div class="how-left">
+      <div class="eyebrow">The Process</div>
+      <h2>How it works, <span class="ghosted">start to finish.</span></h2>
+      <p>Four simple steps from your Airrosti clinic to your first visit at Fossil Creek.</p>
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+    </div>
+    <div class="how-right">
+      <div class="step"><div class="num">01</div><div><h3>SCAN THE CODE</h3><p>Scan the QR code at your Airrosti clinic. It brings you right here.</p></div></div>
+      <div class="step"><div class="num">02</div><div><h3>PICK WHAT YOU ARE CURIOUS ABOUT</h3><p>Recovery support, testing, or both. Not sure? Book a visit and we will help you choose.</p></div></div>
+      <div class="step"><div class="num">03</div><div><h3>BOOK A TIME AT FOSSIL CREEK</h3><p>Choose a time that works. Online booking takes about a minute.</p></div></div>
+      <div class="step"><div class="num">04</div><div><h3>WALK IN, WE TAKE IT FROM THERE</h3><p>Our team walks you through everything and answers your questions.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel  pad" id="panels">
+  <div class="shell grid">
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-iv.webp" alt="Nurse preparing an IV at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
+    <div>
+      <div class="eyebrow">Recover | IV Drips and Shots</div>
+      <h2>Glutathione and IV support</h2>
+      <span class="bestfor cy">Best for: post-workout and recovery weeks</span>
+      <p class="why">Glutathione is an antioxidant your body makes on its own. Training, stress, and hard weeks can draw it down. We offer it as an IV add-on or a quick shot, alongside hydration and nutrient blends chosen to support how you recover.</p>
+      <ul class="learn">
+        <li><span class="ck cy">&#10003;</span>Antioxidant support for the body after hard training or a demanding week.</li>
+        <li><span class="ck cy">&#10003;</span>Hydration and electrolytes to support recovery.</li>
+        <li><span class="ck cy">&#10003;</span>Your choice of IV drip or a quick shot, based on your time and goals.</li>
+        <li><span class="ck cy">&#10003;</span>A nurse reviews what fits you before anything starts.</li>
+      </ul>
+      <div class="spec">Not a treatment for injury or pain. Your Airrosti provider handles your injury evaluation. We support the wellness side.</div>
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+    </div>
+  </div>
+</section>
+
+<section class="panel white flip pad">
+  <div class="shell grid">
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-vo2.webp" alt="Calm hallway at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
+    <div>
+      <div class="eyebrow">Measure | VO2 Max Testing</div>
+      <h2>VO2 Max Testing</h2>
+      <span class="bestfor li">Best for: getting back to training with a baseline</span>
+      <p class="why">VO2 Max shows how well your body uses oxygen when you work hard. It is one of the clearest snapshots of aerobic fitness. Many people use it to set training zones and track progress over time.</p>
+      <ul class="learn">
+        <li><span class="ck li">&#10003;</span>A measured look at your aerobic fitness, not a guess.</li>
+        <li><span class="ck li">&#10003;</span>Personal heart rate zones to train and recover by.</li>
+        <li><span class="ck li">&#10003;</span>A baseline you can retest against as you rebuild.</li>
+        <li><span class="ck li">&#10003;</span>Results explained in plain language.</li>
+      </ul>
+      <div class="spec">Wear comfortable workout clothes. Ask us about what to expect when you book.</div>
+      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+    </div>
+  </div>
+</section>
+
+<section class="panel dark pad">
+  <div class="shell grid">
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-rmr.webp" alt="Private treatment room at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
+    <div>
+      <div class="eyebrow on-dark">Measure | RMR Testing</div>
+      <h2>Resting Metabolic Rate</h2>
+      <span class="bestfor nv">Best for: dialing in fuel and recovery nutrition</span>
+      <p class="why">Your resting metabolic rate is the energy your body burns at rest. Knowing it helps take the guesswork out of how much to eat, especially when your activity level is changing during recovery.<!-- CONFIRM: RMR available at Fossil Creek --></p>
+      <ul class="learn">
+        <li><span class="ck li">&#10003;</span>A measured number, not an online estimate.</li>
+        <li><span class="ck li">&#10003;</span>Helps you match nutrition to your current activity.</li>
+        <li><span class="ck li">&#10003;</span>Useful when you are moving less, or ramping back up.</li>
+        <li><span class="ck li">&#10003;</span>A simple, seated test.</li>
+      </ul>
+      <div class="spec">Ask when you book about prep and timing.</div>
+      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+    </div>
+  </div>
+</section>
+
+<section class="panel cyfill flip pad">
+  <div class="shell grid">
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-labs.webp" alt="Nurse preparing a sample at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
+    <div>
+      <div class="eyebrow">Understand | Lab Panels</div>
+      <h2>Lab Panels</h2>
+      <span class="bestfor cy">Best for: seeing what is going on inside</span>
+      <p class="why">Bloodwork shows what you cannot feel. Vitamin levels, hormones, inflammation markers, and metabolic health can all play into how you recover. A lab panel gives you real numbers to work with.</p>
+      <ul class="learn">
+        <li><span class="ck cy">&#10003;</span>Choose from panels built around energy, recovery, hormones, and metabolic health.</li>
+        <li><span class="ck cy">&#10003;</span>A quick blood draw at Fossil Creek.</li>
+        <li><span class="ck cy">&#10003;</span>Results reviewed with our clinical team.</li>
+        <li><span class="ck cy">&#10003;</span>Share results with your Airrosti provider if you choose.</li>
+      </ul>
+      <div class="spec">Ask us which panel fits your goals when you book.</div>
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+    </div>
+  </div>
+</section>
+
+<section class="panel white pad">
+  <div class="shell grid">
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-genetic.webp" alt="Team member reviewing a tablet with a client at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
+    <div>
+      <div class="eyebrow">Understand | Genetic Testing</div>
+      <h2>Genetic Testing</h2>
+      <span class="bestfor li">Best for: when it is the right fit for you</span>
+      <p class="why">Your genes influence how you recover, use nutrients, and respond to training. Genetic testing is not for everyone, and it is not a first step. If it makes sense for your goals, we will tell you. If not, we will say so.</p>
+      <ul class="learn">
+        <li><span class="ck li">&#10003;</span>A simple cheek swab for most panels.</li>
+        <li><span class="ck li">&#10003;</span>Insight into recovery, nutrient use, and training response.</li>
+        <li><span class="ck li">&#10003;</span>A clear report in plain language.</li>
+        <li><span class="ck li">&#10003;</span>Reviewed with our clinical team so you know what to do with it.</li>
+      </ul>
+      <div class="spec">Offered when appropriate. Ask us during your visit.</div>
+      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="pad">
+  <div class="shell">
+    <div class="cmp-head">
+      <div class="eyebrow">Side By Side</div>
+      <h2>Five services. <span class="ghosted">One quick comparison.</span></h2>
+      <p class="lede" style="margin-left:auto;margin-right:auto">A simple look at what each service is good for and what to expect.</p>
+    </div>
+    <div class="cmp-scroll">
+      <table class="cmp">
+        <thead><tr><th>Service</th><th>Good for</th><th>What happens</th><th>Time in clinic</th></tr></thead>
+        <tbody>
+          <tr><td>IV Drips and Shots</td><td class="txt">Hydration and recovery support.</td><td class="txt">Nurse-reviewed IV or shot, with Glutathione as an option.</td><td class="txt">Ask when you book</td></tr>
+          <tr><td>VO2 Max Testing</td><td class="txt">Aerobic fitness baseline and training zones.</td><td class="txt">A measured effort test with results explained.</td><td class="txt">Ask when you book</td></tr>
+          <tr><td>RMR Testing</td><td class="txt">Understanding how much energy you burn at rest.</td><td class="txt">A simple, seated breathing test.</td><td class="txt">Ask when you book</td></tr>
+          <tr><td>Lab Panels</td><td class="txt">Seeing vitamins, hormones, and inflammation markers.</td><td class="txt">Quick blood draw, results reviewed by our team.</td><td class="txt">Ask when you book</td></tr>
+          <tr><td>Genetic Testing</td><td class="txt">Personalized insight when appropriate.</td><td class="txt">Cheek swab, then a results review.</td><td class="txt">Ask when you book</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmp-note">Not sure where to start? Book a visit and our team will point you to the right fit. Services are wellness support and testing. They are not a treatment for injury or pain.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta pad">
+  <div class="shell">
+    <div class="eyebrow on-dark" style="justify-content:center;margin-bottom:20px">The DRIPBaR Fossil Creek</div>
+    <h2>Let's pick up where <em>Airrosti left off.</em></h2>
+    <p>Book a visit at Fossil Creek and we will build a plan around how you want to feel and move.</p>
+    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+    <div class="fine">Or call <a href="tel:+17269008533">(726) 900-8533</a>. Open Mon-Fri 10-6, Sat 9-3, Sun 10-3.</div>
+    <div class="alt">
+      <h3>JUST HAVE A QUESTION?</h3>
+      <div class="links">
+        <a class="btn btn-ghost" href="tel:+17269008533">CALL US</a>
+        <a class="btn btn-ghost" href="sms:+17269008533">TEXT US</a>
+        <!-- <a class="btn btn-ghost" href="mailto:EMAIL-PLACEHOLDER">EMAIL US</a> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="foot">
+  <div class="shell">
+    <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR">
+    <div class="loc">The DRIPBaR Fossil Creek</div>
+    <div class="adr">22250 Bulverde Rd, Space 108, San Antonio, TX 78261<br>(726) 900-8533<br>Mon-Fri 10 AM - 6 PM, Sat 9 AM - 3 PM, Sun 10 AM - 3 PM</div>
+    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK NOW</a>
+    <div class="md">All services administered under the supervision of A.D. Thakkar, M.D.</div>
+  </div>
+</div>
+
+<!-- CHERRY WIDGET BEGIN -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Slabo+27px&family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100..900&family=Montserrat:wght@100..900&family=Oswald:wght@200..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&family=Source+Sans+3:wght@200..900&family=PT+Sans:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+<script>
+    (function (w, d, s, o, f, js, fjs) {
+        w[o] = w[o] || function () {
+            (w[o].q = w[o].q || []).push(arguments);
+        };
+        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+        js.id = o;
+        js.src = f;
+        js.async = 1;
+        fjs.parentNode.insertBefore(js, fjs);
+    })(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+    _hw("init", {
+        debug: false,
+        variables: {
+            slug: 'the-dripbar-san-antonio',
+            name: "The DRIPBaR - San Antonio",
+            images: [26],
+            customLogo: '',
+            defaultPurchaseAmount: 750,
+            customImage: '', 
+            imageCategory: 'medspa',
+            language: 'en',
+        },
+        styles: {
+            primaryColor: '#90b60a',
+            secondaryColor: '#90b60a10',
+            fontFamily: 'Montserrat',
+            headerFontFamily: 'Montserrat',
+            floatingEstimator: {
+                position: 'bottom-middle',
+                offset: {
+                    x: '0px',
+                    y: '0px'
+                },
+                zIndex: 9999,
+                ctaFontFamily: 'Montserrat',
+                bodyFontFamily: 'Montserrat',
+                ctaColor: '#90b60a',
+                ctaTextColor: '#FFFFFF'
+            }
+        }
+    }, ['floatingEstimator']);
+</script>
+<div id="floatingEstimator"></div>
+<!-- CHERRY WIDGET END -->
+
+<script>
+// airrosti clinic capture (?clinic= or ?utm_content=), stored in localStorage, appended to booking CTAs
+(function(){
+  var q=new URLSearchParams(location.search),c=(q.get('clinic')||q.get('utm_content')||'').toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,60);
+  try{ if(c) localStorage.setItem('db_airrosti_clinic',c); else c=localStorage.getItem('db_airrosti_clinic')||''; }catch(e){}
+  var v=c||'unspecified';
+  document.querySelectorAll('a[data-bk]').forEach(function(a){
+    var u=new URL(a.href); u.searchParams.set('utm_content',v); a.href=u.toString();
+  });
+  if(c){
+    var p=document.getElementById('refPill');
+    if(p){ p.textContent='Referred from Airrosti '+c.split('-').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(' '); p.className='refpill on'; }
+  }
+})();
+// cherry: dismissible, session-remembered
+(function(){
+  var host = document.getElementById('floatingEstimator');
+  if(!host) return;
+  try{ if(sessionStorage.getItem('cherryHidden')==='1'){ host.style.display='none'; return; } }catch(e){}
+  var x = document.createElement('button');
+  x.className='cherry-x'; x.innerHTML='&#10005;'; x.setAttribute('aria-label','Hide financing banner');
+  x.onclick=function(){ host.style.display='none'; x.remove(); try{sessionStorage.setItem('cherryHidden','1');}catch(e){} };
+  document.body.appendChild(x);
+  var tries=0, t=setInterval(function(){
+    tries++;
+    if(host.childElementCount>0){ x.style.display='block'; clearInterval(t); }
+    else if(tries>40){ clearInterval(t); x.remove(); }
+  },500);
+})();
+</script>
+</body>
+</html>
