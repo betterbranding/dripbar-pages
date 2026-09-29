@@ -191,15 +191,27 @@ table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;b
 table.cmp{min-width:900px}
 .cmp td:first-child{min-width:170px}
 @media(max-width:900px){.cta .alt .btn{width:100%}}
+
+/* ---------- language toggle ---------- */
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;gap:2px;padding:3px;border-radius:100px;background:rgba(60,76,98,.08)}
+.lang button{border:0;background:transparent;font-size:20px;line-height:1;padding:5px 9px;border-radius:100px;cursor:pointer;opacity:.45;filter:grayscale(.6);transition:opacity .2s,filter .2s,background .2s,transform .2s}
+.lang button:hover{opacity:.85;filter:none}
+.lang button.on{opacity:1;filter:none;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.lang button:active{transform:scale(.92)}
+@media(max-width:640px){.nav .btn{padding:10px 16px;font-size:14px}.lang button{font-size:18px;padding:4px 7px}}
 </style>
+<script>(function(){var q=new URLSearchParams(location.search).get('lang'),l='';try{l=localStorage.getItem('db_lang')||''}catch(e){}window.__dbLang=(q==='es'||q==='en')?q:(l==='es'?'es':'en');})();</script>
 </head>
 <body>
 
 <div class="nav">
   <div class="shell nav-in">
     <a href="https://san-antonio-fossil-creek.thedripbar.com/"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
-    <span class="tag">Fossil Creek | Airrosti Clients</span>
-    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK NOW</a>
+    <span class="tag" data-i18n="k0">Fossil Creek | Airrosti Clients</span>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-label="English" title="English">&#x1F1FA;&#x1F1F8;</button><button type="button" data-lang="es" aria-label="Español" title="Español">&#x1F1F2;&#x1F1FD;</button></div>
+    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k1">BOOK NOW</a>
   </div>
 </div>
 
@@ -208,15 +220,15 @@ table.cmp{min-width:900px}
   <div class="hero-bg"></div>
   <div class="shell hero-in">
     <!-- AIRROSTI LOGO: pending partner approval -->
-    <div class="eyebrow on-dark">The DRIPBaR Fossil Creek | For Airrosti clients</div>
-    <h1>Recover faster. Move better. <em>Know your numbers.</em></h1>
-    <p>Airrosti gets you out of pain. We help your body do the rest.</p>
+    <div class="eyebrow on-dark" data-i18n="k2">The DRIPBaR Fossil Creek | For Airrosti clients</div>
+    <h1 data-i18n="k3">Recover faster. Move better. <em>Know your numbers.</em></h1>
+    <p data-i18n="k4">Airrosti gets you out of pain. We help your body do the rest.</p>
     <div class="refpill" id="refPill"></div>
     <div class="hero-ctas">
-      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
-      <a class="btn btn-ghost" href="#panels">SEE WHAT WE OFFER</a>
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
+      <a class="btn btn-ghost" href="#panels" data-i18n="k6">SEE WHAT WE OFFER</a>
     </div>
-    <div class="fine">22250 Bulverde Rd, Space 108, San Antonio, TX 78261. Walk-ins welcome, appointments preferred.</div>
+    <div class="fine" data-i18n="k7">22250 Bulverde Rd, Space 108, San Antonio, TX 78261. Walk-ins welcome, appointments preferred.</div>
   </div>
 </header>
 
@@ -224,17 +236,17 @@ table.cmp{min-width:900px}
 <section class="pad">
   <div class="shell">
     <div class="trio-head">
-      <div class="eyebrow">In collaboration with Airrosti</div>
-      <h2>Referred by Airrosti? <span class="ghosted">Here is how it fits.</span></h2>
-      <p class="lede">Your Airrosti provider handles your injury evaluation. The DRIPBaR supports the wellness side: recovery, hydration, testing, and the data behind how your body is doing.</p>
+      <div class="eyebrow" data-i18n="k8">In collaboration with Airrosti</div>
+      <h2 data-i18n="k9">Referred by Airrosti? <span class="ghosted">Here is how it fits.</span></h2>
+      <p class="lede" data-i18n="k10">Your Airrosti provider handles your injury evaluation. The DRIPBaR supports the wellness side: recovery, hydration, testing, and the data behind how your body is doing.</p>
     </div>
     <div class="trio">
       <div class="tcard"><div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/card-recover.webp" alt="Nurse preparing an IV bag at The DRIPBaR Fossil Creek" loading="lazy" width="1216" height="912"></div>
-        <div class="tx"><h3>RECOVER <span>&rarr;</span></h3><p>IV drips and shots, with Glutathione as an option, to support hydration, recovery, and antioxidant needs.</p></div></div>
-      <div class="tcard"><div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/card-measure.webp" alt="Bright lounge at The DRIPBaR Fossil Creek" loading="lazy" width="1216" height="912"></div>
-        <div class="tx"><h3>MEASURE <span>&rarr;</span></h3><p>VO2 Max and Resting Metabolic Rate testing. Real numbers on fitness and energy use.</p></div></div>
+        <div class="tx"><h3 data-i18n="k11">RECOVER <span>&rarr;</span></h3><p data-i18n="k12">IV drips and shots, with Glutathione as an option, to support hydration, recovery, and antioxidant needs.</p></div></div>
+      <div class="tcard"><div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/card-measure.webp" alt="Client wearing a PNOE VO2 Max mask while a nurse reviews results in The DRIPBaR Fossil Creek lounge" loading="lazy" width="1216" height="912"></div>
+        <div class="tx"><h3 data-i18n="k13">MEASURE <span>&rarr;</span></h3><p data-i18n="k14">VO2 Max and Resting Metabolic Rate testing. Real numbers on fitness and energy use.</p></div></div>
       <div class="tcard"><div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/card-understand.webp" alt="Two team members reviewing a tablet at The DRIPBaR Fossil Creek" loading="lazy" width="1216" height="912"></div>
-        <div class="tx"><h3>UNDERSTAND <span>&rarr;</span></h3><p>Lab panels and, when appropriate, genetic testing. Clear answers in plain language.</p></div></div>
+        <div class="tx"><h3 data-i18n="k15">UNDERSTAND <span>&rarr;</span></h3><p data-i18n="k16">Lab panels and, when appropriate, genetic testing. Clear answers in plain language.</p></div></div>
     </div>
   </div>
 </section>
@@ -243,16 +255,16 @@ table.cmp{min-width:900px}
 <section class="how pad">
   <div class="shell how-grid">
     <div class="how-left">
-      <div class="eyebrow">The Process</div>
-      <h2>How it works, <span class="ghosted">start to finish.</span></h2>
-      <p>Four simple steps from your Airrosti clinic to your first visit at Fossil Creek.</p>
-      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+      <div class="eyebrow" data-i18n="k17">The Process</div>
+      <h2 data-i18n="k18">How it works, <span class="ghosted">start to finish.</span></h2>
+      <p data-i18n="k19">Four simple steps from your Airrosti clinic to your first visit at Fossil Creek.</p>
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
     </div>
     <div class="how-right">
-      <div class="step"><div class="num">01</div><div><h3>SCAN THE CODE</h3><p>Scan the QR code at your Airrosti clinic. It brings you right here.</p></div></div>
-      <div class="step"><div class="num">02</div><div><h3>PICK WHAT YOU ARE CURIOUS ABOUT</h3><p>Recovery support, testing, or both. Not sure? Book a visit and we will help you choose.</p></div></div>
-      <div class="step"><div class="num">03</div><div><h3>BOOK A TIME AT FOSSIL CREEK</h3><p>Choose a time that works. Online booking takes about a minute.</p></div></div>
-      <div class="step"><div class="num">04</div><div><h3>WALK IN, WE TAKE IT FROM THERE</h3><p>Our team walks you through everything and answers your questions.</p></div></div>
+      <div class="step"><div class="num">01</div><div><h3 data-i18n="k20">SCAN THE CODE</h3><p data-i18n="k21">Scan the QR code at your Airrosti clinic. It brings you right here.</p></div></div>
+      <div class="step"><div class="num">02</div><div><h3 data-i18n="k22">PICK WHAT YOU ARE CURIOUS ABOUT</h3><p data-i18n="k23">Recovery support, testing, or both. Not sure? Book a visit and we will help you choose.</p></div></div>
+      <div class="step"><div class="num">03</div><div><h3 data-i18n="k24">BOOK A TIME AT FOSSIL CREEK</h3><p data-i18n="k25">Choose a time that works. Online booking takes about a minute.</p></div></div>
+      <div class="step"><div class="num">04</div><div><h3 data-i18n="k26">WALK IN, WE TAKE IT FROM THERE</h3><p data-i18n="k27">Our team walks you through everything and answers your questions.</p></div></div>
     </div>
   </div>
 </section>
@@ -261,38 +273,38 @@ table.cmp{min-width:900px}
   <div class="shell grid">
     <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-iv.webp" alt="Nurse preparing an IV at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
     <div>
-      <div class="eyebrow">Recover | IV Drips and Shots</div>
-      <h2>Glutathione and IV support</h2>
-      <span class="bestfor cy">Best for: post-workout and recovery weeks</span>
-      <p class="why">Glutathione is an antioxidant your body makes on its own. Training, stress, and hard weeks can draw it down. We offer it as an IV add-on or a quick shot, alongside hydration and nutrient blends chosen to support how you recover.</p>
+      <div class="eyebrow" data-i18n="k28">Recover | IV Drips and Shots</div>
+      <h2 data-i18n="k29">Glutathione and IV support</h2>
+      <span class="bestfor cy" data-i18n="k30">Best for: post-workout and recovery weeks</span>
+      <p class="why" data-i18n="k31">Glutathione is an antioxidant your body makes on its own. Training, stress, and hard weeks can draw it down. We offer it as an IV add-on or a quick shot, alongside hydration and nutrient blends chosen to support how you recover.</p>
       <ul class="learn">
-        <li><span class="ck cy">&#10003;</span>Antioxidant support for the body after hard training or a demanding week.</li>
-        <li><span class="ck cy">&#10003;</span>Hydration and electrolytes to support recovery.</li>
-        <li><span class="ck cy">&#10003;</span>Your choice of IV drip or a quick shot, based on your time and goals.</li>
-        <li><span class="ck cy">&#10003;</span>A nurse reviews what fits you before anything starts.</li>
+        <li data-i18n="k32"><span class="ck cy">&#10003;</span>Antioxidant support for the body after hard training or a demanding week.</li>
+        <li data-i18n="k33"><span class="ck cy">&#10003;</span>Hydration and electrolytes to support recovery.</li>
+        <li data-i18n="k34"><span class="ck cy">&#10003;</span>Your choice of IV drip or a quick shot, based on your time and goals.</li>
+        <li data-i18n="k35"><span class="ck cy">&#10003;</span>A nurse reviews what fits you before anything starts.</li>
       </ul>
-      <div class="spec">Not a treatment for injury or pain. Your Airrosti provider handles your injury evaluation. We support the wellness side.</div>
-      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+      <div class="spec" data-i18n="k36">Not a treatment for injury or pain. Your Airrosti provider handles your injury evaluation. We support the wellness side.</div>
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
     </div>
   </div>
 </section>
 
 <section class="panel white flip pad">
   <div class="shell grid">
-    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-vo2.webp" alt="Calm hallway at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-vo2.webp" alt="VO2 Max test consult with a PNOE mask at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
     <div>
-      <div class="eyebrow">Measure | VO2 Max Testing</div>
-      <h2>VO2 Max Testing</h2>
-      <span class="bestfor li">Best for: getting back to training with a baseline</span>
-      <p class="why">VO2 Max shows how well your body uses oxygen when you work hard. It is one of the clearest snapshots of aerobic fitness. Many people use it to set training zones and track progress over time.</p>
+      <div class="eyebrow" data-i18n="k37">Measure | VO2 Max Testing</div>
+      <h2 data-i18n="k38">VO2 Max Testing</h2>
+      <span class="bestfor li" data-i18n="k39">Best for: getting back to training with a baseline</span>
+      <p class="why" data-i18n="k40">VO2 Max shows how well your body uses oxygen when you work hard. It is one of the clearest snapshots of aerobic fitness. Many people use it to set training zones and track progress over time.</p>
       <ul class="learn">
-        <li><span class="ck li">&#10003;</span>A measured look at your aerobic fitness, not a guess.</li>
-        <li><span class="ck li">&#10003;</span>Personal heart rate zones to train and recover by.</li>
-        <li><span class="ck li">&#10003;</span>A baseline you can retest against as you rebuild.</li>
-        <li><span class="ck li">&#10003;</span>Results explained in plain language.</li>
+        <li data-i18n="k41"><span class="ck li">&#10003;</span>A measured look at your aerobic fitness, not a guess.</li>
+        <li data-i18n="k42"><span class="ck li">&#10003;</span>Personal heart rate zones to train and recover by.</li>
+        <li data-i18n="k43"><span class="ck li">&#10003;</span>A baseline you can retest against as you rebuild.</li>
+        <li data-i18n="k44"><span class="ck li">&#10003;</span>Results explained in plain language.</li>
       </ul>
-      <div class="spec">Wear comfortable workout clothes. Ask us about what to expect when you book.</div>
-      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+      <div class="spec" data-i18n="k45">Wear comfortable workout clothes. Ask us about what to expect when you book.</div>
+      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
     </div>
   </div>
 </section>
@@ -301,18 +313,18 @@ table.cmp{min-width:900px}
   <div class="shell grid">
     <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-rmr.webp" alt="Private treatment room at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
     <div>
-      <div class="eyebrow on-dark">Measure | RMR Testing</div>
-      <h2>Resting Metabolic Rate</h2>
-      <span class="bestfor nv">Best for: dialing in fuel and recovery nutrition</span>
-      <p class="why">Your resting metabolic rate is the energy your body burns at rest. Knowing it helps take the guesswork out of how much to eat, especially when your activity level is changing during recovery.<!-- CONFIRM: RMR available at Fossil Creek --></p>
+      <div class="eyebrow on-dark" data-i18n="k46">Measure | RMR Testing</div>
+      <h2 data-i18n="k47">Resting Metabolic Rate</h2>
+      <span class="bestfor nv" data-i18n="k48">Best for: dialing in fuel and recovery nutrition</span>
+      <p class="why" data-i18n="k49">Your resting metabolic rate is the energy your body burns at rest. Knowing it helps take the guesswork out of how much to eat, especially when your activity level is changing during recovery.<!-- CONFIRM: RMR available at Fossil Creek --></p>
       <ul class="learn">
-        <li><span class="ck li">&#10003;</span>A measured number, not an online estimate.</li>
-        <li><span class="ck li">&#10003;</span>Helps you match nutrition to your current activity.</li>
-        <li><span class="ck li">&#10003;</span>Useful when you are moving less, or ramping back up.</li>
-        <li><span class="ck li">&#10003;</span>A simple, seated test.</li>
+        <li data-i18n="k50"><span class="ck li">&#10003;</span>A measured number, not an online estimate.</li>
+        <li data-i18n="k51"><span class="ck li">&#10003;</span>Helps you match nutrition to your current activity.</li>
+        <li data-i18n="k52"><span class="ck li">&#10003;</span>Useful when you are moving less, or ramping back up.</li>
+        <li data-i18n="k53"><span class="ck li">&#10003;</span>A simple, seated test.</li>
       </ul>
-      <div class="spec">Ask when you book about prep and timing.</div>
-      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+      <div class="spec" data-i18n="k54">Ask when you book about prep and timing.</div>
+      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
     </div>
   </div>
 </section>
@@ -321,18 +333,18 @@ table.cmp{min-width:900px}
   <div class="shell grid">
     <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-labs.webp" alt="Nurse preparing a sample at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
     <div>
-      <div class="eyebrow">Understand | Lab Panels</div>
-      <h2>Lab Panels</h2>
-      <span class="bestfor cy">Best for: seeing what is going on inside</span>
-      <p class="why">Bloodwork shows what you cannot feel. Vitamin levels, hormones, inflammation markers, and metabolic health can all play into how you recover. A lab panel gives you real numbers to work with.</p>
+      <div class="eyebrow" data-i18n="k55">Understand | Lab Panels</div>
+      <h2 data-i18n="k56">Lab Panels</h2>
+      <span class="bestfor cy" data-i18n="k57">Best for: seeing what is going on inside</span>
+      <p class="why" data-i18n="k58">Bloodwork shows what you cannot feel. Vitamin levels, hormones, inflammation markers, and metabolic health can all play into how you recover. A lab panel gives you real numbers to work with.</p>
       <ul class="learn">
-        <li><span class="ck cy">&#10003;</span>Choose from panels built around energy, recovery, hormones, and metabolic health.</li>
-        <li><span class="ck cy">&#10003;</span>A quick blood draw at Fossil Creek.</li>
-        <li><span class="ck cy">&#10003;</span>Results reviewed with our clinical team.</li>
-        <li><span class="ck cy">&#10003;</span>Share results with your Airrosti provider if you choose.</li>
+        <li data-i18n="k59"><span class="ck cy">&#10003;</span>Choose from panels built around energy, recovery, hormones, and metabolic health.</li>
+        <li data-i18n="k60"><span class="ck cy">&#10003;</span>A quick blood draw at Fossil Creek.</li>
+        <li data-i18n="k61"><span class="ck cy">&#10003;</span>Results reviewed with our clinical team.</li>
+        <li data-i18n="k62"><span class="ck cy">&#10003;</span>Share results with your Airrosti provider if you choose.</li>
       </ul>
-      <div class="spec">Ask us which panel fits your goals when you book.</div>
-      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+      <div class="spec" data-i18n="k63">Ask us which panel fits your goals when you book.</div>
+      <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
     </div>
   </div>
 </section>
@@ -341,18 +353,18 @@ table.cmp{min-width:900px}
   <div class="shell grid">
     <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/fossil-creek/airrosti/assets/panel-genetic.webp" alt="Team member reviewing a tablet with a client at The DRIPBaR Fossil Creek" loading="lazy" width="960" height="1200"></div>
     <div>
-      <div class="eyebrow">Understand | Genetic Testing</div>
-      <h2>Genetic Testing</h2>
-      <span class="bestfor li">Best for: when it is the right fit for you</span>
-      <p class="why">Your genes influence how you recover, use nutrients, and respond to training. Genetic testing is not for everyone, and it is not a first step. If it makes sense for your goals, we will tell you. If not, we will say so.</p>
+      <div class="eyebrow" data-i18n="k64">Understand | Genetic Testing</div>
+      <h2 data-i18n="k65">Genetic Testing</h2>
+      <span class="bestfor li" data-i18n="k66">Best for: when it is the right fit for you</span>
+      <p class="why" data-i18n="k67">Your genes influence how you recover, use nutrients, and respond to training. Genetic testing is not for everyone, and it is not a first step. If it makes sense for your goals, we will tell you. If not, we will say so.</p>
       <ul class="learn">
-        <li><span class="ck li">&#10003;</span>A simple cheek swab for most panels.</li>
-        <li><span class="ck li">&#10003;</span>Insight into recovery, nutrient use, and training response.</li>
-        <li><span class="ck li">&#10003;</span>A clear report in plain language.</li>
-        <li><span class="ck li">&#10003;</span>Reviewed with our clinical team so you know what to do with it.</li>
+        <li data-i18n="k68"><span class="ck li">&#10003;</span>A simple cheek swab for most panels.</li>
+        <li data-i18n="k69"><span class="ck li">&#10003;</span>Insight into recovery, nutrient use, and training response.</li>
+        <li data-i18n="k70"><span class="ck li">&#10003;</span>A clear report in plain language.</li>
+        <li data-i18n="k71"><span class="ck li">&#10003;</span>Reviewed with our clinical team so you know what to do with it.</li>
       </ul>
-      <div class="spec">Offered when appropriate. Ask us during your visit.</div>
-      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
+      <div class="spec" data-i18n="k72">Offered when appropriate. Ask us during your visit.</div>
+      <a class="btn btn-lime bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
     </div>
   </div>
 </section>
@@ -361,23 +373,23 @@ table.cmp{min-width:900px}
 <section class="pad">
   <div class="shell">
     <div class="cmp-head">
-      <div class="eyebrow">Side By Side</div>
-      <h2>Five services. <span class="ghosted">One quick comparison.</span></h2>
-      <p class="lede" style="margin-left:auto;margin-right:auto">A simple look at what each service is good for and what to expect.</p>
+      <div class="eyebrow" data-i18n="k73">Side By Side</div>
+      <h2 data-i18n="k74">Five services. <span class="ghosted">One quick comparison.</span></h2>
+      <p class="lede" style="margin-left:auto;margin-right:auto" data-i18n="k75">A simple look at what each service is good for and what to expect.</p>
     </div>
     <div class="cmp-scroll">
       <table class="cmp">
-        <thead><tr><th>Service</th><th>Good for</th><th>What happens</th><th>Time in clinic</th></tr></thead>
+        <thead><tr><th data-i18n="k76">Service</th><th data-i18n="k77">Good for</th><th data-i18n="k78">What happens</th><th data-i18n="k79">Time in clinic</th></tr></thead>
         <tbody>
-          <tr><td>IV Drips and Shots</td><td class="txt">Hydration and recovery support.</td><td class="txt">Nurse-reviewed IV or shot, with Glutathione as an option.</td><td class="txt">Ask when you book</td></tr>
-          <tr><td>VO2 Max Testing</td><td class="txt">Aerobic fitness baseline and training zones.</td><td class="txt">A measured effort test with results explained.</td><td class="txt">Ask when you book</td></tr>
-          <tr><td>RMR Testing</td><td class="txt">Understanding how much energy you burn at rest.</td><td class="txt">A simple, seated breathing test.</td><td class="txt">Ask when you book</td></tr>
-          <tr><td>Lab Panels</td><td class="txt">Seeing vitamins, hormones, and inflammation markers.</td><td class="txt">Quick blood draw, results reviewed by our team.</td><td class="txt">Ask when you book</td></tr>
-          <tr><td>Genetic Testing</td><td class="txt">Personalized insight when appropriate.</td><td class="txt">Cheek swab, then a results review.</td><td class="txt">Ask when you book</td></tr>
+          <tr><td data-i18n="k80">IV Drips and Shots</td><td class="txt" data-i18n="k81">Hydration and recovery support.</td><td class="txt" data-i18n="k82">Nurse-reviewed IV or shot, with Glutathione as an option.</td><td class="txt" data-i18n="k83">Ask when you book</td></tr>
+          <tr><td data-i18n="k38">VO2 Max Testing</td><td class="txt" data-i18n="k84">Aerobic fitness baseline and training zones.</td><td class="txt" data-i18n="k85">A measured effort test with results explained.</td><td class="txt" data-i18n="k83">Ask when you book</td></tr>
+          <tr><td data-i18n="k86">RMR Testing</td><td class="txt" data-i18n="k87">Understanding how much energy you burn at rest.</td><td class="txt" data-i18n="k88">A simple, seated breathing test.</td><td class="txt" data-i18n="k83">Ask when you book</td></tr>
+          <tr><td data-i18n="k56">Lab Panels</td><td class="txt" data-i18n="k89">Seeing vitamins, hormones, and inflammation markers.</td><td class="txt" data-i18n="k90">Quick blood draw, results reviewed by our team.</td><td class="txt" data-i18n="k83">Ask when you book</td></tr>
+          <tr><td data-i18n="k65">Genetic Testing</td><td class="txt" data-i18n="k91">Personalized insight when appropriate.</td><td class="txt" data-i18n="k92">Cheek swab, then a results review.</td><td class="txt" data-i18n="k83">Ask when you book</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="cmp-note">Not sure where to start? Book a visit and our team will point you to the right fit. Services are wellness support and testing. They are not a treatment for injury or pain.</p>
+    <p class="cmp-note" data-i18n="k93">Not sure where to start? Book a visit and our team will point you to the right fit. Services are wellness support and testing. They are not a treatment for injury or pain.</p>
   </div>
 </section>
 
@@ -385,15 +397,15 @@ table.cmp{min-width:900px}
 <section class="cta pad">
   <div class="shell">
     <div class="eyebrow on-dark" style="justify-content:center;margin-bottom:20px">The DRIPBaR Fossil Creek</div>
-    <h2>Let's pick up where <em>Airrosti left off.</em></h2>
-    <p>Book a visit at Fossil Creek and we will build a plan around how you want to feel and move.</p>
-    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK A VISIT</a>
-    <div class="fine">Or call <a href="tel:+17269008533">(726) 900-8533</a>. Open Mon-Fri 10-6, Sat 9-3, Sun 10-3.</div>
+    <h2 data-i18n="k95">Let's pick up where <em>Airrosti left off.</em></h2>
+    <p data-i18n="k96">Book a visit at Fossil Creek and we will build a plan around how you want to feel and move.</p>
+    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k5">BOOK A VISIT</a>
+    <div class="fine" data-i18n="k97">Or call <a href="tel:+17269008533">(726) 900-8533</a>. Open Mon-Fri 10-6, Sat 9-3, Sun 10-3.</div>
     <div class="alt">
-      <h3>JUST HAVE A QUESTION?</h3>
+      <h3 data-i18n="k98">JUST HAVE A QUESTION?</h3>
       <div class="links">
-        <a class="btn btn-ghost" href="tel:+17269008533">CALL US</a>
-        <a class="btn btn-ghost" href="sms:+17269008533">TEXT US</a>
+        <a class="btn btn-ghost" href="tel:+17269008533" data-i18n="k99">CALL US</a>
+        <a class="btn btn-ghost" href="sms:+17269008533" data-i18n="k100">TEXT US</a>
         <!-- <a class="btn btn-ghost" href="mailto:EMAIL-PLACEHOLDER">EMAIL US</a> -->
       </div>
     </div>
@@ -405,9 +417,9 @@ table.cmp{min-width:900px}
   <div class="shell">
     <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR">
     <div class="loc">The DRIPBaR Fossil Creek</div>
-    <div class="adr">22250 Bulverde Rd, Space 108, San Antonio, TX 78261<br>(726) 900-8533<br>Mon-Fri 10 AM - 6 PM, Sat 9 AM - 3 PM, Sun 10 AM - 3 PM</div>
-    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk>BOOK NOW</a>
-    <div class="md">All services administered under the supervision of A.D. Thakkar, M.D.</div>
+    <div class="adr" data-i18n="k101">22250 Bulverde Rd, Space 108, San Antonio, TX 78261<br>(726) 900-8533<br>Mon-Fri 10 AM - 6 PM, Sat 9 AM - 3 PM, Sun 10 AM - 3 PM</div>
+    <a class="btn btn-cyan bk" href="https://san-antonio-fossil-creek.thedripbar.com/book-appointment/?utm_source=airrosti&utm_medium=qr&utm_campaign=airrosti-pilot-fc&utm_content=unspecified" data-bk data-i18n="k1">BOOK NOW</a>
+    <div class="md" data-i18n="k102">All services administered under the supervision of A.D. Thakkar, M.D.</div>
   </div>
 </div>
 
@@ -434,7 +446,7 @@ table.cmp{min-width:900px}
             defaultPurchaseAmount: 750,
             customImage: '', 
             imageCategory: 'medspa',
-            language: 'en',
+            language: window.__dbLang||'en',
         },
         styles: {
             primaryColor: '#90b60a',
@@ -470,7 +482,7 @@ table.cmp{min-width:900px}
   });
   if(c){
     var p=document.getElementById('refPill');
-    if(p){ p.textContent='Referred from Airrosti '+c.split('-').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(' '); p.className='refpill on'; }
+    if(p){ var nm=c.split('-').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(' '); p.setAttribute('data-clinic',nm); p.textContent='Referred from Airrosti '+nm; p.className='refpill on'; }
   }
 })();
 // cherry: dismissible, session-remembered
@@ -487,6 +499,23 @@ table.cmp{min-width:900px}
     if(host.childElementCount>0){ x.style.display='block'; clearInterval(t); }
     else if(tries>40){ clearInterval(t); x.remove(); }
   },500);
+})();
+
+// language toggle (EN / ES)
+(function(){
+  var D={en:{"k0": "Fossil Creek | Airrosti Clients", "k1": "BOOK NOW", "k2": "The DRIPBaR Fossil Creek | For Airrosti clients", "k3": "Recover faster. Move better. <em>Know your numbers.</em>", "k4": "Airrosti gets you out of pain. We help your body do the rest.", "k5": "BOOK A VISIT", "k6": "SEE WHAT WE OFFER", "k7": "22250 Bulverde Rd, Space 108, San Antonio, TX 78261. Walk-ins welcome, appointments preferred.", "k8": "In collaboration with Airrosti", "k9": "Referred by Airrosti? <span class=\"ghosted\">Here is how it fits.</span>", "k10": "Your Airrosti provider handles your injury evaluation. The DRIPBaR supports the wellness side: recovery, hydration, testing, and the data behind how your body is doing.", "k11": "RECOVER <span>&rarr;</span>", "k12": "IV drips and shots, with Glutathione as an option, to support hydration, recovery, and antioxidant needs.", "k13": "MEASURE <span>&rarr;</span>", "k14": "VO2 Max and Resting Metabolic Rate testing. Real numbers on fitness and energy use.", "k15": "UNDERSTAND <span>&rarr;</span>", "k16": "Lab panels and, when appropriate, genetic testing. Clear answers in plain language.", "k17": "The Process", "k18": "How it works, <span class=\"ghosted\">start to finish.</span>", "k19": "Four simple steps from your Airrosti clinic to your first visit at Fossil Creek.", "k20": "SCAN THE CODE", "k21": "Scan the QR code at your Airrosti clinic. It brings you right here.", "k22": "PICK WHAT YOU ARE CURIOUS ABOUT", "k23": "Recovery support, testing, or both. Not sure? Book a visit and we will help you choose.", "k24": "BOOK A TIME AT FOSSIL CREEK", "k25": "Choose a time that works. Online booking takes about a minute.", "k26": "WALK IN, WE TAKE IT FROM THERE", "k27": "Our team walks you through everything and answers your questions.", "k28": "Recover | IV Drips and Shots", "k29": "Glutathione and IV support", "k30": "Best for: post-workout and recovery weeks", "k31": "Glutathione is an antioxidant your body makes on its own. Training, stress, and hard weeks can draw it down. We offer it as an IV add-on or a quick shot, alongside hydration and nutrient blends chosen to support how you recover.", "k32": "<span class=\"ck cy\">&#10003;</span>Antioxidant support for the body after hard training or a demanding week.", "k33": "<span class=\"ck cy\">&#10003;</span>Hydration and electrolytes to support recovery.", "k34": "<span class=\"ck cy\">&#10003;</span>Your choice of IV drip or a quick shot, based on your time and goals.", "k35": "<span class=\"ck cy\">&#10003;</span>A nurse reviews what fits you before anything starts.", "k36": "Not a treatment for injury or pain. Your Airrosti provider handles your injury evaluation. We support the wellness side.", "k37": "Measure | VO2 Max Testing", "k38": "VO2 Max Testing", "k39": "Best for: getting back to training with a baseline", "k40": "VO2 Max shows how well your body uses oxygen when you work hard. It is one of the clearest snapshots of aerobic fitness. Many people use it to set training zones and track progress over time.", "k41": "<span class=\"ck li\">&#10003;</span>A measured look at your aerobic fitness, not a guess.", "k42": "<span class=\"ck li\">&#10003;</span>Personal heart rate zones to train and recover by.", "k43": "<span class=\"ck li\">&#10003;</span>A baseline you can retest against as you rebuild.", "k44": "<span class=\"ck li\">&#10003;</span>Results explained in plain language.", "k45": "Wear comfortable workout clothes. Ask us about what to expect when you book.", "k46": "Measure | RMR Testing", "k47": "Resting Metabolic Rate", "k48": "Best for: dialing in fuel and recovery nutrition", "k49": "Your resting metabolic rate is the energy your body burns at rest. Knowing it helps take the guesswork out of how much to eat, especially when your activity level is changing during recovery.<!-- CONFIRM: RMR available at Fossil Creek -->", "k50": "<span class=\"ck li\">&#10003;</span>A measured number, not an online estimate.", "k51": "<span class=\"ck li\">&#10003;</span>Helps you match nutrition to your current activity.", "k52": "<span class=\"ck li\">&#10003;</span>Useful when you are moving less, or ramping back up.", "k53": "<span class=\"ck li\">&#10003;</span>A simple, seated test.", "k54": "Ask when you book about prep and timing.", "k55": "Understand | Lab Panels", "k56": "Lab Panels", "k57": "Best for: seeing what is going on inside", "k58": "Bloodwork shows what you cannot feel. Vitamin levels, hormones, inflammation markers, and metabolic health can all play into how you recover. A lab panel gives you real numbers to work with.", "k59": "<span class=\"ck cy\">&#10003;</span>Choose from panels built around energy, recovery, hormones, and metabolic health.", "k60": "<span class=\"ck cy\">&#10003;</span>A quick blood draw at Fossil Creek.", "k61": "<span class=\"ck cy\">&#10003;</span>Results reviewed with our clinical team.", "k62": "<span class=\"ck cy\">&#10003;</span>Share results with your Airrosti provider if you choose.", "k63": "Ask us which panel fits your goals when you book.", "k64": "Understand | Genetic Testing", "k65": "Genetic Testing", "k66": "Best for: when it is the right fit for you", "k67": "Your genes influence how you recover, use nutrients, and respond to training. Genetic testing is not for everyone, and it is not a first step. If it makes sense for your goals, we will tell you. If not, we will say so.", "k68": "<span class=\"ck li\">&#10003;</span>A simple cheek swab for most panels.", "k69": "<span class=\"ck li\">&#10003;</span>Insight into recovery, nutrient use, and training response.", "k70": "<span class=\"ck li\">&#10003;</span>A clear report in plain language.", "k71": "<span class=\"ck li\">&#10003;</span>Reviewed with our clinical team so you know what to do with it.", "k72": "Offered when appropriate. Ask us during your visit.", "k73": "Side By Side", "k74": "Five services. <span class=\"ghosted\">One quick comparison.</span>", "k75": "A simple look at what each service is good for and what to expect.", "k76": "Service", "k77": "Good for", "k78": "What happens", "k79": "Time in clinic", "k80": "IV Drips and Shots", "k81": "Hydration and recovery support.", "k82": "Nurse-reviewed IV or shot, with Glutathione as an option.", "k83": "Ask when you book", "k84": "Aerobic fitness baseline and training zones.", "k85": "A measured effort test with results explained.", "k86": "RMR Testing", "k87": "Understanding how much energy you burn at rest.", "k88": "A simple, seated breathing test.", "k89": "Seeing vitamins, hormones, and inflammation markers.", "k90": "Quick blood draw, results reviewed by our team.", "k91": "Personalized insight when appropriate.", "k92": "Cheek swab, then a results review.", "k93": "Not sure where to start? Book a visit and our team will point you to the right fit. Services are wellness support and testing. They are not a treatment for injury or pain.", "k95": "Let's pick up where <em>Airrosti left off.</em>", "k96": "Book a visit at Fossil Creek and we will build a plan around how you want to feel and move.", "k97": "Or call <a href=\"tel:+17269008533\">(726) 900-8533</a>. Open Mon-Fri 10-6, Sat 9-3, Sun 10-3.", "k98": "JUST HAVE A QUESTION?", "k99": "CALL US", "k100": "TEXT US", "k101": "22250 Bulverde Rd, Space 108, San Antonio, TX 78261<br>(726) 900-8533<br>Mon-Fri 10 AM - 6 PM, Sat 9 AM - 3 PM, Sun 10 AM - 3 PM", "k102": "All services administered under the supervision of A.D. Thakkar, M.D."},es:{"k0": "Fossil Creek | Clientes de Airrosti", "k1": "RESERVA AHORA", "k2": "The DRIPBaR Fossil Creek | Para clientes de Airrosti", "k3": "Recupérate más rápido. Muévete mejor. <em>Conoce tus números.</em>", "k4": "Airrosti te quita el dolor. Nosotros ayudamos a tu cuerpo con el resto.", "k5": "RESERVA UNA VISITA", "k6": "VER LO QUE OFRECEMOS", "k7": "22250 Bulverde Rd, Space 108, San Antonio, TX 78261. Sin cita bienvenidos, con cita preferible.", "k8": "En colaboración con Airrosti", "k9": "¿Te refirió Airrosti? <span class=\"ghosted\">Así encaja todo.</span>", "k10": "Tu proveedor de Airrosti se encarga de evaluar tu lesión. The DRIPBaR apoya el lado del bienestar: recuperación, hidratación, pruebas y los datos de cómo está tu cuerpo.", "k11": "RECUPERA <span>&rarr;</span>", "k12": "Sueros IV e inyecciones, con Glutatión como opción, para apoyar la hidratación, la recuperación y tus necesidades antioxidantes.", "k13": "MIDE <span>&rarr;</span>", "k14": "Pruebas de VO2 Max y Tasa Metabólica en Reposo. Números reales sobre tu condición física y uso de energía.", "k15": "ENTIENDE <span>&rarr;</span>", "k16": "Paneles de laboratorio y, cuando corresponde, pruebas genéticas. Respuestas claras en lenguaje sencillo.", "k17": "El Proceso", "k18": "Cómo funciona, <span class=\"ghosted\">de principio a fin.</span>", "k19": "Cuatro pasos sencillos desde tu clínica Airrosti hasta tu primera visita en Fossil Creek.", "k20": "ESCANEA EL CÓDIGO", "k21": "Escanea el código QR en tu clínica Airrosti. Te trae directo aquí.", "k22": "ELIGE LO QUE TE INTERESA", "k23": "Apoyo para la recuperación, pruebas o ambos. ¿No estás seguro? Reserva una visita y te ayudamos a elegir.", "k24": "RESERVA UN HORARIO EN FOSSIL CREEK", "k25": "Elige la hora que te convenga. Reservar en línea toma alrededor de un minuto.", "k26": "LLEGA Y NOSOTROS NOS ENCARGAMOS", "k27": "Nuestro equipo te explica todo y responde tus preguntas.", "k28": "Recupera | Sueros IV e Inyecciones", "k29": "Glutatión y apoyo IV", "k30": "Ideal para: después de entrenar y semanas de recuperación", "k31": "El glutatión es un antioxidante que tu cuerpo produce por sí solo. El entrenamiento, el estrés y las semanas pesadas pueden agotarlo. Lo ofrecemos como complemento IV o como inyección rápida, junto con hidratación y mezclas de nutrientes elegidas para apoyar tu recuperación.", "k32": "<span class=\"ck cy\">&#10003;</span>Apoyo antioxidante para el cuerpo después de un entrenamiento fuerte o una semana exigente.", "k33": "<span class=\"ck cy\">&#10003;</span>Hidratación y electrolitos para apoyar la recuperación.", "k34": "<span class=\"ck cy\">&#10003;</span>Tú eliges suero IV o inyección rápida, según tu tiempo y tus metas.", "k35": "<span class=\"ck cy\">&#10003;</span>Una enfermera revisa qué te conviene antes de empezar.", "k36": "No es un tratamiento para lesiones ni dolor. Tu proveedor de Airrosti se encarga de evaluar tu lesión. Nosotros apoyamos el lado del bienestar.", "k37": "Mide | Prueba de VO2 Max", "k38": "Prueba de VO2 Max", "k39": "Ideal para: volver a entrenar con una línea base", "k40": "El VO2 Max muestra qué tan bien tu cuerpo usa el oxígeno cuando te esfuerzas. Es una de las medidas más claras de la condición aeróbica. Muchas personas lo usan para definir zonas de entrenamiento y seguir su progreso.", "k41": "<span class=\"ck li\">&#10003;</span>Una medida real de tu condición aeróbica, no una suposición.", "k42": "<span class=\"ck li\">&#10003;</span>Zonas de ritmo cardíaco personales para entrenar y recuperarte.", "k43": "<span class=\"ck li\">&#10003;</span>Una línea base para volver a medir mientras te recuperas.", "k44": "<span class=\"ck li\">&#10003;</span>Resultados explicados en lenguaje sencillo.", "k45": "Usa ropa deportiva cómoda. Pregúntanos qué esperar cuando reserves.", "k46": "Mide | Prueba de TMR", "k47": "Tasa Metabólica en Reposo", "k48": "Ideal para: ajustar tu alimentación y nutrición de recuperación", "k49": "Tu tasa metabólica en reposo es la energía que tu cuerpo quema en descanso. Conocerla elimina las adivinanzas sobre cuánto comer, sobre todo cuando tu nivel de actividad cambia durante la recuperación.", "k50": "<span class=\"ck li\">&#10003;</span>Un número medido, no un estimado de internet.", "k51": "<span class=\"ck li\">&#10003;</span>Te ayuda a ajustar tu nutrición a tu actividad actual.", "k52": "<span class=\"ck li\">&#10003;</span>Útil cuando te mueves menos, o cuando vuelves a activarte.", "k53": "<span class=\"ck li\">&#10003;</span>Una prueba sencilla, sentado.", "k54": "Pregunta al reservar sobre la preparación y los horarios.", "k55": "Entiende | Paneles de Laboratorio", "k56": "Paneles de Laboratorio", "k57": "Ideal para: ver qué está pasando por dentro", "k58": "Los análisis de sangre muestran lo que no puedes sentir. Niveles de vitaminas, hormonas, marcadores de inflamación y salud metabólica influyen en cómo te recuperas. Un panel de laboratorio te da números reales con los que trabajar.", "k59": "<span class=\"ck cy\">&#10003;</span>Elige entre paneles enfocados en energía, recuperación, hormonas y salud metabólica.", "k60": "<span class=\"ck cy\">&#10003;</span>Una toma de sangre rápida en Fossil Creek.", "k61": "<span class=\"ck cy\">&#10003;</span>Resultados revisados con nuestro equipo clínico.", "k62": "<span class=\"ck cy\">&#10003;</span>Comparte tus resultados con tu proveedor de Airrosti si lo deseas.", "k63": "Pregúntanos qué panel se ajusta a tus metas cuando reserves.", "k64": "Entiende | Pruebas Genéticas", "k65": "Pruebas Genéticas", "k66": "Ideal para: cuando es la opción correcta para ti", "k67": "Tus genes influyen en cómo te recuperas, usas los nutrientes y respondes al entrenamiento. Las pruebas genéticas no son para todos, y no son un primer paso. Si tiene sentido para tus metas, te lo diremos. Si no, también.", "k68": "<span class=\"ck li\">&#10003;</span>Una muestra sencilla de la mejilla para la mayoría de los paneles.", "k69": "<span class=\"ck li\">&#10003;</span>Información sobre recuperación, uso de nutrientes y respuesta al entrenamiento.", "k70": "<span class=\"ck li\">&#10003;</span>Un reporte claro en lenguaje sencillo.", "k71": "<span class=\"ck li\">&#10003;</span>Revisado con nuestro equipo clínico para que sepas qué hacer con él.", "k72": "Se ofrece cuando corresponde. Pregúntanos durante tu visita.", "k73": "Lado a Lado", "k74": "Cinco servicios. <span class=\"ghosted\">Una comparación rápida.</span>", "k75": "Un vistazo sencillo a para qué sirve cada servicio y qué esperar.", "k76": "Servicio", "k77": "Ideal para", "k78": "Qué sucede", "k79": "Tiempo en clínica", "k80": "Sueros IV e Inyecciones", "k81": "Apoyo de hidratación y recuperación.", "k82": "Suero IV o inyección revisada por enfermera, con Glutatión como opción.", "k83": "Pregunta al reservar", "k84": "Línea base de condición aeróbica y zonas de entrenamiento.", "k85": "Una prueba de esfuerzo medida con resultados explicados.", "k86": "Prueba de TMR", "k87": "Entender cuánta energía quemas en reposo.", "k88": "Una prueba sencilla de respiración, sentado.", "k89": "Ver vitaminas, hormonas y marcadores de inflamación.", "k90": "Toma de sangre rápida, resultados revisados por nuestro equipo.", "k91": "Información personalizada cuando corresponde.", "k92": "Muestra de la mejilla, luego revisión de resultados.", "k93": "¿No sabes por dónde empezar? Reserva una visita y nuestro equipo te orienta. Los servicios son apoyo de bienestar y pruebas. No son un tratamiento para lesiones ni dolor.", "k95": "Sigamos donde <em>Airrosti lo dejó.</em>", "k96": "Reserva una visita en Fossil Creek y armamos un plan según cómo quieres sentirte y moverte.", "k97": "O llama al <a href=\"tel:+17269008533\">(726) 900-8533</a>. Abierto Lun-Vie 10-6, Sáb 9-3, Dom 10-3.", "k98": "¿SOLO TIENES UNA PREGUNTA?", "k99": "LLÁMANOS", "k100": "ENVÍANOS UN TEXTO", "k101": "22250 Bulverde Rd, Space 108, San Antonio, TX 78261<br>(726) 900-8533<br>Lun-Vie 10 AM - 6 PM, Sáb 9 AM - 3 PM, Dom 10 AM - 3 PM", "k102": "Todos los servicios se administran bajo la supervisión de A.D. Thakkar, M.D."}},M={"en": {"title": "For Airrosti Clients | The DRIPBaR Fossil Creek", "desc": "Airrosti gets you out of pain. The DRIPBaR Fossil Creek helps your body do the rest, with recovery IVs, VO2 Max, RMR, labs, and genetic testing when appropriate.", "ref": "Referred from Airrosti "}, "es": {"title": "Para Clientes de Airrosti | The DRIPBaR Fossil Creek", "desc": "Airrosti te quita el dolor. The DRIPBaR Fossil Creek ayuda a tu cuerpo con el resto: sueros de recuperación, VO2 Max, TMR, laboratorios y pruebas genéticas cuando corresponde.", "ref": "Referido de Airrosti "}};
+  function apply(l){
+    var d=D[l]||D.en;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(d[k]!=null)el.innerHTML=d[k];});
+    document.documentElement.lang=l; document.title=M[l].title;
+    var md=document.querySelector('meta[name="description"]'); if(md) md.setAttribute('content',M[l].desc);
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===l);});
+    var p=document.getElementById('refPill'); if(p&&p.getAttribute('data-clinic')) p.textContent=M[l].ref+p.getAttribute('data-clinic');
+    try{localStorage.setItem('db_lang',l)}catch(e){}
+    window.__dbLang=l;
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-lang'));});});
+  apply(window.__dbLang||'en');
 })();
 </script>
 </body>
