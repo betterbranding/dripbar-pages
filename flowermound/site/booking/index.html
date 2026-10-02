@@ -771,23 +771,6 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 @media(max-width:420px){.bw-brand .mark{padding:8px 10px 8px 0}.bw-brand .mark img{width:92px;height:46px}.bw-tgrid{grid-template-columns:repeat(2,1fr)}}
 
 </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1816177226243877');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1816177226243877&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -853,6 +836,7 @@ src="https://www.facebook.com/tr?id=1816177226243877&ev=PageView&noscript=1"
         </div>
       </div>
       <a href="/help-me-choose">Help Me Choose</a>
+      <a href="/memberships">Memberships</a>
       <a href="/contact">Contact</a>
     </div>
     <div class="nav-right">
@@ -871,6 +855,7 @@ src="https://www.facebook.com/tr?id=1816177226243877&ev=PageView&noscript=1"
     <div class="grp">Menu</div>
     <a href="/">Home</a>
     <a href="/help-me-choose">Help Me Choose</a>
+    <a href="/memberships">Memberships</a>
     <a href="/contact">Contact</a>
     <div class="grp">Services</div>
     <a href="/hydration-recovery">Hydration and Recovery</a>
@@ -1116,6 +1101,7 @@ src="https://www.facebook.com/tr?id=1816177226243877&ev=PageView&noscript=1"
         <h4>Visit</h4>
         <a href="/">Home</a>
         <a href="/help-me-choose">Help Me Choose</a>
+        <a href="/memberships">Memberships</a>
         <a href="/contact">Contact</a>
         <a href="/privacy-policy">Privacy Policy</a>
         <a href="https://dripbarflowermound.com/booking" data-book="general">Book Appointment</a>
@@ -1519,7 +1505,6 @@ const BOOKING = { default: B,
       renderDone();
       go(5);
       try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'appointment_booked', service:s.name, goal:goalById(state.goal).label}); }catch(e){}
-      try{ if(window.fbq) fbq('track','Schedule',{content_name:s.name}); }catch(e){}
     })
     .catch(function(){
       btn.classList.remove('is-busy');
