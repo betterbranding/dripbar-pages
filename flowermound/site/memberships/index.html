@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>High Dose Vitamin C IV Therapy in Flower Mound, TX</title>
-<meta name="description" content="High dose Vitamin C IV therapy at The DRIPBaR Flower Mound. Clinician-guided infusions with required lab screening, individualized dosing, and a consultation first.">
-<link rel="canonical" href="https://dripbarflowermound.com/high-dose-vitamin-c">
+<title>Wellness Memberships in Flower Mound, TX | The DRIPBaR Flower Mound</title>
+<meta name="description" content="Compare The DRIPBaR Flower Mound membership tiers: monthly Lifestyle drips, quick shots, service credits for supportive therapies, and 20% off additional services. Call or text (469) 804-6232 to start your membership.">
+<link rel="canonical" href="https://dripbarflowermound.com/memberships">
 
 <link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -482,22 +482,46 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .note .isq{width:44px;height:44px;border-radius:12px}
 .note b{color:var(--teal)}
 
-/* ---------- science: antioxidant to pro-oxidant ---------- */
-.sci{background:var(--teal);color:#fff;padding:96px 0 100px}
-.sci .tag.on-teal{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
-.sci h2{color:#fff}
-.sci h2 .acc{color:var(--lime)}
-.sci .lede{color:rgba(255,255,255,.88);max-width:720px}
-.sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-.sci-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:32px 30px 34px;display:flex;flex-direction:column;gap:14px;transition:transform .35s ease,background .35s ease}
-.sci-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.1)}
-.sci-card .kicker{display:inline-flex;align-self:flex-start;background:var(--lime);color:#fff;border-radius:999px;padding:7px 13px;font:600 12px/1 var(--pop);letter-spacing:.6px;text-transform:uppercase}
-.sci-card h3{font:400 30px/1 var(--bebas);letter-spacing:.5px;color:#fff;margin:6px 0 0}
-.sci-card p{font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.84);margin:0}
-.sci-card .arrow{font:400 22px/1 var(--bebas);color:var(--lime);letter-spacing:1px;margin-top:auto}
-.sci-note{margin-top:34px;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.66);max-width:760px}
-@media(max-width:900px){.sci-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.sci{padding:72px 0 76px}.sci-card{padding:26px 22px 28px}.sci-card h3{font-size:27px}}
+/* ---------- membership tiers ---------- */
+.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:8px}
+.tiers.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tier{position:relative;background:#fff;border:1px solid var(--divider);border-radius:24px;padding:34px 26px 26px;display:flex;flex-direction:column;gap:0;transition:transform .3s ease,box-shadow .3s ease}
+.tier:hover{transform:translateY(-4px);box-shadow:0 26px 60px -30px rgba(4,78,99,.35)}
+.tier.hot{background:var(--teal);color:#fff;border-color:var(--teal)}
+.tier .ribbon{position:absolute;top:-13px;left:24px;background:var(--lime);color:#fff;font:600 11.5px/1 var(--pop);letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:7px 13px}
+.tier .tname{font-family:var(--bebas);font-size:36px;line-height:1;letter-spacing:1px;color:var(--teal)}
+.tier.hot .tname{color:#fff}
+.tier .tsub{font-size:13.5px;line-height:1.5;color:var(--muted);margin:8px 0 18px;min-height:40px}
+.tier.hot .tsub{color:rgba(255,255,255,.78)}
+.tier .tprice{display:flex;align-items:center;gap:8px;padding:16px 0;min-height:84px;border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);margin-bottom:18px}
+.tier.hot .tprice{border-color:rgba(255,255,255,.18)}
+.tier .tprice b{font-family:var(--bebas);font-weight:400;font-size:46px;line-height:1;color:var(--teal)}
+.tier.hot .tprice b{color:#fff}
+.tier .tprice span{font-size:13px;color:var(--muted);position:relative;top:5px}
+.tier.hot .tprice span{color:rgba(255,255,255,.72)}
+.tier .tprice .ask{font:600 15px/1.3 var(--pop);color:var(--teal)}
+.tier.hot .tprice .ask{color:#fff}
+.tier ul{display:grid;gap:10px;margin:0 0 24px}
+.tier li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--body)}
+.tier.hot li{color:#fff}
+.tier li .ck{width:22px;height:22px;border-radius:50%;background:var(--blue-icon);color:var(--teal);display:grid;place-items:center;flex:none;margin-top:1px}
+.tier li .ck svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.tier.hot li .ck{background:rgba(255,255,255,.16);color:#fff}
+.tier .tcta{margin-top:auto;display:grid;gap:8px}
+.tier .tcta .btn{width:100%;padding:14px 18px;font-size:14.5px}
+.tier .btn-out{border-color:var(--teal);color:var(--teal)}
+.tier.hot .btn-out{border-color:rgba(255,255,255,.8);color:#fff}
+.tier-note{text-align:center;font-size:13.5px;color:var(--muted);margin-top:26px;max-width:760px;margin-left:auto;margin-right:auto}
+.perk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.perk{background:#fff;border:1px solid var(--divider);border-radius:20px;padding:24px 24px 22px;display:flex;gap:16px;align-items:flex-start}
+.perk .isq{width:48px;height:48px;border-radius:12px}
+.perk .isq svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.perk b{display:block;font:600 15.5px/1.3 var(--pop);color:var(--teal);margin-bottom:6px}
+.perk p{font-size:14px;line-height:1.55;margin:0}
+.call-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.call-row .btn svg{width:18px;height:18px;margin-right:9px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1100px){.tiers,.tiers.five{grid-template-columns:repeat(2,minmax(0,1fr))}.perk-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.tiers,.tiers.five{grid-template-columns:1fr}.perk-grid{grid-template-columns:1fr}.tier .tsub{min-height:0}}
 </style>
 </head>
 <body>
@@ -609,262 +633,117 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <header class="ihero">
   <div class="shell ihero-grid">
     <div>
-      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/#services">Services</a><span>/</span><b>High Dose Vitamin C</b></div>
-      <div class="tag on-teal">High Dose Vitamin C</div>
-      <h1>Vitamin C, <span class="acc">at clinical strength.</span></h1>
-      <p class="lede">High dose intravenous Vitamin C delivers blood concentrations you cannot reach through diet or oral supplements. Pricing is set by dose, from $179, and a required G6PD screening lab comes first for every new guest.</p>
-      <div class="ihero-ctas">
-        <a class="btn btn-lime" href="https://dripbarflowermound.com/booking" data-book="consult">Book a Consultation</a>
-        <a class="btn btn-out-w" href="/help-me-choose">Help Me Choose</a>
+      <div class="crumbs"><a href="/">Home</a><span>/</span><b>Memberships</b></div>
+      <div class="tag on-teal">Memberships</div>
+      <h1>Make wellness <span class="acc">a habit.</span></h1>
+      <p class="lede">A membership turns occasional visits into a plan you can keep: a Lifestyle drip every month, credits for supportive therapies, member pricing on everything else, and a team that learns your preferences. Pick the tier that fits your pace, then call or text to start.</p>
+      <div class="ihero-ctas call-row">
+        <a class="btn btn-lime" href="tel:+14698046232"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Call (469) 804-6232</a>
+        <a class="btn btn-out-w" href="sms:+14698046232"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Text to start</a>
       </div>
-      <ul class="trust"><li><span class="ic"><svg><use href="#i-badge"/></svg></span>Licensed clinical team</li><li><span class="ic"><svg><use href="#i-clock"/></svg></span>Required lab screening</li><li><span class="ic"><svg><use href="#i-star"/></svg></span>5.0 Google rating</li></ul>
+      <ul class="trust"><li><span class="ic"><svg><use href="#i-refresh"/></svg></span>Credits renew monthly</li><li><span class="ic"><svg><use href="#i-badge"/></svg></span>Unused drips roll over</li><li><span class="ic"><svg><use href="#i-star"/></svg></span>5.0 Google rating</li></ul>
     </div>
     <div class="hvis rv">
-      <div class="hph"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/drips/high-dose-vitamin-c.webp" alt="A guest receiving a High Dose Vitamin C infusion in the Flower Mound lounge" loading="eager" fetchpriority="high"></div>
-      <div class="hbag"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/hero/high-dose-vitamin-c.webp" alt="" width="416" height="900"></div>
-      <div class="hchip"><b>From $179</b><span class="hsep"></span><small>Priced by dose, 15 g to 75 g</small></div>
+      <div class="hph wide"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/DSC_7577.webp" alt="A nurse checking a drip while a smiling guest relaxes at The DRIPBaR Flower Mound" loading="eager" fetchpriority="high"></div>
+      <div class="hchip"><b>Members</b><span class="hsep"></span><small>Lifestyle drips $179</small></div>
     </div>
   </div>
 </header>
 <!-- QUICK FACTS -->
 <section class="bg-blue">
   <div class="shell facts">
-    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></div><div><b>Consult first</b><span>Plan built around you</span></div></div>
-    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-badge"/></svg></span></div><div><b>G6PD lab</b><span>Required before infusion</span></div></div>
-    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-users"/></svg></span></div><div><b>RN administered</b><span>Physician oversight</span></div></div>
-    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-clock"/></svg></span></div><div><b>60 to 120 min</b><span>Varies by dose</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-drop"/></svg></span></div><div><b>Monthly drips</b><span>Included in every drip tier</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-refresh"/></svg></span></div><div><b>Service credits</b><span>For supportive therapies</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-badge"/></svg></span></div><div><b>20% off</b><span>Additional services</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></div><div><b>Call or text</b><span>To start in minutes</span></div></div>
   </div>
 </section>
-<!-- SYMPTOMS -->
+<!-- TIERS -->
+<section class="pad" id="tiers">
+  <div class="shell">
+    <div class="cmp-head rv">
+      <div class="tag">Membership Options</div>
+      <h2>Your monthly boost for mind, body, and energy.</h2>
+      <p class="lede">Every tier is month to month and built around how often you want to come in. Not sure which fits? Call or text and we will help you choose.</p>
+    </div>
+    <div class="tiers"><div class="tier rv" id="tier-essential"><span class="ribbon">New</span><div class="tname">Essential</div><div class="tsub">The foundation for consistent, everyday wellness.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>3 IM Quick Shots each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Rotating member perks</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+14698046232">Call to start</a><a class="btn btn-out" href="sms:+14698046232">Text us</a></div></div><div class="tier hot rv" id="tier-evolve"><span class="ribbon">Most popular</span><div class="tname">Evolve</div><div class="tsub">Ready to go beyond the basics and build real momentum.</div><div class="tprice"><b>$179</b><span>per month</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>1 Lifestyle Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>4 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional services</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-lime" href="tel:+14698046232">Call to start</a><a class="btn btn-out" href="sms:+14698046232">Text us</a></div></div><div class="tier rv" id="tier-elevate"><div class="tname">Elevate</div><div class="tsub">For people committed to feeling their best, more often.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 Lifestyle Drips each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>6 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional services</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+14698046232">Call to start</a><a class="btn btn-out" href="sms:+14698046232">Text us</a></div></div><div class="tier rv" id="tier-elite"><span class="ribbon">New</span><div class="tname">Elite</div><div class="tsub">The highest level of support, access, and impact.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A premium 500 mg NAD+ Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Upgrade available for a Niagen drip</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>8 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional services</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+14698046232">Call to start</a><a class="btn btn-out" href="sms:+14698046232">Text us</a></div></div></div>
+    <p class="tier-note">Evolve is $179 per month. Essential, Elevate, and Elite pricing is shared when you call or text. Member pricing on our menu reflects the Evolve Membership rate.</p>
+  </div>
+</section>
+<!-- HOW CREDITS WORK -->
 <section class="bg-soft pad">
   <div class="shell two">
-    <div class="pho wide rv"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/DSC_7564.webp" alt="A nurse and guest talking during an IV therapy session" loading="lazy"><span class="badge">Consult-led care</span></div>
+    <div class="pho wide rv"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/pearl_jam.webp" alt="Two friends relaxing together during their drips at The DRIPBaR Flower Mound" loading="lazy"><span class="badge">Use your credits here</span></div>
     <div class="rv">
-      <div class="tag on-blue">Is This You?</div>
-      <h2>Looking for deeper immune and cellular support?</h2>
-      <p class="lede">Guests explore high dose Vitamin C when they want Vitamin C at levels no supplement or standard drip can reach, often alongside ongoing care from their physician. It is not a stand-in for medical treatment, and dosing is always individualized.</p>
-      <div class="symp-grid"><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Frequent colds or slow recovery from illness</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>High physical or oxidative stress</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Interest in how high dose Vitamin C works differently</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Wanting a plan reviewed by a clinician first</div><div class="symp"><span class="ic"><svg><use href="#i-check"/></svg></span>Curiosity about IV nutrient therapy</div></div>
-      <p>A short consultation and lab screening help our team confirm this infusion is a good fit for you.</p>
-      <p style="margin-top:18px"><a class="tlink" href="#drips">See the options <span>&rarr;</span></a></p>
+      <div class="tag on-blue">How It Works</div>
+      <h2>Drips on your calendar. Credits for everything around them.</h2>
+      <p class="lede">Monthly drip credits keep your Lifestyle IVs on the schedule. Service credits let you add supportive sessions like infrared sauna, halotherapy, and red light therapy, so a drip day can become a full reset.</p>
+      <ul class="ckl">
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Book like always<small>Members use the same online booking and get member pricing automatically.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Use credits your way<small>Pair a session with your drip or stop in on its own. Our team tracks your balance.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>No guesswork<small>We will map a monthly cadence you can actually keep, then adjust as life changes.</small></div></li>
+      </ul>
+      <div class="ctas"><a class="btn btn-lime" href="tel:+14698046232">Call (469) 804-6232</a><a class="btn btn-out" href="https://dripbarflowermound.com/booking" data-book="general">Already a member? Book</a></div>
     </div>
   </div>
 </section>
-<section class="sci">
-  <div class="shell">
-    <div class="cmp-head rv">
-      <div class="tag on-teal">The Science</div>
-      <h2>At high doses,<br>Vitamin C <span class="acc">changes character.</span></h2>
-      <p class="lede">Most people know Vitamin C as an antioxidant. That holds true for supplements and for the Vitamin C in a standard drip. Delivered intravenously at high doses, it does something different. Blood levels climb far beyond what the gut allows, and Vitamin C shifts from an antioxidant to a pro-oxidant, generating hydrogen peroxide in the fluid around your cells. Same molecule, opposite job.</p>
-    </div>
-    <div class="sci-grid">
-      <div class="sci-card rv"><span class="kicker">Everyday doses</span><h3>Antioxidant</h3><p>By mouth, absorption tops out at a few hundred milligrams and blood levels stay modest. In this range Vitamin C neutralizes free radicals and supports normal immune function.</p><span class="arrow">&rarr; raise the dose</span></div>
-      <div class="sci-card rv"><span class="kicker">High dose IV</span><h3>Pro-oxidant</h3><p>An IV bypasses the gut entirely. At the concentrations a high dose infusion reaches, Vitamin C reverses roles and produces hydrogen peroxide, acting as an oxidizing agent rather than an antioxidant.</p><span class="arrow">&rarr; which is why</span></div>
-      <div class="sci-card rv"><span class="kicker">What it means for you</span><h3>A different protocol</h3><p>Because the mechanism changes, so does the care. High dose Vitamin C requires a consultation, a G6PD screening lab, individualized dosing, and physician oversight. We treat it as its own therapy, not a bigger standard drip.</p></div>
-    </div>
-    <p class="sci-note rv">High dose Vitamin C is offered as supportive wellness care under physician oversight. It is not a treatment or cure for any disease. Keep your physician informed, especially if you are managing an ongoing health concern.</p>
-  </div>
-</section>
-
-<!-- DRIPS -->
-<section class="pad" id="drips">
-  <div class="shell">
-    <div class="cmp-head rv">
-      <div class="tag">How It Works</div>
-      <h2>High Dose Vitamin C IV</h2>
-      <p class="lede">Dosing is individualized by our clinical team after your required G6PD lab. Pricing is by dose: $179 at 15 g, $199 at 25 g, $259 at 50 g, and $299 at 75 g.</p>
-    </div>
-    <div class="cmp-grid one">
-      <article class="cmp c-lime rv" style="--cc:#AFB216;--cc-text:#9A9D12">
-        <div class="top"><span class="kind">IV Drip</span><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/hero/high-dose-vitamin-c.webp" alt="High Dose Vitamin C IV bag" loading="lazy" width="416" height="900"></div>
-        <div class="body">
-          <h3>High Dose Vitamin C</h3>
-          <div class="focus">Vitamin C at levels only an IV can reach, screened and dosed for you</div>
-          <p class="best"><b>Best for:</b> Guests seeking clinician-guided, higher-concentration Vitamin C support</p>
-          
-          <div class="price"><div class="reg"><small>Regular</small><span>From $179</span></div><div class="mem"><small>Members</small><b class="nx">15 g to 75 g, priced by dose</b></div></div>
-          <a class="btn btn-lime" href="https://dripbarflowermound.com/booking" data-book="consult">Book This Drip</a>
-        </div>
-      </article>
-    </div>
-    <div class="xtitle rv">Pair it with a quick shot</div>
-    <div class="x-grid">
-      <div class="xcard rv"><div class="row"><span class="k">Drip Add-On</span><span class="p">$25</span></div><h4>Vitamin C Add-On</h4><p>Add Vitamin C to any standard drip for extra antioxidant support.</p><a class="tlink" href="https://dripbarflowermound.com/booking" data-book="quickshot">Book</a></div>
-      <div class="xcard rv"><div class="row"><span class="k">Single Shot</span><span class="p">$35</span></div><h4>Tri-Immune</h4><p>Glutathione, Vitamin C, and Zinc in one quick immune-focused injection.</p><a class="tlink" href="https://dripbarflowermound.com/booking" data-book="quickshot">Book</a></div>
-    </div>
-    <div class="cmp-foot rv">
-      <a class="btn btn-out" href="/help-me-choose">Not sure? Help Me Choose</a>
-      <p class="fine">Regular pricing shown per drip. Member pricing reflects the Evolve Membership monthly rate ($179/mo includes one Lifestyle drip every month plus monthly wellness credits and 20% off additional services). All IV therapy is provided under medical supervision after a brief health screening.</p>
-    </div>
-  </div>
-</section>
-<!-- COMPLEMENTARY -->
-<section class="bg-soft pad">
-  <div class="shell">
-    <div class="cmp-head rv">
-      <div class="tag on-blue">Related Support</div>
-      <h2>Pair your visit with more immune support</h2>
-      <p class="lede">Many guests combine high dose Vitamin C with these complementary options.</p>
-    </div>
-    <div class="comp-grid">
-      <a class="gcard rv" href="/immunity-viral"><div class="isq"><span class="ic"><svg><use href="#i-badge"/></svg></span></div><h3>Immunity Support</h3><p>IV drips built for seasonal immune defense, led by Flu Fighter.</p><span class="tlink">Learn more <span>&rarr;</span></span></a>
-      <a class="gcard rv" href="/skin-brightening-beauty"><div class="isq"><span class="ic"><svg><use href="#i-sparkle"/></svg></span></div><h3>Glutathione</h3><p>The body's master antioxidant, paired often with Vitamin C for a brighter, more resilient feel.</p><span class="tlink">Learn more <span>&rarr;</span></span></a>
-      <a class="gcard rv" href="/ozone-therapy"><div class="isq"><span class="ic"><svg><use href="#i-wind"/></svg></span></div><h3>Blood Ozone Therapy</h3><p>A clinician-supervised therapy that supports immune function and cellular oxygenation.</p><span class="tlink">Learn more <span>&rarr;</span></span></a>
-    </div>
-  </div>
-</section>
-<!-- WHY FLOWER MOUND -->
+<!-- PERKS -->
 <section class="pad">
+  <div class="shell">
+    <div class="cmp-head rv">
+      <div class="tag">Member Perks</div>
+      <h2>Value that adds up every month.</h2>
+      <p class="lede">Beyond the drips themselves, membership comes with the small things that make consistency easy.</p>
+    </div>
+    <div class="perk-grid"><div class="perk rv"><span class="isq"><svg><use href="#i-refresh"/></svg></span><div><b>Credits renew every month</b><p>Service credits refresh on your billing date, so there is always something to use.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-badge"/></svg></span><div><b>20% off additional services</b><p>Evolve, Elevate, and Elite members save 20% on anything beyond their included drips.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-star"/></svg></span><div><b>Rotating member perks</b><p>A new member perk each month, from free add-ons to seasonal shots.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-drop"/></svg></span><div><b>A complimentary drink with every drip</b><p>Settle in, we will bring it to your recliner.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-heart"/></svg></span><div><b>Unused drips roll over</b><p>Travel or a busy month will not cost you a drip.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-clock"/></svg></span><div><b>Priority booking</b><p>Members get first access to the schedule, including busy weeks.</p></div></div></div>
+  </div>
+</section>
+<!-- WHY -->
+<section class="bg-soft pad">
   <div class="shell two">
     <div class="rv">
-      <div class="tag">Why Flower Mound</div>
-      <h2>Why choose The DRIPBaR Flower Mound</h2>
-      <p class="lede">Higher concentration care deserves careful screening and a clinical team that knows your history.</p>
-      <ul class="ckl"><li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Screening first<small>Every high dose Vitamin C plan requires a G6PD screening lab before your first infusion, so our clinical team can confirm the dose is safe for you.</small></div></li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Individualized dosing<small>Our clinical team sets your dose based on your health history and goals, not a one-size-fits-all number.</small></div></li><li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Physician oversight<small>Care is provided under physician oversight, by licensed medical professionals and registered nurses.</small></div></li></ul>
-      <div class="ctas"><a class="btn btn-lime" href="https://dripbarflowermound.com/booking" data-book="consult">Book Your Appointment</a><a class="btn btn-out" href="/contact">Contact Us</a></div>
+      <div class="tag on-blue">Why Flower Mound</div>
+      <h2>Consistent care, without the pressure.</h2>
+      <p class="lede">Prioritizing self-care is not indulgent. It protects your energy, keeps costs predictable, and makes room for rest when life is busy. A membership gives you structure without pressure.</p>
+      <ul class="ckl">
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Licensed clinical team<small>Every drip and shot is administered by licensed medical professionals with physician oversight.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>A plan built around you<small>We learn your goals and preferences, so every visit picks up where the last one left off.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Steady habits, real progress<small>Members tell us the difference is showing up every month, not just when they feel run down.</small></div></li>
+      </ul>
+      <div class="ctas call-row"><a class="btn btn-lime" href="tel:+14698046232"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Call to start</a><a class="btn btn-out" href="sms:+14698046232"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Text (469) 804-6232</a></div>
     </div>
     <div class="stack rv">
-      <div class="p1"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/DSC_7549.webp" alt="Gloved hands preparing an IV bag inside a sterile compounding hood" loading="lazy"></div>
-      <div class="p2"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/DSC_1226.webp" alt="A clean IV placement secured with clear dressing" loading="lazy"></div>
+      <div class="p1"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/DSC_1508.webp" alt="A guest resting comfortably during an IV drip at The DRIPBaR Flower Mound" loading="lazy"></div>
+      <div class="p2"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/DSC_0620.webp" alt="A warm welcome at the front desk at The DRIPBaR Flower Mound" loading="lazy"></div>
     </div>
   </div>
 </section>
-<!-- 9. HOW IT WORKS -->
-<section class="pad">
-  <div class="shell how">
-    <div class="steps rv">
-      <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Choose a day and time that works, or call or text us at (469) 804-6232. Walk-ins are welcome when the schedule allows.</p></div></div>
-      <div class="step"><div class="num">2</div><div><h3>A quick health screening</h3><p>Every first-time guest gets a brief screening with our clinical team. It takes a few minutes and keeps your care safe and personal.</p></div></div>
-      <div class="step"><div class="num">3</div><div><h3>Relax in the lounge</h3><p>Settle into a recliner while a licensed professional administers your drip or shot. Most IVs take 30 to 60 minutes.</p></div></div>
-      <div class="step"><div class="num">4</div><div><h3>Feel the difference</h3><p>Fluids and nutrients go straight into your bloodstream for full absorption. Before you leave, we can help you plan what comes next.</p></div></div>
-    </div>
-    <div class="rv">
-      <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/flowermound/site/assets/photos/DSC_7577.webp" alt="A nurse checking an IV drip while a client relaxes in the Flower Mound lounge" loading="lazy"></div>
-      <div class="tag">Your First Visit</div>
-      <h2>How it works, start to finish.</h2>
-      <p class="lede">Four steps between you and feeling more like yourself. No pressure, no guesswork, and no membership required.</p>
-      <a class="btn btn-lime" href="https://dripbarflowermound.com/booking" data-book="general">Book Your Appointment</a>
-    </div>
-  </div>
-</section>
-
-<!-- 10. REVIEWS -->
-<section class="bg-blue pad">
-  <div class="shell">
-    <div class="rev-head rv">
-      <div class="tag on-blue">Reviews</div>
-      <h2>Rated 5.0 across 190+ Google reviews</h2>
-      <div class="count">Verified Google reviews from guests of The DRIPBaR Flower Mound.</div>
-    </div>
-    <div class="rev-grid">
-      <div class="rcard rv">
-        <div class="rstars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        </div>
-        <blockquote>&ldquo;The team fit me in on the fly and were so great at explaining everything to me in advance of the IV. They were very consultative and kind. The facility has a spa-like quality. I highly recommend this IV bar!&rdquo;</blockquote>
-        <div class="who">Robin C.</div>
-        <div class="src">Google review</div>
-      </div>
-      <div class="rcard rv">
-        <div class="rstars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        </div>
-        <blockquote>&ldquo;Great and friendly staff. Everyone was very nice and helpful. They made sure to help me pick out the drip that was right for me. The halo therapy was awesome. It was my first time trying it and will be doing it again. I&rsquo;ll definitely be back.&rdquo;</blockquote>
-        <div class="who">Jordan S.</div>
-        <div class="src">Google review</div>
-      </div>
-      <div class="rcard rv">
-        <div class="rstars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        </div>
-        <blockquote>&ldquo;Extremely professional and sanitary! Many menu options to choose from whether it&rsquo;s recovery or rehydration they have it. Would highly recommend A++&rdquo;</blockquote>
-        <div class="who">Jerry F.</div>
-        <div class="src">Google review</div>
-      </div>
-      <div class="rcard rv">
-        <div class="rstars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        </div>
-        <blockquote>&ldquo;My first time to have IV therapy and I loved it ! I highly recommend the Power Pack. The effects were pretty much immediate. I have much more energy and yet feel more relaxed. All treatments are in a beautiful spa setting. I will be going back soon !&rdquo;</blockquote>
-        <div class="who">D. H.</div>
-        <div class="src">Google review</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 11. PROMO CALLOUT -->
-<section class="pad">
-  <div class="shell">
-    <div class="callout teal rv">
-      <div>
-        <h2><span class="lime-text">New here?</span> Your first drip is only <s>$224</s> $179.</h2>
-        <p>Try any Lifestyle drip on your first visit for the member price, $179 instead of $224. Every first visit starts with a brief health screening and a plan built around your goals. Book online in a couple of minutes, or reach out with questions first.</p>
-        <div class="fine">Valid for first-time guests at The DRIPBaR Flower Mound. A $35 yearly consultation fee applies at your first visit. Walk-ins welcome, appointments preferred.</div>
-      </div>
-      <div class="ctas">
-        <a class="btn btn-lime" href="https://dripbarflowermound.com/booking" data-book="general">Book Now</a>
-        <a class="btn btn-out-w" href="/contact">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="bg-soft pad" id="faq">
   <div class="shell faq-grid">
     <div class="faq-side rv">
       <div class="tag on-blue">FAQ</div>
-      <h2>Questions, answered.</h2>
-      <p>Everything you want to know about high dose vitamin c at The DRIPBaR Flower Mound.</p>
+      <h2>Membership questions, answered.</h2>
+      <p>Everything you want to know about memberships at The DRIPBaR Flower Mound.</p>
       <div class="faq-help">
         <span class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></span>
-        <div><strong>Still have a question?</strong><a href="tel:+14698046232">Call or text (469) 804-6232</a></div>
+        <div><strong>Ready to start?</strong><a href="tel:+14698046232">Call or text (469) 804-6232</a></div>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item rv" open>
-        <summary>Do I need a consultation before my first high dose Vitamin C infusion?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Yes. High dose Vitamin C requires a consultation and a G6PD screening lab before we can schedule your infusion. This helps our clinical team confirm the therapy is appropriate for you and set a dose that fits your health history.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>What is a G6PD screening and why is it required?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">G6PD is an enzyme screening that helps our clinical team identify whether high concentrations of Vitamin C are safe for you. It is a standard, required step before any high dose infusion and is part of keeping your visit safe.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>How much does high dose Vitamin C cost?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Pricing is set by dose: $179 at 15 g, $199 at 25 g, $259 at 50 g, and $299 at 75 g. A required G6PD screening lab comes first, and our clinical team will help you choose a dose that fits your goals.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>How long does an appointment take?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Infusion times vary based on your individualized dose and are discussed during your consultation. Plan for extra time compared to a standard lifestyle drip.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>Can I get high dose Vitamin C without a G6PD screening?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">No. Because dosing is individualized and a G6PD screening lab is required for safety, every guest completes that lab before scheduling an infusion.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>Is high dose Vitamin C a replacement for my doctor's care?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">No. It is a supportive infusion offered under physician oversight, not a treatment or cure for any condition. We encourage you to keep your physician informed, especially if you are managing an ongoing health concern.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>Why is high dose Vitamin C different from the Vitamin C in a regular drip?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Dose changes the chemistry. At everyday amounts, Vitamin C acts as an antioxidant. At the high concentrations an IV infusion can reach, it shifts to a pro-oxidant and produces hydrogen peroxide in the fluid around your cells. That change in mechanism is why high dose Vitamin C has its own consultation, G6PD screening, and individualized dosing rather than being treated as a larger standard drip.</div>
-      </details>
-    </div>
+    <div class="faq-list"><details class="faq-item rv" open><summary>How do I start a membership?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Call or text (469) 804-6232 and our team will set you up, usually in a few minutes. You can also ask about memberships at the front desk during any visit. There is no online checkout for memberships, because we like to match you to the right tier first.</div></details><details class="faq-item rv"><summary>How do monthly credits work?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Credits renew each month and can be used toward supportive therapies at The DRIPBaR Flower Mound, like infrared sauna, halotherapy, and red light therapy. Our team will show you exactly how credits apply to each service when you join.</div></details><details class="faq-item rv"><summary>Do unused drips roll over?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Yes. If life gets busy and you miss a month, your drip rolls over so you do not lose it.</div></details><details class="faq-item rv"><summary>Does membership pricing apply to every drip?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Member pricing on our menu reflects the Evolve Membership rate. Lifestyle drips are $179 for members instead of $224. Specialty infusions like NAD+ and High Dose Vitamin C are priced separately, and our team can tell you how your membership applies.</div></details><details class="faq-item rv"><summary>Can I change tiers, pause, or cancel?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Talk to our team. They will walk you through the terms, including how to move up or down a tier, before you start, so there are no surprises.</div></details><details class="faq-item rv"><summary>Can I share my membership with family or friends?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Ask our team about guest passes and sharing options when you join. Our goal is to make it easy for the people you care about to come with you.</div></details></div>
   </div>
 </section>
 <!-- FINAL CTA -->
 <section class="bg-teal cta pad">
   <div class="shell rv">
     <div class="tag on-teal">The DRIPBaR Flower Mound</div>
-    <h2>Start with a consultation</h2>
-    <p class="lede">Book a consultation with our clinical team to see if high dose Vitamin C is right for you, and get your G6PD screening scheduled.</p>
-    <a class="btn btn-lime" href="https://dripbarflowermound.com/booking" data-book="consult">Book Now</a>
-    <div class="fine">Questions first? Call or text <a href="tel:+14698046232">(469) 804-6232</a>. Open Mon 11-7, Tue 10-4, Wed-Fri 10-6, Sat 10-5, Sun 12-5.</div>
+    <h2>Start your membership today.</h2>
+    <p class="lede">Call or text (469) 804-6232 and our team will match you to the right tier, answer your questions, and get your first drip on the calendar.</p>
+    <div class="call-row" style="justify-content:center"><a class="btn btn-lime" href="tel:+14698046232"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Call (469) 804-6232</a><a class="btn btn-out-w" href="sms:+14698046232"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Text to start</a></div>
+    <div class="fine">Open Mon-Fri 10-6, Sat 10-4, Sun 11-3. 6230 Long Prairie Rd, Ste 300, Flower Mound, TX 75028.</div>
   </div>
 </section>
 
-<!-- 15. FOOTER -->
 <footer class="foot">
   <div class="shell">
     <div class="foot-grid">
@@ -955,7 +834,7 @@ const BOOKING = { default: B,
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a consultation before my first high dose Vitamin C infusion?","acceptedAnswer":{"@type":"Answer","text":"Yes. High dose Vitamin C requires a consultation and a G6PD screening lab before we can schedule your infusion. This helps our clinical team confirm the therapy is appropriate for you and set a dose that fits your health history."}},{"@type":"Question","name":"What is a G6PD screening and why is it required?","acceptedAnswer":{"@type":"Answer","text":"G6PD is an enzyme screening that helps our clinical team identify whether high concentrations of Vitamin C are safe for you. It is a standard, required step before any high dose infusion and is part of keeping your visit safe."}},{"@type":"Question","name":"How much does high dose Vitamin C cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is set by dose: $179 at 15 g, $199 at 25 g, $259 at 50 g, and $299 at 75 g. A required G6PD screening lab comes first, and our clinical team will help you choose a dose that fits your goals."}},{"@type":"Question","name":"How long does an appointment take?","acceptedAnswer":{"@type":"Answer","text":"Infusion times vary based on your individualized dose and are discussed during your consultation. Plan for extra time compared to a standard lifestyle drip."}},{"@type":"Question","name":"Can I get high dose Vitamin C without a G6PD screening?","acceptedAnswer":{"@type":"Answer","text":"No. Because dosing is individualized and a G6PD screening lab is required for safety, every guest completes that lab before scheduling an infusion."}},{"@type":"Question","name":"Is high dose Vitamin C a replacement for my doctor's care?","acceptedAnswer":{"@type":"Answer","text":"No. It is a supportive infusion offered under physician oversight, not a treatment or cure for any condition. We encourage you to keep your physician informed, especially if you are managing an ongoing health concern."}},{"@type":"Question","name":"Why is high dose Vitamin C different from the Vitamin C in a regular drip?","acceptedAnswer":{"@type":"Answer","text":"Dose changes the chemistry. At everyday amounts, Vitamin C acts as an antioxidant. At the high concentrations an IV infusion can reach, it shifts to a pro-oxidant and produces hydrogen peroxide in the fluid around your cells. That change in mechanism is why high dose Vitamin C has its own consultation, G6PD screening, and individualized dosing rather than being treated as a larger standard drip."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I start a membership?","acceptedAnswer":{"@type":"Answer","text":"Call or text (469) 804-6232 and our team will set you up, usually in a few minutes. You can also ask about memberships at the front desk during any visit. There is no online checkout for memberships, because we like to match you to the right tier first."}},{"@type":"Question","name":"How do monthly credits work?","acceptedAnswer":{"@type":"Answer","text":"Credits renew each month and can be used toward supportive therapies at The DRIPBaR Flower Mound, like infrared sauna, halotherapy, and red light therapy. Our team will show you exactly how credits apply to each service when you join."}},{"@type":"Question","name":"Do unused drips roll over?","acceptedAnswer":{"@type":"Answer","text":"Yes. If life gets busy and you miss a month, your drip rolls over so you do not lose it."}},{"@type":"Question","name":"Does membership pricing apply to every drip?","acceptedAnswer":{"@type":"Answer","text":"Member pricing on our menu reflects the Evolve Membership rate. Lifestyle drips are $179 for members instead of $224. Specialty infusions like NAD+ and High Dose Vitamin C are priced separately, and our team can tell you how your membership applies."}},{"@type":"Question","name":"Can I change tiers, pause, or cancel?","acceptedAnswer":{"@type":"Answer","text":"Talk to our team. They will walk you through the terms, including how to move up or down a tier, before you start, so there are no surprises."}},{"@type":"Question","name":"Can I share my membership with family or friends?","acceptedAnswer":{"@type":"Answer","text":"Ask our team about guest passes and sharing options when you join. Our goal is to make it easy for the people you care about to come with you."}}]}</script>
 
 </body>
 </html>
