@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Help Me Choose a Drip or Quick Shot in Edina, MN</title>
-<meta name="description" content="Not sure which IV drip or quick shot fits? Answer four quick questions and The DRIPBaR Edina will point you to a starting plan, confirmed by our wellness team.">
-<link rel="canonical" href="https://thedripbaredina.com/help-me-choose">
+<title>Wellness Memberships in Edina, MN | The DRIPBaR Edina</title>
+<meta name="description" content="Compare The DRIPBaR Edina membership tiers: monthly Lifestyle drips, quick shots, service credits for supportive therapies, and 20% off additional services. Call or text (612) 324-4740 to start your membership.">
+<link rel="canonical" href="https://thedripbaredina.com/memberships">
 
 <link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -481,8 +481,47 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .note{background:var(--blue-soft);border:1px solid var(--divider);border-radius:20px;padding:22px 26px;font-size:14.5px;display:flex;gap:16px;align-items:flex-start;margin-top:32px}
 .note .isq{width:44px;height:44px;border-radius:12px}
 .note b{color:var(--teal)}
-.rc .rc-book{padding:11px 20px;font-size:14px;margin-top:8px;width:auto}
-.rc .tlink{margin-top:4px}
+
+/* ---------- membership tiers ---------- */
+.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:8px}
+.tiers.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tier{position:relative;background:#fff;border:1px solid var(--divider);border-radius:24px;padding:34px 26px 26px;display:flex;flex-direction:column;gap:0;transition:transform .3s ease,box-shadow .3s ease}
+.tier:hover{transform:translateY(-4px);box-shadow:0 26px 60px -30px rgba(4,78,99,.35)}
+.tier.hot{background:var(--teal);color:#fff;border-color:var(--teal)}
+.tier .ribbon{position:absolute;top:-13px;left:24px;background:var(--lime);color:#fff;font:600 11.5px/1 var(--pop);letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:7px 13px}
+.tier .tname{font-family:var(--bebas);font-size:36px;line-height:1;letter-spacing:1px;color:var(--teal)}
+.tier.hot .tname{color:#fff}
+.tier .tsub{font-size:13.5px;line-height:1.5;color:var(--muted);margin:8px 0 18px;min-height:40px}
+.tier.hot .tsub{color:rgba(255,255,255,.78)}
+.tier .tprice{display:flex;align-items:center;gap:8px;padding:16px 0;min-height:84px;border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);margin-bottom:18px}
+.tier.hot .tprice{border-color:rgba(255,255,255,.18)}
+.tier .tprice b{font-family:var(--bebas);font-weight:400;font-size:46px;line-height:1;color:var(--teal)}
+.tier.hot .tprice b{color:#fff}
+.tier .tprice span{font-size:13px;color:var(--muted);position:relative;top:5px}
+.tier.hot .tprice span{color:rgba(255,255,255,.72)}
+.tier .tprice .ask{font:600 15px/1.3 var(--pop);color:var(--teal)}
+.tier.hot .tprice .ask{color:#fff}
+.tier ul{display:grid;gap:10px;margin:0 0 24px}
+.tier li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--body)}
+.tier.hot li{color:#fff}
+.tier li .ck{width:22px;height:22px;border-radius:50%;background:var(--blue-icon);color:var(--teal);display:grid;place-items:center;flex:none;margin-top:1px}
+.tier li .ck svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.tier.hot li .ck{background:rgba(255,255,255,.16);color:#fff}
+.tier .tcta{margin-top:auto;display:grid;gap:8px}
+.tier .tcta .btn{width:100%;padding:14px 18px;font-size:14.5px}
+.tier .btn-out{border-color:var(--teal);color:var(--teal)}
+.tier.hot .btn-out{border-color:rgba(255,255,255,.8);color:#fff}
+.tier-note{text-align:center;font-size:13.5px;color:var(--muted);margin-top:26px;max-width:760px;margin-left:auto;margin-right:auto}
+.perk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.perk{background:#fff;border:1px solid var(--divider);border-radius:20px;padding:24px 24px 22px;display:flex;gap:16px;align-items:flex-start}
+.perk .isq{width:48px;height:48px;border-radius:12px}
+.perk .isq svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.perk b{display:block;font:600 15.5px/1.3 var(--pop);color:var(--teal);margin-bottom:6px}
+.perk p{font-size:14px;line-height:1.55;margin:0}
+.call-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.call-row .btn svg{width:18px;height:18px;margin-right:9px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1100px){.tiers,.tiers.five{grid-template-columns:repeat(2,minmax(0,1fr))}.perk-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.tiers,.tiers.five{grid-template-columns:1fr}.perk-grid{grid-template-columns:1fr}.tier .tsub{min-height:0}}
 </style>
 </head>
 <body>
@@ -592,134 +631,117 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <header class="ihero">
   <div class="shell ihero-grid">
     <div>
-      <div class="crumbs"><a href="/">Home</a><span>/</span><b>Help Me Choose</b></div>
-      <div class="tag on-teal">Help Me Choose</div>
-      <h1>Not sure where to start? <span class="acc">Answer four questions.</span></h1>
-      <p class="lede">Tell us how you want to feel and how much time you have. We will point you to the drips and quick shots that fit, and our wellness team confirms the plan at your visit.</p>
-      <div class="ihero-ctas"><a class="btn btn-lime" href="#quiz">Start the Quiz</a><a class="btn btn-out-w" href="https://thedripbaredina.com/booking" data-book="general">Skip and Book</a></div>
-      <ul class="trust"><li><span class="ic"><svg><use href="#i-badge"/></svg></span>Takes about a minute</li><li><span class="ic"><svg><use href="#i-clock"/></svg></span>No account needed</li><li><span class="ic"><svg><use href="#i-star"/></svg></span>Clinician confirmed</li></ul>
+      <div class="crumbs"><a href="/">Home</a><span>/</span><b>Memberships</b></div>
+      <div class="tag on-teal">Memberships</div>
+      <h1>Make wellness <span class="acc">a habit.</span></h1>
+      <p class="lede">A membership turns occasional visits into a plan you can keep: a Lifestyle drip every month, credits for supportive therapies, member pricing on everything else, and a team that learns your preferences. Pick the tier that fits your pace, then call or text to start.</p>
+      <div class="ihero-ctas call-row">
+        <a class="btn btn-lime" href="tel:+16123244740"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Call (612) 324-4740</a>
+        <a class="btn btn-out-w" href="sms:+16123244740"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Text to start</a>
+      </div>
+      <ul class="trust"><li><span class="ic"><svg><use href="#i-refresh"/></svg></span>Credits renew monthly</li><li><span class="ic"><svg><use href="#i-badge"/></svg></span>Unused drips roll over</li><li><span class="ic"><svg><use href="#i-star"/></svg></span>5.0 Google rating</li></ul>
     </div>
     <div class="hvis rv">
-      <div class="hph wide"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_7564.webp" alt="A nurse and guest talking through options during a visit at The DRIPBaR Edina" loading="eager" fetchpriority="high"></div>
-      
-      <div class="hchip"><b>21 drips</b><span class="hsep"></span><small>17 quick shots</small></div>
+      <div class="hph wide"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/pickleballers.webp" alt="Two smiling guests relaxing together in the lounge at The DRIPBaR Edina" loading="eager" fetchpriority="high"></div>
+      <div class="hchip"><b>Members</b><span class="hsep"></span><small>Lifestyle drips $179</small></div>
     </div>
   </div>
 </header>
-<!-- QUIZ -->
-<section class="bg-soft pad" id="quiz">
-  <div class="shell">
-    <div class="quiz rv" id="quizBox">
-      <div class="qbar"><i id="qbar"></i></div>
-      <div class="qin">
-        <div id="qpanel"></div>
-        <div class="qres" id="qres"></div>
-      </div>
-    </div>
+<!-- QUICK FACTS -->
+<section class="bg-blue">
+  <div class="shell facts">
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-drop"/></svg></span></div><div><b>Monthly drips</b><span>Included in every drip tier</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-refresh"/></svg></span></div><div><b>Service credits</b><span>For supportive therapies</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-badge"/></svg></span></div><div><b>20% off</b><span>Additional services</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></div><div><b>Call or text</b><span>To start in minutes</span></div></div>
   </div>
 </section>
-<!-- GOALS -->
-<section class="bg-teal pad">
+<!-- TIERS -->
+<section class="pad" id="tiers">
   <div class="shell">
-    <div class="path-head rv">
-      <div class="tag on-teal">Or Browse By Goal</div>
-      <h2>Start with how you want to feel</h2>
-      <p class="lede">Every category page compares the drips and quick shots that fit, with regular and member pricing side by side.</p>
+    <div class="cmp-head rv">
+      <div class="tag">Membership Options</div>
+      <h2>Your monthly boost for mind, body, and energy.</h2>
+      <p class="lede">Every tier is month to month and built around how often you want to come in. Not sure which fits? Call or text and we will help you choose.</p>
     </div>
-    <div class="path-grid">
-      <a class="gcard rv" href="/hydration-recovery"><div class="isq"><span class="ic"><svg><use href="#i-drop"/></svg></span></div><h3>Hydrate &amp; Recover</h3><p>Replace fluids and electrolytes after travel, training, or a long week.</p><span class="tlink">Explore options <span>&rarr;</span></span></a>
-      <a class="gcard rv" href="/energy-focus"><div class="isq"><span class="ic"><svg><use href="#i-bolt"/></svg></span></div><h3>Boost Energy</h3><p>Steady energy and a clearer head when demanding weeks catch up with you.</p><span class="tlink">Explore options <span>&rarr;</span></span></a>
-      <a class="gcard rv" href="/immunity-viral"><div class="isq"><span class="ic"><svg><use href="#i-shield"/></svg></span></div><h3>Strengthen Immunity</h3><p>Back up your defenses before travel or through the long Minnesota winter.</p><span class="tlink">Explore options <span>&rarr;</span></span></a>
-      <a class="gcard rv" href="/skin-brightening-beauty"><div class="isq"><span class="ic"><svg><use href="#i-sun"/></svg></span></div><h3>Healthy Aging &amp; Beauty</h3><p>Support skin tone, collagen, and antioxidant defense from the inside.</p><span class="tlink">Explore options <span>&rarr;</span></span></a>
-      <a class="gcard rv" href="/weight-loss-support"><div class="isq"><span class="ic"><svg><use href="#i-scale"/></svg></span></div><h3>Weight &amp; Metabolic Support</h3><p>Medically supervised GLP-1 weight management, starting with a consultation.</p><span class="tlink">Explore options <span>&rarr;</span></span></a>
-      <a class="gcard rv" href="/detox"><div class="isq"><span class="ic"><svg><use href="#i-refresh"/></svg></span></div><h3>Detox &amp; Reset</h3><p>Support your body's natural detox pathways with antioxidants and key nutrients.</p><span class="tlink">Explore options <span>&rarr;</span></span></a>
-    </div>
+    <div class="tiers"><div class="tier rv" id="tier-essential"><span class="ribbon">New</span><div class="tname">Essential</div><div class="tsub">The foundation for consistent, everyday wellness.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>3 IM Quick Shots each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Member perks</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div><div class="tier hot rv" id="tier-lifestyle"><span class="ribbon">Most popular</span><div class="tname">Lifestyle</div><div class="tsub">One drip a month, plus the perks that make it a habit.</div><div class="tprice"><b>$179</b><span>per month</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>1 Lifestyle Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A free monthly member perk</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional drips</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-lime" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div><div class="tier rv" id="tier-elevate"><div class="tname">Elevate</div><div class="tsub">Two drips a month for people who want to feel their best, more often.</div><div class="tprice"><b>$339</b><span>per month</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 Lifestyle Drips each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A free monthly member perk</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional drips</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div><div class="tier rv" id="tier-elite"><span class="ribbon">New</span><div class="tname">Elite</div><div class="tsub">The highest level of support, access, and impact.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A premium 500 mg NAD+ Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Upgrade available for a Niagen drip</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>8 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional services</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div></div>
+    <p class="tier-note">Lifestyle Membership is $179 per month and Elevate is $339 per month. Essential and Elite pricing is shared when you call or text. Member pricing on our menu reflects the Lifestyle Membership rate.</p>
   </div>
 </section>
-<!-- 9. HOW IT WORKS -->
-<section class="pad">
-  <div class="shell how">
-    <div class="steps rv">
-      <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Choose a day and time that works, or call or text us at (612) 324-4740. Walk-ins are welcome when the schedule allows.</p></div></div>
-      <div class="step"><div class="num">2</div><div><h3>Check in and get comfortable</h3><p>Our wellness team greets you, confirms your drip, and answers any questions before you settle in.</p></div></div>
-      <div class="step"><div class="num">3</div><div><h3>Relax in the lounge</h3><p>Settle into a recliner while a licensed professional administers your drip or shot. Most IVs take 30 to 60 minutes.</p></div></div>
-      <div class="step"><div class="num">4</div><div><h3>Feel the difference</h3><p>Fluids and nutrients go straight into your bloodstream for full absorption. Before you leave, we can help you plan what comes next.</p></div></div>
-    </div>
+<!-- HOW CREDITS WORK -->
+<section class="bg-soft pad">
+  <div class="shell two">
+    <div class="pho wide rv"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_7564.webp" alt="A nurse talking with a smiling guest during her drip at The DRIPBaR Edina" loading="lazy"><span class="badge">Use your credits here</span></div>
     <div class="rv">
-      <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_7577.webp" alt="A nurse checking an IV drip while a client relaxes in the Edina lounge" loading="lazy"></div>
-      <div class="tag">Your First Visit</div>
-      <h2>How it works, start to finish.</h2>
-      <p class="lede">Four steps between you and feeling more like yourself. No pressure, no guesswork, and no membership required.</p>
-      <a class="btn btn-lime" href="https://thedripbaredina.com/booking" data-book="general">Book Your Appointment</a>
+      <div class="tag on-blue">How It Works</div>
+      <h2>Drips on your calendar. Credits for everything around them.</h2>
+      <p class="lede">Monthly drip credits keep your Lifestyle IVs on the schedule. Service credits let you add supportive sessions like infrared sauna, red light therapy, and halotherapy, so a drip day can become a full reset.</p>
+      <ul class="ckl">
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Book like always<small>Members use the same online booking and get member pricing automatically.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Use credits your way<small>Pair a session with your drip or stop in on its own. Our team tracks your balance.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>No guesswork<small>We will map a monthly cadence you can actually keep, then adjust as life changes.</small></div></li>
+      </ul>
+      <div class="ctas"><a class="btn btn-lime" href="tel:+16123244740">Call (612) 324-4740</a><a class="btn btn-out" href="https://thedripbaredina.com/booking" data-book="general">Already a member? Book</a></div>
     </div>
   </div>
 </section>
-
-<!-- 11. PROMO CALLOUT -->
+<!-- PERKS -->
 <section class="pad">
   <div class="shell">
-    <div class="callout teal rv">
-      <div>
-        <h2><span class="lime-text">New here?</span> Your first appointment is $20 off.</h2>
-        <p>Our wellness team will help you choose the right drip for your goals. Book online in a couple of minutes, or reach out with questions first.</p>
-        <div class="fine">Valid for first-time guests at The DRIPBaR Edina. Walk-ins welcome, appointments preferred.</div>
-      </div>
-      <div class="ctas">
-        <a class="btn btn-lime" href="https://thedripbaredina.com/booking" data-book="general">Book Now</a>
-        <a class="btn btn-out-w" href="/contact">Contact Us</a>
-      </div>
+    <div class="cmp-head rv">
+      <div class="tag">Member Perks</div>
+      <h2>Value that adds up every month.</h2>
+      <p class="lede">Beyond the drips themselves, membership comes with the small things that make consistency easy.</p>
+    </div>
+    <div class="perk-grid"><div class="perk rv"><span class="isq"><svg><use href="#i-refresh"/></svg></span><div><b>A free member perk every month</b><p>A rotating perk, like a seasonal quick shot or add-on, included with your membership.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-badge"/></svg></span><div><b>20% off additional drips</b><p>Want a second drip this month? Members pay less.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-star"/></svg></span><div><b>Unused drips roll over</b><p>Travel or a busy month will not cost you a drip.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-drop"/></svg></span><div><b>Member pricing on the menu</b><p>Lifestyle drips are $179 for members instead of $224.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-heart"/></svg></span><div><b>Shareable with friends and family</b><p>Ask our team how guest passes and sharing work.</p></div></div><div class="perk rv"><span class="isq"><svg><use href="#i-clock"/></svg></span><div><b>Priority booking</b><p>Members get first access to the schedule, including busy weeks.</p></div></div></div>
+  </div>
+</section>
+<!-- WHY -->
+<section class="bg-soft pad">
+  <div class="shell two">
+    <div class="rv">
+      <div class="tag on-blue">Why Edina</div>
+      <h2>Consistent care, without the pressure.</h2>
+      <p class="lede">Prioritizing self-care is not indulgent. It protects your energy, keeps costs predictable, and makes room for rest when life is busy. A membership gives you structure without pressure.</p>
+      <ul class="ckl">
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Licensed clinical team<small>Every drip and shot is administered by licensed medical professionals with physician oversight.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>A plan built around you<small>We learn your goals and preferences, so every visit picks up where the last one left off.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Steady habits, real progress<small>Members tell us the difference is showing up every month, not just when they feel run down.</small></div></li>
+      </ul>
+      <div class="ctas call-row"><a class="btn btn-lime" href="tel:+16123244740"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Call to start</a><a class="btn btn-out" href="sms:+16123244740"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Text (612) 324-4740</a></div>
+    </div>
+    <div class="stack rv">
+      <div class="p1"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_1508.webp" alt="A guest resting comfortably during an IV drip at The DRIPBaR Edina" loading="lazy"></div>
+      <div class="p2"><img src="https://betterbranding.github.io/dripbar-pages/edina/site/assets/photos/DSC_0693.webp" alt="The lounge at The DRIPBaR Edina" loading="lazy"></div>
     </div>
   </div>
 </section>
-
 <!-- FAQ -->
 <section class="bg-soft pad" id="faq">
   <div class="shell faq-grid">
     <div class="faq-side rv">
       <div class="tag on-blue">FAQ</div>
-      <h2>Questions, answered.</h2>
-      <p>How the quiz works and what happens next.</p>
+      <h2>Membership questions, answered.</h2>
+      <p>Everything you want to know about memberships at The DRIPBaR Edina.</p>
       <div class="faq-help">
         <span class="isq"><span class="ic"><svg><use href="#i-phone"/></svg></span></span>
-        <div><strong>Still have a question?</strong><a href="tel:+16123244740">Call or text (612) 324-4740</a></div>
+        <div><strong>Ready to start?</strong><a href="tel:+16123244740">Call or text (612) 324-4740</a></div>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item rv" open>
-        <summary>Do I need to know which drip I want before booking?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">No. Most guests book a general appointment and decide with our wellness team when you arrive. This quiz simply gives you a starting point so the conversation is faster.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>Is the recommendation medical advice?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">No. The quiz matches your goals to categories on our menu. Your final plan is always set with our licensed wellness team at your visit, under physician oversight from Dr. Azhar Ahmed.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>What if I have more than one goal?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">That is common. Pick the goal that matters most today. Many drips overlap, and our team can add a quick shot or suggest a follow-up visit to cover the rest.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>How long will my visit take?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Quick shots take under 15 minutes. Most IV drips run 30 to 60 minutes. NAD+ infusions run longer, often 2 to 4 hours, and we adjust the rate for comfort.</div>
-      </details>
-      <details class="faq-item rv">
-        <summary>Is there a cost for a consultation?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans">Standard IV drips and quick shots do not require a consultation, so there is nothing extra to pay. Consultation-based services like GLP-1 weight management, peptide therapy, High Dose Vitamin C, and Ozone Therapy start with a scheduled consultation.</div>
-      </details>
-    </div>
+    <div class="faq-list"><details class="faq-item rv" open><summary>How do I start a membership?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Call or text (612) 324-4740 and our team will set you up, usually in a few minutes. You can also ask about memberships at the front desk during any visit. There is no online checkout for memberships, because we like to match you to the right tier first.</div></details><details class="faq-item rv"><summary>What is the free monthly member perk?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Each month members receive a perk, such as a seasonal quick shot or an add-on, included with the membership. The perk rotates, and our team announces it at the start of the month.</div></details><details class="faq-item rv"><summary>Do unused drips roll over?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Yes. If life gets busy and you miss a month, your drip rolls over so you do not lose it.</div></details><details class="faq-item rv"><summary>Does membership pricing apply to every drip?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Member pricing on our menu reflects the Lifestyle Membership rate. Lifestyle drips are $179 for members instead of $224. Specialty infusions like NAD+ and High Dose Vitamin C are priced separately, and our team can tell you how your membership applies.</div></details><details class="faq-item rv"><summary>Can I change tiers, pause, or cancel?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Talk to our team. They will walk you through the terms, including how to move up or down a tier, before you start, so there are no surprises.</div></details><details class="faq-item rv"><summary>Can I share my membership with family or friends?<span class="pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">Ask our team about guest passes and sharing options when you join. Our goal is to make it easy for the people you care about to come with you.</div></details></div>
   </div>
 </section>
 <!-- FINAL CTA -->
 <section class="bg-teal cta pad">
   <div class="shell rv">
     <div class="tag on-teal">The DRIPBaR Edina</div>
-    <h2>Still deciding? Come talk it through.</h2>
-    <p class="lede">Book a general appointment and our wellness team will match you to the right drip when you arrive. New guests get $20 off.</p>
-    <a class="btn btn-lime" href="https://thedripbaredina.com/booking" data-book="general">Book Now</a>
-    <div class="fine">Questions first? Call us at <a href="tel:+16123244740">(612) 324-4740</a>. Open Mon-Fri 10-6, Sat 10-4, Sun 11-3.</div>
+    <h2>Start your membership today.</h2>
+    <p class="lede">Call or text (612) 324-4740 and our team will match you to the right tier, answer your questions, and get your first drip on the calendar.</p>
+    <div class="call-row" style="justify-content:center"><a class="btn btn-lime" href="tel:+16123244740"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Call (612) 324-4740</a><a class="btn btn-out-w" href="sms:+16123244740"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Text to start</a></div>
+    <div class="fine">Open Mon-Fri 10-6, Sat 10-4, Sun 11-3. 3515 W. 70th St, Edina, MN 55435.</div>
   </div>
 </section>
 
-<!-- 15. FOOTER -->
 <footer class="foot">
   <div class="shell">
     <div class="foot-grid">
@@ -809,46 +831,7 @@ const BOOKING = { default: B,
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to know which drip I want before booking?","acceptedAnswer":{"@type":"Answer","text":"No. Most guests book a general appointment and decide with our wellness team when you arrive. This quiz simply gives you a starting point so the conversation is faster."}},{"@type":"Question","name":"Is the recommendation medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. The quiz matches your goals to categories on our menu. Your final plan is always set with our licensed wellness team at your visit, under physician oversight from Dr. Azhar Ahmed."}},{"@type":"Question","name":"What if I have more than one goal?","acceptedAnswer":{"@type":"Answer","text":"That is common. Pick the goal that matters most today. Many drips overlap, and our team can add a quick shot or suggest a follow-up visit to cover the rest."}},{"@type":"Question","name":"How long will my visit take?","acceptedAnswer":{"@type":"Answer","text":"Quick shots take under 15 minutes. Most IV drips run 30 to 60 minutes. NAD+ infusions run longer, often 2 to 4 hours, and we adjust the rate for comfort."}},{"@type":"Question","name":"Is there a cost for a consultation?","acceptedAnswer":{"@type":"Answer","text":"Standard IV drips and quick shots do not require a consultation, so there is nothing extra to pay. Consultation-based services like GLP-1 weight management, peptide therapy, High Dose Vitamin C, and Ozone Therapy start with a scheduled consultation."}}]}</script>
-<script>
-(function(){
-  var Q={"goals":{"hydrate":{"label":"Hydrate and recover","pl":"Hydration and Recovery","sub":"Travel, training, long weeks","icon":"drop","page":"/hydration-recovery","drips":["restoration","powerpack","allstar"],"shot":["IM Vitalized","Taurine and L-Arginine for circulation and recovery."]},"energy":{"label":"More energy and focus","pl":"Energy and Focus","sub":"Fatigue, brain fog, burnout","icon":"bolt","page":"/energy-focus","drips":["vitality","powerpack","debut"],"shot":["IM Supercharged","B12, Biotin, and B5 for metabolism and clarity."]},"immune":{"label":"Immune support","pl":"Immunity and Viral","sub":"Winter, travel, feeling run down","icon":"shield","page":"/immunity-viral","drips":["shield","flu-fighter","post-viral"],"shot":["Tri-Immune","Glutathione, Vitamin C, and Zinc in one shot."]},"beauty":{"label":"Skin, glow, healthy aging","pl":"Skin Brightening and Beauty","sub":"Tone, collagen, antioxidants","icon":"sun","page":"/skin-brightening-beauty","drips":["glutathione","time-machine","firm"],"shot":["IM Glowing","Glutathione and Biotin for skin, hair, and nails."]},"weight":{"label":"Weight and metabolism","pl":"Weight Loss Support","sub":"Physician-guided GLP-1 program","icon":"scale","page":"/weight-loss-support","drips":["metabolize"],"shot":["IM Lean","Choline, B12, and Taurine for metabolism and appetite support."]},"detox":{"label":"Detox and reset","pl":"Detox","sub":"Antioxidants and nutrient support","icon":"refresh","page":"/detox","drips":["heavy-metal-detox","glutathione","ala"],"shot":["IM Detoxed","Glutathione for antioxidant defense and clarity."]},"stress":{"label":"Stress and tension","pl":"Hydration and Recovery","sub":"Headaches, sleep, unwinding","icon":"moon","page":"/hydration-recovery","drips":["soother","restoration"],"shot":["IM Vitalized","Taurine and L-Arginine for circulation and recovery."]},"aging":{"label":"Cellular health and longevity","pl":"NAD+","sub":"NAD+, clarity, healthy aging","icon":"brain","page":"/nad","drips":["nad-plus","vitality","time-machine"],"shot":["IM Supercharged","B12, Biotin, and B5 for steady energy."]}},"drips":{"vitality":{"name":"Vitality","reg":"$224","mem":"$179","href":"/energy-focus"},"shield":{"name":"Shield","reg":"$224","mem":"$179","href":"/immunity-viral"},"powerpack":{"name":"Powerpack","reg":"$224","mem":"$179","href":"/energy-focus"},"nad-plus":{"name":"NAD+","reg":"$199","mem":"$159","href":"/nad"},"glutathione":{"name":"Glutathione","reg":"$224","mem":"$179","href":"/skin-brightening-beauty"},"time-machine":{"name":"Time Machine","reg":"$224","mem":"$179","href":"/skin-brightening-beauty"},"flu-fighter":{"name":"Flu Fighter","reg":"$224","mem":"$179","href":"/immunity-viral"},"restoration":{"name":"Restoration","reg":"$224","mem":"$179","href":"/hydration-recovery"},"metabolize":{"name":"Metabolize","reg":"$224","mem":"$179","href":"/weight-loss-support"},"allstar":{"name":"Allstar","reg":"$224","mem":"$179","href":"/hydration-recovery"},"heavy-metal-detox":{"name":"Heavy Metal Detox","reg":"$224","mem":"$179","href":"/detox"},"firm":{"name":"Firm","reg":"$224","mem":"$179","href":"/skin-brightening-beauty"},"debut":{"name":"The Debut","reg":"$165","mem":"Same price for members","href":"/help-me-choose"},"post-viral":{"name":"Post Viral","reg":"$224","mem":"$179","href":"/immunity-viral"},"jetsetter":{"name":"Jetsetter","reg":"$224","mem":"$179","href":"/immunity-viral"},"allergy":{"name":"Allergy","reg":"$224","mem":"$179","href":"/immunity-viral"},"soother":{"name":"Soother","reg":"$224","mem":"$179","href":"/help-me-choose"},"maternal-wellness":{"name":"Maternal Wellness","reg":"$224","mem":"$179","href":"/help-me-choose"},"pre-post-op":{"name":"Pre/Post-Op","reg":"$224","mem":"$179","href":"/hydration-recovery"},"ala":{"name":"Alpha Lipoic Acid","reg":"$199","mem":"$159","href":"/detox"},"high-dose-vitamin-c":{"name":"High Dose Vitamin C","reg":"From $189","mem":"Set at consultation","href":"/high-dose-vitamin-c"},"100-percent-hydration":{"name":"100% Hydration","reg":"$109","mem":"$87","href":"/hydration-recovery"}}};
-  var BW={"restoration":"restoration","powerpack":"powerpack","allstar":"allstar","vitality":"vitality","debut":"debut","flu-fighter":"flu","post-viral":"postviral","allergy":"allergy","shield":"shield","glutathione":"glutathione","time-machine":"timemachine","firm":"firm","metabolize":"metabolize","heavy-metal-detox":"hmd","ala":"ala","soother":"soother","nad-plus":"nad","jetsetter":"jetsetter","maternal-wellness":"maternal","pre-post-op":"prepostop","high-dose-vitamin-c":"hdc","100-percent-hydration":"hydration"},BG={"hydrate":"recovery","energy":"energy","immune":"immunity","beauty":"aging","weight":"weight","detox":"metabolic","stress":"recovery","aging":"aging"},BS={"IM Vitalized":"shot_vital","IM Supercharged":"shot_super","Tri-Immune":"shot_tri","IM Glowing":"shot_glow","IM Lean":"shot_lean","IM Detoxed":"shot_detox"};
-  function bookUrl(p){var u=BOOK+'?'+p+'&via=quiz';if(a.first==='no')u+='&first=yes';else if(a.first==='yes')u+='&first=no';return u;}
-  function svcUrl(f){return BW[f]?bookUrl('service='+BW[f]+'&goal='+(BG[a.goal]||'')):bookUrl('goal='+(BG[a.goal]||''));}
-  var ASSET='https://betterbranding.github.io/dripbar-pages/edina/site/assets', BOOK='https://thedripbaredina.com/booking';
-  var steps=[
-    {k:'goal',step:'Question 1 of 4',h:'What do you want help with today?',sub:'Pick the one that matters most right now.',opts:Object.keys(Q.goals).map(function(k){var g=Q.goals[k];return {v:k,l:g.label,s:g.sub,i:g.icon};})},
-    {k:'time',step:'Question 2 of 4',h:'How much time do you have?',sub:'Quick shots take under 15 minutes. Most drips run 30 to 60.',opts:[{v:'15',l:'About 15 minutes',s:'In and out on a break',i:'bolt'},{v:'60',l:'An hour or so',s:'Settle into a recliner',i:'clock'},{v:'any',l:'As long as it takes',s:'I want the full reset',i:'moon'}]},
-    {k:'first',step:'Question 3 of 4',h:'Have you had an IV drip with us before?',sub:'First visits start with a short intake form.',opts:[{v:'yes',l:'Yes, I am a regular',s:'Skip the basics',i:'star'},{v:'no',l:'No, this is my first time',s:'Show me a good starting point',i:'sparkle'}]},
-    {k:'freq',step:'Question 4 of 4',h:'How often do you see yourself coming in?',sub:'This only affects whether we show member pricing.',opts:[{v:'once',l:'Just this once',s:'Or every so often',i:'pin'},{v:'monthly',l:'Monthly or more',s:'Show me membership value',i:'refresh'}]}
-  ];
-  var a={},i=0,panel=document.getElementById('qpanel'),res=document.getElementById('qres'),bar=document.getElementById('qbar');
-  function icon(n){return '<span class="isq"><span class="ic"><svg><use href="#i-'+n+'"/></svg></span></span>';}
-  function render(){
-    res.classList.remove('show');panel.style.display='block';
-    var s=steps[i];bar.style.width=((i)/steps.length*100)+'%';
-    panel.innerHTML='<div class="qstep">'+s.step+'</div><h3>'+s.h+'</h3><p class="qsub">'+s.sub+'</p><div class="opts">'+s.opts.map(function(o){return '<button type="button" class="opt'+(a[s.k]===o.v?' on':'')+'" data-v="'+o.v+'">'+icon(o.i)+'<span>'+o.l+'<small>'+o.s+'</small></span></button>';}).join('')+'</div><div class="qnav">'+(i>0?'<button type="button" class="back" id="qback">&larr; Back</button>':'<span></span>')+'<span style="font:500 13px/1 var(--pop);color:var(--muted)">'+(i+1)+' / '+steps.length+'</span></div>';
-    panel.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){a[s.k]=b.getAttribute('data-v');panel.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on');});b.classList.add('on');setTimeout(function(){i++;if(i>=steps.length)result();else render();},220);});});
-    var bk=document.getElementById('qback');if(bk)bk.addEventListener('click',function(){i--;render();});
-  }
-  function result(){
-    bar.style.width='100%';panel.style.display='none';res.classList.add('show');
-    var g=Q.goals[a.goal],quick=a.time==='15',first=a.first==='no',member=a.freq==='monthly';
-    var list=g.drips.slice();if(first&&a.goal!=='weight'&&a.goal!=='aging'&&list.indexOf('debut')<0&&list.length>2)list[2]='debut';
-    var cards=list.map(function(f){var d=Q.drips[f];if(!d)return '';return '<div class="rc"><img src="'+ASSET+'/hero/'+f+'.webp" alt="'+d.name+' IV bag" loading="lazy"><b>'+d.name+'</b><small>'+(member?'Members '+d.mem+' <span style="opacity:.6">(regular '+d.reg+')</span>':'Regular '+d.reg)+'</small><a class="btn btn-lime rc-book" href="'+svcUrl(f)+'">Book '+d.name+'</a><a class="tlink" href="'+d.href+'">Details <span>&rarr;</span></a></div>';}).join('');
-    var lead=quick?'Short on time? Start with a quick shot today and plan a drip for your next visit.':(first?'A good first visit. Our wellness team will confirm the fit when you arrive.':'Here is where we would start. Our wellness team fine-tunes it at your visit.');
-    res.innerHTML='<div class="qstep">Your starting point</div><h3>'+(quick?'Your quick shot pick, plus drips for next time':'Drips that fit your goal')+'</h3><p class="qsub">'+lead+'</p>'
-      +(quick?'':'<div class="rgrid">'+cards+'</div>')
-      +'<div class="rshot">'+icon('syringe')+'<div style="flex:1"><b>'+g.shot[0]+' quick shot, $50</b><small>'+g.shot[1]+'</small></div><a class="btn btn-out-w" href="'+(BS[g.shot[0]]?bookUrl('service='+BS[g.shot[0]]+'&goal='+(BG[a.goal]||'')):bookUrl('goal='+(BG[a.goal]||'')))+'">Book '+g.shot[0]+' Shot</a></div>'
-      +(quick?'<div class="rgrid">'+cards+'</div>':'')
-      +(member?'<p class="qsub" style="margin-top:18px"><b style="color:var(--teal)">Lifestyle Membership, $179/mo:</b> one Lifestyle drip and one quick shot every month, 50% off additional drips, unused drips roll over.</p>':'')
-      +'<div class="ractions"><a class="btn btn-lime" href="'+bookUrl('goal='+(BG[a.goal]||''))+'">Book This Plan</a><a class="btn btn-out" href="'+g.page+'">Explore '+g.pl+'</a><button type="button" class="back" id="qrestart">Start over</button></div>';
-    document.getElementById('qrestart').addEventListener('click',function(){a={};i=0;render();});
-    document.getElementById('quizBox').scrollIntoView({behavior:'smooth',block:'start'});
-  }
-  render();
-})();
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I start a membership?","acceptedAnswer":{"@type":"Answer","text":"Call or text (612) 324-4740 and our team will set you up, usually in a few minutes. You can also ask about memberships at the front desk during any visit. There is no online checkout for memberships, because we like to match you to the right tier first."}},{"@type":"Question","name":"What is the free monthly member perk?","acceptedAnswer":{"@type":"Answer","text":"Each month members receive a perk, such as a seasonal quick shot or an add-on, included with the membership. The perk rotates, and our team announces it at the start of the month."}},{"@type":"Question","name":"Do unused drips roll over?","acceptedAnswer":{"@type":"Answer","text":"Yes. If life gets busy and you miss a month, your drip rolls over so you do not lose it."}},{"@type":"Question","name":"Does membership pricing apply to every drip?","acceptedAnswer":{"@type":"Answer","text":"Member pricing on our menu reflects the Lifestyle Membership rate. Lifestyle drips are $179 for members instead of $224. Specialty infusions like NAD+ and High Dose Vitamin C are priced separately, and our team can tell you how your membership applies."}},{"@type":"Question","name":"Can I change tiers, pause, or cancel?","acceptedAnswer":{"@type":"Answer","text":"Talk to our team. They will walk you through the terms, including how to move up or down a tier, before you start, so there are no surprises."}},{"@type":"Question","name":"Can I share my membership with family or friends?","acceptedAnswer":{"@type":"Answer","text":"Ask our team about guest passes and sharing options when you join. Our goal is to make it easy for the people you care about to come with you."}}]}</script>
+
 </body>
 </html>
