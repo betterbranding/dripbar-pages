@@ -482,35 +482,34 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .note .isq{width:44px;height:44px;border-radius:12px}
 .note b{color:var(--teal)}
 
-/* ---------- membership tiers ---------- */
+/* ---------- membership tiers: color cards (blue, purple, green, orange; Enhance navy) ---------- */
 .tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:8px}
 .tiers.five{grid-template-columns:repeat(5,minmax(0,1fr))}
-.tier{position:relative;background:#fff;border:1px solid var(--divider);border-radius:24px;padding:34px 26px 26px;display:flex;flex-direction:column;gap:0;transition:transform .3s ease,box-shadow .3s ease}
-.tier:hover{transform:translateY(-4px);box-shadow:0 26px 60px -30px rgba(4,78,99,.35)}
-.tier.hot{background:var(--teal);color:#fff;border-color:var(--teal)}
-.tier .ribbon{position:absolute;top:-13px;left:24px;background:var(--lime);color:#fff;font:600 11.5px/1 var(--pop);letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:7px 13px}
-.tier .tname{font-family:var(--bebas);font-size:36px;line-height:1;letter-spacing:1px;color:var(--teal)}
-.tier.hot .tname{color:#fff}
-.tier .tsub{font-size:13.5px;line-height:1.5;color:var(--muted);margin:8px 0 18px;min-height:40px}
-.tier.hot .tsub{color:rgba(255,255,255,.78)}
-.tier .tprice{display:flex;align-items:center;gap:8px;padding:16px 0;min-height:84px;border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);margin-bottom:18px}
-.tier.hot .tprice{border-color:rgba(255,255,255,.18)}
-.tier .tprice b{font-family:var(--bebas);font-weight:400;font-size:46px;line-height:1;color:var(--teal)}
-.tier.hot .tprice b{color:#fff}
-.tier .tprice span{font-size:13px;color:var(--muted);position:relative;top:5px}
-.tier.hot .tprice span{color:rgba(255,255,255,.72)}
-.tier .tprice .ask{font:600 15px/1.3 var(--pop);color:var(--teal)}
-.tier.hot .tprice .ask{color:#fff}
+.tier{--c1:#2470D6;--c2:#1A5DB5;position:relative;background:linear-gradient(160deg,var(--c1) 0%,var(--c2) 100%);color:#fff;border-radius:24px;padding:34px 26px 26px;display:flex;flex-direction:column;gap:0;box-shadow:0 22px 48px -30px rgba(8,28,48,.55);transition:transform .3s ease,box-shadow .3s ease}
+.tier:hover{transform:translateY(-4px);box-shadow:0 30px 60px -28px rgba(8,28,48,.6)}
+.tier.tc-blue{--c1:#2470D6;--c2:#1A5DB5}
+.tier.tc-purple{--c1:#7E4FCB;--c2:#5B2FA3}
+.tier.tc-green{--c1:#198754;--c2:#136B3A}
+.tier.tc-orange{--c1:#DC5F12;--c2:#C2410C}
+.tier.tc-navy{--c1:#22406D;--c2:#142A4C}
+.tier.hot{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--c1),0 26px 56px -28px rgba(8,28,48,.6)}
+.tier.hot:hover{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--c1),0 32px 64px -28px rgba(8,28,48,.65)}
+.tier .ribbon{position:absolute;top:-13px;left:24px;background:#fff;color:var(--c2);font:600 11.5px/1 var(--pop);letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:7px 13px;box-shadow:0 8px 18px -8px rgba(8,28,48,.45)}
+.tier .tname{font-family:var(--bebas);font-size:36px;line-height:1;letter-spacing:1px;color:#fff}
+.tier .tsub{font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.94);margin:8px 0 18px;min-height:40px}
+.tier .tprice{display:flex;align-items:center;gap:8px;padding:16px 0;min-height:84px;border-top:1px solid rgba(255,255,255,.26);border-bottom:1px solid rgba(255,255,255,.26);margin-bottom:18px}
+.tier .tprice b{font-family:var(--bebas);font-weight:400;font-size:46px;line-height:1;color:#fff}
+.tier .tprice span{font-size:13px;color:rgba(255,255,255,.92);position:relative;top:5px}
+.tier .tprice .ask{font:600 15px/1.3 var(--pop);color:#fff}
 .tier ul{display:grid;gap:10px;margin:0 0 24px}
-.tier li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--body)}
-.tier.hot li{color:#fff}
-.tier li .ck{width:22px;height:22px;border-radius:50%;background:var(--blue-icon);color:var(--teal);display:grid;place-items:center;flex:none;margin-top:1px}
+.tier li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:#fff}
+.tier li .ck{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;display:grid;place-items:center;flex:none;margin-top:1px}
 .tier li .ck svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.tier.hot li .ck{background:rgba(255,255,255,.16);color:#fff}
 .tier .tcta{margin-top:auto;display:grid;gap:8px}
 .tier .tcta .btn{width:100%;padding:14px 18px;font-size:14.5px}
-.tier .btn-out{border-color:var(--teal);color:var(--teal)}
-.tier.hot .btn-out{border-color:rgba(255,255,255,.8);color:#fff}
+.tier .btn-wht{background:#fff;color:var(--c2);border:1.5px solid #fff}
+.tier .btn-wht:hover{background:rgba(255,255,255,.88);transform:translateY(-1px)}
+.tier .btn-out-w:hover{background:#fff;color:var(--c2)}
 .tier-note{text-align:center;font-size:13.5px;color:var(--muted);margin-top:26px;max-width:760px;margin-left:auto;margin-right:auto}
 .perk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
 .perk{background:#fff;border:1px solid var(--divider);border-radius:20px;padding:24px 24px 22px;display:flex;gap:16px;align-items:flex-start}
@@ -664,7 +663,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <h2>Your monthly boost for mind, body, and energy.</h2>
       <p class="lede">Every tier is month to month and built around how often you want to come in. Not sure which fits? Call or text and we will help you choose.</p>
     </div>
-    <div class="tiers"><div class="tier rv" id="tier-essential"><span class="ribbon">New</span><div class="tname">Essential</div><div class="tsub">The foundation for consistent, everyday wellness.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>3 IM Quick Shots each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Member perks</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div><div class="tier hot rv" id="tier-lifestyle"><span class="ribbon">Most popular</span><div class="tname">Lifestyle</div><div class="tsub">One drip a month, plus the perks that make it a habit.</div><div class="tprice"><b>$179</b><span>per month</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>1 Lifestyle Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A free monthly member perk</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional drips</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-lime" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div><div class="tier rv" id="tier-elevate"><div class="tname">Elevate</div><div class="tsub">Two drips a month for people who want to feel their best, more often.</div><div class="tprice"><b>$339</b><span>per month</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 Lifestyle Drips each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A free monthly member perk</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional drips</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div><div class="tier rv" id="tier-elite"><span class="ribbon">New</span><div class="tname">Elite</div><div class="tsub">The highest level of support, access, and impact.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A premium 500 mg NAD+ Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Upgrade available for a Niagen drip</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>8 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional services</li></ul><div class="tcta"><a class="btn btn-out" href="tel:+16123244740">Call to start</a><a class="btn btn-out" href="sms:+16123244740">Text us</a></div></div></div>
+    <div class="tiers"><div class="tier tc-blue rv" id="tier-essential"><span class="ribbon">New</span><div class="tname">Essential</div><div class="tsub">The foundation for consistent, everyday wellness.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>3 IM Quick Shots each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Member perks</li></ul><div class="tcta"><a class="btn btn-wht" href="tel:+16123244740">Call to start</a><a class="btn btn-out-w" href="sms:+16123244740">Text us</a></div></div><div class="tier tc-purple hot rv" id="tier-lifestyle"><span class="ribbon">Most popular</span><div class="tname">Lifestyle</div><div class="tsub">One drip a month, plus the perks that make it a habit.</div><div class="tprice"><b>$179</b><span>per month</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>1 Lifestyle Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A free monthly member perk</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional drips</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-wht" href="tel:+16123244740">Call to start</a><a class="btn btn-out-w" href="sms:+16123244740">Text us</a></div></div><div class="tier tc-green rv" id="tier-elevate"><div class="tname">Elevate</div><div class="tsub">Two drips a month for people who want to feel their best, more often.</div><div class="tprice"><b>$339</b><span>per month</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>2 Lifestyle Drips each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A free monthly member perk</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional drips</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Unused drips roll over</li></ul><div class="tcta"><a class="btn btn-wht" href="tel:+16123244740">Call to start</a><a class="btn btn-out-w" href="sms:+16123244740">Text us</a></div></div><div class="tier tc-orange rv" id="tier-elite"><span class="ribbon">New</span><div class="tname">Elite</div><div class="tsub">The highest level of support, access, and impact.</div><div class="tprice"><span class="ask">Call or text for pricing</span></div><ul><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A premium 500 mg NAD+ Drip each month</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Upgrade available for a Niagen drip</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>8 monthly credits for supportive therapies</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>20% off additional services</li></ul><div class="tcta"><a class="btn btn-wht" href="tel:+16123244740">Call to start</a><a class="btn btn-out-w" href="sms:+16123244740">Text us</a></div></div></div>
     <p class="tier-note">Lifestyle Membership is $179 per month and Elevate is $339 per month. Essential and Elite pricing is shared when you call or text. Member pricing on our menu reflects the Lifestyle Membership rate.</p>
   </div>
 </section>
