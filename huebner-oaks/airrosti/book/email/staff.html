@@ -1,0 +1,87 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="db-page" style="background-color:#f4f5f7;">
+<tr><td align="center" style="padding:28px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" class="db-card" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+
+<!-- Navy header -->
+<tr>
+<td align="center" bgcolor="#3C4C62" style="background-color:#3C4C62;padding:32px 24px 26px;border-radius:12px 12px 0 0;">
+<img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR" width="140" style="display:block;margin:0 auto 16px;max-width:140px;height:auto;border:0;">
+<p style="font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:14px;color:#C1D81A;margin:0 0 8px;letter-spacing:3px;">NEW BOOKING &middot; HUEBNER OAKS</p>
+<h1 class="db-h1" style="font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:32px;font-weight:normal;color:#ffffff;margin:0;letter-spacing:1px;line-height:1.15;">Airrosti Visit</h1>
+</td>
+</tr>
+
+<!-- Cyan accent bar -->
+<tr><td bgcolor="#0E9EC1" style="background-color:#0E9EC1;height:4px;line-height:4px;font-size:0;">&nbsp;</td></tr>
+
+<!-- When -->
+<tr>
+<td class="db-pad" style="padding:32px 36px 8px;">
+<p class="db-muted" style="font-family:'Poppins',Arial,sans-serif;font-size:11px;font-weight:600;color:#7a8896;margin:0 0 6px;letter-spacing:2px;text-transform:uppercase;">When</p>
+<p class="db-text" style="font-family:'Poppins',Arial,sans-serif;font-size:20px;font-weight:600;color:#3C4C62;margin:0;line-height:1.35;">{{appointment.start_time}}</p>
+<p class="db-muted" style="font-family:'Poppins',Arial,sans-serif;font-size:13px;color:#7a8896;margin:6px 0 0;">Central Time ({{appointment.timezone_offset}}) &middot; Airrosti calendar &middot; with {{appointment.user.name}}</p>
+</td>
+</tr>
+
+<tr><td class="db-pad" style="padding:22px 36px 0;"><hr class="db-rule" style="border:none;border-top:1px solid #e8e8e8;margin:0;"></td></tr>
+
+<!-- Client -->
+<tr>
+<td class="db-pad" style="padding:24px 36px 0;">
+<p class="db-muted" style="font-family:'Poppins',Arial,sans-serif;font-size:11px;font-weight:600;color:#7a8896;margin:0 0 12px;letter-spacing:2px;text-transform:uppercase;">Client</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td class="db-row" bgcolor="#f0f7fa" style="background-color:#f0f7fa;border-left:4px solid #0E9EC1;border-radius:8px;padding:18px 20px;">
+<p class="db-text" style="font-family:'Poppins',Arial,sans-serif;font-size:17px;font-weight:600;color:#3C4C62;margin:0 0 8px;">{{contact.first_name}} {{contact.last_name}}</p>
+<p style="font-family:'Poppins',Arial,sans-serif;font-size:14px;color:#0E9EC1;margin:0 0 4px;line-height:1.6;"><a href="tel:{{contact.phone}}" style="color:#0E9EC1;text-decoration:none;">{{contact.phone}}</a></p>
+<p style="font-family:'Poppins',Arial,sans-serif;font-size:14px;color:#0E9EC1;margin:0;line-height:1.6;word-break:break-all;"><a href="mailto:{{contact.email}}" style="color:#0E9EC1;text-decoration:none;">{{contact.email}}</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<!-- Offer -->
+<tr>
+<td class="db-pad" style="padding:24px 36px 0;">
+<p class="db-muted" style="font-family:'Poppins',Arial,sans-serif;font-size:11px;font-weight:600;color:#7a8896;margin:0 0 12px;letter-spacing:2px;text-transform:uppercase;">Airrosti offer</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td class="db-row" bgcolor="#f7f9f0" style="background-color:#f7f9f0;border-left:4px solid #C1D81A;border-radius:8px;padding:18px 20px;">
+<p class="db-text" style="font-family:'Poppins',Arial,sans-serif;font-size:15px;font-weight:600;color:#3C4C62;margin:0 0 6px;line-height:1.5;">{{contact.airrosti_offer}}</p>
+<p class="db-muted" style="font-family:'Poppins',Arial,sans-serif;font-size:13px;color:#7a8896;margin:0;line-height:1.5;">Referred from: {{contact.airrosti_clinic}}</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<!-- Source -->
+<tr>
+<td class="db-pad" style="padding:22px 36px 0;">
+<p class="db-muted" style="font-family:'Poppins',Arial,sans-serif;font-size:12px;color:#7a8896;margin:0;line-height:1.6;">Booked online from the Huebner Oaks Airrosti page. Apply the Airrosti offer at checkout. Recovery stage and language are in the appointment notes.</p>
+</td>
+</tr>
+
+<!-- CTA -->
+<tr>
+<td align="center" class="db-pad" style="padding:30px 36px 40px;">
+<table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
+<tr><td align="center" bgcolor="#0E9EC1" style="background-color:#0E9EC1;border-radius:6px;">
+<a href="https://app.gohighlevel.com/v2/location/tJbNtry4cJDJD5NZKVCw/calendars/view" target="_blank" style="display:inline-block;padding:14px 34px;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:18px;color:#ffffff;text-decoration:none;letter-spacing:1px;">OPEN THE CALENDAR</a>
+</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- Footer -->
+<tr>
+<td align="center" bgcolor="#3C4C62" style="background-color:#3C4C62;padding:22px 24px;border-radius:0 0 12px 12px;">
+<p style="font-family:'Poppins',Arial,sans-serif;font-size:12px;font-weight:600;color:#ffffff;margin:0 0 4px;letter-spacing:3px;">THE DRIPBAR HUEBNER OAKS</p>
+<p style="font-family:'Poppins',Arial,sans-serif;font-size:11px;color:#a0aab4;margin:0;">Internal staff notification. Not for clients.</p>
+</td>
+</tr>
+
+</table>
+</td></tr>
+</table>
