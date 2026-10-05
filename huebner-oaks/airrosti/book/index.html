@@ -950,6 +950,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     state.contact = c;
     var btn=$('#bookBtn'); btn.classList.add('is-busy'); $('#book-err').classList.remove('show');
     var s=S[state.service], notes=buildNotes(), clinic=clinicFinal()||'Not specified';
+    var qp={}; try{ new URLSearchParams(location.search).forEach(function(v,k){ if(k!=='cb') qp[k]=v; }); }catch(e){}
     var payload = {
       calendar_id: CAL_ID, location_id: LOC_ID,
       selected_slot: state.slot, selected_timezone: TZ, Timezone: TZ,
@@ -958,7 +959,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       title: 'Airrosti Visit with '+c.first+' '+c.last,
       description: notes,
       notes: notes,
-      eventData: {source: location.href, medium:'calendar', mediumId: CAL_ID, page:{url:location.href, title:document.title}}
+      eventData: {source: location.href, referrer: document.referrer||'', url_params: qp, campaign: qp.utm_campaign||'',
+                  page:{url:location.href, title:document.title}, documentURL: location.href, domain: location.hostname,
+                  type:'page-visit', pageVisitType:'calendar', parentId: CAL_ID, medium:'calendar', mediumId: CAL_ID, timestamp: Date.now()}
     };
     payload[F_OFFER] = s.staff;  payload[K_OFFER] = s.staff;
     payload[F_CLINIC] = clinic;  payload[K_CLINIC] = clinic;
