@@ -347,6 +347,17 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .cmp .best{margin-top:12px;font-size:14.5px}
 .cmp .best b{color:var(--teal);font-weight:600}
 .cmp .ing{margin-top:10px;font-size:13px;color:var(--muted)}
+/* drip ingredients (CV/FM list, 10/9/26) */
+.cmp .ingr{margin:18px 0 22px}
+.cmp .ingr small{display:block;font:600 10.5px/1 var(--pop);letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.cmp .ingr ul{list-style:none;margin:0 0 0 -14px;padding:0;display:flex;flex-wrap:wrap;font:400 13px/1.65 var(--pop);color:var(--body);-webkit-clip-path:inset(0 0 0 14px);clip-path:inset(0 0 0 14px)}
+.cmp .ingr li{position:relative;padding-left:14px;white-space:nowrap}
+.cmp .ingr li::before{content:"";position:absolute;left:5px;top:50%;width:4px;height:4px;margin-top:-2px;border-radius:50%;background:var(--cc,var(--teal));opacity:.75}
+.cmp .ingr-r{display:flex;align-items:baseline;gap:12px}
+.cmp .ingr-r+.ingr-r{margin-top:6px}
+.cmp .ingr-r b{flex:none;min-width:54px;font:600 12px/1.65 var(--pop);color:var(--cc-text,var(--teal))}
+.cmp .ingr-r ul{flex:1;min-width:0}
+/* /drip ingredients */
 .cmp .price{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:auto;padding-top:20px;border-top:1px solid var(--divider);margin-bottom:18px}
 .cmp .price small{display:block;font:600 11px/1 var(--pop);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .cmp .price .reg span{font:400 24px/1 var(--bebas);color:var(--body);letter-spacing:.5px}
@@ -643,7 +654,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <h3>Shield</h3>
           <div class="focus">Immune defense and seasonal wellness</div>
           <p class="best"><b>Best for:</b> Pre travel prep and proactive seasonal support</p>
-          <p class="ing">Includes Vitamin C, Magnesium, B12, B-Complex, Zinc, NAC</p>
+          <div class="ingr"><small>Ingredients</small><ul><li>Vitamin C</li><li>Magnesium</li><li>B12</li><li>B-Complex</li><li>NAC</li><li>Zinc</li></ul></div>
           <div class="price"><div class="reg"><small>Regular</small><span>$199</span></div><div class="mem"><small>Member</small><b>$159</b></div></div>
           <a class="btn btn-lime" href="https://thedripbarcolleyville.com/booking" data-book="shield">Book This Drip</a>
         </div>
@@ -654,7 +665,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <h3>Flu Fighter</h3>
           <div class="focus">Recovery from active cold or flu</div>
           <p class="best"><b>Best for:</b> Active symptoms and acute dehydration</p>
-          <p class="ing">Includes Vitamin C, Magnesium, Zinc</p>
+          <div class="ingr"><small>Ingredients</small><ul><li>Vitamin C</li><li>Magnesium</li><li>Zinc</li></ul></div>
           <div class="price"><div class="reg"><small>Regular</small><span>$199</span></div><div class="mem"><small>Member</small><b>$159</b></div></div>
           <a class="btn btn-lime" href="https://thedripbarcolleyville.com/booking" data-book="flu-fighter">Book This Drip</a>
         </div>
@@ -665,7 +676,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <h3>Post Viral</h3>
           <div class="focus">Recovery after a recent infection</div>
           <p class="best"><b>Best for:</b> Lingering fatigue, brain fog, and post viral depletion</p>
-          <p class="ing">Includes Vitamin C, Magnesium, B12, B-Complex, Glutamine, Glutathione</p>
+          <div class="ingr"><small>Ingredients</small><ul><li>Vitamin C</li><li>Magnesium</li><li>B12</li><li>B-Complex</li><li>Calcium</li></ul></div>
           <div class="price"><div class="reg"><small>Regular</small><span>$199</span></div><div class="mem"><small>Member</small><b>$159</b></div></div>
           <a class="btn btn-lime" href="https://thedripbarcolleyville.com/booking" data-book="post-viral">Book This Drip</a>
         </div>
@@ -676,7 +687,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <h3>Jetsetter</h3>
           <div class="focus">Jet lag and travel recovery</div>
           <p class="best"><b>Best for:</b> Travel exhaustion and immune support before or after a trip</p>
-          
+          <div class="ingr"><small>Ingredients</small><ul><li>Vitamin C</li><li>B12</li><li>B-Complex</li><li>Zinc</li></ul></div>
           <div class="price"><div class="reg"><small>Regular</small><span>$199</span></div><div class="mem"><small>Member</small><b>$159</b></div></div>
           <a class="btn btn-lime" href="https://thedripbarcolleyville.com/booking" data-book="jetsetter">Book This Drip</a>
         </div>
@@ -687,7 +698,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
           <h3>Allergy</h3>
           <div class="focus">Seasonal allergy relief support</div>
           <p class="best"><b>Best for:</b> Histamine response and DFW seasonal allergy symptoms</p>
-          
+          <div class="ingr"><small>Ingredients</small><ul><li>Vitamin C</li><li>Magnesium</li><li>NAC</li><li>Zinc</li></ul></div>
           <div class="price"><div class="reg"><small>Regular</small><span>$199</span></div><div class="mem"><small>Member</small><b>$159</b></div></div>
           <a class="btn btn-lime" href="https://thedripbarcolleyville.com/booking" data-book="allergy">Book This Drip</a>
         </div>
