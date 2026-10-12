@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Fossil Creek</title>
 <meta name="description" content="Semaglutide and Tirzepatide single shots at The DRIPBaR Fossil Creek in San Antonio. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.">
+<link rel="icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png">
+<link rel="apple-touch-icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -103,12 +107,12 @@ h3{font-size:clamp(22px,2vw,28px)}
 .panel h2{margin-bottom:18px}
 .pill{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);background:rgba(193,216,26,.28);border-radius:100px;padding:7px 18px;margin-bottom:20px}
 .panel p.why{margin-bottom:26px}
-.price-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:26px}
-.price-table th{font-family:var(--bebas);font-size:18px;letter-spacing:1.5px;font-weight:400;background:var(--navy);color:#fff;text-align:left;padding:14px 24px}
-.price-table td{padding:13px 24px;font-size:15px;border-top:1px solid var(--divider)}
-.price-table td:last-child{text-align:right;font-weight:600;color:var(--navy)}
-.price-table tr:nth-child(even) td{background:#f7f9fb}
-.panel.on-dark .price-table{box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.start-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;background:#fff;border-radius:8px;border-left:4px solid var(--cyan);box-shadow:0 2px 8px rgba(0,0,0,.06);padding:20px 28px;margin-bottom:26px}
+.start-price .sp-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted)}
+.start-price .sp-amt{font-family:var(--bebas);font-size:64px;line-height:.9;letter-spacing:1px;color:var(--navy)}
+.start-price .sp-unit{font-size:15px;font-weight:600;color:var(--navy)}
+.panel.on-dark .start-price{border-left-color:var(--lime);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+@media(max-width:640px){.start-price{padding:18px 22px}.start-price .sp-amt{font-size:54px}}
 .spec{font-size:13px;color:var(--muted);margin-bottom:30px}
 .panel.on-white{background:#fff}
 .panel.on-cyan{background:var(--cyanfill)}
@@ -261,14 +265,11 @@ footer .btn{margin:26px 0 30px}
       <h2 data-i18n="semaH2">Semaglutide. <span class="ghosted">Steady and proven.</span></h2>
       <div class="pill" data-i18n="semaPill">Best for a gradual, consistent start</div>
       <p class="why" data-i18n="semaWhy">A GLP-1 medication that helps regulate appetite, slow digestion, and improve blood sugar control. By helping you feel full longer and reducing cravings, it supports consistent, sustainable weight loss when combined with healthy lifestyle habits.</p>
-      <table class="price-table">
-        <tr><th data-i18n="thDose">Dose</th><th data-i18n="thPrice" style="text-align:right">Price per shot</th></tr>
-        <tr><td>.25 mg</td><td>$25</td></tr>
-        <tr><td>.5 mg</td><td>$35</td></tr>
-        <tr><td>1 mg</td><td>$45</td></tr>
-        <tr><td>1.75 mg</td><td>$55</td></tr>
-        <tr><td>2.4 mg</td><td>$65</td></tr>
-      </table>
+      <div class="start-price">
+        <span class="sp-label" data-i18n="spLabel">Starting at</span>
+        <span class="sp-amt">$25</span>
+        <span class="sp-unit" data-i18n="spUnit">per week</span>
+      </div>
       <div class="spec" data-i18n="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
       <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
     </div>
@@ -284,15 +285,11 @@ footer .btn{margin:26px 0 30px}
       <h2 data-i18n="tirzH2">Tirzepatide. <span class="ghosted" style="color:#6b7a90">Dual-action power.</span></h2>
       <div class="pill" data-i18n="tirzPill">Best for stronger, faster momentum</div>
       <p class="why" data-i18n="tirzWhy">Works on both GLP-1 and GIP receptors, providing a dual-action approach to weight loss. It helps regulate appetite, improve insulin sensitivity, and enhance metabolic function, often leading to more significant and efficient weight loss outcomes.</p>
-      <table class="price-table">
-        <tr><th data-i18n="thDose">Dose</th><th data-i18n="thPrice" style="text-align:right">Price per shot</th></tr>
-        <tr><td>2.5 mg</td><td>$39</td></tr>
-        <tr><td>5 mg</td><td>$59</td></tr>
-        <tr><td>7.5 mg</td><td>$79</td></tr>
-        <tr><td>10 mg</td><td>$109</td></tr>
-        <tr><td>12.5 mg</td><td>$139</td></tr>
-        <tr><td>15 mg</td><td>$159</td></tr>
-      </table>
+      <div class="start-price">
+        <span class="sp-label" data-i18n="spLabel">Starting at</span>
+        <span class="sp-amt">$39</span>
+        <span class="sp-unit" data-i18n="spUnit">per week</span>
+      </div>
       <div class="spec" data-i18n="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
       <a class="btn btn-lime" data-i18n="ctaConsult" href="https://fossilcreek.dripbarsanantonio.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
     </div>
@@ -312,8 +309,7 @@ footer .btn{margin:26px 0 30px}
         <tr><td data-i18n="cmpR1a">How it works</td><td data-i18n="cmpR1b">Targets GLP-1 receptors to curb appetite and slow digestion.</td><td data-i18n="cmpR1c">Targets GLP-1 and GIP receptors for a dual-action approach.</td></tr>
         <tr><td data-i18n="cmpR2a">Typical pace</td><td data-i18n="cmpR2b">Gradual, steady progress.</td><td data-i18n="cmpR2c">Often more significant and efficient outcomes.</td></tr>
         <tr><td data-i18n="cmpR3a">Dose range</td><td data-i18n="cmpR3b">.25 mg to 2.4 mg</td><td data-i18n="cmpR3c">2.5 mg to 15 mg</td></tr>
-        <tr><td data-i18n="cmpR4a">Price per shot</td><td data-i18n="cmpR4b">$25 to $65</td><td data-i18n="cmpR4c">$39 to $159</td></tr>
-        <tr><td data-i18n="cmpR5a">Starting price</td><td>$25</td><td>$39</td></tr>
+        <tr><td data-i18n="cmpR5a">Starting price</td><td data-i18n="cmpR5b">$25 per week</td><td data-i18n="cmpR5c">$39 per week</td></tr>
       </table>
     </div>
     <p class="cmp-note" data-i18n="cmpNote">Your medical team will recommend the right medication and starting dose at your consult.</p>
@@ -396,8 +392,8 @@ panelEyebrow:'Inyecciones individuales',
 semaH2:'Semaglutida. <span class="ghosted">Constante y comprobada.</span>',
 semaPill:'Ideal para un inicio gradual y constante',
 semaWhy:'Un medicamento GLP-1 que ayuda a regular el apetito, hacer m&aacute;s lenta la digesti&oacute;n y mejorar el control del az&uacute;car en la sangre. Al ayudarte a sentirte satisfecho por m&aacute;s tiempo y reducir los antojos, favorece una p&eacute;rdida de peso constante y sostenible junto con h&aacute;bitos de vida saludables.',
-thDose:'Dosis',
-thPrice:'Precio por inyecci&oacute;n',
+spLabel:'Desde',
+spUnit:'por semana',
 spec:'Aplicada en la cl&iacute;nica por una enfermera con licencia. Ritmo semanal, la dosis se define en tu consulta.',
 altTirzPanel:'Enfermera preparando una inyecci\u00f3n individual de Tirzepatida',
 tirzH2:'Tirzepatida. <span class="ghosted" style="color:#6b7a90">Poder de doble acci&oacute;n.</span>',
@@ -416,10 +412,9 @@ cmpR2c:'Resultados a menudo m&aacute;s significativos y eficientes.',
 cmpR3a:'Rango de dosis',
 cmpR3b:'.25 mg a 2.4 mg',
 cmpR3c:'2.5 mg a 15 mg',
-cmpR4a:'Precio por inyecci&oacute;n',
-cmpR4b:'$25 a $65',
-cmpR4c:'$39 a $159',
 cmpR5a:'Precio inicial',
+cmpR5b:'$25 por semana',
+cmpR5c:'$39 por semana',
 cmpNote:'Tu equipo m&eacute;dico te recomendar&aacute; el medicamento y la dosis inicial adecuados en tu consulta.',
 refEyebrow:'Recomienda a un amigo',
 refH2:'Trae a un amigo y recibe $35.',
