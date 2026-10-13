@@ -505,7 +505,8 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .team-wrap::before,.team-wrap::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
 .team-wrap::before{left:0;background:linear-gradient(90deg,var(--teal),rgba(4,78,99,0))}
 .team-wrap::after{right:0;background:linear-gradient(270deg,var(--teal),rgba(4,78,99,0))}
-.team-track{display:flex;width:max-content;animation:teamscroll 48s linear infinite;will-change:transform}
+.team-track{display:flex;width:max-content;animation:teamscroll var(--dur,48s) linear infinite;will-change:transform}
+.team-track .dup{display:contents}
 .team-wrap:hover .team-track{animation-play-state:paused}
 .tcard{position:relative;flex:none;width:250px;aspect-ratio:3/4;border-radius:22px;overflow:hidden;margin-right:18px;background:#033b4c;box-shadow:0 18px 40px rgba(0,0,0,.22)}
 .tcard img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s ease}
@@ -514,7 +515,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .tcard .cap small{display:inline-block;background:var(--lime);color:#fff;border-radius:999px;padding:3px 9px;font:600 11px/1 var(--pop);letter-spacing:.6px;white-space:nowrap}
 @keyframes teamscroll{to{transform:translateX(-50%)}}
 @media(max-width:900px){.team-head{grid-template-columns:1fr;gap:16px}.team-head .side{justify-self:start;text-align:left}}
-@media(max-width:768px){.team{padding:72px 0 76px}.tcard{width:200px;margin-right:14px;border-radius:18px}.team-track{animation-duration:38s}.team-wrap::before,.team-wrap::after{width:40px}}
+@media(max-width:768px){.team{padding:72px 0 76px}.tcard{width:200px;margin-right:14px;border-radius:18px}.team-track{animation-duration:var(--dur-m,38s)}.team-wrap::before,.team-wrap::after{width:40px}}
 @media(prefers-reduced-motion:reduce){.team-track{animation:none;width:auto;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch}.team-track .dup{display:none}}
 </style>
 </head>
@@ -873,7 +874,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <div class="side rv">Registered nurses at the chair, a health screening before every first visit, and a plan built around your goals.</div>
   </div>
   <div class="team-wrap" aria-label="Photos of The DRIPBaR Burleson team">
-    <div class="team-track">
+    <div class="team-track" style="--dur:96s;--dur-m:76s">
         <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/kim-card.webp" alt="Kim, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Kim<small>RN</small></div></div>
         <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/lariana-card.webp" alt="Lariana, Wellness Coordinator, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Lariana<small title="Wellness Coordinator">WC</small></div></div>
         <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/tracie-card.webp" alt="Tracie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Tracie<small>RN</small></div></div>
@@ -881,14 +882,28 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
         <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/sam-card.webp" alt="Sam, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Sam<small>RN</small></div></div>
         <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/daley-card.webp" alt="Daley, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Daley<small>RN</small></div></div>
         <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/cirrie-card.webp" alt="Cirrie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Cirrie<small>RN</small></div></div>
-        <div class="dup" style="display:contents" aria-hidden="true">
-        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/kim-card.webp" alt="Kim, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Kim<small>RN</small></div></div>
-        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/lariana-card.webp" alt="Lariana, Wellness Coordinator, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Lariana<small title="Wellness Coordinator">WC</small></div></div>
-        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/tracie-card.webp" alt="Tracie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Tracie<small>RN</small></div></div>
-        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/magdeli-card.webp" alt="Magdeli, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Magdeli<small>RN</small></div></div>
-        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/sam-card.webp" alt="Sam, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Sam<small>RN</small></div></div>
-        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/daley-card.webp" alt="Daley, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Daley<small>RN</small></div></div>
-        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/cirrie-card.webp" alt="Cirrie, RN, part of the clinical team at The DRIPBaR Burleson" loading="lazy" width="660" height="880"><div class="cap">Cirrie<small>RN</small></div></div>
+        <div class="dup" aria-hidden="true">
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/kim-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Kim<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/lariana-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Lariana<small title="Wellness Coordinator">WC</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/tracie-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Tracie<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/magdeli-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Magdeli<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/sam-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Sam<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/daley-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Daley<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/cirrie-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Cirrie<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/kim-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Kim<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/lariana-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Lariana<small title="Wellness Coordinator">WC</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/tracie-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Tracie<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/magdeli-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Magdeli<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/sam-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Sam<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/daley-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Daley<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/cirrie-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Cirrie<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/kim-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Kim<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/lariana-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Lariana<small title="Wellness Coordinator">WC</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/tracie-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Tracie<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/magdeli-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Magdeli<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/sam-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Sam<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/daley-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Daley<small>RN</small></div></div>
+        <div class="tcard"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/team/cirrie-card.webp" alt="" loading="lazy" width="660" height="880"><div class="cap">Cirrie<small>RN</small></div></div>
         </div>
     </div>
   </div>
