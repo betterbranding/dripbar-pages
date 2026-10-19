@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SATX GLP-1 Weekly Shot &middot; GHL Paste Blocks</title>
+<link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg">
+<style>
+  :root { --navy:#0f1f33; --pink:#FF0099; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f5f6f8; color:#111; }
+  header { background:var(--navy); color:#fff; padding:28px 24px; }
+  header h1 { margin:0 0 6px; font-size:24px; }
+  header p { margin:0; color:#b9c4d4; font-size:14px; }
+  nav { position:sticky; top:0; background:#fff; border-bottom:1px solid #e2e5ea; padding:10px 24px; display:flex; gap:14px; flex-wrap:wrap; z-index:5; }
+  nav a { color:var(--navy); text-decoration:none; font-weight:600; font-size:14px; padding:6px 10px; border-radius:8px; }
+  nav a:hover { background:#eef1f5; }
+  main { max-width:1000px; margin:0 auto; padding:24px; }
+  section { margin-bottom:48px; }
+  h2 { font-size:22px; border-bottom:2px solid var(--pink); display:inline-block; padding-bottom:4px; }
+  .card { background:#fff; border:1px solid #e2e5ea; border-radius:12px; margin:16px 0; overflow:hidden; }
+  .card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:14px 16px; }
+  .note { margin:6px 0 0; font-size:13px; color:#555; }
+  .tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:3px 8px; border-radius:999px; margin-right:8px; color:#fff; }
+  .tag-pink { background:var(--pink); }
+  .tag-navy { background:var(--navy); }
+  .copy { flex-shrink:0; background:var(--navy); color:#fff; border:0; border-radius:8px; padding:8px 16px; font-size:14px; font-weight:600; cursor:pointer; }
+  .copy:hover { background:#1c355a; }
+  .copy.done { background:#0a8f4d; }
+  pre { margin:0; background:#0b1220; color:#d7e0ee; padding:16px; font-size:12px; line-height:1.5; overflow:auto; max-height:320px; }
+  .steps { background:#fff; border:1px solid #e2e5ea; border-radius:12px; padding:16px 20px; font-size:14px; }
+  .steps li { margin:6px 0; }
+  code.inline { background:#eef1f5; padding:2px 6px; border-radius:6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SATX GLP-1 Weekly Shot &middot; GHL Paste Blocks</h1>
+  <p>Landing + booking page code for Dominion Creek, Huebner Oaks, Alamo Heights and New Braunfels. Click Copy, paste into GHL. URLs pre-filled.</p>
+</header>
+<nav><a href="#dominion-creek">Dominion Creek</a><a href="#huebner-oaks">Huebner Oaks</a><a href="#alamo-heights">Alamo Heights</a><a href="#new-braunfels">New Braunfels</a></nav>
+<main>
+<div class="steps">
+  <strong>How to use</strong>
+  <ol>
+    <li>On each location's site, create two pages: <code class="inline">/glp-1-weekly-shot</code> (landing) and <code class="inline">/weight-loss-consult</code> (booking).</li>
+    <li>Body loaders (BLOCK A / C) go into a full-width Custom Code element on the page body.</li>
+    <li>Header meta (BLOCK B / D) goes into the page's Settings &gt; Tracking Code &gt; Header. Paste as-is.</li>
+    <li>Save and Publish all 8 pages, then send me the go-ahead for the click-through test.</li>
+  </ol>
+</div>
+<section id="dominion-creek">
+<h2>Dominion Creek</h2>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK A &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://dominion.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blocka">Copy</button>
+  </div>
+  <pre id="dominion-creek-blocka"><code>&lt;script&gt;
+/* The DRIPBaR Dominion Creek loader v7 bootstrap | glp-1-weekly-shot | GLP-1 Weekly Shot | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/dominion-creek/glp1-single-shots/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK B &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://dominion.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blockb">Copy</button>
+  </div>
+  <pre id="dominion-creek-blockb"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://dominion.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Semaglutide and Tirzepatide single shots at The DRIPBaR Dominion Creek in San Antonio. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://dominion.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio. It all begins with a consult.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/dominion-creek/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;GLP-1 Single Shots | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/dominion-creek/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Dominion Creek&quot;,
+      &quot;url&quot;: &quot;https://san-antonio-dominion-creek.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+12102121104&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;23110 W I-10, Suite 206&quot;,
+        &quot;addressLocality&quot;: &quot;San Antonio&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78257&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://dominion.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;url&quot;: &quot;https://dominion.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;name&quot;: &quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Dominion Creek&quot;,
+      &quot;description&quot;: &quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK C &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://dominion.dripbarsanantonio.com/weight-loss-consult</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blockc">Copy</button>
+  </div>
+  <pre id="dominion-creek-blockc"><code>&lt;script&gt;
+/* The DRIPBaR Dominion Creek loader v7 bootstrap | weight-loss-consult | GLP-1 Booking | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/dominion-creek/glp1-single-shots/book/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK D &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://dominion.dripbarsanantonio.com/weight-loss-consult</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="dominion-creek-blockd">Copy</button>
+  </div>
+  <pre id="dominion-creek-blockd"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://dominion.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book your GLP-1 consultation at The DRIPBaR Dominion Creek in San Antonio. Pick a time that works. Medically supervised weight loss starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://dominion.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Dominion Creek. Semaglutide and Tirzepatide single shots, pay per dose.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/dominion-creek/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Dominion Creek&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Dominion Creek in San Antonio.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/dominion-creek/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Dominion Creek&quot;,
+      &quot;url&quot;: &quot;https://san-antonio-dominion-creek.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+12102121104&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;23110 W I-10, Suite 206&quot;,
+        &quot;addressLocality&quot;: &quot;San Antonio&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78257&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://dominion.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;url&quot;: &quot;https://dominion.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;name&quot;: &quot;Book Your GLP-1 Consult | The DRIPBaR Dominion Creek&quot;,
+      &quot;description&quot;: &quot;Book your GLP-1 consultation at The DRIPBaR Dominion Creek in San Antonio.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+</section>
+<section id="huebner-oaks">
+<h2>Huebner Oaks</h2>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK A &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://huebneroaks.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blocka">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blocka"><code>&lt;script&gt;
+/* The DRIPBaR Huebner Oaks loader v7 bootstrap | glp-1-weekly-shot | GLP-1 Weekly Shot | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/huebner-oaks/glp1-single-shots/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK B &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://huebneroaks.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blockb">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blockb"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://huebneroaks.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Semaglutide and Tirzepatide single shots at The DRIPBaR Huebner Oaks in San Antonio. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://huebneroaks.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio. It all begins with a consult.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/huebner-oaks/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;GLP-1 Single Shots | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/huebner-oaks/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Huebner Oaks&quot;,
+      &quot;url&quot;: &quot;https://the-strand-at-huebner-oaks.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+12103064135&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;11255 Huebner Rd, Suite 107&quot;,
+        &quot;addressLocality&quot;: &quot;San Antonio&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78230&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://huebneroaks.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;url&quot;: &quot;https://huebneroaks.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;name&quot;: &quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Huebner Oaks&quot;,
+      &quot;description&quot;: &quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK C &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://huebneroaks.dripbarsanantonio.com/weight-loss-consult</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blockc">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blockc"><code>&lt;script&gt;
+/* The DRIPBaR Huebner Oaks loader v7 bootstrap | weight-loss-consult | GLP-1 Booking | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/huebner-oaks/glp1-single-shots/book/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK D &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://huebneroaks.dripbarsanantonio.com/weight-loss-consult</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="huebner-oaks-blockd">Copy</button>
+  </div>
+  <pre id="huebner-oaks-blockd"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://huebneroaks.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book your GLP-1 consultation at The DRIPBaR Huebner Oaks in San Antonio. Pick a time that works. Medically supervised weight loss starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://huebneroaks.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Huebner Oaks. Semaglutide and Tirzepatide single shots, pay per dose.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/huebner-oaks/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Huebner Oaks&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Huebner Oaks in San Antonio.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/huebner-oaks/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Huebner Oaks&quot;,
+      &quot;url&quot;: &quot;https://the-strand-at-huebner-oaks.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+12103064135&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;11255 Huebner Rd, Suite 107&quot;,
+        &quot;addressLocality&quot;: &quot;San Antonio&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78230&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://huebneroaks.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;url&quot;: &quot;https://huebneroaks.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;name&quot;: &quot;Book Your GLP-1 Consult | The DRIPBaR Huebner Oaks&quot;,
+      &quot;description&quot;: &quot;Book your GLP-1 consultation at The DRIPBaR Huebner Oaks in San Antonio.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+</section>
+<section id="alamo-heights">
+<h2>Alamo Heights</h2>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK A &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://alamoheights.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blocka">Copy</button>
+  </div>
+  <pre id="alamo-heights-blocka"><code>&lt;script&gt;
+/* The DRIPBaR Alamo Heights loader v7 bootstrap | glp-1-weekly-shot | GLP-1 Weekly Shot | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/alamo-heights/glp1-single-shots/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK B &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://alamoheights.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blockb">Copy</button>
+  </div>
+  <pre id="alamo-heights-blockb"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://alamoheights.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Semaglutide and Tirzepatide single shots at The DRIPBaR Alamo Heights in San Antonio. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://alamoheights.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio. It all begins with a consult.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/alamo-heights/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;GLP-1 Single Shots | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/alamo-heights/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Alamo Heights&quot;,
+      &quot;url&quot;: &quot;https://alamo-heights.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+12104837479&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;5800 Broadway, Suite 203&quot;,
+        &quot;addressLocality&quot;: &quot;San Antonio&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78209&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://alamoheights.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;url&quot;: &quot;https://alamoheights.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;name&quot;: &quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Alamo Heights&quot;,
+      &quot;description&quot;: &quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in San Antonio.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK C &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://alamoheights.dripbarsanantonio.com/weight-loss-consult</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blockc">Copy</button>
+  </div>
+  <pre id="alamo-heights-blockc"><code>&lt;script&gt;
+/* The DRIPBaR Alamo Heights loader v7 bootstrap | weight-loss-consult | GLP-1 Booking | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/alamo-heights/glp1-single-shots/book/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK D &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://alamoheights.dripbarsanantonio.com/weight-loss-consult</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="alamo-heights-blockd">Copy</button>
+  </div>
+  <pre id="alamo-heights-blockd"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://alamoheights.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book your GLP-1 consultation at The DRIPBaR Alamo Heights in San Antonio. Pick a time that works. Medically supervised weight loss starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://alamoheights.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Alamo Heights. Semaglutide and Tirzepatide single shots, pay per dose.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/alamo-heights/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Alamo Heights&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Alamo Heights in San Antonio.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/alamo-heights/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Alamo Heights&quot;,
+      &quot;url&quot;: &quot;https://alamo-heights.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+12104837479&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;5800 Broadway, Suite 203&quot;,
+        &quot;addressLocality&quot;: &quot;San Antonio&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78209&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://alamoheights.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;url&quot;: &quot;https://alamoheights.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;name&quot;: &quot;Book Your GLP-1 Consult | The DRIPBaR Alamo Heights&quot;,
+      &quot;description&quot;: &quot;Book your GLP-1 consultation at The DRIPBaR Alamo Heights in San Antonio.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+</section>
+<section id="new-braunfels">
+<h2>New Braunfels</h2>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK A &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://newbraunfels.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blocka">Copy</button>
+  </div>
+  <pre id="new-braunfels-blocka"><code>&lt;script&gt;
+/* The DRIPBaR New Braunfels loader v7 bootstrap | glp-1-weekly-shot | GLP-1 Weekly Shot | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/new-braunfels/glp1-single-shots/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK B &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://newbraunfels.dripbarsanantonio.com/glp-1-weekly-shot</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blockb">Copy</button>
+  </div>
+  <pre id="new-braunfels-blockb"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://newbraunfels.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Semaglutide and Tirzepatide single shots at The DRIPBaR New Braunfels. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://newbraunfels.dripbarsanantonio.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in New Braunfels. It all begins with a consult.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/new-braunfels/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;GLP-1 Single Shots | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in New Braunfels.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/new-braunfels/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR New Braunfels&quot;,
+      &quot;url&quot;: &quot;https://new-braunfels.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+18307305304&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;312 FM 306, #112&quot;,
+        &quot;addressLocality&quot;: &quot;New Braunfels&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78130&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://newbraunfels.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;url&quot;: &quot;https://newbraunfels.dripbarsanantonio.com/glp-1-weekly-shot&quot;,
+      &quot;name&quot;: &quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR New Braunfels&quot;,
+      &quot;description&quot;: &quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in New Braunfels.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK C &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://newbraunfels.dripbarsanantonio.com/weight-loss-consult</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blockc">Copy</button>
+  </div>
+  <pre id="new-braunfels-blockc"><code>&lt;script&gt;
+/* The DRIPBaR New Braunfels loader v7 bootstrap | weight-loss-consult | GLP-1 Booking | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/new-braunfels/glp1-single-shots/book/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK D &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://newbraunfels.dripbarsanantonio.com/weight-loss-consult</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="new-braunfels-blockd">Copy</button>
+  </div>
+  <pre id="new-braunfels-blockd"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://newbraunfels.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book your GLP-1 consultation at The DRIPBaR New Braunfels. Pick a time that works. Medically supervised weight loss starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://newbraunfels.dripbarsanantonio.com/weight-loss-consult&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR New Braunfels. Semaglutide and Tirzepatide single shots, pay per dose.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/new-braunfels/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR New Braunfels&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR New Braunfels.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/new-braunfels/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR New Braunfels&quot;,
+      &quot;url&quot;: &quot;https://new-braunfels.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+18307305304&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;312 FM 306, #112&quot;,
+        &quot;addressLocality&quot;: &quot;New Braunfels&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;78130&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://newbraunfels.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;url&quot;: &quot;https://newbraunfels.dripbarsanantonio.com/weight-loss-consult&quot;,
+      &quot;name&quot;: &quot;Book Your GLP-1 Consult | The DRIPBaR New Braunfels&quot;,
+      &quot;description&quot;: &quot;Book your GLP-1 consultation at The DRIPBaR New Braunfels.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+</section>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = document.getElementById(btn.dataset.target).innerText;
+    var done = function () { btn.textContent = 'Copied!'; btn.classList.add('done'); setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(text); done(); });
+    } else { fallback(text); done(); }
+  });
+});
+function fallback(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text; document.body.appendChild(ta); ta.select();
+  document.execCommand('copy'); ta.remove();
+}
+</script>
+</body>
+</html>
