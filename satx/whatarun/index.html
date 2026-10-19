@@ -83,7 +83,7 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 @media(max-width:380px){.brand img{height:28px}.rr-title b{font-size:21px}.rr-title small{font-size:10.5px}.nav-wr img{height:30px}}
 
 /* ===== hero ===== */
-.hero{position:relative;min-height:calc(100vh - var(--navh) - 6px);min-height:calc(100svh - var(--navh) - 6px);color:#fff;overflow:hidden;display:flex;align-items:flex-end;background:var(--teal)}
+.hero{position:relative;min-height:calc(100vh - var(--navh) - var(--barh) - 6px);min-height:calc(100svh - var(--navh) - var(--barh) - 6px);color:#fff;overflow:hidden;display:flex;align-items:flex-end;background:var(--teal)}
 .slides{position:absolute;inset:0}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
 .slide.on{opacity:1}
@@ -91,7 +91,7 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 .slide.on img{animation:heroZoom 8s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.02)}to{transform:scale(1.12)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,40,52,.92) 0%,rgba(4,58,74,.78) 38%,rgba(4,78,99,.35) 72%,rgba(4,78,99,.18) 100%),linear-gradient(0deg,rgba(3,40,52,.85) 0%,rgba(3,40,52,0) 45%);pointer-events:none}
-.hero-in{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;padding:120px 0 96px}
+.hero-in{position:relative;z-index:2;width:min(1280px,92vw);display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;padding:120px 0 96px}
 .lockup{display:inline-flex;align-items:center;gap:14px;background:#fff;border-radius:16px;padding:12px 20px;box-shadow:0 14px 34px rgba(0,0,0,.25);margin-bottom:26px}
 .lockup .db{height:36px;width:auto}
 .lockup .x{font:400 26px/1 var(--bebas);color:var(--teal);margin-top:2px}
@@ -632,6 +632,14 @@ body.cherry-on #widget-floatingEstimator-mount [class*="floatingContainer"]{opac
     var s=document.createElement('script'); s.src='https://my.raceresult.com/RRPublish/load.js?lang=en'; s.onload=initRR;
     document.head.appendChild(s);
   }
+
+  /* in-page links: smooth scroll without touching the URL hash (the results widget uses the hash) */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a)return;
+    var id=a.getAttribute('href').slice(1); var t=id?document.getElementById(id):null; if(!t)return;
+    e.preventDefault(); var y=t.getBoundingClientRect().top+window.pageYOffset-(id==='top'?99999:document.querySelector('.nav').offsetHeight);
+    window.scrollTo({top:Math.max(0,y),behavior:reduce?'auto':'smooth'});
+  });
 
   /* highlight reel: lightweight YouTube embed */
   var reel=document.getElementById('reel');
