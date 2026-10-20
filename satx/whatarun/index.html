@@ -295,6 +295,7 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 .dbpin.on .body{fill:#AFB216}
 .dbpin.on::after{content:"";position:absolute;left:50%;bottom:-6px;width:18px;height:6px;margin-left:-9px;border-radius:50%;background:rgba(4,78,99,.25)}
 .racepin{display:inline-flex;width:max-content;position:relative;align-items:center;gap:8px;background:#F26722;color:#fff;border-radius:99px;padding:7px 13px 7px 7px;font:600 12px/1 'Poppins',Arial,sans-serif;white-space:nowrap;box-shadow:0 10px 22px -8px rgba(242,103,34,.7);border:2px solid #fff;transform:translate(-50%,-50%)}
+.racepin em{font-style:normal}
 .racepin i{width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center}
 .racepin i svg{width:15px;height:15px;stroke:#F26722;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .racepin::before{content:"";position:absolute;inset:-6px;border-radius:99px;border:2px solid rgba(242,103,34,.55);animation:rp 2.2s ease-out infinite}
@@ -328,6 +329,7 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
  .ml-item.on{border-color:var(--lime)}
  .ml-item .ml-act{display:flex}
  .map-hint{bottom:auto;top:14px}
+ .racepin em{display:none}
 }
 
 /* ===== final cta ===== */
@@ -734,11 +736,11 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
       m.on('click',function(){ select(i,false); });
       return m;
     });
-    var race=L.marker([RACE.lat,RACE.lng],{icon:L.divIcon({className:'',html:'<div class="racepin"><i><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></i>WhataRun start/finish</div>',iconSize:[0,0]}),zIndexOffset:-100,keyboard:false}).addTo(map);
+    var race=L.marker([RACE.lat,RACE.lng],{icon:L.divIcon({className:'',html:'<div class="racepin"><i><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></i>WhataRun<em> start/finish</em></div>',iconSize:[0,0]}),zIndexOffset:-100,keyboard:false}).addTo(map);
     race.bindPopup('<div class="pp"><span class="k">Race day &middot; Nov 21</span><b>WhataRun 5K/10K</b><p>SeaWorld San Antonio<br>10500 SeaWorld Dr, San Antonio, TX 78251</p></div>');
 
     var all=L.latLngBounds(LOCS.map(function(l){return [l.lat,l.lng];})).extend([RACE.lat,RACE.lng]);
-    function pad(){ return window.innerWidth>860 ? {paddingTopLeft:[380,60],paddingBottomRight:[60,60]} : {padding:[40,40]}; }
+    function pad(){ return window.innerWidth>860 ? {paddingTopLeft:[380,60],paddingBottomRight:[60,60]} : {paddingTopLeft:[70,50],paddingBottomRight:[40,40]}; }
     function fitAll(){ map.closePopup(); items.forEach(function(x){x.classList.remove('on');}); markers.forEach(function(m){var e=m.getElement(); e&&e.firstChild.classList.remove('on');}); map.flyToBounds(all,Object.assign({duration:.9},pad())); }
     map.fitBounds(all,pad());
 
