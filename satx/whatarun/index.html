@@ -259,20 +259,74 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 @media(max-width:720px){.mq img{height:190px;border-radius:16px}.gallery{margin-top:56px;gap:12px}.mq-track{gap:12px}}
 .g-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:18px}
 
-/* ===== locations ===== */
-.locs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.loc{background:#fff;border:1px solid var(--divider);border-radius:24px;padding:28px 28px 24px;display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
-.loc:hover{transform:translateY(-5px);box-shadow:0 22px 48px -26px rgba(4,78,99,.4);border-color:transparent}
-.loc-top{display:flex;justify-content:space-between;align-items:center}
-.loc-n{font:400 40px/1 var(--bebas);color:var(--blue);-webkit-text-stroke:1px #b9d7e1}
-.loc-area{font:600 12px/1 var(--pop);letter-spacing:1.4px;text-transform:uppercase;color:var(--lime-dark);background:#f6f7e3;border-radius:99px;padding:8px 12px}
-.loc h3{font-size:30px;margin:14px 0 6px}
-.addr{font-size:14.5px;line-height:1.6;color:var(--muted)}
-.loc-act{margin-top:auto;padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.loc-ph{display:inline-flex;align-items:center;gap:8px;font:600 14.5px/1 var(--pop);color:var(--teal)}
-.loc-ph .ic{width:16px;height:16px;color:var(--lime-dark)}
-@media(max-width:1000px){.locs{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.locs{grid-template-columns:1fr}}
+
+/* ===== locations map ===== */
+.mapwrap{position:relative;border-radius:28px;overflow:hidden;background:#cfe6ee;box-shadow:0 40px 80px -44px rgba(4,78,99,.55);border:6px solid #fff}
+#dbmap{height:620px;width:100%;background:#dbeef4;z-index:1}
+#dbmap .leaflet-tile-pane{filter:grayscale(1) sepia(.18) hue-rotate(150deg) saturate(1.6) brightness(1.06) contrast(.92)}
+.maplist{position:absolute;z-index:500;left:22px;top:22px;bottom:22px;width:330px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:22px;box-shadow:0 20px 50px -20px rgba(4,78,99,.45);display:flex;flex-direction:column;overflow:hidden}
+.ml-head{padding:20px 22px 14px;border-bottom:1px solid var(--divider)}
+.ml-head b{display:block;font:400 30px/1 var(--bebas);letter-spacing:.6px;color:var(--teal)}
+.ml-head span{display:block;font:500 12.5px/1.4 var(--pop);color:var(--muted);margin-top:4px}
+.ml-tools{display:flex;gap:8px;margin-top:12px}
+.ml-tools button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;font:600 12.5px/1 var(--pop);border-radius:99px;padding:10px 10px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);cursor:pointer;transition:background .2s,color .2s}
+.ml-tools button:hover,.ml-tools button.pri{background:var(--teal);color:#fff}
+.ml-tools button.pri:hover{background:var(--teal-d)}
+.ml-tools .ic{width:15px;height:15px}
+.ml-ul{list-style:none;overflow:auto;flex:1;padding:6px 0}
+.ml-item{padding:4px 12px}
+.ml-btn{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:none;border:0;border-radius:14px;padding:10px 10px;cursor:pointer;transition:background .2s}
+.ml-btn:hover{background:var(--blue-soft)}
+.ml-item.on .ml-btn{background:var(--blue)}
+.ml-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:400 19px/1 var(--bebas);padding-top:2px;transition:background .2s,transform .2s}
+.ml-item.on .ml-n{background:var(--lime);transform:scale(1.08)}
+.ml-t b{display:block;font:600 15px/1.25 var(--pop);color:var(--teal)}
+.ml-t small{display:block;font:400 12.5px/1.4 var(--pop);color:var(--muted);margin-top:2px}
+.ml-act{display:none;gap:16px;padding:2px 10px 10px 57px;font:600 13px/1 var(--pop)}
+.ml-item.on .ml-act{display:flex}
+.ml-act a{color:var(--lime-dark)}
+.ml-act a:hover{color:var(--teal)}
+.ml-dist{font:500 11.5px/1 var(--pop);color:var(--lime-dark);margin-left:6px}
+.dbpin{width:46px;height:58px;position:relative;filter:drop-shadow(0 8px 10px rgba(4,78,99,.35));transition:transform .25s ease}
+.dbpin svg{width:46px;height:58px;display:block}
+.dbpin .pn{position:absolute;left:0;right:0;top:9px;text-align:center;font:400 22px/1 'Bebas Neue','Arial Narrow',Arial,sans-serif;color:#fff;padding-top:2px}
+.dbpin .body{fill:#044E63;transition:fill .25s}
+.dbpin.on{transform:translateY(-6px) scale(1.15)}
+.dbpin.on .body{fill:#AFB216}
+.dbpin.on::after{content:"";position:absolute;left:50%;bottom:-6px;width:18px;height:6px;margin-left:-9px;border-radius:50%;background:rgba(4,78,99,.25)}
+.racepin{display:flex;align-items:center;gap:8px;background:#F26722;color:#fff;border-radius:99px;padding:7px 13px 7px 7px;font:600 12px/1 'Poppins',Arial,sans-serif;white-space:nowrap;box-shadow:0 10px 22px -8px rgba(242,103,34,.7);border:2px solid #fff;transform:translate(-50%,-50%)}
+.racepin i{width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.racepin i svg{width:15px;height:15px;stroke:#F26722;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.racepin::before{content:"";position:absolute;inset:-6px;border-radius:99px;border:2px solid rgba(242,103,34,.55);animation:rp 2.2s ease-out infinite}
+@keyframes rp{0%{opacity:1;transform:scale(.9)}100%{opacity:0;transform:scale(1.25)}}
+.mepin{width:18px;height:18px;border-radius:50%;background:#2a7de1;border:3px solid #fff;box-shadow:0 0 0 6px rgba(42,125,225,.25)}
+.leaflet-popup-content-wrapper{border-radius:18px;box-shadow:0 20px 44px -18px rgba(4,78,99,.5);padding:0}
+.leaflet-popup-content{margin:0;width:250px!important;font-family:'Poppins',Arial,sans-serif}
+.pp{padding:18px 20px 18px}
+.pp .k{font:600 10.5px/1 'Poppins';letter-spacing:1.4px;text-transform:uppercase;color:#9A9D12}
+.pp b{display:block;font:400 28px/1 'Bebas Neue','Arial Narrow',Arial;letter-spacing:.5px;color:#044E63;margin:6px 0 6px}
+.pp p{margin:0 0 14px!important;font-size:13px;line-height:1.5;color:#6B7A80}
+.pp .row{display:flex;gap:8px}
+.pp .row a{flex:1;text-align:center;border-radius:99px;padding:10px 8px;font:600 12.5px/1 'Poppins';text-decoration:none}
+.pp .row a.d{background:#044E63;color:#fff}
+.pp .row a.c{border:1.5px solid #044E63;color:#044E63}
+.leaflet-container a.leaflet-popup-close-button{top:10px;right:10px;color:#044E63}
+.leaflet-control-zoom{border:0!important;box-shadow:0 10px 24px -10px rgba(4,78,99,.45)!important;border-radius:14px!important;overflow:hidden}
+.leaflet-control-zoom a{width:38px!important;height:38px!important;line-height:38px!important;color:#044E63!important}
+.leaflet-control-attribution{font-size:10px!important;background:rgba(255,255,255,.75)!important;border-radius:8px 0 0 0}
+.map-hint{position:absolute;z-index:600;left:50%;bottom:18px;transform:translateX(-50%);background:rgba(4,78,99,.9);color:#fff;font:500 12px/1 var(--pop);padding:9px 14px;border-radius:99px;pointer-events:none;opacity:0;transition:opacity .3s}
+.map-hint.show{opacity:1}
+@media(max-width:860px){
+ .mapwrap{border-radius:22px;border-width:4px;display:flex;flex-direction:column-reverse}
+ #dbmap{height:440px}
+ .maplist{position:static;width:auto;border-radius:0;background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+ .ml-head{padding:18px 18px 14px}
+ .ml-ul{display:flex;overflow-x:auto;gap:10px;padding:14px 16px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+ .ml-item{flex:none;width:76%;padding:0;scroll-snap-align:start;border:1px solid var(--divider);border-radius:16px;background:#fff}
+ .ml-item.on{border-color:var(--lime)}
+ .ml-item .ml-act{display:flex}
+ .map-hint{bottom:auto;top:14px}
+}
 
 /* ===== final cta ===== */
 .final{position:relative;overflow:hidden;color:#fff;text-align:center}
@@ -435,8 +489,7 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
         <h2>You ran it. <span class="lime">Now refuel it.</span></h2>
       </div>
       <div class="lede">
-        <p>Race morning asks a lot. An early alarm, miles of pavement, and plenty of sweat. Most runners refuel with water and a burger, and that's a great start.</p>
-        <p>An IV drip sends fluids, electrolytes, and vitamins straight into your bloodstream, so you're not waiting on digestion to catch up. A quick shot is the in-and-out option when your legs say rest but your schedule says go.</p>
+        <p>Race morning takes a lot out of you. Pick an IV drip to put your feet up, or a quick shot to get in and out.</p>
       </div>
     </div>
     <div class="offers">
@@ -445,11 +498,11 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
         <div class="tx">
           <span class="kind"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Quick shots</span>
           <h3>Discount quick shots</h3>
-          <p>A fast vitamin boost given by a licensed nurse. In, out, and on with your weekend.</p>
+          <p>A fast vitamin boost. In, out, and on with your day.</p>
           <ul>
-            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Quick visit, no long appointment</li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Quick visit</li>
             <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Given by a licensed nurse</li>
-            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Available at all six locations</li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>At all six locations</li>
           </ul>
           <a class="btn btn-lime" href="#recover" data-offer="shots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Claim your discount shots</a>
         </div>
@@ -459,11 +512,11 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
         <div class="tx">
           <span class="kind"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>IV drips</span>
           <h3>Discount IV drip</h3>
-          <p>Fluids, electrolytes, and vitamins in a comfortable lounge chair. Put your feet up after race day.</p>
+          <p>Fluids and vitamins while you put your feet up.</p>
           <ul>
-            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Hydration and vitamins in one visit</li>
-            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A nurse is with you start to finish</li>
-            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Available at all six locations</li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Relax in a lounge recliner</li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Monitored by a nurse</li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>At all six locations</li>
           </ul>
           <a class="btn btn-lime" href="#recover" data-offer="iv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>Claim your discount IV</a>
         </div>
@@ -505,61 +558,40 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
       <h2>Six places to recover. <span class="ghost">One close to home.</span></h2>
       <p class="lede">Your runner discount works at every DRIPBaR location in San Antonio, New Braunfels, and Austin.</p>
     </div>
-    <div class="locs">
-<div class="loc">
-  <div class="loc-top"><span class="loc-n">01</span><span class="loc-area">San Antonio</span></div>
-  <h3>Alamo Heights</h3>
-  <p class="addr">5800 Broadway, Suite 203<br>San Antonio, TX 78209</p>
-  <div class="loc-act">
-    <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Alamo+Heights+5800+Broadway,+Suite+203+San+Antonio,+TX+78209" target="_blank" rel="noopener">Directions <span>&rarr;</span></a>
-    <a class="loc-ph" href="tel:+12104837479"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>(210) 483-7479</a>
-  </div>
-</div>
-<div class="loc">
-  <div class="loc-top"><span class="loc-n">02</span><span class="loc-area">San Antonio</span></div>
-  <h3>Dominion Creek</h3>
-  <p class="addr">23110 W I-10, Suite 206<br>San Antonio, TX 78257</p>
-  <div class="loc-act">
-    <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Dominion+Creek+23110+W+I-10,+Suite+206+San+Antonio,+TX+78257" target="_blank" rel="noopener">Directions <span>&rarr;</span></a>
-    <a class="loc-ph" href="tel:+12102121104"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>(210) 212-1104</a>
-  </div>
-</div>
-<div class="loc">
-  <div class="loc-top"><span class="loc-n">03</span><span class="loc-area">San Antonio</span></div>
-  <h3>Fossil Creek</h3>
-  <p class="addr">22250 Bulverde Rd, Space 108<br>San Antonio, TX 78261</p>
-  <div class="loc-act">
-    <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Fossil+Creek+22250+Bulverde+Rd,+Space+108+San+Antonio,+TX+78261" target="_blank" rel="noopener">Directions <span>&rarr;</span></a>
-    <a class="loc-ph" href="tel:+17269008533"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>(726) 900-8533</a>
-  </div>
-</div>
-<div class="loc">
-  <div class="loc-top"><span class="loc-n">04</span><span class="loc-area">San Antonio</span></div>
-  <h3>Huebner Oaks</h3>
-  <p class="addr">11255 Huebner Road, Suite 107<br>San Antonio, TX 78230</p>
-  <div class="loc-act">
-    <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Huebner+Oaks+11255+Huebner+Road,+Suite+107+San+Antonio,+TX+78230" target="_blank" rel="noopener">Directions <span>&rarr;</span></a>
-    <a class="loc-ph" href="tel:+12103064135"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>(210) 306-4135</a>
-  </div>
-</div>
-<div class="loc">
-  <div class="loc-top"><span class="loc-n">05</span><span class="loc-area">New Braunfels</span></div>
-  <h3>New Braunfels</h3>
-  <p class="addr">312 FM 306, #112<br>New Braunfels, TX 78130</p>
-  <div class="loc-act">
-    <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+New+Braunfels+312+FM+306,+#112+New+Braunfels,+TX+78130" target="_blank" rel="noopener">Directions <span>&rarr;</span></a>
-    <a class="loc-ph" href="tel:+18307305304"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>(830) 730-5304</a>
-  </div>
-</div>
-<div class="loc">
-  <div class="loc-top"><span class="loc-n">06</span><span class="loc-area">Austin</span></div>
-  <h3>Austin (The Domain)</h3>
-  <p class="addr">11011 Domain Drive, Suite 104<br>Austin, TX 78758</p>
-  <div class="loc-act">
-    <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Austin+11011+Domain+Drive,+Suite+104+Austin,+TX+78758" target="_blank" rel="noopener">Directions <span>&rarr;</span></a>
-    <a class="loc-ph" href="tel:+15126498323"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>(512) 649-8323</a>
-  </div>
-</div>
+    <div class="mapwrap">
+      <div id="dbmap" role="region" aria-label="Map of DRIPBaR locations near San Antonio"></div>
+      <aside class="maplist">
+        <div class="ml-head"><b>Find your DRIPBaR</b><span>Tap a location to see it on the map.</span>
+          <div class="ml-tools"><button type="button" class="pri" id="mlNear"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span>Closest to me</span></button><button type="button" id="mlAll"><span>Show all</span></button></div>
+        </div>
+        <ul class="ml-ul">
+<li class="ml-item" data-i="0">
+  <button type="button" class="ml-btn" aria-label="Show Alamo Heights on the map"><span class="ml-n">1</span><span class="ml-t"><b>Alamo Heights</b><small>5800 Broadway, Suite 203, San Antonio</small></span></button>
+  <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Alamo+Heights+5800+Broadway,+Suite+203+San+Antonio,+TX+78209" target="_blank" rel="noopener">Directions</a><a href="tel:+12104837479">(210) 483-7479</a></div>
+</li>
+<li class="ml-item" data-i="1">
+  <button type="button" class="ml-btn" aria-label="Show Dominion Creek on the map"><span class="ml-n">2</span><span class="ml-t"><b>Dominion Creek</b><small>23110 W I-10, Suite 206, San Antonio</small></span></button>
+  <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Dominion+Creek+23110+W+I-10,+Suite+206+San+Antonio,+TX+78257" target="_blank" rel="noopener">Directions</a><a href="tel:+12102121104">(210) 212-1104</a></div>
+</li>
+<li class="ml-item" data-i="2">
+  <button type="button" class="ml-btn" aria-label="Show Fossil Creek on the map"><span class="ml-n">3</span><span class="ml-t"><b>Fossil Creek</b><small>22250 Bulverde Rd, Space 108, San Antonio</small></span></button>
+  <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Fossil+Creek+22250+Bulverde+Rd,+Space+108+San+Antonio,+TX+78261" target="_blank" rel="noopener">Directions</a><a href="tel:+17269008533">(726) 900-8533</a></div>
+</li>
+<li class="ml-item" data-i="3">
+  <button type="button" class="ml-btn" aria-label="Show Huebner Oaks on the map"><span class="ml-n">4</span><span class="ml-t"><b>Huebner Oaks</b><small>11255 Huebner Road, Suite 107, San Antonio</small></span></button>
+  <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Huebner+Oaks+11255+Huebner+Road,+Suite+107+San+Antonio,+TX+78230" target="_blank" rel="noopener">Directions</a><a href="tel:+12103064135">(210) 306-4135</a></div>
+</li>
+<li class="ml-item" data-i="4">
+  <button type="button" class="ml-btn" aria-label="Show New Braunfels on the map"><span class="ml-n">5</span><span class="ml-t"><b>New Braunfels</b><small>312 FM 306, #112, New Braunfels</small></span></button>
+  <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+New+Braunfels+312+FM+306,+#112+New+Braunfels,+TX+78130" target="_blank" rel="noopener">Directions</a><a href="tel:+18307305304">(830) 730-5304</a></div>
+</li>
+<li class="ml-item" data-i="5">
+  <button type="button" class="ml-btn" aria-label="Show Austin (The Domain) on the map"><span class="ml-n">6</span><span class="ml-t"><b>Austin (The Domain)</b><small>11011 Domain Drive, Suite 104, Austin</small></span></button>
+  <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Austin+11011+Domain+Drive,+Suite+104+Austin,+TX+78758" target="_blank" rel="noopener">Directions</a><a href="tel:+15126498323">(512) 649-8323</a></div>
+</li>
+        </ul>
+      </aside>
+      <div class="map-hint" id="mapHint" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -665,6 +697,86 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
     reel.appendChild(f);
   });
 
+})();
+</script>
+
+<script>
+(function(){
+  var LOCS = [{"n": "Alamo Heights", "a1": "5800 Broadway, Suite 203", "a2": "San Antonio, TX 78209", "ph": "(210) 483-7479", "tel": "2104837479", "lat": 29.47959, "lng": -98.46355, "dir": "https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Alamo+Heights+5800+Broadway,+Suite+203+San+Antonio,+TX+78209"}, {"n": "Dominion Creek", "a1": "23110 W I-10, Suite 206", "a2": "San Antonio, TX 78257", "ph": "(210) 212-1104", "tel": "2102121104", "lat": 29.65476, "lng": -98.62575, "dir": "https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Dominion+Creek+23110+W+I-10,+Suite+206+San+Antonio,+TX+78257"}, {"n": "Fossil Creek", "a1": "22250 Bulverde Rd, Space 108", "a2": "San Antonio, TX 78261", "ph": "(726) 900-8533", "tel": "7269008533", "lat": 29.64931, "lng": -98.426, "dir": "https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Fossil+Creek+22250+Bulverde+Rd,+Space+108+San+Antonio,+TX+78261"}, {"n": "Huebner Oaks", "a1": "11255 Huebner Road, Suite 107", "a2": "San Antonio, TX 78230", "ph": "(210) 306-4135", "tel": "2103064135", "lat": 29.54661, "lng": -98.57754, "dir": "https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Huebner+Oaks+11255+Huebner+Road,+Suite+107+San+Antonio,+TX+78230"}, {"n": "New Braunfels", "a1": "312 FM 306, #112", "a2": "New Braunfels, TX 78130", "ph": "(830) 730-5304", "tel": "8307305304", "lat": 29.7324, "lng": -98.08212, "dir": "https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+New+Braunfels+312+FM+306,+#112+New+Braunfels,+TX+78130"}, {"n": "Austin (The Domain)", "a1": "11011 Domain Drive, Suite 104", "a2": "Austin, TX 78758", "ph": "(512) 649-8323", "tel": "5126498323", "lat": 30.39629, "lng": -97.72642, "dir": "https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Austin+11011+Domain+Drive,+Suite+104+Austin,+TX+78758"}];
+  var RACE = {lat:29.45663,lng:-98.69866};
+  var sec = document.getElementById('locations'); if(!sec) return;
+  var started = false;
+  function css(h){var l=document.createElement('link');l.rel='stylesheet';l.href=h;document.head.appendChild(l);}
+  function js(src,cb){var s=document.createElement('script');s.src=src;s.onload=cb;document.head.appendChild(s);}
+  function start(){ if(started) return; started=true;
+    css('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+    js('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', init);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ start(); io.disconnect(); } },{rootMargin:'900px 0px'});
+    io.observe(sec);
+  } else start();
+
+  function pinHTML(n){return '<div class="dbpin"><svg viewBox="0 0 46 58"><path class="body" d="M23 1C11 1 1.5 10.4 1.5 22.3 1.5 37.6 19 54 21.3 56.1a2.5 2.5 0 0 0 3.4 0C27 54 44.5 37.6 44.5 22.3 44.5 10.4 35 1 23 1z" stroke="#fff" stroke-width="2.5"/></svg><span class="pn">'+n+'</span></div>';}
+  function km(a,b){var R=3958.8,dLat=(b.lat-a.lat)*Math.PI/180,dLng=(b.lng-a.lng)*Math.PI/180,x=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLng/2)*Math.sin(dLng/2);return 2*R*Math.asin(Math.sqrt(x));}
+
+  function init(){
+    var touch = window.matchMedia('(pointer:coarse)').matches;
+    var map = L.map('dbmap',{scrollWheelZoom:false,dragging:!touch,tap:false,zoomControl:false,attributionControl:true});
+    L.control.zoom({position:'topright'}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    var items=[].slice.call(document.querySelectorAll('.ml-item'));
+    var markers=LOCS.map(function(l,i){
+      var m=L.marker([l.lat,l.lng],{icon:L.divIcon({className:'',html:pinHTML(i+1),iconSize:[46,58],iconAnchor:[23,56],popupAnchor:[0,-52]}),title:'The DRIPBaR '+l.n,riseOnHover:true}).addTo(map);
+      m.bindPopup('<div class="pp"><span class="k">The DRIPBaR</span><b>'+l.n+'</b><p>'+l.a1+'<br>'+l.a2+'</p><div class="row"><a class="d" href="'+l.dir+'" target="_blank" rel="noopener">Directions</a><a class="c" href="tel:+1'+l.tel+'">Call</a></div></div>',{closeButton:true,autoPanPaddingTopLeft:[touch?20:380,20]});
+      m.on('click',function(){ select(i,false); });
+      return m;
+    });
+    var race=L.marker([RACE.lat,RACE.lng],{icon:L.divIcon({className:'',html:'<div class="racepin"><i><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></i>WhataRun start/finish</div>',iconSize:[0,0]}),zIndexOffset:-100,keyboard:false}).addTo(map);
+    race.bindPopup('<div class="pp"><span class="k">Race day &middot; Nov 21</span><b>WhataRun 5K/10K</b><p>SeaWorld San Antonio<br>10500 SeaWorld Dr, San Antonio, TX 78251</p></div>');
+
+    var all=L.latLngBounds(LOCS.map(function(l){return [l.lat,l.lng];})).extend([RACE.lat,RACE.lng]);
+    function pad(){ return window.innerWidth>860 ? {paddingTopLeft:[380,60],paddingBottomRight:[60,60]} : {padding:[40,40]}; }
+    function fitAll(){ map.closePopup(); items.forEach(function(x){x.classList.remove('on');}); markers.forEach(function(m){var e=m.getElement(); e&&e.firstChild.classList.remove('on');}); map.flyToBounds(all,Object.assign({duration:.9},pad())); }
+    map.fitBounds(all,pad());
+
+    function select(i,fly){
+      items.forEach(function(x,k){x.classList.toggle('on',k===i);});
+      markers.forEach(function(m,k){var e=m.getElement(); e&&e.firstChild.classList.toggle('on',k===i);});
+      if(fly){
+        var off = window.innerWidth>860 ? 170 : 0;
+        var z=13, pt=map.project([LOCS[i].lat,LOCS[i].lng],z).subtract([off,90]);
+        map.flyTo(map.unproject(pt,z),z,{duration:1.1});
+        map.once('moveend',function(){ markers[i].openPopup(); });
+      }
+      var it=items[i]; if(it && window.innerWidth<=860){ var ul=it.parentNode; ul.scrollTo({left:it.offsetLeft-16,behavior:'smooth'}); }
+    }
+    items.forEach(function(it,i){ it.querySelector('.ml-btn').addEventListener('click',function(){ select(i,true); }); });
+    var allBtn=document.getElementById('mlAll'); if(allBtn) allBtn.addEventListener('click',fitAll);
+
+    var near=document.getElementById('mlNear'), me=null;
+    if(near){
+      if(!navigator.geolocation){ near.style.display='none'; }
+      near.addEventListener('click',function(){
+        var lbl=near.querySelector('span:last-child'), old=lbl.textContent; lbl.textContent='Locating...';
+        navigator.geolocation.getCurrentPosition(function(p){
+          lbl.textContent=old;
+          var u={lat:p.coords.latitude,lng:p.coords.longitude};
+          if(me) map.removeLayer(me);
+          me=L.marker([u.lat,u.lng],{icon:L.divIcon({className:'',html:'<div class="mepin"></div>',iconSize:[18,18],iconAnchor:[9,9]}),keyboard:false}).addTo(map);
+          var best=0,bd=1e9;
+          LOCS.forEach(function(l,i){ var d=km(u,l); var s=items[i].querySelector('.ml-dist'); if(!s){s=document.createElement('span');s.className='ml-dist';items[i].querySelector('.ml-t b').appendChild(s);} s.textContent=d.toFixed(d<10?1:0)+' mi'; if(d<bd){bd=d;best=i;} });
+          select(best,true);
+        },function(){ lbl.textContent=old; hint('Location is off. Tap a location instead.'); },{enableHighAccuracy:false,timeout:9000,maximumAge:600000});
+      });
+    }
+
+    var h=document.getElementById('mapHint'), ht;
+    function hint(t){ if(!h) return; h.textContent=t; h.classList.add('show'); clearTimeout(ht); ht=setTimeout(function(){h.classList.remove('show');},2200); }
+    document.getElementById('dbmap').addEventListener('wheel',function(e){ if(!e.ctrlKey && !e.metaKey) hint('Use Ctrl + scroll to zoom'); else { map.scrollWheelZoom.enable(); clearTimeout(ht); ht=setTimeout(function(){map.scrollWheelZoom.disable();},800);} },{passive:true});
+    if(touch){ document.getElementById('dbmap').addEventListener('touchstart',function(e){ if(e.touches.length===1) hint('Use two fingers to move the map'); },{passive:true}); }
+    window.addEventListener('resize',function(){ map.invalidateSize(); });
+  }
 })();
 </script>
 
