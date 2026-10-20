@@ -274,8 +274,8 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 .ml-tools button.pri:hover{background:var(--teal-d)}
 .ml-tools .ic{width:15px;height:15px}
 .ml-ul{list-style:none;overflow:auto;flex:1;padding:6px 0}
-.ml-item{padding:4px 12px}
-.ml-btn{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:none;border:0;border-radius:14px;padding:10px 10px;cursor:pointer;transition:background .2s}
+.ml-item{padding:3px 12px}
+.ml-btn{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:none;border:0;border-radius:14px;padding:9px 10px;cursor:pointer;transition:background .2s}
 .ml-btn:hover{background:var(--blue-soft)}
 .ml-item.on .ml-btn{background:var(--blue)}
 .ml-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:400 19px/1 var(--bebas);padding-top:2px;transition:background .2s,transform .2s}
@@ -294,7 +294,7 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 .dbpin.on{transform:translateY(-6px) scale(1.15)}
 .dbpin.on .body{fill:#AFB216}
 .dbpin.on::after{content:"";position:absolute;left:50%;bottom:-6px;width:18px;height:6px;margin-left:-9px;border-radius:50%;background:rgba(4,78,99,.25)}
-.racepin{display:flex;align-items:center;gap:8px;background:#F26722;color:#fff;border-radius:99px;padding:7px 13px 7px 7px;font:600 12px/1 'Poppins',Arial,sans-serif;white-space:nowrap;box-shadow:0 10px 22px -8px rgba(242,103,34,.7);border:2px solid #fff;transform:translate(-50%,-50%)}
+.racepin{display:inline-flex;width:max-content;position:relative;align-items:center;gap:8px;background:#F26722;color:#fff;border-radius:99px;padding:7px 13px 7px 7px;font:600 12px/1 'Poppins',Arial,sans-serif;white-space:nowrap;box-shadow:0 10px 22px -8px rgba(242,103,34,.7);border:2px solid #fff;transform:translate(-50%,-50%)}
 .racepin i{width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center}
 .racepin i svg{width:15px;height:15px;stroke:#F26722;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .racepin::before{content:"";position:absolute;inset:-6px;border-radius:99px;border:2px solid rgba(242,103,34,.55);animation:rp 2.2s ease-out infinite}
@@ -566,27 +566,27 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
         </div>
         <ul class="ml-ul">
 <li class="ml-item" data-i="0">
-  <button type="button" class="ml-btn" aria-label="Show Alamo Heights on the map"><span class="ml-n">1</span><span class="ml-t"><b>Alamo Heights</b><small>5800 Broadway, Suite 203, San Antonio</small></span></button>
+  <button type="button" class="ml-btn" aria-label="Show Alamo Heights on the map"><span class="ml-n">1</span><span class="ml-t"><b>Alamo Heights</b><small>5800 Broadway, Suite 203</small></span></button>
   <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Alamo+Heights+5800+Broadway,+Suite+203+San+Antonio,+TX+78209" target="_blank" rel="noopener">Directions</a><a href="tel:+12104837479">(210) 483-7479</a></div>
 </li>
 <li class="ml-item" data-i="1">
-  <button type="button" class="ml-btn" aria-label="Show Dominion Creek on the map"><span class="ml-n">2</span><span class="ml-t"><b>Dominion Creek</b><small>23110 W I-10, Suite 206, San Antonio</small></span></button>
+  <button type="button" class="ml-btn" aria-label="Show Dominion Creek on the map"><span class="ml-n">2</span><span class="ml-t"><b>Dominion Creek</b><small>23110 W I-10, Suite 206</small></span></button>
   <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Dominion+Creek+23110+W+I-10,+Suite+206+San+Antonio,+TX+78257" target="_blank" rel="noopener">Directions</a><a href="tel:+12102121104">(210) 212-1104</a></div>
 </li>
 <li class="ml-item" data-i="2">
-  <button type="button" class="ml-btn" aria-label="Show Fossil Creek on the map"><span class="ml-n">3</span><span class="ml-t"><b>Fossil Creek</b><small>22250 Bulverde Rd, Space 108, San Antonio</small></span></button>
+  <button type="button" class="ml-btn" aria-label="Show Fossil Creek on the map"><span class="ml-n">3</span><span class="ml-t"><b>Fossil Creek</b><small>22250 Bulverde Rd, Space 108</small></span></button>
   <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Fossil+Creek+22250+Bulverde+Rd,+Space+108+San+Antonio,+TX+78261" target="_blank" rel="noopener">Directions</a><a href="tel:+17269008533">(726) 900-8533</a></div>
 </li>
 <li class="ml-item" data-i="3">
-  <button type="button" class="ml-btn" aria-label="Show Huebner Oaks on the map"><span class="ml-n">4</span><span class="ml-t"><b>Huebner Oaks</b><small>11255 Huebner Road, Suite 107, San Antonio</small></span></button>
+  <button type="button" class="ml-btn" aria-label="Show Huebner Oaks on the map"><span class="ml-n">4</span><span class="ml-t"><b>Huebner Oaks</b><small>11255 Huebner Road, Suite 107</small></span></button>
   <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Huebner+Oaks+11255+Huebner+Road,+Suite+107+San+Antonio,+TX+78230" target="_blank" rel="noopener">Directions</a><a href="tel:+12103064135">(210) 306-4135</a></div>
 </li>
 <li class="ml-item" data-i="4">
-  <button type="button" class="ml-btn" aria-label="Show New Braunfels on the map"><span class="ml-n">5</span><span class="ml-t"><b>New Braunfels</b><small>312 FM 306, #112, New Braunfels</small></span></button>
+  <button type="button" class="ml-btn" aria-label="Show New Braunfels on the map"><span class="ml-n">5</span><span class="ml-t"><b>New Braunfels</b><small>312 FM 306, #112</small></span></button>
   <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+New+Braunfels+312+FM+306,+#112+New+Braunfels,+TX+78130" target="_blank" rel="noopener">Directions</a><a href="tel:+18307305304">(830) 730-5304</a></div>
 </li>
 <li class="ml-item" data-i="5">
-  <button type="button" class="ml-btn" aria-label="Show Austin (The Domain) on the map"><span class="ml-n">6</span><span class="ml-t"><b>Austin (The Domain)</b><small>11011 Domain Drive, Suite 104, Austin</small></span></button>
+  <button type="button" class="ml-btn" aria-label="Show Austin (The Domain) on the map"><span class="ml-n">6</span><span class="ml-t"><b>Austin (The Domain)</b><small>11011 Domain Drive, Suite 104</small></span></button>
   <div class="ml-act"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+DRIPBaR+Austin+11011+Domain+Drive,+Suite+104+Austin,+TX+78758" target="_blank" rel="noopener">Directions</a><a href="tel:+15126498323">(512) 649-8323</a></div>
 </li>
         </ul>
