@@ -36,10 +36,10 @@ a{color:var(--cyan)}
 .nav-back{font-family:var(--bebas);font-size:16px;letter-spacing:1px;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);padding:9px 20px;border-radius:6px;transition:all .2s}
 .nav-back:hover{background:var(--navy);color:#fff}
 .nav-right{display:flex;align-items:center;gap:12px}
-.lang{display:inline-flex;align-items:center;border:1.5px solid var(--navy);border-radius:100px;padding:2px;background:#fff}
-.lang .sep{color:var(--divider);padding:0 1px;font-size:12px}
-.lang button{border:none;background:none;font-family:var(--bebas);font-size:13px;letter-spacing:1px;color:var(--navy);padding:4px 9px;border-radius:100px;cursor:pointer;line-height:1.2}
-.lang button.on{background:var(--navy);color:#fff}
+.lang{display:inline-flex;align-items:center;gap:2px;border:1.5px solid var(--navy);border-radius:100px;padding:2px;background:#fff}
+.lang button{border:none;background:none;font:17px/1 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;padding:4px 8px;border-radius:100px;cursor:pointer;opacity:.42;transition:opacity .2s ease,background .2s ease}
+.lang button:hover{opacity:.8}
+.lang button.on{opacity:1;background:rgba(60,76,98,.12)}
 @media(max-width:700px){.nav-tag{display:none}}
 
 /* Header band */
@@ -154,7 +154,7 @@ a{color:var(--cyan)}
     <a class="nav-logo" href="https://new-braunfels.thedripbar.com"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
     <span class="nav-tag" data-i18n="navTag">Medical Weight Loss | New Braunfels</span>
     <div class="nav-right">
-      <div class="lang" role="group" aria-label="Language"><button type="button" data-setlang="en" class="on">EN</button><span class="sep">|</span><button type="button" data-setlang="es">ES</button></div>
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-setlang="en" class="on" aria-label="English" aria-pressed="true">&#x1F1FA;&#x1F1F8;</button><button type="button" data-setlang="es" aria-label="Espa&ntilde;ol" aria-pressed="false">&#x1F1F2;&#x1F1FD;</button></div>
       <a class="nav-back" data-i18n="navBack" href="https://newbraunfels.dripbarsanantonio.com/glp-1-weekly-shot">BACK TO PROGRAM</a>
     </div>
   </div>
@@ -589,7 +589,9 @@ function setLang(l){
   if(v!==undefined) el.setAttribute('aria-label',v);
  });
  document.querySelectorAll('[data-setlang]').forEach(function(b){
-  b.classList.toggle('on',b.getAttribute('data-setlang')===l);
+  var on=b.getAttribute('data-setlang')===l;
+  b.classList.toggle('on',on);
+  b.setAttribute('aria-pressed',on?'true':'false');
  });
  refreshDynamic();
 }
