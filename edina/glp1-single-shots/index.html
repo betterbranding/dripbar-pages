@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Edina</title>
-<meta name="description" content="Semaglutide and Tirzepatide single shots at The DRIPBaR Edina in Edina. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.">
+<meta name="description" content="Semaglutide and Tirzepatide single shots at The DRIPBaR Edina. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.">
+<link rel="canonical" href="https://thedripbaredina.com/glp-1-weekly-shot">
+<link rel="icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png">
+<link rel="apple-touch-icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -49,11 +54,15 @@ h3{font-size:clamp(22px,2vw,28px)}
 .nav-tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--navy)}
 .nav .btn{font-size:15px;padding:11px 26px}
 .nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:inline-flex;align-items:center;border:1.5px solid var(--navy);border-radius:100px;padding:2px;background:#fff}
+.lang .sep{color:var(--divider);padding:0 1px;font-size:12px}
+.lang button{border:none;background:none;font-family:var(--bebas);font-size:13px;letter-spacing:1px;color:var(--navy);padding:4px 9px;border-radius:100px;cursor:pointer;line-height:1.2}
+.lang button.on{background:var(--navy);color:#fff}
 @media(max-width:820px){.nav-tag{display:none}}
 
 /* HERO */
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/hero.webp') center/cover no-repeat;animation:heroZoom 8s ease-out forwards}
+.hero-bg{position:absolute;inset:0;background:url('https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/hero.webp') 28% center/cover no-repeat;animation:heroZoom 8s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.07)}to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(34,44,58,.88) 0%, rgba(34,44,58,.62) 45%, rgba(34,44,58,.5) 100%)}
 .hero-in{position:relative;z-index:2;width:min(1360px,92vw);margin:0 auto;padding:170px 0 90px;color:#fff}
@@ -99,12 +108,12 @@ h3{font-size:clamp(22px,2vw,28px)}
 .panel h2{margin-bottom:18px}
 .pill{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);background:rgba(193,216,26,.28);border-radius:100px;padding:7px 18px;margin-bottom:20px}
 .panel p.why{margin-bottom:26px}
-.price-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:26px}
-.price-table th{font-family:var(--bebas);font-size:18px;letter-spacing:1.5px;font-weight:400;background:var(--navy);color:#fff;text-align:left;padding:14px 24px}
-.price-table td{padding:13px 24px;font-size:15px;border-top:1px solid var(--divider)}
-.price-table td:last-child{text-align:right;font-weight:600;color:var(--navy)}
-.price-table tr:nth-child(even) td{background:#f7f9fb}
-.panel.on-dark .price-table{box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.start-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;background:#fff;border-radius:8px;border-left:4px solid var(--cyan);box-shadow:0 2px 8px rgba(0,0,0,.06);padding:20px 28px;margin-bottom:26px}
+.start-price .sp-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted)}
+.start-price .sp-amt{font-family:var(--bebas);font-size:64px;line-height:.9;letter-spacing:1px;color:var(--navy)}
+.start-price .sp-unit{font-size:15px;font-weight:600;color:var(--navy)}
+.panel.on-dark .start-price{border-left-color:var(--lime);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+@media(max-width:640px){.start-price{padding:18px 22px}.start-price .sp-amt{font-size:54px}}
 .spec{font-size:13px;color:var(--muted);margin-bottom:30px}
 .panel.on-white{background:#fff}
 .panel.on-cyan{background:var(--cyanfill)}
@@ -163,7 +172,8 @@ footer .btn{margin:26px 0 30px}
     <a class="nav-logo" href="https://thedripbaredina.com"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
     <div class="nav-tag" data-i18n="navTag">Medical Weight Loss | Edina</div>
     <div class="nav-right">
-      <a class="btn btn-cyan" data-i18n="navBook" href="https://thedripbaredina.com/weight-loss-consult">BOOK NOW</a>
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-setlang="en" class="on">EN</button><span class="sep">|</span><button type="button" data-setlang="es">ES</button></div>
+      <a class="btn btn-cyan" data-i18n="navBook" href="https://thedripbaredina.com/glp-1-weekly-booking">BOOK NOW</a>
     </div>
   </div>
 </div>
@@ -176,7 +186,7 @@ footer .btn{margin:26px 0 30px}
     <h1 data-i18n="heroH1">Medical weight loss<br><em>one shot</em> at a time</h1>
     <p class="lede" data-i18n="heroLede">Semaglutide and Tirzepatide single shots, administered by licensed medical professionals. No big packages. No pressure. Pay per dose and go at your own pace. It all begins with a consult.</p>
     <div class="hero-ctas">
-      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/glp-1-weekly-booking">SCHEDULE YOUR CONSULT</a>
       <a class="btn btn-ghost" data-i18n="heroPricing" href="#pricing">SEE SINGLE SHOT PRICING</a>
     </div>
     <div class="hero-fine">3515 W. 70th St, Edina, MN 55435 | (612) 429-6822</div>
@@ -193,21 +203,21 @@ footer .btn{margin:26px 0 30px}
     </div>
     <div class="trio">
       <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/card-consult.webp" data-i18n-alt="altConsult" alt="Weight loss consultation at The DRIPBaR Edina"></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/card-consult.webp" data-i18n-alt="altConsult" alt="Nurse talking with a client about her goals"></div>
         <div class="tx">
           <h3 data-i18n="card1H">Start with a consult <span class="arr">&rarr;</span></h3>
           <p data-i18n="card1P">Every plan starts with a conversation. We review your goals, lifestyle, and health history before anything else.</p>
         </div>
       </div>
       <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/card-shot.webp" data-i18n-alt="altShot" alt="Nurse preparing a GLP-1 single shot"></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/card-shot.webp" data-i18n-alt="altShot" alt="Client relaxing in the lounge"></div>
         <div class="tx">
           <h3 data-i18n="card2H">Pay per shot <span class="arr">&rarr;</span></h3>
           <p data-i18n="card2P">Single shots start at $25. No bundles, no subscriptions. Your dose is administered in minutes by a licensed nurse.</p>
         </div>
       </div>
       <div class="tcard">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/card-support.webp" data-i18n-alt="altSupport" alt="Ongoing support at The DRIPBaR Edina"></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/card-support.webp" data-i18n-alt="altSupport" alt="Nurse walking a client through her medication"></div>
         <div class="tx">
           <h3 data-i18n="card3H">Real support <span class="arr">&rarr;</span></h3>
           <p data-i18n="card3P">Clinical oversight, dose adjustments, and a team that checks in. You are not left to figure it out on your own.</p>
@@ -224,7 +234,7 @@ footer .btn{margin:26px 0 30px}
       <div class="eyebrow" data-i18n="howEyebrow">How it works</div>
       <h2 data-i18n="howH2">Four steps. <span class="ghosted">Zero guesswork.</span></h2>
       <p class="lede" data-i18n="howLede">Our medically supervised weight loss program is designed to help regulate appetite, improve metabolic function, and support sustainable results. Every plan is guided by licensed medical professionals and tailored to you.</p>
-      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/glp-1-weekly-booking">SCHEDULE YOUR CONSULT</a>
     </div>
     <div>
       <div class="step">
@@ -250,22 +260,19 @@ footer .btn{margin:26px 0 30px}
 <!-- SEMAGLUTIDE PANEL -->
 <section class="panel pad" id="pricing">
   <div class="shell grid">
-    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/panel-sema.webp" data-i18n-alt="altSemaPanel" alt="IV lounge at The DRIPBaR Edina"></div>
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/panel-sema.webp" data-i18n-alt="altSemaPanel" alt="Nurse checking in with a client in the lounge"></div>
     <div>
       <div class="eyebrow" data-i18n="panelEyebrow">Single shots</div>
       <h2 data-i18n="semaH2">Semaglutide. <span class="ghosted">Steady and proven.</span></h2>
       <div class="pill" data-i18n="semaPill">Best for a gradual, consistent start</div>
       <p class="why" data-i18n="semaWhy">A GLP-1 medication that helps regulate appetite, slow digestion, and improve blood sugar control. By helping you feel full longer and reducing cravings, it supports consistent, sustainable weight loss when combined with healthy lifestyle habits.</p>
-      <table class="price-table">
-        <tr><th data-i18n="thDose">Dose</th><th data-i18n="thPrice" style="text-align:right">Price per shot</th></tr>
-        <tr><td>.25 mg</td><td>$25</td></tr>
-        <tr><td>.5 mg</td><td>$35</td></tr>
-        <tr><td>1 mg</td><td>$40</td></tr>
-        <tr><td>1.75 mg</td><td>$55</td></tr>
-        <tr><td>2.4 mg</td><td>$65</td></tr>
-      </table>
+      <div class="start-price">
+        <span class="sp-label" data-i18n="spLabel">Starting at</span>
+        <span class="sp-amt">$25</span>
+        <span class="sp-unit" data-i18n="spUnit">per week</span>
+      </div>
       <div class="spec" data-i18n="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
-      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/glp-1-weekly-booking">SCHEDULE YOUR CONSULT</a>
     </div>
   </div>
 </section>
@@ -273,23 +280,19 @@ footer .btn{margin:26px 0 30px}
 <!-- TIRZEPATIDE PANEL -->
 <section class="panel on-dark pad">
   <div class="shell grid flip">
-    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/panel-tirz.webp" data-i18n-alt="altTirzPanel" alt="Nurse preparing a Tirzepatide single shot"></div>
+    <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/edina/glp1-single-shots/assets/panel-tirz.webp" data-i18n-alt="altTirzPanel" alt="Nurse reviewing progress with a client on a tablet"></div>
     <div>
       <div class="eyebrow on-dark" data-i18n="panelEyebrow">Single shots</div>
       <h2 data-i18n="tirzH2">Tirzepatide. <span class="ghosted" style="color:#6b7a90">Dual-action power.</span></h2>
       <div class="pill" data-i18n="tirzPill">Best for stronger, faster momentum</div>
       <p class="why" data-i18n="tirzWhy">Works on both GLP-1 and GIP receptors, providing a dual-action approach to weight loss. It helps regulate appetite, improve insulin sensitivity, and enhance metabolic function, often leading to more significant and efficient weight loss outcomes.</p>
-      <table class="price-table">
-        <tr><th data-i18n="thDose">Dose</th><th data-i18n="thPrice" style="text-align:right">Price per shot</th></tr>
-        <tr><td>2.5 mg</td><td>$35</td></tr>
-        <tr><td>5 mg</td><td>$60</td></tr>
-        <tr><td>7.5 mg</td><td>$85</td></tr>
-        <tr><td>10 mg</td><td>$105</td></tr>
-        <tr><td>12.5 mg</td><td>$140</td></tr>
-        <tr><td>15 mg</td><td>$155</td></tr>
-      </table>
+      <div class="start-price">
+        <span class="sp-label" data-i18n="spLabel">Starting at</span>
+        <span class="sp-amt">$39</span>
+        <span class="sp-unit" data-i18n="spUnit">per week</span>
+      </div>
       <div class="spec" data-i18n="spec">Administered in-clinic by a licensed nurse. Weekly cadence, dosing set at your consult.</div>
-      <a class="btn btn-lime" data-i18n="ctaConsult" href="https://thedripbaredina.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+      <a class="btn btn-lime" data-i18n="ctaConsult" href="https://thedripbaredina.com/glp-1-weekly-booking">SCHEDULE YOUR CONSULT</a>
     </div>
   </div>
 </section>
@@ -307,8 +310,7 @@ footer .btn{margin:26px 0 30px}
         <tr><td data-i18n="cmpR1a">How it works</td><td data-i18n="cmpR1b">Targets GLP-1 receptors to curb appetite and slow digestion.</td><td data-i18n="cmpR1c">Targets GLP-1 and GIP receptors for a dual-action approach.</td></tr>
         <tr><td data-i18n="cmpR2a">Typical pace</td><td data-i18n="cmpR2b">Gradual, steady progress.</td><td data-i18n="cmpR2c">Often more significant and efficient outcomes.</td></tr>
         <tr><td data-i18n="cmpR3a">Dose range</td><td data-i18n="cmpR3b">.25 mg to 2.4 mg</td><td data-i18n="cmpR3c">2.5 mg to 15 mg</td></tr>
-        <tr><td data-i18n="cmpR4a">Price per shot</td><td data-i18n="cmpR4b">$25 to $65</td><td data-i18n="cmpR4c">$35 to $155</td></tr>
-        <tr><td data-i18n="cmpR5a">Starting price</td><td>$25</td><td>$35</td></tr>
+        <tr><td data-i18n="cmpR5a">Starting price</td><td data-i18n="cmpR5b">$25 per week</td><td data-i18n="cmpR5c">$39 per week</td></tr>
       </table>
     </div>
     <p class="cmp-note" data-i18n="cmpNote">Your medical team will recommend the right medication and starting dose at your consult.</p>
@@ -324,7 +326,7 @@ footer .btn{margin:26px 0 30px}
         <h2 data-i18n="refH2">Bring a friend, get $35.</h2>
         <p data-i18n="refP">Refer a friend and get a $35 credit to your account for each referral. There is no cap, so keep them coming.</p>
       </div>
-      <a class="btn btn-lime" data-i18n="navBook" href="https://thedripbaredina.com/weight-loss-consult">BOOK NOW</a>
+      <a class="btn btn-lime" data-i18n="navBook" href="https://thedripbaredina.com/glp-1-weekly-booking">BOOK NOW</a>
     </div>
   </div>
 </section>
@@ -335,7 +337,7 @@ footer .btn{margin:26px 0 30px}
     <div class="eyebrow on-dark" style="justify-content:center;display:inline-flex">The DRIPBaR Edina</div>
     <h2 data-i18n="finalH2">Start your medical weight loss journey <em>today.</em></h2>
     <p data-i18n="finalP">It all begins with a consult. Schedule yours now and walk out with a plan built around you.</p>
-    <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/weight-loss-consult">SCHEDULE YOUR CONSULT</a>
+    <a class="btn btn-cyan" data-i18n="ctaConsult" href="https://thedripbaredina.com/glp-1-weekly-booking">SCHEDULE YOUR CONSULT</a>
     <p class="fine" data-i18n="finalFine">Questions first? Call us at <a href="tel:+16124296822">(612) 429-6822</a>.</p>
   </div>
 </section>
@@ -348,11 +350,113 @@ footer .btn{margin:26px 0 30px}
     <p>3515 W. 70th St, Edina, MN 55435</p>
     <p>(612) 429-6822</p>
     <p data-i18n="hours">Mon-Fri 10-6 | Sat 10-4 | Sun 11-3</p>
-    <a class="btn btn-ghost" data-i18n="navBook" href="https://thedripbaredina.com/weight-loss-consult">BOOK NOW</a>
-    <p class="f-md" data-i18n="mdLine">All services administered under the supervision of Dr. Azhar Ahmed</p>
+    <a class="btn btn-ghost" data-i18n="navBook" href="https://thedripbaredina.com/glp-1-weekly-booking">BOOK NOW</a>
+    <p class="f-md" data-i18n="mdLine">All services administered under the supervision of Dr. Azhar Ahmed.</p>
   </div>
 </footer>
 
+<script>
+(function(){
+var ES={
+navTag:'P&eacute;rdida de Peso M&eacute;dica | Edina',
+navBook:'RESERVA AHORA',
+heroEyebrow:'The DRIPBaR Edina | P&eacute;rdida de Peso M&eacute;dica',
+heroH1:'P&eacute;rdida de peso m&eacute;dica<br><em>una inyecci&oacute;n</em> a la vez',
+heroLede:'Inyecciones individuales de Semaglutida y Tirzepatida, aplicadas por profesionales m&eacute;dicos con licencia. Sin paquetes grandes. Sin presi&oacute;n. Paga por dosis y avanza a tu propio ritmo. Todo comienza con una consulta.',
+ctaConsult:'AGENDA TU CONSULTA',
+heroPricing:'VER PRECIOS POR INYECCI&Oacute;N',
+trioEyebrow:'Por qu&eacute; inyecciones individuales',
+trioH2:'Sencillo. Supervisado. <span class="ghosted">A tu manera.</span>',
+trioLede:'Apoyo GLP-1 sin compromiso a largo plazo. Pagas cada inyecci&oacute;n conforme avanzas, con supervisi&oacute;n cl&iacute;nica en todo momento.',
+altConsult:'Enfermera conversando con una clienta sobre sus metas',
+card1H:'Empieza con una consulta <span class="arr">&rarr;</span>',
+card1P:'Todo plan comienza con una conversaci&oacute;n. Revisamos tus metas, tu estilo de vida y tu historial de salud antes que nada.',
+altShot:'Cliente descansando en la sala',
+card2H:'Paga por inyecci&oacute;n <span class="arr">&rarr;</span>',
+card2P:'Las inyecciones individuales comienzan en $25. Sin paquetes ni suscripciones. Una enfermera con licencia aplica tu dosis en minutos.',
+altSupport:'Enfermera explic\u00e1ndole su medicamento a una clienta',
+card3H:'Apoyo real <span class="arr">&rarr;</span>',
+card3P:'Supervisi&oacute;n cl&iacute;nica, ajustes de dosis y un equipo que se mantiene al pendiente de ti. No te dejamos resolverlo por tu cuenta.',
+howEyebrow:'C&oacute;mo funciona',
+howH2:'Cuatro pasos. <span class="ghosted">Cero complicaciones.</span>',
+howLede:'Nuestro programa de p&eacute;rdida de peso con supervisi&oacute;n m&eacute;dica est&aacute; dise&ntilde;ado para ayudar a regular el apetito, mejorar la funci&oacute;n metab&oacute;lica y lograr resultados sostenibles. Cada plan est&aacute; guiado por profesionales m&eacute;dicos con licencia y hecho a tu medida.',
+step1H:'Agenda tu consulta.',
+step1P:'Una conversaci&oacute;n uno a uno sobre tus metas, tu historial de salud y si el apoyo GLP-1 es adecuado para ti.',
+step2H:'Recibe tu plan.',
+step2P:'Tu medicamento y dosis inicial se ajustan a tu cuerpo y a tus metas, con supervisi&oacute;n m&eacute;dica desde el primer d&iacute;a.',
+step3H:'Ven por tu inyecci&oacute;n.',
+step3P:'Visitas semanales r&aacute;pidas. Una enfermera con licencia aplica tu dosis y en minutos sigues con tu d&iacute;a.',
+step4H:'Ajusta sobre la marcha.',
+step4P:'Las dosis aumentan poco a poco mientras tu cuerpo se adapta. Seguimos tu progreso y afinamos el plan en el camino.',
+altSemaPanel:'Enfermera conversando con una clienta en la sala',
+panelEyebrow:'Inyecciones individuales',
+semaH2:'Semaglutida. <span class="ghosted">Constante y comprobada.</span>',
+semaPill:'Ideal para un inicio gradual y constante',
+semaWhy:'Un medicamento GLP-1 que ayuda a regular el apetito, hacer m&aacute;s lenta la digesti&oacute;n y mejorar el control del az&uacute;car en la sangre. Al ayudarte a sentirte satisfecho por m&aacute;s tiempo y reducir los antojos, favorece una p&eacute;rdida de peso constante y sostenible junto con h&aacute;bitos de vida saludables.',
+spLabel:'Desde',
+spUnit:'por semana',
+spec:'Aplicada en la cl&iacute;nica por una enfermera con licencia. Ritmo semanal, la dosis se define en tu consulta.',
+altTirzPanel:'Enfermera revisando el progreso de un cliente en una tableta',
+tirzH2:'Tirzepatida. <span class="ghosted" style="color:#6b7a90">Poder de doble acci&oacute;n.</span>',
+tirzPill:'Ideal para un impulso m&aacute;s fuerte y r&aacute;pido',
+tirzWhy:'Act&uacute;a sobre los receptores GLP-1 y GIP, con un enfoque de doble acci&oacute;n para la p&eacute;rdida de peso. Ayuda a regular el apetito, mejorar la sensibilidad a la insulina y potenciar la funci&oacute;n metab&oacute;lica, logrando con frecuencia resultados m&aacute;s significativos y eficientes.',
+cmpEyebrow:'Lado a lado',
+cmpH2:'&iquest;Cu&aacute;l es la indicada para ti? <span class="ghosted">Tu consulta lo decide.</span>',
+cmpSema:'Semaglutida',
+cmpTirz:'Tirzepatida',
+cmpR1a:'C&oacute;mo funciona',
+cmpR1b:'Act&uacute;a sobre los receptores GLP-1 para reducir el apetito y hacer m&aacute;s lenta la digesti&oacute;n.',
+cmpR1c:'Act&uacute;a sobre los receptores GLP-1 y GIP con un enfoque de doble acci&oacute;n.',
+cmpR2a:'Ritmo t&iacute;pico',
+cmpR2b:'Progreso gradual y constante.',
+cmpR2c:'Resultados a menudo m&aacute;s significativos y eficientes.',
+cmpR3a:'Rango de dosis',
+cmpR3b:'.25 mg a 2.4 mg',
+cmpR3c:'2.5 mg a 15 mg',
+cmpR5a:'Precio inicial',
+cmpR5b:'$25 por semana',
+cmpR5c:'$39 por semana',
+cmpNote:'Tu equipo m&eacute;dico te recomendar&aacute; el medicamento y la dosis inicial adecuados en tu consulta.',
+refEyebrow:'Recomienda a un amigo',
+refH2:'Trae a un amigo y recibe $35.',
+refP:'Recomienda a un amigo y recibe un cr&eacute;dito de $35 en tu cuenta por cada referido. No hay l&iacute;mite, as&iacute; que sigue invitando.',
+finalH2:'Comienza tu camino de p&eacute;rdida de peso m&eacute;dica <em>hoy.</em>',
+finalP:'Todo comienza con una consulta. Agenda la tuya ahora y sal con un plan hecho a tu medida.',
+finalFine:'&iquest;Tienes preguntas primero? Ll&aacute;manos al <a href="tel:+16124296822">(612) 429-6822</a>.',
+hours:'Lun-Vie 10-6 | S&aacute;b 10-4 | Dom 11-3',
+mdLine:'Todos los servicios se administran bajo la supervisi&oacute;n del Dr. Azhar Ahmed.'
+};
+var LS='edLang';
+var els=document.querySelectorAll('[data-i18n]');
+var altEls=document.querySelectorAll('[data-i18n-alt]');
+var EN={},ENALT={};
+els.forEach(function(el){EN[el.getAttribute('data-i18n')]=el.innerHTML;});
+altEls.forEach(function(el){ENALT[el.getAttribute('data-i18n-alt')]=el.getAttribute('alt');});
+function setLang(l){
+ document.documentElement.lang=l;
+ try{localStorage.setItem(LS,l);}catch(e){}
+ els.forEach(function(el){
+  var k=el.getAttribute('data-i18n');
+  var v=(l==='es')?ES[k]:EN[k];
+  if(v!==undefined) el.innerHTML=v;
+ });
+ altEls.forEach(function(el){
+  var k=el.getAttribute('data-i18n-alt');
+  var v=(l==='es')?ES[k]:ENALT[k];
+  if(v!==undefined) el.setAttribute('alt',v);
+ });
+ document.querySelectorAll('[data-setlang]').forEach(function(b){
+  b.classList.toggle('on',b.getAttribute('data-setlang')===l);
+ });
+}
+document.querySelectorAll('[data-setlang]').forEach(function(b){
+ b.addEventListener('click',function(){setLang(b.getAttribute('data-setlang'));});
+});
+var saved='en';
+try{saved=localStorage.getItem(LS)||'en';}catch(e){}
+if(saved==='es') setLang('es');
+})();
+</script>
 
 </body>
 </html>

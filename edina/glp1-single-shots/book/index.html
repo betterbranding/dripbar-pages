@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Your GLP-1 Consult | The DRIPBaR Edina</title>
-<meta name="description" content="Schedule your GLP-1 weight loss consultation at The DRIPBaR Edina in Edina. Pick a time that works for you.">
+<meta name="description" content="Schedule your GLP-1 weight loss consultation at The DRIPBaR Edina. Pick a time that works for you.">
+<link rel="canonical" href="https://thedripbaredina.com/glp-1-weekly-booking">
+<link rel="icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png">
+<link rel="apple-touch-icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -31,6 +36,10 @@ a{color:var(--cyan)}
 .nav-back{font-family:var(--bebas);font-size:16px;letter-spacing:1px;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);padding:9px 20px;border-radius:6px;transition:all .2s}
 .nav-back:hover{background:var(--navy);color:#fff}
 .nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:inline-flex;align-items:center;border:1.5px solid var(--navy);border-radius:100px;padding:2px;background:#fff}
+.lang .sep{color:var(--divider);padding:0 1px;font-size:12px}
+.lang button{border:none;background:none;font-family:var(--bebas);font-size:13px;letter-spacing:1px;color:var(--navy);padding:4px 9px;border-radius:100px;cursor:pointer;line-height:1.2}
+.lang button.on{background:var(--navy);color:#fff}
 @media(max-width:700px){.nav-tag{display:none}}
 
 /* Header band */
@@ -145,6 +154,7 @@ a{color:var(--cyan)}
     <a class="nav-logo" href="https://thedripbaredina.com"><img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR"></a>
     <span class="nav-tag" data-i18n="navTag">Medical Weight Loss | Edina</span>
     <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-setlang="en" class="on">EN</button><span class="sep">|</span><button type="button" data-setlang="es">ES</button></div>
       <a class="nav-back" data-i18n="navBack" href="https://thedripbaredina.com/glp-1-weekly-shot">BACK TO PROGRAM</a>
     </div>
   </div>
@@ -215,9 +225,9 @@ a{color:var(--cyan)}
     <form class="frm" id="frm" novalidate>
       <div class="fld"><label for="fn" data-i18n="lblFn">First Name</label><input id="fn" type="text" autocomplete="given-name" required></div>
       <div class="fld"><label for="ln" data-i18n="lblLn">Last Name</label><input id="ln" type="text" autocomplete="family-name" required></div>
-      <div class="fld"><label for="ph" data-i18n="lblPh">Phone</label><input id="ph" type="tel" autocomplete="tel" placeholder="(210) 555-1234" required></div>
+      <div class="fld"><label for="ph" data-i18n="lblPh">Phone</label><input id="ph" type="tel" autocomplete="tel" placeholder="(612) 555-1234" required></div>
       <div class="fld"><label for="em" data-i18n="lblEm">Email</label><input id="em" type="email" autocomplete="email" required></div>
-      <label class="tc"><input type="checkbox" id="tc"><span data-i18n="tcText">I agree to the <a href="EDINA-PRIVACY-URL-HERE" target="_blank" rel="noopener">Privacy Policy and Terms of Service</a>, and I consent to being contacted about my appointment.</span></label>
+      <label class="tc"><input type="checkbox" id="tc"><span data-i18n="tcText">I agree to the <a href="https://app.genierocket.com/v2/preview/Ekvjw9Z2UPGks9ZcDdsa#ppyes" target="_blank" rel="noopener">Privacy Policy and Terms of Service</a>, and I consent to being contacted about my appointment.</span></label>
     </form>
     <div class="errmsg" id="bookErr" data-i18n="bookErrTxt">Something went wrong booking your spot. Please try again, or call us at <a href="tel:+16124296822">(612) 429-6822</a>.</div>
     <div class="btnrow">
@@ -244,19 +254,22 @@ a{color:var(--cyan)}
     <div class="loc">Edina</div>
     3515 W. 70th St, Edina, MN 55435<br>
     (612) 429-6822
-    <div class="md" data-i18n="mdLine">All services administered under the supervision of Dr. Azhar Ahmed</div>
+    <div class="md" data-i18n="mdLine">All services administered under the supervision of Dr. Azhar Ahmed.</div>
   </div>
 </footer>
 
 <script>
 (function(){
-var CAL_ID='EDINA-CAL-ID-HERE';
+var CAL_ID='laWkY37qfAtqqvSRfSl6';
 var LOC_ID='FLJ3lWKPEa7lIRYX5X8C';
-var FORM_ID='EDINA-FORM-ID-HERE';
+var FORM_ID='';
 var API='https://backend.leadconnectorhq.com';
 var TZ='America/Chicago';
 
+/* i18n: dynamic JS strings */
+var LANG='en';
 var T={
+en:{
  months:['January','February','March','April','May','June','July','August','September','October','November','December'],
  dows:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
  dowsFull:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
@@ -268,21 +281,37 @@ var T={
  summaryDefault:'GLP-1 consult',
  summaryLoc:' at The DRIPBaR Edina',
  summaryAt:' at ',
- optSemaT:'Semaglutide',optSemaD:'Weekly GLP-1 shots, $25 to $65 per dose.',
- optTirzT:'Tirzepatide',optTirzD:'Dual-action weekly shots, $35 to $155 per dose.',
+ optSemaT:'Semaglutide',optSemaD:'Weekly GLP-1 shots, starting at $25 per week.',
+ optTirzT:'Tirzepatide',optTirzD:'Dual-action weekly shots, starting at $39 per week.',
  optSermT:'Sermorelin',optSermD:'Supports your natural growth hormone production.',
  optMiccT:'IM MICC (Lipo B12)',optMiccD:'Metabolism support shot, $40.',
  optLeanT:'IM Lean Injection',optLeanD:'Lean muscle and metabolism support, $50.',
  optNoneT:'Not sure yet',optNoneD:'Talk it through with our team at your consult.'
-};
-function t(k){return T[k];}
+},
+es:{
+ months:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+ dows:['Dom','Lun','Mar','Mi\u00e9','Jue','Vie','S\u00e1b'],
+ dowsFull:['domingo','lunes','martes','mi\u00e9rcoles','jueves','viernes','s\u00e1bado'],
+ monthsFull:['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],
+ selectDate:'Selecciona una fecha',
+ booking:'RESERVANDO...',
+ bookBtn:'RESERVAR MI CONSULTA',
+ summaryName:'Consulta de {n}',
+ summaryDefault:'Consulta GLP-1',
+ summaryLoc:' en The DRIPBaR Edina',
+ summaryAt:' a las ',
+ optSemaT:'Semaglutida',optSemaD:'Inyecciones GLP-1 semanales, desde $25 por semana.',
+ optTirzT:'Tirzepatida',optTirzD:'Inyecciones semanales de doble acci\u00f3n, desde $39 por semana.',
+ optSermT:'Sermorelina',optSermD:'Apoya tu producci\u00f3n natural de hormona del crecimiento.',
+ optMiccT:'IM MICC (Lipo B12)',optMiccD:'Inyecci\u00f3n de apoyo al metabolismo, $40.',
+ optLeanT:'Inyecci\u00f3n IM Lean',optLeanD:'Apoyo para m\u00fasculo magro y metabolismo, $50.',
+ optNoneT:'A\u00fan no estoy seguro',optNoneD:'Plat\u00edcalo con nuestro equipo en tu consulta.'
+}};
+function t(k){return T[LANG][k];}
 
 var OPTIONS=[
- {v:'Semaglutide (Requires Package)',tk:'optSemaT',dk:'optSemaD'},
- {v:'Tirzepatide (Requires Package)',tk:'optTirzT',dk:'optTirzD'},
- {v:'Sermorelin (Requires Package)',tk:'optSermT',dk:'optSermD'},
- {v:'IM MICC (LIBO B12) - ($40)',tk:'optMiccT',dk:'optMiccD'},
- {v:'IM Lean Injection ($50)',tk:'optLeanT',dk:'optLeanD'},
+ {v:'Weekly semaglutide shot',tk:'optSemaT',dk:'optSemaD'},
+ {v:'Weekly tirzepatide shot',tk:'optTirzT',dk:'optTirzD'},
  {v:'',tk:'optNoneT',dk:'optNoneD'}
 ];
 
@@ -391,6 +420,7 @@ function fmtTime(iso){
 function fmtDay(key){
  var p=key.split('-');
  var d=new Date(parseInt(p[0],10),parseInt(p[1],10)-1,parseInt(p[2],10));
+ if(LANG==='es') return t('dowsFull')[d.getDay()]+', '+d.getDate()+' de '+t('monthsFull')[d.getMonth()];
  return t('dowsFull')[d.getDay()]+', '+t('monthsFull')[d.getMonth()]+' '+d.getDate();
 }
 
@@ -414,7 +444,7 @@ function renderSlots(){
 
 function updateSummary(){
  if(!state.selDay||!state.selSlot) return;
- var title=(state.opt&&state.opt.v)?t('summaryName').replace('{n}',t(state.opt.tk)):t('summaryDefault');
+ var title=(state.opt&&state.opt.tk!=='optNoneT')?t('summaryName').replace('{n}',t(state.opt.tk)):t('summaryDefault');
  $('summary').innerHTML='<b>'+title+'</b>'+t('summaryLoc')+'<br>'+fmtDay(state.selDay)+t('summaryAt')+fmtTime(state.selSlot)+' CT';
 }
 $('toStep3').onclick=function(){
@@ -450,11 +480,24 @@ $('bookBtn').onclick=function(){
   phone:'+'+digits,
   email:em.value.trim(),
   terms_and_conditions:'I agree to the terms and conditions',
-  formId:FORM_ID,
   eventData:{source:location.href,medium:'calendar',mediumId:CAL_ID},
   Timezone:'America/Chicago'
  };
- if(state.opt && state.opt.v) payload.which_weight_loss_injection_are_you_booking_for_today=state.opt.v;
+ var nd=state.selDay.split('-');
+ var ndt=new Date(parseInt(nd[0],10),parseInt(nd[1],10)-1,parseInt(nd[2],10));
+ var interest=(state.opt&&state.opt.v)?state.opt.v:'Not sure yet';
+ var details=[
+  'Interest: '+interest,
+  'Source: Edina GLP-1 Weekly Shot page',
+  'Requested: '+T.en.dowsFull[ndt.getDay()]+', '+T.en.monthsFull[ndt.getMonth()]+' '+ndt.getDate()+' at '+fmtTime(state.selSlot)+' CT',
+  'Booked: '+new Date().toLocaleString('en-US',{timeZone:TZ})+' CT'
+ ];
+ if(LANG==='es') details.push('Language: Spanish');
+ payload.title='GLP-1 Consult with '+payload.first_name+' '+payload.last_name;
+ payload.notes=details.join('\n');
+ payload.description=payload.notes;
+ payload['ftxWE4F5W6LKk7oXnkDA']=interest;
+ payload['glp1_consult_notes']=interest;
 
  var fd=new FormData();
  fd.append('formData',JSON.stringify(payload));
@@ -472,6 +515,84 @@ $('bookBtn').onclick=function(){
  });
 };
 
+/* i18n: static page copy */
+var ES_DOM={
+navTag:'P\u00e9rdida de Peso M\u00e9dica | Edina',
+navBack:'VOLVER AL PROGRAMA',
+headH1:'Agenda tu <em>consulta</em>.',
+headP:'Quince minutos con nuestro equipo cl\u00ednico. Sin presi\u00f3n y sin compromiso. Elige un horario que te funcione y nosotros nos encargamos del resto.',
+dot1Lbl:'Tu Meta',
+dot2Lbl:'Fecha y Hora',
+dot3Lbl:'Tus Datos',
+s1H:'\u00bfQu\u00e9 te interesa?',
+s1Sub:'Esto ayuda a nuestro equipo a prepararse para tu consulta. Siempre puedes cambiar de opini\u00f3n despu\u00e9s de hablar con nosotros.',
+btnChooseTime:'ELEGIR HORARIO',
+s2H:'Elige fecha y hora.',
+s2Sub:'Todos los horarios son en hora del Centro. Las consultas duran unos 15 minutos.',
+loadingTxt:'Cargando horarios disponibles.',
+ariaPrev:'Mes anterior',
+ariaNext:'Mes siguiente',
+tzLine:'Hora del Centro (EE. UU.)',
+calErrTxt:'No pudimos cargar los horarios disponibles. Actualiza la p\u00e1gina o ll\u00e1manos al <a href="tel:+16124296822">(612) 429-6822</a> y te agendamos.',
+btnBack:'ATR\u00c1S',
+btnDetails:'TUS DATOS',
+s3H:'Ya casi terminas.',
+s3Sub:'Solo necesitamos algunos datos para apartar tu lugar.',
+lblFn:'Nombre',
+lblLn:'Apellido',
+lblPh:'Tel\u00e9fono',
+lblEm:'Correo Electr\u00f3nico',
+tcText:'Acepto la <a href="https://app.genierocket.com/v2/preview/Ekvjw9Z2UPGks9ZcDdsa#ppyes" target="_blank" rel="noopener">Pol\u00edtica de Privacidad y los T\u00e9rminos de Servicio</a>, y doy mi consentimiento para que me contacten sobre mi cita.',
+bookErrTxt:'Algo sali\u00f3 mal al reservar tu lugar. Int\u00e9ntalo de nuevo o ll\u00e1manos al <a href="tel:+16124296822">(612) 429-6822</a>.',
+btnBook:'RESERVAR MI CONSULTA',
+confirmH:'Tu cita est\u00e1 reservada.',
+confirmP:'Revisa tu correo y tu tel\u00e9fono para ver la confirmaci\u00f3n. Si algo cambia, solo ll\u00e1manos y lo ajustamos.',
+mdLine:'Todos los servicios se administran bajo la supervisi\u00f3n del Dr. Azhar Ahmed.'
+};
+var i18nEls=document.querySelectorAll('[data-i18n]');
+var ariaEls=document.querySelectorAll('[data-i18n-aria]');
+var EN_DOM={},EN_ARIA={};
+i18nEls.forEach(function(el){EN_DOM[el.getAttribute('data-i18n')]=el.innerHTML;});
+ariaEls.forEach(function(el){EN_ARIA[el.getAttribute('data-i18n-aria')]=el.getAttribute('aria-label');});
+
+function refreshDynamic(){
+ Array.prototype.forEach.call(optsEl.children,function(c,i){
+  var o=OPTIONS[i];
+  c.querySelector('.t').textContent=t(o.tk);
+  c.querySelector('.d').textContent=t(o.dk);
+ });
+ if(state.loaded&&state.month){ renderCal(); renderSlots(); }
+ updateSummary();
+ if(state.booked&&state.selDay&&state.selSlot) $('confirmWhen').textContent=fmtDay(state.selDay)+t('summaryAt')+fmtTime(state.selSlot)+' CT';
+ var bb=$('bookBtn');
+ if(bb.disabled&&!state.booked) bb.textContent=t('booking');
+}
+
+function setLang(l){
+ LANG=l;
+ document.documentElement.lang=l;
+ try{localStorage.setItem('edLang',l);}catch(e){}
+ i18nEls.forEach(function(el){
+  var k=el.getAttribute('data-i18n');
+  var v=(l==='es')?ES_DOM[k]:EN_DOM[k];
+  if(v!==undefined) el.innerHTML=v;
+ });
+ ariaEls.forEach(function(el){
+  var k=el.getAttribute('data-i18n-aria');
+  var v=(l==='es')?ES_DOM[k]:EN_ARIA[k];
+  if(v!==undefined) el.setAttribute('aria-label',v);
+ });
+ document.querySelectorAll('[data-setlang]').forEach(function(b){
+  b.classList.toggle('on',b.getAttribute('data-setlang')===l);
+ });
+ refreshDynamic();
+}
+document.querySelectorAll('[data-setlang]').forEach(function(b){
+ b.addEventListener('click',function(){setLang(b.getAttribute('data-setlang'));});
+});
+var savedLang='en';
+try{savedLang=localStorage.getItem('edLang')||'en';}catch(e){}
+if(savedLang==='es') setLang('es');
 })();
 </script>
 </body>
