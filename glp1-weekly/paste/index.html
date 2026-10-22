@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>GLP-1 Weekly Shot &middot; Burleson, Edina, Austin &middot; GHL Paste Blocks</title>
+<title>GLP-1 Weekly Shot &middot; Burleson, Edina, Austin, Keller &middot; GHL Paste Blocks</title>
 <link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg">
 <style>
   :root { --navy:#0f1f33; --pink:#FF0099; }
@@ -36,18 +36,18 @@
 </head>
 <body>
 <header>
-  <h1>GLP-1 Weekly Shot &middot; Burleson, Edina, Austin</h1>
+  <h1>GLP-1 Weekly Shot &middot; Burleson, Edina, Austin, Keller</h1>
   <p>Landing + booking page code. Preview only until each location's offer is confirmed. Click Copy, paste into GHL. URLs pre-filled.</p>
 </header>
-<nav><a href="#burleson">Burleson</a><a href="#edina">Edina</a><a href="#austin">Austin</a></nav>
+<nav><a href="#burleson">Burleson</a><a href="#edina">Edina</a><a href="#austin">Austin</a><a href="#keller">Keller</a></nav>
 <main>
 <div class="steps">
   <strong>How to use</strong>
   <ol>
-    <li>On each location's site, create two pages: <code class="inline">/glp-1-weekly-shot</code> (landing) and the booking page shown on its cards (<code class="inline">/weight-loss-consult</code> for Burleson and Austin, <code class="inline">/glp-1-weekly-booking</code> for Edina).</li>
+    <li>On each location's site, create two pages: <code class="inline">/glp-1-weekly-shot</code> (landing) and the booking page shown on its cards (<code class="inline">/weight-loss-consult</code> for Burleson, Austin and Keller, <code class="inline">/glp-1-weekly-booking</code> for Edina). Keller's pages go on booking.ivkeller.com, next to its GLP-1 Restart pages.</li>
     <li>Body loaders (BLOCK A / C) go into a full-width Custom Code element on the page body.</li>
     <li>Header meta (BLOCK B / D) goes into the page's Settings &gt; Tracking Code &gt; Header. Paste as-is.</li>
-    <li>Save and Publish all 6 pages, then send me the go-ahead for the click-through test. Burleson's Body blocks already include its GTM snippet.</li>
+    <li>Save and Publish all 8 pages, then send me the go-ahead for the click-through test. Burleson's Body blocks already include its GTM snippet.</li>
   </ol>
 </div>
 <section id="burleson">
@@ -708,6 +708,223 @@ j=d.createElement(s),dl=l!=&#x27;dataLayer&#x27;?&#x27;&amp;l=&#x27;+l:&#x27;&#x
       &quot;url&quot;: &quot;https://www.dripatx.com/weight-loss-consult&quot;,
       &quot;name&quot;: &quot;Book Your GLP-1 Consult | The DRIPBaR Austin&quot;,
       &quot;description&quot;: &quot;Book your GLP-1 consultation at The DRIPBaR Austin.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+</section>
+<section id="keller">
+<h2>Keller</h2>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK A &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://booking.ivkeller.com/glp-1-weekly-shot</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="keller-blocka">Copy</button>
+  </div>
+  <pre id="keller-blocka"><code>&lt;script&gt;
+/* The DRIPBaR Keller loader v7 bootstrap | glp-1-weekly-shot | GLP-1 Weekly Shot | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/keller/glp1-single-shots/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-pink">Landing page</span>
+      <strong>BLOCK B &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://booking.ivkeller.com/glp-1-weekly-shot</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="keller-blockb">Copy</button>
+  </div>
+  <pre id="keller-blockb"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://booking.ivkeller.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Semaglutide and Tirzepatide single shots at The DRIPBaR Keller. Pay per dose, no packages. Medically supervised weight loss that starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://booking.ivkeller.com/glp-1-weekly-shot&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Keller&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in Keller. It all begins with a consult.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/keller/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;GLP-1 Single Shots | The DRIPBaR Keller&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in Keller.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/keller/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Keller&quot;,
+      &quot;url&quot;: &quot;https://keller.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+18179848931&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;1632 Keller Pkwy, #500&quot;,
+        &quot;addressLocality&quot;: &quot;Keller&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;76248&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://booking.ivkeller.com/glp-1-weekly-shot&quot;,
+      &quot;url&quot;: &quot;https://booking.ivkeller.com/glp-1-weekly-shot&quot;,
+      &quot;name&quot;: &quot;GLP-1 Single Shots | Medical Weight Loss | The DRIPBaR Keller&quot;,
+      &quot;description&quot;: &quot;Semaglutide and Tirzepatide single shots, pay per dose. Medically supervised weight loss in Keller.&quot;
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK C &middot; Body Custom Code element</strong>
+      <p class="note">Page: <code class="inline">https://booking.ivkeller.com/weight-loss-consult</code>. Paste into a Custom Code element in the page body.</p>
+    </div>
+    <button class="copy" data-target="keller-blockc">Copy</button>
+  </div>
+  <pre id="keller-blockc"><code>&lt;script&gt;
+/* The DRIPBaR Keller loader v7 bootstrap | weight-loss-consult | GLP-1 Booking | engine: /assets/loader/v7.js */
+(function () {
+  if (window.__drBoot) return; /* never run twice */
+  var GH = &#x27;https://betterbranding.github.io/dripbar-pages&#x27;;
+  var SRC = GH + &#x27;/keller/glp1-single-shots/book/index.html?v=1&#x27;;
+  var ENGINE = &#x27;https://betterbranding.github.io/dripbar-pages/assets/loader/v7.js?v=7&#x27;;
+  var boot = window.__drBoot = { done: false, swapped: false, splash: null, ssrHead: [], gtmInline: [], html: null };
+  try {
+    var sp = document.createElement(&#x27;style&#x27;);
+    sp.id = &#x27;fastSplash&#x27;;
+    sp.textContent = &#x27;html{background:#0a1220!important}body&gt;*{visibility:hidden!important}&#x27; +
+      &#x27;html::before{content:&quot;&quot;;position:fixed;inset:0;z-index:2147483646;background-color:#0a1220;&#x27; +
+      &#x27;background-image:url(&#x27; + GH + &#x27;/assets/email/logo-white-green.png);background-repeat:no-repeat;&#x27; +
+      &#x27;background-position:center calc(50% - 26px);background-size:min(220px,58vw) auto}&#x27; +
+      &#x27;html::after{content:&quot;&quot;;position:fixed;top:calc(50% + 30px);left:50%;width:26px;height:26px;margin-left:-13px;&#x27; +
+      &#x27;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:#0E9EC1;&#x27; +
+      &#x27;animation:fastspin .7s linear infinite;z-index:2147483647}&#x27; +
+      &#x27;@keyframes fastspin{to{transform:rotate(360deg)}}&#x27; +
+      &#x27;@media (prefers-reduced-motion:reduce){html::after{animation:none}}&#x27;;
+    (document.head || document.documentElement).appendChild(sp);
+    boot.splash = sp;
+  } catch (e) {}
+  try {
+    boot.ssrHead = Array.prototype.slice.call(document.head.children);
+    var ss = document.getElementsByTagName(&#x27;script&#x27;);
+    for (var i = 0; i &lt; ss.length; i++) {
+      if (!ss[i].getAttribute(&#x27;src&#x27;) &amp;&amp; /googletagmanager\.com\/gtm\.js/.test(ss[i].textContent || &#x27;&#x27;)) boot.gtmInline.push(ss[i]);
+    }
+  } catch (e) {}
+  boot.html = fetch(SRC).then(function (r) { if (!r.ok) throw new Error(&#x27;HTTP &#x27; + r.status); return r.text(); });
+  boot.html.catch(function () {});
+  var eng = document.createElement(&#x27;script&#x27;);
+  eng.src = ENGINE; eng.async = true; eng.setAttribute(&#x27;data-dr&#x27;, &#x27;&#x27;);
+  eng.onerror = function () { if (boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); };
+  (document.head || document.documentElement).appendChild(eng);
+  setTimeout(function () { if (!boot.swapped &amp;&amp; boot.splash &amp;&amp; boot.splash.parentNode) boot.splash.parentNode.removeChild(boot.splash); }, 12000);
+})();
+&lt;/script&gt;</code></pre>
+</div>
+<div class="card">
+  <div class="card-head">
+    <div>
+      <span class="tag tag-navy">Booking page</span>
+      <strong>BLOCK D &middot; Header Tracking Code</strong>
+      <p class="note">Page: <code class="inline">https://booking.ivkeller.com/weight-loss-consult</code>. Paste into Settings &gt; Tracking Code &gt; Header.</p>
+    </div>
+    <button class="copy" data-target="keller-blockd">Copy</button>
+  </div>
+  <pre id="keller-blockd"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://booking.ivkeller.com/weight-loss-consult&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Book your GLP-1 consultation at The DRIPBaR Keller. Pick a time that works. Medically supervised weight loss starts with a simple consult.&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico&quot; sizes=&quot;32x32&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;48x48&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://booking.ivkeller.com/weight-loss-consult&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Keller&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Keller. Semaglutide and Tirzepatide single shots, pay per dose.&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/keller/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Book Your GLP-1 Consult | The DRIPBaR Keller&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;Pick a time for your GLP-1 consultation at The DRIPBaR Keller.&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://betterbranding.github.io/dripbar-pages/keller/glp1-single-shots/assets/social.jpg&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#3C4C62&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;MedicalClinic&quot;,
+      &quot;name&quot;: &quot;The DRIPBaR Keller&quot;,
+      &quot;url&quot;: &quot;https://keller.thedripbar.com&quot;,
+      &quot;telephone&quot;: &quot;+18179848931&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;1632 Keller Pkwy, #500&quot;,
+        &quot;addressLocality&quot;: &quot;Keller&quot;,
+        &quot;addressRegion&quot;: &quot;TX&quot;,
+        &quot;postalCode&quot;: &quot;76248&quot;,
+        &quot;addressCountry&quot;: &quot;US&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://booking.ivkeller.com/weight-loss-consult&quot;,
+      &quot;url&quot;: &quot;https://booking.ivkeller.com/weight-loss-consult&quot;,
+      &quot;name&quot;: &quot;Book Your GLP-1 Consult | The DRIPBaR Keller&quot;,
+      &quot;description&quot;: &quot;Book your GLP-1 consultation at The DRIPBaR Keller.&quot;
     }
   ]
 }
