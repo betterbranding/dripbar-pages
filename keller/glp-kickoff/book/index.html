@@ -431,6 +431,15 @@ $('bookBtn').onclick=function(){
   eventData:{source:location.href,medium:'calendar',mediumId:CAL_ID},
   Timezone:TZ
  };
+ /* Booking choice in the appointment notes. GHL's public booking endpoint keeps description, not notes. */
+ var details=[
+  'Interest: '+(state.opt?state.opt.t:'Not specified'),
+  'Source: Keller GLP-1 Kickoff page',
+  'Requested: '+fmtDay(state.selDay)+' at '+fmtTime(state.selSlot)+' CT',
+  'Booked: '+new Date().toLocaleString('en-US',{timeZone:TZ})+' CT'
+ ];
+ payload.notes=details.join('\n');
+ payload.description=payload.notes;
 
  var fd=new FormData();
  fd.append('formData',JSON.stringify(payload));
