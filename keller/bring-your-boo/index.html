@@ -401,16 +401,22 @@ $('bookBtn').onclick=function(){
     ok=false; $('bookErr').textContent='You and your boo each need your own mobile number and email so you both get confirmations.'; $('bookErr').style.display='block'; return;
   }
   if(!ok)return;
-  var btn=$('bookBtn'); btn.disabled=true; btn.textContent='HOLDING 2 SPOTS...'; $('bookErr').style.display='none';
-  bookOne(a,b,'Booker')
-   .then(function(){return bookOne(b,a,'Boo')})
+  /* If the booker's spot was already held on an earlier try (same slot + same booker), only retry the boo. */
+  var key=st.slot+'|'+a.ph+'|'+a.em.toLowerCase();
+  if(st.held && st.held!==key) st.held=null;
+  var btn=$('bookBtn'); btn.disabled=true; btn.textContent=st.held?'HOLDING YOUR BOO\'S SPOT...':'HOLDING 2 SPOTS...'; $('bookErr').style.display='none';
+  (st.held?Promise.resolve():bookOne(a,b,'Booker').then(function(){st.held=key}))
+   .then(function(){return bookOne(b,a,'Boo').catch(function(){throw 'boo'})})
    .then(function(){
+     st.held=null;
      $('doneWhen').textContent=fmtDay(st.day)+' at '+fmtTime(st.slot)+' CT';
      $('doneNames').textContent=a.fn+' + '+b.fn;
      go(3);
    })
-   .catch(function(){
-     $('bookErr').innerHTML='Something went wrong holding your spots. Please try again, or call us at <a href="tel:+18179848931">(817) 984-8931</a>.';
+   .catch(function(e){
+     $('bookErr').innerHTML=(e==='boo'
+       ?'Your spot is saved, but we couldn\'t hold your boo\'s spot. Tap BOOK FOR TWO to try again (we won\'t double-book you), or call us at <a href="tel:+18179848931">(817) 984-8931</a>.'
+       :'Something went wrong holding your spots. Please try again, or call us at <a href="tel:+18179848931">(817) 984-8931</a>.');
      $('bookErr').style.display='block'; btn.disabled=false; btn.textContent='BOOK FOR TWO';
    });
 };
