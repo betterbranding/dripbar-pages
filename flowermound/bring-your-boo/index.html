@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bring Your Boo Week | The DRIPBaR Flower Mound</title>
+<meta name="description" content="Bring your boo to The DRIPBaR Flower Mound and you both get 25% off your IVs. Book your time for two.">
+<link rel="canonical" href="https://dripbarflowermound.com/bring-your-boo">
+<link rel="icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0F0819; --plum:#1E1035; --plum2:#2A1848; --edge:#4A3575; --violet:#5B4599;
+  --lime:#C1D81A; --orange:#F28C28; --lav:#D9D2E9; --mute:#A99CC8; --navy:#3C4C62;
+  --bebas:'Bebas Neue',Impact,'Arial Narrow',Arial,sans-serif;
+  --pop:'Poppins',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--pop);color:var(--lav);background:var(--night);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(1200px 600px at 50% -10%,rgba(91,69,153,.55),transparent 60%),radial-gradient(700px 500px at 100% 60%,rgba(242,140,40,.10),transparent 60%),radial-gradient(700px 500px at 0% 90%,rgba(193,216,26,.08),transparent 60%);}
+img{display:block;max-width:100%}
+a{color:var(--lime)}
+.wrap{width:min(720px,92vw);margin:0 auto;position:relative;z-index:2}
+
+/* floating ghosts + fog */
+.sky{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sky .g{position:absolute;opacity:.10;animation:drift 14s ease-in-out infinite}
+.sky .g:nth-child(1){top:12%;left:4%;width:70px}
+.sky .g:nth-child(2){top:46%;right:3%;width:90px;animation-delay:-5s;animation-duration:17s}
+.sky .g:nth-child(3){top:80%;left:8%;width:54px;animation-delay:-9s}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-26px) rotate(4deg)}}
+
+.preview-flag{position:relative;z-index:3;background:var(--orange);color:var(--night);text-align:center;font-weight:600;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:7px 10px}
+
+/* hero */
+.hero{text-align:center;padding:26px 0 8px}
+.pumpkin{width:150px;margin:0 auto;filter:drop-shadow(0 0 28px rgba(242,140,40,.45))}
+.eyebrow{font-family:var(--bebas);letter-spacing:3px;color:var(--lime);font-size:17px;margin:6px 0 18px}
+.hero-img{border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 0 1px rgba(193,216,26,.18)}
+.hero h1{font-family:var(--bebas);font-size:clamp(44px,9vw,72px);line-height:.95;color:#fff;letter-spacing:1px;margin:4px 0 12px}
+.closenote{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 16px;padding:9px 14px;border-radius:12px;border:1px solid rgba(242,140,40,.45);background:rgba(242,140,40,.10);color:#fff;font-size:14px;font-weight:500;text-align:center}
+.closenote b{color:var(--orange);font-family:var(--bebas);letter-spacing:1.5px;font-size:17px;font-weight:400}
+.hero h1 em{font-style:normal;color:var(--lime);text-shadow:0 0 24px rgba(193,216,26,.45)}
+.hero p.lead{max-width:520px;margin:0 auto;font-size:15.5px;color:var(--lav)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 4px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--edge);background:rgba(42,24,72,.7);border-radius:999px;padding:8px 15px;font-size:12.5px;font-weight:600;color:#fff;letter-spacing:.3px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+.chip.o i{background:var(--orange);box-shadow:0 0 10px var(--orange)}
+.chip.v i{background:#B99CFF;box-shadow:0 0 10px #B99CFF}
+
+/* booking card */
+.card{margin:34px 0 0;background:linear-gradient(180deg,rgba(42,24,72,.92),rgba(30,16,53,.95));border:1px solid var(--edge);border-radius:22px;padding:30px 26px 28px;box-shadow:0 30px 80px rgba(0,0,0,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--lime),var(--orange),#B99CFF)}
+@media(max-width:560px){.card{padding:24px 18px 22px;border-radius:18px}}
+.steps{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:22px}
+.dot{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--mute)}
+.dot b{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--edge);font-family:var(--bebas);font-size:15px;font-weight:400;color:var(--mute);transition:all .25s}
+.dot.on{color:#fff}.dot.on b{background:var(--lime);border-color:var(--lime);color:var(--navy);box-shadow:0 0 16px rgba(193,216,26,.5)}
+.dot.done b{background:var(--violet);border-color:var(--violet);color:#fff}
+.line{width:40px;height:2px;background:var(--edge)}
+.card h2{font-family:var(--bebas);font-size:clamp(30px,6vw,40px);letter-spacing:1px;color:#fff;line-height:1;text-align:center}
+.card .sub{text-align:center;font-size:13.5px;color:var(--mute);margin:8px 0 22px}
+
+/* day picker */
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+@media(max-width:560px){.days{grid-template-columns:repeat(3,1fr)}}
+.day{border:1.5px solid var(--edge);background:rgba(15,8,25,.55);border-radius:14px;padding:12px 4px 10px;text-align:center;cursor:pointer;color:#fff;transition:all .18s;font-family:var(--pop)}
+.day .dw{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);font-weight:600}
+.day .dn{font-family:var(--bebas);font-size:34px;line-height:1;margin:4px 0 2px}
+.day .dm{font-size:11px;color:var(--mute)}
+.day:hover:not(:disabled){border-color:var(--lime);transform:translateY(-2px)}
+.day.sel{border-color:var(--lime);background:rgba(193,216,26,.12);box-shadow:0 0 0 1px var(--lime),0 0 22px rgba(193,216,26,.25)}
+.day.sel .dn{color:var(--lime)}
+.day.hw .dm{color:var(--orange);font-weight:600}
+.day:disabled{opacity:.35;cursor:default}
+.times-h{font-family:var(--bebas);letter-spacing:1.5px;color:#fff;font-size:19px;margin:24px 0 12px;text-align:center}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(max-width:560px){.times{grid-template-columns:repeat(3,1fr)}}
+.t{border:1.5px solid var(--edge);background:transparent;color:#fff;border-radius:10px;padding:11px 0;font-family:var(--pop);font-weight:600;font-size:13.5px;cursor:pointer;transition:all .15s}
+.t:hover{border-color:var(--orange);color:var(--orange)}
+.t.sel{background:var(--orange);border-color:var(--orange);color:var(--night)}
+.hint{text-align:center;font-size:12.5px;color:var(--mute);margin-top:14px}
+.empty{text-align:center;color:var(--mute);font-size:14px;padding:14px 0}
+
+/* people */
+.pick{display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(15,8,25,.55);border:1px dashed var(--edge);border-radius:12px;padding:11px 14px;font-size:13.5px;color:#fff;margin-bottom:20px;text-align:center;flex-wrap:wrap}
+.pick b{color:var(--lime);font-weight:600}
+.pick button{background:none;border:none;color:var(--mute);text-decoration:underline;font-family:var(--pop);font-size:12px;cursor:pointer}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.people{grid-template-columns:1fr}}
+.who{border:1.5px solid var(--edge);border-radius:16px;padding:18px 16px 16px;background:rgba(15,8,25,.45);position:relative}
+.who.you{border-top:4px solid var(--lime)}
+.who.boo{border-top:4px solid var(--orange)}
+.who-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.who-h svg{width:30px;height:30px;flex:none}
+.who-h span{font-family:var(--bebas);font-size:24px;letter-spacing:1.2px;color:#fff;line-height:1}
+.who.you .who-h span em{color:var(--lime);font-style:normal}
+.who.boo .who-h span em{color:var(--orange);font-style:normal}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.f{display:flex;flex-direction:column;gap:4px;margin-top:9px}
+.f label{font-size:10.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--mute)}
+.f input{font-family:var(--pop);font-size:15px;padding:11px 12px;border-radius:10px;border:1.5px solid var(--edge);background:rgba(15,8,25,.7);color:#fff;outline:none;transition:border-color .15s;width:100%}
+.f input::placeholder{color:#6f6390}
+.you .f input:focus{border-color:var(--lime)}
+.boo .f input:focus{border-color:var(--orange)}
+.f input.err{border-color:#ff5d73}
+.consent{display:flex;gap:11px;align-items:flex-start;margin-top:18px;background:rgba(193,216,26,.07);border-left:3px solid var(--lime);border-radius:10px;padding:13px 14px;cursor:pointer;font-size:12.5px;line-height:1.55;color:var(--lav)}
+.consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--lime);flex:none}
+.consent.err{outline:2px solid #ff5d73}
+
+/* buttons */
+.btns{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px}
+.btns.c{justify-content:center}
+.btn{font-family:var(--bebas);font-size:20px;letter-spacing:2px;border:none;border-radius:999px;padding:15px 38px;cursor:pointer;transition:all .2s;line-height:1}
+.btn-lime{background:var(--lime);color:var(--navy);box-shadow:0 0 0 rgba(193,216,26,0);animation:glow 2.6s ease-in-out infinite}
+.btn-lime:hover:not(:disabled){transform:translateY(-2px)}
+.btn-lime:disabled{opacity:.4;cursor:default;animation:none}
+@keyframes glow{0%,100%{box-shadow:0 0 0 rgba(193,216,26,0)}50%{box-shadow:0 0 26px rgba(193,216,26,.55)}}
+.btn-ghost{background:none;color:var(--lav);border:1.5px solid var(--edge);font-size:17px;padding:13px 26px}
+.btn-ghost:hover{border-color:var(--lav);color:#fff}
+@media(max-width:560px){.btn{padding:15px 26px}.btns .btn-lime{flex:1}}
+.errmsg{display:none;margin-top:14px;background:rgba(255,93,115,.12);border-left:3px solid #ff5d73;border-radius:10px;padding:12px 14px;font-size:13px;color:#ffd5db}
+
+/* confirmation */
+.done{text-align:center;padding:6px 0 4px}
+.pair{display:flex;justify-content:center;gap:4px;margin:0 auto 14px}
+.pair svg{width:78px;height:auto;animation:bob 3s ease-in-out infinite}
+.pair svg:last-child{animation-delay:-1.5s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.done h2{font-size:clamp(36px,8vw,52px)}
+.done h2 em{font-style:normal;color:var(--lime)}
+.when{font-family:var(--bebas);font-size:26px;letter-spacing:1.5px;color:var(--orange);margin:12px 0 6px}
+.names{font-size:15px;color:#fff;font-weight:600}
+.done p{font-size:14px;max-width:440px;margin:10px auto 0}
+.addr{font-size:12.5px;color:var(--mute);margin-top:18px!important}
+
+/* lower */
+.bats{margin:46px auto 8px;opacity:.95}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;margin:26px 0 10px}
+@media(max-width:640px){.feature{grid-template-columns:1fr}}
+.feature img{border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.feature img.art{box-shadow:none;border-radius:0;max-width:340px;width:100%;margin:0 auto;filter:drop-shadow(0 16px 40px rgba(0,0,0,.45))}
+.feature .k{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange)}
+.feature h3{font-family:var(--bebas);font-size:32px;letter-spacing:1px;color:#fff;line-height:1.05;margin:6px 0 10px}
+.feature p{font-size:14.5px}
+.jacks{margin:40px auto 0;max-width:420px}
+.foot{margin-top:40px;background:var(--violet);padding:36px 0 30px;text-align:center;font-size:12.5px;color:#E7E0F7;position:relative;z-index:2}
+.foot img{height:46px;margin:0 auto 10px}
+.foot .loc{font-family:var(--bebas);letter-spacing:4px;font-size:18px;color:#fff;margin-bottom:6px}
+.foot .fine{max-width:560px;margin:12px auto 0;font-size:11px;color:#CFC4EC;line-height:1.55}
+.hidden{display:none!important}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="preview-flag hidden" id="previewFlag">Preview only. Sample times, booking is turned off.</div>
+
+<div class="sky" aria-hidden="true">
+  <svg class="g" viewBox="0 0 64 72"><path d="M32 2C16 2 6 14 6 30v38l9-7 8 7 9-7 9 7 8-7 9 7V30C58 14 48 2 32 2z" fill="#fff"/></svg>
+  <svg class="g" viewBox="0 0 64 72"><path d="M32 2C16 2 6 14 6 30v38l9-7 8 7 9-7 9 7 8-7 9 7V30C58 14 48 2 32 2z" fill="#fff"/></svg>
+  <svg class="g" viewBox="0 0 64 72"><path d="M32 2C16 2 6 14 6 30v38l9-7 8 7 9-7 9 7 8-7 9 7V30C58 14 48 2 32 2z" fill="#fff"/></svg>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="pumpkin" src="https://betterbranding.github.io/dripbar-pages/assets/email/hw-pumpkin-logo-v3.png" alt="A carved pumpkin glowing with The DRIPBaR logo">
+    <div class="eyebrow">Bring Your Boo Week &nbsp;|&nbsp; Flower Mound</div>
+    <h1>Book for <em>two</em>.</h1>
+    <p class="lead">Bring your boo and you both get 25% off your IVs. Pick a time, add your boo, and you're set. Choose your drips when you get here.</p>
+    <div class="chips">
+      <span class="chip"><i></i>25% off for both of you</span>
+      <span class="chip o"><i></i><span id="chipDates">Oct 26 to 31</span></span>
+      <span class="chip v"><i></i>Pick your IVs in the lounge</span>
+    </div>
+  </header>
+
+  <section class="card" id="book">
+    <div class="steps">
+      <div class="dot on" id="d1"><b>1</b><span>When</span></div>
+      <div class="line"></div>
+      <div class="dot" id="d2"><b>2</b><span>Who</span></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div id="s1">
+      <h2>When are you two coming in?</h2>
+      <p class="sub">Two recliners, side by side. Visits start on the hour. All times Central.</p>
+      <div class="days" id="days"></div>
+      <div id="timesWrap" class="hidden">
+        <div class="times-h" id="timesH"></div>
+        <div class="times" id="times"></div>
+      </div>
+      <div class="empty" id="loading">Summoning open times...</div>
+      <div class="errmsg" id="slotErr">We couldn't load open times. Call or text us at <a href="tel:+14698046232">(469) 804-6232</a> and we'll get you both booked.</div>
+      <p class="hint">Only times with room for two are shown.</p>
+      <div class="btns c"><button class="btn btn-lime" id="next" disabled>ADD YOUR BOO</button></div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="s2" class="hidden">
+      <h2>Who's coming?</h2>
+      <p class="sub">You'll each get your own confirmation email.</p>
+      <div class="pick" id="pick"></div>
+      <div class="people">
+        <div class="who you">
+          <div class="who-h">
+            <svg viewBox="0 0 64 72"><path d="M32 2C16 2 6 14 6 30v38l9-7 8 7 9-7 9 7 8-7 9 7V30C58 14 48 2 32 2z" fill="#C1D81A"/><ellipse cx="24" cy="30" rx="4" ry="6" fill="#1E1035"/><ellipse cx="40" cy="30" rx="4" ry="6" fill="#1E1035"/></svg>
+            <span><em>You</em></span>
+          </div>
+          <div class="row2">
+            <div class="f"><label for="a_fn">First name</label><input id="a_fn" autocomplete="given-name"></div>
+            <div class="f"><label for="a_ln">Last name</label><input id="a_ln" autocomplete="family-name"></div>
+          </div>
+          <div class="f"><label for="a_ph">Mobile</label><input id="a_ph" type="tel" autocomplete="tel" placeholder="(469) 555-1234"></div>
+          <div class="f"><label for="a_em">Email</label><input id="a_em" type="email" autocomplete="email" placeholder="you@email.com"></div>
+        </div>
+        <div class="who boo">
+          <div class="who-h">
+            <svg viewBox="0 0 64 72"><path d="M32 2C16 2 6 14 6 30v38l9-7 8 7 9-7 9 7 8-7 9 7V30C58 14 48 2 32 2z" fill="#F28C28"/><ellipse cx="24" cy="30" rx="4" ry="6" fill="#1E1035"/><ellipse cx="40" cy="30" rx="4" ry="6" fill="#1E1035"/></svg>
+            <span>Your <em>boo</em></span>
+          </div>
+          <div class="row2">
+            <div class="f"><label for="b_fn">First name</label><input id="b_fn" autocomplete="off"></div>
+            <div class="f"><label for="b_ln">Last name</label><input id="b_ln" autocomplete="off"></div>
+          </div>
+          <div class="f"><label for="b_ph">Mobile</label><input id="b_ph" type="tel" autocomplete="off" placeholder="(469) 555-5678"></div>
+          <div class="f"><label for="b_em">Email</label><input id="b_em" type="email" autocomplete="off" placeholder="boo@email.com"></div>
+        </div>
+      </div>
+      <label class="consent" id="consentBox"><input type="checkbox" id="consent"><span>I agree to the <a href="https://dripbarflowermound.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy and Terms</a>. My boo said it's OK to share their info, and we both agree to be contacted about this appointment.</span></label>
+      <div class="errmsg" id="bookErr">Something went wrong holding your spots. Please try again, or call us at <a href="tel:+14698046232">(469) 804-6232</a>.</div>
+      <div class="btns">
+        <button class="btn btn-ghost" id="back">BACK</button>
+        <button class="btn btn-lime" id="bookBtn">BOOK FOR TWO</button>
+      </div>
+    </div>
+
+    <!-- DONE -->
+    <div id="s3" class="hidden">
+      <div class="done">
+        <div class="pair" aria-hidden="true">
+          <svg viewBox="0 0 64 72"><path d="M32 2C16 2 6 14 6 30v38l9-7 8 7 9-7 9 7 8-7 9 7V30C58 14 48 2 32 2z" fill="#C1D81A"/><ellipse cx="24" cy="30" rx="4" ry="6" fill="#1E1035"/><ellipse cx="40" cy="30" rx="4" ry="6" fill="#1E1035"/></svg>
+          <svg viewBox="0 0 64 72"><path d="M32 2C16 2 6 14 6 30v38l9-7 8 7 9-7 9 7 8-7 9 7V30C58 14 48 2 32 2z" fill="#F28C28"/><ellipse cx="24" cy="30" rx="4" ry="6" fill="#1E1035"/><ellipse cx="40" cy="30" rx="4" ry="6" fill="#1E1035"/></svg>
+        </div>
+        <h2>You're booked, <em>boo</em>.</h2>
+        <div class="when" id="doneWhen"></div>
+        <div class="names" id="doneNames"></div>
+        <p>You'll each get a confirmation email. Your 25% off is applied at checkout for both of you.</p>
+        <p class="addr">The DRIPBaR Flower Mound<br>6230 Long Prairie Rd STE 300, Flower Mound, TX 75028<br><a href="tel:+14698046232">(469) 804-6232</a></p>
+      </div>
+    </div>
+  </section>
+
+  <img class="bats" src="https://betterbranding.github.io/dripbar-pages/assets/email/hw-bats-v2.png" alt="" aria-hidden="true">
+
+  <section class="feature">
+    <img src="https://betterbranding.github.io/dripbar-pages/assets/email/oct-boo-co-ghosts-v2.jpg" alt="Two ghosts holding hands in white recliners under The DRIPBaR logo">
+    <div>
+      <div class="k">Who counts as your boo?</div>
+      <h3>Your person is your boo.</h3>
+      <p>Your partner, your best friend, your sister, your gym buddy, your mom. Grab two recliners side by side and catch up while you drip.</p>
+    </div>
+  </section>
+  <section class="feature">
+    <div>
+      <div class="k">No matching required</div>
+      <h3>Pick your drips here.</h3>
+      <p>No need to choose ahead of time. You each pick your own IV in the lounge, and our team will help you decide.</p>
+    </div>
+    <img class="art" src="https://betterbranding.github.io/dripbar-pages/assets/email/hw-pumpkin-drip-v2.png" alt="A glowing jack-o'-lantern with an IV bag carved in lime light">
+  </section>
+
+  <img class="jacks" src="https://betterbranding.github.io/dripbar-pages/assets/email/hw-jackolanterns-v2.png" alt="" aria-hidden="true">
+</div>
+
+<footer class="foot">
+  <img src="https://betterbranding.github.io/dripbar-pages/assets/logo-white-pink.png" alt="The DRIPBaR">
+  <div class="loc">Flower Mound</div>
+  6230 Long Prairie Rd STE 300, Flower Mound, TX 75028 &nbsp;|&nbsp; (469) 804-6232
+  <div class="fine">25% off IV drips for both guests when booked together during Bring Your Boo Week. All services administered under the supervision of Dr. Angela Straface MD.</div>
+</footer>
+
+<script>
+(function(){
+/* ===== CONFIG ===== */
+var PREVIEW=/[?&]preview=1/.test(location.search); /* ?preview=1 = sample times, no booking sent */
+var CAL_ID='esm47i4lTQJJW6TADtNu';      /* Flower Mound "Bring Your Boo Week (Oct 26-31)" calendar, event calendar, 4 bookings per hourly slot = 2 pairs */
+var LOC_ID='xAtiT8BaAjMkTylr28V1';      /* Flower Mound */
+var FORM_ID='';
+var API='https://backend.leadconnectorhq.com';
+var TZ='America/Chicago';
+var START='2026-10-26', END='2026-10-31';  /* offer window */
+var TAG='bring your boo 2026';
+
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var DW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var DWF=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var st={slots:{},day:null,slot:null};
+function $(i){return document.getElementById(i)}
+function keyDate(k){var p=k.split('-');return new Date(+p[0],+p[1]-1,+p[2])}
+function fmtDay(k){var d=keyDate(k);return DWF[d.getDay()]+', '+MONTHS[d.getMonth()]+' '+d.getDate()}
+function fmtTime(iso){var h=+iso.slice(11,13),m=iso.slice(14,16),ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+m+' '+ap}
+function dayKeys(){var out=[],d=keyDate(START),e=keyDate(END);while(d<=e){out.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'));d.setDate(d.getDate()+1)}return out}
+
+if(PREVIEW) $('previewFlag').classList.remove('hidden');
+
+/* ----- slots ----- */
+function sample(){
+  var o={};
+  dayKeys().forEach(function(k,i){
+    var H={'10-26':[11,18],'10-27':[10,15],'10-28':[10,17],'10-29':[10,17],'10-30':[10,17],'10-31':[10,16]}[k.slice(5)]||[10,17],endH=H[1];
+    for(var h=H[0];h<=endH;h++){['00','30'].forEach(function(m){ if(h===endH&&m==='30')return; if((h*7+i*3+(m==='30'?1:0))%5===0)return; arr.push(k+'T'+String(h).padStart(2,'0')+':'+m+':00-05:00')})}
+    o[k]=arr;
+  });
+  return Promise.resolve(o);
+}
+function live(){
+  var s=keyDate(START).getTime(), e=keyDate(END).getTime()+86400000-1;
+  return fetch(API+'/calendars/'+CAL_ID+'/free-slots?startDate='+s+'&endDate='+e+'&timezone='+encodeURIComponent(TZ))
+   .then(function(r){if(!r.ok)throw 0;return r.json()})
+   .then(function(d){var o={};Object.keys(d).forEach(function(k){if(d[k]&&d[k].slots)o[k]=d[k].slots});return o});
+}
+(PREVIEW?sample():live()).then(function(o){
+  st.slots=o; $('loading').classList.add('hidden'); renderDays();
+}).catch(function(){ $('loading').classList.add('hidden'); $('slotErr').style.display='block'; });
+
+function renderDays(){
+  var wrap=$('days'); wrap.innerHTML='';
+  var today=new Date(); today.setHours(0,0,0,0);
+  dayKeys().forEach(function(k){
+    var d=keyDate(k), has=st.slots[k]&&st.slots[k].length&&(PREVIEW||d>=today);
+    var b=document.createElement('button'); b.type='button'; b.className='day'+(k.slice(5)==='10-31'?' hw':'');
+    b.innerHTML='<div class="dw">'+DW[d.getDay()]+'</div><div class="dn">'+d.getDate()+'</div><div class="dm">'+(k.slice(5)==='10-31'?'Halloween':MON[d.getMonth()])+'</div>';
+    if(!has){b.disabled=true}
+    if(st.day===k) b.classList.add('sel');
+    b.onclick=function(){st.day=k;st.slot=null;$('next').disabled=true;renderDays();renderTimes();};
+    wrap.appendChild(b);
+  });
+}
+function renderTimes(){
+  $('timesWrap').classList.remove('hidden');
+  $('timesH').textContent=fmtDay(st.day);
+  var wrap=$('times'); wrap.innerHTML='';
+  st.slots[st.day].forEach(function(iso){
+    var b=document.createElement('button'); b.type='button'; b.className='t'+(st.slot===iso?' sel':''); b.textContent=fmtTime(iso);
+    b.onclick=function(){st.slot=iso;Array.prototype.forEach.call(wrap.children,function(c){c.classList.remove('sel')});b.classList.add('sel');$('next').disabled=false;};
+    wrap.appendChild(b);
+  });
+}
+function go(n){
+  $('s1').classList.toggle('hidden',n!==1); $('s2').classList.toggle('hidden',n!==2); $('s3').classList.toggle('hidden',n!==3);
+  $('d1').className='dot '+(n===1?'on':'done'); $('d2').className='dot '+(n===2?'on':(n>2?'done':''));
+  $('book').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('next').onclick=function(){
+  $('pick').innerHTML='<span><b>'+fmtDay(st.day)+'</b> at <b>'+fmtTime(st.slot)+'</b> CT</span><button type="button" id="chg">Change</button>';
+  $('chg').onclick=function(){go(1)}; go(2);
+};
+$('back').onclick=function(){go(1)};
+
+/* ----- book ----- */
+function digits(v){var d=v.replace(/\D/g,'');if(d.length===10)d='1'+d;return d.length===11?'+'+d:''}
+function person(p){return{fn:$(p+'_fn').value.trim(),ln:$(p+'_ln').value.trim(),ph:digits($(p+'_ph').value),em:$(p+'_em').value.trim()}}
+function validate(p){
+  var ok=true;
+  ['fn','ln','ph','em'].forEach(function(f){
+    var el=$(p+'_'+f), v=el.value.trim(), bad=!v;
+    if(f==='ph'&&!digits(v))bad=true;
+    if(f==='em'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v))bad=true;
+    el.classList.toggle('err',bad); if(bad)ok=false;
+  });
+  return ok;
+}
+function bookOne(me,partner,role){
+  var details=[
+    'Offer: Bring Your Boo Week, 25% off IVs for both',
+    'Guest: '+role+' (booked with '+partner.fn+' '+partner.ln+', '+partner.ph+')',
+    'Source: Flower Mound Bring Your Boo page',
+    'Requested: '+fmtDay(st.day)+' at '+fmtTime(st.slot)+' CT',
+    'Booked: '+new Date().toLocaleString('en-US',{timeZone:TZ})+' CT'
+  ].join('\n');
+  var qp={}; new URLSearchParams(location.search).forEach(function(v,k){qp[k]=v});
+  var payload={calendar_id:CAL_ID,location_id:LOC_ID,selected_slot:st.slot,selected_timezone:TZ,
+    first_name:me.fn,last_name:me.ln,phone:me.ph,email:me.em,
+    title:'Bring Your Boo: '+me.fn+' '+me.ln+' + '+partner.fn+' '+partner.ln,
+    description:details,notes:details,tags:[TAG],
+    terms_and_conditions:'I agree to the terms and conditions',formId:FORM_ID,Timezone:TZ,
+    eventData:{source:location.href,referrer:document.referrer,url_params:qp,campaign:qp.utm_campaign||'',page:{url:location.href,title:document.title},medium:'calendar',mediumId:CAL_ID}};
+  if(PREVIEW){ console.log('PREVIEW payload',payload); return new Promise(function(r){setTimeout(r,700)}); }
+  var fd=new FormData(); fd.append('formData',JSON.stringify(payload));
+  return fetch(API+'/appengine/appointment',{method:'POST',body:fd}).then(function(r){if(!r.ok)throw 0;return r.json()});
+}
+$('bookBtn').onclick=function(){
+  var ok=validate('a'); ok=validate('b')&&ok;
+  var c=$('consent').checked; $('consentBox').classList.toggle('err',!c); if(!c)ok=false;
+  var a=person('a'), b=person('b');
+  if(ok && (a.ph===b.ph || a.em.toLowerCase()===b.em.toLowerCase())){
+    ok=false; $('bookErr').textContent='You and your boo each need your own mobile number and email so you both get confirmations.'; $('bookErr').style.display='block'; return;
+  }
+  if(!ok)return;
+  /* If the booker's spot was already held on an earlier try (same slot + same booker), only retry the boo. */
+  var key=st.slot+'|'+a.ph+'|'+a.em.toLowerCase();
+  if(st.held && st.held!==key) st.held=null;
+  var btn=$('bookBtn'); btn.disabled=true; btn.textContent=st.held?'HOLDING YOUR BOO\'S SPOT...':'HOLDING 2 SPOTS...'; $('bookErr').style.display='none';
+  (st.held?Promise.resolve():bookOne(a,b,'Booker').then(function(){st.held=key}))
+   .then(function(){return bookOne(b,a,'Boo').catch(function(){throw 'boo'})})
+   .then(function(){
+     st.held=null;
+     $('doneWhen').textContent=fmtDay(st.day)+' at '+fmtTime(st.slot)+' CT';
+     $('doneNames').textContent=a.fn+' + '+b.fn;
+     go(3);
+   })
+   .catch(function(e){
+     $('bookErr').innerHTML=(e==='boo'
+       ?'Your spot is saved, but we couldn\'t hold your boo\'s spot. Tap BOOK FOR TWO to try again (we won\'t double-book you), or call us at <a href="tel:+14698046232">(469) 804-6232</a>.'
+       :'Something went wrong holding your spots. Please try again, or call us at <a href="tel:+14698046232">(469) 804-6232</a>.');
+     $('bookErr').style.display='block'; btn.disabled=false; btn.textContent='BOOK FOR TWO';
+   });
+};
+})();
+</script>
+</body>
+</html>
