@@ -40,7 +40,9 @@ a{color:var(--lime)}
 .pumpkin{width:150px;margin:0 auto;filter:drop-shadow(0 0 28px rgba(242,140,40,.45))}
 .eyebrow{font-family:var(--bebas);letter-spacing:3px;color:var(--lime);font-size:17px;margin:6px 0 18px}
 .hero-img{border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 0 1px rgba(193,216,26,.18)}
-.hero h1{font-family:var(--bebas);font-size:clamp(44px,9vw,72px);line-height:.95;color:#fff;letter-spacing:1px;margin:30px 0 12px}
+.hero h1{font-family:var(--bebas);font-size:clamp(44px,9vw,72px);line-height:.95;color:#fff;letter-spacing:1px;margin:4px 0 12px}
+.closenote{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 16px;padding:9px 14px;border-radius:12px;border:1px solid rgba(242,140,40,.45);background:rgba(242,140,40,.10);color:#fff;font-size:14px;font-weight:500;text-align:center}
+.closenote b{color:var(--orange);font-family:var(--bebas);letter-spacing:1.5px;font-size:17px;font-weight:400}
 .hero h1 em{font-style:normal;color:var(--lime);text-shadow:0 0 24px rgba(193,216,26,.45)}
 .hero p.lead{max-width:520px;margin:0 auto;font-size:15.5px;color:var(--lav)}
 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 4px}
@@ -166,7 +168,6 @@ a{color:var(--lime)}
   <header class="hero">
     <img class="pumpkin" src="https://betterbranding.github.io/dripbar-pages/assets/email/hw-pumpkin-logo-v3.png" alt="A carved pumpkin glowing with The DRIPBaR logo">
     <div class="eyebrow">Bring Your Boo Week &nbsp;|&nbsp; Keller</div>
-    <img class="hero-img" src="https://betterbranding.github.io/dripbar-pages/assets/email/oct-boo-hero-25-v1.png" alt="Two ghosts relaxing side by side in DRIPBaR recliners with glowing IV bags. Bring your boo. You both get 25% off your IVs. Sale ends 10/31.">
     <h1>Book for <em>two</em>.</h1>
     <p class="lead">Bring your boo and you both get 25% off your IVs. Pick a time, add your boo, and you're set. Choose your drips when you get here.</p>
     <div class="chips">
@@ -187,6 +188,7 @@ a{color:var(--lime)}
     <div id="s1">
       <h2>When are you two coming in?</h2>
       <p class="sub">Two recliners, side by side. Visits start on the hour. All times Central.</p>
+      <div class="closenote"><b>Heads up:</b> We close at 4pm on 10/31</div>
       <div class="days" id="days"></div>
       <div id="timesWrap" class="hidden">
         <div class="times-h" id="timesH"></div>
@@ -311,7 +313,7 @@ if(PREVIEW) $('previewFlag').classList.remove('hidden');
 function sample(){
   var o={};
   dayKeys().forEach(function(k,i){
-    var arr=[],endH=keyDate(k).getDay()===0?14:17;
+    var arr=[],endH=k.slice(5)==='10-31'?15:17;
     for(var h=10;h<=endH;h++){['00','30'].forEach(function(m){ if(h===endH&&m==='30')return; if((h*7+i*3+(m==='30'?1:0))%5===0)return; arr.push(k+'T'+String(h).padStart(2,'0')+':'+m+':00-05:00')})}
     o[k]=arr;
   });
