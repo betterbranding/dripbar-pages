@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Friday Early Access | The DRIPBaR Keller</title>
+<meta name="description" content="Black Friday at The DRIPBaR Keller. Get early access to our biggest sales of the year.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png">
+<link rel="apple-touch-icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<style>
+:root{--ink:#0b0b0f;--muted:#6e6e73;--blue:#1f6bff;--glow:#4d94ff;--line:rgba(120,170,255,.28)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#000;color:#fff;font-family:'Poppins',Arial,sans-serif;font-size:16px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.bb{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400}
+
+/* sky */
+.sky{position:fixed;inset:0;z-index:-2;background:
+ radial-gradient(900px 520px at 50% -14%,rgba(31,107,255,.20),transparent 65%),
+ radial-gradient(800px 600px at 110% 105%,rgba(0,70,220,.12),transparent 65%),
+ #000}
+.aur{position:fixed;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none;will-change:transform}
+.aur.a1{width:52vmax;height:52vmax;left:-14vmax;top:-18vmax;opacity:.16;background:radial-gradient(circle,#1747c9 0%,transparent 65%);animation:drift1 22s ease-in-out infinite alternate}
+.aur.a2{width:46vmax;height:46vmax;right:-16vmax;top:30vh;background:radial-gradient(circle,#0a63ff 0%,transparent 65%);opacity:.10;animation:drift2 26s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(12vmax,10vmax)}}
+@keyframes drift2{to{transform:translate(-10vmax,-8vmax)}}
+
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;top:0;z-index:50;display:flex;align-items:center;gap:16px;padding:12px max(18px,env(safe-area-inset-left));
+ background:rgba(0,0,0,.66);-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);
+ border-bottom:1px solid rgba(255,255,255,.08);transform:translateY(-110%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.bar.on{transform:none}
+.bar .lg{height:36px;width:auto;filter:brightness(0) invert(1)}
+.seg{margin:0 auto;display:flex;background:rgba(255,255,255,.08);border-radius:999px;padding:4px}
+.seg a{font-size:13px;font-weight:600;padding:8px 16px;border-radius:999px;color:rgba(255,255,255,.75);white-space:nowrap;transition:background .3s,color .3s}
+.seg a.act{background:#fff;color:var(--ink)}
+.pill{font-size:12px;font-weight:600;letter-spacing:.4px;color:#cfe0ff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;white-space:nowrap}
+.pill b{color:#fff;font-weight:600}
+.cartbtn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 14px;white-space:nowrap;transition:background .3s}
+.cartbtn:hover{background:rgba(255,255,255,.2)}
+.cartbtn svg{width:17px;height:17px;flex:none}
+.cart-top{position:absolute;top:18px;right:18px;z-index:5}
+
+/* hero */
+.hero{position:relative;text-align:center;padding:34px 20px 0;overflow:hidden}
+.hero .logo{width:clamp(92px,22vw,124px);height:auto;margin:0 auto;filter:brightness(0) invert(1);opacity:.96}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#FF0099;text-shadow:0 0 14px rgba(255,0,153,.35)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#FF0099;box-shadow:0 0 0 0 rgba(255,0,153,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,0,153,0)}100%{box-shadow:0 0 0 0 rgba(255,0,153,0)}}
+.bf{font-size:min(18vw,124px);line-height:.9;letter-spacing:.02em;color:#fff;margin-top:6px;white-space:nowrap;
+ text-shadow:0 0 6px rgba(255,255,255,.6),0 0 18px rgba(77,148,255,.95),0 0 44px rgba(41,121,255,.85),0 0 96px rgba(31,107,255,.7),0 0 170px rgba(31,107,255,.45);
+ animation:ignite 1.8s ease-out both}
+.bf span{display:inline}
+@keyframes ignite{0%{opacity:0}8%{opacity:1}12%{opacity:.25}18%{opacity:1}24%{opacity:.5}32%,100%{opacity:1}}
+.sub{max-width:560px;margin:14px auto 0;font-size:clamp(19px,2.6vw,24px);font-weight:600;color:#fff}
+.sub strong{color:#fff;font-weight:600}
+.cd-label{margin-top:22px;font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#FF0099;text-shadow:0 0 14px rgba(255,0,153,.35)}
+.cd{display:flex;justify-content:center;gap:10px;margin-top:14px}
+.cd div{min-width:76px;padding:12px 8px 10px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line)}
+.cd b{display:block;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400;font-size:44px;line-height:1;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.cd small{display:block;margin-top:4px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.cta{display:inline-block;margin-top:34px;background:#fff;color:var(--ink);font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:21px;letter-spacing:1.6px;padding:17px 46px;border-radius:999px;
+ box-shadow:0 0 0 1px rgba(255,255,255,.2),0 10px 50px rgba(61,139,255,.55);transition:transform .3s,box-shadow .3s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 0 0 1px #fff,0 14px 70px rgba(61,139,255,.85)}
+
+.hero{padding-top:30px}
+.sub{margin-top:10px}
+.wrap{max-width:520px;margin:26px auto 0;padding:0 20px 10px}
+.card{border-radius:26px;padding:22px 18px 18px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);box-shadow:0 20px 80px rgba(31,107,255,.18)}
+.card h2{font-size:30px;letter-spacing:1px;line-height:1;text-align:center}
+.card .lead{text-align:center;color:rgba(255,255,255,.72);font-size:14.5px;margin:8px 0 10px}
+.card iframe{display:block;width:100%;border:0;min-height:290px;background:transparent}
+.consent{font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.5);margin-top:8px;text-align:center}
+.peek{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px auto 0;max-width:520px;padding:0 20px}
+.peek div{text-align:center;border-radius:18px;padding:12px 6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.peek b{display:block;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400;font-size:28px;line-height:1}
+.peek small{display:block;font-size:11px;color:rgba(255,255,255,.6);margin-top:4px;line-height:1.3}
+.peek em{font-style:normal;color:#7fffd4}
+.live{display:none;text-align:center}
+.is-live .live{display:block}.is-live .signup{display:none}
+.foot{max-width:560px;margin:34px auto 0;padding:0 20px 40px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);line-height:1.6}
+.foot a{color:rgba(255,255,255,.7)}
+@media(max-width:380px){.cd div{min-width:66px}.cd b{font-size:38px}.peek b{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="sky"></div><div class="aur a1"></div><div class="aur a2"></div>
+<header class="hero">
+ <img class="logo" src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR Keller" width="230" height="140">
+ <div class="eyebrow" id="eyebrow"><i></i><span>Early Access</span></div>
+ <h1 class="bf bb"><span>Black</span> <span>Friday</span></h1>
+ <p class="sub">Our biggest sales of the year.</p>
+ <div class="cd-label" id="cdlabel">Early access opens in</div>
+ <div class="cd" id="cd" aria-live="polite">
+  <div><b id="dd">00</b><small>Days</small></div>
+  <div><b id="hh">00</b><small>Hours</small></div>
+  <div><b id="mm">00</b><small>Min</small></div>
+  <div><b id="ss">00</b><small>Sec</small></div>
+ </div>
+</header>
+
+<div class="peek">
+ <div><b>$397</b><small>IV bundles<br><em>Save $200</em></small></div>
+ <div><b>$100</b><small>Shot bundles<br><em>Save $50</em></small></div>
+ <div><b>$794</b><small>MEGA bundle<br><em>Save $450</em></small></div>
+</div>
+
+<main class="wrap">
+ <div class="card signup">
+  <h2 class="bb">Get first dibs</h2>
+  <p class="lead">Sales are limited. Sign up and we'll send your early access link on Monday, Nov 23.</p>
+  <iframe src="https://api.leadconnectorhq.com/widget/form/lrbw5OcSduR2Uoxk9znB" id="inline-lrbw5OcSduR2Uoxk9znB" title="Black Friday Early Access" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="-BLACK FRIDAY 2026 | EARLY ACCESS" data-height="290" data-layout-iframe-id="inline-lrbw5OcSduR2Uoxk9znB" data-form-id="lrbw5OcSduR2Uoxk9znB"></iframe>
+  <p class="consent">By checking the box, you agree to receive recurring automated promotional texts from The DRIPBaR Keller at the number provided. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out, HELP for help.</p>
+ </div>
+ <div class="live">
+  <a class="cta" href="https://shop.ivkeller.com/black-friday-3428" id="livecta">Shop Early Access</a>
+ </div>
+</main>
+
+<footer class="foot">
+ The DRIPBaR Keller &nbsp;·&nbsp; 1632 Keller Pkwy, #500, Keller, TX 76248<br>
+ <a href="tel:+18179848931">(817) 984-8931</a><br>
+ Medical Director: Dr. A.D. Thakkar, M.D.
+</footer>
+
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+(function(){
+ var C={"earlyStart": "2026-11-23T10:30:00-06:00", "publicStart": "2026-11-27T08:00:00-06:00", "lastDay": "2026-11-30T00:00:00-06:00", "end": "2026-11-30T23:59:59-06:00", "earlyLabel": "Monday, Nov 23", "earlyShort": "11/23"};
+ var T={early:new Date(C.earlyStart).getTime(),pub:new Date(C.publicStart).getTime(),end:new Date(C.end).getTime()};
+ var q=new URLSearchParams(location.search),force=q.get('phase');
+ function phase(n){if(force)return force;return n<T.early?'pre':n<T.pub?'early':n<T.end?'live':'over'}
+ var P={pre:{eye:'Early Access',label:'Early access opens in',t:T.early},
+        early:{eye:'Early access is live',label:'Opens to everyone in',t:T.pub,cta:'Shop Early Access'},
+        live:{eye:'Black Friday is live',label:'Sale ends in',t:T.end,cta:'Shop Black Friday'},
+        over:{eye:'Black Friday has ended',label:'',t:0}};
+ var $=function(i){return document.getElementById(i)},cur;
+ function pad(x){return (x<10?'0':'')+x}
+ function tick(){var n=Date.now(),ph=phase(n),p=P[ph];
+  if(ph!==cur){cur=ph;$('eyebrow').lastChild.textContent=p.eye;$('cdlabel').textContent=p.label;
+   document.body.classList.toggle('is-live',ph==='early'||ph==='live');if(p.cta)$('livecta').textContent=p.cta;
+   $('cd').style.display=$('cdlabel').style.display=p.t?'':'none';if(ph==='over'){document.querySelector('.signup').style.display='none'}}
+  if(!p.t)return;var d=Math.max(0,p.t-(force?n-0:n));if(force)d=Math.max(0,p.t-n);
+  var s=Math.floor(d/1000);$('dd').textContent=pad(Math.floor(s/86400));$('hh').textContent=pad(Math.floor(s%86400/3600));$('mm').textContent=pad(Math.floor(s%3600/60));$('ss').textContent=pad(s%60)}
+ tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
