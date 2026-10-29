@@ -226,12 +226,20 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 .offer li .ic{width:18px;height:18px;color:var(--lime);margin-top:1px}
 .offer li .ic svg{stroke-width:2.4}
 .offer .btn{margin-top:auto;align-self:flex-start}
+.well{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:28px;position:relative;background:#fff;border-radius:24px;padding:22px 30px}
+.well-h{display:flex;flex-direction:column;gap:4px}
+.well-k{font:600 12px/1 var(--pop);letter-spacing:1.6px;text-transform:uppercase;color:var(--lime-dark)}
+.well-h b{font:400 30px/1 var(--bebas);letter-spacing:.4px;color:var(--teal)}
+.well-l{list-style:none;display:flex;gap:12px;flex-wrap:wrap}
+.well-l li{display:flex;align-items:center;gap:10px;background:var(--blue-soft);border:1px solid var(--divider);border-radius:99px;padding:11px 18px 11px 12px;font:600 14.5px/1 var(--pop);color:var(--teal)}
+.well-l .ic{width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;flex:none}
+.well-l .ic svg{width:18px;height:18px;stroke-width:2}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px;position:relative}
 .step{display:flex;gap:16px;align-items:center;background:var(--teal-soft);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:20px 22px}
 .step b{font:400 46px/1 var(--bebas);color:var(--lime);flex:none;width:40px}
 .step h4{font-size:22px;color:#fff;line-height:1.05}
 .step p{font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.45;margin-top:2px}
-@media(max-width:860px){.rec-head{grid-template-columns:1fr;gap:18px}.offers{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.offer .tx{padding:26px 22px 26px}.offer .btn{width:100%}}
+@media(max-width:860px){.rec-head{grid-template-columns:1fr;gap:18px}.offers{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.well{flex-direction:column;align-items:flex-start;gap:16px;padding:22px 20px}.well-l{flex-direction:column;width:100%;gap:8px}.well-l li{width:100%}.offer .tx{padding:26px 22px 26px}.offer .btn{width:100%}}
 
 /* ===== highlights ===== */
 .hl-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
@@ -464,7 +472,7 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
       </a>
       <a class="help" href="#recover">
         <span class="isq"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span></span>
-        <div><h4>Claim your runner discount</h4><p>Every WhataRun runner gets a discount on IV drips and quick shots at The DRIPBaR.</p><span class="tlink">See the offers <span>&rarr;</span></span></div>
+        <div><h4>Claim your runner discount</h4><p>Every WhataRun runner gets $10 off a Quick Shot or $40 off an IV Drip, with complimentary wellness included.</p><span class="tlink">See the offers <span>&rarr;</span></span></div>
       </a>
       <a class="help" href="#locations">
         <span class="isq"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span></span>
@@ -493,38 +501,46 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
         <h2>You ran it. <span class="lime">Now refuel it.</span></h2>
       </div>
       <div class="lede">
-        <p>Race morning takes a lot out of you. Pick an IV drip to put your feet up, or a quick shot to get in and out.</p>
+        <p>Race morning takes a lot out of you. Pick an IV Drip to put your feet up, or a Quick Shot to get in and out. Both come with complimentary wellness.</p>
       </div>
     </div>
     <div class="offers">
       <article class="offer">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/offer-shots-v2.webp" alt="A smiling runner getting a quick vitamin shot in his upper arm from a gloved nurse" loading="lazy" style="object-position:50% 35%"><span class="pill">Runner discount</span></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/offer-shots-v2.webp" alt="A smiling runner getting a quick vitamin shot in his upper arm from a gloved nurse" loading="lazy" style="object-position:50% 35%"><span class="pill">$10 off</span></div>
         <div class="tx">
           <span class="kind"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Quick shots</span>
-          <h3>Discount quick shots</h3>
+          <h3>$10 off a Quick Shot</h3>
           <p>A fast vitamin boost. In, out, and on with your day.</p>
           <ul>
-            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Quick visit</li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Complimentary wellness included</li>
             <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Given by a licensed nurse</li>
             <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>At all six locations</li>
           </ul>
-          <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=shots" data-offer="shots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Claim your discount shots</a>
+          <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=shots" data-offer="shots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Claim $10 off a Quick Shot</a>
         </div>
       </article>
       <article class="offer">
-        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/offer-iv-v2.webp" alt="A runner wearing her finisher medal relaxing in a recliner during an IV drip" loading="lazy" style="object-position:55% 40%"><span class="pill">Runner discount</span></div>
+        <div class="ph"><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/offer-iv-v2.webp" alt="A runner wearing her finisher medal relaxing in a lounge chair during an IV drip" loading="lazy" style="object-position:55% 40%"><span class="pill">$40 off</span></div>
         <div class="tx">
           <span class="kind"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>IV drips</span>
-          <h3>Discount IV drip</h3>
+          <h3>$40 off an IV Drip</h3>
           <p>Fluids and vitamins while you put your feet up.</p>
           <ul>
-            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Relax in a lounge recliner</li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Complimentary wellness included</li>
             <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Monitored by a nurse</li>
             <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>At all six locations</li>
           </ul>
-          <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=iv" data-offer="iv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>Claim your discount IV</a>
+          <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=iv" data-offer="iv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>Claim $40 off an IV Drip</a>
         </div>
       </article>
+    </div>
+    <div class="well">
+      <div class="well-h"><span class="well-k">Complimentary wellness</span><b>Included with both promos</b></div>
+      <ul class="well-l">
+        <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21.5c-3.9 0-6.5-2.6-6.5-6.2 0-3.4 2.5-5.4 3.6-8.3.4 1.6 1.3 2.7 2.4 3.3.2-2.8 1.5-5.6 3.9-7.8-.3 3.6 3.1 6.4 3.1 11 0 4.4-2.6 8-6.5 8z"/></svg></span>Infrared Sauna</li>
+        <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5v19M4.2 7l15.6 10M4.2 17L19.8 7M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg></span>Cold Plunge</li>
+        <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3v8.5c0 2-.6 3.6-1.4 5.3L5.5 19c-.5 1.1.3 2 1.4 2H11V3M16 3v8.5c0 2 .6 3.6 1.4 5.3l1.1 2.2c.5 1.1-.3 2-1.4 2H13V3M8 8h3M13 8h3M8 12.5h3M13 12.5h3"/></svg></span>Leg Compression</li>
+      </ul>
     </div>
     <div class="steps">
       <div class="step"><b>1</b><div><h4>Pick your location</h4><p>Choose the DRIPBaR closest to you.</p></div></div>
@@ -607,8 +623,8 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
     <h2>The medal is yours. <span class="lime">So is the discount.</span></h2>
     <p class="lede">Thank you for running the first WhataRun in San Antonio. Now take care of the legs that got you there.</p>
     <div class="final-ctas">
-      <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=shots" data-offer="shots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Claim your discount shots</a>
-      <a class="btn btn-w" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=iv" data-offer="iv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>Claim your discount IV</a>
+      <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=shots" data-offer="shots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Claim $10 off a Quick Shot</a>
+      <a class="btn btn-w" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=iv" data-offer="iv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>Claim $40 off an IV Drip</a>
     </div>
   </div>
 </section>
@@ -626,10 +642,10 @@ h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
 <div class="claim" role="region" aria-label="Runner discounts">
   <div class="stripe" aria-hidden="true"></div>
   <div class="shell claim-in">
-    <div class="claim-copy"><span class="medal"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="15" r="5"/><path d="M8.5 11L5 3h4l3 6 3-6h4l-3.5 8"/></svg></span></span><span><b>WhataRun runner discount</b><small>For every finisher, at all six locations.</small></span></div>
+    <div class="claim-copy"><span class="medal"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="15" r="5"/><path d="M8.5 11L5 3h4l3 6 3-6h4l-3.5 8"/></svg></span></span><span><b>WhataRun runner discount</b><small>Complimentary wellness included. All six locations.</small></span></div>
     <div class="claim-btns">
-      <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=shots" data-offer="shots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Claim your discount shots</a>
-      <a class="btn btn-teal" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=iv" data-offer="iv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>Claim your discount IV</a>
+      <a class="btn btn-lime" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=shots" data-offer="shots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Claim $10 off a Quick Shot</a>
+      <a class="btn btn-teal" href="https://huebneroaks.dripbarsanantonio.com/whatarun-booking?promo=iv" data-offer="iv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>Claim $40 off an IV Drip</a>
     </div>
   </div>
 </div>
