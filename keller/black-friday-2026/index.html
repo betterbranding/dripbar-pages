@@ -53,7 +53,7 @@ a{color:inherit;text-decoration:none}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#cfe0ff}
 .eyebrow i{width:8px;height:8px;border-radius:50%;background:#4d94ff;box-shadow:0 0 0 0 rgba(77,148,255,.7);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(77,148,255,0)}100%{box-shadow:0 0 0 0 rgba(77,148,255,0)}}
-.bf{font-size:min(18vw,150px);line-height:.9;letter-spacing:.02em;color:#fff;margin-top:6px;white-space:nowrap;
+.bf{font-size:min(18vw,124px);line-height:.9;letter-spacing:.02em;color:#fff;margin-top:6px;white-space:nowrap;
  text-shadow:0 0 6px rgba(255,255,255,.6),0 0 18px rgba(77,148,255,.95),0 0 44px rgba(41,121,255,.85),0 0 96px rgba(31,107,255,.7),0 0 170px rgba(31,107,255,.45);
  animation:ignite 1.8s ease-out both}
 .bf span{display:inline}
@@ -78,14 +78,14 @@ a{color:inherit;text-decoration:none}
 
 /* sections */
 .sec{padding:120px 20px}
-#iv{padding-top:56px}
+#iv{padding-top:44px}
 .sec-h{text-align:center;max-width:760px;margin:0 auto}
-.sec-h h2{font-size:clamp(46px,8vw,88px);line-height:.9;letter-spacing:.02em;text-shadow:0 0 30px rgba(31,107,255,.55)}
-.sec-h p{margin-top:14px;font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.72)}
+.sec-h h2{font-size:clamp(44px,7vw,68px);line-height:.9;letter-spacing:.02em;text-shadow:0 0 30px rgba(31,107,255,.55)}
+.sec-h p{margin-top:8px;font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.72)}
 .sec-h p b{color:#fff;font-weight:600}
 .grid{display:grid;gap:22px;max-width:1180px;margin:36px auto 0;grid-template-columns:1fr}
 @media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:1fr 1fr}}
-@media(min-width:1040px){.grid.three{grid-template-columns:1fr 1fr 1fr}}
+@media(min-width:1040px){.grid.three,.grid.two{grid-template-columns:1fr 1fr 1fr}.grid.two .card.wide{grid-column:span 2}}
 
 /* cards */
 .card{position:relative;display:flex;flex-direction:column;background:#fff;color:var(--ink);border-radius:30px;padding:30px 28px 28px;overflow:hidden;
@@ -183,7 +183,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
 <section class="sec" id="iv">
  <div class="sec-h rv"><h2 class="bb">IV Bundles</h2><p>Get <b>$200 off</b> our IV bundles.</p></div>
  <div class="grid two">
-  <article class="card rv" style="--c1:#d4f03c;--c2:#ffe14d;--tb:#f2fbcc;--tc:#4b5a00">
+  <article class="card rv" id="immunity" style="--c1:#d4f03c;--c2:#ffe14d;--tb:#f2fbcc;--tc:#4b5a00">
    <span class="tag">Immunity</span>
    <h3>Immunity Bundle</h3>
    <p class="inc">Shield · Flu Fighter · Post Viral</p>
@@ -192,7 +192,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
    <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
-  <article class="card rv" style="--c1:#ff9a3c;--c2:#5fe3c9;--tb:#fff0e0;--tc:#8a3d00">
+  <article class="card rv" id="energy" style="--c1:#ff9a3c;--c2:#5fe3c9;--tb:#fff0e0;--tc:#8a3d00">
    <span class="tag">Energy</span>
    <h3>Energy Bundle</h3>
    <p class="inc">Powerpack · Vitality · NAD+</p>
@@ -201,7 +201,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
    <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
-  <article class="card rv" style="--c1:#ff8fc1;--c2:#b79cff;--tb:#ffe8f3;--tc:#8a1050">
+  <article class="card rv" id="antiaging" style="--c1:#ff8fc1;--c2:#b79cff;--tb:#ffe8f3;--tc:#8a1050">
    <span class="tag">Anti-Aging</span>
    <h3>Anti-Aging Bundle</h3>
    <p class="inc">Time Machine · Glutathione · Firm</p>
@@ -210,7 +210,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
    <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
-  <article class="card rv" style="--c1:#ff7a45;--c2:#ffc15a;--tb:#ffece3;--tc:#8a2e00">
+  <article class="card rv" id="weight" style="--c1:#ff7a45;--c2:#ffc15a;--tb:#ffece3;--tc:#8a2e00">
    <span class="tag">Weight Loss</span>
    <h3>Weight Loss Bundle</h3>
    <p class="inc">Metabolize · Restoration · Allstar</p>
@@ -219,7 +219,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
    <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
-  <article class="card rv wide" style="--c1:#4fd6ff;--c2:#ff8fc1;--tb:#e3f6ff;--tc:#00597a">
+  <article class="card rv wide" id="byo" style="--c1:#4fd6ff;--c2:#ff8fc1;--tb:#e3f6ff;--tc:#00597a">
    <span class="tag">Your Pick</span>
    <h3>Build Your Own</h3>
    <p class="inc">Any three Lifestyle drips. Choose at each visit.</p>
@@ -234,7 +234,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
 <section class="sec" id="shots">
  <div class="sec-h rv"><h2 class="bb">Quick Shot Bundles</h2><p>Three shots. <b>$100.</b> In and out in minutes.</p></div>
  <div class="grid three">
-  <article class="card rv" style="--c1:#ffb03c;--c2:#5fe3c9;--tb:#fff0e0;--tc:#8a3d00">
+  <article class="card rv" id="sh-energy" style="--c1:#ffb03c;--c2:#5fe3c9;--tb:#fff0e0;--tc:#8a3d00">
    <span class="tag">Energy</span>
    <h3>Energy Shots</h3>
    <p class="inc">Supercharge · Vitality · NAD+</p>
@@ -243,7 +243,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
    <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
-  <article class="card rv" style="--c1:#ffe14d;--c2:#ff4d6d;--tb:#fff6cc;--tc:#6b5300">
+  <article class="card rv" id="sh-immune" style="--c1:#ffe14d;--c2:#ff4d6d;--tb:#fff6cc;--tc:#6b5300">
    <span class="tag">Immunity</span>
    <h3>Immunity Shots</h3>
    <p class="inc">Detox · B12 · Tri-Immune</p>
@@ -252,7 +252,7 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
    <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
-  <article class="card rv" style="--c1:#6b7bff;--c2:#ff5fd2;--tb:#eeeaff;--tc:#3a2a9a">
+  <article class="card rv" id="sh-byo" style="--c1:#6b7bff;--c2:#ff5fd2;--tb:#eeeaff;--tc:#3a2a9a">
    <span class="tag">Your Pick</span>
    <h3>Build Your Own</h3>
    <p class="inc">Any three quick shots. Choose at each visit.</p>
