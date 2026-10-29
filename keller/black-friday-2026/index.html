@@ -108,13 +108,17 @@ a{color:inherit;text-decoration:none}
 .buy:active{transform:scale(.98)}
 .buy.off{background:#d9d9de;color:#6e6e73;pointer-events:none}
 .payg{display:none;margin-top:12px;text-align:center;font-size:13px;font-weight:600;color:var(--blue)}
-.show-payg .payg{display:block}
+.payg{display:block}
+.card.mega{box-shadow:0 0 0 2px #4d94ff,0 0 60px rgba(77,148,255,.55),0 50px 120px -40px rgba(31,107,255,.9)}
+.card.mega:hover{box-shadow:0 0 0 2px #7fb2ff,0 0 80px rgba(77,148,255,.75),0 60px 130px -40px rgba(31,107,255,1)}
+.card.mega .save{background:linear-gradient(90deg,#1f6bff,#7a4dff)}
 .limit{position:absolute;top:30px;right:28px;font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
 @media(min-width:760px){
  .card.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.15fr;grid-template-rows:auto auto auto 1fr auto auto;column-gap:36px;padding:44px}
  .card.wide>*{grid-column:1}
  .card.wide .art{grid-column:2;grid-row:1/-1;margin:0;aspect-ratio:auto;min-height:340px}
  .card.wide h3{font-size:58px}
+ .card.mega h3{font-size:76px}
 }
 
 /* steps */
@@ -183,6 +187,14 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
 <section class="sec" id="iv">
  <div class="sec-h rv"><h2 class="bb">IV Bundles</h2><p>Get <b>$200 off</b> our IV bundles.</p></div>
  <div class="grid two">
+  <article class="card rv wide mega" id="mega" style="--c1:#4d94ff;--c2:#b56bff;--tb:#e6efff;--tc:#0b3fa8">
+   <span class="tag">Best Value</span>
+   <h3>MEGA Bundle</h3>
+   <p class="inc">6 Lifestyle drips + 1 IM Quick Shot. Choose at each visit.</p>
+   <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-mega.webp" alt="MEGA Bundle" loading="lazy" width="900" height="780"></div>
+   <div class="price-row"><span class="price">$794</span><span class="was">$1,244</span><span class="save">Save $450</span></div>
+   <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
+  </article>
   <article class="card rv" id="immunity" style="--c1:#d4f03c;--c2:#ffe14d;--tb:#f2fbcc;--tc:#4b5a00">
    <span class="tag">Immunity</span>
    <h3>Immunity Bundle</h3>
@@ -190,7 +202,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-immunity.webp" alt="Immunity Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
   <article class="card rv" id="energy" style="--c1:#ff9a3c;--c2:#5fe3c9;--tb:#fff0e0;--tc:#8a3d00">
    <span class="tag">Energy</span>
@@ -199,7 +210,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-energy.webp" alt="Energy Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
   <article class="card rv" id="antiaging" style="--c1:#ff8fc1;--c2:#b79cff;--tb:#ffe8f3;--tc:#8a1050">
    <span class="tag">Anti-Aging</span>
@@ -208,7 +218,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-antiaging.webp" alt="Anti-Aging Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
   <article class="card rv" id="weight" style="--c1:#ff7a45;--c2:#ffc15a;--tb:#ffece3;--tc:#8a2e00">
    <span class="tag">Weight Loss</span>
@@ -217,7 +226,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-weight.webp" alt="Weight Loss Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
   <article class="card rv" id="biostack" style="--c1:#ff4d5e;--c2:#7cc7ff;--tb:#ffe6e9;--tc:#8a0f20">
    <span class="tag">Bio Stack</span>
@@ -226,7 +234,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-biostack.webp" alt="Bio Stack Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
   <article class="card rv" id="byo" style="--c1:#4fd6ff;--c2:#ff8fc1;--tb:#e3f6ff;--tc:#00597a">
    <span class="tag">Your Pick</span>
@@ -235,7 +242,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-byo.webp" alt="Build Your Own" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
  </div>
 </section>
@@ -250,7 +256,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-energy.webp" alt="Energy Shots" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
   <article class="card rv" id="sh-immune" style="--c1:#ffe14d;--c2:#ff4d6d;--tb:#fff6cc;--tc:#6b5300">
    <span class="tag">Immunity</span>
@@ -259,7 +264,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-immunity.webp" alt="Immunity Shots" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
   <article class="card rv" id="sh-byo" style="--c1:#6b7bff;--c2:#ff5fd2;--tb:#eeeaff;--tc:#3a2a9a">
    <span class="tag">Your Pick</span>
@@ -268,7 +272,6 @@ footer .md{margin-top:18px;font-size:12px;color:#7a8896}
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-byo.webp" alt="Build Your Own" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
    <a class="buy" href="#" data-pending="Checkout opens when the Black Friday bundles go live.">Buy Now</a>
-   <a class="payg" href="#" data-pending="Pay As You Go options are coming soon.">Or pay as you go</a>
   </article>
  </div>
 </section>
