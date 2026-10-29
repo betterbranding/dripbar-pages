@@ -832,6 +832,32 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .launch i{width:8px;height:8px;border-radius:50%;background:var(--lime)}
 @media(max-width:1000px){.tech-grid{grid-template-columns:repeat(2,1fr)}.sess-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.tech-grid{grid-template-columns:1fr}}
+
+/* ---------- t-shape before/after carousel (Artemis-style) ---------- */
+.ba{position:relative}
+.ba-view{overflow:hidden;touch-action:pan-y}
+.ba-track{display:flex;column-gap:24px;will-change:transform}
+.ba-slide{flex:0 0 calc((100% - 24px)/2);min-width:0;margin:0;-webkit-user-select:none;user-select:none}
+.ba-img{position:relative;aspect-ratio:1320/1100}
+.ba-img img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
+.ba-tag{position:absolute;top:12px;font:600 11px/1 var(--pop);letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(4,78,99,.86);padding:7px 11px;border-radius:99px}
+.ba-img.row .ba-tag.b{left:12px}.ba-img.row .ba-tag.a{left:calc(50% + 12px)}
+.ba-img.col .ba-tag{left:12px}.ba-img.col .ba-tag.a{top:calc(50% + 12px)}
+.ba-slide figcaption{margin-top:16px;text-align:center;font:600 16px/1.35 var(--pop);color:#fff}
+.ba-slide figcaption small{display:block;margin-bottom:7px;font:600 11.5px/1 var(--pop);letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.ba-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:30px}
+.ba-arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.34);background:transparent;color:#fff;display:inline-grid;place-items:center;cursor:pointer;padding:0;transition:background .2s,border-color .2s}
+.ba-arrow:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.6)}
+.ba-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ba-dots{display:flex;align-items:center}
+.ba-dots button{width:22px;height:30px;border:0;padding:0;background:none;cursor:pointer;display:inline-grid;place-items:center}
+.ba-dots button::before{content:"";width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.38);transition:width .25s,background .25s}
+.ba-dots button[aria-current="true"]{width:38px}
+.ba-dots button[aria-current="true"]::before{width:22px;background:var(--lime)}
+.ba-arrow:focus-visible,.ba-dots button:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.ba-note{font-size:13px;color:rgba(255,255,255,.66);margin-top:24px;text-align:center}
+@media(max-width:760px){.ba-slide{flex-basis:100%}.ba-dots button{width:18px}.ba-slide figcaption{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.ba-track{transition:none!important}}
 </style>
 </head>
 <body>
@@ -946,7 +972,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
   <div class="shell ihero-grid">
     <div>
       <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/#services">Services</a><span>/</span><b>T-Shape 2</b></div>
-      <div class="launch"><i></i>New at Burleson. Sessions begin Friday, October 16</div>
+      <div class="launch"><i></i>Now booking at Burleson</div>
       <h1>Face and body sculpting, <span class="acc">on your lunch break.</span></h1>
       <p class="lede">T-Shape 2 combines laser, radiofrequency, vacuum massage, and deep therapeutic massage in one session to help firm skin, improve the appearance of cellulite and muscle tone, and support circulation. It feels like a warm, deep massage. Pairs well with medical weight loss.</p>
       <div class="ihero-ctas">
@@ -957,7 +983,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     </div>
     <div class="hvis rv">
       <div class="hph wide"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/hero-body-session.webp" alt="A provider guiding the T-Shape 2 handpiece over a guest's abdomen during a body sculpting session" loading="eager" fetchpriority="high"></div>
-      <div class="hchip"><b>Burleson only</b><span class="hsep"></span><small>Face, body, lymphatic</small></div>
+      <div class="hchip"><b>Now in Burleson</b><span class="hsep"></span><small>Face, body, lymphatic</small></div>
     </div>
   </div>
 </header>
@@ -965,7 +991,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 <section class="bg-blue">
   <div class="shell facts">
     <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-sun"/></svg></span></div><div><b>4 technologies</b><span>In one handpiece</span></div></div>
-    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-clock"/></svg></span></div><div><b>Non-invasive</b><span>Back to your day after</span></div></div>
+    <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-clock"/></svg></span></div><div><b>Non-invasive</b><span>No needles or incisions</span></div></div>
     <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-refresh"/></svg></span></div><div><b>A series</b><span>Best results over a course</span></div></div>
     <div class="fact"><div class="isq"><span class="ic"><svg><use href="#i-users"/></svg></span></div><div><b>Consult included</b><span>Built into your first visit</span></div></div>
   </div>
@@ -1001,6 +1027,21 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
     <p class="results-note">T-Shape 2 is an FDA-cleared device for temporary improvement in the appearance of cellulite, temporary improvement in local circulation, and relief of minor muscle aches. Individual results may vary.</p>
   </div>
 </section>
+<!-- RESULTS -->
+<section class="bg-teal pad" id="results">
+  <div class="shell">
+    <div class="cmp-head rv">
+      <div class="tag on-teal">Before and After</div>
+      <h2>Real results.</h2>
+      <p class="lede">Before and after photos from other T-Shape 2 providers, shared by Artemis, the T-Shape 2 distributor. Results depend on the area, the number of sessions, and the person.</p>
+    </div>
+    <div class="ba" data-ba role="region" aria-roledescription="carousel" aria-label="T-Shape 2 before and after photos">
+      <div class="ba-view"><div class="ba-track"><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="1 of 8"><div class="ba-img row"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-abdomen-11.webp" alt="T-Shape 2 before and after photos of the abdomen, after 11 sessions (before on the left, after on the right). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Abdomen</small>After 11 sessions</figcaption></figure><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="2 of 8"><div class="ba-img row"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-face-2.webp" alt="T-Shape 2 before and after photos of the face and neck, after 2 sessions (before on the left, after on the right). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Face and neck</small>After 2 sessions</figcaption></figure><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="3 of 8"><div class="ba-img row"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-thighs-3.webp" alt="T-Shape 2 before and after photos of the back of thighs, after 3 sessions (before on the left, after on the right). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Back of thighs</small>After 3 sessions</figcaption></figure><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="4 of 8"><div class="ba-img col"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-abdomen-3.webp" alt="T-Shape 2 before and after photos of the abdomen, after 3 sessions (before on top, after below). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Abdomen</small>After 3 sessions</figcaption></figure><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="5 of 8"><div class="ba-img row"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-glutes-8.webp" alt="T-Shape 2 before and after photos of the glutes, after 8 sessions (before on the left, after on the right). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Glutes</small>After 8 sessions</figcaption></figure><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="6 of 8"><div class="ba-img row"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-face-4.webp" alt="T-Shape 2 before and after photos of the face, after 4 sessions (before on the left, after on the right). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Face</small>After 4 sessions</figcaption></figure><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="7 of 8"><div class="ba-img row"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-legs-8.webp" alt="T-Shape 2 before and after photos of the back of legs, after 8 sessions (before on the left, after on the right). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Back of legs</small>After 8 sessions</figcaption></figure><figure class="ba-slide" role="group" aria-roledescription="slide" aria-label="8 of 8"><div class="ba-img row"><img src="https://betterbranding.github.io/dripbar-pages/burleson/site/assets/photos/tshape/ba/ba-abdomen-3m.webp" alt="T-Shape 2 before and after photos of the abdomen, after 3 sessions (before on the left, after on the right). Courtesy of Artemis." width="1320" height="1100" loading="lazy" decoding="async"><span class="ba-tag b" aria-hidden="true">Before</span><span class="ba-tag a" aria-hidden="true">After</span></div><figcaption><small>Abdomen</small>After 3 sessions</figcaption></figure></div></div>
+      <div class="ba-nav"><button type="button" class="ba-arrow ba-prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><div class="ba-dots" role="group" aria-label="Choose a photo"></div><button type="button" class="ba-arrow ba-next" aria-label="Next photos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+    </div>
+    <p class="ba-note">Photos courtesy of Artemis. Individual results may vary. A full course of sessions is recommended.</p>
+  </div>
+</section>
 <!-- SESSIONS -->
 <section class="bg-soft pad" id="sessions">
   <div class="shell">
@@ -1027,7 +1068,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <ul class="ckl">
         <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>One team, one plan<small>Your weight loss provider and T-Shape provider work from the same notes.</small></div></li>
         <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Timed to your progress<small>Sessions can be scheduled around weigh-ins and dose changes.</small></div></li>
-        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Fits your schedule<small>Sessions fit into a lunch break and you head straight back to your day.</small></div></li>
+        <li><span class="ic ck"><svg><use href="#i-check"/></svg></span><div>Fits your schedule<small>Sessions take 30 to 60 minutes, so they fit into a busy week.</small></div></li>
       </ul>
       <div class="ctas"><a class="btn btn-lime" href="#book">Book a Session</a><a class="btn btn-out" href="/weight-loss-support">GLP-1 Weight Loss</a></div>
       <p class="results-note" style="text-align:left;margin-top:16px">Individual results may vary.</p>
@@ -1051,7 +1092,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
       <div class="step"><div class="num">1</div><div><h3>Book online</h3><p>Pick Body Shaping, Face and Decollete, or Lymphatic Massage below. Tell us it is your first T-Shape visit and we build the consultation into the same appointment.</p></div></div>
       <div class="step"><div class="num">2</div><div><h3>Consultation</h3><p>Your provider reviews your goals and health history, maps the areas you care about, and recommends a series. Package options and pricing are shared here.</p></div></div>
       <div class="step"><div class="num">3</div><div><h3>Your session</h3><p>Lie back while the handpiece glides over the area with gentle suction and warmth. Many guests find it relaxing.</p></div></div>
-      <div class="step"><div class="num">4</div><div><h3>Back to your day</h3><p>Drink water, keep moving, and book your next session on the way out.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h3>After your session</h3><p>Drink water, keep moving, and book your next session on the way out.</p></div></div>
     </div>
   </div>
 </section>
@@ -1768,6 +1809,70 @@ const BOOKING = { default: B,
       var bw = document.getElementById('bw'); if(bw) bw.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
+})();
+</script>
+
+<script>
+/* T-Shape before/after carousel: 2 per view (1 on phones), infinite loop with clones, autoplay 5 s while visible,
+   pauses on hover/focus, stops after any interaction, swipe + arrows + dots + arrow keys, honours reduced motion. */
+(function(){
+  var root = document.querySelector('[data-ba]'); if(!root) return;
+  var view = root.querySelector('.ba-view'), track = root.querySelector('.ba-track');
+  var orig = Array.prototype.slice.call(track.children), N = orig.length; if(N < 2) return;
+  var dotsWrap = root.querySelector('.ba-dots'), prevB = root.querySelector('.ba-prev'), nextB = root.querySelector('.ba-next');
+  var mq = window.matchMedia('(max-width: 760px)');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DELAY = 5000, SPEED = 550, spv = 0, idx = 0, busy = false, timer = null, hover = false, stopped = false, visible = false, fb = null, dots = [];
+  orig.forEach(function(s, k){
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Show photo ' + (k + 1) + ' of ' + N);
+    b.addEventListener('click', function(){ stop(); go(k, true); }); dotsWrap.appendChild(b); dots.push(b);
+  });
+  function mark(el){ el.classList.add('ba-clone'); el.setAttribute('aria-hidden', 'true'); el.setAttribute('inert', ''); el.removeAttribute('role'); el.removeAttribute('aria-roledescription'); el.removeAttribute('aria-label'); }
+  function build(){
+    Array.prototype.slice.call(track.querySelectorAll('.ba-clone')).forEach(function(c){ track.removeChild(c); });
+    spv = mq.matches ? 1 : 2;
+    for(var i = 0; i < spv; i++){
+      var h = orig[N - 1 - i].cloneNode(true); mark(h); track.insertBefore(h, track.firstChild);
+      var t = orig[i].cloneNode(true); mark(t); track.appendChild(t);
+    }
+    go(idx, false);
+  }
+  function stepPx(){ return orig[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0); }
+  function render(anim){
+    track.style.transition = (anim && !reduce) ? 'transform ' + SPEED + 'ms cubic-bezier(.22,.61,.36,1)' : 'none';
+    track.style.transform = 'translate3d(' + (-(idx + spv) * stepPx()) + 'px,0,0)';
+    var real = ((idx % N) + N) % N;
+    dots.forEach(function(d, k){ d.setAttribute('aria-current', k === real ? 'true' : 'false'); });
+    orig.forEach(function(s, k){ if(((k - real + N) % N) < spv){ s.removeAttribute('aria-hidden'); s.removeAttribute('inert'); } else { s.setAttribute('aria-hidden', 'true'); s.setAttribute('inert', ''); } });
+  }
+  function settle(){ busy = false; clearTimeout(fb); if(idx >= N || idx < 0){ idx = ((idx % N) + N) % N; render(false); void track.offsetWidth; } }
+  function go(i, anim){ idx = i; render(anim); if(anim && !reduce){ busy = true; clearTimeout(fb); fb = setTimeout(settle, SPEED + 80); } else settle(); }
+  track.addEventListener('transitionend', function(e){ if(e.target === track && e.propertyName === 'transform') settle(); });
+  function move(d){ if(!busy) go(idx + d, true); }
+  function stop(){ stopped = true; clearInterval(timer); timer = null; }
+  function start(){ if(reduce || stopped || timer) return; timer = setInterval(function(){ if(!hover && visible && !document.hidden) move(1); }, DELAY); }
+  prevB.addEventListener('click', function(){ stop(); move(-1); });
+  nextB.addEventListener('click', function(){ stop(); move(1); });
+  root.addEventListener('mouseenter', function(){ hover = true; });
+  root.addEventListener('mouseleave', function(){ hover = false; });
+  root.addEventListener('focusin', function(){ hover = true; });
+  root.addEventListener('focusout', function(){ hover = false; });
+  root.addEventListener('keydown', function(e){ if(e.key === 'ArrowLeft'){ stop(); move(-1); } else if(e.key === 'ArrowRight'){ stop(); move(1); } });
+  var sx = null, dx = 0, pid = null;
+  view.addEventListener('pointerdown', function(e){ if(e.pointerType === 'mouse' && e.button !== 0) return; sx = e.clientX; dx = 0; pid = e.pointerId; });
+  view.addEventListener('pointermove', function(e){ if(sx !== null && e.pointerId === pid) dx = e.clientX - sx; });
+  view.addEventListener('pointerup', function(){ if(sx === null) return; if(Math.abs(dx) > 40){ stop(); move(dx < 0 ? 1 : -1); } sx = null; });
+  view.addEventListener('pointercancel', function(){ sx = null; });
+  view.addEventListener('dragstart', function(e){ e.preventDefault(); });
+  var loaded = false;
+  function eager(){ if(loaded) return; loaded = true; root.querySelectorAll('img[loading="lazy"]').forEach(function(im){ im.loading = 'eager'; }); }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting) eager(); }); }, {rootMargin: '700px 0px'}).observe(root);
+    new IntersectionObserver(function(es){ es.forEach(function(en){ visible = en.isIntersecting; }); }, {threshold: 0.3}).observe(root);
+  } else { eager(); visible = true; }
+  var rt = null;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ if((mq.matches ? 1 : 2) !== spv) build(); else render(false); }, 120); });
+  build(); start();
 })();
 </script>
 </body>
