@@ -852,6 +852,7 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 .ba-dots{display:flex;align-items:center}
 .ba-dots button{width:22px;height:30px;border:0;padding:0;background:none;cursor:pointer;display:inline-grid;place-items:center}
 .ba-dots button::before{content:"";width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.38);transition:width .25s,background .25s}
+.ba-dots button[aria-current="true"]{width:38px}
 .ba-dots button[aria-current="true"]::before{width:22px;background:var(--lime)}
 .ba-arrow:focus-visible,.ba-dots button:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
 .ba-note{font-size:13px;color:rgba(255,255,255,.66);margin-top:24px;text-align:center}
