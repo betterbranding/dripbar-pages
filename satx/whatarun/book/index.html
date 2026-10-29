@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-dr>Claim Your WhataRun Runner Discount | The DRIPBaR San Antonio</title>
+<meta name="description" content="WhataRun runners: pick your DRIPBaR location, choose a discount quick shot or IV drip, and book your recovery visit in a few taps.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#044E63">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claim Your WhataRun Runner Discount | The DRIPBaR San Antonio">
+<meta property="og:description" content="Pick your location, choose your promo, and book your recovery visit.">
+<meta property="og:image" content="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/social.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-48.png">
+<link rel="apple-touch-icon" href="https://betterbranding.github.io/dripbar-pages/assets/favicon/dripbar-emoji-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+
+:root{--teal:#044E63;--teal-d:#033c4d;--teal-soft:rgba(255,255,255,.12);--lime:#AFB216;--lime-dark:#9A9D12;--blue:#D9EEF5;--blue-soft:#EEF7FA;--blue-icon:#DFF1F6;--body:#3B4A4E;--muted:#6B7A80;--divider:#DCE8EC;--wb:#F26722;--bebas:'Bebas Neue','Arial Narrow',Arial,sans-serif;--pop:'Poppins',Arial,sans-serif;--navh:84px;--barh:84px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--pop);color:var(--body);background:#fff;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:calc(var(--barh) + env(safe-area-inset-bottom))}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+.shell{width:min(1280px,92vw);margin:0 auto}
+.pad{padding-top:120px;padding-bottom:120px}
+section[id]{scroll-margin-top:calc(var(--navh) + 8px)}
+h1,h2,h3,h4{font-family:var(--bebas);font-weight:400;letter-spacing:1px}
+h2{font-size:clamp(38px,4.2vw,62px);line-height:1.02;color:var(--teal)}
+h3{font-size:clamp(23px,2vw,28px);line-height:1.1;color:var(--teal)}
+.ghost{color:#9fb3ba}
+.bg-teal .ghost{color:rgba(255,255,255,.45)}
+.lede{font-size:clamp(16px,1.25vw,18px);max-width:640px}
+.bg-blue{background:var(--blue)}.bg-soft{background:var(--blue-soft)}.bg-teal{background:var(--teal);color:#fff}
+.bg-teal h2,.bg-teal h3{color:#fff}
+.bg-teal .lede{color:rgba(255,255,255,.86)}
+.lime{color:var(--lime)}
+.tag{display:inline-flex;align-items:center;gap:9px;font:500 14px/1 var(--pop);padding:11px 18px;border-radius:99px;background:var(--blue);color:var(--teal);margin-bottom:22px}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none}
+.tag.on-teal{background:var(--teal-soft);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.tag.on-blue{background:#fff}
+.ic{display:inline-flex;flex:none;width:18px;height:18px}
+.ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15.5px/1 var(--pop);padding:17px 30px;border-radius:99px;border:0;cursor:pointer;text-align:center;white-space:nowrap;transition:background .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.btn-lime{background:var(--lime);color:#fff}
+.btn-lime:hover{background:var(--lime-dark);transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(175,178,22,.7)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(4,78,99,.6)}
+.btn-out-w{background:transparent;border:1.5px solid rgba(255,255,255,.85);color:#fff;padding:15.5px 28.5px}
+.btn-out-w:hover{background:#fff;color:var(--teal)}
+.btn-w{background:#fff;color:var(--teal)}
+.btn-w:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(0,0,0,.45)}
+.tlink{font:600 15px/1.3 var(--pop);color:var(--lime-dark);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;display:inline-flex;align-items:center;gap:6px;transition:color .25s ease}
+.tlink:hover{color:var(--teal)}
+.tlink span{display:inline-block;transition:transform .3s ease}
+.tlink:hover span{transform:translateX(4px)}
+.sec-head{text-align:center;max-width:780px;margin:0 auto 54px}
+.sec-head .lede{margin:16px auto 0}
+
+
+/* ===== nav / results banner ===== */
+.nav{position:sticky;top:0;z-index:900;background:#fff;border-bottom:1px solid var(--divider)}
+.stripe{height:6px;background:repeating-linear-gradient(-45deg,var(--wb) 0 10px,#fff 10px 20px)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--navh);gap:18px}
+.brand{display:flex;align-items:center;gap:18px;min-width:0}
+.brand img{height:46px;width:auto}
+.brand .div{width:1px;height:42px;background:var(--divider);flex:none}
+.rr-title{display:flex;flex-direction:column;line-height:1;min-width:0}
+.rr-title b{font:400 31px/0.95 var(--bebas);letter-spacing:1.5px;color:var(--teal);white-space:nowrap}
+.rr-title small{font:500 13px/1.25 var(--pop);color:var(--muted);margin-top:4px;white-space:nowrap}
+.rr-title small strong{color:var(--teal);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:30px;font:500 15px/1 var(--pop);color:var(--teal)}
+.nav-links a{padding:12px 0;position:relative;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-wr{display:flex;align-items:center;gap:10px;font:500 12px/1.2 var(--pop);color:var(--muted);text-align:right}
+.nav-wr img{height:46px;width:auto}
+@media(max-width:1180px){.nav-links{display:none}}
+@media(max-width:720px){:root{--navh:68px}.brand{gap:12px}.brand img{height:34px}.brand .div{height:32px}.rr-title b{font-size:24px}.rr-title small{font-size:11px}.nav-wr span{display:none}.nav-wr img{height:36px}}
+@media(max-width:380px){.brand img{height:28px}.rr-title b{font-size:21px}.rr-title small{font-size:10.5px}.nav-wr img{height:30px}}
+
+
+/* ===== locations map ===== */
+.mapwrap{position:relative;border-radius:28px;overflow:hidden;background:#cfe6ee;box-shadow:0 40px 80px -44px rgba(4,78,99,.55);border:6px solid #fff}
+#dbmap{height:620px;width:100%;background:#dbeef4;z-index:1}
+#dbmap .leaflet-tile-pane{filter:grayscale(1) sepia(.18) hue-rotate(150deg) saturate(1.6) brightness(1.06) contrast(.92)}
+.maplist{position:absolute;z-index:500;left:22px;top:22px;bottom:22px;width:330px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:22px;box-shadow:0 20px 50px -20px rgba(4,78,99,.45);display:flex;flex-direction:column;overflow:hidden}
+.ml-head{padding:20px 22px 14px;border-bottom:1px solid var(--divider)}
+.ml-head b{display:block;font:400 30px/1 var(--bebas);letter-spacing:.6px;color:var(--teal)}
+.ml-head span{display:block;font:500 12.5px/1.4 var(--pop);color:var(--muted);margin-top:4px}
+.ml-tools{display:flex;gap:8px;margin-top:12px}
+.ml-tools button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;font:600 12.5px/1 var(--pop);border-radius:99px;padding:10px 10px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);cursor:pointer;transition:background .2s,color .2s}
+.ml-tools button:hover,.ml-tools button.pri{background:var(--teal);color:#fff}
+.ml-tools button.pri:hover{background:var(--teal-d)}
+.ml-tools .ic{width:15px;height:15px}
+.ml-ul{list-style:none;overflow:auto;flex:1;padding:6px 0}
+.ml-item{padding:3px 12px}
+.ml-btn{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:none;border:0;border-radius:14px;padding:9px 10px;cursor:pointer;transition:background .2s}
+.ml-btn:hover{background:var(--blue-soft)}
+.ml-item.on .ml-btn{background:var(--blue)}
+.ml-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:400 19px/1 var(--bebas);padding-top:2px;transition:background .2s,transform .2s}
+.ml-item.on .ml-n{background:var(--lime);transform:scale(1.08)}
+.ml-t b{display:block;font:600 15px/1.25 var(--pop);color:var(--teal)}
+.ml-t small{display:block;font:400 12.5px/1.4 var(--pop);color:var(--muted);margin-top:2px}
+.ml-act{display:none;gap:16px;padding:2px 10px 10px 57px;font:600 13px/1 var(--pop)}
+.ml-item.on .ml-act{display:flex}
+.ml-act a{color:var(--lime-dark)}
+.ml-act a:hover{color:var(--teal)}
+.ml-dist{font:500 11.5px/1 var(--pop);color:var(--lime-dark);margin-left:6px}
+.dbpin{width:46px;height:58px;position:relative;filter:drop-shadow(0 8px 10px rgba(4,78,99,.35));transition:transform .25s ease}
+.dbpin svg{width:46px;height:58px;display:block}
+.dbpin .pn{position:absolute;left:0;right:0;top:9px;text-align:center;font:400 22px/1 'Bebas Neue','Arial Narrow',Arial,sans-serif;color:#fff;padding-top:2px}
+.dbpin .body{fill:#044E63;transition:fill .25s}
+.dbpin.on{transform:translateY(-6px) scale(1.15)}
+.dbpin.on .body{fill:#AFB216}
+.dbpin.on::after{content:"";position:absolute;left:50%;bottom:-6px;width:18px;height:6px;margin-left:-9px;border-radius:50%;background:rgba(4,78,99,.25)}
+.racepin{display:inline-flex;width:max-content;position:relative;align-items:center;gap:8px;background:#F26722;color:#fff;border-radius:99px;padding:7px 13px 7px 7px;font:600 12px/1 'Poppins',Arial,sans-serif;white-space:nowrap;box-shadow:0 10px 22px -8px rgba(242,103,34,.7);border:2px solid #fff;transform:translate(-50%,-50%)}
+.racepin em{font-style:normal}
+.racepin i{width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.racepin i svg{width:15px;height:15px;stroke:#F26722;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.racepin::before{content:"";position:absolute;inset:-6px;border-radius:99px;border:2px solid rgba(242,103,34,.55);animation:rp 2.2s ease-out infinite}
+@keyframes rp{0%{opacity:1;transform:scale(.9)}100%{opacity:0;transform:scale(1.25)}}
+.mepin{width:18px;height:18px;border-radius:50%;background:#2a7de1;border:3px solid #fff;box-shadow:0 0 0 6px rgba(42,125,225,.25)}
+.leaflet-popup-content-wrapper{border-radius:18px;box-shadow:0 20px 44px -18px rgba(4,78,99,.5);padding:0}
+.leaflet-popup-content{margin:0;width:250px!important;font-family:'Poppins',Arial,sans-serif}
+.pp{padding:18px 20px 18px}
+.pp .k{font:600 10.5px/1 'Poppins';letter-spacing:1.4px;text-transform:uppercase;color:#9A9D12}
+.pp b{display:block;font:400 28px/1 'Bebas Neue','Arial Narrow',Arial;letter-spacing:.5px;color:#044E63;margin:6px 0 6px}
+.pp p{margin:0 0 14px!important;font-size:13px;line-height:1.5;color:#6B7A80}
+.pp .row{display:flex;gap:8px}
+.pp .row a{flex:1;text-align:center;border-radius:99px;padding:10px 8px;font:600 12.5px/1 'Poppins';text-decoration:none}
+.pp .row a.d{background:#044E63;color:#fff}
+.pp .row a.c{border:1.5px solid #044E63;color:#044E63}
+.leaflet-container a.leaflet-popup-close-button{top:10px;right:10px;color:#044E63}
+.leaflet-control-zoom{border:0!important;box-shadow:0 10px 24px -10px rgba(4,78,99,.45)!important;border-radius:14px!important;overflow:hidden}
+.leaflet-control-zoom a{width:38px!important;height:38px!important;line-height:38px!important;color:#044E63!important}
+.leaflet-control-attribution{font-size:10px!important;background:rgba(255,255,255,.75)!important;border-radius:8px 0 0 0}
+.map-hint{position:absolute;z-index:600;left:50%;bottom:18px;transform:translateX(-50%);background:rgba(4,78,99,.9);color:#fff;font:500 12px/1 var(--pop);padding:9px 14px;border-radius:99px;pointer-events:none;opacity:0;transition:opacity .3s}
+.map-hint.show{opacity:1}
+@media(max-width:860px){
+ .mapwrap{border-radius:22px;border-width:4px;display:flex;flex-direction:column}
+ #dbmap{height:400px}
+ .ml-ul{scrollbar-width:none}.ml-ul::-webkit-scrollbar{display:none}
+ .ml-act{white-space:nowrap;gap:14px;padding-left:57px}
+ .maplist{position:static;width:auto;border-radius:0;background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+ .ml-head{padding:18px 18px 14px}
+ .ml-ul{display:flex;overflow-x:auto;gap:10px;padding:14px 16px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+ .ml-item{flex:none;width:84%;padding:0;scroll-snap-align:start;border:1px solid var(--divider);border-radius:16px;background:#fff}
+ .ml-item.on{border-color:var(--lime)}
+ .ml-item .ml-act{display:flex}
+ .map-hint{bottom:auto;top:14px}
+ .racepin em{display:none}
+}
+
+
+/* ===== footer ===== */
+.foot{background:#033544;color:#fff;text-align:center;padding:72px 0 56px}
+.foot img.fl{height:58px;width:auto;margin:0 auto}
+.foot .fname{font:600 13px/1 var(--pop);letter-spacing:3px;text-transform:uppercase;margin-top:20px}
+.foot .flinks{display:flex;gap:10px 26px;justify-content:center;flex-wrap:wrap;margin:22px 0;font:500 14px/1 var(--pop);color:rgba(255,255,255,.82)}
+.foot .flinks a:hover{color:var(--lime)}
+.foot .md{font-size:12.5px;color:#9fb7bf;margin-top:6px}
+.foot .tm{font-size:11.5px;color:#7f9aa3;margin-top:10px;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+
+body{padding-bottom:0;background:var(--blue-soft)}
+.nav-back{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--pop);color:var(--teal);padding:12px 18px;border-radius:99px;border:1.5px solid var(--divider);transition:border-color .2s,background .2s}
+.nav-back:hover{border-color:var(--teal);background:var(--blue-soft)}
+.nav-back .ic{width:16px;height:16px}
+@media(max-width:1180px){.nav-back{display:none}}
+
+/* ===== booking hero ===== */
+.bk-hero{position:relative;background:var(--teal);color:#fff;overflow:hidden;padding:64px 0 150px}
+.bk-hero .bg{position:absolute;inset:0}
+.bk-hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.28;transform:scale(1.04)}
+.bk-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(4,78,99,.97) 0%,rgba(4,78,99,.86) 46%,rgba(4,78,99,.55) 100%)}
+.bk-hero .shell{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end}
+.bk-hero h1{font-size:clamp(46px,5.6vw,88px);line-height:.93;color:#fff}
+.bk-hero p.lede{color:rgba(255,255,255,.86);margin-top:18px}
+.bk-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.bk-badges>span{display:inline-flex;align-items:center;gap:8px;background:var(--teal-soft);border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:10px 15px;font:500 13.5px/1 var(--pop)}
+.bk-badges .ic{width:16px;height:16px;color:var(--lime)}
+.bk-hero .stripe{position:absolute;left:0;right:0;bottom:0;z-index:3}
+@media(max-width:900px){.bk-hero{padding:44px 0 128px}.bk-hero .shell{grid-template-columns:1fr;gap:22px}.bk-badges{justify-content:flex-start}.bk-badges>span{font-size:12.5px;padding:9px 13px}}
+
+/* ===== stepper + panel ===== */
+.bk{position:relative;z-index:5;margin-top:-104px;padding-bottom:110px}
+.stepper{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border-radius:22px 22px 0 0;padding:22px 30px 18px;border-bottom:1px solid var(--divider);position:relative}
+.sp{display:flex;align-items:center;gap:12px;position:relative;min-width:0}
+.sp b{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:400 22px/1 var(--bebas);padding-top:2px;background:var(--blue-soft);color:var(--muted);border:2px solid var(--divider);transition:all .35s ease}
+.sp b .ic{width:18px;height:18px;display:none}
+.sp span{display:flex;flex-direction:column;min-width:0}
+.sp small{font:600 10.5px/1 var(--pop);letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.sp em{font:600 14.5px/1.25 var(--pop);font-style:normal;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sp.on b{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 0 0 6px rgba(4,78,99,.1)}
+.sp.on em{color:var(--teal)}
+.sp.done b{background:var(--lime);border-color:var(--lime);color:#fff}
+.sp.done b i{display:none}.sp.done b .ic{display:inline-flex}
+.sp.done em{color:var(--teal)}
+.sp.done{cursor:pointer}
+.sp.done:hover em{text-decoration:underline}
+.sbar{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent}
+.sbar i{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--wb),var(--lime));border-radius:0 3px 3px 0;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.panel{background:#fff;border-radius:0 0 28px 28px;box-shadow:0 50px 90px -50px rgba(4,78,99,.45);padding:36px 36px 40px;min-height:520px}
+.stage{display:none;animation:stIn .5s cubic-bezier(.2,.8,.2,1)}
+.stage.on{display:block}
+@keyframes stIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.st-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+.st-top h2{font-size:clamp(34px,3.4vw,50px)}
+.st-top p{font-size:15px;color:var(--muted);margin-top:6px;max-width:560px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);border:1px solid var(--divider);border-radius:99px;padding:8px 8px 8px 14px;font:500 13px/1 var(--pop);color:var(--teal)}
+.chip .ic{width:15px;height:15px;color:var(--lime-dark)}
+.chip button{border:0;background:#fff;border-radius:99px;padding:6px 10px;font:600 11.5px/1 var(--pop);color:var(--lime-dark);cursor:pointer}
+.chip button:hover{color:var(--teal)}
+.back{display:inline-flex;align-items:center;gap:7px;border:0;background:none;font:600 14px/1 var(--pop);color:var(--muted);cursor:pointer;padding:10px 0}
+.back:hover{color:var(--teal)}
+.back .ic{width:16px;height:16px}
+@media(max-width:860px){
+ .bk{margin-top:-90px;padding-bottom:70px}
+ .stepper{padding:16px 14px 14px;border-radius:20px 20px 0 0}
+ .sp{flex-direction:column;gap:7px;text-align:center}
+ .sp b{width:34px;height:34px;font-size:19px}
+ .sp small{display:none}
+ .sp em{font-size:11.5px;margin:0}
+ .panel{padding:24px 18px 30px;border-radius:0 0 22px 22px}
+ .st-top{margin-bottom:18px}
+}
+
+/* ===== step 1: locator ===== */
+.loc-grid{display:grid;grid-template-columns:380px 1fr;gap:22px;align-items:stretch}
+.loc-list{display:flex;flex-direction:column;gap:10px;max-height:560px;overflow:auto;padding-right:4px}
+.loc-tools{display:flex;gap:8px;margin-bottom:4px}
+.loc-tools button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;font:600 13px/1 var(--pop);border-radius:99px;padding:12px 10px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);cursor:pointer;transition:background .2s,color .2s}
+.loc-tools button:hover,.loc-tools button.pri{background:var(--teal);color:#fff}
+.loc-tools .ic{width:15px;height:15px}
+.lc{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--divider);border-radius:18px;padding:14px 14px 14px 14px;cursor:pointer;transition:border-color .2s,box-shadow .25s,transform .25s;position:relative}
+.lc:hover{border-color:var(--teal);box-shadow:0 16px 30px -22px rgba(4,78,99,.55);transform:translateY(-1px)}
+.lc.hl{border-color:var(--teal)}
+.lc.sel{border-color:var(--lime);box-shadow:0 0 0 4px rgba(175,178,22,.18)}
+.lc .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:400 21px/1 var(--bebas);padding-top:2px}
+.lc.sel .n{background:var(--lime)}
+.lc .t{flex:1;min-width:0}
+.lc .t b{display:block;font:600 15.5px/1.25 var(--pop);color:var(--teal)}
+.lc .t small{display:block;font:400 12.5px/1.45 var(--pop);color:var(--muted);margin-top:2px}
+.lc .t .d{display:inline-block;font:600 11.5px/1 var(--pop);color:var(--lime-dark);margin-top:6px}
+.lc .go{flex:none;width:36px;height:36px;border-radius:50%;background:var(--blue-soft);color:var(--teal);display:grid;place-items:center;transition:background .2s,color .2s,transform .25s}
+.lc .go .ic{width:17px;height:17px}
+.lc:hover .go{background:var(--teal);color:#fff;transform:translateX(3px)}
+.lc .near{position:absolute;top:-9px;right:14px;background:var(--wb);color:#fff;font:600 10.5px/1 var(--pop);letter-spacing:1px;text-transform:uppercase;padding:5px 9px;border-radius:99px}
+.loc-map{position:relative;border-radius:24px;overflow:hidden;border:5px solid #fff;box-shadow:0 30px 60px -36px rgba(4,78,99,.6);min-height:560px;background:#dbeef4}
+#bkmap{position:absolute;inset:0;z-index:1}
+#bkmap .leaflet-tile-pane,#tymap .leaflet-tile-pane{filter:grayscale(1) sepia(.18) hue-rotate(150deg) saturate(1.6) brightness(1.06) contrast(.92)}
+.geo-msg{font:500 12.5px/1.4 var(--pop);color:var(--muted);min-height:18px}
+@media(max-width:960px){
+ .loc-grid{grid-template-columns:1fr;gap:14px}
+ .loc-map{min-height:0;height:300px;order:-1;border-width:3px;border-radius:20px}
+ .loc-list{max-height:none;overflow:visible;padding:0}
+}
+
+/* ===== step 2: promo ===== */
+.promos{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pr{position:relative;display:flex;flex-direction:column;text-align:left;background:#fff;border:2px solid var(--divider);border-radius:24px;overflow:hidden;cursor:pointer;padding:0;transition:border-color .25s,box-shadow .3s,transform .3s}
+.pr:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 30px 60px -36px rgba(4,78,99,.6)}
+.pr.sel{border-color:var(--lime);box-shadow:0 0 0 5px rgba(175,178,22,.2),0 30px 60px -36px rgba(4,78,99,.6)}
+.pr .ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--blue)}
+.pr .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.pr:hover .ph img{transform:scale(1.05)}
+.pr .pill{position:absolute;left:16px;top:16px;background:var(--wb);color:#fff;font:600 12px/1 var(--pop);letter-spacing:.6px;padding:9px 13px;border-radius:99px;box-shadow:0 8px 18px -8px rgba(242,103,34,.8)}
+.pr .radio{position:absolute;right:16px;top:16px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:2px solid #fff;display:grid;place-items:center;color:transparent;transition:background .25s,color .25s}
+.pr .radio .ic{width:18px;height:18px}
+.pr.sel .radio{background:var(--lime);color:#fff}
+.pr .tx{padding:22px 24px 26px}
+.pr .kind{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--pop);letter-spacing:1.4px;text-transform:uppercase;color:var(--lime-dark)}
+.pr .kind .ic{width:18px;height:18px}
+.pr h3{font-size:clamp(30px,2.6vw,40px);line-height:1;margin:10px 0 8px}
+.pr p{font-size:14.5px;line-height:1.55}
+.pr ul{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.pr li{display:inline-flex;align-items:center;gap:6px;font:500 12.5px/1 var(--pop);color:var(--teal);background:var(--blue-soft);border-radius:99px;padding:8px 12px}
+.pr li .ic{width:14px;height:14px;color:var(--lime-dark)}
+.pr-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:26px;flex-wrap:wrap}
+@media(max-width:760px){.promos{grid-template-columns:1fr;gap:14px}.pr .ph{aspect-ratio:16/8}.pr .tx{padding:18px 18px 20px}}
+
+/* ===== step 3: schedule ===== */
+.sch{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+.blk-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.blk-h h4{font:400 26px/1 var(--bebas);letter-spacing:.8px;color:var(--teal)}
+.blk-h .arrows{display:flex;gap:6px}
+.blk-h .arrows button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--divider);background:#fff;color:var(--teal);cursor:pointer;display:grid;place-items:center}
+.blk-h .arrows button:hover{border-color:var(--teal)}
+.blk-h .arrows .ic{width:16px;height:16px}
+.days{display:flex;gap:9px;overflow-x:auto;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.day{flex:none;width:76px;border:1.5px solid var(--divider);background:#fff;border-radius:16px;padding:11px 4px 10px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;position:relative}
+.day .dw{font:600 11px/1 var(--pop);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.day .dn{font:400 34px/1 var(--bebas);color:var(--teal);margin:6px 0 4px}
+.day .dm{font:500 11.5px/1 var(--pop);color:var(--muted)}
+.day:hover:not(:disabled){border-color:var(--teal);transform:translateY(-2px)}
+.day.sel{background:var(--teal);border-color:var(--teal)}
+.day.sel .dw,.day.sel .dm{color:rgba(255,255,255,.75)}
+.day.sel .dn{color:#fff}
+.day:disabled{opacity:.38;cursor:not-allowed}
+.day.race{border-color:var(--wb)}
+.day.race .dm{color:var(--wb);font-weight:600}
+.day.sel.race{background:var(--wb);border-color:var(--wb)}
+.day.sel.race .dm{color:#fff}
+.tgroup{margin-top:18px}
+.tgroup small{display:block;font:600 11px/1 var(--pop);letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:9px}
+.slot{border:1.5px solid var(--divider);background:#fff;border-radius:12px;padding:13px 6px;font:600 14px/1 var(--pop);color:var(--teal);cursor:pointer;transition:all .2s}
+.slot:hover{border-color:var(--teal)}
+.slot.sel{background:var(--lime);border-color:var(--lime);color:#fff;box-shadow:0 10px 20px -12px rgba(175,178,22,.9)}
+.loading{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:14.5px;padding:30px 0}
+.spin{width:22px;height:22px;border-radius:50%;border:2.5px solid var(--divider);border-top-color:var(--teal);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.note{font-size:13.5px;color:var(--muted);padding:14px 16px;background:var(--blue-soft);border-radius:14px;margin-top:14px}
+.note a{color:var(--teal);font-weight:600}
+.form-card{background:var(--blue-soft);border-radius:24px;padding:26px 24px 24px;position:sticky;top:calc(var(--navh) + 18px)}
+.sum{background:#fff;border-radius:18px;padding:16px 18px;margin-bottom:18px;display:grid;gap:10px}
+.sum div{display:flex;gap:12px;align-items:flex-start}
+.sum .ic{width:18px;height:18px;color:var(--lime-dark);margin-top:2px}
+.sum small{display:block;font:600 10.5px/1 var(--pop);letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}
+.sum b{display:block;font:600 14.5px/1.35 var(--pop);color:var(--teal);margin-top:3px}
+.sum b.wait{color:var(--muted);font-weight:500}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld.full{grid-column:1/-1}
+.fld label{font:600 12px/1 var(--pop);color:var(--teal)}
+.fld input{font:500 15px/1.2 var(--pop);color:var(--teal);border:1.5px solid var(--divider);background:#fff;border-radius:12px;padding:14px 14px;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+.fld input:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(4,78,99,.1)}
+.fld input.err{border-color:#d64545;box-shadow:0 0 0 4px rgba(214,69,69,.12)}
+.consent{display:flex;gap:11px;align-items:flex-start;margin-top:14px;background:#fff;border-radius:14px;padding:13px 14px;cursor:pointer;font-size:12.5px;line-height:1.55;color:var(--body);border:1.5px solid transparent}
+.consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--teal);flex:none}
+.consent a{color:var(--teal);font-weight:600;text-decoration:underline}
+.consent.err{border-color:#d64545}
+.book-btn{width:100%;margin-top:16px;padding:19px 20px;font-size:16px}
+.book-btn:disabled{opacity:.55;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.err-msg{display:none;margin-top:12px;background:#fdecec;color:#a33;border-radius:12px;padding:12px 14px;font-size:13.5px;line-height:1.5}
+.err-msg a{color:#a33;font-weight:600}
+.fine{font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.55;text-align:center}
+@media(max-width:960px){.sch{grid-template-columns:1fr;gap:24px}.form-card{position:static;padding:20px 16px}.day{width:68px}.day .dn{font-size:30px}}
+@media(max-width:420px){.fgrid{grid-template-columns:1fr}}
+
+/* ===== step 4: thanks ===== */
+.ty{display:grid;grid-template-columns:.95fr 1.05fr;gap:34px;align-items:stretch}
+.ty-hero{text-align:left}
+.check{width:92px;height:92px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(175,178,22,.18),0 20px 40px -18px rgba(175,178,22,.9);margin-bottom:24px}
+.check svg{width:46px;height:46px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40}
+.stage.on .check svg{animation:draw .7s .25s ease forwards}
+.stage.on .check{animation:pop .55s cubic-bezier(.2,1.6,.4,1)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.ty-hero h2{font-size:clamp(44px,4.6vw,72px);line-height:.95}
+.ty-hero .lede{margin-top:14px;font-size:16.5px}
+.mail{display:flex;gap:14px;align-items:center;background:var(--blue-soft);border-radius:18px;padding:16px 18px;margin-top:22px}
+.mail .ic{width:40px;height:40px;flex:none;background:#fff;border-radius:12px;padding:9px;color:var(--teal)}
+.mail b{display:block;font:600 15px/1.3 var(--pop);color:var(--teal)}
+.mail small{display:block;font-size:13px;color:var(--muted);line-height:1.45;margin-top:2px}
+.ty .sum{background:var(--blue-soft);margin:18px 0 0}
+.cal-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.cal-btns .btn{padding:14px 20px;font-size:14px}
+.btn-ghost{background:#fff;color:var(--teal);border:1.5px solid var(--divider)}
+.btn-ghost:hover{border-color:var(--teal);transform:translateY(-2px)}
+.ty-map{position:relative;border-radius:24px;overflow:hidden;border:5px solid #fff;box-shadow:0 30px 60px -36px rgba(4,78,99,.6);min-height:460px;background:#dbeef4;display:flex;flex-direction:column}
+#tymap{flex:1;min-height:360px;z-index:1}
+.ty-loc{background:var(--teal);color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;position:relative;z-index:2}
+.ty-loc b{display:block;font:400 28px/1 var(--bebas);letter-spacing:.6px}
+.ty-loc small{display:block;font-size:13px;color:rgba(255,255,255,.8);margin-top:4px;line-height:1.4}
+.ty-loc .row{display:flex;gap:8px}
+.ty-loc .row a{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:11px 16px;font:600 13px/1 var(--pop)}
+.ty-loc .row a.d{background:var(--lime);color:#fff}
+.ty-loc .row a.c{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.ty-loc .row .ic{width:15px;height:15px}
+.tip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.tip div{background:var(--blue-soft);border-radius:18px;padding:18px 18px}
+.tip .ic{width:26px;height:26px;color:var(--lime-dark)}
+.tip h4{font:400 22px/1.05 var(--bebas);letter-spacing:.6px;color:var(--teal);margin-top:10px}
+.tip p{font-size:13.5px;line-height:1.5;margin-top:4px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:2000}
+@media(max-width:960px){.ty{grid-template-columns:1fr;gap:24px}.ty-map{min-height:0}#tymap{min-height:280px}.tip{grid-template-columns:1fr}.check{width:76px;height:76px}.check svg{width:38px;height:38px}}
+
+.preview-flag{position:fixed;left:16px;bottom:16px;z-index:3000;background:#F26722;color:#fff;font:600 12px/1 var(--pop);padding:10px 14px;border-radius:99px;box-shadow:0 10px 24px -10px rgba(0,0,0,.4)}
+.hidden{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.check svg{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<div class="nav" id="top">
+  <div class="stripe" aria-hidden="true"></div>
+  <div class="shell nav-in">
+    <a class="brand" href="/whatarun" aria-label="Runner Discount by The DRIPBaR San Antonio">
+      <img src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-navy-green.png" alt="The DRIPBaR" width="150" height="46">
+      <span class="div" aria-hidden="true"></span>
+      <span class="rr-title"><b>Runner Discount</b><small>by <strong>The DRIPBaR San Antonio</strong></small></span>
+    </a>
+    <a class="nav-back" href="/whatarun"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></span>Back to race results</a>
+    <div class="nav-wr"><span>Official sponsor of the</span><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/whatarun-logo.png" alt="Whataburger WhataRun 5K/10K" width="50" height="46"></div>
+  </div>
+</div>
+
+<header class="bk-hero">
+  <div class="bg" aria-hidden="true"><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/hero-2.webp" alt=""></div>
+  <div class="shell">
+    <div>
+      <span class="tag on-teal">WhataRun 2026 finishers</span>
+      <h1>Claim your <span class="lime">runner discount.</span></h1>
+      <p class="lede">Pick your DRIPBaR, choose your promo, and lock in a time. It takes about a minute.</p>
+    </div>
+    <div class="bk-badges">
+      <span><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>6 locations</span>
+      <span><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Book in about a minute</span>
+      <span><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8z"/></svg></span>Licensed nurses</span>
+    </div>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+</header>
+
+<main class="shell bk" id="book">
+  <div class="stepper" role="list" aria-label="Booking steps">
+    <div class="sp on" id="sp1" role="listitem" data-go="1"><b><i>1</i><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></b><span><small>Step 1</small><em id="sp1t">Location</em></span></div>
+    <div class="sp" id="sp2" role="listitem" data-go="2"><b><i>2</i><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></b><span><small>Step 2</small><em id="sp2t">Promo</em></span></div>
+    <div class="sp" id="sp3" role="listitem" data-go="3"><b><i>3</i><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></b><span><small>Step 3</small><em id="sp3t">Schedule</em></span></div>
+    <div class="sp" id="sp4" role="listitem"><b><i>4</i><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></b><span><small>Step 4</small><em>Done</em></span></div>
+    <div class="sbar" aria-hidden="true"><i id="sbar"></i></div>
+  </div>
+
+  <div class="panel">
+    <!-- STEP 1 -->
+    <section class="stage on" id="s1" aria-labelledby="s1h">
+      <div class="st-top">
+        <div><h2 id="s1h">Choose your location</h2><p>All six DRIPBaR locations honor the WhataRun runner discount. Tap a pin or a card to pick yours.</p></div>
+      </div>
+      <div class="loc-grid">
+        <div>
+          <div class="loc-tools">
+            <button type="button" class="pri" id="nearBtn"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/></svg></span>Closest to me</button>
+            <button type="button" id="allBtn"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>Show all</button>
+          </div>
+          <p class="geo-msg" id="geoMsg" aria-live="polite"></p>
+          <div class="loc-list" id="locList"></div>
+        </div>
+        <div class="loc-map"><div id="bkmap" role="region" aria-label="Map of DRIPBaR locations"></div><div class="map-hint" id="mapHint"></div></div>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="stage" id="s2" aria-labelledby="s2h">
+      <div class="st-top">
+        <div><h2 id="s2h">Choose your promo</h2><p>Both are runner discounts for WhataRun 2026 finishers.</p></div>
+        <div class="chips"><span class="chip"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span class="chipLoc"></span><button type="button" data-go="1">Change</button></span></div>
+      </div>
+      <div class="promos">
+        <button type="button" class="pr" data-promo="shots">
+          <span class="ph"><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/offer-shots-v2.webp" alt="A smiling runner getting a quick vitamin shot in his upper arm from a gloved nurse" style="object-position:50% 35%"><span class="pill" data-pill="shots">Runner discount</span><span class="radio" aria-hidden="true"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></span></span>
+          <span class="tx">
+            <span class="kind"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 2l4 4M15 5l4 4M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5zM4.5 19.5L2 22M10 9l2 2M7.5 11.5l2 2"/></svg></span>Quick shots</span>
+            <h3>Discount quick shot</h3>
+            <p>A fast vitamin boost. In, out, and on with your day.</p>
+            <ul><li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Quick visit</li><li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span>Licensed nurse</li></ul>
+          </span>
+        </button>
+        <button type="button" class="pr" data-promo="iv">
+          <span class="ph"><img src="https://betterbranding.github.io/dripbar-pages/satx/whatarun/assets/offer-iv-v2.webp" alt="A runner wearing her finisher medal relaxing in a recliner during an IV drip" style="object-position:55% 40%"><span class="pill" data-pill="iv">Runner discount</span><span class="radio" aria-hidden="true"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></span></span>
+          <span class="tx">
+            <span class="kind"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v11a4 4 0 0 1-8 0zM8 7h8M12 17v5M10 22h4"/></svg></span>IV drips</span>
+            <h3>Discount IV drip</h3>
+            <p>Fluids and vitamins while you put your feet up.</p>
+            <ul><li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18v-6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6M4 14h16M6 18v2M18 18v2"/></svg></span>Lounge chair</li><li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span>Nurse monitored</li></ul>
+          </span>
+        </button>
+      </div>
+      <div class="pr-foot">
+        <button type="button" class="back" data-go="1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></span>Back to locations</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="stage" id="s3" aria-labelledby="s3h">
+      <div class="st-top">
+        <div><h2 id="s3h">Pick your time</h2><p id="s3sub">Open times update live.</p></div>
+        <div class="chips">
+          <span class="chip"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span class="chipLoc"></span><button type="button" data-go="1">Change</button></span>
+          <span class="chip"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span class="chipPromo"></span><button type="button" data-go="2">Change</button></span>
+        </div>
+      </div>
+      <div class="sch">
+        <div>
+          <div class="blk-h"><h4 id="monthH">Choose a day</h4><div class="arrows"><button type="button" id="dPrev" aria-label="Earlier days"><span class="ic"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></span></button><button type="button" id="dNext" aria-label="Later days"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span></button></div></div>
+          <div class="loading" id="slotLoad"><span class="spin"></span>Finding open times...</div>
+          <div class="days" id="days" role="listbox" aria-label="Days"></div>
+          <div id="timesWrap" class="hidden">
+            <div class="blk-h" style="margin-top:14px"><h4 id="timesH"></h4></div>
+            <div id="timeGroups"></div>
+          </div>
+          <p class="note hidden" id="slotErr">We couldn't load open times right now. Please refresh, or call <a class="locTel" href="#"></a> and we'll book you.</p>
+          <p class="note hidden" id="noSlots">No open times in the next few weeks. Call <a class="locTel" href="#"></a> and we'll find you a spot.</p>
+        </div>
+        <div class="form-card">
+          <div class="sum" aria-live="polite">
+            <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><small>Location</small><b class="sumLoc"></b></span></div>
+            <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span><small>Promo</small><b class="sumPromo"></b></span></div>
+            <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><small>When</small><b class="sumWhen wait" id="sumWhen">Pick a day and time</b></span></div>
+          </div>
+          <div class="fgrid">
+            <div class="fld"><label for="fn">First name</label><input id="fn" autocomplete="given-name" required></div>
+            <div class="fld"><label for="ln">Last name</label><input id="ln" autocomplete="family-name" required></div>
+            <div class="fld full"><label for="ph">Mobile number</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="(210) 555-0123" required></div>
+            <div class="fld full"><label for="em">Email</label><input id="em" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required></div>
+          </div>
+          <label class="consent" id="consentBox"><input type="checkbox" id="consent"><span>I agree to the <a id="privLink" href="#" target="_blank" rel="noopener">Privacy Policy and Terms</a> and to be contacted by text and email about this appointment.</span></label>
+          <button type="button" class="btn btn-lime book-btn" id="bookBtn" disabled>Book my visit</button>
+          <div class="err-msg" id="bookErr" role="alert"></div>
+          <p class="fine">Your confirmation is sent by email and text. Need a different time later? Just call the location.</p>
+        </div>
+      </div>
+      <div class="pr-foot">
+        <button type="button" class="back" data-go="2"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></span>Back to promos</button>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="stage" id="s4" aria-labelledby="s4h">
+      <div class="ty">
+        <div class="ty-hero">
+          <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2 id="s4h">Thanks, <span class="lime" id="tyName">runner</span>!<br>You're booked.</h2>
+          <p class="lede">Your runner discount is saved to your visit. Show up, sit back, and let us take it from here.</p>
+          <div class="mail"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span><span><b>Check your email</b><small>We sent your confirmation to <strong id="tyEmail"></strong>. Not there in a few minutes? Check spam or promotions.</small></span></div>
+          <div class="sum">
+            <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><small>When</small><b id="tyWhen"></b></span></div>
+            <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span><small>Promo</small><b class="sumPromo"></b></span></div>
+          </div>
+          <div class="cal-btns">
+            <a class="btn btn-teal" id="gcal" href="#" target="_blank" rel="noopener"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg></span>Google Calendar</a>
+            <a class="btn btn-ghost" id="ical" href="#" download="dripbar-whatarun-visit.ics"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>Apple / Outlook</a>
+          </div>
+        </div>
+        <div class="ty-map">
+          <div id="tymap" role="region" aria-label="Map to your DRIPBaR location"></div>
+          <div class="ty-loc"><span><b id="tyLocName"></b><small id="tyLocAddr"></small></span><span class="row"><a class="d" id="tyDir" href="#" target="_blank" rel="noopener"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg></span>Directions</a><a class="c" id="tyCall" href="#"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>Call</a></span></div>
+        </div>
+      </div>
+      <div class="tip">
+        <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4>Arrive 10 minutes early</h4><p>First visit? We'll have a little paperwork for you.</p></div>
+        <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><h4>Eat and drink first</h4><p>A light meal and some water before your visit helps.</p></div>
+        <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="15" r="5"/><path d="M8.5 11L5 3h4l3 6 3-6h4l-3.5 8"/></svg></span><h4>Mention WhataRun</h4><p>Your discount is on your booking. Bring the medal if you want bragging rights.</p></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="foot">
+  <div class="shell">
+    <img class="fl" src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR" loading="lazy">
+    <div class="fname">The DRIPBaR San Antonio</div>
+    <div class="flinks"><a href="/whatarun">Race results</a><a href="#book">Book your runner discount</a></div>
+    <p class="md">All services administered under the supervision of A.D. Thakkar, M.D.</p>
+    <p class="tm">The DRIPBaR is a proud sponsor of the Whataburger WhataRun 5K/10K. Whataburger and WhataRun are trademarks of their respective owners. IV therapy and quick shots are wellness services and are not intended to diagnose, treat, cure, or prevent any disease.</p>
+  </div>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="preview-flag hidden" id="previewFlag">Preview mode: sample times, nothing is booked</div>
+
+<script>
+(function(){
+if(window.__wrBook) return; window.__wrBook=true;
+/* ===== CONFIG ===== */
+var LOCS=[{"key":"alamo-heights","short":"Alamo Heights","a1":"5800 Broadway, Suite 203","a2":"San Antonio, TX 78209","ph":"(210) 483-7479","tel":"2104837479","lat":29.47959,"lng":-98.46355,"dir":"https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Alamo+Heights+5800+Broadway,+Suite+203+San+Antonio,+TX+78209","cal":"GdLK26VlmgUqNSLw4DVh","loc":"CiUIU6kdpsZ9hdUj78jO","field":"WF5azSgCQDLG6KDZwHIc","privacy":"https://alamo-heights.thedripbar.com/privacy-policy/"},{"key":"dominion-creek","short":"Dominion Creek","a1":"23110 W I-10, Suite 206","a2":"San Antonio, TX 78257","ph":"(210) 212-1104","tel":"2102121104","lat":29.65476,"lng":-98.62575,"dir":"https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Dominion+Creek+23110+W+I-10,+Suite+206+San+Antonio,+TX+78257","cal":"r034WIlZeeo6qj3MlXN5","loc":"GQAjpkv2MCImNKjsFk53","field":"LsnIKmJN2EkeLu3nBR7G","privacy":"https://san-antonio-dominion-creek.thedripbar.com/privacy-policy/"},{"key":"fossil-creek","short":"Fossil Creek","a1":"22250 Bulverde Rd, Space 108","a2":"San Antonio, TX 78261","ph":"(726) 900-8533","tel":"7269008533","lat":29.64931,"lng":-98.426,"dir":"https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Fossil+Creek+22250+Bulverde+Rd,+Space+108+San+Antonio,+TX+78261","cal":"1WlISoWNUm3ZokXPCyCP","loc":"w80AIIrvQm1pxFuS7Yml","field":"H0yB4idutRZVFH636WW2","privacy":"https://san-antonio-fossil-creek.thedripbar.com/privacy-policy/"},{"key":"huebner-oaks","short":"Huebner Oaks","a1":"11255 Huebner Road, Suite 107","a2":"San Antonio, TX 78230","ph":"(210) 306-4135","tel":"2103064135","lat":29.54661,"lng":-98.57754,"dir":"https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Huebner+Oaks+11255+Huebner+Road,+Suite+107+San+Antonio,+TX+78230","cal":"mcKUNEfSycrGMHWsZZpJ","loc":"tJbNtry4cJDJD5NZKVCw","field":"xnohvfW6x4JWw8VG1wBx","privacy":"https://the-strand-at-huebner-oaks.thedripbar.com/privacy-policy/"},{"key":"new-braunfels","short":"New Braunfels","a1":"312 FM 306, #112","a2":"New Braunfels, TX 78130","ph":"(830) 730-5304","tel":"8307305304","lat":29.7324,"lng":-98.08212,"dir":"https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+New+Braunfels+312+FM+306,+#112+New+Braunfels,+TX+78130","cal":"hO3rUwoZsaXaCbcLVimu","loc":"WL4EpOe8of2qeFvWWnKp","field":"9Yay5LggVDQk56yCdZm1","privacy":"https://new-braunfels.thedripbar.com/privacy-policy/"},{"key":"austin","short":"Austin (The Domain)","a1":"11011 Domain Drive, Suite 104","a2":"Austin, TX 78758","ph":"(512) 649-8323","tel":"5126498323","lat":30.39629,"lng":-97.72642,"dir":"https://www.google.com/maps/search/?api=1&query=The+DRIPBaR+Austin+11011+Domain+Drive,+Suite+104+Austin,+TX+78758","cal":"lGZmkOC39aWxOT9gMqEB","loc":"DUPIkcAu6l2rbLLsxhO7","field":"VRl1Wy7ANP6HAgOg4Znr","privacy":"https://austin-the-domain.thedripbar.com/privacy-policy/"}];
+var PROMOS={"shots":{"title":"Discount quick shot","short":"Quick Shot","amount":""},"iv":{"title":"Discount IV drip","short":"IV Drip","amount":""}};
+var RACE={lat:29.45663,lng:-98.69866}, RACE_DAY='2026-11-21';
+var API='https://backend.leadconnectorhq.com', TZ='America/Chicago', TAG='whatarun 2026';
+var DAYS_AHEAD=60;
+var qs=new URLSearchParams(location.search);
+var PREVIEW=qs.get('preview')==='1';
+
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var DW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var DWF=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var st={step:1,loc:null,promo:null,slots:null,slotsFor:null,day:null,slot:null,me:null};
+function $(i){return document.getElementById(i)}
+function all(s){return Array.prototype.slice.call(document.querySelectorAll(s))}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function track(ev,o){try{window.dataLayer=window.dataLayer||[];var d={event:ev};for(var k in o)d[k]=o[k];window.dataLayer.push(d)}catch(e){}}
+function locBy(k){for(var i=0;i<LOCS.length;i++)if(LOCS[i].key===k)return LOCS[i];return null}
+function pad(n){return String(n).padStart(2,'0')}
+function key(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function keyDate(k){var p=k.split('-');return new Date(+p[0],+p[1]-1,+p[2])}
+function fmtDay(k){var d=keyDate(k);return DWF[d.getDay()]+', '+MONTHS[d.getMonth()]+' '+d.getDate()}
+function fmtTime(iso){var h=+iso.slice(11,13),m=iso.slice(14,16),ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+m+' '+ap}
+if(PREVIEW) $('previewFlag').classList.remove('hidden');
+
+/* promo labels */
+function promoLabel(p){var o=PROMOS[p];return o.title+(o.amount?' ('+o.amount+')':'')}
+all('[data-pill]').forEach(function(el){var o=PROMOS[el.getAttribute('data-pill')];if(o.amount)el.textContent=o.amount})
+
+/* ===== stepper ===== */
+function go(n,quiet){
+  if(n>=2&&!st.loc)n=1; if(n>=3&&!st.promo)n=2;
+  st.step=n;
+  for(var i=1;i<=4;i++){
+    $('s'+i).classList.toggle('on',i===n);
+    var sp=$('sp'+i); sp.classList.toggle('on',i===n); sp.classList.toggle('done',i<n);
+  }
+  $('sbar').style.width=(n*25)+'%';
+  $('sp1t').textContent=st.loc?st.loc.short:'Location';
+  $('sp2t').textContent=st.promo?PROMOS[st.promo].short:'Promo';
+  $('sp3t').textContent=st.slot&&n>=3?fmtTime(st.slot):'Schedule';
+  if(n===4){all('.sp').forEach(function(s){s.classList.add('done');s.classList.remove('on')});}
+  if(!quiet){var y=$('book').getBoundingClientRect().top+window.pageYOffset-90;window.scrollTo({top:y,behavior:'smooth'})}
+  if(n===1&&map)setTimeout(function(){map.invalidateSize()},60);
+  if(n===3)loadSlots();
+  track('whatarun_step',{step:n,location:st.loc&&st.loc.short,promo:st.promo});
+}
+all('[data-go]').forEach(function(el){el.addEventListener('click',function(){var n=+el.getAttribute('data-go');if(el.classList.contains('sp')&&!el.classList.contains('done'))return;if(st.step===4)return;go(n)})});
+function paintChosen(){
+  all('.chipLoc,.sumLoc').forEach(function(e){e.textContent=st.loc?('The DRIPBaR '+st.loc.short):''});
+  all('.chipPromo,.sumPromo').forEach(function(e){e.textContent=st.promo?promoLabel(st.promo):''});
+  all('.locTel').forEach(function(a){if(st.loc){a.textContent=st.loc.ph;a.href='tel:+1'+st.loc.tel}});
+  if(st.loc)$('privLink').href=st.loc.privacy;
+}
+
+/* ===== step 1: store locator ===== */
+var map=null, markers={}, me=null;
+function pinIcon(n,on){return L.divIcon({className:'',html:'<div class="dbpin'+(on?' on':'')+'"><svg viewBox="0 0 46 58"><path class="body" d="M23 1C10.8 1 1 10.6 1 22.6 1 39 23 57 23 57s22-18 22-34.4C45 10.6 35.2 1 23 1z"/></svg><span class="pn">'+n+'</span></div>',iconSize:[46,58],iconAnchor:[23,56],popupAnchor:[0,-50]})}
+function renderList(){
+  var wrap=$('locList'); wrap.innerHTML='';
+  var nearest=null; if(me){LOCS.forEach(function(l){if(!nearest||l.dist<nearest.dist)nearest=l})}
+  LOCS.forEach(function(l,i){
+    var b=document.createElement('button'); b.type='button'; b.className='lc'+(st.loc&&st.loc.key===l.key?' sel':''); b.setAttribute('data-k',l.key);
+    b.innerHTML=(nearest&&nearest.key===l.key?'<span class="near">Closest</span>':'')+'<span class="n">'+l.num+'</span><span class="t"><b>The DRIPBaR '+esc(l.short)+'</b><small>'+esc(l.a1)+'<br>'+esc(l.a2)+'</small>'+(l.dist!=null?'<span class="d">'+l.dist.toFixed(1)+' miles away</span>':'')+'</span><span class="go" aria-hidden="true"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>';
+    b.setAttribute('aria-label','Choose The DRIPBaR '+l.short+', '+l.a1+', '+l.a2);
+    b.addEventListener('click',function(){pickLoc(l.key)});
+    b.addEventListener('mouseenter',function(){hl(l.key,true)});
+    b.addEventListener('mouseleave',function(){hl(l.key,false)});
+    wrap.appendChild(b);
+  });
+}
+function hl(k,on){var m=markers[k];if(!m)return;var l=locBy(k);m.setIcon(pinIcon(l.num,on||(st.loc&&st.loc.key===k)));if(on)m.setZIndexOffset(1000);else m.setZIndexOffset(0)}
+function pickLoc(k){
+  var l=locBy(k); if(!l)return;
+  if(!st.loc||st.loc.key!==k){st.slots=null;st.day=null;st.slot=null}
+  st.loc=l; paintChosen(); renderList();
+  Object.keys(markers).forEach(function(mk){hl(mk,false)});
+  track('whatarun_location',{location:l.short});
+  setTimeout(function(){go(st.promo&&st.promoFromUrl?3:2)},st.step===1?220:0);
+}
+function haversine(a,b,c,d){var R=3958.8,t=Math.PI/180,x=(c-a)*t,y=(d-b)*t,h=Math.sin(x/2)*Math.sin(x/2)+Math.cos(a*t)*Math.cos(c*t)*Math.sin(y/2)*Math.sin(y/2);return 2*R*Math.asin(Math.sqrt(h))}
+$('nearBtn').addEventListener('click',function(){
+  var msg=$('geoMsg');
+  if(!navigator.geolocation){msg.textContent='Your browser can\'t share location. Pick from the list below.';return}
+  msg.textContent='Finding the closest DRIPBaR...';
+  navigator.geolocation.getCurrentPosition(function(p){
+    var la=p.coords.latitude,ln=p.coords.longitude;
+    LOCS.forEach(function(l){l.dist=haversine(la,ln,l.lat,l.lng)});
+    LOCS.sort(function(a,b){return a.dist-b.dist}); me={lat:la,lng:ln};
+    renderList(); msg.textContent='Sorted by distance from you.';
+    if(map){ if(map._me)map.removeLayer(map._me); map._me=L.marker([la,ln],{icon:L.divIcon({className:'',html:'<div class="mepin"></div>',iconSize:[18,18],iconAnchor:[9,9]}),keyboard:false}).addTo(map);
+      var n=LOCS[0]; map.flyToBounds(L.latLngBounds([[la,ln],[n.lat,n.lng]]).pad(.35),{duration:.9}); hl(n.key,true); }
+    track('whatarun_geolocate',{nearest:LOCS[0].short});
+  },function(){msg.textContent='We couldn\'t get your location. Pick from the list below.'},{enableHighAccuracy:false,timeout:9000,maximumAge:600000});
+});
+$('allBtn').addEventListener('click',function(){if(map)map.flyToBounds(boundsAll(),{duration:.8})});
+function boundsAll(){return L.latLngBounds(LOCS.map(function(l){return[l.lat,l.lng]})).pad(.12)}
+function initMap(){
+  if(!window.L||map)return;
+  map=L.map('bkmap',{scrollWheelZoom:false,zoomControl:true,attributionControl:true,tap:true});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+  map.fitBounds(boundsAll());
+  LOCS.forEach(function(l){
+    var m=L.marker([l.lat,l.lng],{icon:pinIcon(l.num,false),title:'The DRIPBaR '+l.short,riseOnHover:true}).addTo(map);
+    m.bindPopup('<div class="pp"><span class="k">Location '+l.num+'</span><b>'+esc(l.short)+'</b><p>'+esc(l.a1)+'<br>'+esc(l.a2)+'</p><div class="row"><a class="d" href="#" data-pick="'+l.key+'">Book here</a><a class="c" href="tel:+1'+l.tel+'">Call</a></div></div>');
+    m.on('mouseover',function(){hl(l.key,true);var c=document.querySelector('.lc[data-k="'+l.key+'"]');if(c)c.classList.add('hl')});
+    m.on('mouseout',function(){hl(l.key,false);var c=document.querySelector('.lc[data-k="'+l.key+'"]');if(c)c.classList.remove('hl')});
+    markers[l.key]=m;
+  });
+  var race=L.marker([RACE.lat,RACE.lng],{icon:L.divIcon({className:'',html:'<div class="racepin"><i><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></i><em>WhataRun</em></div>',iconSize:null}),keyboard:false}).addTo(map);
+  race.bindPopup('<div class="pp"><span class="k">Race day &middot; Nov 21</span><b>WhataRun 5K/10K</b><p>SeaWorld San Antonio<br>10500 SeaWorld Dr, San Antonio, TX 78251</p></div>');
+  map.on('popupopen',function(e){var a=e.popup.getElement().querySelector('[data-pick]');if(a)a.addEventListener('click',function(ev){ev.preventDefault();map.closePopup();pickLoc(a.getAttribute('data-pick'))})});
+  var hint=$('mapHint');
+  map.getContainer().addEventListener('wheel',function(ev){if(ev.ctrlKey||ev.metaKey){map.scrollWheelZoom.enable()}else{map.scrollWheelZoom.disable();hint.textContent='Hold Ctrl and scroll to zoom';hint.classList.add('show');clearTimeout(hint._t);hint._t=setTimeout(function(){hint.classList.remove('show')},1400)}},{passive:true});
+}
+function needLeaflet(cb){
+  if(window.L)return cb();
+  var s=document.createElement('script');s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';s.onload=cb;document.head.appendChild(s);
+}
+LOCS.forEach(function(l,i){l.num=i+1;l.dist=null});
+renderList();
+needLeaflet(initMap);
+
+/* ===== step 2: promo ===== */
+all('.pr').forEach(function(b){b.addEventListener('click',function(){
+  var p=b.getAttribute('data-promo'); st.promo=p;
+  all('.pr').forEach(function(x){x.classList.toggle('sel',x===b);x.setAttribute('aria-pressed',x===b?'true':'false')});
+  paintChosen(); track('whatarun_promo',{promo:p});
+  setTimeout(function(){go(3)},260);
+})});
+
+/* ===== step 3: slots ===== */
+function sample(){
+  var o={},d=new Date();d.setHours(0,0,0,0);
+  for(var i=0;i<DAYS_AHEAD;i++){
+    var k=key(d),dow=d.getDay(),arr=[],end=dow===0?14:(dow===6?15:17);
+    for(var h=10;h<=end;h++){['00','30'].forEach(function(m){if((h*3+i+(m==='30'?1:0))%4===0)return;arr.push(k+'T'+pad(h)+':'+m+':00-06:00')})}
+    if(i>0)o[k]=arr; d.setDate(d.getDate()+1);
+  }
+  return Promise.resolve(o);
+}
+function fetchRange(s,e){
+  return fetch(API+'/calendars/'+st.loc.cal+'/free-slots?startDate='+s+'&endDate='+e+'&timezone='+encodeURIComponent(TZ))
+   .then(function(r){if(!r.ok)throw 0;return r.json()})
+   .then(function(d){var o={};Object.keys(d).forEach(function(k){if(/^\d{4}-/.test(k)&&d[k]&&d[k].slots&&d[k].slots.length)o[k]=d[k].slots});return o});
+}
+function live(){
+  var s=new Date();s.setHours(0,0,0,0);var a=s.getTime(),mid=a+30*864e5,b=a+DAYS_AHEAD*864e5;
+  return Promise.all([fetchRange(a,mid-1),fetchRange(mid,b)]).then(function(r){var o=r[0];for(var k in r[1])o[k]=r[1][k];return o});
+}
+function loadSlots(){
+  if(st.slots&&st.slotsFor===st.loc.key){renderDays();return}
+  $('slotLoad').classList.remove('hidden');$('days').innerHTML='';$('timesWrap').classList.add('hidden');$('slotErr').classList.add('hidden');$('noSlots').classList.add('hidden');
+  $('s3sub').textContent='Open times at The DRIPBaR '+st.loc.short+'. They update live.';
+  var forKey=st.loc.key;
+  (PREVIEW?sample():live()).then(function(o){
+    if(!st.loc||st.loc.key!==forKey)return;
+    st.slots=o; st.slotsFor=forKey; $('slotLoad').classList.add('hidden');
+    if(!Object.keys(o).length){$('noSlots').classList.remove('hidden');return}
+    if(!st.day||!o[st.day]){var ks=Object.keys(o).sort();st.day=ks[0];st.slot=null}
+    renderDays(); renderTimes();
+  }).catch(function(){$('slotLoad').classList.add('hidden');$('slotErr').classList.remove('hidden')});
+}
+function renderDays(){
+  var wrap=$('days'); wrap.innerHTML='';
+  var d=new Date();d.setHours(0,0,0,0);var selEl=null;
+  for(var i=0;i<DAYS_AHEAD;i++){
+    (function(k,dd){
+      var has=st.slots[k]&&st.slots[k].length, race=k===RACE_DAY;
+      var b=document.createElement('button');b.type='button';b.className='day'+(race?' race':'')+(st.day===k?' sel':'');
+      b.setAttribute('role','option');b.setAttribute('aria-selected',st.day===k?'true':'false');
+      b.setAttribute('aria-label',fmtDay(k)+(has?'':' , no open times'));
+      b.innerHTML='<div class="dw">'+DW[dd.getDay()]+'</div><div class="dn">'+dd.getDate()+'</div><div class="dm">'+(race?'Race day':MON[dd.getMonth()])+'</div>';
+      if(!has)b.disabled=true;
+      b.addEventListener('click',function(){st.day=k;st.slot=null;renderDays();renderTimes();updateBook()});
+      wrap.appendChild(b); if(st.day===k)selEl=b;
+    })(key(d),new Date(d));
+    d.setDate(d.getDate()+1);
+  }
+  if(st.day){var sd=keyDate(st.day);$('monthH').textContent=MONTHS[sd.getMonth()]+' '+sd.getFullYear()}
+  if(selEl)setTimeout(function(){wrap.scrollLeft=Math.max(0,selEl.offsetLeft-wrap.offsetLeft-12)},30);
+}
+$('dPrev').addEventListener('click',function(){$('days').scrollBy({left:-340,behavior:'smooth'})});
+$('dNext').addEventListener('click',function(){$('days').scrollBy({left:340,behavior:'smooth'})});
+function renderTimes(){
+  if(!st.day||!st.slots[st.day])return;
+  $('timesWrap').classList.remove('hidden');
+  $('timesH').textContent=fmtDay(st.day)+(st.day===RACE_DAY?' (race day)':'');
+  var g={Morning:[],Afternoon:[],Evening:[]};
+  st.slots[st.day].forEach(function(iso){var h=+iso.slice(11,13);(h<12?g.Morning:(h<17?g.Afternoon:g.Evening)).push(iso)});
+  var w=$('timeGroups');w.innerHTML='';
+  Object.keys(g).forEach(function(name){
+    if(!g[name].length)return;
+    var box=document.createElement('div');box.className='tgroup';box.innerHTML='<small>'+name+'</small><div class="times"></div>';
+    var t=box.querySelector('.times');
+    g[name].forEach(function(iso){var b=document.createElement('button');b.type='button';b.className='slot'+(st.slot===iso?' sel':'');b.textContent=fmtTime(iso);
+      b.addEventListener('click',function(){st.slot=iso;all('.slot').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');updateBook();
+        if(window.innerWidth<960){var f=document.querySelector('.form-card');window.scrollTo({top:f.getBoundingClientRect().top+window.pageYOffset-100,behavior:'smooth'})}});
+      t.appendChild(b)});
+    w.appendChild(box);
+  });
+}
+function updateBook(){
+  var w=$('sumWhen');
+  if(st.slot){w.textContent=fmtDay(st.day)+' at '+fmtTime(st.slot);w.classList.remove('wait')}else{w.textContent='Pick a day and time';w.classList.add('wait')}
+  $('bookBtn').disabled=!st.slot;
+  $('sp3t').textContent=st.slot?fmtTime(st.slot):'Schedule';
+}
+
+/* ===== book ===== */
+function digits(v){var d=v.replace(/\D/g,'');if(d.length===10)d='1'+d;return d.length===11&&d[0]==='1'?'+'+d:''}
+function validate(){
+  var ok=true;
+  ['fn','ln','ph','em'].forEach(function(f){var el=$(f),v=el.value.trim(),bad=!v;
+    if(f==='ph'&&!digits(v))bad=true; if(f==='em'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v))bad=true;
+    el.classList.toggle('err',bad);if(bad)ok=false});
+  var c=$('consent').checked;$('consentBox').classList.toggle('err',!c);if(!c)ok=false;
+  return ok;
+}
+['fn','ln','ph','em'].forEach(function(f){$(f).addEventListener('input',function(){$(f).classList.remove('err')})});
+$('consent').addEventListener('change',function(){$('consentBox').classList.remove('err')});
+$('bookBtn').addEventListener('click',function(){
+  var err=$('bookErr');err.style.display='none';
+  if(!st.slot)return;
+  if(!validate()){err.textContent='Please fill in the highlighted fields.';err.style.display='block';return}
+  var p={fn:$('fn').value.trim(),ln:$('ln').value.trim(),ph:digits($('ph').value),em:$('em').value.trim()};
+  var L0=st.loc,P=PROMOS[st.promo];
+  var offer='WhataRun runner discount: '+P.title+(P.amount?' ('+P.amount+')':'');
+  var details=['Offer: '+offer,'Location: The DRIPBaR '+L0.short,'Source: WhataRun 2026 booking page','Requested: '+fmtDay(st.day)+' at '+fmtTime(st.slot)+' CT','Booked: '+new Date().toLocaleString('en-US',{timeZone:TZ})+' CT'].join('\n');
+  var qp={};qs.forEach(function(v,k){qp[k]=v});
+  var payload={calendar_id:L0.cal,location_id:L0.loc,selected_slot:st.slot,selected_timezone:TZ,
+    first_name:p.fn,last_name:p.ln,full_name:p.fn+' '+p.ln,phone:p.ph,email:p.em,
+    title:'WhataRun '+P.short+': '+p.fn+' '+p.ln,description:details,notes:details,tags:[TAG,TAG+' '+st.promo],
+    terms_and_conditions:'I agree to the terms and conditions',Timezone:TZ,whatarun_offer:offer,
+    eventData:{source:location.href,referrer:document.referrer,url_params:qp,campaign:qp.utm_campaign||'whatarun-2026',page:{url:location.href,title:document.title},medium:'calendar',mediumId:L0.cal}};
+  payload[L0.field]=offer;
+  var btn=$('bookBtn');btn.disabled=true;btn.textContent='Booking your visit...';
+  var req=PREVIEW?new Promise(function(r){console.log('PREVIEW payload',payload);setTimeout(r,800)})
+    :fetch(API+'/appengine/appointment',{method:'POST',body:(function(){var fd=new FormData();fd.append('formData',JSON.stringify(payload));return fd})()}).then(function(r){if(!r.ok)return r.text().then(function(t){throw t||r.status});return r.json()});
+  req.then(function(){
+    st.me=p; track('whatarun_booking',{location:L0.short,promo:st.promo});
+    showThanks();
+  }).catch(function(e){
+    btn.disabled=false;btn.textContent='Book my visit';
+    var taken=/slot|available|booked/i.test(String(e));
+    err.innerHTML=(taken?'That time was just taken. Please pick another time.':'Something went wrong and you are not booked yet. Please try again, or call ')+(taken?'':'<a href="tel:+1'+L0.tel+'">'+L0.ph+'</a>.');
+    err.style.display='block';
+    if(taken){st.slots=null;st.slot=null;updateBook();loadSlots()}
+  });
+});
+
+/* ===== step 4: thanks ===== */
+var tymap=null;
+function ymd(iso){var t=new Date(Date.parse(iso));return t.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}
+function showThanks(){
+  var L0=st.loc,P=PROMOS[st.promo];
+  $('tyName').textContent=st.me.fn; $('tyEmail').textContent=st.me.em;
+  $('tyWhen').textContent=fmtDay(st.day)+' at '+fmtTime(st.slot)+' CT';
+  $('tyLocName').textContent='The DRIPBaR '+L0.short; $('tyLocAddr').textContent=L0.a1+', '+L0.a2;
+  $('tyDir').href=L0.dir; $('tyCall').href='tel:+1'+L0.tel;
+  var s=ymd(st.slot),e=ymd(new Date(Date.parse(st.slot)+30*60000).toISOString());
+  var title='WhataRun runner discount at The DRIPBaR '+L0.short, loc=L0.a1+', '+L0.a2, det=P.title+'. Mention WhataRun at check in. Questions? Call '+L0.ph+'.';
+  $('gcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+s+'/'+e+'&details='+encodeURIComponent(det)+'&location='+encodeURIComponent(loc);
+  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The DRIPBaR//WhataRun//EN','BEGIN:VEVENT','UID:'+Date.now()+'@dripbar-whatarun','DTSTAMP:'+ymd(new Date().toISOString()),'DTSTART:'+s,'DTEND:'+e,'SUMMARY:'+title,'DESCRIPTION:'+det,'LOCATION:'+loc.replace(/,/g,'\\,'),'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  $('ical').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
+  go(4);
+  needLeaflet(function(){
+    setTimeout(function(){
+      if(!tymap){tymap=L.map('tymap',{scrollWheelZoom:false,zoomControl:true});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(tymap)}
+      tymap.invalidateSize(); tymap.setView([L0.lat,L0.lng],15);
+      L.marker([L0.lat,L0.lng],{icon:L.divIcon({className:'',html:'<div class="dbpin on"><svg viewBox="0 0 46 58"><path class="body" d="M23 1C10.8 1 1 10.6 1 22.6 1 39 23 57 23 57s22-18 22-34.4C45 10.6 35.2 1 23 1z"/></svg><span class="pn">'+L0.num+'</span></div>',iconSize:[46,58],iconAnchor:[23,56],popupAnchor:[0,-50]})}).addTo(tymap)
+        .bindPopup('<div class="pp"><span class="k">Your visit</span><b>'+esc(L0.short)+'</b><p>'+esc(L0.a1)+'<br>'+esc(L0.a2)+'</p><div class="row"><a class="d" href="'+L0.dir+'" target="_blank" rel="noopener">Directions</a><a class="c" href="tel:+1'+L0.tel+'">Call</a></div></div>');
+    },120);
+  });
+  confetti();
+}
+function confetti(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var c=$('confetti'),x=c.getContext('2d'),W=c.width=innerWidth,H=c.height=innerHeight,cols=['#F26722','#AFB216','#044E63','#D9EEF5','#ffffff'],ps=[];
+  for(var i=0;i<150;i++)ps.push({x:W/2+(Math.random()-.5)*W*.5,y:H*.32,vx:(Math.random()-.5)*15,vy:-Math.random()*15-4,w:6+Math.random()*7,h:9+Math.random()*9,r:Math.random()*6,vr:(Math.random()-.5)*.35,c:cols[i%cols.length]});
+  var t0=performance.now();
+  (function f(t){var k=(t-t0)/1000;x.clearRect(0,0,W,H);ps.forEach(function(p){p.vy+=.42;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;x.save();x.globalAlpha=Math.max(0,1-k/3.2);x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore()});if(k<3.3)requestAnimationFrame(f);else x.clearRect(0,0,W,H)})(t0);
+}
+
+/* ===== deep links: ?loc=huebner-oaks&promo=iv ===== */
+var qp0=qs.get('promo'), ql0=qs.get('loc');
+if(qp0==='shots'||qp0==='iv'){st.promo=qp0;st.promoFromUrl=true;all('.pr').forEach(function(x){x.classList.toggle('sel',x.getAttribute('data-promo')===qp0)})}
+paintChosen();
+if(ql0&&locBy(ql0)){st.loc=locBy(ql0);paintChosen();renderList();go(st.promo?3:2,true)}else{go(1,true)}
+})();
+</script>
+</body>
+</html>
