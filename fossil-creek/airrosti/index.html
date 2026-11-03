@@ -354,12 +354,6 @@ h3{font-size:clamp(22px,2vw,27px);line-height:1.1;color:var(--teal)}
 @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.pad{padding-top:72px;padding-bottom:72px}.sec-head{margin-bottom:38px}}
 @media(max-width:420px){.hchips .ic{display:none}.hchips>span{padding:8px 11px}}
-/* Cherry floating estimator: small, bottom-right corner, only while pricing is on screen */
-#floatingEstimator{display:none}
-#widget-floatingEstimator-mount [class*="floatingContainer"]{left:auto!important;right:18px!important;bottom:18px!important;transform:scale(.86)!important;transform-origin:100% 100%!important;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease}
-body.cherry-on #widget-floatingEstimator-mount [class*="floatingContainer"]{opacity:1;visibility:visible;pointer-events:auto}
-@media(max-width:720px){#widget-floatingEstimator-mount [class*="floatingContainer"]{right:12px!important;bottom:12px!important}}
-@media(max-width:1100px){#widget-floatingEstimator-mount [class*="buttonSubtext"]{display:none!important}}
 @media(prefers-reduced-motion:reduce){html,.track{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -752,53 +746,6 @@ body.cherry-on #widget-floatingEstimator-mount [class*="floatingContainer"]{opac
   </div>
 </footer>
 
-<!-- CHERRY WIDGET BEGIN -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Slabo+27px&family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100..900&family=Montserrat:wght@100..900&family=Oswald:wght@200..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&family=Source+Sans+3:wght@200..900&family=PT+Sans:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-<script>
-    (function (w, d, s, o, f, js, fjs) {
-        w[o] = w[o] || function () {
-            (w[o].q = w[o].q || []).push(arguments);
-        };
-        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-        js.id = o;
-        js.src = f;
-        js.async = 1;
-        fjs.parentNode.insertBefore(js, fjs);
-    })(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
-    _hw("init", {
-        debug: false,
-        variables: {
-            slug: 'the-dripbar-san-antonio',
-            name: "The DRIPBaR - San Antonio",
-            images: [26],
-            customLogo: '',
-            defaultPurchaseAmount: 750,
-            customImage: '', 
-            imageCategory: 'medspa',
-            language: window.__dbLang||'en',
-        },
-        styles: {
-            primaryColor: '#90b60a',
-            secondaryColor: '#90b60a10',
-            fontFamily: 'Montserrat',
-            headerFontFamily: 'Montserrat',
-            floatingEstimator: {
-                position: 'bottom-middle',
-                offset: {
-                    x: '0px',
-                    y: '0px'
-                },
-                zIndex: 9999,
-                ctaFontFamily: 'Montserrat',
-                bodyFontFamily: 'Montserrat',
-                ctaColor: '#90b60a',
-                ctaTextColor: '#FFFFFF'
-            }
-        }
-    }, ['floatingEstimator']);
-</script>
-<div id="floatingEstimator"></div>
-<!-- CHERRY WIDGET END -->
 
 <script>
 (function(){
@@ -848,12 +795,6 @@ body.cherry-on #widget-floatingEstimator-mount [class*="floatingContainer"]{opac
   function step(dir){ var s=tr.querySelector('.slide'); var w=s?s.getBoundingClientRect().width+20:300; tr.scrollBy({left:dir*w,behavior:'smooth'}); }
   document.getElementById('slPrev').addEventListener('click',function(){ step(-1); });
   document.getElementById('slNext').addEventListener('click',function(){ step(1); });
-  // Cherry pay-over-time button: only visible while the offers or pricing sections are on screen
-  if('IntersectionObserver' in window){
-    var vis={};
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ vis[e.target.id]=e.isIntersecting; }); var on=false; for(var k in vis){ if(vis[k]) on=true; } document.body.classList.toggle('cherry-on',on); },{rootMargin:'-15% 0px -15% 0px'});
-    document.querySelectorAll('[data-cherry]').forEach(function(s){ io.observe(s); });
-  } else { document.body.classList.add('cherry-on'); }
 })();
 </script>
 </body>

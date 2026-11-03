@@ -208,10 +208,6 @@ table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;b
 .foot .adr{color:#a0aab4;font-size:14px;line-height:1.8}
 .foot .btn{margin:26px 0 30px}
 .foot .md{color:#7a8896;font-size:12px}
-
-/* ---------- cherry tamer ---------- */
-#floatingEstimator{transform:scale(.82);transform-origin:bottom center}
-.cherry-x{position:fixed;bottom:118px;left:50%;transform:translateX(64px);z-index:10000;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;border:0;font-size:15px;line-height:1;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.3);display:none}
 </style>
 </head>
 <body>
@@ -461,53 +457,6 @@ table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;b
   </div>
 </div>
 
-<!-- CHERRY WIDGET BEGIN -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<script>
-    (function (w, d, s, o, f, js, fjs) {
-        w[o] = w[o] || function () {
-            (w[o].q = w[o].q || []).push(arguments);
-        };
-        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-        js.id = o;
-        js.src = f;
-        js.async = 1;
-        fjs.parentNode.insertBefore(js, fjs);
-    })(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
-    _hw("init", {
-        debug: false,
-        variables: {
-            slug: 'the-dripbar-austin',
-            name: "The DRIPBaR - Austin",
-            images: [26],
-            customLogo: '',
-            defaultPurchaseAmount: 750,
-            customImage: '',
-            imageCategory: 'medspa',
-            language: 'en',
-        },
-        styles: {
-            primaryColor: '#8bad25',
-            secondaryColor: '#8bad2510',
-            fontFamily: 'Montserrat',
-            headerFontFamily: 'Montserrat',
-            floatingEstimator: {
-                position: 'bottom-middle',
-                offset: {
-                    x: '0px',
-                    y: '0px'
-                },
-                zIndex: 9999,
-                ctaFontFamily: 'Montserrat',
-                bodyFontFamily: 'Montserrat',
-                ctaColor: '#8bad25',
-                ctaTextColor: '#FFFFFF'
-            }
-        }
-    }, ['floatingEstimator']);
-</script>
-<div id="floatingEstimator"></div>
-<!-- CHERRY WIDGET END -->
 
 <script>
 // scroll reveal
@@ -516,21 +465,6 @@ table.cmp{width:100%;min-width:820px;border-collapse:separate;border-spacing:0;b
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-})();
-// cherry: dismissible, session-remembered
-(function(){
-  var host = document.getElementById('floatingEstimator');
-  if(!host) return;
-  try{ if(sessionStorage.getItem('cherryHidden')==='1'){ host.style.display='none'; return; } }catch(e){}
-  var x = document.createElement('button');
-  x.className='cherry-x'; x.innerHTML='&#10005;'; x.setAttribute('aria-label','Hide financing banner');
-  x.onclick=function(){ host.style.display='none'; x.remove(); try{sessionStorage.setItem('cherryHidden','1');}catch(e){} };
-  document.body.appendChild(x);
-  var tries=0, t=setInterval(function(){
-    tries++;
-    if(host.childElementCount>0){ x.style.display='block'; clearInterval(t); }
-    else if(tries>40){ clearInterval(t); x.remove(); }
-  },500);
 })();
 </script>
 </body>
