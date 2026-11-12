@@ -194,3 +194,5 @@ img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{height:72px !important;backgrou
 .bf-next .bf-card{box-shadow:0 40px 90px -40px rgba(31,107,255,.6),0 0 0 1px rgba(255,255,255,.6) inset !important}
 .bf-steps b{background:transparent;color:var(--bf-blue);font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:26px;flex-basis:24px;height:auto}
 .bf-steps div{background:#f5f5f7;border-radius:18px;padding:14px 16px}
+/* native Continue Shopping duplicates the Keep Shopping button in the next card */
+.c-store-thank-you .flex:has(>.thankyou-action-btn){display:none !important}
