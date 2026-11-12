@@ -155,3 +155,6 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 .bf-steps b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--bf-ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
 .bf-wrap.bf-next{max-width:980px;margin-top:22px}
 @media(max-width:767px){.c-store-thank-you [class^="cstore-thank-you"]{border-radius:24px !important;margin:16px 12px 0 !important}.bf-btn.alt{margin-left:0}.bf-btn{display:block;margin-top:14px}}
+
+/* ---------- mobile width fix (native cart overflowed at <=767px) ---------- */
+@media(max-width:767px){.c-store-cart,.c-store-cart [class^="cstore-cart"],.c-store-checkout,.c-store-thank-you{width:100% !important;max-width:100% !important;box-sizing:border-box !important;margin-left:0 !important;margin-right:0 !important}.c-store-cart *{max-width:100%;box-sizing:border-box}.hl-cart-container{padding:22px 16px !important}}
