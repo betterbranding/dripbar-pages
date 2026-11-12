@@ -14,7 +14,7 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 .c-section,.fullSection,.c-row,.c-column,.c-section>.inner,.c-row>.inner{background:transparent !important;border:0 !important;box-shadow:none !important}
 
 /* ---------- nav (first section) ---------- */
-#preview-container>.c-section:first-child{position:sticky;top:0;z-index:60;background:rgba(0,0,0,.66) !important;-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(255,255,255,.08) !important;padding-top:4px !important;padding-bottom:4px !important}
+#preview-container>.c-section:first-child{position:sticky;top:0;margin:0 !important;z-index:60;background:rgba(0,0,0,.66) !important;-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(255,255,255,.08) !important;padding-top:4px !important;padding-bottom:4px !important}
 #preview-container>.c-section:first-child .c-row,#preview-container>.c-section:first-child .c-column,#preview-container>.c-section:first-child .c-nav-menu-v2{padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;margin-bottom:0 !important}
 .c-nav-menu-v2 .image-container img{max-height:42px !important;width:auto !important}
 .c-nav-menu-v2 .menu-item a,.c-nav-menu-v2 .menu-item a div,.c-nav-menu-v2 .menu-item-title-icon-rotate-reverse{font-family:'Poppins',Arial,sans-serif !important;font-size:13px !important;font-weight:600 !important;letter-spacing:.4px !important;color:#fff !important;text-transform:none !important}
@@ -33,7 +33,10 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 .c-store-product-detail *,.c-store-cart *,.c-store-checkout *{font-family:inherit}
 
 /* ---------- product details ---------- */
-.product-detail-container{padding:clamp(22px,4vw,48px) !important;gap:clamp(18px,4vw,48px) !important;margin:clamp(14px,3vw,36px) auto !important;max-width:1120px}
+.c-store-product-detail,.c-store-cart,.c-store-checkout{margin-top:0 !important;padding-top:0 !important}
+#preview-container>.c-section:nth-child(2){padding-top:clamp(14px,3vw,34px) !important;padding-bottom:20px !important}
+.product-detail-container{padding:clamp(22px,4vw,48px) !important;gap:clamp(18px,4vw,48px) !important;margin:0 auto !important;max-width:1120px}
+.bf-pname-eye{display:block;font-family:'Poppins',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--bf-pink);margin-bottom:8px}
 .hl-product-image-container{position:relative}
 .hl-product-image-container .image-wrapper{position:relative;border-radius:22px;overflow:visible}
 .hl-product-image-container .image-wrapper:before{content:'';position:absolute;inset:12% 8% 6%;border-radius:50%;background:radial-gradient(circle at 32% 42%,rgba(77,148,255,.55),transparent 58%),radial-gradient(circle at 70% 62%,rgba(255,0,153,.25),transparent 58%);filter:blur(34px);opacity:.7;pointer-events:none}
@@ -56,6 +59,7 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 #description{margin-top:22px !important;font-size:15px !important;line-height:1.6 !important;color:#3a3a40 !important}
 #description p{margin:0 0 10px !important;color:#3a3a40 !important}
 #description strong{color:var(--bf-ink) !important}
+#description p:first-child:has(>strong:only-child){display:none !important}
 #description p:first-child strong{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:.6px}
 .ec-review-stars,.review-component,.hl-product-review{display:none !important}
 
