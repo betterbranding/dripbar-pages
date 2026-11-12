@@ -438,7 +438,7 @@ body.has-cart .pv{bottom:86px}
  /* add to cart: writes to the same GHL cart the product/cart/checkout pages use */
  function cartKey(){if(CFG.cartKey)return CFG.cartKey;for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k.indexOf('cart_details_')===0)return k}return null}
  function addToCart(key){var it=CFG.items&&CFG.items[key],k=cartKey();if(!it||!k)return false;
-  try{var c=JSON.parse(localStorage.getItem(k)||'{}');c.products=c.products||[];var f=null;
+  try{var c;try{c=JSON.parse(localStorage.getItem(k)||'{}')}catch(_){c=null}if(!c||typeof c!=='object'||Array.isArray(c))c={};if(!Array.isArray(c.products))c.products=[];var f=null;
    c.products.forEach(function(p){if(p._id===it._id&&p.selectedPrice&&p.selectedPrice._id===it.selectedPrice._id)f=p});
    if(f){f.quantity=(parseInt(f.quantity,10)||0)+1}else{var n=JSON.parse(JSON.stringify(it));n.quantity=1;n.buyNowQuantity=1;n.showName=false;c.products.push(n)}
    localStorage.setItem(k,JSON.stringify(c));return true}catch(e){return false}}
@@ -451,7 +451,7 @@ body.has-cart .pv{bottom:86px}
  var cb=$('cartbar');
  function cartCount(){var n=0;try{var k=CFG.cartKey&&localStorage.getItem(CFG.cartKey)!==null?CFG.cartKey:null;
   if(!k)k=cartKey();
-  if(!k)return 0;var c=JSON.parse(localStorage.getItem(k)||'{}');(c.products||[]).forEach(function(p){n+=Math.max(0,parseInt(p.quantity,10)||0)})}catch(e){}return n}
+  if(!k)return 0;var c=JSON.parse(localStorage.getItem(k)||'{}')||{};(Array.isArray(c.products)?c.products:[]).forEach(function(p){n+=Math.max(0,parseInt(p.quantity,10)||0)})}catch(e){}return n}
  function cartUI(bump){var n=cartCount();if(bump){var bb=$('cartn');bb.classList.remove('bump');void bb.offsetWidth;bb.classList.add('bump')}$('cartn').textContent=n;$('cartl').textContent=n===1?'item in cart':'items in cart';
   var open=!!(cur&&P[cur]&&P[cur].buy);cb.classList.toggle('on',open);cb.classList.toggle('empty',n===0);document.body.classList.toggle('has-cart',open)}
  window.__cartUI=cartUI;cartUI();window.addEventListener('storage',cartUI);window.addEventListener('pageshow',cartUI);
