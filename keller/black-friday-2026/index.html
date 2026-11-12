@@ -117,6 +117,9 @@ a{color:inherit;text-decoration:none}
 .buy:hover{background:var(--blue)}
 .buy:active{transform:scale(.98)}
 .buy.off{background:#d9d9de;color:#6e6e73;pointer-events:none}
+.buy.added{background:#0b6e69 !important;color:#fff}
+@keyframes bump{30%{transform:scale(1.35)}100%{transform:scale(1)}}
+.cartbar .cnt b.bump{animation:bump .5s cubic-bezier(.2,.8,.2,1)}
 .payg{display:none;margin-top:12px;text-align:center;font-size:13px;font-weight:600;color:var(--blue)}
 .payg{display:block}
 .card.mega{box-shadow:0 0 0 2px #4d94ff,0 0 60px rgba(77,148,255,.55),0 50px 120px -40px rgba(31,107,255,.9)}
@@ -245,15 +248,23 @@ body.has-cart .pv{bottom:86px}
 </header>
 
 <section class="sec" id="iv">
- <div class="sec-h rv"><h2 class="bb">IV Bundles</h2><p>Get <b>$200 off</b> our IV bundles.</p></div>
+ <div class="sec-h rv"><h2 class="bb">IV Bundles</h2><p>Get <b>$450 off</b> our IV bundles.</p></div>
  <div class="grid two">
+  <article class="card rv wide mega" id="mega" style="--c1:#4d94ff;--c2:#b56bff;--tb:#e6efff;--tc:#0b3fa8">
+   <span class="tag">Best Value</span>
+   <h3>MEGA Bundle</h3>
+   <p class="inc">6 Lifestyle drips + 1 IM Quick Shot. Choose at each visit.</p>
+   <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-mega.webp" alt="MEGA Bundle" loading="lazy" width="900" height="780"></div>
+   <div class="price-row"><span class="price">$794</span><span class="was">$1,244</span><span class="save">Save $450</span></div>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c997e3f0f3f4d1adf0e5" data-add="mega" role="button">Add to Cart</a>
+  </article>
   <article class="card rv" id="immunity" style="--c1:#d4f03c;--c2:#ffe14d;--tb:#f2fbcc;--tc:#4b5a00">
    <span class="tag">Immunity</span>
    <h3>Immunity Bundle</h3>
    <p class="inc">Shield · Flu Fighter · Post Viral</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-immunity.webp" alt="Immunity Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9922b3f276d6b754386">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9922b3f276d6b754386" data-add="immunity" role="button">Add to Cart</a>
   </article>
   <article class="card rv" id="energy" style="--c1:#ff9a3c;--c2:#5fe3c9;--tb:#fff0e0;--tc:#8a3d00">
    <span class="tag">Energy</span>
@@ -261,7 +272,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">Powerpack · Vitality · NAD+</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-energy.webp" alt="Energy Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9932d474f63ab1d4419">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9932d474f63ab1d4419" data-add="energy" role="button">Add to Cart</a>
   </article>
   <article class="card rv" id="antiaging" style="--c1:#ff8fc1;--c2:#b79cff;--tb:#ffe8f3;--tc:#8a1050">
    <span class="tag">Anti-Aging</span>
@@ -269,7 +280,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">Time Machine · Glutathione · Firm</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-antiaging.webp" alt="Anti-Aging Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c994d3d673d11188c3e7">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c994d3d673d11188c3e7" data-add="antiaging" role="button">Add to Cart</a>
   </article>
   <article class="card rv" id="weight" style="--c1:#ff7a45;--c2:#ffc15a;--tb:#ffece3;--tc:#8a2e00">
    <span class="tag">Weight Loss</span>
@@ -277,7 +288,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">Metabolize · Restoration · Allstar</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-weight.webp" alt="Weight Loss Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9942edbf12669b5b6a7">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9942edbf12669b5b6a7" data-add="weight" role="button">Add to Cart</a>
   </article>
   <article class="card rv" id="biostack" style="--c1:#ff4d5e;--c2:#7cc7ff;--tb:#ffe6e9;--tc:#8a0f20">
    <span class="tag">Bio Stack</span>
@@ -285,7 +296,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">Ozone IV · Allergy · Soother</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-biostack.webp" alt="Bio Stack Bundle" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c995d3d673d11188c403">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c995d3d673d11188c403" data-add="biostack" role="button">Add to Cart</a>
   </article>
   <article class="card rv" id="byo" style="--c1:#4fd6ff;--c2:#ff8fc1;--tb:#e3f6ff;--tc:#00597a">
    <span class="tag">Your Pick</span>
@@ -293,15 +304,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">Any three Lifestyle drips. Choose at each visit.</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-byo.webp" alt="Build Your Own" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$397</span><span class="was">$597</span><span class="save">Save $200</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9962edbf12669b5b6de">Buy Now</a>
-  </article>
-  <article class="card rv wide mega" id="mega" style="--c1:#4d94ff;--c2:#b56bff;--tb:#e6efff;--tc:#0b3fa8">
-   <span class="tag">Best Value</span>
-   <h3>MEGA Bundle</h3>
-   <p class="inc">6 Lifestyle drips + 1 IM Quick Shot. Choose at each visit.</p>
-   <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/iv-mega.webp" alt="MEGA Bundle" loading="lazy" width="900" height="780"></div>
-   <div class="price-row"><span class="price">$794</span><span class="was">$1,244</span><span class="save">Save $450</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c997e3f0f3f4d1adf0e5">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9962edbf12669b5b6de" data-add="byo" role="button">Add to Cart</a>
   </article>
  </div>
 </section>
@@ -315,7 +318,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">IM Vitalized · IM Supercharge · NAD+</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-energy.webp" alt="Energy Shots" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9986cbed37519e28829">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c9986cbed37519e28829" data-add="sh-energy" role="button">Add to Cart</a>
   </article>
   <article class="card rv shot" id="sh-immune" style="--c1:#ffe14d;--c2:#ff4d6d;--tb:#fff6cc;--tc:#6b5300">
    <span class="tag">Immunity</span>
@@ -323,7 +326,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">IM Detox · Tri-Immune · Vitamin D</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-immunity.webp" alt="Immunity Shots" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c999d1f90a757d5d99c6">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c999d1f90a757d5d99c6" data-add="sh-immune" role="button">Add to Cart</a>
   </article>
   <article class="card rv shot" id="sh-beauty" style="--c1:#ff8fc1;--c2:#ffd36b;--tb:#ffe8f3;--tc:#8a1050">
    <span class="tag">Beauty</span>
@@ -331,7 +334,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">Biotin · IM Glowing · B12 · IM Detox</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-beauty.webp" alt="Beauty Shots" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c99ad3d673d11188c4a5">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c99ad3d673d11188c4a5" data-add="sh-beauty" role="button">Add to Cart</a>
   </article>
   <article class="card rv shot" id="sh-skinny" style="--c1:#c6f03c;--c2:#4fd6ff;--tb:#effbd0;--tc:#3f5200">
    <span class="tag">Skinny</span>
@@ -339,7 +342,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">MIC · IM Lean · B6 · B12</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-skinny.webp" alt="Skinny Shots" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c99be53623c518f889ab">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c99be53623c518f889ab" data-add="sh-skinny" role="button">Add to Cart</a>
   </article>
   <article class="card rv wide span2 shot" id="sh-byo" style="--c1:#6b7bff;--c2:#ff5fd2;--tb:#eeeaff;--tc:#3a2a9a">
    <span class="tag">Your Pick</span>
@@ -347,7 +350,7 @@ body.has-cart .pv{bottom:86px}
    <p class="inc">Any three quick shots. Choose at each visit.</p>
    <div class="art"><img src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/shot-byo.webp" alt="Build Your Own" loading="lazy" width="900" height="780"></div>
    <div class="price-row"><span class="price">$100</span><span class="was">$150</span><span class="save">Save $50</span></div>
-   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c99c68c13c2aa38442da">Buy Now</a>
+   <a class="buy" href="https://shop.ivkeller.com/product-details-2304/product/6ae3c99c68c13c2aa38442da" data-add="sh-byo" role="button">Add to Cart</a>
   </article>
  </div>
 </section>
@@ -378,7 +381,7 @@ body.has-cart .pv{bottom:86px}
 <script>
 (function(){
  if(window.__bf26)return;window.__bf26=1;
- var CFG={"earlyStart": "2026-11-23T10:30:00-06:00", "publicStart": "2026-11-27T08:00:00-06:00", "lastDay": "2026-11-30T00:00:00-06:00", "end": "2026-11-30T23:59:59-06:00", "earlyLabel": "Monday, Nov 23", "earlyShort": "11/23", "bookingUrl": "https://keller.thedripbar.com/book-appointment/", "earlyAccessUrl": "https://shop.ivkeller.com/bf-2026-early-access", "payg": false, "cartKey": "cart_details_s43BI6jSrHV2zVUpVhPz"};
+ var CFG={"earlyStart": "2026-11-23T10:30:00-06:00", "publicStart": "2026-11-27T08:00:00-06:00", "lastDay": "2026-11-30T00:00:00-06:00", "end": "2026-11-30T23:59:59-06:00", "earlyLabel": "Monday, Nov 23", "earlyShort": "11/23", "bookingUrl": "https://keller.thedripbar.com/book-appointment/", "earlyAccessUrl": "https://shop.ivkeller.com/bf-2026-early-access", "payg": false, "cartKey": "cart_details_s43BI6jSrHV2zVUpVhPz", "items": {"immunity": {"_id": "6ae3c9922b3f276d6b754386", "name": "Immunity IV Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/475830a9-4b11-4b6e-a1b1-00046e4150b5.png", "selectedPrice": {"_id": "6ae3c992e20fb085d0a93dda", "name": "Immunity IV Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 397, "variantOptionIds": [], "compareAtPrice": 597, "trackInventory": false}}, "energy": {"_id": "6ae3c9932d474f63ab1d4419", "name": "Energy IV Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/2d06ba75-5ba0-4f2c-b4a6-893f1c87fd19.png", "selectedPrice": {"_id": "6ae3c993e488ad9cc18e5c99", "name": "Energy IV Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 397, "variantOptionIds": [], "compareAtPrice": 597, "trackInventory": false}}, "antiaging": {"_id": "6ae3c994d3d673d11188c3e7", "name": "Anti-Aging IV Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/e93f7e9d-e679-4eb6-b76a-1fcb48695499.png", "selectedPrice": {"_id": "6ae3c994eefd63c0a9263d40", "name": "Anti-Aging IV Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 397, "variantOptionIds": [], "compareAtPrice": 597, "trackInventory": false}}, "weight": {"_id": "6ae3c9942edbf12669b5b6a7", "name": "Weight Loss IV Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/caf8060b-1bba-4436-a899-9ede55726fb7.png", "selectedPrice": {"_id": "6ae3c995e488ad9cc18e5d1d", "name": "Weight Loss IV Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 397, "variantOptionIds": [], "compareAtPrice": 597, "trackInventory": false}}, "biostack": {"_id": "6ae3c995d3d673d11188c403", "name": "Bio Stack IV Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/1c476693-e608-4125-9c18-076c2f13f6a7.png", "selectedPrice": {"_id": "6ae3c99668c13c2aa38441d7", "name": "Bio Stack IV Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 397, "variantOptionIds": [], "compareAtPrice": 597, "trackInventory": false}}, "byo": {"_id": "6ae3c9962edbf12669b5b6de", "name": "Build Your Own IV Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/dbe0f2d2-a7ca-4738-a3c5-88c9e9b58316.png", "selectedPrice": {"_id": "6ae3c9962edbf12669b5b6ef", "name": "Build Your Own IV Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 397, "variantOptionIds": [], "compareAtPrice": 597, "trackInventory": false}}, "mega": {"_id": "6ae3c997e3f0f3f4d1adf0e5", "name": "MEGA Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/d2aa11f0-a8d0-44aa-a930-8532c1e86942.png", "selectedPrice": {"_id": "6ae3c9972b3f276d6b7544d0", "name": "MEGA Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 794, "variantOptionIds": [], "compareAtPrice": 1244, "trackInventory": false}}, "sh-energy": {"_id": "6ae3c9986cbed37519e28829", "name": "Energy Quick Shot Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/19ebe336-7dc2-494f-9aec-01e7b9afc732.png", "selectedPrice": {"_id": "6ae3c9982edbf12669b5b705", "name": "Energy Quick Shot Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 100, "variantOptionIds": [], "compareAtPrice": 150, "trackInventory": false}}, "sh-immune": {"_id": "6ae3c999d1f90a757d5d99c6", "name": "Immunity Quick Shot Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/f3e81984-47a7-4cfc-8fd6-602a7a102c3d.png", "selectedPrice": {"_id": "6ae3c9996cbed37519e28863", "name": "Immunity Quick Shot Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 100, "variantOptionIds": [], "compareAtPrice": 150, "trackInventory": false}}, "sh-beauty": {"_id": "6ae3c99ad3d673d11188c4a5", "name": "Beauty Quick Shot Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/6a17d1eb-d40a-4112-a489-42402fe9f5cf.png", "selectedPrice": {"_id": "6ae3c99ae488ad9cc18e5da2", "name": "Beauty Quick Shot Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 100, "variantOptionIds": [], "compareAtPrice": 150, "trackInventory": false}}, "sh-skinny": {"_id": "6ae3c99be53623c518f889ab", "name": "Skinny Quick Shot Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/dfea551a-7e70-4cfb-99e5-7f5b6810d235.png", "selectedPrice": {"_id": "6ae3c99b7d1cf14640cb278b", "name": "Skinny Quick Shot Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 100, "variantOptionIds": [], "compareAtPrice": 150, "trackInventory": false}}, "sh-byo": {"_id": "6ae3c99c68c13c2aa38442da", "name": "Build Your Own Quick Shot Bundle | Black Friday 2026", "selectedProductImage": "https://assets.cdn.filesafe.space/A4bIjjCvr66Eom4M81wq/media/182d0818-11c0-4593-aa11-ba95eddabc98.png", "selectedPrice": {"_id": "6ae3c99ce53623c518f889ee", "name": "Build Your Own Quick Shot Bundle | Black Friday 2026", "type": "one_time", "currency": "USD", "amount": 100, "variantOptionIds": [], "compareAtPrice": 150, "trackInventory": false}}}};
  var q=new URLSearchParams(location.search);
  var root=document.documentElement;
  if(CFG.payg||q.get('payg')==='1')root.classList.add('show-payg');
@@ -432,12 +435,24 @@ body.has-cart .pv{bottom:86px}
   seg[0].classList.toggle('act',y<s);seg[1].classList.toggle('act',y>=s)}
  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
+ /* add to cart: writes to the same GHL cart the product/cart/checkout pages use */
+ function cartKey(){if(CFG.cartKey)return CFG.cartKey;for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k.indexOf('cart_details_')===0)return k}return null}
+ function addToCart(key){var it=CFG.items&&CFG.items[key],k=cartKey();if(!it||!k)return false;
+  try{var c=JSON.parse(localStorage.getItem(k)||'{}');c.products=c.products||[];var f=null;
+   c.products.forEach(function(p){if(p._id===it._id&&p.selectedPrice&&p.selectedPrice._id===it.selectedPrice._id)f=p});
+   if(f){f.quantity=(parseInt(f.quantity,10)||0)+1}else{var n=JSON.parse(JSON.stringify(it));n.quantity=1;n.buyNowQuantity=1;n.showName=false;c.products.push(n)}
+   localStorage.setItem(k,JSON.stringify(c));return true}catch(e){return false}}
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-add]');if(!a||a.classList.contains('off'))return;
+  if(!addToCart(a.dataset.add))return; /* fall back to the product page */
+  e.preventDefault();a.classList.add('added');a.textContent='Added';clearTimeout(a._t);a._t=setTimeout(function(){a.classList.remove('added');a.textContent=a.dataset.t},1600);
+  if(window.__cartUI)window.__cartUI(true)});
+
  /* sticky cart footer: reads the GHL cart saved in this browser */
  var cb=$('cartbar');
  function cartCount(){var n=0;try{var k=CFG.cartKey&&localStorage.getItem(CFG.cartKey)!==null?CFG.cartKey:null;
-  if(!k)for(var i=0;i<localStorage.length;i++){var kk=localStorage.key(i);if(kk&&kk.indexOf('cart_details_')===0){k=kk;break}}
+  if(!k)k=cartKey();
   if(!k)return 0;var c=JSON.parse(localStorage.getItem(k)||'{}');(c.products||[]).forEach(function(p){n+=Math.max(0,parseInt(p.quantity,10)||0)})}catch(e){}return n}
- function cartUI(){var n=cartCount();$('cartn').textContent=n;$('cartl').textContent=n===1?'item in cart':'items in cart';
+ function cartUI(bump){var n=cartCount();if(bump){var bb=$('cartn');bb.classList.remove('bump');void bb.offsetWidth;bb.classList.add('bump')}$('cartn').textContent=n;$('cartl').textContent=n===1?'item in cart':'items in cart';
   var open=!!(cur&&P[cur]&&P[cur].buy);cb.classList.toggle('on',open);cb.classList.toggle('empty',n===0);document.body.classList.toggle('has-cart',open)}
  window.__cartUI=cartUI;cartUI();window.addEventListener('storage',cartUI);window.addEventListener('pageshow',cartUI);
  document.addEventListener('visibilitychange',function(){if(!document.hidden)cartUI()});setInterval(cartUI,4000);
