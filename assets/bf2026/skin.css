@@ -158,3 +158,5 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 
 /* ---------- mobile width fix (native cart overflowed at <=767px) ---------- */
 @media(max-width:767px){.c-store-cart,.c-store-cart [class^="cstore-cart"],.c-store-checkout,.c-store-thank-you{width:100% !important;max-width:100% !important;box-sizing:border-box !important;margin-left:0 !important;margin-right:0 !important}.c-store-cart *{max-width:100%;box-sizing:border-box}.hl-cart-container{padding:22px 16px !important}}
+/* checkout: in-clinic bundles, no shipping. Address collected is the billing address; keep "same as" checked and hidden */
+.c-store-checkout .mt-2:has(> label > #billingAddressChecked){display:none !important}
