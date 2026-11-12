@@ -172,3 +172,25 @@ img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{height:72px !important;backgrou
  .c-nav-menu-v2 .image-container img[src*="69122f0eeb4248372d8a6ce2"]{height:46px !important}
  img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{height:60px !important}
 }
+
+/* ---------- thank you v4 (Greg 11/12): match contact/store pages ---------- */
+.c-store-thank-you{text-align:center}
+.c-store-thank-you::before{content:'Black Friday';display:block;margin:clamp(26px,5vw,54px) auto 0;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400;
+ font-size:clamp(46px,9vw,76px);line-height:.9;letter-spacing:0;color:#fff;white-space:nowrap;text-transform:uppercase;
+ text-shadow:0 0 6px rgba(255,255,255,.6),0 0 18px rgba(77,148,255,.95),0 0 44px rgba(41,121,255,.85),0 0 96px rgba(31,107,255,.7)}
+.c-store-thank-you [class^="cstore-thank-you"]{margin-top:clamp(22px,4vw,34px) !important;max-width:760px !important;
+ box-shadow:0 40px 90px -40px rgba(31,107,255,.6),0 0 0 1px rgba(255,255,255,.6) inset !important}
+.c-store-thank-you .hl-thankyou-headline-container{flex-direction:column !important;align-items:center !important;gap:0 !important}
+.c-store-thank-you .check-icon-container{width:64px !important;height:64px !important;min-width:64px;display:grid !important;place-items:center;background:#c9f7e6 !important;margin:0 auto !important}
+.c-store-thank-you .check-icon-container svg,.c-store-thank-you .check-icon-container svg *{width:30px !important;height:30px !important;stroke:#0b6e69 !important;color:#0b6e69 !important}
+.c-store-thank-you .hl-thankyou-headline-container::after{content:'Order confirmed';order:1;margin-top:18px;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--bf-pink)}
+.c-store-thank-you .hl-thankyou-headline{order:2;margin-top:8px !important;font-size:clamp(46px,8vw,66px) !important;line-height:.92 !important;text-align:center}
+.c-store-thank-you .sub-headline{margin-top:12px !important;font-size:16px !important;color:#3a3a40 !important}
+.c-store-thank-you .hl-order-summary-container,.c-store-thank-you .shipping-details-container{text-align:left;background:#f5f5f7 !important;border:0 !important;border-radius:18px !important}
+.c-store-thank-you .shipping-details-heading{font-size:0 !important}
+.c-store-thank-you .shipping-details-heading::after{content:'Billing details';font-size:22px}
+.c-store-thank-you .thankyou-action-btn{min-width:220px;padding:15px 30px 13px !important}
+.bf-wrap.bf-next{max-width:760px}
+.bf-next .bf-card{box-shadow:0 40px 90px -40px rgba(31,107,255,.6),0 0 0 1px rgba(255,255,255,.6) inset !important}
+.bf-steps b{background:transparent;color:var(--bf-blue);font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:26px;flex-basis:24px;height:auto}
+.bf-steps div{background:#f5f5f7;border-radius:18px;padding:14px 16px}
