@@ -161,13 +161,14 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 /* checkout: in-clinic bundles, no shipping. Address collected is the billing address; keep "same as" checked and hidden */
 .c-store-checkout .mt-2:has(> label > #billingAddressChecked){display:none !important}
 
-/* ---------- 2026 logo lockup (Greg 11/12): replaces the 2025 logo + BLACK FRIDAY graphic in nav and footer ---------- */
+/* ---------- 2026 logo lockup (Greg 11/12): replaces the 2025 logo + BLACK FRIDAY graphic in nav and footer.
+   GHL sets an inline width with !important, so the old picture is pushed out of view with object-position and the lockup is drawn as a background. ---------- */
 img[src*="69122f0eeb4248372d8a6ce2"],img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"],
 .c-nav-menu-v2 .image-container img[src*="69122f0eeb4248372d8a6ce2"]{
- box-sizing:border-box !important;width:230px !important;max-width:none !important;height:57px !important;max-height:none !important;padding-left:230px !important;
- background:url("https://betterbranding.github.io/dripbar-pages/assets/bf2026/bf-lockup.png?v=1") left center/contain no-repeat !important;object-fit:none !important}
-img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{width:280px !important;height:69px !important;padding-left:280px !important;background-position:center !important;margin:0 auto !important}
+ max-width:100% !important;height:56px !important;max-height:none !important;object-fit:none !important;object-position:-99999px 0 !important;
+ background:url("https://betterbranding.github.io/dripbar-pages/assets/bf2026/bf-lockup.png?v=1") left center/contain no-repeat !important}
+img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{height:72px !important;background-position:center !important;margin:0 auto !important}
 @media(max-width:480px){
- .c-nav-menu-v2 .image-container img[src*="69122f0eeb4248372d8a6ce2"]{width:190px !important;height:47px !important;padding-left:190px !important}
- img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{width:240px !important;height:59px !important;padding-left:240px !important}
+ .c-nav-menu-v2 .image-container img[src*="69122f0eeb4248372d8a6ce2"]{height:46px !important}
+ img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{height:60px !important}
 }
