@@ -131,3 +131,4 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 #make-payment:hover{background:var(--bf-blue) !important}
 #make-payment:disabled,#make-payment[disabled]{opacity:.45}
 .c-store-checkout .edit-cart,.c-store-checkout .edit-cart *{color:var(--bf-blue) !important;font-weight:600 !important}
+.c-section:has(.c-store-product-detail) .c-row,.c-section:has(.c-store-product-detail) .c-column,.c-section:has(.c-store-cart) .c-row,.c-section:has(.c-store-cart) .c-column,.c-section:has(.c-store-checkout) .c-row,.c-section:has(.c-store-checkout) .c-column{padding-top:0 !important;margin-top:0 !important}
