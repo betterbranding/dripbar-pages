@@ -196,3 +196,5 @@ img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{height:72px !important;backgrou
 .bf-steps div{background:#f5f5f7;border-radius:18px;padding:14px 16px}
 /* native Continue Shopping duplicates the Keep Shopping button in the next card */
 .c-store-thank-you .flex:has(>.thankyou-action-btn){display:none !important}
+.c-store-thank-you .hl-order-summary-container,.c-store-thank-you .shipping-details-container{padding:18px !important;box-sizing:border-box}
+.c-store-thank-you .hl-order-item button,.c-store-thank-you .hl-order-item a.btn{background:var(--bf-ink) !important;color:#fff !important;border:0 !important;border-radius:999px !important;font-weight:600 !important;padding:7px 16px !important}
