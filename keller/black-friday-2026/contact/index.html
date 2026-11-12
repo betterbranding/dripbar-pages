@@ -22,13 +22,16 @@ a{color:inherit;text-decoration:none}
 .aur{position:fixed;z-index:-1;border-radius:50%;filter:blur(90px);pointer-events:none;width:52vmax;height:52vmax;left:-14vmax;top:-18vmax;opacity:.16;background:radial-gradient(circle,#1747c9 0%,transparent 65%);animation:drift 22s ease-in-out infinite alternate}
 @keyframes drift{to{transform:translate(12vmax,10vmax)}}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(18px,env(safe-area-inset-left));background:rgba(0,0,0,.66);-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:50}
-.bar .lg{height:36px;width:auto;filter:brightness(0) invert(1)}
+.lockup{display:flex;align-items:center;gap:12px}
+.bar .lg{height:30px;width:auto}
+.lockup i{width:1px;height:26px;background:rgba(255,255,255,.22)}
+.lockup .bfw{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:30px;line-height:1;letter-spacing:0;color:#fff;white-space:nowrap;padding-top:2px;text-shadow:0 0 4px rgba(255,255,255,.55),0 0 12px rgba(77,148,255,.95),0 0 26px rgba(41,121,255,.8),0 0 48px rgba(31,107,255,.55)}
 .bar .r{display:flex;gap:8px}
 .chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 14px;white-space:nowrap;transition:background .3s}
 .chip:hover{background:rgba(255,255,255,.2)}
 .chip svg{width:17px;height:17px}
 main{flex:1;display:flex;flex-direction:column;align-items:center;padding:clamp(28px,6vw,64px) 16px 40px;text-align:center}
-.bf{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:clamp(44px,9vw,76px);line-height:.9;letter-spacing:.02em;white-space:nowrap;text-shadow:0 0 6px rgba(255,255,255,.6),0 0 18px rgba(77,148,255,.95),0 0 44px rgba(41,121,255,.85),0 0 96px rgba(31,107,255,.7)}
+.bf{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:clamp(44px,9vw,76px);line-height:.9;letter-spacing:0;white-space:nowrap;text-shadow:0 0 6px rgba(255,255,255,.6),0 0 18px rgba(77,148,255,.95),0 0 44px rgba(41,121,255,.85),0 0 96px rgba(31,107,255,.7)}
 .card{position:relative;width:min(620px,100%);margin-top:clamp(22px,4vw,34px);background:#fff;color:var(--ink);border-radius:30px;padding:clamp(30px,5vw,48px) clamp(22px,4vw,44px);box-shadow:0 40px 90px -40px rgba(31,107,255,.6),0 0 0 1px rgba(255,255,255,.6) inset;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(30px)}}
 .check{width:64px;height:64px;margin:0 auto;border-radius:50%;display:grid;place-items:center;background:#c9f7e6;color:#0b6e69}
@@ -47,21 +50,20 @@ h1{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400;font
 .meta{margin-top:22px;font-size:13px;color:var(--muted)}
 .meta a{color:var(--blue);font-weight:600}
 footer{padding:40px 20px 56px;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
-footer .logo{width:120px;margin:0 auto;filter:brightness(0) invert(1);opacity:.9}
+footer .logo{width:120px;margin:0 auto}
 footer .ad{margin-top:14px;font-size:13px;color:#a0aab4}
 footer .ad a{color:#cfe0ff}
 footer .md{margin-top:12px;font-size:12px;color:#7a8896}
-@media(max-width:640px){.bar .lg{height:30px}.chip span{display:none}.btn{width:100%}}
+@media(max-width:640px){.bar .lg{height:24px}.lockup{gap:9px}.lockup i{height:20px}.lockup .bfw{font-size:23px}.chip span{display:none}.btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="sky"></div><div class="aur"></div>
 <div class="bar">
- <a href="https://shop.ivkeller.com/black-friday-2026"><img class="lg" src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR Keller"></a>
+ <a class="lockup" href="https://shop.ivkeller.com/black-friday-2026"><img class="lg" src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/logo-white-green.png" alt="The DRIPBaR Keller"><i></i><span class="bfw">Black Friday</span></a>
  <div class="r">
   <a class="chip" href="https://shop.ivkeller.com/black-friday-2026"><span>Shop Black Friday</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  <a class="chip" href="https://shop.ivkeller.com/cart-3418" aria-label="View cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg><span>Cart</span></a>
  </div>
 </div>
 <main>
@@ -76,7 +78,7 @@ footer .md{margin-top:12px;font-size:12px;color:#7a8896}
  </div>
 </main>
 <footer>
- <img class="logo" src="https://betterbranding.github.io/dripbar-pages/assets/email/logo-white-green.png" alt="The DRIPBaR">
+ <img class="logo" src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/logo-white-green.png" alt="The DRIPBaR">
  <div class="ad">The DRIPBaR Keller &nbsp;·&nbsp; 1632 Keller Pkwy, #500, Keller, TX 76248<br><a href="tel:+18179848931">(817) 984-8931</a> &nbsp;·&nbsp; Text <a href="sms:+18178139148">(817) 813-9148</a></div>
  <div class="md">All services administered under the supervision of Dr. A.D. Thakkar, M.D..</div>
 </footer>
