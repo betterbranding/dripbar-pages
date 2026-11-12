@@ -1,0 +1,116 @@
+/* DRIPBaR Black Friday 2026 skin for native GHL store pages (product details, cart, checkout, thank you).
+   Hosted: https://betterbranding.github.io/dripbar-pages/assets/bf2026/skin.css
+   Loaded from a Custom Code element at the top of each page. Matches the BF2026 store page design. */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap');
+
+:root{--bf-ink:#0b0b0f;--bf-muted:#6e6e73;--bf-blue:#1f6bff;--bf-glow:#4d94ff;--bf-line:rgba(120,170,255,.28);--bf-pink:#FF0099}
+
+/* ---------- canvas ---------- */
+html,body{background:#000 !important}
+body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:antialiased}
+.bgCover,#preview-container,.hl_page-preview--content{background:
+ radial-gradient(900px 520px at 50% -14%,rgba(31,107,255,.22),transparent 65%),
+ radial-gradient(800px 600px at 110% 105%,rgba(0,70,220,.14),transparent 65%),#000 !important;background-attachment:fixed !important;min-height:100vh}
+.c-section,.fullSection,.c-row,.c-column,.c-section>.inner,.c-row>.inner{background:transparent !important;border:0 !important;box-shadow:none !important}
+
+/* ---------- nav (first section) ---------- */
+#preview-container>.c-section:first-child{position:sticky;top:0;z-index:60;background:rgba(0,0,0,.66) !important;-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(255,255,255,.08) !important;padding-top:4px !important;padding-bottom:4px !important}
+#preview-container>.c-section:first-child .c-row,#preview-container>.c-section:first-child .c-column,#preview-container>.c-section:first-child .c-nav-menu-v2{padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;margin-bottom:0 !important}
+.c-nav-menu-v2 .image-container img{max-height:42px !important;width:auto !important}
+.c-nav-menu-v2 .menu-item a,.c-nav-menu-v2 .menu-item a div,.c-nav-menu-v2 .menu-item-title-icon-rotate-reverse{font-family:'Poppins',Arial,sans-serif !important;font-size:13px !important;font-weight:600 !important;letter-spacing:.4px !important;color:#fff !important;text-transform:none !important}
+.c-nav-menu-v2 .menu-item a div{background:rgba(255,255,255,.1) !important;border:1px solid rgba(255,255,255,.14);border-radius:999px !important;padding:7px 16px !important;transition:background .3s}
+.c-nav-menu-v2 .menu-item a:hover div{background:rgba(255,255,255,.2) !important}
+.nav-cart-button{color:#fff !important}
+.nav-cart-button svg path,.nav-cart-button svg g{stroke:#fff !important}
+.c-nav-menu-v2 .cart-padding{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 12px !important}
+.c-nav-menu-v2 .cart-padding *{color:#fff !important}
+.nav-menu-mobile span,.nav-menu-mobile i{color:#fff !important}
+
+/* ---------- shared white card ---------- */
+.product-detail-container,.hl-cart-container,.hl-amount-subtotal,.hl-store-checkout-container>*,.bf-card{background:#fff !important;color:var(--bf-ink) !important;border-radius:30px !important;
+ box-shadow:0 40px 90px -40px rgba(31,107,255,.6),0 0 0 1px rgba(255,255,255,.6) inset !important}
+.c-store-product-detail,.c-store-cart,.c-store-checkout{font-family:'Poppins',Arial,sans-serif !important}
+.c-store-product-detail *,.c-store-cart *,.c-store-checkout *{font-family:inherit}
+
+/* ---------- product details ---------- */
+.product-detail-container{padding:clamp(22px,4vw,48px) !important;gap:clamp(18px,4vw,48px) !important;margin:clamp(14px,3vw,36px) auto !important;max-width:1120px}
+.hl-product-image-container{position:relative}
+.hl-product-image-container .image-wrapper{position:relative;border-radius:22px;overflow:visible}
+.hl-product-image-container .image-wrapper:before{content:'';position:absolute;inset:12% 8% 6%;border-radius:50%;background:radial-gradient(circle at 32% 42%,rgba(77,148,255,.55),transparent 58%),radial-gradient(circle at 70% 62%,rgba(255,0,153,.25),transparent 58%);filter:blur(34px);opacity:.7;pointer-events:none}
+.hl-product-image-container .hl-product-image{position:relative;background:transparent !important}
+.product-image-list-container{display:none !important}
+.hl-product-detail-product-name{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-weight:400 !important;font-size:clamp(38px,5vw,52px) !important;line-height:.95 !important;letter-spacing:.5px !important;color:var(--bf-ink) !important;text-transform:none !important}
+.ecomm-price-desktop-container .flex{align-items:center !important;gap:12px;flex-wrap:wrap}
+.hl-product-detail-product-price{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-weight:400 !important;font-size:clamp(54px,7vw,66px) !important;line-height:.9 !important;color:var(--bf-ink) !important}
+.hl-product-detail-price-override,.hl-cart-product-price-override{font-family:'Poppins',Arial,sans-serif !important;font-size:17px !important;color:var(--bf-muted) !important;text-decoration:line-through !important;margin:0 !important}
+.hl-product-detail-price-discount,.hl-cart-product-price-discount{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:18px !important;letter-spacing:1px;background:#c9f7e6 !important;color:#0b6e69 !important;padding:6px 12px 5px !important;border-radius:999px;margin:0 !important;display:inline-block;line-height:1.1}
+.hl-product-detail-selectors{font-size:12px !important;font-weight:600 !important;letter-spacing:1.4px;text-transform:uppercase;color:var(--bf-muted) !important}
+.hl-quantity-input-container{border-radius:999px !important;border:1px solid #d9d9de !important;overflow:hidden;background:#f5f5f7 !important}
+.hl-quantity-input{background:transparent !important;font-weight:600 !important;color:var(--bf-ink) !important}
+#add-to-cart-btn,#buy-now-btn,.hl-checkout-btn{display:block;width:100% !important;max-width:none !important;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:22px !important;letter-spacing:1.6px !important;font-weight:400 !important;border-radius:999px !important;padding:15px 18px 13px !important;height:auto !important;min-height:54px;transition:background .3s,transform .2s,color .3s !important;cursor:pointer}
+#add-to-cart-btn,.hl-checkout-btn{background:var(--bf-ink) !important;color:#fff !important;border:0 !important}
+#add-to-cart-btn:hover,.hl-checkout-btn:hover{background:var(--bf-blue) !important}
+#buy-now-btn{background:#fff !important;color:var(--bf-ink) !important;border:2px solid var(--bf-ink) !important;margin-top:12px !important}
+#buy-now-btn:hover{background:var(--bf-ink) !important;color:#fff !important}
+.hl-checkout-btn .checkout-btn-text{font:inherit !important;color:inherit !important}
+#description{margin-top:22px !important;font-size:15px !important;line-height:1.6 !important;color:#3a3a40 !important}
+#description p{margin:0 0 10px !important;color:#3a3a40 !important}
+#description strong{color:var(--bf-ink) !important}
+#description p:first-child strong{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:.6px}
+.ec-review-stars,.review-component,.hl-product-review{display:none !important}
+
+/* ---------- cart ---------- */
+.c-store-cart .cstore-cart-tlIZB4H3UFN,.c-store-cart>div{gap:22px}
+.hl-cart-container,.hl-amount-subtotal{padding:clamp(20px,3vw,34px) !important}
+.hl-cart-heading{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-weight:400 !important;font-size:40px !important;letter-spacing:.5px;color:var(--bf-ink) !important;border:0 !important}
+.hl-cart-item{border-color:#ececf0 !important}
+.hl-cart-product-image{border-radius:14px;background:#f5f5f7}
+.hl-cart-product-name{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:24px !important;line-height:1 !important;color:var(--bf-ink) !important;letter-spacing:.4px}
+.hl-cart-product-price{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:32px !important;color:var(--bf-ink) !important}
+.hl-amount-subtotal p,.cart-subtotal p,.cart-total p{color:var(--bf-ink) !important}
+.total-amount{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:38px !important;font-weight:400 !important}
+.ecom-gray-divider{border-color:#ececf0 !important}
+.hl-cart-container a,.hl-cart-container .continue-shopping{color:var(--bf-blue) !important}
+
+/* ---------- checkout ---------- */
+.hl-store-checkout-container{gap:22px !important;padding:clamp(14px,3vw,30px) 0 !important}
+.hl-store-checkout-container>*{padding:clamp(20px,3vw,34px) !important}
+.c-store-checkout,.c-store-checkout input,.c-store-checkout label,.c-store-checkout p,.c-store-checkout div{font-family:'Poppins',Arial,sans-serif !important}
+.checkout-heading,.hl-checkout-form-heading,.payment-heading,.hl-store-checkout-container .hl-cart-heading{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-weight:400 !important;font-size:30px !important;letter-spacing:.6px;color:var(--bf-ink) !important}
+.input-label,.input-label *{font-size:13px !important;font-weight:600 !important;color:#3a3a40 !important}
+.hl-checkout-input,.c-store-checkout input.form-input,.hl-address-autocomplete-input-wrapper{border-radius:14px !important;border:1px solid #d9d9de !important;background:#f5f5f7 !important;min-height:50px;font-size:15px !important;color:var(--bf-ink) !important}
+.hl-address-autocomplete-input-wrapper input{border:0 !important;background:transparent !important}
+.hl-checkout-input:focus,.c-store-checkout input.form-input:focus{border-color:var(--bf-blue) !important;box-shadow:0 0 0 3px rgba(31,107,255,.18) !important;outline:0 !important;background:#fff !important}
+.c-store-checkout a{color:var(--bf-blue) !important}
+.cart-summary-desktop{align-self:flex-start;position:sticky;top:90px}
+.hl-cart-checkout-product-name{font-weight:600 !important;color:var(--bf-ink) !important}
+.hl-cart-checkout-product-price{color:#3a3a40 !important}
+.c-store-checkout .hl-cart-product-image{border-radius:12px;background:#f5f5f7}
+.order-form-footer{color:var(--bf-muted) !important;font-size:12px !important;letter-spacing:.4px}
+.c-store-checkout button[type=submit],.c-store-checkout .submit-btn,.c-store-checkout .hl-btn-primary,.c-store-checkout .pay-btn{background:var(--bf-ink) !important;color:#fff !important;border:0 !important;border-radius:999px !important;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:22px !important;letter-spacing:1.6px !important;min-height:54px}
+.c-store-checkout button[type=submit]:hover,.c-store-checkout .submit-btn:hover{background:var(--bf-blue) !important}
+
+/* ---------- footer (last section) ---------- */
+#preview-container>.c-section:last-of-type{padding:46px 20px 60px !important;border-top:1px solid rgba(255,255,255,.08) !important;margin-top:40px}
+#preview-container>.c-section:last-of-type img{max-width:min(320px,70vw) !important;height:auto !important;margin:0 auto;opacity:.9}
+#preview-container>.c-section:last-of-type .text-output,#preview-container>.c-section:last-of-type .text-output *{color:rgba(255,255,255,.55) !important;font-family:'Poppins',Arial,sans-serif !important;font-size:12px !important}
+
+/* ---------- custom thank-you / contact cards (bf-*) ---------- */
+.bf-wrap{max-width:640px;margin:clamp(30px,6vw,70px) auto;padding:0 18px;text-align:center;font-family:'Poppins',Arial,sans-serif}
+.bf-card{padding:clamp(28px,5vw,48px) clamp(22px,4vw,40px)}
+.bf-eye{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--bf-pink)}
+.bf-h{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-weight:400;font-size:clamp(46px,8vw,64px);line-height:.92;letter-spacing:.5px;margin:10px 0 0;color:var(--bf-ink)}
+.bf-p{margin:14px auto 0;max-width:460px;font-size:16px;line-height:1.6;color:#3a3a40}
+.bf-btn{display:inline-block;margin-top:24px;background:var(--bf-ink);color:#fff !important;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:21px;letter-spacing:1.6px;padding:15px 38px 13px;border-radius:999px;text-decoration:none;transition:background .3s}
+.bf-btn:hover{background:var(--bf-blue)}
+.bf-btn.alt{background:#fff;color:var(--bf-ink) !important;border:2px solid var(--bf-ink);margin-left:8px}
+.bf-meta{margin-top:22px;font-size:13px;color:var(--bf-muted)}
+.bf-meta a{color:var(--bf-blue) !important;text-decoration:none;font-weight:600}
+
+/* ---------- mobile ---------- */
+@media(max-width:767px){
+ .product-detail-container{border-radius:24px !important;margin:12px !important}
+ .hl-cart-container,.hl-amount-subtotal,.hl-store-checkout-container>*{border-radius:24px !important}
+ .c-nav-menu-v2 .image-container img{max-height:34px !important}
+ .cart-summary-desktop{position:static}
+}
