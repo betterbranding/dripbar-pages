@@ -96,9 +96,9 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 .c-store-checkout button[type=submit]:hover,.c-store-checkout .submit-btn:hover{background:var(--bf-blue) !important}
 
 /* ---------- footer (last section) ---------- */
-.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)){padding:46px 20px 60px !important;border-top:1px solid rgba(255,255,255,.08) !important;margin-top:40px}
-.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)) img{max-width:min(320px,70vw) !important;height:auto !important;margin:0 auto;opacity:.9}
-.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)) .text-output,.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)) .text-output *{color:rgba(255,255,255,.55) !important;font-family:'Poppins',Arial,sans-serif !important;font-size:12px !important}
+.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)):not(:has(.c-store-thank-you)):not(:has(.bf-wrap)){padding:46px 20px 60px !important;border-top:1px solid rgba(255,255,255,.08) !important;margin-top:40px}
+.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)):not(:has(.c-store-thank-you)):not(:has(.bf-wrap)) img{max-width:min(320px,70vw) !important;height:auto !important;margin:0 auto;opacity:.9}
+.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)):not(:has(.c-store-thank-you)):not(:has(.bf-wrap)) .text-output,.c-section:has(.c-image):not(:has(.c-nav-menu-v2)):not(:has(.c-store-product-detail)):not(:has(.c-store-cart)):not(:has(.c-store-checkout)):not(:has(.c-store-thank-you)):not(:has(.bf-wrap)) .text-output *{color:rgba(255,255,255,.55) !important;font-family:'Poppins',Arial,sans-serif !important;font-size:12px !important}
 
 /* ---------- custom thank-you / contact cards (bf-*) ---------- */
 .bf-wrap{max-width:640px;margin:clamp(30px,6vw,70px) auto;padding:0 18px;text-align:center;font-family:'Poppins',Arial,sans-serif}
@@ -132,3 +132,26 @@ body{font-family:'Poppins',Arial,sans-serif !important;-webkit-font-smoothing:an
 #make-payment:disabled,#make-payment[disabled]{opacity:.45}
 .c-store-checkout .edit-cart,.c-store-checkout .edit-cart *{color:var(--bf-blue) !important;font-weight:600 !important}
 .c-section:has(.c-store-product-detail) .c-row,.c-section:has(.c-store-product-detail) .c-column,.c-section:has(.c-store-cart) .c-row,.c-section:has(.c-store-cart) .c-column,.c-section:has(.c-store-checkout) .c-row,.c-section:has(.c-store-checkout) .c-column{padding-top:0 !important;margin-top:0 !important}
+
+/* ---------- thank you (native order summary) ---------- */
+.c-store-thank-you{font-family:'Poppins',Arial,sans-serif !important;margin-top:0 !important;padding-top:0 !important}
+.c-store-thank-you *{font-family:inherit}
+.c-store-thank-you [class^="cstore-thank-you"]{background:#fff !important;color:var(--bf-ink) !important;border-radius:30px !important;max-width:980px;margin:clamp(24px,5vw,56px) auto 0 !important;padding:clamp(26px,4vw,46px) clamp(18px,3.5vw,42px) !important;box-shadow:0 40px 90px -40px rgba(31,107,255,.6),0 0 0 1px rgba(255,255,255,.6) inset !important}
+.c-store-thank-you .hl-thankyou-headline-container{justify-content:center}
+.c-store-thank-you .hl-thankyou-headline{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-weight:400 !important;font-size:clamp(38px,6vw,56px) !important;line-height:1 !important;letter-spacing:.5px;color:var(--bf-ink) !important}
+.c-store-thank-you .check-icon-container,.c-store-thank-you .check-icon-container *{color:#fff !important}
+.c-store-thank-you .check-icon-container{background:var(--bf-ink) !important;border-radius:50%}
+.c-store-thank-you .sub-headline{color:var(--bf-muted) !important;font-size:15px !important;font-weight:500 !important;text-align:center}
+.c-store-thank-you .hl-order-summary-container,.c-store-thank-you .shipping-details-container{border:1px solid #e6e6ea !important;border-radius:20px !important;background:#fafafb !important}
+.c-store-thank-you .hl-order-summary-container .header span{font-size:12px !important;font-weight:600 !important;letter-spacing:1.4px;text-transform:uppercase;color:var(--bf-muted) !important}
+.c-store-thank-you .hl-order-product-image{border-radius:12px !important}
+.c-store-thank-you .hl-product-name{font-weight:600 !important;color:var(--bf-ink) !important}
+.c-store-thank-you .total-amount{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:40px !important;font-weight:400 !important;color:var(--bf-ink) !important}
+.c-store-thank-you .shipping-details-heading{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:22px !important;letter-spacing:.6px}
+.c-store-thank-you .thankyou-action-btn{background:var(--bf-ink) !important;color:#fff !important;border:0 !important;border-radius:999px !important;font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important;font-size:21px !important;letter-spacing:1.6px !important;padding:13px 34px 11px !important;min-height:50px}
+.c-store-thank-you .thankyou-action-btn:hover{background:var(--bf-blue) !important}
+.bf-steps{margin:22px auto 0;max-width:440px;text-align:left;display:grid;gap:12px}
+.bf-steps div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#3a3a40}
+.bf-steps b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--bf-ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+.bf-wrap.bf-next{max-width:980px;margin-top:22px}
+@media(max-width:767px){.c-store-thank-you [class^="cstore-thank-you"]{border-radius:24px !important;margin:16px 12px 0 !important}.bf-btn.alt{margin-left:0}.bf-btn{display:block;margin-top:14px}}
