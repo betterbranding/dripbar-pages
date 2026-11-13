@@ -1,0 +1,16 @@
+<style>html,body{background:#000!important}</style>
+<link rel="stylesheet" href="https://betterbranding.github.io/dripbar-pages/assets/bf2026/skin.css?v=2">
+<script>
+/* DRIPBaR BF2026 skin | product name eyebrow */
+(function () {
+  function fix() {
+    var n = document.querySelector('.hl-product-detail-product-name');
+    if (!n || n.querySelector('.bf-pname-eye')) return;
+    var parts = (n.textContent || '').split(' | ');
+    if (parts.length < 2) return;
+    var eye = document.createElement('span'); eye.className = 'bf-pname-eye'; eye.textContent = parts.slice(1).join(' | ');
+    n.textContent = parts[0]; n.insertBefore(eye, n.firstChild);
+  }
+  var i = 0, t = setInterval(function () { fix(); if (++i > 60) clearInterval(t); }, 200);
+})();
+</script>
