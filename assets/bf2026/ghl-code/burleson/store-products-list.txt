@@ -5,7 +5,7 @@
   /* Before early access opens, send visitors to the sign-up page (no prices revealed). ?preview=1 bypasses. */
   try {
     if (Date.now() < Date.parse('2026-11-23T10:30:00-06:00') && !/[?&]preview=/.test(location.search)) {
-      location.replace('/bf-2026-early-access' + (location.search || ''));
+      location.replace('/early-access' + (location.search || ''));
       return;
     }
   } catch (e) {}
