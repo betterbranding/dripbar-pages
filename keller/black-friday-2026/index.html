@@ -141,6 +141,10 @@ a{color:inherit;text-decoration:none}
 .buy.added{background:#0b6e69 !important;color:#fff}
 @keyframes bump{30%{transform:scale(1.35)}100%{transform:scale(1)}}
 .cartbar .cnt b.bump{animation:bump .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes catch{0%{transform:none}25%{transform:translateY(3px) scale(1.18,.86)}55%{transform:translateY(-2px) rotate(-8deg)}80%{transform:rotate(5deg)}100%{transform:none}}
+.cartbar .cnt.catch svg{animation:catch .55s cubic-bezier(.2,.8,.2,1);transform-origin:50% 90%}
+.flyx{position:fixed;z-index:80;pointer-events:none;will-change:transform}
+.flyx img{display:block;width:100%;height:100%;object-fit:contain;will-change:transform;filter:drop-shadow(0 8px 16px rgba(31,107,255,.55))}
 .payg{display:none;margin-top:12px;text-align:center;font-size:13px;font-weight:600;color:var(--blue)}
 .payg{display:block}
 .card.mega{box-shadow:0 0 0 2px #4d94ff,0 0 60px rgba(77,148,255,.55),0 50px 120px -40px rgba(31,107,255,.9)}
@@ -553,7 +557,24 @@ body.has-cart .pv{bottom:86px}
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-add]');if(!a||a.classList.contains('off'))return;
   if(!addToCart(a.dataset.add))return; /* fall back to the product page */
   e.preventDefault();a.classList.add('added');a.textContent='Added';clearTimeout(a._t);a._t=setTimeout(function(){a.classList.remove('added');a.textContent=a.dataset.t},1600);
-  if(window.__cartUI)window.__cartUI(true)});
+  flyToCart(a,function(){if(window.__cartUI)window.__cartUI(true)})});
+
+ /* tiny product drops into the footer cart (Greg 11/12); count bumps when it lands */
+ function flyToCart(a,done){var fin=false;function end(){if(!fin){fin=true;done()}}
+  try{var bar=$('cartbar'),card=a.closest('.card'),src=card&&card.querySelector('.art img'),dst=bar&&bar.querySelector('.cnt svg');
+   if(!src||!dst||!bar.classList.contains('on')||!src.animate||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return end();
+   var r=src.getBoundingClientRect(),d=dst.getBoundingClientRect();if(!r.width||!r.height)return end();
+   var s=Math.max(70,Math.min(150,r.width*.45,r.height*.6)),x0=r.left+r.width/2,y0=r.top+r.height/2,x1=d.left+d.width/2,y1=d.top+d.height/2-4;
+   var w=document.createElement('div');w.className='flyx';w.style.cssText='left:'+(x0-s/2)+'px;top:'+(y0-s/2)+'px;width:'+s+'px;height:'+s+'px';
+   var g=document.createElement('img');g.src=src.currentSrc||src.src;g.alt='';w.appendChild(g);document.body.appendChild(w);
+   var dx=x1-x0,dy=y1-y0,up=Math.max(50,Math.min(140,Math.abs(dy)*.22)),T=Math.max(650,Math.min(1000,500+Math.hypot(dx,dy)*.45)),sc=Math.max(.14,26/s);
+   w.animate([{transform:'translateX(0)'},{transform:'translateX('+dx+'px)'}],{duration:T,easing:'cubic-bezier(.3,0,.6,1)',fill:'forwards'});
+   var an=g.animate([{transform:'translateY(0) scale(1) rotate(0)',easing:'cubic-bezier(.2,.7,.4,1)'},
+     {transform:'translateY('+(-up)+'px) scale(.62) rotate(-10deg)',offset:.3,easing:'cubic-bezier(.55,0,.9,.5)'},
+     {transform:'translateY('+dy+'px) scale('+sc+') rotate(8deg)',opacity:.9}],{duration:T,fill:'forwards'});
+   setTimeout(function(){if(w.parentNode)w.remove();end()},T+400);
+   an.onfinish=function(){w.remove();end();var c=dst.closest('.cnt');c.classList.remove('catch');void c.offsetWidth;c.classList.add('catch')};
+  }catch(err){end()}}
 
  /* sticky cart footer: reads the GHL cart saved in this browser */
  var cb=$('cartbar');
