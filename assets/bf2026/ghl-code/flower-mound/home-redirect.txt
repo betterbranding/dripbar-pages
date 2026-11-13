@@ -1,0 +1,1 @@
+<script>/* DRIPBaR BF2026 home redirect */location.replace('/black-friday-2026' + (location.search || ''));</script>
