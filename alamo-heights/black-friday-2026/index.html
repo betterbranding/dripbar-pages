@@ -271,6 +271,28 @@ body.has-cart .pv{bottom:86px}
  .card:not(.wide) .dose{gap:4px;margin-top:4px}
  .card:not(.wide) .dose button{font-size:11px;padding:4px 8px}
 }
+/* 11/13 compact cards (Greg): one-line titles, photo -10%, price row on one line */
+.card h3{white-space:nowrap;font-size:40px}
+.art{aspect-ratio:40/27}
+.price-row{flex-wrap:nowrap;gap:10px}
+.price{font-size:54px}
+.was{white-space:nowrap}
+@media(min-width:760px){.card.wide .art{min-height:306px}.card.wide .art img{max-width:85%;max-height:90%}.card.wide h3{font-size:52px}.card.mega h3{font-size:68px}}
+@media(max-width:759px){
+ .card h3{font-size:38px}
+ .card:not(.wide) h3{font-size:24px}
+ .card:not(.wide) .art{aspect-ratio:10/9}
+ .card:not(.wide) .art img{max-width:90%}
+ .card:not(.wide) .price-row{flex-wrap:nowrap;gap:5px;align-items:baseline}
+ .card:not(.wide) .price{font-size:32px}
+ .card:not(.wide) .was{font-size:12px}
+ .card:not(.wide) .save{order:0;margin-left:auto;font-size:12px;letter-spacing:.6px;padding:4px 7px 3px}
+ .rail .card:not(.wide) h3{font-size:30px}
+ .rail .card:not(.wide) .art{aspect-ratio:40/27}
+ .rail .card:not(.wide) .price{font-size:42px}
+ .rail .card:not(.wide) .was{font-size:14px}
+ .rail .card:not(.wide) .save{font-size:14px;padding:5px 10px 4px}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -586,7 +608,19 @@ body.has-cart .pv{bottom:86px}
  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.dose button');if(!b)return;var card=b.closest('.card');
   [].forEach.call(card.querySelectorAll('.dose button'),function(x){x.classList.toggle('act',x===b)});
   var p=+b.dataset.p,w=+b.dataset.w;card.querySelector('.price').textContent=fmt(p);card.querySelector('.was').textContent=fmt(w);card.querySelector('.save').textContent='Save '+fmt(w-p);
-  card.querySelector('.buy').dataset.add=b.dataset.k});
+  card.querySelector('.buy').dataset.add=b.dataset.k;fitCards(card)});
+
+
+ /* fit: shrink a title or price row only if it still overflows one line */
+ function fitCards(root){[].forEach.call((root&&root.querySelectorAll?[root]:document.querySelectorAll('.card')),function(c){
+  var h=c.querySelector('h3');if(h&&h.clientWidth){h.style.fontSize='';var f=parseFloat(getComputedStyle(h).fontSize),m=f*.55;while(h.scrollWidth>h.clientWidth+1&&f>m){f-=1;h.style.fontSize=f+'px'}}
+  var r=c.querySelector('.price-row');if(r&&r.clientWidth){var els=[].slice.call(r.children);els.forEach(function(x){x.style.fontSize=''});
+   var base=els.map(function(x){return parseFloat(getComputedStyle(x).fontSize)}),k=1;
+   while(r.scrollWidth>r.clientWidth+1&&k>.55){k-=.03;els.forEach(function(x,i){x.style.fontSize=(base[i]*k).toFixed(1)+'px'})}}})}
+ window.__fitCards=fitCards;fitCards();
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){fitCards()});
+ window.addEventListener('load',function(){fitCards()});
+ var fitT;window.addEventListener('resize',function(){clearTimeout(fitT);fitT=setTimeout(fitCards,120)});
 
  /* curated bundles rail arrows */
  var rail=$('rail');if(rail){var pv=document.querySelector('.rail-btn.prev'),nx=document.querySelector('.rail-btn.next');
