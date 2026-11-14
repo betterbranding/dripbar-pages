@@ -1,0 +1,21 @@
+<style>html,body{background:#000!important}</style>
+<link rel="stylesheet" href="https://betterbranding.github.io/dripbar-pages/assets/bf2026/skin.css?v=3">
+<script>
+/* DRIPBaR BF2026 skin | thank-you next steps (Edina) */
+(function () {
+  function add() {
+    var ty = document.querySelector('.c-store-thank-you');
+    if (!ty || document.querySelector('.bf-next')) return !!ty;
+    var w = document.createElement('div'); w.className = 'bf-wrap bf-next';
+    w.innerHTML = '<div class="bf-card"><div class="bf-eye">What happens next</div>' +
+      '<div class="bf-steps"><div><b>1</b><span>Book each visit whenever it suits you.</span></div>' +
+      '<div><b>2</b><span>Use your credits at your own pace. They stay active for 12 months.</span></div></div>' +
+      '<a class="bf-btn" href="https://thedripbaredina.com/booking">Book a Visit</a>' +
+      '<a class="bf-btn alt" href="https://thedripbaredina.com/black-friday-2026">Keep Shopping</a>' +
+      '<p class="bf-meta">Questions? Call <a href="tel:+16124296822">(612) 429-6822</a>.</p></div>';
+    ty.parentNode.insertBefore(w, ty.nextSibling);
+    return true;
+  }
+  var i = 0, t = setInterval(function () { if (add() && document.querySelector('.bf-next') || ++i > 75) clearInterval(t); }, 200);
+})();
+</script>
