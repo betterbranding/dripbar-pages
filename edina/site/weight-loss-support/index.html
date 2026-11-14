@@ -976,5 +976,68 @@ const BOOKING = { default: B,
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is included in the GLP-1 weight management program?","acceptedAnswer":{"@type":"Answer","text":"The program is physician-guided and begins with a consultation to review your health history and goals. From there, our clinical team builds a personalized plan with ongoing check-ins, and you can add supportive drips or shots like Metabolize or IM Lean."}},{"@type":"Question","name":"Do I need a consultation before starting?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every guest starts with a consultation so our clinical team can review your health history and determine whether the program is a good fit for you."}},{"@type":"Question","name":"How much does the program cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is discussed during your consultation once your clinical team has reviewed your goals and health history. Ask our team for current pricing when you book."}},{"@type":"Question","name":"Can I add drips or shots to my weight management plan?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many guests pair their program with the Metabolize drip or shots like IM Lean, MIC, or Carnitine for added metabolic and energy support."}},{"@type":"Question","name":"How often will I check in with the clinical team?","acceptedAnswer":{"@type":"Answer","text":"Your clinical team will schedule ongoing check-ins to monitor your progress and adjust your plan as needed. The exact cadence is set based on your individual program."}},{"@type":"Question","name":"How is the medication administered?","acceptedAnswer":{"@type":"Answer","text":"Your GLP-1 medication is self-administered at home. Before you begin, our clinical team walks you through step-by-step safety instructions, including proper technique, your dosing schedule, and storage, and stays available for questions between check-ins."}},{"@type":"Question","name":"Is this program right for everyone?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Your consultation helps our clinical team determine if physician-guided GLP-1 medical weight management is appropriate for your health history and goals."}}]}</script>
 
+<!-- CHERRY WIDGET BEGIN (Edina only, Greg 11/13/26: DRIPBaR lime) -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Cherry pill appears once the visitor scrolls past the first screen, so it never covers the hero buttons */
+html:not(.cherry-in) [class*="floatingEstimator-floatingButton"]{opacity:0;visibility:hidden;pointer-events:none}
+[class*="floatingEstimator-floatingButton"]{transition:opacity .3s ease,visibility .3s ease}
+/* Small phones: keep "$47.46 / month" and the "Lowest Payment" tag on one line each so the payment card is not cut off */
+@media (max-width:420px){[class*="floatingEstimator-calculatorContainer"] [class*="calculator-frequency_text"]{white-space:nowrap}[class*="floatingEstimator-calculatorContainer"] [class*="calculator-month_option_apr_container"]{white-space:nowrap;font-size:11px;padding:4px 7px}}
+</style>
+<script>
+(function (w, d, s, o, f, js, fjs) {
+w[o] = w[o] || function () {
+(w[o].q = w[o].q || []).push(arguments);
+};
+(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+js.id = o;
+js.src = f;
+js.async = 1;
+fjs.parentNode.insertBefore(js, fjs);
+})(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+_hw("init", {
+debug: false,
+variables: {
+slug: "the-dripbar-edina",
+name: "The DRIPBaR Edina",
+images: [6],
+customLogo: "",
+defaultPurchaseAmount: 1000,
+customImage: "",
+imageCategory: "other",
+language: "en",
+},
+styles: {
+primaryColor: "#AFB216",
+secondaryColor: "#AFB21610",
+fontFamily: "Open Sans",
+headerFontFamily: "Open Sans",
+floatingEstimator: {
+position: "bottom-right",
+offset: {
+x: "0px",
+y: "0px"
+},
+zIndex: 940,
+ctaFontFamily: "Poppins",
+bodyFontFamily: "Open Sans",
+ctaColor: "#AFB216",
+ctaTextColor: "#FFFFFF"
+}
+}
+}, ["floatingEstimator"]);
+</script>
+<script>
+(function () {
+var de = document.documentElement;
+function check() { var y = window.scrollY || de.scrollTop || 0; de.classList.toggle("cherry-in", y > Math.min(480, window.innerHeight * 0.6)); }
+window.addEventListener("scroll", check, { passive: true });
+window.addEventListener("resize", check);
+check();
+})();
+</script>
+<div id="floatingEstimator"></div>
+<!-- CHERRY WIDGET END -->
 </body>
 </html>

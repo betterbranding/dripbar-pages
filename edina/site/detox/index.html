@@ -966,5 +966,68 @@ const BOOKING = { default: B,
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a detox support drip actually do?","acceptedAnswer":{"@type":"Answer","text":"Our drips deliver nutrients like Vitamin C, B vitamins, magnesium, and taurine that are designed to support your body's own natural detox pathways. They are a supportive nutrient infusion, not a medical treatment for toxin removal."}},{"@type":"Question","name":"What is in the Heavy Metal Detox drip?","acceptedAnswer":{"@type":"Answer","text":"Heavy Metal Detox is a nutrient IV formulated with Ascorbic Acid, Taurine, Magnesium, B12, and B6, designed to support the body's own natural detox pathways. It is a nutrient infusion, not a pharmaceutical treatment."}},{"@type":"Question","name":"How often should I come in for detox support?","acceptedAnswer":{"@type":"Answer","text":"Many guests visit monthly or seasonally depending on their goals and schedule. Our team can help you find a cadence that fits, and our Lifestyle Membership makes regular visits more affordable."}},{"@type":"Question","name":"Is a health screening required before my first visit?","acceptedAnswer":{"@type":"Answer","text":"No. Minnesota does not require a health screening before your first drip. You will fill out a short intake form, and our wellness team will help you choose the right drip for your goals."}},{"@type":"Question","name":"What is the difference between the drip and the quick shot?","acceptedAnswer":{"@type":"Answer","text":"The IV drip delivers a larger volume of nutrients over 30 to 60 minutes for deeper support. The IM Detoxed quick shot is a smaller injection that takes under 15 minutes for a targeted boost between drip visits."}},{"@type":"Question","name":"Can I pair a detox drip with a sauna or halotherapy session?","acceptedAnswer":{"@type":"Answer","text":"Yes, many guests pair a drip with Infrared Sauna or Halotherapy for a more complete visit. Ask our team about pairing options when you book."}}]}</script>
 
+<!-- CHERRY WIDGET BEGIN (Edina only, Greg 11/13/26: DRIPBaR lime) -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Cherry pill appears once the visitor scrolls past the first screen, so it never covers the hero buttons */
+html:not(.cherry-in) [class*="floatingEstimator-floatingButton"]{opacity:0;visibility:hidden;pointer-events:none}
+[class*="floatingEstimator-floatingButton"]{transition:opacity .3s ease,visibility .3s ease}
+/* Small phones: keep "$47.46 / month" and the "Lowest Payment" tag on one line each so the payment card is not cut off */
+@media (max-width:420px){[class*="floatingEstimator-calculatorContainer"] [class*="calculator-frequency_text"]{white-space:nowrap}[class*="floatingEstimator-calculatorContainer"] [class*="calculator-month_option_apr_container"]{white-space:nowrap;font-size:11px;padding:4px 7px}}
+</style>
+<script>
+(function (w, d, s, o, f, js, fjs) {
+w[o] = w[o] || function () {
+(w[o].q = w[o].q || []).push(arguments);
+};
+(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+js.id = o;
+js.src = f;
+js.async = 1;
+fjs.parentNode.insertBefore(js, fjs);
+})(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+_hw("init", {
+debug: false,
+variables: {
+slug: "the-dripbar-edina",
+name: "The DRIPBaR Edina",
+images: [6],
+customLogo: "",
+defaultPurchaseAmount: 1000,
+customImage: "",
+imageCategory: "other",
+language: "en",
+},
+styles: {
+primaryColor: "#AFB216",
+secondaryColor: "#AFB21610",
+fontFamily: "Open Sans",
+headerFontFamily: "Open Sans",
+floatingEstimator: {
+position: "bottom-right",
+offset: {
+x: "0px",
+y: "0px"
+},
+zIndex: 940,
+ctaFontFamily: "Poppins",
+bodyFontFamily: "Open Sans",
+ctaColor: "#AFB216",
+ctaTextColor: "#FFFFFF"
+}
+}
+}, ["floatingEstimator"]);
+</script>
+<script>
+(function () {
+var de = document.documentElement;
+function check() { var y = window.scrollY || de.scrollTop || 0; de.classList.toggle("cherry-in", y > Math.min(480, window.innerHeight * 0.6)); }
+window.addEventListener("scroll", check, { passive: true });
+window.addEventListener("resize", check);
+check();
+})();
+</script>
+<div id="floatingEstimator"></div>
+<!-- CHERRY WIDGET END -->
 </body>
 </html>

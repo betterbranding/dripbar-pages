@@ -977,5 +977,68 @@ const BOOKING = { default: B,
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is high dose Vitamin C an antioxidant?", "acceptedAnswer": {"@type": "Answer", "text": "Not at these doses. At everyday oral amounts, Vitamin C acts as an antioxidant. At the millimolar concentrations a high dose IV reaches, it shifts to a pro-oxidant and generates hydrogen peroxide in the tissues. Oral absorption caps out well below that level, which is why the IV route matters and why this therapy has its own consultation, labs, and dosing."}}, {"@type": "Question", "name": "Do I need a consultation and labs before my first infusion?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. High dose Vitamin C requires a physician consultation, lab work including a G6PD test, and a prescription before your first infusion. The first phone consult is complimentary. Once your labs are back, your practitioner sets your personalized dose and frequency."}}, {"@type": "Question", "name": "How much does high dose Vitamin C cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing starts at $189 and is set by dose. We offer 15,000 mg, 25,000 mg, 50,000 mg, and 75,000 mg infusions. Your final price is confirmed at your consultation once your practitioner sets your protocol."}}, {"@type": "Question", "name": "Can I do high dose Vitamin C during chemotherapy or radiation?", "acceptedAnswer": {"@type": "Answer", "text": "Many people do, and only with their oncologist's knowledge. We coordinate timing and your protocol with your oncology team. High dose Vitamin C is complementary support alongside your cancer treatment, never in place of it. It is not a treatment or cure for cancer or any disease."}}, {"@type": "Question", "name": "Who should not receive high dose Vitamin C?", "acceptedAnswer": {"@type": "Answer", "text": "Your consultation decides. We check for G6PD deficiency and kidney conditions with lab work before anyone is scheduled, and we review your full health history and current medications. A 2010 review of more than 50,000 infusions found adverse events were rare and preventable with proper lab work and consultation, which is exactly why labs come first."}}, {"@type": "Question", "name": "How long is a visit?", "acceptedAnswer": {"@type": "Answer", "text": "Longer than a standard drip. Infusion time depends on your dose, so plan for a longer visit and bring something to read or watch. Our lounge is built for it."}}, {"@type": "Question", "name": "Does membership pricing apply to high dose Vitamin C?", "acceptedAnswer": {"@type": "Answer", "text": "No. High dose Vitamin C is priced separately by dose and is not part of the Lifestyle Membership. Members and non-members pay the same dose-based price, starting at $189."}}]}</script>
 
+<!-- CHERRY WIDGET BEGIN (Edina only, Greg 11/13/26: DRIPBaR lime) -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Cherry pill appears once the visitor scrolls past the first screen, so it never covers the hero buttons */
+html:not(.cherry-in) [class*="floatingEstimator-floatingButton"]{opacity:0;visibility:hidden;pointer-events:none}
+[class*="floatingEstimator-floatingButton"]{transition:opacity .3s ease,visibility .3s ease}
+/* Small phones: keep "$47.46 / month" and the "Lowest Payment" tag on one line each so the payment card is not cut off */
+@media (max-width:420px){[class*="floatingEstimator-calculatorContainer"] [class*="calculator-frequency_text"]{white-space:nowrap}[class*="floatingEstimator-calculatorContainer"] [class*="calculator-month_option_apr_container"]{white-space:nowrap;font-size:11px;padding:4px 7px}}
+</style>
+<script>
+(function (w, d, s, o, f, js, fjs) {
+w[o] = w[o] || function () {
+(w[o].q = w[o].q || []).push(arguments);
+};
+(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+js.id = o;
+js.src = f;
+js.async = 1;
+fjs.parentNode.insertBefore(js, fjs);
+})(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+_hw("init", {
+debug: false,
+variables: {
+slug: "the-dripbar-edina",
+name: "The DRIPBaR Edina",
+images: [6],
+customLogo: "",
+defaultPurchaseAmount: 1000,
+customImage: "",
+imageCategory: "other",
+language: "en",
+},
+styles: {
+primaryColor: "#AFB216",
+secondaryColor: "#AFB21610",
+fontFamily: "Open Sans",
+headerFontFamily: "Open Sans",
+floatingEstimator: {
+position: "bottom-right",
+offset: {
+x: "0px",
+y: "0px"
+},
+zIndex: 940,
+ctaFontFamily: "Poppins",
+bodyFontFamily: "Open Sans",
+ctaColor: "#AFB216",
+ctaTextColor: "#FFFFFF"
+}
+}
+}, ["floatingEstimator"]);
+</script>
+<script>
+(function () {
+var de = document.documentElement;
+function check() { var y = window.scrollY || de.scrollTop || 0; de.classList.toggle("cherry-in", y > Math.min(480, window.innerHeight * 0.6)); }
+window.addEventListener("scroll", check, { passive: true });
+window.addEventListener("resize", check);
+check();
+})();
+</script>
+<div id="floatingEstimator"></div>
+<!-- CHERRY WIDGET END -->
 </body>
 </html>

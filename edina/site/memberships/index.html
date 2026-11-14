@@ -835,5 +835,68 @@ const BOOKING = { default: B,
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I start a membership?","acceptedAnswer":{"@type":"Answer","text":"Call or text (612) 324-4740 and our team will set you up, usually in a few minutes. You can also ask about memberships at the front desk during any visit. There is no online checkout for memberships, because we like to match you to the right tier first."}},{"@type":"Question","name":"What is the free monthly member perk?","acceptedAnswer":{"@type":"Answer","text":"Each month members receive a perk, such as a seasonal quick shot or an add-on, included with the membership. The perk rotates, and our team announces it at the start of the month."}},{"@type":"Question","name":"Do unused drips roll over?","acceptedAnswer":{"@type":"Answer","text":"Yes. If life gets busy and you miss a month, your drip rolls over so you do not lose it."}},{"@type":"Question","name":"Does membership pricing apply to every drip?","acceptedAnswer":{"@type":"Answer","text":"Member pricing on our menu reflects the Lifestyle Membership rate. Lifestyle drips are $179 for members instead of $224. Specialty infusions like NAD+ and High Dose Vitamin C are priced separately, and our team can tell you how your membership applies."}},{"@type":"Question","name":"Can I change tiers, pause, or cancel?","acceptedAnswer":{"@type":"Answer","text":"Talk to our team. They will walk you through the terms, including how to move up or down a tier, before you start, so there are no surprises."}},{"@type":"Question","name":"Can I share my membership with family or friends?","acceptedAnswer":{"@type":"Answer","text":"Ask our team about guest passes and sharing options when you join. Our goal is to make it easy for the people you care about to come with you."}}]}</script>
 
+<!-- CHERRY WIDGET BEGIN (Edina only, Greg 11/13/26: DRIPBaR lime) -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Cherry pill appears once the visitor scrolls past the first screen, so it never covers the hero buttons */
+html:not(.cherry-in) [class*="floatingEstimator-floatingButton"]{opacity:0;visibility:hidden;pointer-events:none}
+[class*="floatingEstimator-floatingButton"]{transition:opacity .3s ease,visibility .3s ease}
+/* Small phones: keep "$47.46 / month" and the "Lowest Payment" tag on one line each so the payment card is not cut off */
+@media (max-width:420px){[class*="floatingEstimator-calculatorContainer"] [class*="calculator-frequency_text"]{white-space:nowrap}[class*="floatingEstimator-calculatorContainer"] [class*="calculator-month_option_apr_container"]{white-space:nowrap;font-size:11px;padding:4px 7px}}
+</style>
+<script>
+(function (w, d, s, o, f, js, fjs) {
+w[o] = w[o] || function () {
+(w[o].q = w[o].q || []).push(arguments);
+};
+(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+js.id = o;
+js.src = f;
+js.async = 1;
+fjs.parentNode.insertBefore(js, fjs);
+})(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+_hw("init", {
+debug: false,
+variables: {
+slug: "the-dripbar-edina",
+name: "The DRIPBaR Edina",
+images: [6],
+customLogo: "",
+defaultPurchaseAmount: 1000,
+customImage: "",
+imageCategory: "other",
+language: "en",
+},
+styles: {
+primaryColor: "#AFB216",
+secondaryColor: "#AFB21610",
+fontFamily: "Open Sans",
+headerFontFamily: "Open Sans",
+floatingEstimator: {
+position: "bottom-right",
+offset: {
+x: "0px",
+y: "0px"
+},
+zIndex: 940,
+ctaFontFamily: "Poppins",
+bodyFontFamily: "Open Sans",
+ctaColor: "#AFB216",
+ctaTextColor: "#FFFFFF"
+}
+}
+}, ["floatingEstimator"]);
+</script>
+<script>
+(function () {
+var de = document.documentElement;
+function check() { var y = window.scrollY || de.scrollTop || 0; de.classList.toggle("cherry-in", y > Math.min(480, window.innerHeight * 0.6)); }
+window.addEventListener("scroll", check, { passive: true });
+window.addEventListener("resize", check);
+check();
+})();
+</script>
+<div id="floatingEstimator"></div>
+<!-- CHERRY WIDGET END -->
 </body>
 </html>

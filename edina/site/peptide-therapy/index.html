@@ -901,5 +901,68 @@ const BOOKING = { default: B,
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is peptide therapy?","acceptedAnswer":{"@type":"Answer","text":"Peptides are short chains of amino acids that act as signaling molecules in the body. Peptide therapy uses these signals to support specific goals like recovery, sleep quality, lean muscle, metabolism, and healthy aging under medical supervision."}},{"@type":"Question","name":"Do I need a consultation before starting?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every peptide protocol starts with a consultation so our clinical team can review your health history and goals. This helps us recommend a plan that is appropriate and personalized for you."}},{"@type":"Question","name":"How much does peptide therapy cost?","acceptedAnswer":{"@type":"Answer","text":"Peptide therapy is $249 a month. The number of months we recommend varies by goal and protocol, and our team will walk through expectations before you begin."}},{"@type":"Question","name":"Who administers peptide therapy?","acceptedAnswer":{"@type":"Answer","text":"Peptides are self-administered as a small subcutaneous injection into the fatty tissue of the stomach. Your peptide ships from the pharmacy to your home, our team shows you exactly how to do it, and Dr. Azhar Ahmed provides medical oversight."}},{"@type":"Question","name":"How long until I notice results?","acceptedAnswer":{"@type":"Answer","text":"Timelines vary by goal and protocol. Some guests notice changes in sleep or energy within a few weeks, while goals like lean muscle support or healthy aging typically take longer and steadier commitment."}},{"@type":"Question","name":"Is peptide therapy right for me?","acceptedAnswer":{"@type":"Answer","text":"The best way to find out is a consultation. Our clinical team will discuss your goals, review your health history, and let you know whether a peptide protocol is appropriate for you."}}]}</script>
 
+<!-- CHERRY WIDGET BEGIN (Edina only, Greg 11/13/26: DRIPBaR lime) -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Cherry pill appears once the visitor scrolls past the first screen, so it never covers the hero buttons */
+html:not(.cherry-in) [class*="floatingEstimator-floatingButton"]{opacity:0;visibility:hidden;pointer-events:none}
+[class*="floatingEstimator-floatingButton"]{transition:opacity .3s ease,visibility .3s ease}
+/* Small phones: keep "$47.46 / month" and the "Lowest Payment" tag on one line each so the payment card is not cut off */
+@media (max-width:420px){[class*="floatingEstimator-calculatorContainer"] [class*="calculator-frequency_text"]{white-space:nowrap}[class*="floatingEstimator-calculatorContainer"] [class*="calculator-month_option_apr_container"]{white-space:nowrap;font-size:11px;padding:4px 7px}}
+</style>
+<script>
+(function (w, d, s, o, f, js, fjs) {
+w[o] = w[o] || function () {
+(w[o].q = w[o].q || []).push(arguments);
+};
+(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+js.id = o;
+js.src = f;
+js.async = 1;
+fjs.parentNode.insertBefore(js, fjs);
+})(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+_hw("init", {
+debug: false,
+variables: {
+slug: "the-dripbar-edina",
+name: "The DRIPBaR Edina",
+images: [6],
+customLogo: "",
+defaultPurchaseAmount: 1000,
+customImage: "",
+imageCategory: "other",
+language: "en",
+},
+styles: {
+primaryColor: "#AFB216",
+secondaryColor: "#AFB21610",
+fontFamily: "Open Sans",
+headerFontFamily: "Open Sans",
+floatingEstimator: {
+position: "bottom-right",
+offset: {
+x: "0px",
+y: "0px"
+},
+zIndex: 940,
+ctaFontFamily: "Poppins",
+bodyFontFamily: "Open Sans",
+ctaColor: "#AFB216",
+ctaTextColor: "#FFFFFF"
+}
+}
+}, ["floatingEstimator"]);
+</script>
+<script>
+(function () {
+var de = document.documentElement;
+function check() { var y = window.scrollY || de.scrollTop || 0; de.classList.toggle("cherry-in", y > Math.min(480, window.innerHeight * 0.6)); }
+window.addEventListener("scroll", check, { passive: true });
+window.addEventListener("resize", check);
+check();
+})();
+</script>
+<div id="floatingEstimator"></div>
+<!-- CHERRY WIDGET END -->
 </body>
 </html>
