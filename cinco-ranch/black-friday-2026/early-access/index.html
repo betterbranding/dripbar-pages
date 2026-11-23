@@ -90,6 +90,7 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
+<script>/* From 11/27 8 AM CT, send sign-up page visitors to the store. ?phase= bypasses. */try{if(!/[?&]phase=/.test(location.search)&&Date.now()>=Date.parse('2026-11-27T08:00:00-06:00'))location.replace('https://cincoranch.dripbar.app/black-friday-2026'+location.search+location.hash)}catch(e){}</script>
 <div class="sky"></div><div class="aur a1"></div><div class="aur a2"></div>
 <header class="hero">
  <img class="logo" src="https://betterbranding.github.io/dripbar-pages/assets/bf2026/logo-white-green.png" alt="The DRIPBaR Cinco Ranch" width="230" height="140">
@@ -113,7 +114,7 @@ a{color:inherit;text-decoration:none}
   <p class="consent">By checking the box, you agree to receive recurring automated promotional texts from The DRIPBaR Cinco Ranch at the number provided. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out, HELP for help.</p>
  </div>
  <div class="live">
-  <a class="cta" href="https://cincoranch.dripbar.app/black-friday-2026" id="livecta">Shop Early Access</a><script>/* 11/23: open store before GHL's 10:30 gate */try{if(Date.now()<Date.parse('2026-11-23T10:30:00-06:00')){var a=document.getElementById('livecta');a.href=a.href.split('?')[0]+'?preview=1&phase=early';}}catch(e){}</script>
+  <a class="cta" href="https://cincoranch.dripbar.app/black-friday-2026" id="livecta">Shop Early Access</a>
  </div>
 </main>
 
@@ -140,7 +141,7 @@ a{color:inherit;text-decoration:none}
  function pad(x){return (x<10?'0':'')+x}
  function tick(){var n=Date.now(),ph=phase(n),p=P[ph];
   if(ph!==cur){cur=ph;$('eyebrow').lastChild.textContent=p.eye;$('cdlabel').textContent=p.label;
-   document.body.classList.toggle('is-live',ph==='early'||ph==='live');if(p.cta)$('livecta').textContent=p.cta;
+   document.body.classList.toggle('is-live',ph==='live');if(ph==='early'){var L=document.querySelector('.signup .lead');if(L)L.textContent="Sales are limited. Sign up and we'll send your early access link right away."}if(p.cta)$('livecta').textContent=p.cta;
    $('cd').style.display=$('cdlabel').style.display=p.t?'':'none';if(ph==='over'){document.querySelector('.signup').style.display='none'}}
   if(!p.t)return;var d=Math.max(0,p.t-(force?n-0:n));if(force)d=Math.max(0,p.t-n);
   var s=Math.floor(d/1000);$('dd').textContent=pad(Math.floor(s/86400));$('hh').textContent=pad(Math.floor(s%86400/3600));$('mm').textContent=pad(Math.floor(s%3600/60));$('ss').textContent=pad(s%60)}
