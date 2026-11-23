@@ -128,7 +128,7 @@ a{color:inherit;text-decoration:none}
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 <script>
 (function(){
- var C={"earlyStart": "2026-11-23T10:30:00-06:00", "publicStart": "2026-11-27T08:00:00-06:00", "lastDay": "2026-11-30T00:00:00-06:00", "end": "2026-11-30T23:59:59-06:00", "earlyLabel": "Monday, Nov 23", "earlyShort": "11/23"};
+ var C={"earlyStart": "2026-11-23T10:05:00-06:00", "publicStart": "2026-11-27T08:00:00-06:00", "lastDay": "2026-11-30T00:00:00-06:00", "end": "2026-11-30T23:59:59-06:00", "earlyLabel": "Monday, Nov 23", "earlyShort": "11/23"};
  var T={early:new Date(C.earlyStart).getTime(),pub:new Date(C.publicStart).getTime(),end:new Date(C.end).getTime()};
  var q=new URLSearchParams(location.search),force=q.get('phase');
  function phase(n){if(force)return force;return n<T.early?'pre':n<T.pub?'early':n<T.end?'live':'over'}
