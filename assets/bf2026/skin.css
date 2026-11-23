@@ -198,3 +198,10 @@ img[src*="6b23d118-466c-46ed-90c3-cbc8770cf343"]{height:72px !important;backgrou
 .c-store-thank-you .flex:has(>.thankyou-action-btn){display:none !important}
 .c-store-thank-you .hl-order-summary-container,.c-store-thank-you .shipping-details-container{padding:18px !important;box-sizing:border-box}
 .c-store-thank-you .hl-order-item button,.c-store-thank-you .hl-order-item a.btn{background:var(--bf-ink) !important;color:#fff !important;border:0 !important;border-radius:999px !important;font-weight:600 !important;padding:7px 16px !important}
+
+/* BF2026 limit 2 per item (Greg 11/23): no typing in quantity boxes; plus button disabled at 2 */
+.hl-quantity-input{pointer-events:none!important;caret-color:transparent!important}
+.hl-quantity-input-container{position:relative}
+.hl-quantity-input-container:has(.hl-quantity-input:not([value=""]):not([value="0"]):not([value="1"])) img[alt="Increase quantity"],
+.hl-quantity-input-container:has(.hl-quantity-input:not([value=""]):not([value="0"]):not([value="1"])) [aria-label="Increase quantity"]{opacity:.2!important;pointer-events:none!important;cursor:default!important}
+.hl-quantity-input-container:has(.hl-quantity-input:not([value=""]):not([value="0"]):not([value="1"]))::after{content:"Limit 2 per item";position:absolute;left:0;right:0;top:calc(100% + 4px);text-align:center;font:500 11px/1.2 Poppins,Arial,sans-serif;color:#6e6e73;white-space:nowrap;pointer-events:none}

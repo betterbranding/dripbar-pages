@@ -544,13 +544,20 @@ body.has-cart .pv{bottom:86px}
 
  /* add to cart: writes to the same GHL cart the product/cart/checkout pages use */
  function cartKey(){if(CFG.cartKey)return CFG.cartKey;for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k.indexOf('cart_details_')===0)return k}return null}
+ /* limit 2 per item (Greg 11/23): caps adds and trims any cart over the limit */
+ var LIMIT=2;
+ function clampCart(){try{var k=cartKey();if(!k)return;var c=JSON.parse(localStorage.getItem(k)||'{}');if(!c||!Array.isArray(c.products))return;var ch=false;
+  c.products.forEach(function(p){if((parseInt(p.quantity,10)||0)>LIMIT){p.quantity=LIMIT;ch=true}});if(ch)localStorage.setItem(k,JSON.stringify(c))}catch(e){}}
+ clampCart();window.addEventListener('pageshow',clampCart);
  function addToCart(key){var it=CFG.items&&CFG.items[key],k=cartKey();if(!it||!k)return false;
   try{var c;try{c=JSON.parse(localStorage.getItem(k)||'{}')}catch(_){c=null}if(!c||typeof c!=='object'||Array.isArray(c))c={};if(!Array.isArray(c.products))c.products=[];var f=null;
    c.products.forEach(function(p){if(p._id===it._id&&p.selectedPrice&&p.selectedPrice._id===it.selectedPrice._id)f=p});
-   if(f){f.quantity=(parseInt(f.quantity,10)||0)+1}else{var n=JSON.parse(JSON.stringify(it));n.quantity=1;n.buyNowQuantity=1;n.showName=false;c.products.push(n)}
+   if(f){var q0=parseInt(f.quantity,10)||0;if(q0>=LIMIT)return 'limit';f.quantity=q0+1}else{var n=JSON.parse(JSON.stringify(it));n.quantity=1;n.buyNowQuantity=1;n.showName=false;c.products.push(n)}
    localStorage.setItem(k,JSON.stringify(c));return true}catch(e){return false}}
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-add]');if(!a||a.classList.contains('off'))return;
-  if(!addToCart(a.dataset.add))return; /* fall back to the product page */
+  var ok=addToCart(a.dataset.add);
+  if(ok==='limit'){e.preventDefault();say('Limit '+LIMIT+' per item. This one is already in your cart.');a.textContent='Limit '+LIMIT;clearTimeout(a._t);a._t=setTimeout(function(){a.textContent=a.dataset.t},1800);return}
+  if(!ok)return; /* fall back to the product page */
   e.preventDefault();a.classList.add('added');a.textContent='Added';clearTimeout(a._t);a._t=setTimeout(function(){a.classList.remove('added');a.textContent=a.dataset.t},1600);
   flyToCart(a,function(){if(window.__cartUI)window.__cartUI(true)})});
 
